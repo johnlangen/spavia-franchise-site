@@ -31,6 +31,14 @@ const limitedMarkets = [
   "Rhode Island",
 ];
 
+
+interface Location {
+    id: string;
+    name?: string;
+    path: string;
+  }
+  
+
 export default function YourSpaviaContent() {
   const [hoveredState, setHoveredState] = useState<string | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
@@ -207,10 +215,11 @@ export default function YourSpaviaContent() {
             role="img"
             aria-label="US map of available markets"
           >
-            {usa.locations.map((loc) => {
-              const name = (loc.name || loc.id || "").toString();
-              const isLimited = limitedSet.has(name);
-              const isHover = hoveredState === name;
+
+            {usa.locations.map((loc: Location) => {
+            const name = (loc.name || loc.id || "").toString();
+            const isLimited = limitedSet.has(name);
+            const isHover = hoveredState === name;
               const fill = isHover ? hover : isLimited ? limited : gold;
 
               return (

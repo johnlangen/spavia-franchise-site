@@ -34,7 +34,7 @@ export default function MultiStepForm() {
   };
 
   const validateStep = () => {
-    let newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (step === 1) {
       if (!formData.firstName) newErrors.firstName = "First name is required";
@@ -60,6 +60,7 @@ export default function MultiStepForm() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+  
 
   const handleNext = () => {
     if (validateStep()) setStep(step + 1);

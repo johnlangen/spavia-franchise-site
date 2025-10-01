@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -11,7 +11,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: "easeOut",
+      ease: "easeOut" as const, // ✅ fixed typing
     },
   }),
 };
