@@ -87,13 +87,18 @@ export default function WhySpaviaContent() {
             {revenueStreams.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl p-6 transition"
+                className="bg-white rounded-xl shadow-md hover:shadow-xl p-6 transition relative"
               >
-                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                {/* Number Badge */}
+                <div className="absolute -top-4 -left-4 bg-[#C2A878] text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+
+                <h3 className="text-lg font-bold mb-2 mt-4">{item.title}</h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -102,6 +107,7 @@ export default function WhySpaviaContent() {
           </div>
         </div>
       </section>
+
 
       {/* Exceptional Guest Experience */}
       <section className="snap-start py-20 bg-white">

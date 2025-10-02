@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Link from "next/link";
+
 
 const states = [
   "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
@@ -27,6 +29,7 @@ export default function MultiStepForm() {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [captcha, setCaptcha] = useState<string | null>(null);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -72,7 +75,7 @@ export default function MultiStepForm() {
     e.preventDefault();
     if (validateStep()) {
       console.log("Form Submitted", formData, captcha);
-      alert("Form submitted!");
+      setShowSuccess(true); // show custom popup
     }
   };
 
@@ -222,6 +225,31 @@ export default function MultiStepForm() {
           </>
         )}
       </form>
+
+      {/* Success Popup Modal */}
+      {showSuccess && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
+          <div className="bg-white max-w-md w-full p-6 rounded-lg shadow-xl text-center relative">
+            <button
+              className="absolute top-3 right-3 text-gray-500 hover:text-black"
+              onClick={() => setShowSuccess(false)}
+            >
+              ✕
+            </button>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Form Submitted!</h2>
+            <p className="text-gray-700 mb-6">
+              Thank you for your interest in Spavia! Our team will contact you soon.
+            </p>
+            <Link
+              href="/"
+              className="inline-block bg-[#C2A878] text-white px-5 py-2 rounded-full hover:bg-[#b09466] transition"
+            >
+              Back to Home
+            </Link>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 }

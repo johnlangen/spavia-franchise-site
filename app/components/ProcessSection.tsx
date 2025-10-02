@@ -79,16 +79,23 @@ export default function ProcessSection() {
                 </h3>
                 <p className="text-gray-700 mb-4">{step.description}</p>
                 {step.button && (
-                  <Button
-                    variant="primary"
-                    style={{
-                      backgroundColor: themeColor,
-                      borderColor: themeColor,
-                    }}
+                  <a
+                    href="https://calendly.com/karyn-spaviadayspa/15mincall?back=1&month=2025-04"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {step.button}
-                  </Button>
+                    <Button
+                      variant="primary"
+                      style={{
+                        backgroundColor: themeColor,
+                        borderColor: themeColor,
+                      }}
+                    >
+                      {step.button}
+                    </Button>
+                  </a>
                 )}
+
               </motion.div>
             </div>
           ))}

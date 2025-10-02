@@ -1,5 +1,5 @@
-// app/get-started/page.tsx
 import { Metadata } from "next";
+import GetStartedContent from "../components/GetStartedContent";
 
 export const metadata: Metadata = {
   title: "Get Started | Spavia Franchise | Franchising Opportunity",
@@ -8,9 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <main>
-      <h1>Get Started</h1>
-    </main>
-  );
+  return <GetStartedContent />;
 }

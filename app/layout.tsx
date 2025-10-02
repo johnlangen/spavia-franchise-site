@@ -38,6 +38,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        {/* Floating Get Started Button - visible on all pages */}
+        <a
+          href="/get-started"
+          className="hidden md:flex fixed right-0 top-[12.5%] 
+                     bg-[#C2A878] text-white font-semibold 
+                     py-3 px-6 rounded-l-full shadow-lg 
+                     hover:bg-[#b09466] transition z-50"
+        >
+          Get Started
+        </a>
       </body>
     </html>
   );

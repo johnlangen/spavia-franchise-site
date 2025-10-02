@@ -84,28 +84,27 @@ export default function WhoWeAreContent() {
         </motion.p>
       </section>
 
+      
       {/* Founders */}
       <section className="snap-start py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Our Founders</h2>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-12 justify-center">
             {founders.map((f, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform hover:scale-[1.02] p-5"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform hover:scale-[1.02] p-6 max-w-[500px] mx-auto flex flex-col"
               >
                 <img
                   src={f.image}
                   alt={f.name}
-                  className="rounded-lg mb-3 w-full object-cover h-64"
+                  className="rounded-lg mb-4 w-full h-72 object-cover object-center"
                 />
-                <h3 className="text-lg font-bold">{f.name}</h3>
-                <p className="text-xs text-[#C2A878] font-semibold mb-2">
-                  {f.role}
-                </p>
+                <h3 className="text-xl font-bold">{f.name}</h3>
+                <p className="text-sm text-[#C2A878] font-semibold mb-3">{f.role}</p>
                 <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line font-sans">
                   {f.bio}
                 </p>
@@ -114,6 +113,7 @@ export default function WhoWeAreContent() {
           </div>
         </div>
       </section>
+
 
       {/* Support Team */}
       <section className="snap-start py-20 bg-gray-50">

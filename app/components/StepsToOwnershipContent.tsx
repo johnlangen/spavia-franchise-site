@@ -18,7 +18,7 @@ const faqItems = [
       "The federal trade commission and state franchise sales regulations do not allow franchisors to provide profit projections. However, if you become a qualified candidate, we would be happy to share our franchise disclosure document (FDD). The FDD will highlight our historical sales from our franchised locations.",
   },
   {
-    question: "Do I need experience the spa industry?",
+    question: "Do I need experience in the spa industry?",
     answer:
       "While it can’t hurt to have experience in the spa industry, it is not required. We are looking for individuals who share our dedication to providing an exceptional experience. We can teach you and your team the rest!",
   },

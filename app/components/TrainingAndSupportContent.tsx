@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import NavBar from "./NavBar";
 import AwardsSection from "./AwardsSection";
-
 import Footer from "./Footer";
 
-
+// All data for the component is now here
 const expertiseItems = [
   {
     title: "Over 120 Years of Spa Experience",
@@ -41,14 +41,126 @@ const expertiseItems = [
   },
 ];
 
+const journeyItems = [
+  {
+    title: "Strategic Sessions with Founders & Leadership Team",
+    content:
+      "Hear directly from our Founders and Leadership Team on what to expect when becoming a Spavia franchise partner. This is where the journey begins — grounded in vision, passion, and clarity.",
+    imageSrc: "/training-and-support/image1.jpg",
+    imageAlt: "Strategic Sessions",
+  },
+  {
+    title: "On-Site Operations Training",
+    content:
+      "Hands-on training for you and your team. Learn systems, procedures, and guest engagement in a live spa environment to ensure confidence on day one.",
+    imageSrc: "/training-and-support/image2.jpg",
+    imageAlt: "On-Site Training",
+  },
+  {
+    title: "Spa Services Training",
+    content:
+      "A three-step process designed to create confident, consistent specialists:",
+    listItems: [
+      "Online e-learning introduction to protocols and systems",
+      "Deep dives with Spavia Trainers",
+      "Hands-on training to ensure excellence in every guest experience",
+    ],
+    imageSrc: "/training-and-support/image3.jpg",
+    imageAlt: "Spa Services Training",
+  },
+  {
+    title: "E-Learning – Spavia University",
+    content:
+      "Access training 24/7 with our e-learning LMS suite. Includes video, text, quizzes, and reporting to keep your team engaged and accountable.",
+    imageSrc: "/training-and-support/image4.jpg",
+    imageAlt: "E-Learning",
+  },
+  {
+    title: "Classroom Training – Denver, CO",
+    content:
+      "New owners meet the Spavia team and undergo in-depth training covering Operations, Marketing, Economics, Spa Services, and Systems. Grand Opening Training: Marketing, POS, and over 15 guides to prepare you for a successful launch.",
+    imageSrc: "/training-and-support/image5.jpg",
+    imageAlt: "Classroom Training",
+  },
+];
+
+const supportCommitmentItems = [
+  {
+    title: "Team of Experts",
+    content:
+      "Over 120 years of combined experience. Seasoned owners, therapists, and estheticians guide and inspire you.",
+  },
+  {
+    title: "Culture of Innovation",
+    content:
+      "Creativity + data = smarter growth. We constantly test and evolve with the industry.",
+  },
+  {
+    title: "World Class Partners",
+    content:
+      "From marketing agencies to skincare vendors, we only work with the best so you can thrive.",
+  },
+  {
+    title: "Every Step of the Way",
+    content:
+      "Our national team stands with you from discovery day to grand opening and beyond.",
+  },
+];
+
 export default function TrainingAndSupportContent() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [currentJourneyIndex, setCurrentJourneyIndex] = useState(0);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const carouselVariants = {
+    enter: (direction: number) => {
+      return {
+        x: direction > 0 ? 1000 : -1000,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 1000 : -1000,
+        opacity: 0,
+      };
+    },
+  };
+
+  const paginate = (newDirection: number) => {
+    setCurrentJourneyIndex((prevIndex) => {
+      const newIndex = prevIndex + newDirection;
+      if (newIndex < 0) return journeyItems.length - 1;
+      if (newIndex >= journeyItems.length) return 0;
+      return newIndex;
+    });
+  };
 
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
 
-      {/* Hero */}
+      {/* Hero (Original - Unchanged) */}
       <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-28 text-center text-white relative overflow-hidden">
         <motion.h1
           initial={{ opacity: 0 }}
@@ -70,244 +182,235 @@ export default function TrainingAndSupportContent() {
         </motion.p>
       </section>
 
-      {/* Training Expertise Accordion */}
+      {/* Training Expertise (Accordion) - Enhanced */}
       <section className="snap-start py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-10 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-10 text-center"
+          >
             Training Expertise
-          </h2>
+          </motion.h2>
           <div className="space-y-4">
-            {expertiseItems.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="border rounded-lg shadow-sm overflow-hidden"
-              >
-                <button
-                  className="w-full flex justify-between items-center p-5 bg-gray-50 hover:bg-gray-100 transition"
-                  onClick={() =>
-                    setOpenIndex(openIndex === idx ? null : idx)
-                  }
+            {expertiseItems.map((item, idx) => {
+              const isOpen = openIndex === idx;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  className={`cursor-pointer rounded-xl border shadow-sm transition-all duration-300 transform ${
+                    isOpen
+                      ? "bg-white shadow-lg border-[#C2A878] scale-[1.01]"
+                      : "bg-gray-50 hover:shadow-md hover:scale-[1.01]"
+                  }`}
                 >
-                  <span className="font-semibold">{item.title}</span>
-                  <span className="text-lg font-bold">
-                    {openIndex === idx ? "−" : "+"}
-                  </span>
-                </button>
-                {openIndex === idx && (
-                  <div className="p-5 text-gray-700 text-sm bg-white">
-                    {item.content}
+                  {/* Header */}
+                  <div className="flex justify-between items-center p-5">
+                    <span className="font-semibold text-lg">{item.title}</span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-[#C2A878] text-2xl font-bold"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </motion.span>
                   </div>
-                )}
+
+                  {/* Smooth Expandable Content */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 pb-5 text-gray-700 text-sm leading-relaxed">
+                          {item.content}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Journey Sections Carousel - FINAL UI */}
+      <section className="snap-start py-20 bg-gray-50 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-10 text-center"
+          >
+            Your Franchise Journey
+          </motion.h2>
+
+          <div className="relative w-full overflow-hidden">
+            <AnimatePresence initial={false} mode="wait">
+              <motion.div
+                key={currentJourneyIndex}
+                className="grid md:grid-cols-2 gap-8 items-center"
+                custom={1}
+                variants={carouselVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+              >
+                {/* Image */}
+                <div
+                  className={`order-1 ${
+                    currentJourneyIndex % 2 !== 0 ? "md:order-last" : "md:order-1"
+                  }`}
+                >
+                  <div className="relative w-full h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
+                    <Image
+                      src={journeyItems[currentJourneyIndex].imageSrc}
+                      alt={journeyItems[currentJourneyIndex].imageAlt}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div
+                  className={`order-2 ${
+                    currentJourneyIndex % 2 !== 0 ? "md:order-1" : "md:order-last"
+                  }`}
+                >
+                  <h3 className="text-2xl font-bold mb-4">
+                    {journeyItems[currentJourneyIndex].title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed mb-3">
+                    {journeyItems[currentJourneyIndex].content}
+                  </p>
+                  {journeyItems[currentJourneyIndex].listItems && (
+                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
+                      {journeyItems[currentJourneyIndex].listItems?.map(
+                        (listItem, listIdx) => (
+                          <li key={listIdx}>{listItem}</li>
+                        )
+                      )}
+                    </ol>
+                  )}
+                </div>
               </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* New combined control center for dots and arrows */}
+          <div className="flex justify-center items-center mt-8 space-x-2">
+            <button
+              onClick={() => paginate(-1)}
+              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors"
+              aria-label="Previous step"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            {journeyItems.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentJourneyIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  idx === currentJourneyIndex
+                    ? "bg-[#C2A878] scale-125 shadow-md"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to step ${idx + 1}`}
+              />
             ))}
+            <button
+              onClick={() => paginate(1)}
+              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors"
+              aria-label="Next step"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Journey Sections */}
-      <section className="snap-start py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 space-y-20">
-          {/* 1 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.img
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/training-and-support/image1.jpg"
-              alt="Strategic Sessions"
-              className="rounded-xl shadow-lg"
-            />
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">
-                Strategic Sessions with Founders & Leadership Team
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Hear directly from our Founders and Leadership Team on what to
-                expect when becoming a Spavia franchise partner. This is where
-                the journey begins — grounded in vision, passion, and clarity.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* 2 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">
-                On-Site Operations Training
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Hands-on training for you and your team. Learn systems,
-                procedures, and guest engagement in a live spa environment to
-                ensure confidence on day one.
-              </p>
-            </motion.div>
-            <motion.img
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/training-and-support/image2.jpg"
-              alt="On-Site Training"
-              className="rounded-xl shadow-lg"
-            />
-          </div>
-
-          {/* 3 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.img
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/training-and-support/image3.jpg"
-              alt="Spa Services Training"
-              className="rounded-xl shadow-lg"
-            />
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">Spa Services Training</h3>
-              <p className="text-gray-700 leading-relaxed mb-3">
-                A three-step process designed to create confident, consistent
-                specialists:
-              </p>
-              <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                <li>Online e-learning introduction to protocols and systems</li>
-                <li>Deep dives with Spavia Trainers</li>
-                <li>
-                  Hands-on training to ensure excellence in every guest
-                  experience
-                </li>
-              </ol>
-            </motion.div>
-          </div>
-
-          {/* 4 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">
-                E-Learning – Spavia University
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Access training 24/7 with our e-learning LMS suite. Includes
-                video, text, quizzes, and reporting to keep your team engaged
-                and accountable.
-              </p>
-            </motion.div>
-            <motion.img
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/training-and-support/image4.jpg"
-              alt="E-Learning"
-              className="rounded-xl shadow-lg"
-            />
-          </div>
-
-          {/* 5 */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.img
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/training-and-support/image5.jpg"
-              alt="Classroom Training"
-              className="rounded-xl shadow-lg"
-            />
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">
-                Classroom Training – Denver, CO
-              </h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                New owners meet the Spavia team and undergo in-depth training
-                covering Operations, Marketing, Economics, Spa Services, and
-                Systems.
-              </p>
-              <h3 className="text-xl font-semibold mb-2">
-                Grand Opening Training
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                Marketing, POS, and over 15 guides to prepare you for a
-                successful launch.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Support Commitment */}
+      {/* Support Commitment - Enhanced */}
       <section className="snap-start py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-12">Our Support Commitment</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="p-6 bg-gray-50 rounded-xl shadow"
-            >
-              <h3 className="font-semibold mb-2">Team of Experts</h3>
-              <p className="text-gray-700 text-sm">
-                Over 120 years of combined experience. Seasoned owners,
-                therapists, and estheticians guide and inspire you.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="p-6 bg-gray-50 rounded-xl shadow"
-            >
-              <h3 className="font-semibold mb-2">Culture of Innovation</h3>
-              <p className="text-gray-700 text-sm">
-                Creativity + data = smarter growth. We constantly test and
-                evolve with the industry.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="p-6 bg-gray-50 rounded-xl shadow"
-            >
-              <h3 className="font-semibold mb-2">World Class Partners</h3>
-              <p className="text-gray-700 text-sm">
-                From marketing agencies to skincare vendors, we only work with
-                the best so you can thrive.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="p-6 bg-gray-50 rounded-xl shadow"
-            >
-              <h3 className="font-semibold mb-2">Every Step of the Way</h3>
-              <p className="text-gray-700 text-sm">
-                Our national team stands with you from discovery day to grand
-                opening and beyond.
-              </p>
-            </motion.div>
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-12"
+          >
+            Our Support Commitment
+          </motion.h2>
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {supportCommitmentItems.map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="p-6 bg-gray-50 rounded-xl shadow transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+              >
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-700 text-sm">{item.content}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

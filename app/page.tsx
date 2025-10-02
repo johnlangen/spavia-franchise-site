@@ -13,6 +13,7 @@ import ProcessSection from "./components/ProcessSection";
 import MultiStepForm from "./components/MultiStepForm";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import CallToAction from "./components/CallToAction";
 
 export const metadata: Metadata = {
   title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
@@ -56,9 +57,12 @@ export default function Home() {
         <ProcessSection />
 
         {/* MULTI-STEP FORM SECTION */}
+        {/* MULTI-STEP FORM SECTION */}
         <Section id="franchise-form" className="bg-white">
           <MultiStepForm />
+          <CallToAction />   {/* <-- add here, right under the form */}
         </Section>
+
 
         {/* FAQ */}
         <FAQ />
@@ -77,14 +81,6 @@ export default function Home() {
 
 
       </main>
-
-      {/* Floating Get Started Button - only visible on md+ */}
-      <a
-        href="/get-started"
-        className="hidden md:flex fixed right-0 top-[12.5%] bg-[#C2A878] text-white font-semibold py-3 px-6 rounded-l-full shadow-lg hover:bg-[#b09466] transition z-50"
-      >
-        Get Started
-      </a>
 
 
 
