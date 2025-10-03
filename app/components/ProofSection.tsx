@@ -7,7 +7,7 @@ import { themes } from "../themeConfig";
 
 export default function ProofSection() {
   const { theme } = useTheme();
-  const themeColor = theme ? themes[theme].color : "#9B2C2C"; // fallback color
+  const themeColor = theme ? themes[theme].color : "#C2A878"; // 👈 Changed fallback color to bronze
 
   const stats = [
     {
@@ -32,9 +32,8 @@ export default function ProofSection() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 scroll-mt-24">
-        THE PROOF IS IN THE NUMBERS
+          THE PROOF IS IN THE NUMBERS
         </h2>
-
 
         {/* Stat Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

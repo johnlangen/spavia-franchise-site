@@ -16,7 +16,7 @@ export default function ThemeSelector() {
           <button
             key={key}
             onClick={() => setTheme(key)}
-            className={`px-5 py-2 rounded font-semibold border transition-all duration-200 ease-in-out transform hover:scale-105 hover:shadow-lg`}
+            className={`px-5 py-2 rounded font-semibold border transition-all duration-200 ease-in-out transform hover:scale-105 hover:shadow-lg cursor-pointer`}
             style={{
               backgroundColor: isActive ? themeColor : "white",
               color: isActive ? "white" : "#C2A878", // gold text for inactive

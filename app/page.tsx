@@ -14,6 +14,8 @@ import MultiStepForm from "./components/MultiStepForm";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
+import Link from 'next/link';
+import FloatingButton from "./components/FloatingButton"; // Import the FloatingButton component
 
 export const metadata: Metadata = {
   title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
@@ -24,25 +26,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <ThemeProvider>
-
       <NavBar />
       <main className="flex flex-col">
         {/* HERO */}
-        
         <Hero />
 
-      {/* THEME SELECTION */}
-      <Section className="bg-white pt-28 pb-16">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-2 scroll-mt-24">
-          Choose Your Spa Design
-        </h2>
-        <p className="text-gray-600 text-center mb-6">
-          Select a theme to see how your spa can look and feel.
-        </p>
-        <ThemeSelector />
-        <ThemeGallery />
-      </Section>
-
+        {/* THEME SELECTION */}
+        <Section className="bg-white pt-28 pb-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-2 scroll-mt-24">
+            Choose Your Spa Design
+          </h2>
+          <p className="text-gray-600 text-center mb-6">
+            Select a theme to see how your spa can look and feel.
+          </p>
+          <ThemeSelector />
+          <ThemeGallery />
+        </Section>
 
         {/* PROOF SECTION */}
         <ProofSection />
@@ -57,33 +56,31 @@ export default function Home() {
         <ProcessSection />
 
         {/* MULTI-STEP FORM SECTION */}
-        {/* MULTI-STEP FORM SECTION */}
         <Section id="franchise-form" className="bg-white">
           <MultiStepForm />
-          <CallToAction />   {/* <-- add here, right under the form */}
+          <CallToAction />
         </Section>
-
 
         {/* FAQ */}
         <FAQ />
-
         <Section className="bg-black">
           <h2 className="text-3xl font-bold text-center mb-6 text-white">
             Ready to Start Your Journey?
           </h2>
           <div className="flex justify-center">
-            <Button className="bg-[#C2A878] text-white hover:bg-[#b09466]">
-              Get Started
-            </Button>
+            <Link href="/get-started">
+              <Button className="bg-[#C2A878] text-white hover:bg-[#b09466]">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </Section>
+
         <Footer />
-
-
       </main>
-
-
-
+      
+      {/* Add the floating button here */}
+      <FloatingButton />
     </ThemeProvider>
   );
 }

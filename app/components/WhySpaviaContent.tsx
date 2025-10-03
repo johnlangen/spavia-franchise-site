@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Footer from "./Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Hand } from "lucide-react";
 import { useState } from "react";
 
 const revenueStreams = [
@@ -33,7 +32,7 @@ const revenueStreams = [
 ];
 
 export default function WhySpaviaContent() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<number>(0);
 
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
@@ -87,47 +86,46 @@ export default function WhySpaviaContent() {
 
       {/* Multiple Streams of Revenue */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-12">
             Multiple Streams of Revenue
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {revenueStreams.map((item, i) => (
-              <div
+          {/* Number Selector */}
+          <div className="flex justify-center gap-4 mb-8">
+            {revenueStreams.map((_, i) => (
+              <button
                 key={i}
-                onClick={() => setActive(active === i ? null : i)}
-                className="relative group bg-white rounded-xl shadow-md cursor-pointer transition hover:shadow-xl p-6"
+                onClick={() => setActive(i)}
+                className={`w-12 h-12 rounded-full font-bold flex items-center justify-center transition cursor-pointer ${
+                  active === i
+                    ? "bg-[#C2A878] text-white shadow-lg scale-110"
+                    : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                }`}
               >
-                {/* Number Badge */}
-                <div className="absolute -top-4 -left-4 bg-[#C2A878] text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-
-                {/* Hand icon on hover */}
-                <Hand
-                  size={20}
-                  className="absolute top-2 right-2 text-[#C2A878] opacity-0 group-hover:opacity-100 transition-opacity"
-                />
-
-                <h3 className="text-lg font-bold mb-2 mt-4">{item.title}</h3>
-
-                <AnimatePresence>
-                  {active === i && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-gray-700 text-sm leading-relaxed"
-                    >
-                      {item.description}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-              </div>
+                {i + 1}
+              </button>
             ))}
           </div>
+
+          {/* Animated Detail */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white rounded-xl shadow-md p-8"
+            >
+              <h3 className="text-xl font-bold mb-4">
+                {revenueStreams[active].title}
+              </h3>
+              <p className="text-gray-700 text-base leading-relaxed">
+                {revenueStreams[active].description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import NavBar from "./NavBar";
 import AwardsSection from "./AwardsSection";
 import Footer from "./Footer";
+import Link from "next/link";
 
 // All data for the component is now here
 const expertiseItems = [
@@ -111,42 +112,6 @@ export default function TrainingAndSupportContent() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [currentJourneyIndex, setCurrentJourneyIndex] = useState(0);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const carouselVariants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 1000 : -1000,
-        opacity: 0,
-      };
-    },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
-        opacity: 0,
-      };
-    },
-  };
-
   const paginate = (newDirection: number) => {
     setCurrentJourneyIndex((prevIndex) => {
       const newIndex = prevIndex + newDirection;
@@ -160,13 +125,13 @@ export default function TrainingAndSupportContent() {
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
 
-      {/* Hero (Original - Unchanged) */}
-      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-28 text-center text-white relative overflow-hidden">
+      {/* Hero */}
+      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-28 text-center text-white px-4 sm:px-6">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-6"
+          className="text-4xl md:text-5xl font-bold mb-6"
         >
           Training and Support
         </motion.h1>
@@ -174,7 +139,7 @@ export default function TrainingAndSupportContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-lg leading-relaxed font-sans"
+          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
         >
           You Have the Dream, We Have the Knowledge. Spavia offers top-notch
           training and support from spa industry experts who bring over 120
@@ -182,7 +147,7 @@ export default function TrainingAndSupportContent() {
         </motion.p>
       </section>
 
-      {/* Training Expertise (Accordion) - Enhanced */}
+      {/* Training Expertise (Accordion) */}
       <section className="snap-start py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <motion.h2
@@ -190,7 +155,7 @@ export default function TrainingAndSupportContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold mb-10 text-center"
+            className="text-3xl md:text-4xl font-bold mb-10 text-center"
           >
             Training Expertise
           </motion.h2>
@@ -200,43 +165,28 @@ export default function TrainingAndSupportContent() {
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className={`cursor-pointer rounded-xl border shadow-sm transition-all duration-300 transform ${
+                  className={`cursor-pointer rounded-xl border shadow-sm transition-all duration-300 ${
                     isOpen
-                      ? "bg-white shadow-lg border-[#C2A878] scale-[1.01]"
-                      : "bg-gray-50 hover:shadow-md hover:scale-[1.01]"
+                      ? "bg-white border-[#C2A878] shadow-lg"
+                      : "bg-gray-50 hover:shadow-md"
                   }`}
                 >
-                  {/* Header */}
                   <div className="flex justify-between items-center p-5">
                     <span className="font-semibold text-lg">{item.title}</span>
                     <motion.span
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="text-[#C2A878] text-2xl font-bold"
+                      className="text-[#C2A878]"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
+                      ▼
                     </motion.span>
                   </div>
 
-                  {/* Smooth Expandable Content */}
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
@@ -244,7 +194,7 @@ export default function TrainingAndSupportContent() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        transition={{ duration: 0.35, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 text-gray-700 text-sm leading-relaxed">
@@ -260,57 +210,43 @@ export default function TrainingAndSupportContent() {
         </div>
       </section>
 
-      {/* Journey Sections Carousel - FINAL UI */}
-      <section className="snap-start py-20 bg-gray-50 relative">
+      {/* Journey Sections Carousel */}
+      <section className="snap-start py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold mb-10 text-center"
+            className="text-3xl md:text-4xl font-bold mb-10 text-center"
           >
             Your Franchise Journey
           </motion.h2>
 
+          {/* Slide */}
           <div className="relative w-full overflow-hidden">
             <AnimatePresence initial={false} mode="wait">
               <motion.div
                 key={currentJourneyIndex}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.45 }}
                 className="grid md:grid-cols-2 gap-8 items-center"
-                custom={1}
-                variants={carouselVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
               >
-                {/* Image */}
-                <div
-                  className={`order-1 ${
-                    currentJourneyIndex % 2 !== 0 ? "md:order-last" : "md:order-1"
-                  }`}
-                >
-                  <div className="relative w-full h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
-                    <Image
-                      src={journeyItems[currentJourneyIndex].imageSrc}
-                      alt={journeyItems[currentJourneyIndex].imageAlt}
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
+                {/* Image (fits better on mobile) */}
+                <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
+                  <Image
+                    src={journeyItems[currentJourneyIndex].imageSrc}
+                    alt={journeyItems[currentJourneyIndex].imageAlt}
+                    fill
+                    className="object-contain md:object-cover"
+                    priority
+                  />
                 </div>
 
-                {/* Content */}
-                <div
-                  className={`order-2 ${
-                    currentJourneyIndex % 2 !== 0 ? "md:order-1" : "md:order-last"
-                  }`}
-                >
+                {/* Text */}
+                <div>
                   <h3 className="text-2xl font-bold mb-4">
                     {journeyItems[currentJourneyIndex].title}
                   </h3>
@@ -319,9 +255,9 @@ export default function TrainingAndSupportContent() {
                   </p>
                   {journeyItems[currentJourneyIndex].listItems && (
                     <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                      {journeyItems[currentJourneyIndex].listItems?.map(
-                        (listItem, listIdx) => (
-                          <li key={listIdx}>{listItem}</li>
+                      {journeyItems[currentJourneyIndex].listItems.map(
+                        (li, idx) => (
+                          <li key={idx}>{li}</li>
                         )
                       )}
                     </ol>
@@ -331,11 +267,11 @@ export default function TrainingAndSupportContent() {
             </AnimatePresence>
           </div>
 
-          {/* New combined control center for dots and arrows */}
-          <div className="flex justify-center items-center mt-8 space-x-2">
+          {/* Controls (no shifting; hand cursor) */}
+          <div className="flex justify-center items-center mt-8 space-x-3">
             <button
               onClick={() => paginate(-1)}
-              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors"
+              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
               aria-label="Previous step"
             >
               <svg
@@ -349,6 +285,7 @@ export default function TrainingAndSupportContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
+
             {journeyItems.map((_, idx) => (
               <button
                 key={idx}
@@ -361,9 +298,10 @@ export default function TrainingAndSupportContent() {
                 aria-label={`Go to step ${idx + 1}`}
               />
             ))}
+
             <button
               onClick={() => paginate(1)}
-              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors"
+              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
               aria-label="Next step"
             >
               <svg
@@ -381,7 +319,7 @@ export default function TrainingAndSupportContent() {
         </div>
       </section>
 
-      {/* Support Commitment - Enhanced */}
+      {/* Support Commitment */}
       <section className="snap-start py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.h2
@@ -389,22 +327,24 @@ export default function TrainingAndSupportContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold mb-12"
+            className="text-3xl md:text-4xl font-bold mb-12"
           >
             Our Support Commitment
           </motion.h2>
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"
           >
             {supportCommitmentItems.map((item, idx) => (
               <motion.div
                 key={idx}
-                variants={itemVariants}
-                className="p-6 bg-gray-50 rounded-xl shadow transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                className="p-6 bg-gray-50 rounded-xl shadow hover:shadow-xl transition"
               >
                 <h3 className="font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-700 text-sm">{item.content}</p>
@@ -418,6 +358,16 @@ export default function TrainingAndSupportContent() {
       <section className="snap-start bg-gray-50">
         <AwardsSection />
       </section>
+
+      {/* Next Page Link */}
+      <div className="bg-black text-white py-10 text-center">
+        <Link
+          href="/our-franchisees"
+          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
+        >
+          Next: Our Franchisees →
+        </Link>
+      </div>
 
       <Footer />
     </main>

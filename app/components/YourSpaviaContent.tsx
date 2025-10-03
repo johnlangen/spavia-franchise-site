@@ -1,14 +1,14 @@
 "use client";
 
 import NavBar from "./NavBar";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { DollarSign, CreditCard, BarChart, X } from "lucide-react";
+import { DollarSign, CreditCard, BarChart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
-import usa from "@svg-maps/usa"; // data-only map
+import usa from "@svg-maps/usa";
 import AwardsSection from "./AwardsSection";
-
 import Footer from "./Footer";
+import Link from "next/link";
 
 const financials = [
   { label: "Net Worth", value: "$500,000", icon: DollarSign },
@@ -31,21 +31,35 @@ const limitedMarkets = [
   "Rhode Island",
 ];
 
+const galleryImages = [
+  "/your-spavia/image1.jpg",
+  "/your-spavia/image2.jpg",
+  "/your-spavia/image3.jpg",
+];
 
 interface Location {
-    id: string;
-    name?: string;
-    path: string;
-  }
-  
+  id: string;
+  name?: string;
+  path: string;
+}
 
 export default function YourSpaviaContent() {
   const [hoveredState, setHoveredState] = useState<string | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const limitedSet = useMemo(() => new Set(limitedMarkets), []);
   const gold = "#C2A878";
   const limited = "#e5e5e5";
   const hover = "#000000";
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
 
   return (
     <main className="text-gray-900">
@@ -173,30 +187,52 @@ export default function YourSpaviaContent() {
         </div>
       </section>
 
-      {/* Bigger Image Row */}
+      {/* Image Carousel for Mobile, Grid for Desktop */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-          <Image
-            src="/your-spavia/image1.jpg"
-            alt="Spa Image 1"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-md object-cover h-[400px] w-full"
-          />
-          <Image
-            src="/your-spavia/image2.jpg"
-            alt="Spa Image 2"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-md object-cover h-[400px] w-full"
-          />
-          <Image
-            src="/your-spavia/image3.jpg"
-            alt="Spa Image 3"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-md object-cover h-[400px] w-full"
-          />
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {galleryImages.map((src) => (
+              <Image
+                key={src}
+                src={src}
+                alt="Spa interior"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-md object-cover h-[400px] w-full"
+              />
+            ))}
+          </div>
+
+          <div className="md:hidden relative w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className="w-full"
+              >
+                <Image
+                  src={galleryImages[currentImageIndex]}
+                  alt="Spa interior"
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md object-cover w-full"
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Carousel Controls */}
+            <div className="flex justify-between items-center px-4 absolute inset-x-0 inset-y-0">
+              <button onClick={prevImage} className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors">
+                <ChevronLeft size={24} />
+              </button>
+              <button onClick={nextImage} className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors">
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -207,6 +243,18 @@ export default function YourSpaviaContent() {
           Click your state for additional territory information.
         </p>
 
+        {/* Legend */}
+        <div className="flex justify-center items-center space-x-4 mb-8">
+          <div className="flex items-center space-x-2">
+            <span className="w-4 h-4 rounded-full" style={{ backgroundColor: gold }}></span>
+            <span className="text-sm font-semibold">Available</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="w-4 h-4 rounded-full" style={{ backgroundColor: limited }}></span>
+            <span className="text-sm font-semibold">Limited Market</span>
+          </div>
+        </div>
+
         <div className="relative flex justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -215,11 +263,10 @@ export default function YourSpaviaContent() {
             role="img"
             aria-label="US map of available markets"
           >
-
             {usa.locations.map((loc: Location) => {
-            const name = (loc.name || loc.id || "").toString();
-            const isLimited = limitedSet.has(name);
-            const isHover = hoveredState === name;
+              const name = (loc.name || loc.id || "").toString();
+              const isLimited = limitedSet.has(name);
+              const isHover = hoveredState === name;
               const fill = isHover ? hover : isLimited ? limited : gold;
 
               return (
@@ -284,9 +331,18 @@ export default function YourSpaviaContent() {
       <section className="snap-start bg-gray-50">
         <AwardsSection />
       </section>
+      
+      {/* Next Page Link */}
+      <div className="bg-black text-white py-10 text-center">
+        <Link
+          href="/steps-to-ownership"
+          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
+        >
+          Next: Steps to Ownership →
+        </Link>
+      </div>
 
-    <Footer />
+      <Footer />
     </main>
-    
   );
 }

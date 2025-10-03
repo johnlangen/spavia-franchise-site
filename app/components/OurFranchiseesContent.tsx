@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 import Footer from "./Footer";
+import Image from "next/image";
+import Link from "next/link"; // Make sure to import Link
 
 const entrepreneurTraits = [
   {
@@ -84,7 +86,7 @@ export default function OurFranchiseesContent() {
       <NavBar />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white">
+      <section className="bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-6 sm:px-8">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -132,7 +134,7 @@ export default function OurFranchiseesContent() {
       </section>
 
       {/* Franchisee Video */}
-      <section className="py-20 bg-white text-center">
+      <section className="py-20 bg-white text-center px-6">
         <h2 className="text-3xl font-bold mb-6">Hear From Our Franchisees</h2>
         <video
           src="/our-franchisees/video1.mp4"
@@ -148,7 +150,7 @@ export default function OurFranchiseesContent() {
             What Our Franchise Partners Are Saying
           </h2>
 
-          <div className="relative">
+          <div className="relative h-[550px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={testimonial.name}
@@ -156,16 +158,20 @@ export default function OurFranchiseesContent() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center mx-auto max-w-3xl min-h-[420px]" // consistent height
+                className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center mx-auto max-w-3xl absolute inset-0 md:static"
               >
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-44 h-44 rounded-full mb-6 object-cover shadow-md"
+                  width={176}
+                  height={176}
+                  className="rounded-full mb-6 object-cover shadow-md"
                 />
-                <p className="text-gray-700 italic mb-6 text-lg leading-relaxed">
-                  “{testimonial.text}”
-                </p>
+                <div className="h-32 overflow-y-auto mb-6">
+                  <p className="text-gray-700 italic text-lg leading-relaxed">
+                    “{testimonial.text}”
+                  </p>
+                </div>
                 <p className="font-semibold text-[#C2A878] text-lg">
                   – {testimonial.name}, {testimonial.role}
                 </p>
@@ -175,13 +181,13 @@ export default function OurFranchiseesContent() {
             {/* Arrows */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2"
+              className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2 cursor-pointer"
             >
               <ChevronLeft size={56} />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2"
+              className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2 cursor-pointer"
             >
               <ChevronRight size={56} />
             </button>
@@ -194,6 +200,15 @@ export default function OurFranchiseesContent() {
         <AwardsSection />
       </section>
 
+      {/* Next Page Link */}
+      <div className="bg-black text-white py-10 text-center">
+        <Link
+          href="/your-spavia"
+          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
+        >
+          Next: Your Spavia →
+        </Link>
+      </div>
 
       <Footer />
     </main>
