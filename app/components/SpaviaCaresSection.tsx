@@ -30,7 +30,6 @@ const stories = [
 
 export default function SpaviaCaresSection() {
   const { theme } = useTheme();
-  // theme-driven background (fallback = bronze)
   const themeColor = theme ? themes[theme].color : "#C2A878";
 
   return (
@@ -87,6 +86,13 @@ export default function SpaviaCaresSection() {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
+            {/* Mobile hint */}
+            <div className="col-span-2 md:hidden text-center mb-2">
+              <p className="text-sm text-white/90 italic">
+                👉 Tap a card to learn more
+              </p>
+            </div>
+
             {stories.map((story, i) => (
               <div
                 key={i}
