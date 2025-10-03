@@ -2,9 +2,10 @@
 
 import NavBar from "./NavBar";
 import AwardsSection from "./AwardsSection";
+import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
 
 const revenueStreams = [
   {
@@ -30,25 +31,45 @@ const revenueStreams = [
 ];
 
 export default function WhySpaviaContent() {
-  const [active, setActive] = useState(0);
-
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
 
       {/* Hero */}
       <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-4 sm:px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Why Spavia</h1>
-        <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-bold mb-6"
+        >
+          Why Spavia
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
+        >
           Redefining Spa Excellence with Purpose and Passion. Spavia provides
           multiple streams of revenue and a proven system for success.
-        </p>
+        </motion.p>
       </section>
 
       {/* Expertise Intro */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Expertise That Sets Us Apart</h2>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-6"
+          >
+            Expertise That Sets Us Apart
+          </motion.h2>
           <p className="text-gray-700 leading-relaxed font-sans text-base sm:text-lg">
             On September 25, 2005, Spavia opened its doors with a mission and
             vision of making a positive difference in the world one guest at a
@@ -60,41 +81,33 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
-      {/* Multiple Streams of Revenue - Interactive */}
+      {/* Multiple Streams of Revenue */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Multiple Streams of Revenue
           </h2>
-
-          <div className="flex flex-col md:flex-row gap-6">
-            {/* Number selector */}
-            <div className="flex md:flex-col gap-4 justify-center md:justify-start">
-              {revenueStreams.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`w-12 h-12 rounded-full font-bold shadow-md flex items-center justify-center transition
-                    ${
-                      active === i
-                        ? "bg-[#C2A878] text-white"
-                        : "bg-white text-gray-800 hover:bg-gray-100"
-                    }`}
-                >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {revenueStreams.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, translateY: 20, scale: 1 }}
+                whileInView={{ opacity: 1, translateY: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                className="bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl relative"
+              >
+                {/* Number Badge */}
+                <div className="absolute -top-4 -left-4 bg-[#C2A878] text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md">
                   {String(i + 1).padStart(2, "0")}
-                </button>
-              ))}
-            </div>
+                </div>
 
-            {/* Active content */}
-            <div className="flex-1 bg-white rounded-xl shadow-md p-6 transition">
-              <h3 className="text-xl font-bold mb-4">
-                {revenueStreams[active].title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                {revenueStreams[active].description}
-              </p>
-            </div>
+                <h3 className="text-lg font-bold mb-2 mt-4">{item.title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -102,63 +115,110 @@ export default function WhySpaviaContent() {
       {/* Exceptional Guest Experience */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <img
-            src="/why-spavia/image1.png"
-            alt="Exceptional Guest Experience"
-            className="rounded-xl shadow-md"
-          />
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Exceptional Guest Experience</h2>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Image
+              src="/why-spavia/image1.png"
+              alt="Exceptional Guest Experience"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-md"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              Exceptional Guest Experience
+            </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
               Our guests inspire us. At Spavia, we are focused on creating an
               exceptional experience where they can turn off the stresses of
-              everyday life...
+              every day life...
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Proven Concept */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-3xl font-bold mb-4">Proven Concept</h2>
             <p className="text-gray-700 leading-relaxed font-sans mb-6">
-              Spavia offers top-notch training and support. The process is
-              in-depth and we will give you all the tools you need to succeed...
+              Spavia offers top-notch training and support...
             </p>
             <ul className="list-disc pl-5 text-gray-700 space-y-2 text-sm">
               <li>World-class applicant tracking system</li>
               <li>100% cloud based</li>
               <li>Fully integrated marketing and POS system</li>
-              <li>Robust Spavia app for online scheduling</li>
+              <li>Robust Spavia app for online scheduling on iOS and Android</li>
               <li>Coordinated team member management</li>
               <li>Integrated payroll system</li>
               <li>Effortless inventory management</li>
               <li>Instant analytics with over 150 reports</li>
               <li>Guest capture technology with AI</li>
             </ul>
-          </div>
-          <img
-            src="/why-spavia/image2.png"
-            alt="Proven Concept"
-            className="rounded-xl shadow-md"
-          />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Image
+              src="/why-spavia/image2.png"
+              alt="Proven Concept"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-md"
+            />
+          </motion.div>
         </div>
       </section>
 
       {/* What Our Guests Say */}
       <section className="snap-start py-20 bg-white text-center px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">What Our Guests Say</h2>
-          <p className="text-gray-700 leading-relaxed font-sans mb-8">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold mb-6"
+          >
+            What Our Guests Say
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-gray-700 leading-relaxed font-sans mb-8"
+          >
             The greatest rewards come when you give of yourself...
-          </p>
-          <video
-            src="/why-spavia/video1.mp4"
-            controls
-            className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
-          />
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <video
+              src="/why-spavia/video1.mp4"
+              controls
+              className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
+            />
+          </motion.div>
         </div>
       </section>
 
