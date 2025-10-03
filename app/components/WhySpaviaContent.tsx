@@ -2,10 +2,12 @@
 
 import NavBar from "./NavBar";
 import AwardsSection from "./AwardsSection";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Footer from "./Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { Hand } from "lucide-react";
+import { useState } from "react";
 
 const revenueStreams = [
   {
@@ -31,6 +33,8 @@ const revenueStreams = [
 ];
 
 export default function WhySpaviaContent() {
+  const [active, setActive] = useState<number | null>(null);
+
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
@@ -87,27 +91,41 @@ export default function WhySpaviaContent() {
           <h2 className="text-3xl font-bold text-center mb-12">
             Multiple Streams of Revenue
           </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {revenueStreams.map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, translateY: 20, scale: 1 }}
-                whileInView={{ opacity: 1, translateY: 0, scale: 1 }}
-                whileTap={{ scale: 0.95 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
-                className="bg-white rounded-xl shadow-md p-6 cursor-pointer transition md:hover:scale-105 md:hover:shadow-xl relative"
+                onClick={() => setActive(active === i ? null : i)}
+                className="relative group bg-white rounded-xl shadow-md cursor-pointer transition hover:shadow-xl p-6"
               >
                 {/* Number Badge */}
                 <div className="absolute -top-4 -left-4 bg-[#C2A878] text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md">
                   {String(i + 1).padStart(2, "0")}
                 </div>
 
+                {/* Hand icon on hover */}
+                <Hand
+                  size={20}
+                  className="absolute top-2 right-2 text-[#C2A878] opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+
                 <h3 className="text-lg font-bold mb-2 mt-4">{item.title}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
+
+                <AnimatePresence>
+                  {active === i && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-gray-700 text-sm leading-relaxed"
+                    >
+                      {item.description}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </div>
         </div>
