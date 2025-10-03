@@ -1,9 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function MobileCTA() {
   const [open, setOpen] = useState(true);
+  const pathname = usePathname();
+
+  // ❌ Hide completely on the /get-started page
+  if (pathname === "/get-started") return null;
+
+  // ✅ Auto-close when navigating away
+  useEffect(() => {
+    setOpen(true); // reset open on each route change
+  }, [pathname]);
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50">
@@ -18,6 +28,7 @@ export default function MobileCTA() {
           <button
             onClick={() => setOpen(false)}
             className="ml-3 text-white text-lg"
+            aria-label="Close Get Started bar"
           >
             ▼
           </button>
@@ -27,6 +38,7 @@ export default function MobileCTA() {
           <button
             onClick={() => setOpen(true)}
             className="text-white text-lg"
+            aria-label="Open Get Started bar"
           >
             ▲ Open
           </button>
