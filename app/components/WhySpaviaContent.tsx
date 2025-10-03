@@ -93,9 +93,10 @@ export default function WhySpaviaContent() {
                 key={i}
                 initial={{ opacity: 0, translateY: 20, scale: 1 }}
                 whileInView={{ opacity: 1, translateY: 0, scale: 1 }}
+                whileTap={{ scale: 0.95 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.8, delay: i * 0.15 }}
-                className="bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl relative"
+                className="bg-white rounded-xl shadow-md p-6 cursor-pointer transition md:hover:scale-105 md:hover:shadow-xl relative"
               >
                 {/* Number Badge */}
                 <div className="absolute -top-4 -left-4 bg-[#C2A878] text-white text-lg font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md">
