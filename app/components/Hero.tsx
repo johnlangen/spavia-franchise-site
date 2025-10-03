@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-white">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-white pb-24 md:pb-0">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Hero() {
             hidden: {},
             show: { transition: { staggerChildren: 0.2 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8"
         >
           {[
             { value: "$1,080,829", label: "Average Gross Sales" },
