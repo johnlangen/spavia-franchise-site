@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { themes } from "../themeConfig";
+import { useState } from "react";
 
 const stories = [
   {
@@ -30,22 +31,33 @@ const stories = [
 
 export default function SpaviaCaresSection() {
   const { theme } = useTheme();
-  // theme-driven background (fallback = bronze)
   const themeColor = theme ? themes[theme].color : "#C2A878";
 
+  const [flipped, setFlipped] = useState<number | null>(null);
+
+  const toggleFlip = (i: number) => {
+    if (window.innerWidth < 768) {
+      // Only toggle flip on mobile
+      setFlipped(flipped === i ? null : i);
+    }
+  };
+
   return (
-    <section className="py-20 text-white" style={{ backgroundColor: themeColor }}>
+    <section
+      className="py-20 text-white"
+      style={{ backgroundColor: themeColor }}
+    >
       <div className="max-w-6xl mx-auto px-6">
         {/* Logo + Heading */}
         <div className="text-center mb-12">
-        <div className="w-[280px] h-[80px] mx-auto mb-6 relative">
-  <Image
-    src="/spavia-cares/logo.png"
-    alt="Spavia Cares"
-    fill
-    className="object-contain"
-  />
-</div>
+          <div className="w-[280px] h-[80px] mx-auto mb-6 relative">
+            <Image
+              src="/spavia-cares/logo.png"
+              alt="Spavia Cares"
+              fill
+              className="object-contain"
+            />
+          </div>
 
           <h2 className="text-2xl md:text-3xl font-semibold">
             Making a positive difference, one guest at a time.
@@ -74,7 +86,7 @@ export default function SpaviaCaresSection() {
             </p>
           </motion.div>
 
-          {/* Flip Cards Grid (hover to flip image → text) */}
+          {/* Flip Cards Grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,10 +97,13 @@ export default function SpaviaCaresSection() {
             {stories.map((story, i) => (
               <div
                 key={i}
-                className="group relative w-full h-48 md:h-56 [perspective:1000px]"
+                onClick={() => toggleFlip(i)}
+                className="group relative w-full h-48 md:h-56 [perspective:1000px] cursor-pointer"
               >
                 <div
-                  className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] will-change-transform"
+                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] will-change-transform
+                    ${flipped === i ? "[transform:rotateY(180deg)]" : ""}
+                    md:group-hover:[transform:rotateY(180deg)]`}
                 >
                   {/* Front (Image) */}
                   <div
