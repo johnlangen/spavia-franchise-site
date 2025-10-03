@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { themes } from "../themeConfig";
-import { useState } from "react";
 
 const stories = [
   {
@@ -31,16 +30,8 @@ const stories = [
 
 export default function SpaviaCaresSection() {
   const { theme } = useTheme();
+  // theme-driven background (fallback = bronze)
   const themeColor = theme ? themes[theme].color : "#C2A878";
-
-  const [flipped, setFlipped] = useState<number | null>(null);
-
-  const handleFlip = (i: number) => {
-    // On mobile, toggle click
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setFlipped(flipped === i ? null : i);
-    }
-  };
 
   return (
     <section
@@ -58,6 +49,7 @@ export default function SpaviaCaresSection() {
               className="object-contain"
             />
           </div>
+
           <h2 className="text-2xl md:text-3xl font-semibold">
             Making a positive difference, one guest at a time.
           </h2>
@@ -73,7 +65,7 @@ export default function SpaviaCaresSection() {
             className="bg-white/10 border border-white/30 rounded-lg p-6"
           >
             <h3 className="text-xl font-bold mb-4">Annual Impact</h3>
-            <p className="leading-relaxed text-sm md:text-base">
+            <p className="leading-relaxed text-xs sm:text-sm md:text-base">
               At Spavia, it is important to give back to our communities and
               help others.
               <br />
@@ -95,58 +87,61 @@ export default function SpaviaCaresSection() {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            {stories.map((story, i) => {
-              const isFlipped = flipped === i;
-              return (
+            {stories.map((story, i) => (
+              <div
+                key={i}
+                className="group relative w-full h-48 md:h-56 [perspective:1000px]"
+              >
                 <div
-                  key={i}
-                  className="group relative w-full h-auto min-h-48 md:h-56 [perspective:1000px]"
-                  onClick={() => handleFlip(i)}
+                  tabIndex={0}
+                  className="relative w-full h-full transition-transform duration-700 
+                             [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] 
+                             md:cursor-pointer will-change-transform"
+                  onClick={(e) =>
+                    (e.currentTarget.style.transform =
+                      e.currentTarget.style.transform === "rotateY(180deg)"
+                        ? "rotateY(0deg)"
+                        : "rotateY(180deg)")
+                  }
                 >
+                  {/* Front (Image) */}
                   <div
-                    className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] will-change-transform 
-                      ${isFlipped ? "[transform:rotateY(180deg)]" : ""}
-                      md:group-hover:[transform:rotateY(180deg)]`}
+                    className="absolute inset-0 [backface-visibility:hidden]"
+                    style={{
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                    }}
                   >
-                    {/* Front (Image) */}
-                    <div
-                      className="absolute inset-0 [backface-visibility:hidden]"
-                      style={{
-                        WebkitBackfaceVisibility: "hidden",
-                        backfaceVisibility: "hidden",
-                      }}
-                    >
-                      <Image
-                        src={story.img}
-                        alt={`Spavia Cares ${i + 1}`}
-                        fill
-                        className="object-cover rounded-lg shadow-lg"
-                      />
-                    </div>
+                    <Image
+                      src={story.img}
+                      alt={`Spavia Cares ${i + 1}`}
+                      fill
+                      className="object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
 
-                    {/* Back (Text) */}
-                    <div
-                      className="absolute inset-0 bg-white text-gray-800 p-4 rounded-lg 
-                                 [transform:rotateY(180deg)] [backface-visibility:hidden] 
-                                 flex items-start text-sm leading-relaxed
-                                 h-auto md:h-56 overflow-visible md:overflow-y-auto"
-                      style={{
-                        WebkitBackfaceVisibility: "hidden",
-                        backfaceVisibility: "hidden",
-                      }}
-                    >
-                      <p>{story.text}</p>
-                    </div>
+                  {/* Back (Text) */}
+                  <div
+                    className="absolute inset-0 bg-white text-gray-800 p-4 rounded-lg 
+                               [transform:rotateY(180deg)] [backface-visibility:hidden] 
+                               flex items-start text-xs sm:text-sm md:text-base 
+                               overflow-y-auto"
+                    style={{
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                    }}
+                  >
+                    <p>{story.text}</p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </motion.div>
         </div>
 
         {/* Closing Statement */}
         <div className="text-center mt-12 max-w-3xl mx-auto">
-          <p className="italic text-lg md:text-xl">
+          <p className="italic text-xs sm:text-sm md:text-lg">
             Spavia isn’t just about wellness inside the spa—{" "}
             <span className="font-semibold">
               we’re dedicated to uplifting the communities we serve.
