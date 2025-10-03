@@ -104,6 +104,7 @@ export default function WhoWeAreContent() {
                 <img
                   src={f.image}
                   alt={f.name}
+                  loading="lazy"
                   className="rounded-lg mb-4 w-full h-72 object-cover object-center"
                 />
                 <h3 className="text-xl font-bold">{f.name}</h3>
@@ -133,12 +134,13 @@ export default function WhoWeAreContent() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl"
+                className="bg-white rounded-xl shadow-md p-6 min-h-[420px] flex flex-col transition md:hover:scale-105 md:hover:shadow-xl"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="rounded-lg mb-4 w-full object-cover h-56"
+                  loading="lazy"
+                  className="rounded-lg mb-4 w-full h-56 object-cover object-center"
                 />
                 <h3 className="text-base font-bold">{member.name}</h3>
                 <p className="text-xs text-[#C2A878] font-semibold mb-2">
@@ -165,6 +167,7 @@ export default function WhoWeAreContent() {
             <img
               src="/who-we-are/image7.png"
               alt="Spavia Cares"
+              loading="lazy"
               className="rounded-xl shadow-md"
             />
           </motion.div>
@@ -218,6 +221,7 @@ export default function WhoWeAreContent() {
             <img
               src="/who-we-are/image8.png"
               alt="Our Responsibility"
+              loading="lazy"
               className="rounded-xl shadow-md"
             />
           </motion.div>
