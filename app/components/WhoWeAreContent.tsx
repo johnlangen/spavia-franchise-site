@@ -3,9 +3,8 @@
 import NavBar from "./NavBar";
 import AwardsSection from "./AwardsSection";
 import { motion } from "framer-motion";
-
 import Footer from "./Footer";
-
+import Link from "next/link";
 
 // --- Data ---
 const founders = [
@@ -61,20 +60,20 @@ export default function WhoWeAreContent() {
       <NavBar />
 
       {/* Hero */}
-      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white">
+      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-4 sm:px-6">
         <motion.h1
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-4xl md:text-5xl font-bold mb-6"
         >
           Who We Are
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-lg leading-relaxed font-sans"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans"
         >
           Spavia redefined the spa experience by bringing luxury treatments and
           amenities found at world-class resorts to local communities across
@@ -84,18 +83,18 @@ export default function WhoWeAreContent() {
         </motion.p>
       </section>
 
-      
       {/* Founders */}
-      <section className="snap-start py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Founders</h2>
           <div className="grid md:grid-cols-2 gap-12 justify-center">
             {founders.map((f, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.2, ease: "easeOut" }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform hover:scale-[1.02] p-6 max-w-[500px] mx-auto flex flex-col"
               >
                 <img
@@ -104,7 +103,9 @@ export default function WhoWeAreContent() {
                   className="rounded-lg mb-4 w-full h-72 object-cover object-center"
                 />
                 <h3 className="text-xl font-bold">{f.name}</h3>
-                <p className="text-sm text-[#C2A878] font-semibold mb-3">{f.role}</p>
+                <p className="text-sm text-[#C2A878] font-semibold mb-3">
+                  {f.role}
+                </p>
                 <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line font-sans">
                   {f.bio}
                 </p>
@@ -114,10 +115,9 @@ export default function WhoWeAreContent() {
         </div>
       </section>
 
-
       {/* Support Team */}
-      <section className="snap-start py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Your Support Team
           </h2>
@@ -125,11 +125,12 @@ export default function WhoWeAreContent() {
             {team.map((member, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl p-6 transition"
+                className="bg-white rounded-xl shadow-md hover:shadow-xl p-6 transition will-change-transform"
               >
                 <img
                   src={member.image}
@@ -150,16 +151,26 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* Community */}
-      <section className="snap-start py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <img
               src="/who-we-are/image7.png"
               alt="Spavia Cares"
               className="rounded-xl shadow-md"
             />
           </motion.div>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold mb-4">Spavia Cares</h2>
             <p className="text-gray-700 leading-relaxed font-sans">
               Our focus on community has always been central to our growth. With
@@ -173,9 +184,14 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* Responsibility */}
-      <section className="snap-start py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold mb-4">Our Responsibility</h2>
             <p className="text-gray-700 leading-relaxed font-sans">
               In life, gratitude and generosity of spirit are the greatest gifts
@@ -186,7 +202,12 @@ export default function WhoWeAreContent() {
               the planet.
             </p>
           </motion.div>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <img
               src="/who-we-are/image8.png"
               alt="Our Responsibility"
@@ -197,8 +218,18 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* Awards */}
-      <section className="snap-start bg-white">
+      <section className="snap-start bg-white px-4 sm:px-6">
         <AwardsSection />
+      </section>
+
+      {/* Next Page Link */}
+      <section className="bg-[#C2A878] text-white py-8 text-center">
+        <Link
+          href="/our-franchise-model"
+          className="text-lg font-semibold hover:underline"
+        >
+          Next: Our Franchise Model →
+        </Link>
       </section>
 
       <Footer />
