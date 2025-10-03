@@ -35,9 +35,9 @@ export default function SpaviaCaresSection() {
 
   const [flipped, setFlipped] = useState<number | null>(null);
 
-  const toggleFlip = (i: number) => {
-    if (window.innerWidth < 768) {
-      // Only toggle flip on mobile
+  const handleFlip = (i: number) => {
+    // On mobile, toggle click
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
       setFlipped(flipped === i ? null : i);
     }
   };
@@ -58,7 +58,6 @@ export default function SpaviaCaresSection() {
               className="object-contain"
             />
           </div>
-
           <h2 className="text-2xl md:text-3xl font-semibold">
             Making a positive difference, one guest at a time.
           </h2>
@@ -75,14 +74,16 @@ export default function SpaviaCaresSection() {
           >
             <h3 className="text-xl font-bold mb-4">Annual Impact</h3>
             <p className="leading-relaxed text-sm md:text-base">
-              At Spavia, it is important to give back to our communities and help others.
+              At Spavia, it is important to give back to our communities and
+              help others.
               <br />
               <br />
               It is core to our values and mission statement as a company.
               <br />
               <br />
-              Our owners give back year-round, and every September—our anniversary month—all
-              locations join together in a focused effort to support the communities they serve.
+              Our owners give back year-round, and every September—our
+              anniversary month—all locations join together in a focused effort
+              to support the communities they serve.
             </p>
           </motion.div>
 
@@ -94,46 +95,52 @@ export default function SpaviaCaresSection() {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            {stories.map((story, i) => (
-              <div
-                key={i}
-                onClick={() => toggleFlip(i)}
-                className="group relative w-full h-48 md:h-56 [perspective:1000px] cursor-pointer"
-              >
+            {stories.map((story, i) => {
+              const isFlipped = flipped === i;
+              return (
                 <div
-                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] will-change-transform
-                    ${flipped === i ? "[transform:rotateY(180deg)]" : ""}
-                    md:group-hover:[transform:rotateY(180deg)]`}
+                  key={i}
+                  className="group relative w-full h-auto min-h-48 md:h-56 [perspective:1000px]"
+                  onClick={() => handleFlip(i)}
                 >
-                  {/* Front (Image) */}
                   <div
-                    className="absolute inset-0 [backface-visibility:hidden]"
-                    style={{
-                      WebkitBackfaceVisibility: "hidden",
-                      backfaceVisibility: "hidden",
-                    }}
+                    className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] will-change-transform 
+                      ${isFlipped ? "[transform:rotateY(180deg)]" : ""}
+                      md:group-hover:[transform:rotateY(180deg)]`}
                   >
-                    <Image
-                      src={story.img}
-                      alt={`Spavia Cares ${i + 1}`}
-                      fill
-                      className="object-cover rounded-lg shadow-lg"
-                    />
-                  </div>
+                    {/* Front (Image) */}
+                    <div
+                      className="absolute inset-0 [backface-visibility:hidden]"
+                      style={{
+                        WebkitBackfaceVisibility: "hidden",
+                        backfaceVisibility: "hidden",
+                      }}
+                    >
+                      <Image
+                        src={story.img}
+                        alt={`Spavia Cares ${i + 1}`}
+                        fill
+                        className="object-cover rounded-lg shadow-lg"
+                      />
+                    </div>
 
-                  {/* Back (Text) */}
-                  <div
-                    className="absolute inset-0 bg-white text-gray-800 p-4 rounded-lg [transform:rotateY(180deg)] [backface-visibility:hidden] flex items-center text-sm leading-relaxed overflow-y-auto"
-                    style={{
-                      WebkitBackfaceVisibility: "hidden",
-                      backfaceVisibility: "hidden",
-                    }}
-                  >
-                    {story.text}
+                    {/* Back (Text) */}
+                    <div
+                      className="absolute inset-0 bg-white text-gray-800 p-4 rounded-lg 
+                                 [transform:rotateY(180deg)] [backface-visibility:hidden] 
+                                 flex items-start text-sm leading-relaxed
+                                 h-auto md:h-56 overflow-visible md:overflow-y-auto"
+                      style={{
+                        WebkitBackfaceVisibility: "hidden",
+                        backfaceVisibility: "hidden",
+                      }}
+                    >
+                      <p>{story.text}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
 
