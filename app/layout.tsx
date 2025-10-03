@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
+import FloatingButton from "./components/FloatingButton"; // ✅ Desktop floating button
 
 // Keep Geist if you want, otherwise you can remove
 const geistSans = Geist({
@@ -39,16 +40,18 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Floating Get Started Button - visible on all pages */}
-        <a
-          href="/get-started"
-          className="hidden md:flex fixed right-0 top-[12.5%] 
-                     bg-[#C2A878] text-white font-semibold 
-                     py-3 px-6 rounded-l-full shadow-lg 
-                     hover:bg-[#b09466] transition z-50"
-        >
-          Get Started
-        </a>
+        {/* ✅ Floating button (desktop only) */}
+        <FloatingButton />
+
+        {/* ✅ Sticky bottom CTA (mobile only) */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur p-3 md:hidden">
+          <a
+            href="/get-started"
+            className="block w-full text-center bg-[#C2A878] text-white py-3 rounded-lg font-semibold shadow-lg hover:bg-[#b09466] transition"
+          >
+            Get Started
+          </a>
+        </div>
       </body>
     </html>
   );
