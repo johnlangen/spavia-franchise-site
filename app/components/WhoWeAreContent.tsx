@@ -62,18 +62,20 @@ export default function WhoWeAreContent() {
       {/* Hero */}
       <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-4 sm:px-6">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-bold mb-6"
         >
           Who We Are
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-sans"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
         >
           Spavia redefined the spa experience by bringing luxury treatments and
           amenities found at world-class resorts to local communities across
@@ -86,16 +88,18 @@ export default function WhoWeAreContent() {
       {/* Founders */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Founders</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+            Our Founders
+          </h2>
           <div className="grid md:grid-cols-2 gap-12 justify-center">
             {founders.map((f, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.2, ease: "easeOut" }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform hover:scale-[1.02] p-6 max-w-[500px] mx-auto flex flex-col"
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className="motion-fade-in bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform md:hover:scale-[1.02] p-6 max-w-[500px] mx-auto flex flex-col"
               >
                 <img
                   src={f.image}
@@ -118,7 +122,7 @@ export default function WhoWeAreContent() {
       {/* Support Team */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
             Your Support Team
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -127,10 +131,9 @@ export default function WhoWeAreContent() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl p-6 transition will-change-transform"
+                className="motion-fade-in bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl"
               >
                 <img
                   src={member.image}
@@ -154,10 +157,10 @@ export default function WhoWeAreContent() {
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
           >
             <img
               src="/who-we-are/image7.png"
@@ -166,12 +169,14 @@ export default function WhoWeAreContent() {
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-4">Spavia Cares</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Spavia Cares
+            </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
               Our focus on community has always been central to our growth. With
               every new Spavia, our team actively works to become part of the
@@ -187,12 +192,14 @@ export default function WhoWeAreContent() {
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-4">Our Responsibility</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Our Responsibility
+            </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
               In life, gratitude and generosity of spirit are the greatest gifts
               we can give to ourselves and others. Spavia is committed to
@@ -203,10 +210,10 @@ export default function WhoWeAreContent() {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
           >
             <img
               src="/who-we-are/image8.png"
@@ -223,14 +230,14 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* Next Page Link */}
-      <section className="bg-[#C2A878] text-white py-8 text-center">
+      <div className="bg-black text-white py-10 text-center">
         <Link
-          href="/our-franchise-model"
-          className="text-lg font-semibold hover:underline"
+          href="/steps-to-ownership"
+          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
         >
-          Next: Our Franchise Model →
+          Next: Steps to Ownership →
         </Link>
-      </section>
+      </div>
 
       <Footer />
     </main>
