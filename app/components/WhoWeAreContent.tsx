@@ -228,10 +228,10 @@ export default function WhoWeAreContent() {
       {/* Next Page Link */}
       <div className="bg-black text-white py-10 text-center">
         <Link
-          href="/steps-to-ownership"
+          href="/why-spavia"
           className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
         >
-          Next: Steps to Ownership →
+          Next: Why Spavia →
         </Link>
       </div>
 
