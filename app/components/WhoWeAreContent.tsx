@@ -85,7 +85,7 @@ export default function WhoWeAreContent() {
         </motion.p>
       </section>
 
-      {/* Founders */}
+      {/* Founders (NO animations) */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
@@ -93,12 +93,8 @@ export default function WhoWeAreContent() {
           </h2>
           <div className="grid md:grid-cols-2 gap-12 justify-center">
             {founders.map((f, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition p-6 max-w-[500px] mx-auto flex flex-col"
               >
                 <div className="w-full bg-gray-100 rounded-lg mb-4 overflow-hidden h-48 sm:h-72">
@@ -116,13 +112,13 @@ export default function WhoWeAreContent() {
                 <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line font-sans">
                   {f.bio}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Support Team */}
+      {/* Support Team (KEEP animations) */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
