@@ -53,24 +53,6 @@ const team = [
   },
 ];
 
-// --- Motion Variants ---
-const gridVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 // --- Component ---
 export default function WhoWeAreContent() {
   return (
@@ -113,9 +95,8 @@ export default function WhoWeAreContent() {
             {founders.map((f, i) => (
               <motion.div
                 key={i}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="show"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-transform md:hover:scale-[1.02] p-6 max-w-[500px] mx-auto flex flex-col"
@@ -144,18 +125,14 @@ export default function WhoWeAreContent() {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
             Your Support Team
           </h2>
-          <motion.div
-            variants={gridVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (
               <motion.div
                 key={i}
-                variants={cardVariants}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
                 className="bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl"
               >
                 <img
@@ -172,7 +149,7 @@ export default function WhoWeAreContent() {
                 </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
