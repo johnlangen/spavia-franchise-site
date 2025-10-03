@@ -7,13 +7,13 @@ export default function MobileCTA() {
   const [open, setOpen] = useState(true);
   const pathname = usePathname();
 
-  // ❌ Hide completely on the /get-started page
-  if (pathname === "/get-started") return null;
-
-  // ✅ Auto-close when navigating away
+  // ✅ Always call hooks, then decide rendering
   useEffect(() => {
     setOpen(true); // reset open on each route change
   }, [pathname]);
+
+  // ❌ Don't render on /get-started
+  if (pathname === "/get-started") return null;
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50">
