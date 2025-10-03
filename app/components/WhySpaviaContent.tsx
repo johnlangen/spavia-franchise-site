@@ -5,6 +5,7 @@ import AwardsSection from "./AwardsSection";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 const revenueStreams = [
   {
@@ -91,7 +92,7 @@ export default function WhySpaviaContent() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                whileInView={{ opacity: 1, z: 0 }} // z:0 is a shortcut for transform: translateZ(0)
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.8, delay: i * 0.15 }}
                 className="bg-white rounded-xl shadow-md p-6 transition md:hover:scale-105 md:hover:shadow-xl relative"
@@ -120,9 +121,11 @@ export default function WhySpaviaContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img
+            <Image
               src="/why-spavia/image1.png"
               alt="Exceptional Guest Experience"
+              width={600}
+              height={400}
               className="rounded-xl shadow-md"
             />
           </motion.div>
@@ -175,9 +178,11 @@ export default function WhySpaviaContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img
+            <Image
               src="/why-spavia/image2.png"
               alt="Proven Concept"
+              width={600}
+              height={400}
               className="rounded-xl shadow-md"
             />
           </motion.div>
