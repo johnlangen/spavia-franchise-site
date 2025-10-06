@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface FAQItem {
   question: string;
@@ -78,6 +79,13 @@ export default function FAQ() {
             );
           })}
         </div>
+        
+        <div className="text-center mt-10">
+          <Link href="/training-and-support" className="text-[#C2A878] font-medium hover:underline">
+            See details on training and support →
+          </Link>
+        </div>
+
       </div>
     </section>
   );

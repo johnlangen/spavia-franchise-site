@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { DollarSign, Trophy, TrendingUp } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { themes } from "../themeConfig";
+import Link from "next/link";
+
 
 export default function ProofSection() {
   const { theme } = useTheme();
@@ -32,7 +34,7 @@ export default function ProofSection() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 scroll-mt-24">
-          THE PROOF IS IN THE NUMBERS
+           Spavia Spa Franchise Performance – The Proof is in the Numbers
         </h2>
 
         {/* Stat Cards */}
@@ -96,7 +98,14 @@ export default function ProofSection() {
                 Woodhouse: $1,482,439 – $2,697,879
               </p>
             </div>
+
           </div>
+
+          <div className="text-center mt-6">
+              <Link href="/your-spavia" className="text-[#C2A878] font-medium hover:underline">
+                See full financial requirements →
+              </Link>
+            </div>
         </motion.div>
       </div>
     </section>

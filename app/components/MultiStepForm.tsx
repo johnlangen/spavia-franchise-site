@@ -85,7 +85,7 @@ export default function MultiStepForm() {
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg mx-auto">
       <h2 className="text-2xl font-bold text-center mb-2 text-gray-900">
-        Start Your Spavia Journey
+        Franchise Inquiry Form – Start Your Spavia Journey
       </h2>
       <p className="text-center text-gray-700 mb-6">
         Complete the form below to learn more about the Spavia Day Spa franchise opportunity.

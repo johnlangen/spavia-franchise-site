@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { themes } from "../themeConfig";
+import Link from "next/link";
+
 
 const stories = [
   {
@@ -50,7 +52,7 @@ export default function SpaviaCaresSection() {
           </div>
 
           <h2 className="text-2xl md:text-3xl font-semibold">
-            Making a positive difference, one guest at a time.
+            Spavia Cares – Giving Back to Our Communities
           </h2>
         </div>
 
@@ -154,6 +156,13 @@ export default function SpaviaCaresSection() {
             </span>
           </p>
         </div>
+
+        <div className="mt-6 text-center">
+          <Link href="/who-we-are" className="text-white font-medium underline hover:text-gray-200">
+            Learn more about our founders and team →
+          </Link>
+        </div>
+
       </div>
     </section>
   );

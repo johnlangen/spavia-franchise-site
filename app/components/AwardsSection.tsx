@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
 
 const awards = [
   "/awards/award1.svg",
@@ -38,6 +40,13 @@ export default function AwardsSection() {
             ))}
           </div>
         </div>
+
+        <div className="mt-8">
+          <Link href="/our-franchisees" className="text-[#C2A878] font-medium hover:underline">
+            Explore franchisee stories →
+          </Link>
+        </div>
+
       </div>
     </section>
   );

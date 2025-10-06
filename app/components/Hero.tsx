@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl font-bold mb-4"
         >
-          Own a Part of the $6 Trillion Wellness Industry at Spavia
+          Own a Spavia Spa Franchise – Join the $6 Trillion Wellness Industry
         </motion.h1>
 
         <motion.p
