@@ -2,9 +2,12 @@ import { Metadata } from "next";
 import GetStartedContent from "../components/GetStartedContent";
 
 export const metadata: Metadata = {
-  title: "Get Started | Spavia Franchise | Franchising Opportunity",
+  title: "Spa Franchise Opportunities | Get Started With Spavia",
   description:
-    "Let's discuss the benefits of bringing a resort spa experience to your neighborhood by opening a Spavia Franchise! Learn more about our spa franchising opportunity.",
+    "Join the $6.3 Trillion wellness industry with Spavia franchise opportunities. Proven spa model, membership revenue, and full training & support. Get started today.",
+  alternates: {
+    canonical: "https://spaviafranchise.com/get-started",
+  },
 };
 
 export default function Page() {

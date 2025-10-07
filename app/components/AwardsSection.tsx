@@ -3,17 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 const awards = [
-  "/awards/award1.svg",
-  "/awards/award2.png",
-  "/awards/award3.webp",
-  "/awards/award4.png",
-  "/awards/award5.png",
-  "/awards/award6.png",
-  "/awards/award7.png",
-  "/awards/award8.png",
-  "/awards/award9.png",
+  { src: "/awards/award1.svg", alt: "Top Franchise Award" },
+  { src: "/awards/award2.png", alt: "Entrepreneur Franchise 500" },
+  { src: "/awards/award3.webp", alt: "Franchise Business Review" },
+  { src: "/awards/award4.png", alt: "Inc. 5000 Recognition" },
+  { src: "/awards/award5.png", alt: "Wellness Industry Excellence Award" },
+  { src: "/awards/award6.png", alt: "Best Spa Franchise Award" },
+  { src: "/awards/award7.png", alt: "Top Growing Franchise Award" },
+  { src: "/awards/award8.png", alt: "Industry Innovation Award" },
+  { src: "/awards/award9.png", alt: "Community Impact Award" },
 ];
 
 export default function AwardsSection() {
@@ -27,12 +26,12 @@ export default function AwardsSection() {
 
         <div className="overflow-hidden relative">
           <div className="flex animate-marquee whitespace-nowrap">
-            {awards.concat(awards).map((src, i) => (
+            {awards.concat(awards).map((award, i) => (
               <div key={i} className="flex-shrink-0 px-8">
                 <Image
-                  src={src}
-                  alt={`Award ${i + 1}`}
-                  width={140}   // smaller logos
+                  src={award.src}
+                  alt={award.alt}
+                  width={140}
                   height={60}
                   className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition"
                 />
@@ -46,7 +45,6 @@ export default function AwardsSection() {
             Explore franchisee stories →
           </Link>
         </div>
-
       </div>
     </section>
   );

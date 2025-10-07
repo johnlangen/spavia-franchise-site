@@ -21,7 +21,8 @@ export default function MobileCTA() {
         <div className="bg-black/90 backdrop-blur p-3 flex items-center justify-between">
           <a
             href="/get-started"
-            className="flex-1 text-center bg-[#C2A878] text-white py-3 rounded-lg font-semibold shadow-lg hover:bg-[#b09466] transition"
+            className="flex-1 text-center text-white py-3 rounded-lg font-semibold shadow-lg transition"
+            style={{ backgroundColor: "var(--accent)" }} // ✅ theme-based color
           >
             Get Started
           </a>

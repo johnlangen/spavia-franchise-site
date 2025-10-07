@@ -211,148 +211,104 @@ export default function TrainingAndSupportContent() {
       </section>
 
       {/* Journey Sections Carousel */}
-      <section className="snap-start py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-10 text-center"
-          >
-            Your Franchise Journey
-          </motion.h2>
+<section className="snap-start py-20 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-6">
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-3xl md:text-4xl font-bold mb-10 text-center"
+    >
+      Your Franchise Journey
+    </motion.h2>
 
-          {/* Slide */}
-          <div className="relative w-full overflow-hidden">
-            <AnimatePresence initial={false} mode="wait">
-              <motion.div
-                key={currentJourneyIndex}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.45 }}
-                className="grid md:grid-cols-2 gap-8 items-center"
-              >
-                {/* Image (fits better on mobile) */}
-                <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
-                  <Image
-                    src={journeyItems[currentJourneyIndex].imageSrc}
-                    alt={journeyItems[currentJourneyIndex].imageAlt}
-                    fill
-                    className="object-contain md:object-cover"
-                    priority
-                  />
-                </div>
-
-                {/* Text */}
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">
-                    {journeyItems[currentJourneyIndex].title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-3">
-                    {journeyItems[currentJourneyIndex].content}
-                  </p>
-                  {journeyItems[currentJourneyIndex].listItems && (
-                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                      {journeyItems[currentJourneyIndex].listItems.map(
-                        (li, idx) => (
-                          <li key={idx}>{li}</li>
-                        )
-                      )}
-                    </ol>
-                  )}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+    {/* Slide container */}
+    <div className="relative w-full">
+      <AnimatePresence initial={false} mode="wait">
+        <motion.div
+          key={currentJourneyIndex}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -40 }}
+          transition={{ duration: 0.45 }}
+          className="grid md:grid-cols-2 gap-8 items-center"
+        >
+          {/* Image */}
+          <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
+            <Image
+              src={journeyItems[currentJourneyIndex].imageSrc}
+              alt={journeyItems[currentJourneyIndex].imageAlt}
+              fill
+              className="object-contain md:object-cover"
+              priority
+            />
           </div>
 
-          {/* Controls (no shifting; hand cursor) */}
-          <div className="flex justify-center items-center mt-8 space-x-3">
-            <button
-              onClick={() => paginate(-1)}
-              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-              aria-label="Previous step"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
+          {/* Text */}
+          <div className="relative pb-16 md:pb-0"> 
+            {/* 👆 add padding bottom on mobile so controls have space */}
+            <h3 className="text-2xl font-bold mb-4">
+              {journeyItems[currentJourneyIndex].title}
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-3">
+              {journeyItems[currentJourneyIndex].content}
+            </p>
+            {journeyItems[currentJourneyIndex].listItems && (
+              <ol className="list-decimal list-inside space-y-1 text-gray-700">
+                {journeyItems[currentJourneyIndex].listItems.map((li, idx) => (
+                  <li key={idx}>{li}</li>
+                ))}
+              </ol>
+            )}
 
-            {journeyItems.map((_, idx) => (
+            {/* Controls – absolute only on mobile, normal flow on desktop */}
+            <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center mt-6 space-x-3 md:static md:mt-8">
+              {/* Prev */}
               <button
-                key={idx}
-                onClick={() => setCurrentJourneyIndex(idx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentJourneyIndex
-                    ? "bg-[#C2A878] scale-125 shadow-md"
-                    : "bg-gray-300 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to step ${idx + 1}`}
-              />
-            ))}
-
-            <button
-              onClick={() => paginate(1)}
-              className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-              aria-label="Next step"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+                onClick={() => paginate(-1)}
+                className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
+                aria-label="Previous step"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Dots */}
+              {journeyItems.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentJourneyIndex(idx)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    idx === currentJourneyIndex
+                      ? "bg-[#C2A878] scale-125 shadow-md"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to step ${idx + 1}`}
+                />
+              ))}
+
+              {/* Next */}
+              <button
+                onClick={() => paginate(1)}
+                className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
+                aria-label="Next step"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  </div>
+</section>
 
-      {/* Support Commitment */}
-      <section className="snap-start py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-12"
-          >
-            Our Support Commitment
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"
-          >
-            {supportCommitmentItems.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="p-6 bg-gray-50 rounded-xl shadow hover:shadow-xl transition"
-              >
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-700 text-sm">{item.content}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Awards */}
       <section className="snap-start bg-gray-50">
@@ -371,5 +327,7 @@ export default function TrainingAndSupportContent() {
 
       <Footer />
     </main>
+
+    
   );
 }

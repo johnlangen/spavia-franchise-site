@@ -75,24 +75,30 @@ export default function YourSpaviaContent() {
         >
           Your Spavia
         </motion.h1>
-        <motion.p
+        {/* Tagline as H2 for SEO */}
+        <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-lg leading-relaxed"
+          className="max-w-3xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed"
         >
-          Financial Success Through Wellness. At Spavia, your investment goes
-          beyond profitability—it’s about bringing an oasis of relaxation and
-          rejuvenation to your community.
+          Financial Success Through Wellness
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45, duration: 0.8 }}
+          className="max-w-3xl mx-auto text-lg leading-relaxed mt-4"
+        >
+          At Spavia, your investment goes beyond profitability—it’s about bringing an oasis of
+          relaxation and rejuvenation to your community.
         </motion.p>
       </section>
 
       {/* Financial Requirements */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Financial Requirements
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Financial Requirements</h2>
         </div>
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
           {financials.map((item, i) => {
@@ -106,9 +112,7 @@ export default function YourSpaviaContent() {
                 className="p-8 rounded-xl shadow-lg border border-gray-200 bg-gradient-to-b from-white to-gray-50 hover:shadow-xl hover:-translate-y-1 transition transform"
               >
                 <Icon className="w-12 h-12 text-[#C2A878] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#C2A878] mb-2">
-                  {item.value}
-                </p>
+                <p className="text-3xl font-bold text-[#C2A878] mb-2">{item.value}</p>
                 <p className="text-gray-700">{item.label}</p>
               </motion.div>
             );
@@ -120,32 +124,19 @@ export default function YourSpaviaContent() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
-              Recurring Revenue
-            </h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">Recurring Revenue</h3>
             <p>
-              Recurring revenue is the cornerstone of a financially successful
-              franchise. Membership accounts for over 50% of revenue with a
-              fiercely loyal following.
+              Recurring revenue is the cornerstone of a financially successful franchise.
+              Membership accounts for over 50% of revenue with a fiercely loyal following.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
-              Diversity of Revenue
-            </h3>
-            <p>
-              Revenue generated from multiple streams: massage, skin care,
-              retail, body treatments, beauty, and gift cards.
-            </p>
+            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">Diversity of Revenue</h3>
+            <p>Revenue generated from multiple streams: massage, skin care, retail, body treatments, beauty, and gift cards.</p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
-              Advanced Pricing Strategy
-            </h3>
-            <p>
-              Financial modeling maximizes revenue through yield management,
-              market tiers, and membership tiers.
-            </p>
+            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">Advanced Pricing Strategy</h3>
+            <p>Financial modeling maximizes revenue through yield management, market tiers, and membership tiers.</p>
           </div>
         </div>
       </section>
@@ -161,8 +152,7 @@ export default function YourSpaviaContent() {
             </li>
             <li>22% of wellness growth is attributed to the spa segment</li>
             <li>
-              Global day spa market expected to reach{" "}
-              <span className="font-semibold">$57B by 2033</span>
+              Global day spa market expected to reach <span className="font-semibold">$57B by 2033</span>
             </li>
           </ul>
         </div>
@@ -173,17 +163,10 @@ export default function YourSpaviaContent() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Finding Your Location</h2>
           <p className="max-w-3xl mx-auto mb-8">
-            Finding a great location for your Spavia requires collaboration
-            between the franchise partner, Spavia National, and our real estate
-            partner, JLL.
+            Finding a great location for your Spavia requires collaboration between the franchise
+            partner, Spavia National, and our real estate partner, JLL.
           </p>
-          <Image
-            src="/your-spavia/JLL-logo.png"
-            alt="JLL Logo"
-            width={200}
-            height={90}
-            className="mx-auto"
-          />
+          <Image src="/your-spavia/JLL-logo.png" alt="JLL Logo" width={200} height={90} className="mx-auto" />
         </div>
       </section>
 
@@ -191,11 +174,11 @@ export default function YourSpaviaContent() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="hidden md:grid md:grid-cols-3 gap-6">
-            {galleryImages.map((src) => (
+            {galleryImages.map((src, i) => (
               <Image
                 key={src}
                 src={src}
-                alt="Spa interior"
+                alt={`Spa interior ${i + 1}`}
                 width={600}
                 height={400}
                 className="rounded-lg shadow-md object-cover h-[400px] w-full"
@@ -215,7 +198,7 @@ export default function YourSpaviaContent() {
               >
                 <Image
                   src={galleryImages[currentImageIndex]}
-                  alt="Spa interior"
+                  alt={`Spa interior ${currentImageIndex + 1}`}
                   width={600}
                   height={400}
                   className="rounded-lg shadow-md object-cover w-full"
@@ -225,10 +208,18 @@ export default function YourSpaviaContent() {
 
             {/* Carousel Controls */}
             <div className="flex justify-between items-center px-4 absolute inset-x-0 inset-y-0">
-              <button onClick={prevImage} className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors">
+              <button
+                onClick={prevImage}
+                className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors"
+                aria-label="Previous image"
+              >
                 <ChevronLeft size={24} />
               </button>
-              <button onClick={nextImage} className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors">
+              <button
+                onClick={nextImage}
+                className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors"
+                aria-label="Next image"
+              >
                 <ChevronRight size={24} />
               </button>
             </div>
@@ -239,9 +230,7 @@ export default function YourSpaviaContent() {
       {/* Interactive Available Markets */}
       <section className="py-20 bg-gray-50 text-center">
         <h2 className="text-3xl font-bold mb-6">Available Markets</h2>
-        <p className="mb-6 text-gray-700">
-          Click your state for additional territory information.
-        </p>
+        <p className="mb-6 text-gray-700">Click your state for additional territory information.</p>
 
         {/* Legend */}
         <div className="flex justify-center items-center space-x-4 mb-8">
@@ -263,6 +252,7 @@ export default function YourSpaviaContent() {
             role="img"
             aria-label="US map of available markets"
           >
+            <title>US map of available markets</title>
             {usa.locations.map((loc: Location) => {
               const name = (loc.name || loc.id || "").toString();
               const isLimited = limitedSet.has(name);
@@ -280,6 +270,7 @@ export default function YourSpaviaContent() {
                   onMouseEnter={() => setHoveredState(name)}
                   onMouseLeave={() => setHoveredState(null)}
                   onClick={() => setSelectedState(name)}
+                  aria-label={name}
                 />
               );
             })}
@@ -292,35 +283,38 @@ export default function YourSpaviaContent() {
           )}
         </div>
 
-        <p className="mt-6 text-sm text-gray-600">
-          Limited markets: {limitedMarkets.join(", ")}.
-        </p>
+        <p className="mt-6 text-sm text-gray-600">Limited markets: {limitedMarkets.join(", ")}.</p>
       </section>
 
       {/* Modal for State Click */}
       {selectedState && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-          <div className="bg-white max-w-lg w-full p-6 rounded-lg shadow-xl relative">
+          <div
+            className="bg-white max-w-lg w-full p-6 rounded-lg shadow-xl relative"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="stateDialogTitle"
+          >
             <button
               className="absolute top-3 right-3 text-gray-500 hover:text-black"
               onClick={() => setSelectedState(null)}
+              aria-label="Close dialog"
             >
               <X size={20} />
             </button>
 
-            <h2 className="text-xl font-bold mb-3">{selectedState}</h2>
+            <h2 id="stateDialogTitle" className="text-xl font-bold mb-3">
+              {selectedState}
+            </h2>
             <p className="mb-4 text-gray-700">
-              Thank you for your interest in Spavia! We’re excited to share that
-              we’re looking to grow in your state.
+              Thank you for your interest in Spavia! We’re excited to share that we’re looking to grow
+              in your state.
               <br />
               <br />
-              To learn more, simply complete the contact form by clicking the
-              button below, and our team will be in touch with you shortly.
+              To learn more, simply complete the contact form by clicking the button below, and our
+              team will be in touch with you shortly.
             </p>
-            <a
-              href="/get-started"
-              className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
-            >
+            <a href="/get-started" className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition">
               Contact Us
             </a>
           </div>
@@ -331,13 +325,10 @@ export default function YourSpaviaContent() {
       <section className="snap-start bg-gray-50">
         <AwardsSection />
       </section>
-      
+
       {/* Next Page Link */}
       <div className="bg-black text-white py-10 text-center">
-        <Link
-          href="/steps-to-ownership"
-          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
-        >
+        <Link href="/steps-to-ownership" className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition">
           Next: Steps to Ownership →
         </Link>
       </div>

@@ -3,9 +3,12 @@ import { Metadata } from "next";
 import WhySpaviaContent from "../components/WhySpaviaContent";
 
 export const metadata: Metadata = {
-  title: "Why Spavia | Luxury Spa Franchise",
+  title: "Why Spavia | Spa Franchise With Multiple Revenue Streams",
   description:
-    "Redefining Spa Excellence with Purpose and Passion. Spavia provides multiple streams of revenue and a proven system for success.",
+    "Discover why Spavia is the leading spa franchise. Redefining spa excellence with purpose, passion, and multiple revenue streams for proven success.",
+  alternates: {
+    canonical: "https://spaviafranchise.com/why-spavia",
+  },
 };
 
 export default function Page() {

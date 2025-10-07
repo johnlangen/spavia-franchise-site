@@ -34,12 +34,6 @@ const team = [
     bio: `With over 10 years of experience as a franchise operations leader, Courtney has a proven track record of supporting franchisees in high-growth systems. Her strong background in operations and training, coupled with her passion for driving franchisee success and profitability, makes her an invaluable asset to the team.`,
   },
   {
-    name: "Dana Benfield",
-    role: "Chief Marketing Officer",
-    image: "/who-we-are/image4.png",
-    bio: `With over two decades of marketing expertise and strategic vision, Dana’s creativity and professionalism enhance our commitment to strong brand recognition, ensuring our presence resonates from national landscapes to local communities, making her a key asset in driving growth and revenue for the team.`,
-  },
-  {
     name: "Karyn White",
     role: "Director of Franchise Development",
     image: "/who-we-are/image5.png",
@@ -119,12 +113,13 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* Support Team (KEEP animations) */}
-      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+      <section className="snap-start py-20 bg-black text-white px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-[#C2A878]">
             Your Support Team
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {team.map((member, i) => (
               <motion.div
                 key={i}
@@ -132,9 +127,9 @@ export default function WhoWeAreContent() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.15 }}
-                className="bg-white rounded-xl shadow-md p-6 flex flex-col h-full"
+                className="rounded-xl border border-[#C2A878] p-6 flex flex-col h-full bg-black"
               >
-                <div className="w-full bg-gray-100 rounded-lg mb-4 overflow-hidden h-48 sm:h-56">
+                <div className="w-full rounded-lg mb-4 overflow-hidden h-48 sm:h-56 border border-[#C2A878]">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -142,11 +137,11 @@ export default function WhoWeAreContent() {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <h3 className="text-base font-bold">{member.name}</h3>
+                <h3 className="text-base font-bold text-white">{member.name}</h3>
                 <p className="text-xs text-[#C2A878] font-semibold mb-2">
                   {member.role}
                 </p>
-                <p className="text-gray-700 text-xs leading-relaxed font-sans">
+                <p className="text-gray-200 text-xs leading-relaxed font-sans">
                   {member.bio}
                 </p>
               </motion.div>
@@ -154,6 +149,7 @@ export default function WhoWeAreContent() {
           </div>
         </div>
       </section>
+
 
       {/* Community */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
@@ -181,7 +177,7 @@ export default function WhoWeAreContent() {
               Spavia Cares
             </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
-              Our focus on community has always been central to our growth...
+            Our focus on community has always been central to our growth. With every new Spavia, our team actively works to become part of the neighborhoods we serve. With philanthropic efforts, small business relationships, and community engagement, Spavia has worked tirelessly to better the community we care for. We believe that when we’re at our best, Spavia can help our community and owners build a life with warm relationships, deep purpose, stable careers, and a bright future for all.
             </p>
           </motion.div>
         </div>
@@ -200,8 +196,7 @@ export default function WhoWeAreContent() {
               Our Responsibility
             </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
-              In life, gratitude and generosity of spirit are the greatest gifts
-              we can give to ourselves and others. Spavia is committed...
+            In life, gratitude and generosity of spirit are the greatest gifts we can give to ourselves and others. Spavia is committed to creating stronger communities, happier neighborhoods, and a better world than when we found it. That’s why we’re committed to sourcing high quality products that are good for our guests and the planet.
             </p>
           </motion.div>
           <motion.div
