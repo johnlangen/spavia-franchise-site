@@ -38,27 +38,39 @@ export default function WhySpaviaContent() {
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
 
-      {/* Hero */}
-      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-4 sm:px-6">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+      {/* Hero with video + black tint */}
+      <section className="snap-start relative overflow-hidden pt-40 pb-24 text-center text-white px-4 sm:px-6">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          Why Spavia
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
-        >
-          Redefining Spa Excellence with Purpose and Passion. Spavia provides
-          multiple streams of revenue and a proven system for success.
-        </motion.p>
+          <source src="/why-spavia.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        <div className="relative z-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Why Spavia
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
+          >
+            Redefining Spa Excellence with Purpose and Passion. Spavia provides
+            multiple streams of revenue and a proven system for success.
+          </motion.p>
+        </div>
       </section>
 
       {/* Expertise Intro */}
@@ -156,8 +168,11 @@ export default function WhySpaviaContent() {
               Exceptional Guest Experience
             </h2>
             <p className="text-gray-700 leading-relaxed font-sans">
-            Our guests inspire us. At Spavia, we are focused on creating an exceptional experience where they can turn off the stresses of every day life. We listen to our guests and we measure our success based on every experience. We take to heart the feedback we receive and strive to better each and every day.
-            We welcome our guests as if they were being greeted into our home. Our resort-inspired amenities and retreat rooms are geared to help them relax and be comfortable. Our guests love the Spavia membership because they love to experience our therapeutic massage and body treatments and our result-driven skin care at affordable prices. Our caring and professional specialists aim to help each and every guest improve their overall physical and mental health.
+              Our guests inspire us. At Spavia, we are focused on creating an
+              exceptional experience where they can turn off the stresses of
+              every day life. We listen to our guests and we measure our success
+              based on every experience. We take to heart the feedback we
+              receive and strive to better each and every day.
             </p>
           </motion.div>
         </div>

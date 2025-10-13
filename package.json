@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@svg-maps/usa": "^1.1.1",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.544.0",
@@ -17,7 +20,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-google-recaptcha": "^3.1.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "tsparticles": "^3.9.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

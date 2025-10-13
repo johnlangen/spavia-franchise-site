@@ -8,7 +8,6 @@ import AwardsSection from "./AwardsSection";
 import Footer from "./Footer";
 import Link from "next/link";
 
-// All data for the component is now here
 const expertiseItems = [
   {
     title: "Over 120 Years of Spa Experience",
@@ -85,29 +84,6 @@ const journeyItems = [
   },
 ];
 
-const supportCommitmentItems = [
-  {
-    title: "Team of Experts",
-    content:
-      "Over 120 years of combined experience. Seasoned owners, therapists, and estheticians guide and inspire you.",
-  },
-  {
-    title: "Culture of Innovation",
-    content:
-      "Creativity + data = smarter growth. We constantly test and evolve with the industry.",
-  },
-  {
-    title: "World Class Partners",
-    content:
-      "From marketing agencies to skincare vendors, we only work with the best so you can thrive.",
-  },
-  {
-    title: "Every Step of the Way",
-    content:
-      "Our national team stands with you from discovery day to grand opening and beyond.",
-  },
-];
-
 export default function TrainingAndSupportContent() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [currentJourneyIndex, setCurrentJourneyIndex] = useState(0);
@@ -125,26 +101,40 @@ export default function TrainingAndSupportContent() {
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
 
-      {/* Hero */}
-      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-28 text-center text-white px-4 sm:px-6">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+      {/* Hero with video background */}
+      <section className="snap-start relative overflow-hidden pt-40 pb-28 text-center text-white px-4 sm:px-6">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          Training and Support
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
-        >
-          You Have the Dream, We Have the Knowledge. Spavia offers top-notch
-          training and support from spa industry experts who bring over 120
-          years of combined experience in spa and beauty.
-        </motion.p>
+          <source src="/training.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        <div className="relative z-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Training and Support
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
+          >
+            You Have the Dream, We Have the Knowledge. Spavia offers top-notch
+            training and support from spa industry experts who bring over 120
+            years of combined experience in spa and beauty.
+          </motion.p>
+        </div>
       </section>
 
       {/* Training Expertise (Accordion) */}
@@ -211,104 +201,120 @@ export default function TrainingAndSupportContent() {
       </section>
 
       {/* Journey Sections Carousel */}
-<section className="snap-start py-20 bg-gray-50">
-  <div className="max-w-6xl mx-auto px-6">
-    <motion.h2
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="text-3xl md:text-4xl font-bold mb-10 text-center"
-    >
-      Your Franchise Journey
-    </motion.h2>
+      <section className="snap-start py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-bold mb-10 text-center"
+          >
+            Your Franchise Journey
+          </motion.h2>
 
-    {/* Slide container */}
-    <div className="relative w-full">
-      <AnimatePresence initial={false} mode="wait">
-        <motion.div
-          key={currentJourneyIndex}
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -40 }}
-          transition={{ duration: 0.45 }}
-          className="grid md:grid-cols-2 gap-8 items-center"
-        >
-          {/* Image */}
-          <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
-            <Image
-              src={journeyItems[currentJourneyIndex].imageSrc}
-              alt={journeyItems[currentJourneyIndex].imageAlt}
-              fill
-              className="object-contain md:object-cover"
-              priority
-            />
-          </div>
-
-          {/* Text */}
-          <div className="relative pb-16 md:pb-0"> 
-            {/* 👆 add padding bottom on mobile so controls have space */}
-            <h3 className="text-2xl font-bold mb-4">
-              {journeyItems[currentJourneyIndex].title}
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-3">
-              {journeyItems[currentJourneyIndex].content}
-            </p>
-            {journeyItems[currentJourneyIndex].listItems && (
-              <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                {journeyItems[currentJourneyIndex].listItems.map((li, idx) => (
-                  <li key={idx}>{li}</li>
-                ))}
-              </ol>
-            )}
-
-            {/* Controls – absolute only on mobile, normal flow on desktop */}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center mt-6 space-x-3 md:static md:mt-8">
-              {/* Prev */}
-              <button
-                onClick={() => paginate(-1)}
-                className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-                aria-label="Previous step"
+          <div className="relative w-full">
+            <AnimatePresence initial={false} mode="wait">
+              <motion.div
+                key={currentJourneyIndex}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.45 }}
+                className="grid md:grid-cols-2 gap-8 items-center"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+                {/* Image */}
+                <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
+                  <Image
+                    src={journeyItems[currentJourneyIndex].imageSrc}
+                    alt={journeyItems[currentJourneyIndex].imageAlt}
+                    fill
+                    className="object-contain md:object-cover"
+                    priority
+                  />
+                </div>
 
-              {/* Dots */}
-              {journeyItems.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentJourneyIndex(idx)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    idx === currentJourneyIndex
-                      ? "bg-[#C2A878] scale-125 shadow-md"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                  aria-label={`Go to step ${idx + 1}`}
-                />
-              ))}
+                {/* Text */}
+                <div className="relative pb-16 md:pb-0">
+                  <h3 className="text-2xl font-bold mb-4">
+                    {journeyItems[currentJourneyIndex].title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed mb-3">
+                    {journeyItems[currentJourneyIndex].content}
+                  </p>
+                  {journeyItems[currentJourneyIndex].listItems && (
+                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
+                      {journeyItems[currentJourneyIndex].listItems.map(
+                        (li, idx) => (
+                          <li key={idx}>{li}</li>
+                        )
+                      )}
+                    </ol>
+                  )}
 
-              {/* Next */}
-              <button
-                onClick={() => paginate(1)}
-                className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-                aria-label="Next step"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+                  {/* Controls */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center mt-6 space-x-3 md:static md:mt-8">
+                    <button
+                      onClick={() => paginate(-1)}
+                      className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
+                      aria-label="Previous step"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
+                    </button>
+
+                    {journeyItems.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentJourneyIndex(idx)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          idx === currentJourneyIndex
+                            ? "bg-[#C2A878] scale-125 shadow-md"
+                            : "bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Go to step ${idx + 1}`}
+                      />
+                    ))}
+
+                    <button
+                      onClick={() => paginate(1)}
+                      className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
+                      aria-label="Next step"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
-        </motion.div>
-      </AnimatePresence>
-    </div>
-  </div>
-</section>
-
+        </div>
+      </section>
 
       {/* Awards */}
       <section className="snap-start bg-gray-50">
@@ -327,7 +333,5 @@ export default function TrainingAndSupportContent() {
 
       <Footer />
     </main>
-
-    
   );
 }

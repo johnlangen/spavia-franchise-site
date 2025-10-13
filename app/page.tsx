@@ -34,7 +34,7 @@ export default function Home() {
         {/* THEME SELECTION */}
         <Section className="bg-white pt-28 pb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-2 scroll-mt-24">
-            Choose Your Spa Design
+            Choose Your Award Winning Spa Design
           </h2>
           <p className="text-gray-600 text-center mb-6">
             Select a theme to see how your spa can look and feel.

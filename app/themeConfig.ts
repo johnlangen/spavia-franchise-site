@@ -52,7 +52,7 @@ export const themes = {
   };
   
   // Default hero image (used before a theme is selected)
-  export const defaultImage = "/themes/default.png";
+  export const defaultImage = "/themes/default.jpg";
   
   export type ThemeKey = keyof typeof themes;
   

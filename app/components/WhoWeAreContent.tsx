@@ -54,32 +54,46 @@ export default function WhoWeAreContent() {
       <NavBar />
 
       {/* Hero */}
-      <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-4 sm:px-6">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+      <section className="snap-start relative overflow-hidden pt-40 pb-24 text-center text-white px-4 sm:px-6">
+        {/* Video background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          Who We Are
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
-        >
-          Spavia redefined the spa experience by bringing luxury treatments and
-          amenities found at world-class resorts to local communities across
-          America. For the last 20 years, Spavia has served guests nationwide
-          and built a network of Spavia Members who enjoy monthly treatments to
-          feel relaxed, recentered, and renewed.
-        </motion.p>
+          <source src="/who-we-are.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        <div className="relative z-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Who We Are
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
+          >
+            Spavia redefined the spa experience by bringing luxury treatments
+            and amenities found at world-class resorts to local communities
+            across America. For the last 20 years, Spavia has served guests
+            nationwide and built a network of Spavia Members who enjoy monthly
+            treatments to feel relaxed, recentered, and renewed.
+          </motion.p>
+        </div>
       </section>
 
-      {/* Founders (NO animations) */}
+      {/* Founders */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
@@ -112,22 +126,20 @@ export default function WhoWeAreContent() {
         </div>
       </section>
 
-      {/* Support Team (KEEP animations) */}
-      <section className="snap-start py-20 bg-black text-white px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
+      {/* Support Team */}
+      <section className="snap-start relative overflow-hidden py-20 bg-black text-white px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto relative">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-[#C2A878]">
             Your Support Team
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
             {team.map((member, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.15 }}
-                className="rounded-xl border border-[#C2A878] p-6 flex flex-col h-full bg-black"
+                className="rounded-xl border border-[#C2A878] p-6 flex flex-col h-full bg-black/90"
               >
                 <div className="w-full rounded-lg mb-4 overflow-hidden h-48 sm:h-56 border border-[#C2A878]">
                   <img
@@ -137,7 +149,9 @@ export default function WhoWeAreContent() {
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
-                <h3 className="text-base font-bold text-white">{member.name}</h3>
+                <h3 className="text-base font-bold text-white">
+                  {member.name}
+                </h3>
                 <p className="text-xs text-[#C2A878] font-semibold mb-2">
                   {member.role}
                 </p>
@@ -150,16 +164,10 @@ export default function WhoWeAreContent() {
         </div>
       </section>
 
-
       {/* Community */}
       <section className="snap-start py-20 bg-white px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
             <img
               src="/who-we-are/image7.png"
               alt="Spavia Cares"
@@ -167,17 +175,14 @@ export default function WhoWeAreContent() {
               className="rounded-xl shadow-md"
             />
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Spavia Cares
-            </h2>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Spavia Cares</h2>
             <p className="text-gray-700 leading-relaxed font-sans">
-            Our focus on community has always been central to our growth. With every new Spavia, our team actively works to become part of the neighborhoods we serve. With philanthropic efforts, small business relationships, and community engagement, Spavia has worked tirelessly to better the community we care for. We believe that when we’re at our best, Spavia can help our community and owners build a life with warm relationships, deep purpose, stable careers, and a bright future for all.
+              Our focus on community has always been central to our growth. With
+              every new Spavia, our team actively works to become part of the
+              neighborhoods we serve. With philanthropic efforts, small business
+              relationships, and community engagement, Spavia has worked
+              tirelessly to better the community we care for.
             </p>
           </motion.div>
         </div>
@@ -186,25 +191,16 @@ export default function WhoWeAreContent() {
       {/* Responsibility */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Our Responsibility
-            </h2>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Responsibility</h2>
             <p className="text-gray-700 leading-relaxed font-sans">
-            In life, gratitude and generosity of spirit are the greatest gifts we can give to ourselves and others. Spavia is committed to creating stronger communities, happier neighborhoods, and a better world than when we found it. That’s why we’re committed to sourcing high quality products that are good for our guests and the planet.
+              In life, gratitude and generosity of spirit are the greatest gifts
+              we can give to ourselves and others. Spavia is committed to
+              creating stronger communities, happier neighborhoods, and a better
+              world than when we found it.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6 }}>
             <img
               src="/who-we-are/image8.png"
               alt="Our Responsibility"

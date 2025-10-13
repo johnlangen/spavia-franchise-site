@@ -15,7 +15,7 @@ import {
 
 import Footer from "./Footer";
 import Image from "next/image";
-import Link from "next/link"; // Make sure to import Link
+import Link from "next/link";
 
 const entrepreneurTraits = [
   {
@@ -85,27 +85,43 @@ export default function OurFranchiseesContent() {
     <main className="text-gray-900">
       <NavBar />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-24 text-center text-white px-6 sm:px-8">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-6"
+      {/* Hero with Video */}
+      <section className="relative overflow-hidden pt-40 pb-24 text-center text-white px-6 sm:px-8">
+        {/* Video background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          Our Franchisees
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-lg leading-relaxed"
-        >
-          Passionate Entrepreneurs, Thriving Communities. At Spavia, our
-          franchisees are the backbone of our brand and the key to our success.
-          Each franchisee brings a unique passion for wellness and a commitment
-          to creating extraordinary experiences for our guests.
-        </motion.p>
+          <source src="/franchisee.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        <div className="relative z-10">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl font-bold mb-6"
+          >
+            Our Franchisees
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="max-w-3xl mx-auto text-lg leading-relaxed"
+          >
+            Passionate Entrepreneurs, Thriving Communities. At Spavia, our
+            franchisees are the backbone of our brand and the key to our
+            success. Each franchisee brings a unique passion for wellness and a
+            commitment to creating extraordinary experiences for our guests.
+          </motion.p>
+        </div>
       </section>
 
       {/* Ideal Entrepreneur */}

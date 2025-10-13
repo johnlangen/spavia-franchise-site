@@ -13,9 +13,9 @@ export default function Page() {
   return (
     <>
       <NavBar />
-      <main className="bg-white text-gray-900 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-                      {/* Back Button */}
+      <main className="bg-white text-gray-900 py-20 px-6">
+        <article className="max-w-3xl mx-auto">
+          {/* Back Button */}
           <Link
             href="/blog"
             className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
@@ -27,88 +27,128 @@ export default function Page() {
             The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving
           </h1>
 
-          <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-            Celebrating the incredible success stories of our franchisees is at the heart of Spavia’s mission. 
-            From building serene spas to creating meaningful community connections, our owners exemplify what 
-            it means to merge wellness and business success.
+          <p className="text-lg mb-8 leading-relaxed">
+            At Spavia, success isn’t measured only in numbers—it’s measured in{" "}
+            <strong>stories of transformation, resilience, and community impact</strong>.
+            From serene spa environments to deep neighborhood connections, our franchisees
+            exemplify how wellness and business can thrive together.
           </p>
 
           <img
             src="/blog/blog12.png"
             alt="A group of Spavia franchisees outside a franchise location"
-            className="w-full h-auto rounded-lg shadow mb-12"
+            className="w-full h-auto rounded shadow mb-10"
           />
 
-          <article className="prose prose-lg max-w-none text-gray-800">
-            <h2>Celebrating Franchisee Success</h2>
-            <p>
-              Summer is the season of growth, and at Spavia Day Spa, it’s also the perfect time to 
-              celebrate the incredible success stories of our franchisees. Each summer, we take pride 
-              in reflecting on the achievements of the individuals who make Spavia thrive in their communities...
-            </p>
+          <h2 className="text-2xl font-semibold mb-3">Celebrating Franchisee Success</h2>
+          <p className="mb-6 leading-relaxed">
+            Every year, we take time to celebrate the incredible achievements of our
+            franchise owners. These stories are more than business updates—they’re proof
+            that with the right support and proven systems,{" "}
+            <strong>entrepreneurs can create lasting change in their communities</strong>.
+          </p>
 
-            <h2>Inspiring Journeys of Spavia Franchise Owners</h2>
-            <p>
-              Our franchise community is as diverse as it is inspiring, bringing unique skills, goals, 
-              and dreams to the Spavia family. From entrepreneurs seeking a fresh start to seasoned business 
-              owners, every story showcases a passion for wellness and community care.
-            </p>
+          <h2 className="text-2xl font-semibold mb-3">
+            Inspiring Journeys of Spavia Franchise Owners
+          </h2>
+          <p className="mb-6 leading-relaxed">
+            No two Spavia franchisees are alike. Some are first-time entrepreneurs seeking
+            a new chapter, while others are seasoned business owners looking to expand. What
+            unites them is their{" "}
+            <em>shared passion for wellness and hospitality</em>.
+          </p>
 
-            <p>
-              Take the story of Peter and Cathy, for example—a dynamic husband-and-wife team who transformed 
-              their vision of wellness into a thriving community hub. Their journey highlights the personal 
-              fulfillment and financial success possible with Spavia.
-            </p>
+          <p className="mb-6 leading-relaxed">
+            Take Peter and Cathy, for example—a husband-and-wife team who turned their
+            vision of wellness into a thriving community hub. Their story highlights the
+            joy of financial success paired with the fulfillment of helping people feel
+            renewed and cared for every day.
+          </p>
 
-            <h2>Why Spavia Day Spa Franchisees Succeed</h2>
-            <p>
-              Spavia franchisees thrive because of comprehensive training, a proven business model, 
-              and ongoing guidance. Our mission is to empower owners with the resources and confidence 
-              they need to succeed long-term.
-            </p>
+          <h2 className="text-2xl font-semibold mb-3">
+            Why Spavia Day Spa Franchisees Succeed
+          </h2>
+          <p className="mb-6 leading-relaxed">
+            Spavia franchisees thrive because they aren’t alone. With{" "}
+            <strong>comprehensive training, a proven model, and continuous support</strong>,
+            owners feel prepared from day one and confident for the long haul.
+          </p>
 
-            <h3>Comprehensive Training and Support</h3>
-            <p>
-              From marketing strategies to operational excellence, our extensive training programs 
-              prepare owners for every aspect of running a successful spa.
-            </p>
+          <h3 className="text-xl font-semibold mb-2">Comprehensive Training and Support</h3>
+          <p className="mb-6 leading-relaxed">
+            From marketing strategies to guest experience, our programs cover every
+            element of spa ownership—ensuring franchisees start strong and stay supported.
+          </p>
 
-            <h3>A Proven Business Model</h3>
-            <p>
-              Built on affordable luxury and personalized guest experiences, Spavia’s model attracts 
-              loyal clients and fosters repeat business.
-            </p>
+          <h3 className="text-xl font-semibold mb-2">A Proven Business Model</h3>
+          <p className="mb-6 leading-relaxed">
+            Built on <strong>affordable luxury</strong> and{" "}
+            <strong>personalized guest experiences</strong>, our model attracts loyal
+            clients and encourages repeat visits.
+          </p>
 
-            <h3>Ongoing Guidance</h3>
-            <p>
-              Our leadership team provides personalized support on marketing, operations, and financial 
-              planning so every franchisee feels confident and supported.
-            </p>
+          <h3 className="text-xl font-semibold mb-2">Ongoing Guidance</h3>
+          <p className="mb-6 leading-relaxed">
+            Our leadership team provides personalized guidance on operations, marketing,
+            and financial planning—helping franchisees navigate challenges and scale
+            successfully.
+          </p>
 
-            <h2>The Benefits of Joining the Spavia Franchise Family</h2>
-            <p>
-              Joining Spavia means becoming part of a booming wellness industry with 9% CAGR growth. 
-              It’s more than business ownership—it’s a movement dedicated to enhancing well-being.
-            </p>
+          <h2 className="text-2xl font-semibold mb-3">
+            The Benefits of Joining the Spavia Franchise Family
+          </h2>
+          <p className="mb-6 leading-relaxed">
+            Joining Spavia means stepping into a{" "}
+            <strong>wellness industry growing at 9% CAGR</strong>. But it’s more than
+            business ownership—it’s a movement to make wellness accessible, affordable,
+            and impactful in every community.
+          </p>
 
-            <h2>Your Path to Success Starts Here</h2>
-            <p>
-              This summer, we invite aspiring entrepreneurs to join Spavia and experience the perfect 
-              blend of wellness and success. With comprehensive support and a proven model, your journey 
-              toward meaningful impact starts today.
-            </p>
+          <ul className="list-disc list-inside mb-6 leading-relaxed space-y-2">
+            <li>Be part of a national brand with local focus</li>
+            <li>Access exclusive vendor discounts and financial frameworks</li>
+            <li>Build a business with both personal fulfillment and profitability</li>
+          </ul>
 
-            <p>
-              Interested in learning more?{" "}
-              <a
-                href="/get-started"
-                className="text-[#C2A878] font-semibold hover:underline"
-              >
-                Contact us to get started →
-              </a>
-            </p>
-          </article>
-        </div>
+          <h2 className="text-2xl font-semibold mb-3">Your Path to Success Starts Here</h2>
+          <p className="mb-8 leading-relaxed">
+            Whether you’re an experienced entrepreneur or starting fresh, Spavia offers
+            the tools, training, and support to{" "}
+            <strong>turn your vision into a success story</strong>. The next inspiring
+            chapter could be yours.
+          </p>
+
+          <p className="mb-8 leading-relaxed">
+            Interested in writing your own success story?{" "}
+            <a
+              href="/get-started"
+              className="text-[#C2A878] font-semibold hover:underline"
+            >
+              Contact us to get started →
+            </a>
+          </p>
+
+          {/* Permalink */}
+          <p className="text-sm text-gray-500">
+            Permalink:{" "}
+            <a
+              href="https://spaviafranchise.com/blog/2025/10/07/the-power-of-franchisee-success-stories"
+              className="underline"
+            >
+              https://spaviafranchise.com/blog/2025/10/07/the-power-of-franchisee-success-stories
+            </a>
+          </p>
+
+          {/* Back Button at Bottom */}
+          <div className="mt-12">
+            <Link
+              href="/blog"
+              className="inline-block text-[#C2A878] hover:underline font-medium"
+            >
+              ← Back to Blog
+            </Link>
+          </div>
+        </article>
       </main>
       <Footer />
     </>
