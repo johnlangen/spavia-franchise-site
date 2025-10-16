@@ -89,7 +89,9 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true });
-  } catch (err: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+
     console.error("❌ Error saving lead:", err);
     return NextResponse.json(
       { success: false, error: "Failed to save lead" },
