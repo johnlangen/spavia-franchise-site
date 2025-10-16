@@ -4,7 +4,6 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
 
-
 const states = [
   "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
   "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa",
@@ -30,6 +29,7 @@ export default function MultiStepForm() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [captcha, setCaptcha] = useState<string | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -64,7 +64,6 @@ export default function MultiStepForm() {
     return Object.keys(newErrors).length === 0;
   };
   
-
   const handleNext = () => {
     if (validateStep()) setStep(step + 1);
   };
@@ -75,6 +74,7 @@ export default function MultiStepForm() {
     e.preventDefault();
     if (validateStep()) {
       try {
+        setLoading(true);
         const res = await fetch("/api/submit-form", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -83,13 +83,28 @@ export default function MultiStepForm() {
   
         const data = await res.json();
         if (data.success) {
-          setShowSuccess(true); // ✅ only show success if Monday API succeeded
+          setShowSuccess(true);
+          // ✅ Reset form after success
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            city: "",
+            state: "",
+            investment: "",
+          });
+          setCaptcha(null);
+          setErrors({});
+          setStep(1);
         } else {
           alert("Error: " + data.error);
         }
       } catch (err) {
         alert("Submission failed. Please try again.");
         console.error("❌ Submit error:", err);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -144,7 +159,7 @@ export default function MultiStepForm() {
             <button
               type="button"
               onClick={handleNext}
-              className="w-full bg-[#C2A878] text-white py-2 rounded"
+              className="w-full bg-[#C2A878] text-white py-2 rounded hover:bg-[#b09466] transition"
             >
               Next Step
             </button>
@@ -191,13 +206,17 @@ export default function MultiStepForm() {
             {errors.state && <p className="text-red-500 text-sm">{errors.state}</p>}
 
             <div className="flex justify-between">
-              <button type="button" onClick={handlePrev} className="px-4 py-2 bg-gray-300 rounded">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition"
+              >
                 Back
               </button>
               <button
                 type="button"
                 onClick={handleNext}
-                className="px-4 py-2 bg-[#C2A878] text-white rounded"
+                className="px-4 py-2 bg-[#C2A878] text-white rounded hover:bg-[#b09466] transition"
               >
                 Next Step
               </button>
@@ -230,11 +249,21 @@ export default function MultiStepForm() {
             {errors.captcha && <p className="text-red-500 text-sm">{errors.captcha}</p>}
 
             <div className="flex justify-between">
-              <button type="button" onClick={handlePrev} className="px-4 py-2 bg-gray-300 rounded">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition"
+              >
                 Back
               </button>
-              <button type="submit" className="px-4 py-2 bg-[#C2A878] text-white rounded">
-                Submit
+              <button
+                type="submit"
+                disabled={loading}
+                className={`px-4 py-2 rounded text-white bg-[#C2A878] hover:bg-[#b09466] transition ${
+                  loading ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+              >
+                {loading ? "Submitting..." : "Submit"}
               </button>
             </div>
           </>
@@ -261,7 +290,6 @@ export default function MultiStepForm() {
             >
               Back to Home
             </Link>
-
           </div>
         </div>
       )}
