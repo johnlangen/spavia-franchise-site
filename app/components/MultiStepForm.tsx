@@ -71,14 +71,29 @@ export default function MultiStepForm() {
 
   const handlePrev = () => setStep(step - 1);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateStep()) {
-      console.log("Form Submitted", formData, captcha);
-      setShowSuccess(true); // show custom popup
+      try {
+        const res = await fetch("/api/submit-form", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, captcha }),
+        });
+  
+        const data = await res.json();
+        if (data.success) {
+          setShowSuccess(true); // ✅ only show success if Monday API succeeded
+        } else {
+          alert("Error: " + data.error);
+        }
+      } catch (err) {
+        alert("Submission failed. Please try again.");
+        console.error("❌ Submit error:", err);
+      }
     }
   };
-
+  
   const inputClass =
     "w-full border border-gray-300 rounded px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#C2A878]";
 

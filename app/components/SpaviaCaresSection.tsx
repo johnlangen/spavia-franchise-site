@@ -9,22 +9,22 @@ import Link from "next/link";
 
 const stories = [
   {
-    img: "/spavia-cares/1.png",
+    img: "/spavia-cares/3.png",
     text:
       "Spavia proudly partners with FarmHouse Fresh, whose award-winning skincare is matched by their philanthropic mission of rescuing neglected animals and funding their care through every product purchased.",
   },
   {
-    img: "/spavia-cares/2.png",
+    img: "/spavia-cares/4.png",
     text:
       "For over 15 years, Spavia has partnered with Pure Fiji as our signature lotion line, celebrating not only their exceptional products but also their philanthropy—supporting the people of Fiji and the children of the Fijian school.",
   },
   {
-    img: "/spavia-cares/3.png",
+    img: "/spavia-cares/2.png",
     text:
       "For its 20th anniversary, Spavia partnered with IMAGE Skincare to launch a custom Anniversary Facial and donated $25 from each treatment to the national charity Blessings in a Backpack.",
   },
   {
-    img: "/spavia-cares/4.png",
+    img: "/spavia-cares/1.png",
     text:
       "Every September, in honor of our anniversary month, Spavia Cares unites all locations to support local charities—each choosing a cause that matters most to their community.",
   },
