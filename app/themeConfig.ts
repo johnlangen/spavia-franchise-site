@@ -1,6 +1,30 @@
 // app/themeConfig.ts
 
 export const themes = {
+  coastal: {
+    name: "Coastal",
+    color: "#86A2BF", // ocean blue
+    images: [
+      "/themes/coastal1.png",
+      "/themes/coastal2.png",
+      "/themes/coastal3.png",
+      "/themes/coastal4.png",
+      "/themes/coastal5.png",
+      "/themes/coastal6.png",
+    ],
+  },
+    vineyard: {
+      name: "Vineyard",
+      color: "#A15751", // olive green
+      images: [
+        "/themes/vineyard1.png",
+        "/themes/vineyard4.jpg",
+        "/themes/vineyard3.png",
+        "/themes/vineyard2.png",
+        "/themes/vineyard5.png",
+        "/themes/vineyard6.png",
+      ],
+    },
     mountain: {
       name: "Mountain",
       color: "#7C9A82", // earthy brown
@@ -11,30 +35,6 @@ export const themes = {
         "/themes/mountain4.png",
         "/themes/mountain6.png",
         "/themes/mountain5.png",
-      ],
-    },
-    vineyard: {
-      name: "Vineyard",
-      color: "#A15751", // olive green
-      images: [
-        "/themes/vineyard1.png",
-        "/themes/vineyard4.png",
-        "/themes/vineyard3.png",
-        "/themes/vineyard2.png",
-        "/themes/vineyard5.png",
-        "/themes/vineyard6.png",
-      ],
-    },
-    coastal: {
-      name: "Coastal",
-      color: "#86A2BF", // ocean blue
-      images: [
-        "/themes/coastal1.png",
-        "/themes/coastal2.png",
-        "/themes/coastal3.png",
-        "/themes/coastal4.png",
-        "/themes/coastal5.png",
-        "/themes/coastal6.png",
       ],
     },
     sway: {

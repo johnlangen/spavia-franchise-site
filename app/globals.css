@@ -89,3 +89,38 @@ html {
 }
 
 
+
+
+/* --- ActiveCampaign Form Overrides --- */
+._form_36 input,
+._form_36 select,
+._form_36 textarea {
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  padding: 12px !important;
+  font-size: 16px !important;
+}
+
+._form_36 input:focus,
+._form_36 select:focus,
+._form_36 textarea:focus {
+  outline: none !important;
+  border-color: #c2a878 !important;
+  box-shadow: 0 0 0 2px rgba(194, 168, 120, 0.4) !important;
+}
+
+._form_36 button,
+._form_36 input[type="submit"] {
+  background-color: #c2a878 !important;
+  color: black !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+._form_36 button:hover,
+._form_36 input[type="submit"]:hover {
+  background-color: #b09466 !important;
+}

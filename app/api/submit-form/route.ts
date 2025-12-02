@@ -20,6 +20,7 @@ export async function POST(req: Request) {
       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captcha}`,
     }
   );
+
   const verifyData = await verifyRes.json();
   if (!verifyData.success) {
     return NextResponse.json(
@@ -28,19 +29,19 @@ export async function POST(req: Request) {
     );
   }
 
-  // ✅ Insert into Monday.com
+  // ✅ Save to Monday.com
   try {
-    // Use the actual City column ID: text_mkwsb0wp
+    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+
     const columnVals = {
       email_mkwsf6vv: { email: formData.email, text: formData.email },
       phone_mkwse69z: { phone: formData.phone, countryShortName: "US" },
-      text_mkwsb0wp: formData.city,            // ✅ Correct City column ID
+      text_mkwsb0wp: formData.city,
       text_mkws26k0: formData.state,
       text_mkwsvr57: formData.investment,
       text_mkwsx6bk: "Franchise Form",
+      date_mkwsba3m: { date: today },
     };
-
-    console.log("👉 Sending to Monday columnVals:", columnVals);
 
     const mutation = `
       mutation CreateItem(
@@ -70,9 +71,9 @@ export async function POST(req: Request) {
         query: mutation,
         variables: {
           boardId: process.env.MONDAY_BOARD_ID,
-          groupId: "topics", // adjust if needed
+          groupId: "topics",
           itemName: `${formData.firstName} ${formData.lastName}`,
-          columnValues: JSON.stringify(columnVals), // ✅ stringified once
+          columnValues: JSON.stringify(columnVals),
         },
       }),
     });
@@ -88,10 +89,49 @@ export async function POST(req: Request) {
       );
     }
 
-    return NextResponse.json({ success: true });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
+    // ✅ Add to ActiveCampaign
+    try {
+      const acForm = new URLSearchParams({
+        u: "1",
+        f: "1",
+        s: "",
+        c: "0",
+        m: "0",
+        act: "sub",
+        v: "2",
+        or: "6d2955e6e540fa8ca57bb575ae5af086",
+        firstname: formData.firstName,
+        lastname: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        "field[209]": formData.city, // city
+        "field[1]": formData.state,  // state
+        "field[208]": formData.investment, // liquid assets
+      });
 
+      const acRes = await fetch(
+        "https://spaviainternational.activehosted.com/proc.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: acForm.toString(),
+        }
+      );
+
+      const acText = await acRes.text();
+      const acSuccess = acText.includes("thank_you") || acRes.ok;
+
+      if (!acSuccess) {
+        console.error("⚠️ ActiveCampaign form submission failed:", acText);
+      } else {
+        console.log("✅ ActiveCampaign lead added successfully");
+      }
+    } catch (acErr) {
+      console.error("❌ Error submitting to ActiveCampaign:", acErr);
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (err: any) {
     console.error("❌ Error saving lead:", err);
     return NextResponse.json(
       { success: false, error: "Failed to save lead" },

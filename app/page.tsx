@@ -14,13 +14,54 @@ import MultiStepForm from "./components/MultiStepForm";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
-import Link from 'next/link';
-import FloatingButton from "./components/FloatingButton"; // Import the FloatingButton component
+import Link from "next/link";
+import FloatingButton from "./components/FloatingButton";
+import ActiveCampaignForm from "./components/ActiveCampaignForm";
 
 export const metadata: Metadata = {
   title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
   description:
     "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+  alternates: {
+    canonical: "https://spaviafranchise.com/",
+  },
+  openGraph: {
+    title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
+    description:
+      "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+    url: "https://spaviafranchise.com/",
+    type: "website",
+    images: [
+      {
+        url: "https://spaviafranchise.com/og/spavia-franchise-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Spavia Franchise Storefront",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
+    description:
+      "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
+  },
+  other: {
+    "script:ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Spavia Franchise",
+      url: "https://spaviafranchise.com/",
+      description:
+        "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+      logo: "https://spaviafranchise.com/logo.png",
+      sameAs: [
+        "https://www.facebook.com/SpaviaSpa",
+        "https://www.instagram.com/spavia",
+      ],
+    }),
+  },
 };
 
 export default function Home() {
@@ -55,14 +96,25 @@ export default function Home() {
         {/* PROCESS SECTION */}
         <ProcessSection />
 
-        {/* MULTI-STEP FORM SECTION */}
-        <Section id="franchise-form" className="bg-white">
-          <MultiStepForm />
+        {/* ACTIVE CAMPAIGN FORM */}
+        <Section id="franchise-form" className="bg-white py-20">
+          <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
+              Request Franchise Information
+            </h2>
+            <p className="text-center text-gray-700 mb-6">
+              Learn more about opening a Spavia location in your community.
+            </p>
+            <ActiveCampaignForm />
+          </div>
+
           <CallToAction />
         </Section>
 
         {/* FAQ */}
         <FAQ />
+
+        {/* CTA SECTION */}
         <Section className="bg-black">
           <h2 className="text-3xl font-bold text-center mb-6 text-white">
             Ready to Start Your Journey?
@@ -78,8 +130,8 @@ export default function Home() {
 
         <Footer />
       </main>
-      
-      {/* Add the floating button here */}
+
+      {/* Floating Button */}
       <FloatingButton />
     </ThemeProvider>
   );
