@@ -28,10 +28,11 @@ export default function BlogGrid() {
           viewport={{ once: true }}
           variants={cardVariants}
         >
-          <Link
-            href={post.href}
-            className="group block border rounded-xl shadow hover:shadow-xl overflow-hidden transition-all duration-300 hover:border-[#C2A878]"
-          >
+        <Link
+          href={post.href}
+          className="group block h-full border rounded-xl shadow hover:shadow-xl overflow-hidden transition-all duration-300 hover:border-[#C2A878] flex flex-col"
+        >
+
             <div className="overflow-hidden">
               <img
                 src={post.image}
@@ -39,14 +40,14 @@ export default function BlogGrid() {
                 className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <div className="p-6">
+            <div className="p-6 flex-1 flex flex-col">
               <h2 className="text-2xl font-semibold mb-3 group-hover:text-[#C2A878] transition-colors">
                 {post.title}
               </h2>
               <p className="text-gray-700 mb-2 leading-relaxed">
                 {post.excerpt}
               </p>
-              <span className="text-[#C2A878] font-semibold inline-block mt-2 group-hover:underline">
+              <span className="text-[#C2A878] font-semibold inline-block mt-auto pt-4 group-hover:underline">
                 Read More →
               </span>
             </div>
@@ -58,6 +59,47 @@ export default function BlogGrid() {
 }
 
 const blogPosts = [
+
+  {
+    title: "The Power of Spavia’s Brand Partners: Vendor Collaborations That Drive Revenue",
+    excerpt:
+      "Spavia’s premium vendor partnerships elevate the guest experience, strengthen franchise revenue, and support franchisees through training, buying power, and curated, high-performance products.",
+    image: "/blog/blog19.png",
+    href: "/blog/2025/11/26/the-power-of-spavias-brand-partners-vendor-collaborations-that-drive-revenue",
+  },
+
+  {
+    title: "How $8 Could Feed Every Hungry Child: A Thanksgiving Reflection From Spavia’s CEO",
+    excerpt:
+      "A message of gratitude from Spavia’s CEO — exploring how small, targeted acts of generosity can feed every hungry child in America, and celebrating Spavia’s 20th Anniversary donation impact.",
+    image: "/blog/blog18.png",
+    href: "/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo",
+  },
+  
+  {
+    title: "Spavia Day Spa Named to 2025 Franchise Times Top 400",
+    excerpt:
+      "Spavia celebrates its 20th year with design-led growth, national expansion, and recognition on the 2025 Franchise Times Top 400 list for accessible, affordable luxury.",
+    image: "/blog/blog17.png",
+    href: "/blog/2025/11/20/spavia-day-spa-named-to-2025-franchise-times-top-400-as-the-brand-celebrates-its-20th-year-with-design-led-growth-and-affordable-luxury-at-scale",
+  },  
+
+  {
+    title: "Spavia Co-Founder Allison Langenderfer Named a “Woman of Wonder” for the Second Consecutive Year",
+    excerpt:
+      "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been named to Franchise Dictionary Magazine’s “50 Women of Wonder” list for the second consecutive year, recognizing her leadership and community impact.",
+    image: "/blog/blog16.png", // temporary placeholder – replace when ready
+    href: "/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year",
+  },
+  
+
+  {
+    title: "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward",
+    excerpt:
+      "Spavia celebrates 20 years of inspiring wellness through accessible luxury, founder-led passion, and community-driven growth.",
+    image: "/blog/blog15.png",
+    href: "/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward",
+  },  
   {
     title: "The Power of a National Brand with a Local Focus",
     excerpt:
