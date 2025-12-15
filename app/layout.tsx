@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script"; // 👈 ADD THIS
 import MobileCTA from "./components/MobileCTA";
 import FloatingButton from "./components/FloatingButton";
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -33,7 +34,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${recoleta.variable}`}>
+    <html lang="en" className={recoleta.variable}>
+
+      {/* ✅ Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-6N6Q7GX5D4"
+        strategy="afterInteractive"
+      />
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-6N6Q7GX5D4', {
+            anonymize_ip: true,
+          });
+        `}
+      </Script>
+
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           {children}
