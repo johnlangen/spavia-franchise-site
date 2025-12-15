@@ -37,11 +37,11 @@ export default function ThankYouContent() {
               We’re excited to share more about Spavia’s differentiated model and
               superior guest experience with you. We look forward to getting in
               touch with you soon. In the meantime, head to our{" "}
-              <Link href="/why-spavia" className="text-[#C2A878] underline">
+              <Link href="https://spaviadayspa.com" className="text-[#C2A878] underline">
                 website
               </Link>{" "}
               to discover more about Spavia, or{" "}
-              <Link href="/locations" className="text-[#C2A878] underline">
+              <Link href="https://spaviadayspa.com/location" className="text-[#C2A878] underline">
                 visit one of our many locations
               </Link>{" "}
               to experience a treatment for yourself.
