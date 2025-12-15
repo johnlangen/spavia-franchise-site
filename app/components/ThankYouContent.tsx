@@ -61,7 +61,7 @@ export default function ThankYouContent() {
                   schedule a call by clicking the button below.
                 </p>
                 <Link
-                  href="https://calendly.com/karyn-spaviadayspa/15mincall?back=1&month=2025-04"
+                  href="https://calendly.com/tyler-spaviadayspa/new-meeting"
                   target="_blank"
                   className="inline-block border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition"
                 >

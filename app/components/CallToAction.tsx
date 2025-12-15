@@ -4,7 +4,7 @@ export default function CallToAction() {
   return (
     <div className="text-center mt-8">
       <a
-        href="https://calendly.com/karyn-spaviadayspa/15mincall?back=1&month=2025-04"
+        href="https://calendly.com/tyler-spaviadayspa/new-meeting"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
