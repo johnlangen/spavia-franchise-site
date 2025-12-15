@@ -17,8 +17,8 @@ export default function ThankYouContent() {
           <div className="w-full md:w-1/2">
             <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/towels.jpg"  // <-- Replace with your asset path
-                alt="Rolled towels"
+                src="/images/image2.jpg"  // <-- Replace with your asset path
+                alt="Spavia Thank You Image"
                 fill
                 className="object-cover"
                 priority
