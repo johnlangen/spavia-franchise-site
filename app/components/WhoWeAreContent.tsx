@@ -34,10 +34,10 @@ const team = [
     bio: `With over 10 years of experience as a franchise operations leader, Courtney has a proven track record of supporting franchisees in high-growth systems. Her strong background in operations and training, coupled with her passion for driving franchisee success and profitability, makes her an invaluable asset to the team.`,
   },
   {
-    name: "Karyn White",
+    name: "Tyler Woodard",
     role: "Director of Franchise Development",
     image: "/who-we-are/image5.png",
-    bio: `With a wealth of franchise experience and a deep passion for the wellness industry, Karyn’s expertise in building strong franchisee relationships and driving unit growth plays a pivotal role as we continue to expand and bring exceptional spa offerings to even more communities across the country.`,
+    bio: `Tyler brings extensive experience in franchise growth, sales strategy, and multi-unit development, with a proven track record of helping brands scale with intention. As Director of Franchise Development, he leads franchise recruitment efforts, strengthens the owner pipeline, and identifies high-potential markets to support Spavia’s continued expansion and long-term success.`,
   },
   {
     name: "Jessica Hartman",
