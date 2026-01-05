@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
+import Script from "next/script"; // 👈 ADD THIS
 import MobileCTA from "./components/MobileCTA";
 import FloatingButton from "./components/FloatingButton";
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -19,16 +19,8 @@ const geistMono = Geist_Mono({
 
 const recoleta = localFont({
   src: [
-    {
-      path: "../public/fonts/Recoleta-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Recoleta-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
+    { path: "../public/fonts/Recoleta-Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Recoleta-Bold.otf", weight: "700", style: "normal" },
   ],
   variable: "--font-recoleta",
   display: "swap",
@@ -40,29 +32,11 @@ export const metadata: Metadata = {
     "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={recoleta.variable}>
 
-      {/* ✅ GOOGLE ADS BASE TAG */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-944657062"
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-944657062');
-        `}
-      </Script>
-
-      {/* ✅ GOOGLE ANALYTICS (GA4) */}
+      {/* ✅ Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-6N6Q7GX5D4"
         strategy="afterInteractive"
@@ -78,9 +52,7 @@ export default function RootLayout({
         `}
       </Script>
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           {children}
           <MobileCTA />
