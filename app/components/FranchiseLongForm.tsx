@@ -9,11 +9,10 @@ export default function FranchiseLongForm() {
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // ✅ IMPORTANT
-    const form = e.currentTarget;
+    e.preventDefault();
     setLoading(true);
   
-    const formData = new FormData(form);
+    const formData = new FormData(e.currentTarget);
   
     const payload = {
       firstName: formData.get("firstName"),
@@ -28,6 +27,16 @@ export default function FranchiseLongForm() {
       creditScore: formData.get("creditScore"),
     };
   
+    /* 1️⃣ SUPABASE (DB ONLY — DO NOT BLOCK) */
+    fetch("/api/franchise-lead-long-db", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch((err) => {
+      console.error("Supabase long form save failed:", err);
+    });
+  
+    /* 2️⃣ ACTIVE CAMPAIGN (UNCHANGED) */
     const res = await fetch("/api/franchise-lead-long", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -37,7 +46,7 @@ export default function FranchiseLongForm() {
     setLoading(false);
   
     if (res.ok) {
-      router.push("/thank-you"); // ✅ redirect
+      router.push("/thank-you");
     }
   };
   

@@ -10,16 +10,33 @@ export default function Hero() {
 
   const [step, setStep] = useState<1 | 2>(1);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const [email, setEmail] = useState("");
   const [zip, setZip] = useState("");
 
-  const handleStep1 = (e: React.FormEvent<HTMLFormElement>) => {
+  /* ---------------- STEP 1 ---------------- */
+  const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Save partial lead to DB (email + zip)
+    try {
+      await fetch("/api/franchise-lead-step1", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          zip,
+        }),
+      });
+    } catch (err) {
+      console.error("Step 1 DB save failed", err);
+      // intentionally non-blocking
+    }
+
     setStep(2);
   };
 
+  /* ---------------- STEP 2 ---------------- */
   const handleStep2 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -34,6 +51,19 @@ export default function Hero() {
       phone: formData.get("phone"),
     };
 
+    // 1️⃣ Save completed short form to DB
+    try {
+      await fetch("/api/franchise-lead-short-db", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      console.error("Short form DB save failed", err);
+      // still continue
+    }
+
+    // 2️⃣ Send to ActiveCampaign (UNCHANGED)
     const res = await fetch("/api/franchise-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -84,105 +114,95 @@ export default function Hero() {
         {/* Glass form */}
         <div
           className={`mx-auto backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl transition-all duration-300 ${
-            step === 1
-              ? "max-w-2xl p-5"
-              : "max-w-4xl p-6 md:p-8"
+            step === 1 ? "max-w-2xl p-5" : "max-w-4xl p-6 md:p-8"
           }`}
         >
-          {success ? (
-            <p className="text-center text-lg font-semibold">
-              Thank you! We’ll be in touch shortly.
-            </p>
-          ) : (
-            <AnimatePresence mode="wait">
-              {/* STEP 1 */}
-              {step === 1 && (
-                <motion.form
-                  key="step1"
-                  onSubmit={handleStep1}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.25 }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-3"
-                >
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="input-glass"
-                  />
+          <AnimatePresence mode="wait">
+            {/* STEP 1 */}
+            {step === 1 && (
+              <motion.form
+                key="step1"
+                onSubmit={handleStep1}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-3"
+              >
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="input-glass"
+                />
 
-                  <input
-                    placeholder="Zip code"
-                    required
-                    value={zip}
-                    onChange={(e) => setZip(e.target.value)}
-                    className="input-glass"
-                  />
+                <input
+                  placeholder="Zip code"
+                  required
+                  value={zip}
+                  onChange={(e) => setZip(e.target.value)}
+                  className="input-glass"
+                />
 
-                  <div className="md:col-span-2">
-                    <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
-                      Continue →
-                    </Button>
-                  </div>
-                </motion.form>
-              )}
+                <div className="md:col-span-2">
+                  <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
+                    Continue →
+                  </Button>
+                </div>
+              </motion.form>
+            )}
 
-              {/* STEP 2 */}
-              {step === 2 && (
-                <motion.form
-                  key="step2"
-                  onSubmit={handleStep2}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.25 }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-3"
-                >
-                  <input
-                    name="firstName"
-                    placeholder="First name"
-                    required
-                    className="input-glass"
-                  />
+            {/* STEP 2 */}
+            {step === 2 && (
+              <motion.form
+                key="step2"
+                onSubmit={handleStep2}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-3"
+              >
+                <input
+                  name="firstName"
+                  placeholder="First name"
+                  required
+                  className="input-glass"
+                />
 
-                  <input
-                    name="lastName"
-                    placeholder="Last name"
-                    required
-                    className="input-glass"
-                  />
+                <input
+                  name="lastName"
+                  placeholder="Last name"
+                  required
+                  className="input-glass"
+                />
 
-                  <input
-                    name="phone"
-                    placeholder="Phone"
-                    className="input-glass md:col-span-2"
-                  />
+                <input
+                  name="phone"
+                  placeholder="Phone"
+                  className="input-glass md:col-span-2"
+                />
 
-                  <div className="md:col-span-2">
-                    <Button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
-                    >
-                      {loading ? "Submitting…" : "Get Franchise Info"}
-                    </Button>
+                <div className="md:col-span-2">
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
+                  >
+                    {loading ? "Submitting…" : "Get Franchise Info"}
+                  </Button>
 
-                    <p className="mt-3 text-xs text-center text-white/60 leading-relaxed">
-                      By submitting this form, you agree that Spavia may contact
-                      you by phone, email, or text regarding franchise
-                      opportunities. Your information will only be used to
-                      evaluate franchise candidacy. Message and data rates may
-                      apply.
-                    </p>
-                  </div>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          )}
+                  <p className="mt-3 text-xs text-center text-white/60 leading-relaxed">
+                    By submitting this form, you agree that Spavia may contact
+                    you by phone, email, or text regarding franchise
+                    opportunities. Message and data rates may apply.
+                  </p>
+                </div>
+              </motion.form>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
