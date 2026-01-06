@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import { ThemeProvider } from "./ThemeProvider";
 import AwardsSection from "./AwardsSection";
 import Link from "next/link";
-import ActiveCampaignForm from "./ActiveCampaignForm";
+import FranchiseLongForm from "./FranchiseLongForm";
 
 export default function GetStartedContent() {
   return (
@@ -93,7 +93,7 @@ export default function GetStartedContent() {
 
             {/* ActiveCampaign Form */}
             <div className="bg-white p-6 rounded-md shadow-sm">
-              <ActiveCampaignForm />
+              <FranchiseLongForm />
             </div>
           </motion.div>
 

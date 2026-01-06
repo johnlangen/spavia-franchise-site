@@ -16,7 +16,8 @@ import Footer from "./components/Footer";
 import CallToAction from "./components/CallToAction";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
-import ActiveCampaignForm from "./components/ActiveCampaignForm";
+import FranchiseLongForm from "./components/FranchiseLongForm";
+
 
 export const metadata: Metadata = {
   title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
@@ -71,6 +72,7 @@ export default function Home() {
       <main className="flex flex-col">
         {/* HERO */}
         <Hero />
+        
 
         {/* THEME SELECTION */}
         <Section className="bg-white pt-28 pb-16">
@@ -105,7 +107,7 @@ export default function Home() {
             <p className="text-center text-gray-700 mb-6">
               Learn more about opening a Spavia location in your community.
             </p>
-            <ActiveCampaignForm />
+            <FranchiseLongForm />
           </div>
 
           <CallToAction />
