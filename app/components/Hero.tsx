@@ -23,30 +23,43 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
     >
-      {/* Background video */}
+      {/* ---------- BACKGROUND ---------- */}
+
+      {/* Desktop video */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+      {/* Mobile image */}
+      <img
+        src="/hero-bg.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover md:hidden"
+      />
 
+      {/* Lighter overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+
+      {/* ---------- CONTENT ---------- */}
       <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 text-white text-center">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-semibold leading-tight mb-3
-                     text-[26px]
-                     sm:text-3xl
-                     md:text-[42px]"
+          className="
+            font-semibold leading-tight mb-3
+            text-[26px]
+            sm:text-3xl
+            md:text-[42px]
+          "
         >
           <span className="block">Own a Part of the Global Wellness</span>
           <span className="block">Economy</span>
@@ -57,27 +70,33 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto max-w-3xl
-                     text-sm
-                     sm:text-base
-                     md:text-lg
-                     text-white/85
-                     mb-8"
+          className="
+            mx-auto max-w-3xl
+            text-sm
+            sm:text-base
+            md:text-lg
+            text-white/85
+            mb-8
+          "
         >
           Join 60+ Spavia franchisees bringing affordable luxury wellness to their
           communities — with many locations exceeding $1M in annual sales.*
         </motion.p>
 
-        {/* ---------------- METRICS ---------------- */}
+        {/* ---------- METRICS ---------- */}
         <div className="mx-auto max-w-4xl">
           {/* Desktop */}
           <div className="hidden sm:grid grid-cols-3 gap-3">
             {metrics.map((x) => (
               <div
                 key={x.l}
-                className="rounded-lg border border-white/20
-                           bg-white/10 backdrop-blur-md
-                           px-4 py-2.5"
+                className="
+                  rounded-lg
+                  border border-white/20
+                  bg-white/10
+                  backdrop-blur-md
+                  px-4 py-2.5
+                "
               >
                 <p className="text-base font-medium">{x.v}</p>
                 <p className="text-[11px] text-white/70 mt-0.5">{x.l}</p>
@@ -85,11 +104,12 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Mobile */}
+          {/* Mobile carousel */}
           <div className="sm:hidden flex items-center justify-center gap-3">
             <button
               onClick={prevMetric}
               className="h-8 w-8 rounded-full border border-white/30 text-white/80"
+              aria-label="Previous metric"
             >
               ‹
             </button>
@@ -101,10 +121,14 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -16 }}
                 transition={{ duration: 0.2 }}
-                className="min-w-[220px] rounded-lg
-                           border border-white/20
-                           bg-white/10 backdrop-blur-md
-                           px-4 py-2.5"
+                className="
+                  min-w-[220px]
+                  rounded-lg
+                  border border-white/20
+                  bg-white/10
+                  backdrop-blur-md
+                  px-4 py-2.5
+                "
               >
                 <p className="text-base font-medium">
                   {metrics[metricIndex].v}
@@ -118,12 +142,13 @@ export default function Hero() {
             <button
               onClick={nextMetric}
               className="h-8 w-8 rounded-full border border-white/30 text-white/80"
+              aria-label="Next metric"
             >
               ›
             </button>
           </div>
 
-          <p className="mt-4 text-[10px] text-white/55">
+          <p className="mt-4 text-[10px] text-white/60">
             *Results vary. See FDD Item 19 for details.
           </p>
         </div>
@@ -131,8 +156,17 @@ export default function Hero() {
         {/* Scroll CTA */}
         <a
           href="#franchise-overview"
-          className="mt-10 inline-flex flex-col items-center gap-1
-                     text-sm text-white/70 hover:text-white transition"
+          className="
+            mt-10
+            inline-flex
+            flex-col
+            items-center
+            gap-1
+            text-sm
+            text-white/75
+            hover:text-white
+            transition
+          "
         >
           <span>Request the Franchise Overview</span>
           <span className="text-lg">↓</span>
