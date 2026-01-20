@@ -4,14 +4,6 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const fieldValues = [];
-    if (body.zip) {
-      fieldValues.push({
-        field: "90", // Zip Code custom field
-        value: body.zip,
-      });
-    }
-
     // 1️⃣ Create / update contact
     const contactRes = await fetch(
       `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contacts`,
@@ -28,7 +20,9 @@ export async function POST(req: Request) {
             firstName: body.firstName,
             lastName: body.lastName,
             phone: body.phone,
-            ...(fieldValues.length ? { fieldValues } : {}),
+            fieldValues: body.zip
+              ? [{ field: "90", value: body.zip }]
+              : [],
           },
         }),
       }
@@ -42,12 +36,9 @@ export async function POST(req: Request) {
     }
 
     const contactId = contactData?.contact?.id;
+    if (!contactId) throw new Error("No contact ID returned");
 
-    if (!contactId) {
-      throw new Error("No contact ID returned from ActiveCampaign");
-    }
-
-    // 2️⃣ Subscribe contact to Organic Lead List (ID = 2)
+    // 2️⃣ Subscribe to Organic Lead List (ID = 2)
     const listRes = await fetch(
       `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contactLists`,
       {
