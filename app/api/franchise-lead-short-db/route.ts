@@ -3,9 +3,7 @@ import { supabase } from "@/lib/supabaseServer";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-
-    const { email, zip, firstName, lastName, phone } = body;
+    const { email, zip, firstName, lastName, phone } = await req.json();
 
     if (!email) {
       return NextResponse.json({ error: "Missing email" }, { status: 400 });
@@ -21,7 +19,7 @@ export async function POST(req: Request) {
           last_name: lastName || null,
           phone: phone || null,
           source: "short_full",
-          completed_at: new Date().toISOString(),
+          stage: "hero_completed",
         },
         { onConflict: "email" }
       );
@@ -33,7 +31,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error(err);
+    console.error("Short DB error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

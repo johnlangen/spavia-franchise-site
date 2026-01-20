@@ -14,6 +14,21 @@ export default function Hero() {
   const [email, setEmail] = useState("");
   const [zip, setZip] = useState("");
 
+  /* ---------------- METRICS ---------------- */
+  const metrics = [
+    { v: "$1,080,829", l: "Avg Gross Sales*" },
+    { v: "$496K – $796K", l: "Initial Investment*" },
+    { v: "1 in 2 Owners", l: "Achieve $1M+ Revenue*" },
+  ];
+
+  const [metricIndex, setMetricIndex] = useState(0);
+
+  const prevMetric = () =>
+    setMetricIndex((i) => (i === 0 ? metrics.length - 1 : i - 1));
+
+  const nextMetric = () =>
+    setMetricIndex((i) => (i === metrics.length - 1 ? 0 : i + 1));
+
   /* ---------------- STEP 1 ---------------- */
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -105,17 +120,14 @@ export default function Hero() {
           resort-inspired day spa in your market.
         </p>
 
-        {/* Proof strip */}
-        <div className="mx-auto max-w-4xl mb-3">
-          <div className="flex gap-3 overflow-x-auto pb-1 snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
-            {[
-              { v: "$1,080,829", l: "Avg Gross Sales*" },
-              { v: "$496K - $796K", l: "Initial Investment*" },
-              { v: "1 in 2 owners", l: "Achieve $1M+ revenue*" },
-            ].map((x) => (
+        {/* ---------------- METRICS ---------------- */}
+        <div className="mx-auto max-w-4xl mb-4">
+          {/* Desktop */}
+          <div className="hidden sm:grid grid-cols-3 gap-4">
+            {metrics.map((x) => (
               <div
                 key={x.l}
-                className="min-w-[260px] sm:min-w-0 sm:flex-1 snap-start rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-3 text-center"
+                className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-3 text-center"
               >
                 <p className="text-lg font-semibold">{x.v}</p>
                 <p className="text-xs text-white/75">{x.l}</p>
@@ -123,12 +135,49 @@ export default function Hero() {
             ))}
           </div>
 
+          {/* Mobile */}
+          <div className="sm:hidden flex items-center justify-center gap-3">
+            <button
+              onClick={prevMetric}
+              aria-label="Previous metric"
+              className="h-9 w-9 rounded-full border border-white/30 text-white/80 hover:text-white"
+            >
+              ‹
+            </button>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={metricIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
+                className="min-w-[240px] rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-3 text-center"
+              >
+                <p className="text-lg font-semibold">
+                  {metrics[metricIndex].v}
+                </p>
+                <p className="text-xs text-white/75">
+                  {metrics[metricIndex].l}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            <button
+              onClick={nextMetric}
+              aria-label="Next metric"
+              className="h-9 w-9 rounded-full border border-white/30 text-white/80 hover:text-white"
+            >
+              ›
+            </button>
+          </div>
+
           <p className="text-center text-[10px] text-white/55 mt-2">
             *Results vary. See FDD Item 19 and financial requirements.
           </p>
         </div>
 
-        {/* Glass form */}
+        {/* ---------------- FORM ---------------- */}
         <div
           className={`mx-auto backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl transition-all duration-300 ${
             step === 1 ? "max-w-lg p-4 sm:p-5" : "max-w-2xl p-4 sm:p-6"
@@ -155,7 +204,7 @@ export default function Hero() {
                 />
 
                 <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
-                  Get Franchise Overview 
+                  Get Franchise Overview
                 </Button>
 
                 <p className="text-[11px] text-center text-white/60">
