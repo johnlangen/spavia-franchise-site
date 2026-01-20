@@ -17,6 +17,7 @@ import CallToAction from "./components/CallToAction";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import FranchiseLongForm from "./components/FranchiseLongForm";
+import FranchiseIntroForm from "./components/FranchiseIntroForm";
 
 
 export const metadata: Metadata = {
@@ -72,6 +73,7 @@ export default function Home() {
       <main className="flex flex-col">
         {/* HERO */}
         <Hero />
+        <FranchiseIntroForm />
         
 
         {/* THEME SELECTION */}
