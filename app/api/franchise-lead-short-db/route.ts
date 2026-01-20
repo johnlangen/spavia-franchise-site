@@ -5,19 +5,10 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const {
-      email,
-      zip,
-      firstName,
-      lastName,
-      phone,
-    } = body;
+    const { email, zip, firstName, lastName, phone } = body;
 
     if (!email) {
-      return NextResponse.json(
-        { error: "Missing email" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Missing email" }, { status: 400 });
     }
 
     const { error } = await supabase
@@ -25,10 +16,10 @@ export async function POST(req: Request) {
       .upsert(
         {
           email,
-          zip,
-          first_name: firstName,
-          last_name: lastName,
-          phone,
+          zip: zip || null,
+          first_name: firstName || null,
+          last_name: lastName || null,
+          phone: phone || null,
           source: "short_full",
           completed_at: new Date().toISOString(),
         },

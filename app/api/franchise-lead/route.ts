@@ -4,6 +4,14 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
+    const fieldValues = [];
+    if (body.zip) {
+      fieldValues.push({
+        field: "90", // Zip Code custom field
+        value: body.zip,
+      });
+    }
+
     // 1️⃣ Create / update contact
     const contactRes = await fetch(
       `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contacts`,
@@ -20,12 +28,7 @@ export async function POST(req: Request) {
             firstName: body.firstName,
             lastName: body.lastName,
             phone: body.phone,
-            fieldValues: [
-              {
-                field: "90", // Zip Code custom field
-                value: body.zip,
-              },
-            ],
+            ...(fieldValues.length ? { fieldValues } : {}),
           },
         }),
       }
@@ -56,9 +59,9 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({
           contactList: {
-            list: "2", // Organic Lead List
+            list: "2",
             contact: contactId,
-            status: 1, // subscribed
+            status: 1,
           },
         }),
       }
@@ -74,9 +77,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Franchise lead error:", err);
-    return NextResponse.json(
-      { error: "Submission failed" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Submission failed" }, { status: 500 });
   }
 }

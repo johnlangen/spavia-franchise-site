@@ -4,25 +4,10 @@ import { supabase } from "@/lib/supabaseServer";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-
-    const {
-      email,
-      firstName,
-      lastName,
-      phone,
-      zip,
-      state,
-      primaryGoal,
-      liquidAssets,
-      netWorth,
-      creditScore,
-    } = body;
+    const { email } = body;
 
     if (!email) {
-      return NextResponse.json(
-        { error: "Email required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email required" }, { status: 400 });
     }
 
     const { error } = await supabase
@@ -30,32 +15,21 @@ export async function POST(req: Request) {
       .upsert(
         {
           email,
-          first_name: firstName,
-          last_name: lastName,
-          phone,
-          zip,
-          state,
-          primary_goal: primaryGoal,
-          liquid_assets: liquidAssets,
-          net_worth: netWorth,
-          credit_score: creditScore,
-          source: "long_form",
-          stage: "long_completed",
+          source: "short_partial",
+          stage: "hero_step1",
+          started_at: new Date().toISOString(),
         },
         { onConflict: "email" }
       );
 
     if (error) {
-      console.error("Supabase long error:", error);
+      console.error("Supabase step1 error:", error);
       return NextResponse.json({ error: "DB error" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error(err);
-    return NextResponse.json(
-      { error: "Submission failed" },
-      { status: 500 }
-    );
+    console.error("Step1 error:", err);
+    return NextResponse.json({ error: "Submission failed" }, { status: 500 });
   }
 }

@@ -3,7 +3,6 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
-import MobileCTA from "./components/MobileCTA";
 import FloatingButton from "./components/FloatingButton";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -83,7 +82,6 @@ export default function RootLayout({
       >
         <ThemeProvider>
           {children}
-          <MobileCTA />
           <FloatingButton />
         </ThemeProvider>
       </body>
