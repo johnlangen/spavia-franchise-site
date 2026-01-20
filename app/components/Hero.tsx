@@ -188,7 +188,7 @@ export default function Hero() {
                 />
                 <input
                   name="phone"
-                  placeholder="Phone (optional)"
+                  placeholder="Phone"
                   className="input-glass sm:col-span-2"
                 />
                 <input
