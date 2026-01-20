@@ -24,13 +24,15 @@ export default function Hero() {
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden"
     >
       {/* Background video */}
-      {/* Background image */}
-      <img
-        src="/hero-bg.jpg"
-        alt=""
-        aria-hidden="true"
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover"
-      />
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/55" />
