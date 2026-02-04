@@ -14,7 +14,7 @@ export default function ProofSection() {
   const stats = [
     {
       icon: DollarSign,
-      value: "$1,080,829",
+      value: "$1,146,952",
       label: "Average Gross Sales",
     },
     {

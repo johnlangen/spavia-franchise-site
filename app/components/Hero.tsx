@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Hero() {
   /* ---------------- METRICS ---------------- */
   const metrics = [
-    { v: "$1,080,829", l: "Avg Gross Sales*" },
+    { v: "$1,146,952", l: "Avg Gross Sales*" },
     { v: "1 in 2 Owners", l: "Achieve $1M+ Revenue*" },
     { v: "$496K – $796K", l: "Initial Investment*" },
   ];
