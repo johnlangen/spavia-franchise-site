@@ -11,6 +11,7 @@ export default function FranchiseIntroForm() {
 
   const [step, setStep] = useState<1 | 2>(1);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [zip, setZip] = useState("");
 
@@ -35,6 +36,7 @@ export default function FranchiseIntroForm() {
   const handleStep2 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     const formData = new FormData(e.currentTarget);
 
@@ -47,23 +49,36 @@ export default function FranchiseIntroForm() {
     };
 
     try {
-      await fetch("/api/franchise-lead-short-db", {
+      // Save to DB (don't block on this)
+      fetch("/api/franchise-lead-short-db", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+
+      const res = await fetch("/api/franchise-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-    } catch (err) {
-      console.error("Short form DB save failed", err);
+
+      if (res.ok) {
+        router.push("/thank-you");
+        return;
+      }
+
+      const data = await res.json().catch(() => null);
+      setError(
+        data?.error ||
+          "Something went wrong. Please try again."
+      );
+    } catch {
+      setError(
+        "Unable to connect. Please check your internet connection and try again."
+      );
+    } finally {
+      setLoading(false);
     }
-
-    const res = await fetch("/api/franchise-lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    setLoading(false);
-    if (res.ok) router.push("/thank-you");
   };
 
   const inputStyle = `
@@ -196,6 +211,12 @@ export default function FranchiseIntroForm() {
                 />
 
                 <div className="sm:col-span-2">
+                  {error && (
+                    <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                      {error}
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     disabled={loading}

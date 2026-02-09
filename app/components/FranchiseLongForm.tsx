@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function FranchiseLongForm() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [step, setStep] = useState<1 | 2>(1);
   const router = useRouter();
 
@@ -38,6 +39,7 @@ export default function FranchiseLongForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     const formData = new FormData(e.currentTarget);
 
@@ -54,22 +56,37 @@ export default function FranchiseLongForm() {
       creditScore: formData.get("creditScore"),
     };
 
-    fetch("/api/franchise-lead-long-db", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    }).catch(() => {});
+    try {
+      // Save to DB (don't block on this)
+      fetch("/api/franchise-lead-long-db", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
 
-    const res = await fetch("/api/franchise-lead-long", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+      const res = await fetch("/api/franchise-lead-long", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    setLoading(false);
+      if (res.ok) {
+        router.push("/thank-you");
+        return;
+      }
 
-    if (res.ok) {
-      router.push("/thank-you");
+      // Try to get a message from the API response
+      const data = await res.json().catch(() => null);
+      setError(
+        data?.error ||
+          "Something went wrong submitting your request. Please try again."
+      );
+    } catch {
+      setError(
+        "Unable to connect. Please check your internet connection and try again."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -284,6 +301,12 @@ export default function FranchiseLongForm() {
             </div>
 
             <div className="md:col-span-2 pt-2">
+              {error && (
+                <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                  {error}
+                </div>
+              )}
+
               <Button
                 disabled={loading}
                 className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
