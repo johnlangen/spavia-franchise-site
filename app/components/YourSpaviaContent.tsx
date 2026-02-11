@@ -1,6 +1,7 @@
 "use client";
 
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
@@ -73,6 +74,7 @@ export default function YourSpaviaContent() {
   return (
     <main className="text-gray-900">
       <NavBar />
+        <Breadcrumbs items={[{ label: "Your Spavia" }]} />
 
       {/* Hero with Video */}
       <section className="relative overflow-hidden pt-40 pb-20 text-center text-white px-6">

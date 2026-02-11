@@ -1,6 +1,7 @@
 "use client";
 
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import AwardsSection from "./AwardsSection";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -84,6 +85,7 @@ export default function OurFranchiseesContent() {
   return (
     <main className="text-gray-900">
       <NavBar />
+        <Breadcrumbs items={[{ label: "Our Franchisees" }]} />
 
       {/* Hero with Video */}
       <section className="relative overflow-hidden pt-40 pb-24 text-center text-white px-6 sm:px-8">

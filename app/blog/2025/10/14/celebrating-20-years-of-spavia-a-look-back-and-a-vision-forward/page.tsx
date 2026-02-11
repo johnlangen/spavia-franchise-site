@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Celebrating 20 Years of Spavia: A Look Back and a Vision ..." }]} />
 
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">

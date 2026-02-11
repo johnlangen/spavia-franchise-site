@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 
@@ -41,6 +42,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "3 Reasons to Invest in a Day Spa Franchise" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

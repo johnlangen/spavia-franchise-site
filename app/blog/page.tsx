@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import NavBar from "../components/NavBar";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
 import BlogGrid from "../components/BlogGrid"; // 👈 client component
 
@@ -13,6 +14,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog" }]} />
       <main className="bg-white text-gray-900 py-32 px-6 [scroll-snap-type:none]">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-16 text-center tracking-tight">

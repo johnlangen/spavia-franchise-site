@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import { ThemeProvider } from "./ThemeProvider";
 import AwardsSection from "./AwardsSection";
@@ -13,6 +14,7 @@ export default function GetStartedContent() {
     <ThemeProvider>
       <main className="bg-black text-white flex flex-col">
         <NavBar />
+        <Breadcrumbs items={[{ label: "Get Started" }]} />
 
         {/* HERO + FORM */}
         <section className="flex flex-col items-center justify-start px-6 pt-24 pb-20">

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "How $8 Could Feed Every Hungry Child: A Thanksgiving Refl..." }]} />
 
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">

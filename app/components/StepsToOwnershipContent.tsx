@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import ProcessSection from "./ProcessSection";
 import AwardsSection from "./AwardsSection";
 import { ThemeProvider } from "./ThemeProvider";
@@ -76,6 +77,7 @@ export default function StepsToOwnershipContent() {
     <ThemeProvider>
       <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
         <NavBar />
+        <Breadcrumbs items={[{ label: "Steps to Ownership" }]} />
 
         {/* Hero */}
         <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] pt-40 pb-28 text-center text-white relative overflow-hidden">

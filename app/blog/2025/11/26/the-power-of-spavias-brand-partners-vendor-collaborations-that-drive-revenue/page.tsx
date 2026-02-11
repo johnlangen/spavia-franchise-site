@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -49,13 +50,7 @@ export default function Page() {
       />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
-          {/* Back Link */}
-          <Link
-            href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
-          >
-            ← Back to Blog
-          </Link>
+<Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "The Power of Spavia’s Brand Partners: Vendor Collaboratio..." }]} />
 
           <h1 className="text-4xl font-bold mb-6">
             The Power of Spavia’s Brand Partners: Vendor Collaborations That Drive

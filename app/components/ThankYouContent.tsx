@@ -1,6 +1,7 @@
 "use client";
 
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import { ThemeProvider } from "./ThemeProvider";
 import Link from "next/link";
@@ -11,6 +12,7 @@ export default function ThankYouContent() {
     <ThemeProvider>
       <main className="bg-gradient-to-b from-black to-[#141414] text-white flex flex-col min-h-screen">
         <NavBar />
+        <Breadcrumbs items={[{ label: "Thank You" }]} />
 
         <section className="flex flex-col md:flex-row items-center justify-center px-6 pt-28 pb-20 gap-12 max-w-7xl mx-auto">
           

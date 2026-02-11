@@ -1,6 +1,7 @@
 "use client";
 
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import AwardsSection from "./AwardsSection";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "./Footer";
@@ -37,6 +38,7 @@ export default function WhySpaviaContent() {
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
+        <Breadcrumbs items={[{ label: "Why Spavia" }]} />
 
       {/* Hero with video + black tint */}
       <section className="snap-start relative overflow-hidden pt-40 pb-24 text-center text-white px-4 sm:px-6">

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "The Power of a National Brand with a Local Focus" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

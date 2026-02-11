@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -99,6 +100,7 @@ export default function Page() {
   return (
     <>
       <NavBar />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Day Spa vs. Med Spa Franchise: Which Is Right for You?" }]} />
 
       <script
         type="application/ld+json"

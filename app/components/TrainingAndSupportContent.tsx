@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import NavBar from "./NavBar";
+import Breadcrumbs from "./Breadcrumbs";
 import AwardsSection from "./AwardsSection";
 import Footer from "./Footer";
 import Link from "next/link";
@@ -100,6 +101,7 @@ export default function TrainingAndSupportContent() {
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
+        <Breadcrumbs items={[{ label: "Training & Support" }]} />
 
       {/* Hero with video background */}
       <section className="snap-start relative overflow-hidden pt-40 pb-28 text-center text-white px-4 sm:px-6">
