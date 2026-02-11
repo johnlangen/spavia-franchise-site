@@ -65,6 +65,11 @@ export default function Page() {
             Spavia Day Spa Named to 2025 Franchise Times Top 400 as the Brand Celebrates Its 20th Year with Design-Led Growth and “Affordable Luxury” at Scale
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published November 20, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog15.jpeg"
                 alt="Spavia recognized in Franchise Times Top 400"

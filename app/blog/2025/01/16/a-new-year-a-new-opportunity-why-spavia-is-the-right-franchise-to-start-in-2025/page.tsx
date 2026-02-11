@@ -60,6 +60,11 @@ export default function Page() {
             Start in 2025
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published January 16, 2025
+          </p>
+
+
           <p className="mb-6 leading-relaxed">
             The start of a new year holds endless opportunities—it's a season of
             change, growth, and fresh starts. For aspiring entrepreneurs and

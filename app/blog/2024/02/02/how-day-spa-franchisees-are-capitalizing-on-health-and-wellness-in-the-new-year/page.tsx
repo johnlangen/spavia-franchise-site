@@ -58,6 +58,11 @@ export default function Page() {
             How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published February 2, 2024
+          </p>
+
+
           <p className="mb-6 leading-relaxed">
             As we step into the New Year, there's a collective shift in focus as individuals embrace
             the 'Great Rejuvenation'—a term capturing the heightened awareness of health and wellness.

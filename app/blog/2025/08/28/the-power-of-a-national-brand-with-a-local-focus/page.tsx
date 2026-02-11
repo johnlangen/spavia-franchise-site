@@ -60,6 +60,11 @@ export default function Page() {
             The Power of a National Brand with a Local Focus
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published August 28, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog14.png"
                 alt="Spavia national brand with local focus"

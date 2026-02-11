@@ -58,6 +58,11 @@ export default function Page() {
             Spavia: 2023 Reflections and Exciting Anticipations for 2024
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published January 4, 2024
+          </p>
+
+
           <p className="mb-6 leading-relaxed">
             The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked
             by substantial growth and exciting developments. From the opening of new

@@ -59,6 +59,11 @@ export default function Page() {
             3 Reasons to Invest in a Day Spa Franchise
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published November 28, 2023
+          </p>
+
+
           <p className="mb-6 leading-relaxed">
             As the wellness industry gains momentum amongst consumers, now is
             the ideal time to explore the world of day spa franchises. From

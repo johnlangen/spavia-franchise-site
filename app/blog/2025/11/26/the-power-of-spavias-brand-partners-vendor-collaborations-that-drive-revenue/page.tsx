@@ -62,6 +62,11 @@ export default function Page() {
             Revenue
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published November 26, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog19.png"
                 alt="Spavia vendor partnerships driving revenue"

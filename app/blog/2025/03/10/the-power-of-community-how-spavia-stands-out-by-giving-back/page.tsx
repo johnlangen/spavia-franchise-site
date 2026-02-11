@@ -60,6 +60,11 @@ export default function Page() {
             The Power of Community: How Spavia Stands Out by Giving Back
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published March 10, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog9.jpg"
                 alt="The Power of Community: How Spavia Stands Out by Giving Back"

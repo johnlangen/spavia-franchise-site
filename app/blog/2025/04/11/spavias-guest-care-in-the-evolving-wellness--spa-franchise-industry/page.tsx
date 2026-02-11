@@ -61,6 +61,11 @@ export default function Page() {
             Spavia’s Guest Care in the Evolving Wellness & Spa Franchise Industry
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published April 11, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog10.jpeg"
                 alt="Spavia’s Guest Care in the Evolving Wellness & Spa Franchise Industry"

@@ -119,6 +119,11 @@ export default function Page() {
             Day Spa vs. Med Spa Franchise: Which Is Right for You?
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published February 11, 2026
+          </p>
+
+
           <Image
                 src="/blog/blog20.jpg"
                 alt="Day spa franchise vs med spa franchise comparison"

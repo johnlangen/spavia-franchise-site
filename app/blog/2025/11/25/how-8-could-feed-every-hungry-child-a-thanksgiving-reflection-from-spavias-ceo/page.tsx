@@ -59,6 +59,11 @@ export default function Page() {
             Spavia’s CEO
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published November 25, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog18.png"
                 alt="Thanksgiving reflection and child hunger impact"

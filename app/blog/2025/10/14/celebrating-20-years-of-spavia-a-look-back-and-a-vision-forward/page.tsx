@@ -62,6 +62,11 @@ export default function Page() {
             Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published October 14, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog15.png"
                 alt="Celebrating 20 Years of Spavia"

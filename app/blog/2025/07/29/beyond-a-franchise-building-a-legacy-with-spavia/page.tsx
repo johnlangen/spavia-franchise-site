@@ -60,6 +60,11 @@ export default function Page() {
             Beyond a Franchise: Building a Legacy with Spavia
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published July 29, 2025
+          </p>
+
+
           <p className="text-lg mb-8 leading-relaxed">
             Spavia franchise ownership isn’t just about running a business—it’s about{" "}
             <strong>building something that lasts</strong>. With financial opportunity,

@@ -60,6 +60,11 @@ export default function Page() {
             A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published December 3, 2024
+          </p>
+
+
           <Image
                 src="/blog/blog5.jpeg"
                 alt="Guide to Choosing the Best Spa Franchise"

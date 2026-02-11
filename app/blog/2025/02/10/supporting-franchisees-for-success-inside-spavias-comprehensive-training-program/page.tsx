@@ -62,6 +62,11 @@ export default function Page() {
             Training Program
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published February 10, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog8.jpg"
                 alt="Supporting Franchisees for Success: Inside Spavia’s Comprehensive Training Program"

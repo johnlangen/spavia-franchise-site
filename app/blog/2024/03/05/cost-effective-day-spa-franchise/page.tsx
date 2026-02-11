@@ -60,6 +60,11 @@ export default function Page() {
             A Cost-Effective Day Spa Franchise: The Spavia Advantage
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published March 5, 2024
+          </p>
+
+
           <Image
                 src="/blog/blog4.jpg"
                 alt="Spavia Day Spa Franchise Advantage"

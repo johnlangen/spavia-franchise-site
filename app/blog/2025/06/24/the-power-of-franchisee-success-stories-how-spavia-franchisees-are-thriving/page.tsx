@@ -60,6 +60,11 @@ export default function Page() {
             The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published June 24, 2025
+          </p>
+
+
           <p className="text-lg mb-8 leading-relaxed">
             At Spavia, success isn’t measured only in numbers—it’s measured in{" "}
             <strong>stories of transformation, resilience, and community impact</strong>.

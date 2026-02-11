@@ -60,6 +60,11 @@ export default function Page() {
             Spa Franchise Opportunities: Where Passion Meets Profit
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published April 16, 2024
+          </p>
+
+
           <p className="text-sm italic mb-6">
             written by{" "}
             <a

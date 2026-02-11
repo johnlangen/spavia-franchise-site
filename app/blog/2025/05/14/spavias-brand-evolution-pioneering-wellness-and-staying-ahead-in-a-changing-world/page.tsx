@@ -61,6 +61,11 @@ export default function Page() {
             Spavia’s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World
           </h1>
 
+          <p className="text-sm text-gray-500 mb-6">
+            Published May 14, 2025
+          </p>
+
+
           <Image
                 src="/blog/blog11.jpg"
                 alt="Spavia’s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World"
