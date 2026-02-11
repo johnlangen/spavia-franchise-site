@@ -61,7 +61,15 @@ export default function BlogGrid() {
 const blogPosts = [
 
   {
-    title: "The Power of Spavia’s Brand Partners: Vendor Collaborations That Drive Revenue",
+    title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+    excerpt:
+      "Compare day spa and med spa franchise models side by side — investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
+    image: "/blog/blog20.jpg",
+    href: "/blog/2026/02/11/day-spa-vs-med-spa-franchise",
+  },
+
+  {
+    title: "The Power of Spavia's Brand Partners: Vendor Collaborations That Drive Revenue",
     excerpt:
       "Spavia’s premium vendor partnerships elevate the guest experience, strengthen franchise revenue, and support franchisees through training, buying power, and curated, high-performance products.",
     image: "/blog/blog19.png",
