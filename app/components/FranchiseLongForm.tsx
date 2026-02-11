@@ -100,10 +100,12 @@ export default function FranchiseLongForm() {
         {step === 1 && (
           <>
             <div>
-              <label className="form-label">First Name</label>
+              <label htmlFor="long-firstName" className="form-label">First Name</label>
               <input
+                id="long-firstName"
                 required
                 placeholder="John"
+                autoComplete="given-name"
                 className="form-input"
                 value={step1.firstName}
                 onChange={(e) =>
@@ -113,10 +115,12 @@ export default function FranchiseLongForm() {
             </div>
 
             <div>
-              <label className="form-label">Last Name</label>
+              <label htmlFor="long-lastName" className="form-label">Last Name</label>
               <input
+                id="long-lastName"
                 required
                 placeholder="Doe"
+                autoComplete="family-name"
                 className="form-input"
                 value={step1.lastName}
                 onChange={(e) =>
@@ -126,11 +130,13 @@ export default function FranchiseLongForm() {
             </div>
 
             <div className="md:col-span-2">
-              <label className="form-label">Email</label>
+              <label htmlFor="long-email" className="form-label">Email</label>
               <input
+                id="long-email"
                 type="email"
                 required
                 placeholder="john@example.com"
+                autoComplete="email"
                 className="form-input"
                 value={step1.email}
                 onChange={(e) =>
@@ -140,10 +146,12 @@ export default function FranchiseLongForm() {
             </div>
 
             <div>
-              <label className="form-label">Phone</label>
+              <label htmlFor="long-phone" className="form-label">Phone</label>
               <input
+                id="long-phone"
                 required
                 placeholder="555-123-4567"
+                autoComplete="tel"
                 className="form-input"
                 value={step1.phone}
                 onChange={(e) =>
@@ -153,10 +161,12 @@ export default function FranchiseLongForm() {
             </div>
 
             <div>
-              <label className="form-label">Zip Code</label>
+              <label htmlFor="long-zip" className="form-label">Zip Code</label>
               <input
+                id="long-zip"
                 required
                 placeholder="80202"
+                autoComplete="postal-code"
                 className="form-input"
                 value={step1.zip}
                 onChange={(e) =>
@@ -167,8 +177,9 @@ export default function FranchiseLongForm() {
 
             {/* ✅ STATE — EXPLICIT LIST (AS REQUESTED) */}
             <div>
-              <label className="form-label">State</label>
+              <label htmlFor="long-state" className="form-label">State</label>
               <select
+                id="long-state"
                 required
                 className="form-select"
                 value={step1.state}
@@ -176,6 +187,7 @@ export default function FranchiseLongForm() {
                   setStep1({ ...step1, state: e.target.value })
                 }
               >
+                <option value="">Select State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -230,8 +242,9 @@ export default function FranchiseLongForm() {
             </div>
 
             <div>
-              <label className="form-label">Primary Goal</label>
+              <label htmlFor="long-primaryGoal" className="form-label">Primary Goal</label>
               <select
+                id="long-primaryGoal"
                 required
                 className="form-select"
                 value={step1.primaryGoal}
@@ -267,8 +280,8 @@ export default function FranchiseLongForm() {
             ))}
 
             <div>
-              <label className="form-label">Liquid Assets</label>
-              <select name="liquidAssets" required className="form-select">
+              <label htmlFor="long-liquidAssets" className="form-label">Liquid Assets</label>
+              <select id="long-liquidAssets" name="liquidAssets" required className="form-select">
                 <option value="">Select range</option>
                 <option value="$0 - $200K">$0 – $200K</option>
                 <option value="$200K - $500K">$200K – $500K</option>
@@ -278,8 +291,8 @@ export default function FranchiseLongForm() {
             </div>
 
             <div>
-              <label className="form-label">Estimated Net Worth</label>
-              <select name="netWorth" required className="form-select">
+              <label htmlFor="long-netWorth" className="form-label">Estimated Net Worth</label>
+              <select id="long-netWorth" name="netWorth" required className="form-select">
                 <option value="">Select range</option>
                 <option value="$0 - $150K">$0 – $150K</option>
                 <option value="$150K - $350K">$150K – $350K</option>
@@ -290,8 +303,8 @@ export default function FranchiseLongForm() {
             </div>
 
             <div className="md:col-span-2">
-              <label className="form-label">Credit Score</label>
-              <select name="creditScore" required className="form-select">
+              <label htmlFor="long-creditScore" className="form-label">Credit Score</label>
+              <select id="long-creditScore" name="creditScore" required className="form-select">
                 <option value="">Select score</option>
                 <option value="<620">&lt;620</option>
                 <option value="620-679">620 – 679</option>

@@ -51,9 +51,52 @@ export const metadata: Metadata = {
   },
 };
 
+const homepageFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What kind of leadership experience does Spavia provide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our national team offers over 100 years of combined spa experience, providing expert insights and guidance for our franchise owners. This knowledge equips you with the tools to navigate the competitive spa landscape and build a successful franchise while delivering exceptional guest experiences.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can Spavia franchisees generate revenue?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia generates revenue through diverse streams, including spa treatments, beauty services, and retail products. Multiple revenue streams are vital for stability and growth, enabling your business to thrive while successfully meeting guest needs and maximizing earning potential. Revenue streams include massage, facials/skin care, waxing, lash & brow treatments, body treatments, retail, gift cards, and spa packages.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What makes Spavia franchisees so successful?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "At Spavia, our dedicated franchisees are the heart of our success, committed to providing exceptional wellness experiences while building thriving businesses. Their focus on guest care and community impact positions Spavia as a trusted leader in the spa industry. Join us to become part of a network of passionate entrepreneurs invested in your success.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is Spavia considered a leading spa franchise opportunity?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia has built its reputation by delivering resort-inspired wellness experiences in communities across the U.S. With over 120 years of combined leadership expertise, franchisees benefit from proven systems, strong guest loyalty, and a business model designed for stability and growth.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <ThemeProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
+      />
       <NavBar />
       <main className="flex flex-col">
         {/* HERO */}

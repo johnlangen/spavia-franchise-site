@@ -10,6 +10,7 @@ const navItems = [
   { label: "Our Franchisees", href: "/our-franchisees" },
   { label: "Your Spavia", href: "/your-spavia" },
   { label: "Steps to Ownership", href: "/steps-to-ownership" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function NavBar() {

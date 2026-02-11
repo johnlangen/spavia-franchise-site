@@ -159,9 +159,12 @@ export default function FranchiseIntroForm() {
                 transition={{ duration: 0.2 }}
                 className="space-y-3"
               >
+                <label htmlFor="intro-email" className="sr-only">Email address</label>
                 <input
+                  id="intro-email"
                   type="email"
                   placeholder="Email address"
+                  autoComplete="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -184,31 +187,51 @@ export default function FranchiseIntroForm() {
                 transition={{ duration: 0.2 }}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-3"
               >
-                <input
-                  name="firstName"
-                  placeholder="First name"
-                  required
-                  className={inputStyle}
-                />
-                <input
-                  name="lastName"
-                  placeholder="Last name"
-                  required
-                  className={inputStyle}
-                />
-                <input
-                  name="phone"
-                  placeholder="Phone"
-                  className={`${inputStyle} sm:col-span-2`}
-                />
-                <input
-                  name="zip"
-                  placeholder="ZIP code"
-                  required
-                  value={zip}
-                  onChange={(e) => setZip(e.target.value)}
-                  className={`${inputStyle} sm:col-span-2`}
-                />
+                <div>
+                  <label htmlFor="intro-firstName" className="sr-only">First name</label>
+                  <input
+                    id="intro-firstName"
+                    name="firstName"
+                    placeholder="First name"
+                    autoComplete="given-name"
+                    required
+                    className={inputStyle}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="intro-lastName" className="sr-only">Last name</label>
+                  <input
+                    id="intro-lastName"
+                    name="lastName"
+                    placeholder="Last name"
+                    autoComplete="family-name"
+                    required
+                    className={inputStyle}
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="intro-phone" className="sr-only">Phone</label>
+                  <input
+                    id="intro-phone"
+                    name="phone"
+                    placeholder="Phone"
+                    autoComplete="tel"
+                    className={inputStyle}
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="intro-zip" className="sr-only">ZIP code</label>
+                  <input
+                    id="intro-zip"
+                    name="zip"
+                    placeholder="ZIP code"
+                    autoComplete="postal-code"
+                    required
+                    value={zip}
+                    onChange={(e) => setZip(e.target.value)}
+                    className={inputStyle}
+                  />
+                </div>
 
                 <div className="sm:col-span-2">
                   {error && (
