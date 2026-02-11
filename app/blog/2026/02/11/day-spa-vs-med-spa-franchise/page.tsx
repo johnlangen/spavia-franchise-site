@@ -14,10 +14,95 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline:
+        "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+      description:
+        "Compare day spa and med spa franchise models side by side. Investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
+      image: "https://spaviafranchise.com/blog/blog20.jpg",
+      datePublished: "2026-02-11",
+      dateModified: "2026-02-11",
+      author: {
+        "@type": "Organization",
+        name: "Spavia Day Spa",
+        url: "https://spaviafranchise.com",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Spavia Franchise",
+        url: "https://spaviafranchise.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://spaviafranchise.com/spavia-logo.png",
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id":
+          "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How much does it cost to open a spa franchise?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Day spa franchises typically range from $295,000 to $800,000, while med spa franchises start at $550,000 and can exceed $1 million. Spavia's investment range of $496K–$796K is competitive for an affordable luxury day spa brand with proven unit economics.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is owning a day spa franchise profitable?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Profitability depends on brand, location, and membership penetration. Spavia's mature locations average over $1 million in annual revenue with strong EBITDA margins. The best-performing brands combine membership-based recurring revenue with diversified service offerings to deliver consistent returns.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need a medical license to own a spa franchise?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Not for a day spa franchise. Day spas require only licensed estheticians and massage therapists — no physician involvement. Med spa franchises require a licensed physician (MD or DO) serving as medical director in every state, and many states require physician ownership under Corporate Practice of Medicine laws.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take to open a spa franchise?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Day spa franchises typically take 6 to 12 months from signing to opening. Med spa franchises take 12 to 18 months due to additional licensing and clinical equipment procurement. Day spas also tend to reach profitability faster — typically within 1 to 2 years compared to 3 to 4 years for med spas.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the difference between a wellness franchise and a spa franchise?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A wellness franchise is a broader category that includes day spas, fitness studios, nutrition services, and holistic health brands. A spa franchise specifically focuses on treatments like massage, facials, and body treatments. Day spa franchises like Spavia sit at the intersection — delivering spa services within the growing wellness economy, now valued at $6.8 trillion globally.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
