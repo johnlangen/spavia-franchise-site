@@ -10,10 +10,42 @@ export const metadata: Metadata = {
     "Discover Spavia's industry-leading franchise training program. Get comprehensive support, expert coaching, and a proven system to launch and grow your successful Spavia spa. Learn more!",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Supporting Franchisees for Success: Inside Spavia\u2019s Comprehensive Training Program",
+  "description": "Discover Spavia\u2019s industry-leading franchise training program. Get comprehensive support, expert coaching, and a proven system to launch and grow your successful Spavia spa.",
+  "datePublished": "2025-02-10",
+  "dateModified": "2025-02-10",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/02/10/supporting-franchisees-for-success-inside-spavias-comprehensive-training-program"
+  },
+  "image": "https://spaviafranchise.com/blog/blog8.jpg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

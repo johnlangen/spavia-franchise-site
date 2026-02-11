@@ -30,16 +30,6 @@ export const metadata: Metadata = {
       "Discover why Spavia is the leading spa franchise. Redefining spa excellence with purpose, passion, and multiple revenue streams for proven success.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Why Spavia",
-      url: "https://spaviafranchise.com/why-spavia",
-      description:
-        "Discover why Spavia is the leading spa franchise. Redefining spa excellence with purpose, passion, and multiple revenue streams for proven success.",
-    }),
-  },
 };
 
 export default function Page() {

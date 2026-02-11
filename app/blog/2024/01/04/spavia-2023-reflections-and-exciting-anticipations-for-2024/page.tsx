@@ -9,10 +9,41 @@ export const metadata: Metadata = {
     "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
+  "description": "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
+  "datePublished": "2024-01-04",
+  "dateModified": "2024-01-04",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
+  }
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

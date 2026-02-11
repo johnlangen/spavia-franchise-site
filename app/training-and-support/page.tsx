@@ -30,16 +30,6 @@ export const metadata: Metadata = {
       "Spavia's franchising team offers top-notch training and support from spa industry experts who have over 100 years of spa and beauty experience.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Spa Franchise Training and Support",
-      url: "https://spaviafranchise.com/training-and-support",
-      description:
-        "Spavia's franchising team offers top-notch training and support from spa industry experts who have over 100 years of spa and beauty experience.",
-    }),
-  },
 };
 
 export default function Page() {

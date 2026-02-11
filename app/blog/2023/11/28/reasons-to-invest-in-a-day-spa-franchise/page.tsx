@@ -10,10 +10,41 @@ export const metadata: Metadata = {
     "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "3 Reasons to Invest in a Day Spa Franchise",
+  "description": "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
+  "datePublished": "2023-11-28",
+  "dateModified": "2023-11-28",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+  }
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

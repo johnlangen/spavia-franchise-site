@@ -30,16 +30,6 @@ export const metadata: Metadata = {
       "Meet Spavia spa franchise owners – passionate entrepreneurs building thriving communities and delivering exceptional wellness experiences nationwide.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Our Franchisees",
-      url: "https://spaviafranchise.com/our-franchisees",
-      description:
-        "Meet Spavia spa franchise owners – passionate entrepreneurs building thriving communities and delivering exceptional wellness experiences nationwide.",
-    }),
-  },
 };
 
 export default function Page() {

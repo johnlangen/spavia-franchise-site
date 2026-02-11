@@ -14,10 +14,42 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spavia Day Spa Named to 2025 Franchise Times Top 400",
+  "description": "As Spavia celebrates 20 years of affordable luxury, the brand has been named to the 2025 Franchise Times Top 400 list \u2014 marking a milestone in design-led growth and national expansion.",
+  "datePublished": "2025-11-20",
+  "dateModified": "2025-11-20",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/11/20/spavia-day-spa-named-to-2025-franchise-times-top-400-as-the-brand-celebrates-its-20th-year-with-design-led-growth-and-affordable-luxury-at-scale"
+  },
+  "image": "https://spaviafranchise.com/blog/blog15.jpeg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

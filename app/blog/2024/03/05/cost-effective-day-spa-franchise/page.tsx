@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise. Delve into the Spavia Advantage and capitalize on the booming wellness industry.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+  "description": "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise. Delve into the Spavia Advantage and capitalize on the booming wellness industry.",
+  "datePublished": "2024-03-05",
+  "dateModified": "2024-03-05",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2024/03/05/cost-effective-day-spa-franchise"
+  },
+  "image": "https://spaviafranchise.com/blog/blog4.jpg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

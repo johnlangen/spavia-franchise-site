@@ -39,6 +39,37 @@ export const metadata: Metadata = {
     "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
 };
 
+const globalJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://spaviafranchise.com/#organization",
+      name: "Spavia Day Spa",
+      url: "https://spaviafranchise.com",
+      description:
+        "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing spa industry.",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://spaviafranchise.com/spavia-logo.png",
+      },
+      sameAs: [
+        "https://www.facebook.com/SpaviaSpa",
+        "https://www.instagram.com/spavia",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://spaviafranchise.com/#website",
+      name: "Spavia Franchise",
+      url: "https://spaviafranchise.com",
+      publisher: {
+        "@id": "https://spaviafranchise.com/#organization",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -46,6 +77,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={recoleta.variable}>
+
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
+        />
+      </head>
 
       {/* ✅ GOOGLE ADS BASE TAG */}
       <Script

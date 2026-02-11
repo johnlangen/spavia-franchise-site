@@ -14,6 +14,34 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spavia Co-Founder Allison Langenderfer Named a \u201cWoman of Wonder\u201d for the Second Consecutive Year",
+  "description": "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been recognized by Franchise Dictionary Magazine as a \u2018Woman of Wonder\u2019 for 2025 \u2014 her second consecutive year receiving this honor.",
+  "datePublished": "2025-10-29",
+  "dateModified": "2025-10-29",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year"
+  },
+  "image": "https://spaviafranchise.com/blog/blog14.png"
+};
+
 export default function Page() {
   return (
     <>

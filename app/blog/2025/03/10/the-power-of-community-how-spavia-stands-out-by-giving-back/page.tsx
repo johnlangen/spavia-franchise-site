@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Discover how Spavia celebrates 20 years of excellence by giving back to the communities we call home. Learn about our #SpaviaCares initiative, fostering wellness beyond the spa and empowering franchisees to make a difference.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Power of Community: How Spavia Stands Out by Giving Back",
+  "description": "Discover how Spavia celebrates 20 years of excellence by giving back to the communities we call home. Learn about our #SpaviaCares initiative.",
+  "datePublished": "2025-03-10",
+  "dateModified": "2025-03-10",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
+  },
+  "image": "https://spaviafranchise.com/blog/blog9.jpg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

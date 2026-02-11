@@ -10,10 +10,42 @@ export const metadata: Metadata = {
     "Discover how Spavia continues to lead in wellness by blending innovation, personalization, and sustainability. Learn how Spavia’s evolving brand redefines relaxation and self-care in a changing world.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spavia\u2019s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World",
+  "description": "Discover how Spavia continues to lead in wellness by blending innovation, personalization, and sustainability. Learn how Spavia\u2019s evolving brand redefines relaxation and self-care in a changing world.",
+  "datePublished": "2025-05-14",
+  "dateModified": "2025-05-14",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+  },
+  "image": "https://spaviafranchise.com/blog/blog11.jpg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

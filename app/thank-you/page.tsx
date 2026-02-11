@@ -30,16 +30,6 @@ export const metadata: Metadata = {
       "Thank you for contacting Spavia. Our franchise development team will be in touch shortly.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Thank You | Spavia Franchise",
-      url: "https://spaviafranchise.com/thank-you",
-      description:
-        "Thank you for contacting Spavia. Our franchise development team will be in touch shortly.",
-    }),
-  },
 };
 
 export default function Page() {

@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Discover how Spavia franchisees are thriving with support, training, and a proven business model. Explore inspiring stories and why franchise owners succeed.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving",
+  "description": "Discover how Spavia franchisees are thriving with support, training, and a proven business model. Explore inspiring stories and why franchise owners succeed.",
+  "datePublished": "2025-06-24",
+  "dateModified": "2025-06-24",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving"
+  },
+  "image": "https://spaviafranchise.com/blog/blog12.png"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

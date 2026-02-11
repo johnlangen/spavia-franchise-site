@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spa Franchise Opportunities: Where Passion Meets Profit",
+  "description": "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+  "datePublished": "2024-04-16",
+  "dateModified": "2024-04-16",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities"
+  },
+  "image": "https://spaviafranchise.com/blog/blog2.jpg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

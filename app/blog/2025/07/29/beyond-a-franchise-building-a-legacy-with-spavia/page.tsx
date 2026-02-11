@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Discover how Spavia franchise owners create lasting family legacies through multi-unit ownership, community impact, and generational wealth building.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Beyond a Franchise: Building a Legacy with Spavia",
+  "description": "Discover how Spavia franchise owners create lasting family legacies through multi-unit ownership, community impact, and generational wealth building.",
+  "datePublished": "2025-07-29",
+  "dateModified": "2025-07-29",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia"
+  },
+  "image": "https://spaviafranchise.com/blog/blog13.png"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

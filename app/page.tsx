@@ -49,21 +49,6 @@ export const metadata: Metadata = {
       "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Spavia Franchise",
-      url: "https://spaviafranchise.com/",
-      description:
-        "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
-      logo: "https://spaviafranchise.com/logo.png",
-      sameAs: [
-        "https://www.facebook.com/SpaviaSpa",
-        "https://www.instagram.com/spavia",
-      ],
-    }),
-  },
 };
 
 export default function Home() {

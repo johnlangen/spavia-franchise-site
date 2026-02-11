@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business. Their support programs empower entrepreneurs in the growing wellness industry.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Power of a National Brand with a Local Focus",
+  "description": "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business.",
+  "datePublished": "2025-08-28",
+  "dateModified": "2025-08-28",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
+  },
+  "image": "https://spaviafranchise.com/blog/blog14.png"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

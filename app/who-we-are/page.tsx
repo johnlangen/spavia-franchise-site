@@ -30,20 +30,6 @@ export const metadata: Metadata = {
       "Meet the founders and leadership team behind Spavia Franchise. Discover our vision, passion, and commitment to redefining the spa industry.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Spavia Franchise",
-      url: "https://spaviafranchise.com/who-we-are",
-      description:
-        "Meet the founders and leadership team behind Spavia Franchise. Discover our vision, passion, and commitment to redefining the spa industry.",
-      sameAs: [
-        "https://www.facebook.com/SpaviaSpa",
-        "https://www.instagram.com/spavia",
-      ],
-    }),
-  },
 };
 
 export default function Page() {

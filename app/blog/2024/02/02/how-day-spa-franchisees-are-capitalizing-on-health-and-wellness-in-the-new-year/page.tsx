@@ -9,10 +9,41 @@ export const metadata: Metadata = {
     "As we step into the New Year, individuals embrace the 'Great Rejuvenation'—heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
+  "description": "As we step into the New Year, individuals embrace the \u2018Great Rejuvenation\u2019\u2014heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
+  "datePublished": "2024-02-02",
+  "dateModified": "2024-02-02",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
+  }
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}

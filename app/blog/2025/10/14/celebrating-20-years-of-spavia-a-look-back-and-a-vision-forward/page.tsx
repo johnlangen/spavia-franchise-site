@@ -14,6 +14,34 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward",
+  "description": "Celebrate 20 years of Spavia\u2019s mission of accessible luxury, personalized wellness, and community-focused spa experiences. Explore our founders\u2019 vision, key milestones, and the future of the Spavia brand.",
+  "datePublished": "2025-10-14",
+  "dateModified": "2025-10-14",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
+  },
+  "image": "https://spaviafranchise.com/blog/blog15.png"
+};
+
 export default function Page() {
   return (
     <>

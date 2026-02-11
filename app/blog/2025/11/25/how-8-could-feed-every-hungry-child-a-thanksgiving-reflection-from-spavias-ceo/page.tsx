@@ -10,6 +10,34 @@ export const metadata: Metadata = {
     "A Thanksgiving message from Spavia’s CEO reflecting on generosity, impact, and how targeted giving can feed every hungry child in America.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How $8 Could Feed Every Hungry Child: A Thanksgiving Reflection From Spavia\u2019s CEO",
+  "description": "A Thanksgiving message from Spavia\u2019s CEO reflecting on generosity, impact, and how targeted giving can feed every hungry child in America.",
+  "datePublished": "2025-11-25",
+  "dateModified": "2025-11-25",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo"
+  },
+  "image": "https://spaviafranchise.com/blog/blog18.png"
+};
+
 export default function Page() {
   return (
     <>

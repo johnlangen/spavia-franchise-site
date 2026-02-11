@@ -9,10 +9,42 @@ export const metadata: Metadata = {
     "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations",
+  "description": "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
+  "datePublished": "2024-12-03",
+  "dateModified": "2024-12-03",
+  "author": {
+    "@type": "Organization",
+    "name": "Spavia Day Spa",
+    "url": "https://spaviafranchise.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spavia Franchise",
+    "url": "https://spaviafranchise.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://spaviafranchise.com/spavia-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://spaviafranchise.com/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations"
+  },
+  "image": "https://spaviafranchise.com/blog/blog5.jpeg"
+};
+
 export default function Page() {
   return (
     <>
       <NavBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="bg-white text-gray-900 py-20 px-6">
         <article className="max-w-3xl mx-auto">
           {/* Back Button */}
