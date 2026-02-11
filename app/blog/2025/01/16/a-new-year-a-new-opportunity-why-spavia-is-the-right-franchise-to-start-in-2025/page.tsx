@@ -181,7 +181,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/03/05/cost-effective-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                A Cost-Effective Day Spa Franchise: The Spavia Advantage
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/04/16/spa-franchise-opportunities"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spa Franchise Opportunities: Where Passion Meets Profit
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "The Power of Franchisee Success Stories | Spavia Franchise Blog",
@@ -66,11 +67,13 @@ export default function Page() {
             exemplify how wellness and business can thrive together.
           </p>
 
-          <img
-            src="/blog/blog12.png"
-            alt="A group of Spavia franchisees outside a franchise location"
-            className="w-full h-auto rounded shadow mb-10"
-          />
+          <Image
+                src="/blog/blog12.png"
+                alt="A group of Spavia franchisees outside a franchise location"
+                width={1200}
+                height={675}
+                className="w-full rounded shadow mb-10"
+              />
 
           <h2 className="text-2xl font-semibold mb-3">Celebrating Franchisee Success</h2>
           <p className="mb-6 leading-relaxed">
@@ -172,7 +175,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
+                className="text-[#C2A878] hover:underline"
+              >
+                How Day Spa Franchisees Are Capitalizing on Wellness
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia"
+                className="text-[#C2A878] hover:underline"
+              >
+                Beyond a Franchise: Building a Legacy with Spavia
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

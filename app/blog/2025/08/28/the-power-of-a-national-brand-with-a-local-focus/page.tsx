@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "The Power of a National Brand with a Local Focus | Spavia Franchise Blog",
@@ -59,11 +60,13 @@ export default function Page() {
             The Power of a National Brand with a Local Focus
           </h1>
 
-          <img
-            src="/blog/blog14.png"
-            alt="Spavia national brand with local focus"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog14.png"
+                alt="Spavia national brand with local focus"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <p className="text-lg mb-8 leading-relaxed">
             Spavia offers a unique franchise opportunity that blends the strength of a
@@ -140,7 +143,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/03/05/cost-effective-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                A Cost-Effective Day Spa Franchise: The Spavia Advantage
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/04/16/spa-franchise-opportunities"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spa Franchise Opportunities: Where Passion Meets Profit
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

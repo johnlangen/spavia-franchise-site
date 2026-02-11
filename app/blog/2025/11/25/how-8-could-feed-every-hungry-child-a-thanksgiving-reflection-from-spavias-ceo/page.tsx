@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -58,11 +59,13 @@ export default function Page() {
             Spavia’s CEO
           </h1>
 
-          <img
-            src="/blog/blog18.png"
-            alt="Thanksgiving reflection and child hunger impact"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog18.png"
+                alt="Thanksgiving reflection and child hunger impact"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <p className="text-lg mb-6 leading-relaxed">
             As we gather in gratitude this Thanksgiving season, I’ve been reflecting
@@ -228,7 +231,39 @@ export default function Page() {
           </p>
 
           {/* Bottom Back Button */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
+                className="text-[#C2A878] hover:underline"
+              >
+                The Power of Community: How Spavia Gives Back
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
+                className="text-[#C2A878] hover:underline"
+              >
+                The Power of a National Brand with a Local Focus
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia Co-Founder Named “Woman of Wonder”
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

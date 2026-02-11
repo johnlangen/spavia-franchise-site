@@ -152,7 +152,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2025/04/11/spavias-guest-care-in-the-evolving-wellness--spa-franchise-industry"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia’s Guest Care in the Evolving Wellness Industry
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia’s Brand Evolution: Pioneering Wellness
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving"
+                className="text-[#C2A878] hover:underline"
+              >
+                The Power of Franchisee Success Stories
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

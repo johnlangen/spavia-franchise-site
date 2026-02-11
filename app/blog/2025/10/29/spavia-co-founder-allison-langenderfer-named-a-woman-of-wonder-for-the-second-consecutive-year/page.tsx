@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -62,11 +63,13 @@ export default function Page() {
             the Second Consecutive Year
           </h1>
 
-          <img
-            src="/blog/blog14.png" // replace with new image when ready
-            alt="Allison Langenderfer Woman of Wonder"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog14.png"
+                alt="Allison Langenderfer Woman of Wonder"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <h2 className="text-xl font-semibold mb-4 text-gray-800">
             Franchise Dictionary Magazine Recognizes Spavia President’s
@@ -167,7 +170,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2025/11/20/spavia-day-spa-named-to-2025-franchise-times-top-400-as-the-brand-celebrates-its-20th-year-with-design-led-growth-and-affordable-luxury-at-scale"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia Named to 2025 Franchise Times Top 400
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo"
+                className="text-[#C2A878] hover:underline"
+              >
+                How $8 Could Feed Every Hungry Child: A Thanksgiving Reflection
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

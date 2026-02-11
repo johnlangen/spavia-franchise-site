@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 
@@ -59,11 +60,13 @@ export default function Page() {
             A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations
           </h1>
 
-          <img
-            src="/blog/blog5.jpeg"
-            alt="Guide to Choosing the Best Spa Franchise"
-            className="w-full rounded mb-8"
-          />
+          <Image
+                src="/blog/blog5.jpeg"
+                alt="Guide to Choosing the Best Spa Franchise"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <p className="mb-6 leading-relaxed">
             Are you looking for the best spa franchise to invest in? Entering the spa industry as a franchisee offers a promising opportunity to capitalize on the growing wellness industry. However, selecting the right franchise can be a complex process, involving critical decisions and strategic planning. This guide simplifies the process by outlining key factors and considerations to evaluate when choosing a spa franchise.
@@ -126,7 +129,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                Day Spa vs. Med Spa Franchise: Which Is Right for You?
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/03/05/cost-effective-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                A Cost-Effective Day Spa Franchise: The Spavia Advantage
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

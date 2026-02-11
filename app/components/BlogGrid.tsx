@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const cardVariants: Variants = {
@@ -33,11 +34,13 @@ export default function BlogGrid() {
           className="group block h-full border rounded-xl shadow hover:shadow-xl overflow-hidden transition-all duration-300 hover:border-[#C2A878] flex flex-col"
         >
 
-            <div className="overflow-hidden">
-              <img
+            <div className="overflow-hidden relative h-56">
+              <Image
                 src={post.image}
                 alt={post.title}
-                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="p-6 flex-1 flex flex-col">

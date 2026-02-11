@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 
@@ -60,11 +61,13 @@ export default function Page() {
             Spavia’s Guest Care in the Evolving Wellness & Spa Franchise Industry
           </h1>
 
-          <img
-            src="/blog/blog10.jpeg"
-            alt="Spavia’s Guest Care in the Evolving Wellness & Spa Franchise Industry"
-            className="w-full rounded mb-8"
-          />
+          <Image
+                src="/blog/blog10.jpeg"
+                alt="Spavia’s Guest Care in the Evolving Wellness & Spa Franchise Industry"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <h2 className="text-2xl font-semibold mb-3">
             Wellness Industry Trends: Personalization and the Rise of Self-Care
@@ -203,7 +206,39 @@ export default function Page() {
           </p>
 
           {/* Back Button at Bottom */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
+                className="text-[#C2A878] hover:underline"
+              >
+                How Day Spa Franchisees Are Capitalizing on Wellness
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia’s Brand Evolution: Pioneering Wellness
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

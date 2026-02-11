@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -61,11 +62,13 @@ export default function Page() {
             Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
           </h1>
 
-          <img
-            src="/blog/blog15.png"
-            alt="Celebrating 20 Years of Spavia"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog15.png"
+                alt="Celebrating 20 Years of Spavia"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <p className="text-lg mb-8 leading-relaxed">
             Twenty years ago, a vision was born—a vision to create an affordable
@@ -211,7 +214,39 @@ export default function Page() {
           </p>
 
           {/* Bottom Back Button */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia: 2023 Reflections and Anticipations for 2024
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
+                className="text-[#C2A878] hover:underline"
+              >
+                The Power of Community: How Spavia Gives Back
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia’s Brand Evolution: Pioneering Wellness
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

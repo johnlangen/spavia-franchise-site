@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -118,11 +119,13 @@ export default function Page() {
             Day Spa vs. Med Spa Franchise: Which Is Right for You?
           </h1>
 
-          <img
-            src="/blog/blog20.jpg"
-            alt="Day spa franchise vs med spa franchise comparison"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog20.jpg"
+                alt="Day spa franchise vs med spa franchise comparison"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           {/* ── Intro ── */}
           <p className="text-lg mb-6 leading-relaxed">
@@ -805,7 +808,39 @@ export default function Page() {
           </p>
 
           {/* Bottom Back Button */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations"
+                className="text-[#C2A878] hover:underline"
+              >
+                A Guide to Choosing the Best Spa Franchise
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                3 Reasons to Invest in a Day Spa Franchise
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2024/03/05/cost-effective-day-spa-franchise"
+                className="text-[#C2A878] hover:underline"
+              >
+                A Cost-Effective Day Spa Franchise: The Spavia Advantage
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

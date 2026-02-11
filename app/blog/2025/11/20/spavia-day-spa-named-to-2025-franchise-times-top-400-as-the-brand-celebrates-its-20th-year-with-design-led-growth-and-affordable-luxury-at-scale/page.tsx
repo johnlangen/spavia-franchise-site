@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
@@ -64,11 +65,13 @@ export default function Page() {
             Spavia Day Spa Named to 2025 Franchise Times Top 400 as the Brand Celebrates Its 20th Year with Design-Led Growth and “Affordable Luxury” at Scale
           </h1>
 
-          <img
-            src="/blog/blog15.jpeg"
-            alt="Spavia recognized in Franchise Times Top 400"
-            className="w-full h-auto rounded mb-8"
-          />
+          <Image
+                src="/blog/blog15.jpeg"
+                alt="Spavia recognized in Franchise Times Top 400"
+                width={1200}
+                height={675}
+                className="w-full rounded mb-8"
+              />
 
           <p className="text-lg mb-8 leading-relaxed">
             <strong>DENVER, Colo.</strong> – Spavia Day Spa has been recognized by{" "}
@@ -164,7 +167,39 @@ export default function Page() {
           </p>
 
           {/* Back Button */}
-          <div className="mt-12">
+          
+          {/* Related Posts */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
+            <ul className="space-y-3">
+            <li>
+              <Link
+                href="/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia: 2023 Reflections and Anticipations for 2024
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+                className="text-[#C2A878] hover:underline"
+              >
+                Spavia’s Brand Evolution: Pioneering Wellness
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
+                className="text-[#C2A878] hover:underline"
+              >
+                Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
+              </Link>
+            </li>
+            </ul>
+          </div>
+
+<div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"
