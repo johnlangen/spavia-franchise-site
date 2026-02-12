@@ -21,16 +21,16 @@ import FranchiseIntroForm from "./components/FranchiseIntroForm";
 
 
 export const metadata: Metadata = {
-  title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
+  title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
   description:
-    "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+    "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
   alternates: {
     canonical: "https://spaviafranchise.com/",
   },
   openGraph: {
-    title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
+    title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
     description:
-      "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
     url: "https://spaviafranchise.com/",
     type: "website",
     images: [
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise | Spavia Day Spa | Luxury Spa Franchises",
+    title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
     description:
-      "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing $19 billion spa industry.",
+      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
@@ -85,6 +85,14 @@ const homepageFaqJsonLd = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Spavia has built its reputation by delivering resort-inspired wellness experiences in communities across the U.S. With over 120 years of combined leadership expertise, franchisees benefit from proven systems, strong guest loyalty, and a business model designed for stability and growth.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does it cost to open a Spavia day spa franchise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The initial investment to open a Spavia day spa franchise ranges from $496K to $796K, which includes build-out, equipment, and initial operating capital. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs and expected returns.",
       },
     },
   ],
@@ -149,7 +157,7 @@ export default function Home() {
         {/* CTA SECTION */}
         <Section className="bg-black">
           <h2 className="text-3xl font-bold text-center mb-6 text-white">
-            Ready to Start Your Journey?
+            Ready to Own a Spa Franchise?
           </h2>
           <div className="flex justify-center">
             <Link href="/get-started">

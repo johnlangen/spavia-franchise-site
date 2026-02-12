@@ -48,7 +48,7 @@ export default function ProcessSection() {
       <div className="max-w-4xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-          The Process
+          The Franchise Ownership Process
         </h2>
 
         {/* Timeline */}

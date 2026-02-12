@@ -61,8 +61,8 @@ export default function Hero() {
             md:text-[42px]
           "
         >
-          <span className="block">Own a Part of the Global Wellness</span>
-          <span className="block">Economy</span>
+          <span className="block">Own a Day Spa Franchise</span>
+          <span className="block">in the Wellness Industry</span>
         </motion.h1>
 
         {/* Subhead */}
