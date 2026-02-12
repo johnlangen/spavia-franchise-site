@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/franchise-opportunities/tennessee`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-opportunities/north-carolina`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-opportunities/georgia`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/franchise-opportunities`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/franchise-cost`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/why-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/your-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/steps-to-ownership`, changeFrequency: "monthly", priority: 0.8 },
@@ -24,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.8 },
 
     // ── Blog Posts ──
+    {
+      url: `${BASE}/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise`,
+      lastModified: new Date("2026-02-12"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     {
       url: `${BASE}/blog/2026/02/11/day-spa-vs-med-spa-franchise`,
       lastModified: new Date("2026-02-11"),

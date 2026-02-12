@@ -64,6 +64,14 @@ export default function BlogGrid() {
 const blogPosts = [
 
   {
+    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    excerpt:
+      "Compare Spavia and Woodhouse spa franchise models side by side — investment costs, revenue, franchise fees, training, and which spa franchise is right for you.",
+    image: "/blog/blog20.jpg",
+    href: "/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
+  },
+
+  {
     title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
     excerpt:
       "Compare day spa and med spa franchise models side by side — investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
