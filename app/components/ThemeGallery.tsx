@@ -1,12 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
-import { themes, defaultImage } from "../themeConfig";
+import { themes, defaultImage, ThemeKey } from "../themeConfig";
 
 export default function ThemeGallery() {
   const { theme } = useTheme();
+
+  // Preload all theme images in the background so switching is instant
+  useEffect(() => {
+    const allImages = Object.values(themes).flatMap((t) => t.images);
+    allImages.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
 
   // If no theme selected → show single default image
   if (!theme) {
