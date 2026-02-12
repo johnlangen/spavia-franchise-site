@@ -6,6 +6,12 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 interface FranchiseIntroFormProps {
   leadSource?: string;
 }
@@ -67,6 +73,14 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
       });
 
       if (res.ok) {
+        // Fire Google Ads conversion
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-944657062/OhOICIf4y_cbEKalucID",
+            value: 1.0,
+            currency: "USD",
+          });
+        }
         router.push("/thank-you");
         return;
       }

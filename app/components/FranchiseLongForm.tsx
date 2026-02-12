@@ -4,6 +4,12 @@ import { useState } from "react";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 interface FranchiseLongFormProps {
   leadSource?: string;
 }
@@ -75,6 +81,14 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
       });
 
       if (res.ok) {
+        // Fire Google Ads conversion
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-944657062/OhOICIf4y_cbEKalucID",
+            value: 1.0,
+            currency: "USD",
+          });
+        }
         router.push("/thank-you");
         return;
       }
