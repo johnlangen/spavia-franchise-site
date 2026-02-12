@@ -12,6 +12,7 @@ import CallToAction from "./CallToAction";
 import Section from "./Section";
 import { ThemeProvider } from "./ThemeProvider";
 import { Check, MapPin, TrendingUp, Users, Sun } from "lucide-react";
+import Link from "next/link";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -244,6 +245,39 @@ export default function NorthCarolinaContent() {
 
         {/* ═══════ AWARDS (reused) ═══════ */}
         <AwardsSection />
+
+
+        {/* ═══════ EXPLORE MORE ═══════ */}
+        <section className="bg-white py-16 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
+              Continue Exploring
+            </h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <Link
+                href="/franchise-cost"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">Franchise Cost</p>
+                <p className="text-sm text-gray-600">Full investment breakdown</p>
+              </Link>
+              <Link
+                href="/franchise-opportunities"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">All Markets</p>
+                <p className="text-sm text-gray-600">See all available states</p>
+              </Link>
+              <Link
+                href="/why-spavia"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">Why Spavia</p>
+                <p className="text-sm text-gray-600">What sets us apart</p>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* ═══════ LONG FORM ═══════ */}
         <Section id="north-carolina-form" className="bg-white py-20">

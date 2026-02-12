@@ -154,6 +154,38 @@ export default function Home() {
         {/* FAQ */}
         <FAQ />
 
+        {/* EXPLORE LINKS */}
+        <Section className="bg-gray-50 py-16">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
+              Explore More
+            </h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <Link
+                href="/franchise-cost"
+                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">Franchise Cost</p>
+                <p className="text-sm text-gray-600">Full investment breakdown</p>
+              </Link>
+              <Link
+                href="/franchise-opportunities"
+                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">Available Markets</p>
+                <p className="text-sm text-gray-600">Find territories by state</p>
+              </Link>
+              <Link
+                href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
+                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-gray-900 mb-1">Spavia vs. Woodhouse</p>
+                <p className="text-sm text-gray-600">Side-by-side comparison</p>
+              </Link>
+            </div>
+          </div>
+        </Section>
+
         {/* CTA SECTION */}
         <Section className="bg-black">
           <h2 className="text-3xl font-bold text-center mb-6 text-white">

@@ -38,11 +38,15 @@ export default function Footer() {
 
         {/* Middle - Navigation */}
         <div className="flex flex-col items-center space-y-2 text-sm uppercase tracking-wide">
-        <Link href="/blog" className="hover:underline">
-        BLOG
-        </Link>
-
-
+          <Link href="/franchise-opportunities" className="hover:text-white">
+            Franchise Opportunities
+          </Link>
+          <Link href="/franchise-cost" className="hover:text-white">
+            Franchise Cost
+          </Link>
+          <Link href="/blog" className="hover:text-white">
+            Blog
+          </Link>
           <Link href="/get-started" className="hover:text-white">
             Request Info
           </Link>

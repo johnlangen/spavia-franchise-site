@@ -345,6 +345,45 @@ export default function FranchiseCostContent() {
           </div>
         </section>
 
+        {/* ═══════ RELATED LINKS ═══════ */}
+        <section className="bg-white py-16 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
+              Continue Exploring
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/franchise-opportunities"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+              >
+                <p className="font-bold text-gray-900 mb-1">Available Territories</p>
+                <p className="text-sm text-gray-600">See franchise opportunities by state</p>
+              </Link>
+              <Link
+                href="/why-spavia"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+              >
+                <p className="font-bold text-gray-900 mb-1">Why Spavia</p>
+                <p className="text-sm text-gray-600">Discover what sets Spavia apart</p>
+              </Link>
+              <Link
+                href="/steps-to-ownership"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+              >
+                <p className="font-bold text-gray-900 mb-1">Steps to Ownership</p>
+                <p className="text-sm text-gray-600">Your path from inquiry to grand opening</p>
+              </Link>
+              <Link
+                href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
+                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+              >
+                <p className="font-bold text-gray-900 mb-1">Spavia vs. Woodhouse</p>
+                <p className="text-sm text-gray-600">Side-by-side franchise comparison</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════ LONG FORM ═══════ */}
         <Section className="bg-white py-20">
           <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
