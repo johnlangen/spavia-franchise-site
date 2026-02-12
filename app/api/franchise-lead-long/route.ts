@@ -78,6 +78,54 @@ export async function POST(req: Request) {
       // Don't fail the whole submission for a list subscribe issue
     }
 
+    // 3. Tag contact for campaign tracking (if leadSource provided)
+    if (body.leadSource && contactId) {
+      try {
+        const tagName = body.leadSource.split("_")[0] + "_campaign"; // e.g. "arizona_campaign"
+        // Search for existing tag
+        const tagSearchRes = await fetch(
+          `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/tags?search=${encodeURIComponent(tagName)}`,
+          { headers: { "Api-Token": process.env.ACTIVE_CAMPAIGN_API_KEY! } }
+        );
+        const tagSearchData = await tagSearchRes.json();
+        let tagId = tagSearchData.tags?.find((t: { tag: string }) => t.tag === tagName)?.id;
+
+        // Create tag if it doesn't exist
+        if (!tagId) {
+          const createTagRes = await fetch(
+            `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/tags`,
+            {
+              method: "POST",
+              headers: {
+                "Api-Token": process.env.ACTIVE_CAMPAIGN_API_KEY!,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ tag: { tag: tagName, tagType: "contact" } }),
+            }
+          );
+          const createTagData = await createTagRes.json();
+          tagId = createTagData.tag?.id;
+        }
+
+        // Apply tag to contact
+        if (tagId) {
+          await fetch(
+            `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contactTags`,
+            {
+              method: "POST",
+              headers: {
+                "Api-Token": process.env.ACTIVE_CAMPAIGN_API_KEY!,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } }),
+            }
+          );
+        }
+      } catch (err) {
+        console.error("AC tag failed (non-fatal):", err);
+      }
+    }
+
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Franchise lead long error:", err);

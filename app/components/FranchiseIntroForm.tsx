@@ -6,7 +6,11 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 
-export default function FranchiseIntroForm() {
+interface FranchiseIntroFormProps {
+  leadSource?: string;
+}
+
+export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormProps) {
   const router = useRouter();
 
   const [step, setStep] = useState<1 | 2>(1);
@@ -23,7 +27,7 @@ export default function FranchiseIntroForm() {
       await fetch("/api/franchise-lead-step1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, leadSource }),
       });
     } catch (err) {
       console.error("Step 1 DB save failed", err);
@@ -53,13 +57,13 @@ export default function FranchiseIntroForm() {
       fetch("/api/franchise-lead-short-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, leadSource }),
       }).catch(() => {});
 
       const res = await fetch("/api/franchise-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, leadSource }),
       });
 
       if (res.ok) {

@@ -16,6 +16,7 @@ export async function POST(req: Request) {
       liquidAssets,
       netWorth,
       creditScore,
+      leadSource,
     } = body;
 
     if (!email) {
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
           liquid_assets: liquidAssets,
           net_worth: netWorth,
           credit_score: creditScore,
-          source: "long_form",
+          source: leadSource || "long_form",
           stage: "long_completed",
         },
         { onConflict: "email" }

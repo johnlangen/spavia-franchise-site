@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabaseServer";
 
 export async function POST(req: Request) {
   try {
-    const { email, zip, firstName, lastName, phone } = await req.json();
+    const { email, zip, firstName, lastName, phone, leadSource } = await req.json();
 
     if (!email) {
       return NextResponse.json({ error: "Missing email" }, { status: 400 });
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
           first_name: firstName || null,
           last_name: lastName || null,
           phone: phone || null,
-          source: "short_full",
+          source: leadSource || "short_full",
           stage: "hero_completed",
         },
         { onConflict: "email" }

@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Core Pages ──
     { url: `${BASE}/`, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/get-started`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/franchise-opportunities/arizona`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/why-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/your-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/steps-to-ownership`, changeFrequency: "monthly", priority: 0.8 },

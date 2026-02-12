@@ -13,6 +13,7 @@ export async function POST(req: Request) {
       zip,
       state,
       primaryGoal,
+      leadSource,
     } = body;
 
     if (!email) {
@@ -33,7 +34,7 @@ export async function POST(req: Request) {
           zip,
           state,
           primary_goal: primaryGoal,
-          source: "long_form",
+          source: leadSource || "long_form",
           stage: "long_started",
         },
         { onConflict: "email" }

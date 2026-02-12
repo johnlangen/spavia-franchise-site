@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabaseServer";
 
 export async function POST(req: Request) {
   try {
-    const { email } = await req.json();
+    const { email, leadSource } = await req.json();
 
     if (!email) {
       return NextResponse.json({ error: "Email required" }, { status: 400 });
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       .upsert(
         {
           email,
-          source: "short_partial",
+          source: leadSource || "short_partial",
           stage: "hero_step1",
         },
         { onConflict: "email" }

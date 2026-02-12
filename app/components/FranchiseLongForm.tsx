@@ -4,7 +4,11 @@ import { useState } from "react";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
-export default function FranchiseLongForm() {
+interface FranchiseLongFormProps {
+  leadSource?: string;
+}
+
+export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [step, setStep] = useState<1 | 2>(1);
@@ -28,7 +32,7 @@ export default function FranchiseLongForm() {
       await fetch("/api/franchise-lead-long-step1-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(step1),
+        body: JSON.stringify({ ...step1, leadSource }),
       });
     } catch {}
 
@@ -61,13 +65,13 @@ export default function FranchiseLongForm() {
       fetch("/api/franchise-lead-long-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, leadSource }),
       }).catch(() => {});
 
       const res = await fetch("/api/franchise-lead-long", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, leadSource }),
       });
 
       if (res.ok) {
