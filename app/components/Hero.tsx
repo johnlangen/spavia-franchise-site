@@ -79,8 +79,9 @@ export default function Hero() {
             mb-8
           "
         >
-          Join 60+ Spavia franchisees bringing affordable luxury wellness to their
-          communities — with many locations exceeding $1M in annual sales.*
+          Join 60+ Spavia day spa franchise owners bringing affordable luxury
+          wellness to their communities — with many locations exceeding $1M in
+          annual sales.*
         </motion.p>
 
         {/* ---------- METRICS ---------- */}
