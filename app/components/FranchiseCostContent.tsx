@@ -6,8 +6,6 @@ import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import FranchiseIntroForm from "./FranchiseIntroForm";
 import FranchiseLongForm from "./FranchiseLongForm";
-import CallToAction from "./CallToAction";
-import Section from "./Section";
 import { ThemeProvider } from "./ThemeProvider";
 import { DollarSign, TrendingUp, Shield, Clock, Check } from "lucide-react";
 import Link from "next/link";
@@ -45,7 +43,7 @@ const jsonLd = {
       name: "Is SBA financing available for a Spavia franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Spavia is listed on the SBA Franchise Directory, making franchisees eligible for SBA-backed loans. Many franchise owners use SBA 7(a) loans, which offer favorable terms including lower down payments and longer repayment periods.",
+        text: "Spavia does not offer in-house financing, but the brand is listed on the SBA Franchise Directory. This means franchisees can apply for SBA-backed loans through third-party lenders, including SBA 7(a) loans with favorable terms such as lower down payments and longer repayment periods.",
       },
     },
     {
@@ -185,10 +183,10 @@ export default function FranchiseCostContent() {
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
                 <Shield className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
-                <p className="text-2xl font-bold text-gray-900">SBA Eligible</p>
-                <p className="text-sm text-gray-600 mt-1">Financing Available</p>
+                <p className="text-2xl font-bold text-gray-900">SBA Listed</p>
+                <p className="text-sm text-gray-600 mt-1">Third-Party Financing</p>
                 <p className="text-xs text-gray-500 mt-2">
-                  Listed on the SBA Franchise Directory for favorable loan terms
+                  On the SBA Franchise Directory — eligible for SBA-backed loans through third-party lenders
                 </p>
               </div>
             </div>
@@ -302,10 +300,10 @@ export default function FranchiseCostContent() {
                   Can I finance a Spavia franchise?
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Yes. Spavia is listed on the SBA Franchise Directory, so franchisees
-                  can apply for SBA 7(a) loans with favorable terms. Many franchise
-                  owners combine SBA financing with personal capital. Our team can
-                  connect you with lenders experienced in franchise financing.
+                  Spavia does not offer in-house financing, but the brand is listed on
+                  the SBA Franchise Directory. This means you can apply for SBA 7(a)
+                  loans through third-party lenders with favorable terms. Many franchise
+                  owners combine SBA financing with personal capital.
                 </p>
               </div>
               <div>
@@ -385,7 +383,7 @@ export default function FranchiseCostContent() {
         </section>
 
         {/* ═══════ LONG FORM ═══════ */}
-        <Section className="bg-white py-20">
+        <section className="bg-gray-50 py-20 px-6">
           <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
             <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
               Ready to Learn More?
@@ -396,8 +394,7 @@ export default function FranchiseCostContent() {
             </p>
             <FranchiseLongForm />
           </div>
-          <CallToAction />
-        </Section>
+        </section>
 
         <Footer />
       </main>

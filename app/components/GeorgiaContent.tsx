@@ -8,8 +8,6 @@ import FranchiseIntroForm from "./FranchiseIntroForm";
 import FranchiseLongForm from "./FranchiseLongForm";
 import AwardsSection from "./AwardsSection";
 import ProofSection from "./ProofSection";
-import CallToAction from "./CallToAction";
-import Section from "./Section";
 import { ThemeProvider } from "./ThemeProvider";
 import { Check, MapPin, TrendingUp, Users, Sun } from "lucide-react";
 import Link from "next/link";
@@ -79,6 +77,19 @@ export default function GeorgiaContent() {
 
         {/* ═══════ HERO ═══════ */}
         <section className="relative overflow-hidden pt-28 pb-20 text-center text-white px-4 sm:px-6 bg-gradient-to-br from-[#1a2e2e] via-[#163e3e] to-[#0f4040]">
+          {/* Background video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero-bg.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50" />
+
           <div className="relative z-10 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -280,7 +291,7 @@ export default function GeorgiaContent() {
         </section>
 
         {/* ═══════ LONG FORM ═══════ */}
-        <Section id="georgia-form" className="bg-white py-20">
+        <section id="georgia-form" className="bg-gray-50 py-20 px-6">
           <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
             <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
               Request Georgia Franchise Information
@@ -290,23 +301,6 @@ export default function GeorgiaContent() {
             </p>
             <FranchiseLongForm leadSource="georgia_long" />
           </div>
-          <CallToAction />
-        </Section>
-
-        {/* ═══════ FINAL CTA ═══════ */}
-        <section className="bg-black py-16 text-center px-6">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Bring Spavia to Georgia?
-          </h2>
-          <p className="text-gray-300 mb-8 max-w-lg mx-auto">
-            Territories are limited. Secure your market in Atlanta, Savannah, or one of the other available Georgia locations today.
-          </p>
-          <a
-            href="#georgia-form"
-            className="inline-block bg-[#C2A878] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#b09466] transition text-lg"
-          >
-            Request Franchise Info
-          </a>
         </section>
 
         <Footer />

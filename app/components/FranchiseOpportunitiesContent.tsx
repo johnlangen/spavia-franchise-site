@@ -5,8 +5,6 @@ import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import FranchiseIntroForm from "./FranchiseIntroForm";
-import CallToAction from "./CallToAction";
-import Section from "./Section";
 import { ThemeProvider } from "./ThemeProvider";
 import { MapPin, TrendingUp, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
@@ -135,7 +133,7 @@ export default function FranchiseOpportunitiesContent() {
         <section className="bg-gray-50 py-20 px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">
-              Explore Available Markets
+              Explore Hot Markets
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
               Click on a state to see available territories, market data, and
@@ -162,14 +160,17 @@ export default function FranchiseOpportunitiesContent() {
                 </Link>
               ))}
 
-              {/* Coming Soon card */}
-              <div className="bg-gray-100 rounded-xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center text-center">
-                <MapPin className="w-5 h-5 text-gray-400 mb-2" />
-                <p className="font-semibold text-gray-500">More States Coming Soon</p>
+              {/* Other markets card */}
+              <Link
+                href="/get-started"
+                className="group bg-gray-100 rounded-xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center text-center hover:border-[#C2A878] transition-all"
+              >
+                <MapPin className="w-5 h-5 text-gray-400 group-hover:text-[#C2A878] mb-2 transition-colors" />
+                <p className="font-semibold text-gray-500 group-hover:text-[#C2A878] transition-colors">Don&apos;t See Your State?</p>
                 <p className="text-sm text-gray-400 mt-1">
-                  Request info to learn about upcoming markets
+                  We have many more markets available — request info to learn more
                 </p>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -177,26 +178,6 @@ export default function FranchiseOpportunitiesContent() {
         {/* ═══════ SHORT FORM ═══════ */}
         <FranchiseIntroForm />
 
-        {/* ═══════ FINAL CTA ═══════ */}
-        <Section className="bg-black">
-          <h2 className="text-3xl font-bold text-center mb-4 text-white">
-            Don&apos;t See Your State?
-          </h2>
-          <p className="text-gray-300 text-center mb-8 max-w-lg mx-auto">
-            Spavia is growing nationwide. Request franchise information and
-            we&apos;ll let you know about available territories in your area.
-          </p>
-          <div className="flex justify-center">
-            <Link
-              href="/get-started"
-              className="inline-block bg-[#C2A878] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#b09466] transition text-lg"
-            >
-              Get Started
-            </Link>
-          </div>
-        </Section>
-
-        <CallToAction />
         <Footer />
       </main>
     </ThemeProvider>

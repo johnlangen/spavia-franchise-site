@@ -10,10 +10,8 @@ import ProofSection from "./components/ProofSection";
 import AwardsSection from "./components/AwardsSection";
 import SpaviaCaresSection from "./components/SpaviaCaresSection";
 import ProcessSection from "./components/ProcessSection";
-import MultiStepForm from "./components/MultiStepForm";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import CallToAction from "./components/CallToAction";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import FranchiseLongForm from "./components/FranchiseLongForm";
@@ -130,6 +128,23 @@ export default function Home() {
         {/* AWARDS SECTION */}
         <AwardsSection />
 
+        {/* FRANCHISEE VIDEO */}
+        <Section className="bg-gray-50 py-20">
+          <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
+            Hear From Our Franchisees
+          </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+            Franchise owners share what it&apos;s like to build a business with Spavia.
+          </p>
+          <video
+            src="/our-franchisees/video1.mp4"
+            controls
+            preload="metadata"
+            poster="/hero-bg.jpg"
+            className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
+          />
+        </Section>
+
         {/* SPAVIA CARES SECTION */}
         <SpaviaCaresSection />
 
@@ -147,8 +162,17 @@ export default function Home() {
             </p>
             <FranchiseLongForm />
           </div>
-
-          <CallToAction />
+          <div className="text-center mt-8">
+            <p className="text-sm text-gray-500 mb-2">Prefer to talk first?</p>
+            <a
+              href="https://calendly.com/tyler-spaviadayspa/new-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-[#C2A878] font-semibold hover:underline"
+            >
+              Schedule a Call →
+            </a>
+          </div>
         </Section>
 
         {/* FAQ */}

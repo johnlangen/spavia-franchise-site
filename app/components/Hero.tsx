@@ -25,24 +25,17 @@ export default function Hero() {
     >
       {/* ---------- BACKGROUND ---------- */}
 
-      {/* Desktop video */}
+      {/* Background video (all screens — fallback image via poster for Low Power Mode) */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        poster="/hero-bg.jpg"
+        className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
-
-      {/* Mobile image */}
-      <img
-        src="/hero-bg.jpg"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover md:hidden"
-      />
 
       {/* Lighter overlay */}
       <div className="absolute inset-0 bg-black/40" />

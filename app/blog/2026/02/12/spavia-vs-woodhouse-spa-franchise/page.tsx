@@ -24,7 +24,7 @@ const jsonLd = {
         "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
       description:
         "Compare Spavia and Woodhouse spa franchise models side by side. Investment costs, revenue, franchise fees, training, and which spa franchise is right for you.",
-      image: "https://spaviafranchise.com/blog/blog20.jpg",
+      image: "https://spaviafranchise.com/blog/blog21.jpg",
       datePublished: "2026-02-12",
       dateModified: "2026-02-12",
       author: {
