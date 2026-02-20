@@ -1,37 +1,33 @@
 import { Metadata } from "next";
-import SouthCarolinaContent from "../../components/SouthCarolinaContent";
+import StateMarketContent from "../../components/StateMarketContent";
+import { getStateBySlug } from "../../data/markets";
+
+const state = getStateBySlug("south-carolina")!;
 
 export const metadata: Metadata = {
-  title: "Spa Franchise in South Carolina | Spavia Day Spa | Charleston & Greenville",
+  title: "Spa Franchise in South Carolina | Spavia Day Spa | Fort Mill & Charleston",
   description:
-    "Own a Spavia day spa franchise in South Carolina. Explore franchise opportunities in Charleston, Greenville, Columbia, and Myrtle Beach. Proven model, full support.",
+    "Explore Spavia day spa franchise opportunities in South Carolina. Data-driven market analysis for Lancaster County, Spartanburg, Richland County, Beaufort, and more. Proven model, recurring revenue, full training & support.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-opportunities/south-carolina",
   },
   openGraph: {
-    title: "Spa Franchise in South Carolina | Spavia Day Spa | Now Expanding",
+    title: "Spa Franchise in South Carolina | Spavia Day Spa",
     description:
-      "Own a Spavia Day Spa franchise in Charleston, Greenville, or Columbia. Proven business model with $1M+ average revenue potential.",
+      "Explore Spavia day spa franchise opportunities in South Carolina. Data-driven market analysis for Fort Mill, Spartanburg, Columbia, and Hilton Head.",
     url: "https://spaviafranchise.com/franchise-opportunities/south-carolina",
+    images: ["/og/spavia-franchise-og.jpg"],
     type: "website",
-    images: [
-      {
-        url: "https://spaviafranchise.com/og/spavia-franchise-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Spavia Franchise - Now Expanding to South Carolina",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise in South Carolina | Spavia Day Spa | Now Expanding",
+    title: "Spa Franchise in South Carolina | Spavia Day Spa",
     description:
-      "Own a Spavia Day Spa franchise in Charleston, Greenville, or Columbia. Proven business model with $1M+ average revenue potential.",
-    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
+      "Explore Spavia day spa franchise opportunities in South Carolina. Data-driven market analysis for Fort Mill, Spartanburg, Columbia, and Hilton Head.",
+    images: ["/og/spavia-franchise-og.jpg"],
   },
 };
 
-export default function Page() {
-  return <SouthCarolinaContent />;
+export default function SouthCarolinaPage() {
+  return <StateMarketContent state={state} />;
 }

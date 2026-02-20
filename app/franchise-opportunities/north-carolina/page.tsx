@@ -1,37 +1,33 @@
 import { Metadata } from "next";
-import NorthCarolinaContent from "../../components/NorthCarolinaContent";
+import StateMarketContent from "../../components/StateMarketContent";
+import { getStateBySlug } from "../../data/markets";
+
+const state = getStateBySlug("north-carolina")!;
 
 export const metadata: Metadata = {
   title: "Spa Franchise in North Carolina | Spavia Day Spa | Charlotte & Raleigh",
   description:
-    "Own a Spavia day spa franchise in North Carolina. Explore franchise opportunities in Charlotte, Raleigh, Asheville, and Durham. Proven model, full support.",
+    "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, Chatham County, Iredell County, and more. Proven model, recurring revenue, full training & support.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-opportunities/north-carolina",
   },
   openGraph: {
-    title: "Spa Franchise in North Carolina | Spavia Day Spa | Now Expanding",
+    title: "Spa Franchise in North Carolina | Spavia Day Spa",
     description:
-      "Own a Spavia Day Spa franchise in Charlotte, Raleigh, or Asheville. Proven business model with $1M+ average revenue potential.",
+      "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, and the Research Triangle.",
     url: "https://spaviafranchise.com/franchise-opportunities/north-carolina",
+    images: ["/og/spavia-franchise-og.jpg"],
     type: "website",
-    images: [
-      {
-        url: "https://spaviafranchise.com/og/spavia-franchise-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Spavia Franchise - Now Expanding to North Carolina",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise in North Carolina | Spavia Day Spa | Now Expanding",
+    title: "Spa Franchise in North Carolina | Spavia Day Spa",
     description:
-      "Own a Spavia Day Spa franchise in Charlotte, Raleigh, or Asheville. Proven business model with $1M+ average revenue potential.",
-    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
+      "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, and the Research Triangle.",
+    images: ["/og/spavia-franchise-og.jpg"],
   },
 };
 
-export default function Page() {
-  return <NorthCarolinaContent />;
+export default function NorthCarolinaPage() {
+  return <StateMarketContent state={state} />;
 }
