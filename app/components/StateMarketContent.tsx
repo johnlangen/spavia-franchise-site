@@ -101,7 +101,9 @@ export default function StateMarketContent({ state }: StateMarketContentProps) {
               transition={{ duration: 0.5 }}
               className="inline-block bg-[#C2A878] text-black text-sm font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide"
             >
-              Now Expanding to {state.stateName}
+              {state.currentLocations > 0
+                ? `Growing in ${state.stateName}`
+                : `Now Expanding to ${state.stateName}`}
             </motion.div>
 
             <motion.h1

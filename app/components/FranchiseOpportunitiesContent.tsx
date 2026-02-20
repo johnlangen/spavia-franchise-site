@@ -52,6 +52,7 @@ const arizonaCard = {
   slug: "arizona",
   cities: "Scottsdale, Phoenix, Mesa, Tempe",
   countyCount: 1,
+  currentLocations: 0,
   region: "Southwest" as const,
 };
 
@@ -92,6 +93,7 @@ export default function FranchiseOpportunitiesContent() {
         .slice(0, 4)
         .join(", "),
       countyCount: s.counties.length,
+      currentLocations: s.currentLocations,
       region: STATE_REGIONS[s.stateAbbr] || ("Southeast" as Region),
     })),
   ];
@@ -202,7 +204,9 @@ export default function FranchiseOpportunitiesContent() {
                         {state.cities}
                       </p>
                       <span className="inline-block text-xs font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">
-                        Now Expanding
+                        {state.currentLocations > 0
+                          ? `${state.currentLocations} Location${state.currentLocations !== 1 ? "s" : ""} & Growing`
+                          : "Now Expanding"}
                       </span>
                     </Link>
                   ))}
