@@ -12,6 +12,7 @@ import ProofSection from "./ProofSection";
 import MarketReportCard from "./MarketReportCard";
 import MarketReportModal from "./MarketReportModal";
 import { ThemeProvider } from "./ThemeProvider";
+import CustomMarketForm from "./CustomMarketForm";
 import { Check, MapPin, TrendingUp, Users, Sun, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import type { StateMarket, CountyMarket } from "../data/markets";
@@ -249,12 +250,7 @@ export default function StateMarketContent({ state }: StateMarketContentProps) {
               the United States. Tell us where you&apos;re interested and
               we&apos;ll run the numbers.
             </p>
-            <Link
-              href="/get-started"
-              className="inline-block bg-[#C2A878] hover:bg-[#b09668] text-white font-semibold px-8 py-3 rounded-full transition-colors"
-            >
-              Request a Custom Market Analysis
-            </Link>
+            <CustomMarketForm />
           </div>
         </section>
 

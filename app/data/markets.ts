@@ -82,7 +82,7 @@ export const stateMarkets: StateMarket[] = [
     population: "39M+",
     growthRanking: "Largest U.S. Market",
     medianIncome: "$85K+",
-    currentLocations: 0,
+    currentLocations: 4,
     heroGradient: "from-[#1a2e2e] via-[#163e2e] to-[#0f4030]",
     counties: [
       {
@@ -166,7 +166,7 @@ export const stateMarkets: StateMarket[] = [
     population: "5.9M+",
     growthRanking: "Top 10 Growth",
     medianIncome: "$82K+",
-    currentLocations: 2,
+    currentLocations: 10,
     heroGradient: "from-[#1a1a2e] via-[#21273d] to-[#0f2460]",
     counties: [
       {
@@ -202,7 +202,7 @@ export const stateMarkets: StateMarket[] = [
     population: "23M+",
     growthRanking: "#2 Fastest Growing",
     medianIncome: "$63K+",
-    currentLocations: 0,
+    currentLocations: 6,
     heroGradient: "from-[#1a2e2e] via-[#163e3e] to-[#0f4040]",
     counties: [
       {
@@ -310,7 +310,7 @@ export const stateMarkets: StateMarket[] = [
     population: "11M+",
     growthRanking: "Top 5 Growth",
     medianIncome: "$65K+",
-    currentLocations: 0,
+    currentLocations: 3,
     heroGradient: "from-[#1a2e2e] via-[#163e3e] to-[#0f4040]",
     counties: [
       {
@@ -370,7 +370,7 @@ export const stateMarkets: StateMarket[] = [
     population: "3.2M+",
     growthRanking: "Emerging Market",
     medianIncome: "$65K+",
-    currentLocations: 0,
+    currentLocations: 1,
     heroGradient: "from-[#1a1a2e] via-[#21273d] to-[#0f2460]",
     counties: [
       {
@@ -406,7 +406,7 @@ export const stateMarkets: StateMarket[] = [
     population: "12.5M+",
     growthRanking: "Major Metro Market",
     medianIncome: "$72K+",
-    currentLocations: 0,
+    currentLocations: 4,
     heroGradient: "from-[#1a1a2e] via-[#16213e] to-[#0f3460]",
     counties: [
       {
@@ -442,7 +442,7 @@ export const stateMarkets: StateMarket[] = [
     population: "6.9M+",
     growthRanking: "Growing Market",
     medianIncome: "$62K+",
-    currentLocations: 0,
+    currentLocations: 1,
     heroGradient: "from-[#2e1a2e] via-[#3a1e3a] to-[#301030]",
     counties: [
       {
@@ -514,7 +514,7 @@ export const stateMarkets: StateMarket[] = [
     population: "10.8M+",
     growthRanking: "Top 5 Growth",
     medianIncome: "$60K+",
-    currentLocations: 0,
+    currentLocations: 2,
     heroGradient: "from-[#1a1a2e] via-[#21273d] to-[#0f2460]",
     counties: [
       {
@@ -694,7 +694,7 @@ export const stateMarkets: StateMarket[] = [
     population: "5.4M+",
     growthRanking: "Top 10 Growth",
     medianIncome: "$59K+",
-    currentLocations: 0,
+    currentLocations: 1,
     heroGradient: "from-[#1a2e1a] via-[#1e3a2a] to-[#0f3030]",
     counties: [
       {
@@ -802,7 +802,7 @@ export const stateMarkets: StateMarket[] = [
     population: "7.1M+",
     growthRanking: "Top 10 Growth",
     medianIncome: "$59K+",
-    currentLocations: 0,
+    currentLocations: 1,
     heroGradient: "from-[#2e1a1a] via-[#3a1e2a] to-[#30100f]",
     counties: [
       {
@@ -862,7 +862,7 @@ export const stateMarkets: StateMarket[] = [
     population: "30M+",
     growthRanking: "#1 Franchise Growth",
     medianIncome: "$67K+",
-    currentLocations: 0,
+    currentLocations: 6,
     heroGradient: "from-[#2e1a1a] via-[#3a2a1e] to-[#30200f]",
     counties: [
       {

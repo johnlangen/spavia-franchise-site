@@ -6,6 +6,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import FranchiseIntroForm from "./FranchiseIntroForm";
 import { ThemeProvider } from "./ThemeProvider";
+import CustomMarketForm from "./CustomMarketForm";
 import { MapPin, TrendingUp, DollarSign, Users, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import { getAllStates } from "../data/markets";
@@ -210,20 +211,15 @@ export default function FranchiseOpportunitiesContent() {
             ))}
 
             {/* Don't see your state */}
-            <div className="mt-10">
-              <Link
-                href="/get-started"
-                className="group block max-w-lg mx-auto bg-gray-100 rounded-xl border border-dashed border-gray-300 p-8 text-center hover:border-[#C2A878] transition-all"
-              >
-                <MapPin className="w-6 h-6 text-gray-400 group-hover:text-[#C2A878] mx-auto mb-3 transition-colors" />
-                <p className="font-bold text-gray-600 group-hover:text-[#C2A878] text-lg transition-colors">
-                  Don&apos;t See Your State?
-                </p>
-                <p className="text-sm text-gray-400 mt-2 max-w-sm mx-auto">
-                  We analyze any U.S. location. Tell us where you&apos;re
-                  interested and we&apos;ll run the numbers.
-                </p>
-              </Link>
+            <div className="mt-12 max-w-2xl mx-auto text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                Don&apos;t See Your State?
+              </h3>
+              <p className="text-sm text-gray-500 mb-6">
+                We analyze any U.S. location. Enter your city and we&apos;ll
+                run the numbers.
+              </p>
+              <CustomMarketForm />
             </div>
           </div>
         </section>
