@@ -62,6 +62,13 @@ export default function BlogGrid() {
 }
 
 const blogPosts = [
+  {
+    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    excerpt:
+      "Everything you need to know about spa franchise opportunities in 2026 \u2014 compare costs, revenue models, and top brands to find the right investment for you.",
+    image: "/blog/blog22.png",
+    href: "/blog/2026/02/19/spa-franchise-opportunities-guide",
+  },
 
   {
     title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
