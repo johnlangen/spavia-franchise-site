@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Blog Posts ──
     {
+      url: `${BASE}/blog/2026/02/26/spa-franchise-phoenix-scottsdale`,
+      lastModified: new Date("2026-02-26"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE}/blog/2026/02/19/spa-franchise-opportunities-guide`,
       lastModified: new Date("2026-02-19"),
       changeFrequency: "monthly",
