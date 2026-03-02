@@ -9,34 +9,63 @@ export const metadata: Metadata = {
   title: "3 Reasons to Invest in a Day Spa Franchise",
   description:
     "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise",
+  },
+  openGraph: {
+    title: "3 Reasons to Invest in a Day Spa Franchise",
+    description:
+      "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
+    url: "https://spaviafranchise.com/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog000.jpeg",
+        width: 1200,
+        height: 675,
+        alt: "Reasons to invest in a day spa franchise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "3 Reasons to Invest in a Day Spa Franchise",
+    description:
+      "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
+    images: ["https://spaviafranchise.com/blog/blog000.jpeg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "3 Reasons to Invest in a Day Spa Franchise",
-  "description": "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
-  "datePublished": "2023-11-28",
-  "dateModified": "2023-11-28",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
-  }
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "3 Reasons to Invest in a Day Spa Franchise",
+      "description": "As the wellness industry gains momentum amongst consumers, now is the ideal time to explore the world of day spa franchises.",
+      "datePublished": "2023-11-28",
+      "dateModified": "2023-11-28",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
+      },
+      "image": "https://spaviafranchise.com/blog/blog000.jpeg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

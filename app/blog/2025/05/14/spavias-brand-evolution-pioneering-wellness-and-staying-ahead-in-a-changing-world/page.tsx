@@ -10,35 +10,63 @@ export const metadata: Metadata = {
     "Spavia’s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World | Spavia Day Spa",
   description:
     "Discover how Spavia continues to lead in wellness by blending innovation, personalization, and sustainability. Learn how Spavia’s evolving brand redefines relaxation and self-care in a changing world.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world",
+  },
+  openGraph: {
+    title: "Spavias Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World",
+    description:
+      "Spavia offers personalized wellness experiences tailored to refresh both body and mind, redefining relaxation and self-care.",
+    url: "https://spaviafranchise.com/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog11.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Spavia brand evolution pioneering wellness",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spavias Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World",
+    description:
+      "Spavia offers personalized wellness experiences tailored to refresh both body and mind, redefining relaxation and self-care.",
+    images: ["https://spaviafranchise.com/blog/blog11.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Spavia\u2019s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World",
-  "description": "Discover how Spavia continues to lead in wellness by blending innovation, personalization, and sustainability. Learn how Spavia\u2019s evolving brand redefines relaxation and self-care in a changing world.",
-  "datePublished": "2025-05-14",
-  "dateModified": "2025-05-14",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
-  },
-  "image": "https://spaviafranchise.com/blog/blog11.jpg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "Spavia\u2019s Brand Evolution: Pioneering Wellness and Staying Ahead in a Changing World",
+      "description": "Discover how Spavia continues to lead in wellness by blending innovation, personalization, and sustainability. Learn how Spavia\u2019s evolving brand redefines relaxation and self-care in a changing world.",
+      "datePublished": "2025-05-14",
+      "dateModified": "2025-05-14",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
+      },
+      "image": "https://spaviafranchise.com/blog/blog11.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

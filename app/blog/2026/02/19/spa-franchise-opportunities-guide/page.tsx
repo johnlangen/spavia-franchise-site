@@ -14,6 +14,28 @@ export const metadata: Metadata = {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/19/spa-franchise-opportunities-guide",
   },
+  openGraph: {
+    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    description:
+      "Everything you need to know about spa franchise opportunities in 2026, including costs, revenue models, and top brands.",
+    url: "https://spaviafranchise.com/blog/2026/02/19/spa-franchise-opportunities-guide",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog22.png",
+        width: 1200,
+        height: 675,
+        alt: "Complete guide to spa franchise opportunities 2026",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    description:
+      "Everything you need to know about spa franchise opportunities in 2026, including costs, revenue models, and top brands.",
+    images: ["https://spaviafranchise.com/blog/blog22.png"],
+  },
 };
 
 const jsonLd = {

@@ -48,6 +48,26 @@ export const metadata: Metadata = {
   },
 };
 
+const homepageVideoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Hear From Our Franchisees — Spavia Day Spa",
+  description:
+    "Spavia franchise owners share what it's like to build a business with Spavia Day Spa. Learn about the ownership experience, training, support, and community impact.",
+  thumbnailUrl: "https://spaviafranchise.com/hero-bg.jpg",
+  uploadDate: "2025-01-01",
+  contentUrl: "https://spaviafranchise.com/our-franchisees/video1.mp4",
+  embedUrl: "https://spaviafranchise.com/our-franchisees/video1.mp4",
+  publisher: {
+    "@type": "Organization",
+    name: "Spavia Day Spa",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://spaviafranchise.com/spavia-logo.png",
+    },
+  },
+};
+
 const homepageFaqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -101,6 +121,12 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageVideoJsonLd),
+        }}
       />
       <NavBar />
       <main className="flex flex-col">

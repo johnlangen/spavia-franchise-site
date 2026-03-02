@@ -14,6 +14,28 @@ export const metadata: Metadata = {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
   },
+  openGraph: {
+    title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+    description:
+      "Compare day spa and med spa franchise models side by side, including investment costs, profit margins, licensing requirements, and ROI.",
+    url: "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog20.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Day spa vs med spa franchise comparison",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+    description:
+      "Compare day spa and med spa franchise models side by side, including investment costs, profit margins, licensing requirements, and ROI.",
+    images: ["https://spaviafranchise.com/blog/blog20.jpg"],
+  },
 };
 
 const jsonLd = {

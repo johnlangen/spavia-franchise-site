@@ -8,34 +8,63 @@ export const metadata: Metadata = {
   title: "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
   description:
     "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024",
+  },
+  openGraph: {
+    title: "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
+    description:
+      "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
+    url: "https://spaviafranchise.com/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog00.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Spavia 2023 reflections and 2024 anticipations",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
+    description:
+      "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
+    images: ["https://spaviafranchise.com/blog/blog00.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
-  "description": "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
-  "datePublished": "2024-01-04",
-  "dateModified": "2024-01-04",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
-  }
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
+      "description": "The year 2023 has unfolded as a thrilling chapter for Spavia Day Spa, marked by substantial growth and exciting developments.",
+      "datePublished": "2024-01-04",
+      "dateModified": "2024-01-04",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
+      },
+      "image": "https://spaviafranchise.com/blog/blog00.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

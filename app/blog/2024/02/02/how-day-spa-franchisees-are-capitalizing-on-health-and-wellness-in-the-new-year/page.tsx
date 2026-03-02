@@ -8,34 +8,108 @@ export const metadata: Metadata = {
   title: "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
   description:
     "As we step into the New Year, individuals embrace the 'Great Rejuvenation'—heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year",
+  },
+  openGraph: {
+    title: "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
+    description:
+      "As we step into the New Year, individuals embrace the Great Rejuvenation, a heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
+    url: "https://spaviafranchise.com/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog0.jpeg",
+        width: 1200,
+        height: 675,
+        alt: "Day spa franchisees capitalizing on health and wellness",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
+    description:
+      "As we step into the New Year, individuals embrace the Great Rejuvenation, a heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
+    images: ["https://spaviafranchise.com/blog/blog0.jpeg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
-  "description": "As we step into the New Year, individuals embrace the \u2018Great Rejuvenation\u2019\u2014heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
-  "datePublished": "2024-02-02",
-  "dateModified": "2024-02-02",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
-  }
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "How Day Spa Franchisees Are Capitalizing on Health and Wellness in the New Year",
+      "description": "As we step into the New Year, individuals embrace the \u2018Great Rejuvenation\u2019\u2014heightened awareness of health and wellness, creating opportunity for Spavia franchisees.",
+      "datePublished": "2024-02-02",
+      "dateModified": "2024-02-02",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
+      },
+      "image": "https://spaviafranchise.com/blog/blog0.jpeg"
+
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do I need experience in the spa industry?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "While it can't hurt to have experience in the spa industry, it is not required. We are looking for individuals who share our dedication to providing an exceptional experience. With our 120 years of spa experience, we can teach you and your team everything you need to be successful.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I own multiple Spavia locations?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, you are able to own multiple locations. Many of our owners have chosen to purchase 3 or more. We also offer a multi-unit discount.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much are the royalties and other annual fees?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our current initial franchise fee is $49,500. Royalty fee is 6% of gross sales. Marketing fee is up to 1% of gross sales.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take to open a Spavia?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Each location is different, but the most time-consuming steps tend to be site selection, lease negotiation, build-out (including permitting) requirements, and training. We anticipate it will take approximately 9-12 months from signing your lease to opening day.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the standard design space of a Spavia development?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our spas' ideal square footage is between 2,500 and 2,800 square feet.",
+          },
+        }
+      ],
+    },
+  ],
+}
 
 export default function Page() {
   return (

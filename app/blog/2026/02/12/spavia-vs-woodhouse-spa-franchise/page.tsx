@@ -13,6 +13,28 @@ export const metadata: Metadata = {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
   },
+  openGraph: {
+    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    description:
+      "Compare Spavia and Woodhouse spa franchise models side by side, including investment costs, revenue, franchise fees, and training.",
+    url: "https://spaviafranchise.com/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog21.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Spavia vs Woodhouse spa franchise comparison",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    description:
+      "Compare Spavia and Woodhouse spa franchise models side by side, including investment costs, revenue, franchise fees, and training.",
+    images: ["https://spaviafranchise.com/blog/blog21.jpg"],
+  },
 };
 
 const jsonLd = {

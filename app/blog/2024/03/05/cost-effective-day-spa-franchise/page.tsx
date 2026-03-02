@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Day Spa Franchise Opportunity - Spavia Day Spa",
   description:
     "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise. Delve into the Spavia Advantage and capitalize on the booming wellness industry.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/03/05/cost-effective-day-spa-franchise",
+  },
+  openGraph: {
+    title: "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+    description:
+      "Discover the Spavia Advantage, an affordable day spa franchise offering exceptional services. Join us in delivering relaxation and wellness to your community.",
+    url: "https://spaviafranchise.com/blog/2024/03/05/cost-effective-day-spa-franchise",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog4.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Cost-effective day spa franchise Spavia advantage",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+    description:
+      "Discover the Spavia Advantage, an affordable day spa franchise offering exceptional services. Join us in delivering relaxation and wellness to your community.",
+    images: ["https://spaviafranchise.com/blog/blog4.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
-  "description": "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise. Delve into the Spavia Advantage and capitalize on the booming wellness industry.",
-  "datePublished": "2024-03-05",
-  "dateModified": "2024-03-05",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/03/05/cost-effective-day-spa-franchise"
-  },
-  "image": "https://spaviafranchise.com/blog/blog4.jpg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+      "description": "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise. Delve into the Spavia Advantage and capitalize on the booming wellness industry.",
+      "datePublished": "2024-03-05",
+      "dateModified": "2024-03-05",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/03/05/cost-effective-day-spa-franchise"
+      },
+      "image": "https://spaviafranchise.com/blog/blog4.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

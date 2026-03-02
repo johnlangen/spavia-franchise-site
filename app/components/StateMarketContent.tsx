@@ -73,7 +73,7 @@ export default function StateMarketContent({ state }: StateMarketContentProps) {
         <NavBar />
         <Breadcrumbs
           items={[
-            { label: "Franchise Opportunities" },
+            { label: "Franchise Opportunities", href: "/franchise-opportunities" },
             { label: state.stateName },
           ]}
         />

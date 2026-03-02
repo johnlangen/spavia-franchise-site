@@ -10,35 +10,63 @@ export const metadata: Metadata = {
     "The Power of Spavia’s Brand Partners: Vendor Collaborations That Drive Revenue | Spavia Franchise Blog",
   description:
     "Learn how Spavia’s premium vendor partnerships elevate guest experiences and drive franchise revenue through retail, training, sustainability, and strategic collaboration.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/11/26/the-power-of-spavias-brand-partners-vendor-collaborations-that-drive-revenue",
+  },
+  openGraph: {
+    title: "The Power of Spavias Brand Partners: Vendor Collaborations That Drive Revenue",
+    description:
+      "Spavias premium vendor partnerships elevate the guest experience, strengthen franchise revenue, and support franchisees.",
+    url: "https://spaviafranchise.com/blog/2025/11/26/the-power-of-spavias-brand-partners-vendor-collaborations-that-drive-revenue",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog19.png",
+        width: 1200,
+        height: 675,
+        alt: "Spavia brand partners and vendor collaborations",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Power of Spavias Brand Partners: Vendor Collaborations That Drive Revenue",
+    description:
+      "Spavias premium vendor partnerships elevate the guest experience, strengthen franchise revenue, and support franchisees.",
+    images: ["https://spaviafranchise.com/blog/blog19.png"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Power of Spavia\u2019s Brand Partners: Vendor Collaborations That Drive Revenue",
-  "description": "Learn how Spavia\u2019s premium vendor partnerships elevate guest experiences and drive franchise revenue through retail, training, sustainability, and strategic collaboration.",
-  "datePublished": "2025-11-26",
-  "dateModified": "2025-11-26",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/11/26/the-power-of-spavias-brand-partners-vendor-collaborations-that-drive-revenue"
-  },
-  "image": "https://spaviafranchise.com/blog/blog19.png"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "The Power of Spavia\u2019s Brand Partners: Vendor Collaborations That Drive Revenue",
+      "description": "Learn how Spavia\u2019s premium vendor partnerships elevate guest experiences and drive franchise revenue through retail, training, sustainability, and strategic collaboration.",
+      "datePublished": "2025-11-26",
+      "dateModified": "2025-11-26",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/11/26/the-power-of-spavias-brand-partners-vendor-collaborations-that-drive-revenue"
+      },
+      "image": "https://spaviafranchise.com/blog/blog19.png"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

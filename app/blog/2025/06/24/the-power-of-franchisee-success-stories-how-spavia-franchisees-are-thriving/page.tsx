@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "The Power of Franchisee Success Stories | Spavia Franchise Blog",
   description:
     "Discover how Spavia franchisees are thriving with support, training, and a proven business model. Explore inspiring stories and why franchise owners succeed.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving",
+  },
+  openGraph: {
+    title: "The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving",
+    description:
+      "Discover how Spavia franchisees are building thriving businesses while making an impact in their communities.",
+    url: "https://spaviafranchise.com/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog12.png",
+        width: 1200,
+        height: 675,
+        alt: "Spavia franchisee success stories",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving",
+    description:
+      "Discover how Spavia franchisees are building thriving businesses while making an impact in their communities.",
+    images: ["https://spaviafranchise.com/blog/blog12.png"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving",
-  "description": "Discover how Spavia franchisees are thriving with support, training, and a proven business model. Explore inspiring stories and why franchise owners succeed.",
-  "datePublished": "2025-06-24",
-  "dateModified": "2025-06-24",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving"
-  },
-  "image": "https://spaviafranchise.com/blog/blog12.png"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "The Power of Franchisee Success Stories: How Spavia Franchisees Are Thriving",
+      "description": "Discover how Spavia franchisees are thriving with support, training, and a proven business model. Explore inspiring stories and why franchise owners succeed.",
+      "datePublished": "2025-06-24",
+      "dateModified": "2025-06-24",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving"
+      },
+      "image": "https://spaviafranchise.com/blog/blog12.png"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

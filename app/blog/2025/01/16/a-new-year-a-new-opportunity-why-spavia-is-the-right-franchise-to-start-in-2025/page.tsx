@@ -9,34 +9,63 @@ export const metadata: Metadata = {
     "A New Year, A New Opportunity: Why Spavia is the Right Franchise to Start in 2025",
   description:
     "Discover why Spavia is one of the top spa franchises for aspiring entrepreneurs and career changers. Learn about our proven success, innovative services, and the support you’ll receive as a Spavia franchisee. Start your 2025 with Spavia!",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/01/16/a-new-year-a-new-opportunity-why-spavia-is-the-right-franchise-to-start-in-2025",
+  },
+  openGraph: {
+    title: "A New Year, A New Opportunity: Why Spavia is the Right Franchise to Start in 2025",
+    description:
+      "Discover why Spavia is one of the top spa franchises for aspiring entrepreneurs and career changers. Start your 2025 with Spavia!",
+    url: "https://spaviafranchise.com/blog/2025/01/16/a-new-year-a-new-opportunity-why-spavia-is-the-right-franchise-to-start-in-2025",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog7.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Why Spavia is the right franchise to start in 2025",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A New Year, A New Opportunity: Why Spavia is the Right Franchise to Start in 2025",
+    description:
+      "Discover why Spavia is one of the top spa franchises for aspiring entrepreneurs and career changers. Start your 2025 with Spavia!",
+    images: ["https://spaviafranchise.com/blog/blog7.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "A New Year, A New Opportunity: Why Spavia is the Right Franchise to Start in 2025",
-  "description": "Discover why Spavia is one of the top spa franchises for aspiring entrepreneurs and career changers.",
-  "datePublished": "2025-01-16",
-  "dateModified": "2025-01-16",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/01/16/a-new-year-a-new-opportunity-why-spavia-is-the-right-franchise-to-start-in-2025"
-  }
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "A New Year, A New Opportunity: Why Spavia is the Right Franchise to Start in 2025",
+      "description": "Discover why Spavia is one of the top spa franchises for aspiring entrepreneurs and career changers.",
+      "datePublished": "2025-01-16",
+      "dateModified": "2025-01-16",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/01/16/a-new-year-a-new-opportunity-why-spavia-is-the-right-franchise-to-start-in-2025"
+      },
+      "image": "https://spaviafranchise.com/blog/blog7.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

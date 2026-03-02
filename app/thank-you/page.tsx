@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Thank You | Spavia Franchise",
   description:
     "Thank you for contacting Spavia. Our franchise development team will be in touch shortly.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: "https://spaviafranchise.com/thank-you",
   },

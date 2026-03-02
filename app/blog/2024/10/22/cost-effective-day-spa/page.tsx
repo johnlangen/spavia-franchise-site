@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Affordable Day Spa Franchise Opportunities | Spavia Franchising",
   description:
     "Discover the Spavia Advantage—an affordable day spa franchise offering exceptional services. Join us in delivering relaxation and wellness to your community.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/10/22/cost-effective-day-spa",
+  },
+  openGraph: {
+    title: "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+    description:
+      "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise.",
+    url: "https://spaviafranchise.com/blog/2024/10/22/cost-effective-day-spa",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog1.jpeg",
+        width: 1200,
+        height: 675,
+        alt: "Cost-effective day spa franchise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+    description:
+      "Unlock the lucrative potential of Spavia, a cost-effective day spa franchise.",
+    images: ["https://spaviafranchise.com/blog/blog1.jpeg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
-  "description": "Discover the Spavia Advantage\u2014an affordable day spa franchise offering exceptional services. Join us in delivering relaxation and wellness to your community.",
-  "datePublished": "2024-10-22",
-  "dateModified": "2024-10-22",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/10/22/cost-effective-day-spa"
-  },
-  "image": "https://spaviafranchise.com/blog/blog1.jpeg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "A Cost-Effective Day Spa Franchise: The Spavia Advantage",
+      "description": "Discover the Spavia Advantage\u2014an affordable day spa franchise offering exceptional services. Join us in delivering relaxation and wellness to your community.",
+      "datePublished": "2024-10-22",
+      "dateModified": "2024-10-22",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/10/22/cost-effective-day-spa"
+      },
+      "image": "https://spaviafranchise.com/blog/blog1.jpeg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

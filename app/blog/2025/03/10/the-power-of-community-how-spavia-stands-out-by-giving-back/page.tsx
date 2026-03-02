@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Spavia’s 20-Year Journey of Giving Back | Spavia Day Spa",
   description:
     "Discover how Spavia celebrates 20 years of excellence by giving back to the communities we call home. Learn about our #SpaviaCares initiative, fostering wellness beyond the spa and empowering franchisees to make a difference.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back",
+  },
+  openGraph: {
+    title: "The Power of Community: How Spavia Stands Out by Giving Back",
+    description:
+      "As Spavia celebrates its 20th anniversary, we reflect on our growth as a leader in the spa industry and the core values that define us.",
+    url: "https://spaviafranchise.com/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog9.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Spavia community impact and giving back",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Power of Community: How Spavia Stands Out by Giving Back",
+    description:
+      "As Spavia celebrates its 20th anniversary, we reflect on our growth as a leader in the spa industry and the core values that define us.",
+    images: ["https://spaviafranchise.com/blog/blog9.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Power of Community: How Spavia Stands Out by Giving Back",
-  "description": "Discover how Spavia celebrates 20 years of excellence by giving back to the communities we call home. Learn about our #SpaviaCares initiative.",
-  "datePublished": "2025-03-10",
-  "dateModified": "2025-03-10",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
-  },
-  "image": "https://spaviafranchise.com/blog/blog9.jpg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "The Power of Community: How Spavia Stands Out by Giving Back",
+      "description": "Discover how Spavia celebrates 20 years of excellence by giving back to the communities we call home. Learn about our #SpaviaCares initiative.",
+      "datePublished": "2025-03-10",
+      "dateModified": "2025-03-10",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
+      },
+      "image": "https://spaviafranchise.com/blog/blog9.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

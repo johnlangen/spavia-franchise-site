@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Guide to Choosing the Best Spa Franchise | Spavia Day Spa",
   description:
     "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations",
+  },
+  openGraph: {
+    title: "A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations",
+    description:
+      "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
+    url: "https://spaviafranchise.com/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog6.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Guide to choosing the best spa franchise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations",
+    description:
+      "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
+    images: ["https://spaviafranchise.com/blog/blog6.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations",
-  "description": "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
-  "datePublished": "2024-12-03",
-  "dateModified": "2024-12-03",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations"
-  },
-  "image": "https://spaviafranchise.com/blog/blog5.jpeg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "A Guide to Choosing the Best Spa Franchise: Key Factors and Considerations",
+      "description": "Discover how to choose the best spa franchise with our guide. Learn about brand reputation, financial performance, and more to succeed in the spa industry.",
+      "datePublished": "2024-12-03",
+      "dateModified": "2024-12-03",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/12/03/a-guide-to-choosing-the-best-spa-franchise-key-factors-and-considerations"
+      },
+      "image": "https://spaviafranchise.com/blog/blog5.jpeg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

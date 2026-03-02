@@ -72,7 +72,7 @@ export default function ArizonaContent() {
       <main className="bg-white text-gray-900 flex flex-col">
         <NavBar />
         <Breadcrumbs
-          items={[{ label: "Franchise Opportunities" }, { label: "Arizona" }]}
+          items={[{ label: "Franchise Opportunities", href: "/franchise-opportunities" }, { label: "Arizona" }]}
         />
 
         {/* ═══════ HERO ═══════ */}

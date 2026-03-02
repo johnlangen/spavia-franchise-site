@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Explore Spavia day spa franchise opportunities in South Carolina. Data-driven market analysis for Fort Mill, Spartanburg, Columbia, and Hilton Head.",
     url: "https://spaviafranchise.com/franchise-opportunities/south-carolina",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
     type: "website",
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Spa Franchise in South Carolina | Spavia Day Spa",
     description:
       "Explore Spavia day spa franchise opportunities in South Carolina. Data-driven market analysis for Fort Mill, Spartanburg, Columbia, and Hilton Head.",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
 

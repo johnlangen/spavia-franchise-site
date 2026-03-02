@@ -46,6 +46,13 @@ const globalJsonLd = {
         "https://www.facebook.com/SpaviaSpa",
         "https://www.instagram.com/spavia",
       ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Franchise Development",
+        email: "tyler@spaviadayspa.com",
+        url: "https://calendly.com/tyler-spaviadayspa/new-meeting",
+        availableLanguage: "English",
+      },
     },
     {
       "@type": "WebSite",

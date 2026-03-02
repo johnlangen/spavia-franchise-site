@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Beyond a Franchise: Building a Legacy with Spavia | Spavia Franchise Blog",
   description:
     "Discover how Spavia franchise owners create lasting family legacies through multi-unit ownership, community impact, and generational wealth building.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia",
+  },
+  openGraph: {
+    title: "Beyond a Franchise: Building a Legacy with Spavia",
+    description:
+      "Spavia franchise ownership offers an opportunity to create a lasting legacy through financial success, personal growth, and community impact.",
+    url: "https://spaviafranchise.com/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog13.png",
+        width: 1200,
+        height: 675,
+        alt: "Building a legacy with Spavia franchise",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beyond a Franchise: Building a Legacy with Spavia",
+    description:
+      "Spavia franchise ownership offers an opportunity to create a lasting legacy through financial success, personal growth, and community impact.",
+    images: ["https://spaviafranchise.com/blog/blog13.png"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Beyond a Franchise: Building a Legacy with Spavia",
-  "description": "Discover how Spavia franchise owners create lasting family legacies through multi-unit ownership, community impact, and generational wealth building.",
-  "datePublished": "2025-07-29",
-  "dateModified": "2025-07-29",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia"
-  },
-  "image": "https://spaviafranchise.com/blog/blog13.png"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "Beyond a Franchise: Building a Legacy with Spavia",
+      "description": "Discover how Spavia franchise owners create lasting family legacies through multi-unit ownership, community impact, and generational wealth building.",
+      "datePublished": "2025-07-29",
+      "dateModified": "2025-07-29",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia"
+      },
+      "image": "https://spaviafranchise.com/blog/blog13.png"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

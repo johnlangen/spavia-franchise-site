@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "Spa Franchise Opportunities - Wellness Industry | Spavia Day Spa",
   description:
     "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities",
+  },
+  openGraph: {
+    title: "Spa Franchise Opportunities: Where Passion Meets Profit",
+    description:
+      "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+    url: "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog2.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Spa franchise opportunities with Spavia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spa Franchise Opportunities: Where Passion Meets Profit",
+    description:
+      "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+    images: ["https://spaviafranchise.com/blog/blog2.jpg"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Spa Franchise Opportunities: Where Passion Meets Profit",
-  "description": "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
-  "datePublished": "2024-04-16",
-  "dateModified": "2024-04-16",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities"
-  },
-  "image": "https://spaviafranchise.com/blog/blog2.jpg"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "Spa Franchise Opportunities: Where Passion Meets Profit",
+      "description": "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+      "datePublished": "2024-04-16",
+      "dateModified": "2024-04-16",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities"
+      },
+      "image": "https://spaviafranchise.com/blog/blog2.jpg"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

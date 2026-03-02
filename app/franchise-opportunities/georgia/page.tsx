@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Explore Spavia day spa franchise opportunities in Georgia. Data-driven market analysis for Forsyth County, Cherokee County, and the Atlanta metro.",
     url: "https://spaviafranchise.com/franchise-opportunities/georgia",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
     type: "website",
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Spa Franchise in Georgia | Spavia Day Spa",
     description:
       "Explore Spavia day spa franchise opportunities in Georgia. Data-driven market analysis for Forsyth County, Cherokee County, and the Atlanta metro.",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
 

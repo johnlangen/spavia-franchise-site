@@ -9,35 +9,63 @@ export const metadata: Metadata = {
   title: "The Power of a National Brand with a Local Focus | Spavia Franchise Blog",
   description:
     "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business. Their support programs empower entrepreneurs in the growing wellness industry.",
+  alternates: {
+    canonical:
+      "https://spaviafranchise.com/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus",
+  },
+  openGraph: {
+    title: "The Power of a National Brand with a Local Focus",
+    description:
+      "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business.",
+    url: "https://spaviafranchise.com/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus",
+    type: "article",
+    images: [
+      {
+        url: "https://spaviafranchise.com/blog/blog14.png",
+        width: 1200,
+        height: 675,
+        alt: "Spavia national brand with local focus",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Power of a National Brand with a Local Focus",
+    description:
+      "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business.",
+    images: ["https://spaviafranchise.com/blog/blog14.png"],
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "The Power of a National Brand with a Local Focus",
-  "description": "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business.",
-  "datePublished": "2025-08-28",
-  "dateModified": "2025-08-28",
-  "author": {
-    "@type": "Organization",
-    "name": "Spavia Day Spa",
-    "url": "https://spaviafranchise.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Spavia Franchise",
-    "url": "https://spaviafranchise.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://spaviafranchise.com/spavia-logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://spaviafranchise.com/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
-  },
-  "image": "https://spaviafranchise.com/blog/blog14.png"
-};
+  "@graph": [
+    {
+      "@type": "Article",
+
+      "headline": "The Power of a National Brand with a Local Focus",
+      "description": "Spavia offers a unique franchise opportunity that blends the strength of a nationally recognized brand with the personalized touch of a community-focused business.",
+      "datePublished": "2025-08-28",
+      "dateModified": "2025-08-28",
+      "author": {
+        "name": "Spavia Day Spa",
+        "url": "https://spaviafranchise.com"
+      },
+      "publisher": {
+        "name": "Spavia Franchise",
+        "url": "https://spaviafranchise.com",
+        "logo": {
+          "url": "https://spaviafranchise.com/spavia-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@id": "https://spaviafranchise.com/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
+      },
+      "image": "https://spaviafranchise.com/blog/blog14.png"
+
+    },
+  ],
+}
 
 export default function Page() {
   return (

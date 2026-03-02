@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/training-and-support`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/who-we-are`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/our-franchisees`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/thank-you`, changeFrequency: "yearly", priority: 0.3 },
+    // /thank-you excluded — noindex post-conversion page
 
     // ── Blog Index ──
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.8 },

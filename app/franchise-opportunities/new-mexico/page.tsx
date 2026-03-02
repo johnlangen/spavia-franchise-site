@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Explore Spavia day spa franchise opportunities in New Mexico. Data-driven market analysis for the Albuquerque metro. Proven model, recurring revenue, full training & support.",
     url: "https://spaviafranchise.com/franchise-opportunities/new-mexico",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
     type: "website",
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Spa Franchise in New Mexico | Spavia Day Spa",
     description:
       "Explore Spavia day spa franchise opportunities in New Mexico. Data-driven market analysis for the Albuquerque metro. Proven model, recurring revenue, full training & support.",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
 

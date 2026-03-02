@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Explore Spavia day spa franchise opportunities in Florida. Data-driven market analysis for Orlando, Jacksonville, Lake County, and more. Proven model, recurring revenue, full training & support.",
     url: "https://spaviafranchise.com/franchise-opportunities/florida",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
     type: "website",
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Spa Franchise in Florida | Spavia Day Spa",
     description:
       "Explore Spavia day spa franchise opportunities in Florida. Data-driven market analysis for Orlando, Jacksonville, Lake County, and more. Proven model, recurring revenue, full training & support.",
-    images: ["/og/spavia-franchise-og.jpg"],
+    images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
 
