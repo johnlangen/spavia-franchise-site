@@ -47,6 +47,9 @@ export default function Footer() {
           <Link href="/blog" className="hover:text-white">
             Blog
           </Link>
+          <Link href="/press" className="hover:text-white">
+            Press
+          </Link>
           <Link href="/get-started" className="hover:text-white">
             Request Info
           </Link>

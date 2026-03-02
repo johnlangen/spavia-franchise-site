@@ -41,8 +41,8 @@ export default function AwardsSection() {
         </div>
 
         <div className="mt-8">
-          <Link href="/our-franchisees" className="text-[#C2A878] font-medium hover:underline">
-            Explore franchisee stories →
+          <Link href="/press" className="text-[#C2A878] font-medium hover:underline">
+            View all press &amp; recognition →
           </Link>
         </div>
       </div>
