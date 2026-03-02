@@ -72,8 +72,32 @@ const testimonials = [
   },
 ];
 
+const ourFranchiseesFaqs = [
+  {
+    question: "What qualities does Spavia look for in franchise candidates?",
+    answer:
+      "Spavia seeks natural leaders with a drive to succeed, a genuine passion for the spa and wellness industry, and a commitment to being highly engaged within the franchise system. Ideal candidates demonstrate resilience, a results-oriented mindset, and dedication to contributing to the overall effectiveness of Spavia.",
+  },
+  {
+    question: "Do I need prior spa or wellness experience to own a Spavia franchise?",
+    answer:
+      "No. Spavia welcomes entrepreneurs from all backgrounds. For example, one franchise owner came from 25 years in the banking industry with no prior spa experience. Spavia's comprehensive training programs prepare owners regardless of their previous industry experience.",
+  },
+  {
+    question: "Where do Spavia franchise owners operate?",
+    answer:
+      "Spavia franchise owners operate across the United States, including locations in markets like Chicago, IL; Centennial, CO; Fredericksburg, VA; and Orlando, FL, among others.",
+  },
+  {
+    question: "What do current Spavia franchise owners say about the experience?",
+    answer:
+      "Spavia franchise owners consistently highlight the strong support from the national team, the brand's passion and knowledge, and the rewarding experience of building a wellness business. Owners describe Spavia as more than just a business \u2014 it's a network of passionate, caring individuals making a difference in the lives of guests and team members.",
+  },
+];
+
 export default function OurFranchiseesContent() {
   const [index, setIndex] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const nextTestimonial = () =>
     setIndex((prev) => (prev + 1) % testimonials.length);
@@ -209,6 +233,44 @@ export default function OurFranchiseesContent() {
             >
               <ChevronRight size={56} />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {ourFranchiseesFaqs.map((faq, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div key={idx} className="border-b pb-4 transition-colors">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
+                  >
+                    {faq.question}
+                    <span
+                      className={`text-2xl font-bold transform transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                      }`}
+                    >
+                      {isOpen ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

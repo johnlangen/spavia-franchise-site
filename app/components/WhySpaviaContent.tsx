@@ -9,6 +9,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+const whySpaviaFaqs = [
+  {
+    question: "What revenue streams does a Spavia franchise offer?",
+    answer:
+      "Spavia franchisees benefit from multiple revenue streams including a multi-treatment spa concept with result-driven treatments, a retail boutique for at-home wellness products, gift card sales that boost revenue during holidays and special occasions, and a three-tier membership model that caters to diverse guest needs and budgets.",
+  },
+  {
+    question: "What technology and systems does Spavia provide to franchisees?",
+    answer:
+      "Spavia provides a comprehensive suite of technology including a world-class applicant tracking system, 100% cloud-based operations, a fully integrated marketing and POS system, a robust Spavia app for online scheduling on iOS and Android, coordinated team member management, an integrated payroll system, effortless inventory management, instant analytics with over 150 reports, and guest capture technology with AI.",
+  },
+  {
+    question: "How long has Spavia been in the spa franchise industry?",
+    answer:
+      "Spavia opened its doors on September 25, 2005, with a mission and vision of making a positive difference in the world one guest at a time. The brand has over 20 years of experience delivering exceptional service and result-driven treatments.",
+  },
+  {
+    question: "What makes the Spavia guest experience different from other spa franchises?",
+    answer:
+      "Spavia is focused on creating an exceptional experience where guests can turn off the stresses of everyday life. Spavia listens to guests, measures success based on every experience, takes feedback to heart, and strives to improve each and every day. This commitment to guest care drives word-of-mouth referrals and positive reviews.",
+  },
+];
+
 const revenueStreams = [
   {
     title: "Multi-Treatment Concept",
@@ -34,6 +57,7 @@ const revenueStreams = [
 
 export default function WhySpaviaContent() {
   const [active, setActive] = useState<number>(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
@@ -258,6 +282,44 @@ export default function WhySpaviaContent() {
       {/* Awards */}
       <section className="snap-start bg-gray-50 px-4 sm:px-6">
         <AwardsSection />
+      </section>
+
+      {/* FAQ */}
+      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {whySpaviaFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div key={index} className="border-b pb-4 transition-colors">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
+                  >
+                    {faq.question}
+                    <span
+                      className={`text-2xl font-bold transform transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                      }`}
+                    >
+                      {isOpen ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
       {/* Next Page Link */}

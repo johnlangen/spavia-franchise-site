@@ -4,8 +4,32 @@ import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import AwardsSection from "./AwardsSection";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Footer from "./Footer";
 import Link from "next/link";
+
+const whoWeAreFaqs = [
+  {
+    question: "Who founded Spavia Day Spa?",
+    answer:
+      "Spavia was co-founded by Marty Langenderfer (CEO) and Allison Langenderfer (President). Marty brings expertise in finance, marketing, and operations from his background at Cornell University, Travelocity, and DISH Network. Allison leads with passion in design, creativity, and spa retail, drawing on her experience at Macy's and in pharmaceutical sales.",
+  },
+  {
+    question: "How long has Spavia been in business?",
+    answer:
+      "Spavia has been serving guests for over 20 years, bringing luxury spa treatments and amenities found at world-class resorts to local communities across America. The brand has built a network of Spavia Members who enjoy monthly treatments.",
+  },
+  {
+    question: "What is Spavia Cares?",
+    answer:
+      "Spavia Cares is the brand's community-focused initiative. With every new location, the team actively works to become part of the neighborhoods they serve through philanthropic efforts, small business relationships, and community engagement.",
+  },
+  {
+    question: "What leadership and support team does Spavia have?",
+    answer:
+      "Spavia's support team includes a Chief Operating Officer with over 10 years of franchise operations experience, a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+  },
+];
 
 // --- Data ---
 const founders = [
@@ -50,6 +74,8 @@ const team = [
 
 // --- Component ---
 export default function WhoWeAreContent() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
       <NavBar />
@@ -210,6 +236,44 @@ export default function WhoWeAreContent() {
               className="rounded-xl shadow-md"
             />
           </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {whoWeAreFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div key={index} className="border-b pb-4 transition-colors">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
+                  >
+                    {faq.question}
+                    <span
+                      className={`text-2xl font-bold transform transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                      }`}
+                    >
+                      {isOpen ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

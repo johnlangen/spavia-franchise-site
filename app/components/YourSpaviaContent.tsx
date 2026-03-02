@@ -45,6 +45,34 @@ const galleryImages = [
   "/your-spavia/image3.jpg",
 ];
 
+const yourSpaviaFaqs = [
+  {
+    question: "What are the financial requirements to open a Spavia franchise?",
+    answer:
+      "Spavia requires a minimum net worth of $500,000 and liquid capital of $200,000. The estimated initial investment ranges from $496,450 to $795,950, which includes build-out, equipment, and initial operating capital.",
+  },
+  {
+    question: "How does Spavia generate recurring revenue?",
+    answer:
+      "Recurring revenue is the cornerstone of the Spavia model. Membership accounts for over 50% of revenue with a fiercely loyal following. Additional revenue comes from multiple streams including massage, skin care, retail, body treatments, beauty services, and gift cards.",
+  },
+  {
+    question: "How big is the spa and wellness industry?",
+    answer:
+      "The global wellness market is expected to reach $8.5 trillion by 2027, with 22% of wellness growth attributed to the spa segment. The global day spa market is expected to reach $57 billion by 2033.",
+  },
+  {
+    question: "How does Spavia help with finding a location?",
+    answer:
+      "Finding a great location for your Spavia requires collaboration between the franchise partner, Spavia National, and their real estate partner, JLL. This partnership ensures you find the right site for your market.",
+  },
+  {
+    question: "Which markets are available for Spavia franchise development?",
+    answer:
+      "Spavia is available in most U.S. states. Limited markets include Colorado, North Dakota, South Dakota, Alaska, Hawaii, Maryland, New Jersey, and Rhode Island. Click on the interactive map above for territory details.",
+  },
+];
+
 interface Location {
   id: string;
   name?: string;
@@ -55,6 +83,7 @@ export default function YourSpaviaContent() {
   const [hoveredState, setHoveredState] = useState<string | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const limitedSet = useMemo(() => new Set(limitedMarkets), []);
   const gold = "#C2A878";
@@ -386,6 +415,44 @@ export default function YourSpaviaContent() {
           </div>
         </div>
       )}
+
+      {/* FAQ */}
+      <section className="py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {yourSpaviaFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div key={index} className="border-b pb-4 transition-colors">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
+                  >
+                    {faq.question}
+                    <span
+                      className={`text-2xl font-bold transform transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                      }`}
+                    >
+                      {isOpen ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Awards */}
       <section className="snap-start bg-gray-50">

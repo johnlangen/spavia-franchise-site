@@ -85,8 +85,37 @@ const journeyItems = [
   },
 ];
 
+const trainingFaqs = [
+  {
+    question: "What kind of training does Spavia provide new franchise owners?",
+    answer:
+      "Spavia provides comprehensive training including strategic sessions with founders and leadership, on-site operations training in a live spa environment, a three-step spa services training process (e-learning, deep dives with trainers, and hands-on training), access to Spavia University e-learning platform, and classroom training at headquarters in Denver, Colorado.",
+  },
+  {
+    question: "Does Spavia offer ongoing support after opening?",
+    answer:
+      "Yes. Spavia provides ongoing support including exceptional experience team training, vendor training from carefully selected partners, operational systems and POS support with evolving technology, spa services specialist training on new trends and treatments, and marketing training with community engagement strategies.",
+  },
+  {
+    question: "What is Spavia University?",
+    answer:
+      "Spavia University is Spavia's e-learning LMS suite that provides 24/7 access to training including video, text, quizzes, and reporting to keep teams engaged and accountable.",
+  },
+  {
+    question: "How much spa industry experience does the Spavia leadership team have?",
+    answer:
+      "The Spavia national team brings over 120 years of combined experience in spa and beauty, providing expert insights and guidance from day one of your franchise journey.",
+  },
+  {
+    question: "Where does Spavia classroom training take place?",
+    answer:
+      "New owners attend in-depth classroom training in Denver, Colorado, covering operations, marketing, economics, spa services, and systems. Grand opening training includes marketing, POS setup, and over 15 guides to prepare you for a successful launch.",
+  },
+];
+
 export default function TrainingAndSupportContent() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [currentJourneyIndex, setCurrentJourneyIndex] = useState(0);
 
   const paginate = (newDirection: number) => {
@@ -314,6 +343,44 @@ export default function TrainingAndSupportContent() {
                 </div>
               </motion.div>
             </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {trainingFaqs.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div key={index} className="border-b pb-4 transition-colors">
+                  <button
+                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
+                  >
+                    {faq.question}
+                    <span
+                      className={`text-2xl font-bold transform transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                      }`}
+                    >
+                      {isOpen ? "\u2212" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

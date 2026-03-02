@@ -1,6 +1,45 @@
 import { Metadata } from "next";
 import OurFranchiseesContent from "../components/OurFranchiseesContent";
 
+const ourFranchiseesFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What qualities does Spavia look for in franchise candidates?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia seeks natural leaders with a drive to succeed, a genuine passion for the spa and wellness industry, and a commitment to being highly engaged within the franchise system. Ideal candidates demonstrate resilience, a results-oriented mindset, and dedication to contributing to the overall effectiveness of Spavia.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need prior spa or wellness experience to own a Spavia franchise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Spavia welcomes entrepreneurs from all backgrounds. For example, one franchise owner came from 25 years in the banking industry with no prior spa experience. Spavia's comprehensive training programs prepare owners regardless of their previous industry experience.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where do Spavia franchise owners operate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia franchise owners operate across the United States, including locations in markets like Chicago, IL; Centennial, CO; Fredericksburg, VA; and Orlando, FL, among others.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What do current Spavia franchise owners say about the experience?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia franchise owners consistently highlight the strong support from the national team, the brand's passion and knowledge, and the rewarding experience of building a wellness business. Owners describe Spavia as more than just a business — it's a network of passionate, caring individuals making a difference in the lives of guests and team members.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Our Franchisees | Spavia Spa Franchise Owners",
   description:
@@ -33,5 +72,13 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <OurFranchiseesContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ourFranchiseesFaqJsonLd) }}
+      />
+      <OurFranchiseesContent />
+    </>
+  );
 }

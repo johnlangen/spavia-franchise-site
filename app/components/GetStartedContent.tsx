@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
@@ -9,7 +10,32 @@ import AwardsSection from "./AwardsSection";
 import Link from "next/link";
 import FranchiseLongForm from "./FranchiseLongForm";
 
+const getStartedFaqs = [
+  {
+    question: "How do I get started with a Spavia franchise?",
+    answer:
+      "Complete the franchise inquiry form above to receive the Spavia Franchise Information Kit. A Spavia representative will contact you within 24\u201348 hours to discuss the opportunity.",
+  },
+  {
+    question: "What happens after I submit the franchise inquiry form?",
+    answer:
+      "After submitting the form, a Spavia representative will reach out within 24\u201348 hours. The first step is typically a 15-minute introductory call to learn more about each other and determine if Spavia is the right fit.",
+  },
+  {
+    question: "What is the franchise ownership process at Spavia?",
+    answer:
+      "The Spavia franchise process includes an introductory call, two discovery sessions covering culture, design, support systems, marketing, operations, and economics, meetings with franchise partners and executives, a Meet the Team Day in Denver, Colorado, and then franchise award.",
+  },
+  {
+    question: "How large is the wellness industry opportunity?",
+    answer:
+      "The global wellness industry is a $6.3 trillion market. Spavia franchise owners bring resort-like spa experiences to local communities, tapping into the growing demand for affordable luxury wellness services.",
+  },
+];
+
 export default function GetStartedContent() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   return (
     <ThemeProvider>
       <main className="bg-black text-white flex flex-col">
@@ -99,6 +125,44 @@ export default function GetStartedContent() {
             </div>
           </motion.div>
 
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 px-4 sm:px-6 bg-black">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-white mb-12">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {getStartedFaqs.map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <div key={index} className="border-b border-gray-700 pb-4 transition-colors">
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="w-full text-left flex justify-between items-center font-semibold text-lg text-white hover:text-[#C2A878] transition-colors cursor-pointer"
+                    >
+                      {faq.question}
+                      <span
+                        className={`text-2xl font-bold transform transition-transform duration-300 ${
+                          isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
+                        }`}
+                      >
+                        {isOpen ? "\u2212" : "+"}
+                      </span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </section>
 
         {/* AWARDS */}

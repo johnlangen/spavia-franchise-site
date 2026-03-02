@@ -54,6 +54,38 @@ const jsonLd = {
         text: "Spavia franchise locations average over $1.1 million in gross annual sales, with 1 in 2 franchise owners achieving $1M+ in revenue. Results vary by location — see the Franchise Disclosure Document (FDD) Item 19 for details.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Can I finance a Spavia franchise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia does not offer in-house financing, but the brand is listed on the SBA Franchise Directory. This means you can apply for SBA 7(a) loans through third-party lenders with favorable terms. Many franchise owners combine SBA financing with personal capital.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long until a Spavia franchise breaks even?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Timelines vary by location and market, but Spavia's membership-driven model is designed to build recurring revenue from day one. With 1 in 2 owners achieving $1M+ in annual revenue, the model is built for sustainable, long-term returns. Request the franchise overview for detailed financial projections.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are there multi-unit discount opportunities?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Spavia offers multi-unit development agreements for qualified candidates who want to open multiple locations. Contact the franchise team to discuss multi-unit pricing and territory availability.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the royalty fee for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The 6% royalty fee funds ongoing franchise support including technology platforms, training programs, operational guidance, vendor partnerships, and continuous brand development.",
+      },
+    },
   ],
 };
 
