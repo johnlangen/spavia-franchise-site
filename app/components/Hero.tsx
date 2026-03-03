@@ -1,9 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
   /* ---------------- METRICS ---------------- */
   const metrics = [
     { v: "$1,146,952", l: "Avg Gross Sales*" },
@@ -18,6 +20,18 @@ export default function Hero() {
   const nextMetric = () =>
     setMetricIndex((i) => (i === metrics.length - 1 ? 0 : i + 1));
 
+  // Attempt autoplay — reveal on success, remove video entirely on failure
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => setVideoReady(true))
+        .catch(() => video.remove());
+    }
+  }, []);
+
   return (
     <section
       id="hero"
@@ -25,13 +39,28 @@ export default function Hero() {
     >
       {/* ---------- BACKGROUND ---------- */}
 
-      {/* Background image */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ backgroundImage: "url('/your-spavia/image1.jpg')" }}
+      {/* Static fallback image — always visible behind video */}
+      <img
+        src="/your-spavia/image1.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Lighter overlay */}
+      {/* Video layer — starts invisible, fades in only if autoplay succeeds */}
+      <video
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className={`absolute inset-0 w-full h-full object-cover object-[center_30%] transition-opacity duration-700 ${
+          videoReady ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
       {/* ---------- CONTENT ---------- */}
