@@ -25,17 +25,11 @@ export default function Hero() {
     >
       {/* ---------- BACKGROUND ---------- */}
 
-      {/* Background video (all screens — fallback image via poster for Low Power Mode) */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="/hero-bg.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
+      {/* Background image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      />
 
       {/* Lighter overlay */}
       <div className="absolute inset-0 bg-black/40" />
@@ -147,24 +141,28 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Scroll CTA */}
-        <a
+        {/* CTA Button */}
+        <motion.a
           href="#franchise-overview"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="
             mt-10
-            inline-flex
-            flex-col
-            items-center
-            gap-1
-            text-sm
-            text-white/75
-            hover:text-white
+            inline-block
+            bg-[#C2A878]
+            hover:bg-[#b09466]
+            text-white
+            font-semibold
+            px-8 py-3.5
+            rounded-lg
+            text-base
+            shadow-lg
             transition
           "
         >
-          <span>Request the Franchise Overview</span>
-          <span className="text-lg">↓</span>
-        </a>
+          Get the Franchise Overview
+        </motion.a>
       </div>
     </section>
   );

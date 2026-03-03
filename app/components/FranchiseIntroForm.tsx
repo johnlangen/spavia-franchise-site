@@ -115,7 +115,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
   return (
     <section
       id="franchise-overview"
-      className="bg-white pt-28 pb-24 border-t border-gray-100"
+      className="bg-white pt-20 pb-16 border-t border-gray-100"
     >
       <div className="mx-auto max-w-6xl px-5 grid gap-14 md:grid-cols-2">
         {/* LEFT */}

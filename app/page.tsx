@@ -147,9 +147,22 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
             Hear From Our Franchisees
           </h2>
-          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 text-center mb-4 max-w-2xl mx-auto">
             Franchise owners share what it&apos;s like to build a business with Spavia.
           </p>
+
+          {/* Quote overlay */}
+          <blockquote className="max-w-2xl mx-auto text-center mb-8">
+            <p className="text-lg italic text-gray-700 leading-relaxed">
+              &ldquo;Spavia is more than just a business — it is a network of passionate,
+              caring individuals that have come together to make a difference in the
+              lives of our guests and team.&rdquo;
+            </p>
+            <cite className="block mt-3 text-sm font-semibold text-[#C2A878] not-italic">
+              — Kari, Spavia Owner, Centennial, CO
+            </cite>
+          </blockquote>
+
           <video
             src="/our-franchisees/video1.mp4"
             controls
@@ -157,6 +170,15 @@ export default function Home() {
             poster="/hero-bg.jpg"
             className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
           />
+
+          <div className="text-center mt-6">
+            <Link
+              href="/our-franchisees"
+              className="text-[#C2A878] font-medium hover:underline"
+            >
+              Meet more franchise owners →
+            </Link>
+          </div>
         </Section>
 
         {/* 6. THEME SELECTION — interactive differentiator, rewards the scroll */}

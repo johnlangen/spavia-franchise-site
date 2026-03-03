@@ -17,7 +17,7 @@ const awards = [
 
 export default function AwardsSection() {
   return (
-    <section className="bg-white py-26">
+    <section className="bg-white py-16">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           Awards, Press, and Recognition

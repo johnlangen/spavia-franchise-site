@@ -30,7 +30,7 @@ export default function ProofSection() {
   ];
 
   return (
-    <section className="bg-white py-30">
+    <section className="bg-white py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 scroll-mt-24">
