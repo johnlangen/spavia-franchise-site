@@ -191,6 +191,14 @@ export default function Home() {
           </p>
           <ThemeSelector />
           <ThemeGallery />
+          <div className="text-center mt-4">
+            <a
+              href="#franchise-form"
+              className="inline-block bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold px-8 py-3 rounded-lg shadow transition"
+            >
+              Bring This Design to Your Market
+            </a>
+          </div>
         </Section>
 
         {/* 7. PROCESS — reduce anxiety, show clear path before main form */}

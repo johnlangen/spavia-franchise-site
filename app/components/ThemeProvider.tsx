@@ -11,7 +11,7 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<ThemeKey | null>(null);
+  const [theme, setTheme] = useState<ThemeKey | null>("mountain");
 
   // Keep a global CSS var in sync with the theme
   useEffect(() => {
