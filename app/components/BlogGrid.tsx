@@ -63,6 +63,14 @@ export default function BlogGrid() {
 
 const blogPosts = [
   {
+    title: "How to Open a Spa Franchise: A Step-by-Step Owner\u2019s Timeline",
+    excerpt:
+      "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the 8-step timeline, financing options, and what to expect at every phase of ownership.",
+    image: "/blog/blog24.png",
+    href: "/blog/2026/03/10/how-to-open-a-spa-franchise",
+  },
+
+  {
     title: "Why Phoenix & Scottsdale Are the Hottest Markets for a Spa Franchise in 2026",
     excerpt:
       "Phoenix and Scottsdale are booming markets for spa franchise investment. Explore why Spavia's day spa franchise model is ideal for the Valley's wellness-driven population. Limited territories available.",
