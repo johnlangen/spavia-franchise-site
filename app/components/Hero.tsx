@@ -145,13 +145,13 @@ export default function Hero() {
       </video>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-black/55" />
 
       {/* ---------- CONTENT: Split Layout ---------- */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-0">
         <div className="grid md:grid-cols-[1fr_380px] gap-8 md:gap-12 items-center">
           {/* ── LEFT: Headline + Metrics ── */}
-          <div className="text-white">
+          <div className="text-white text-center md:text-left">
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
@@ -168,7 +168,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-xl text-sm sm:text-base md:text-lg text-white/85 mb-6"
+              className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg text-white/85 mb-6"
             >
               Join 60+ Spavia day spa franchise owners bringing affordable luxury
               wellness to their communities &mdash; with many locations exceeding
@@ -180,7 +180,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="max-w-lg"
+              className="max-w-lg mx-auto md:mx-0"
             >
               {/* Desktop */}
               <div className="hidden sm:grid grid-cols-3 gap-2.5">
