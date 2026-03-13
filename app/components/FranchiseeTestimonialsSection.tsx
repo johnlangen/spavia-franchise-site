@@ -49,11 +49,9 @@ export default function FranchiseeTestimonialsSection() {
   }, [next]);
 
   return (
-    <section className="bg-black py-20 px-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
-
+    <section className="bg-white py-20 px-6 overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
           What Our Franchise Partners Are Saying
         </h2>
 
@@ -61,7 +59,7 @@ export default function FranchiseeTestimonialsSection() {
           {/* Arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 text-white/50 hover:text-[#C2A878] transition cursor-pointer z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-300 hover:text-[#C2A878] transition cursor-pointer z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={40} />
@@ -83,7 +81,7 @@ export default function FranchiseeTestimonialsSection() {
                 height={100}
                 className="w-[100px] h-[100px] rounded-full object-cover shadow-lg mb-5 border-2 border-[#C2A878]/30"
               />
-              <p className="text-white/85 italic text-base md:text-lg leading-relaxed mb-4 max-w-2xl">
+              <p className="text-gray-700 italic text-base md:text-lg leading-relaxed mb-4 max-w-2xl">
                 &ldquo;{testimonials[index].text}&rdquo;
               </p>
               <p className="text-[#C2A878] font-semibold">
@@ -94,7 +92,7 @@ export default function FranchiseeTestimonialsSection() {
 
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-white/50 hover:text-[#C2A878] transition cursor-pointer z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-300 hover:text-[#C2A878] transition cursor-pointer z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight size={40} />
@@ -108,21 +106,19 @@ export default function FranchiseeTestimonialsSection() {
               key={i}
               onClick={() => setIndex(i)}
               className={`w-2 h-2 rounded-full transition cursor-pointer ${
-                i === index ? "bg-[#C2A878]" : "bg-white/25"
+                i === index ? "bg-[#C2A878]" : "bg-gray-300"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />
           ))}
         </div>
 
-        <p className="text-white/40 text-xs text-center mt-10 max-w-xl mx-auto">
+        <p className="text-gray-400 text-xs text-center mt-10 max-w-xl mx-auto">
           Spavia franchise owners come from diverse professional backgrounds — from
           banking and corporate careers to lifelong wellness enthusiasts — and find
           success through Spavia&apos;s proven systems and hands-on support.
         </p>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
     </section>
   );
 }

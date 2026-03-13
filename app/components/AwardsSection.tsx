@@ -17,9 +17,9 @@ const awards = [
 
 export default function AwardsSection() {
   return (
-    <section className="bg-black py-16">
+    <section className="bg-white py-16">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           Awards, Press, and Recognition
         </h2>
         <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8" />
@@ -27,16 +27,14 @@ export default function AwardsSection() {
         <div className="overflow-hidden relative">
           <div className="flex animate-marquee whitespace-nowrap items-center">
             {awards.concat(awards).map((award, i) => (
-              <div key={i} className="flex-shrink-0 px-6">
-                <div className="bg-white rounded-lg px-4 py-3 flex items-center justify-center h-16">
-                  <Image
-                    src={award.src}
-                    alt={award.alt}
-                    width={140}
-                    height={60}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
+              <div key={i} className="flex-shrink-0 px-8">
+                <Image
+                  src={award.src}
+                  alt={award.alt}
+                  width={140}
+                  height={60}
+                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition"
+                />
               </div>
             ))}
           </div>
