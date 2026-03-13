@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import FranchiseLongForm from "./components/FranchiseLongForm";
-import FranchiseIntroForm from "./components/FranchiseIntroForm";
+// FranchiseIntroForm is now embedded directly in the Hero component
 
 
 export const metadata: Metadata = {
@@ -133,10 +133,7 @@ export default function Home() {
         {/* 1. HERO — value prop, 5-second test */}
         <Hero />
 
-        {/* 2. SHORT FORM — capture high-intent visitors immediately */}
-        <FranchiseIntroForm />
-
-        {/* 3. SOCIAL PROOF — stats, investment comparison (trust first) */}
+        {/* 2. SOCIAL PROOF — stats, investment comparison (trust first) */}
         <ProofSection />
 
         {/* 4. AWARDS — trust logos, brand credibility */}
