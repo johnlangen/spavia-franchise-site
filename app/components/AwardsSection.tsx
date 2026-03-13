@@ -5,14 +5,14 @@ import Link from "next/link";
 
 const awards = [
   { src: "/awards/award1.svg", alt: "Top Franchise Award" },
-  { src: "/awards/award2.png", alt: "Entrepreneur Franchise 500" },
-  { src: "/awards/award3.webp", alt: "Franchise Business Review" },
-  { src: "/awards/award4.png", alt: "Inc. 5000 Recognition" },
-  { src: "/awards/award5.png", alt: "Wellness Industry Excellence Award" },
-  { src: "/awards/award6.png", alt: "Best Spa Franchise Award" },
-  { src: "/awards/award7.png", alt: "Top Growing Franchise Award" },
-  { src: "/awards/award8.png", alt: "Industry Innovation Award" },
-  { src: "/awards/award9.png", alt: "Community Impact Award" },
+  { src: "/awards/award2.png", alt: "Titan 100 Award" },
+  { src: "/awards/award3.webp", alt: "Franchise Times" },
+  { src: "/awards/award4.png", alt: "Inc. Magazine" },
+  { src: "/awards/award5.png", alt: "Quality Business Awards" },
+  { src: "/awards/award6.png", alt: "Maple Grove Magazine" },
+  { src: "/awards/award7.png", alt: "Cities South Magazine" },
+  { src: "/awards/award8.png", alt: "FranServe" },
+  { src: "/awards/award9.png", alt: "2025 Franchise Innovation Winner" },
 ];
 
 export default function AwardsSection() {
@@ -25,16 +25,18 @@ export default function AwardsSection() {
         <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8" />
 
         <div className="overflow-hidden relative">
-          <div className="flex animate-marquee whitespace-nowrap">
+          <div className="flex animate-marquee whitespace-nowrap items-center">
             {awards.concat(awards).map((award, i) => (
-              <div key={i} className="flex-shrink-0 px-8">
-                <Image
-                  src={award.src}
-                  alt={award.alt}
-                  width={140}
-                  height={60}
-                  className="h-12 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition"
-                />
+              <div key={i} className="flex-shrink-0 px-6">
+                <div className="bg-white rounded-lg px-4 py-3 flex items-center justify-center h-16">
+                  <Image
+                    src={award.src}
+                    alt={award.alt}
+                    width={140}
+                    height={60}
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>

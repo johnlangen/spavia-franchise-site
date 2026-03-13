@@ -25,7 +25,7 @@ export default function GuestRatingsSection() {
           className="flex flex-col items-center gap-3"
         >
           <p className="text-[#C2A878] text-6xl md:text-7xl font-bold font-[family-name:var(--font-recoleta)]">
-            4.7
+            4.8
           </p>
 
           <div className="flex gap-1">
@@ -38,10 +38,7 @@ export default function GuestRatingsSection() {
           </div>
 
           <p className="text-gray-600 text-sm mt-1">
-            Based on <span className="font-semibold">134,662 verified reviews</span>
-          </p>
-          <p className="text-gray-400 text-xs">
-            Powered by Frederick
+            Based on <span className="font-semibold">30,976 Google reviews</span> across 62 locations
           </p>
         </motion.div>
 

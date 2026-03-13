@@ -48,8 +48,6 @@ export default function FranchiseeTestimonialsSection() {
     return () => clearInterval(timer);
   }, [next]);
 
-  const t = testimonials[index];
-
   return (
     <section className="bg-black py-20 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
@@ -59,7 +57,7 @@ export default function FranchiseeTestimonialsSection() {
           What Our Franchise Partners Are Saying
         </h2>
 
-        <div className="relative flex items-center justify-center min-h-[340px] md:min-h-[280px]">
+        <div className="relative h-[380px] md:h-[320px]">
           {/* Arrows */}
           <button
             onClick={prev}
@@ -76,20 +74,20 @@ export default function FranchiseeTestimonialsSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -60 }}
               transition={{ duration: 0.45, ease: "easeInOut" }}
-              className="flex flex-col items-center text-center max-w-2xl mx-auto px-10"
+              className="absolute inset-0 flex flex-col items-center justify-center text-center px-14 md:px-16"
             >
               <Image
-                src={t.image}
-                alt={t.name}
-                width={120}
-                height={120}
-                className="rounded-full object-cover shadow-lg mb-6 border-2 border-[#C2A878]/30"
+                src={testimonials[index].image}
+                alt={testimonials[index].name}
+                width={100}
+                height={100}
+                className="w-[100px] h-[100px] rounded-full object-cover shadow-lg mb-5 border-2 border-[#C2A878]/30"
               />
-              <p className="text-white/85 italic text-base md:text-lg leading-relaxed mb-5">
-                &ldquo;{t.text}&rdquo;
+              <p className="text-white/85 italic text-base md:text-lg leading-relaxed mb-4 max-w-2xl">
+                &ldquo;{testimonials[index].text}&rdquo;
               </p>
               <p className="text-[#C2A878] font-semibold">
-                — {t.name}, {t.role}
+                — {testimonials[index].name}, {testimonials[index].role}
               </p>
             </motion.div>
           </AnimatePresence>
@@ -104,7 +102,7 @@ export default function FranchiseeTestimonialsSection() {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-4">
           {testimonials.map((_, i) => (
             <button
               key={i}
