@@ -1,113 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DollarSign, Trophy, TrendingUp } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
-import { themes } from "../themeConfig";
-import Link from "next/link";
 
+const stats = [
+  { value: "$1,146,952", label: "Avg Gross Sales*" },
+  { value: "1 in 2", label: "Owners Achieve $1M+ Revenue*" },
+  { value: "$496K – $796K", label: "Initial Investment*" },
+];
 
 export default function ProofSection() {
-  const { theme } = useTheme();
-  const themeColor = theme ? themes[theme].color : "#C2A878"; // 👈 Changed fallback color to bronze
-
-  const stats = [
-    {
-      icon: DollarSign,
-      value: "$1,146,952",
-      label: "Average Gross Sales",
-    },
-    {
-      icon: TrendingUp,
-      value: "1 in 2 owners",
-      label: "Achieve $1M+ in annual revenue",
-    },
-    {
-      icon: Trophy,
-      value: "$1,940,000",
-      label: "Highest Gross Revenue",
-    },
-  ];
-
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 scroll-mt-24">
-           Spavia Spa Franchise Performance – The Proof is in the Numbers
-        </h2>
+    <section className="bg-black py-20 relative overflow-hidden">
+      {/* Gold divider top */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
 
-        {/* Stat Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {stats.map((stat, idx) => {
-            const Icon = stat.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                viewport={{ once: true }}
-                className="p-6 rounded-lg border bg-white shadow text-center"
-                style={{ borderColor: themeColor }}
-              >
-                <Icon
-                  className="w-8 h-8 mx-auto mb-4"
-                  style={{ color: themeColor }}
-                />
-                <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-gray-600 italic">{stat.label}</p>
-              </motion.div>
-            );
-          })}
+      <div className="max-w-5xl mx-auto px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-2xl md:text-3xl font-bold text-white text-center mb-14"
+        >
+          The Proof Is in the Numbers
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-[#C2A878] text-4xl md:text-5xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+                {stat.value}
+              </p>
+              <p className="text-white/70 text-sm tracking-wide uppercase">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Investment Comparison */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="p-8 rounded-lg border bg-white shadow text-center"
-          style={{ borderColor: themeColor }}
-        >
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">
-            Own a resort-inspired spa for a fraction of the price
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Spavia */}
-            <div>
-              <p className="font-semibold mb-2" style={{ color: themeColor }}>
-                Spavia Initial Investment
-              </p>
-              <p className="text-gray-900 font-medium">
-                $496,450 – $795,950
-              </p>
-            </div>
-
-            {/* Competitors */}
-            <div>
-              <p className="font-semibold mb-2 text-gray-900">
-                Competitors Initial Investment
-              </p>
-              <p className="text-gray-900">
-                Massage Envy: $719,350 – $1,081,000
-              </p>
-              <p className="text-gray-900">
-                Woodhouse: $1,482,439 – $2,697,879
-              </p>
-            </div>
-
-          </div>
-
-          <div className="text-center mt-6">
-              <Link href="/your-spavia" className="text-[#C2A878] font-medium hover:underline">
-                See full financial requirements →
-              </Link>
-            </div>
-        </motion.div>
+        <p className="text-center text-white/40 text-[10px] mt-10">
+          *Based on 2024 FDD Item 19 data. Results vary. See FDD for details.
+        </p>
       </div>
+
+      {/* Gold divider bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
     </section>
   );
 }

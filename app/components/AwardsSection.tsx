@@ -17,12 +17,12 @@ const awards = [
 
 export default function AwardsSection() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-black py-16">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
           Awards, Press, and Recognition
         </h2>
-        <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8"></div>
+        <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8" />
 
         <div className="overflow-hidden relative">
           <div className="flex animate-marquee whitespace-nowrap">
@@ -33,7 +33,7 @@ export default function AwardsSection() {
                   alt={award.alt}
                   width={140}
                   height={60}
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition"
+                  className="h-12 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition"
                 />
               </div>
             ))}

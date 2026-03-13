@@ -1,33 +1,31 @@
 import { Metadata } from "next";
 import Hero from "./components/Hero";
-import Section from "./components/Section";
 import FAQ from "./components/FAQ";
-import { ThemeProvider } from "./components/ThemeProvider";
-import ThemeSelector from "./components/ThemeSelector";
-import ThemeGallery from "./components/ThemeGallery";
 import ProofSection from "./components/ProofSection";
 import AwardsSection from "./components/AwardsSection";
-import SpaviaCaresSection from "./components/SpaviaCaresSection";
-import ProcessSection from "./components/ProcessSection";
+import ScheduleCallBanner from "./components/ScheduleCallBanner";
+import GuestRatingsSection from "./components/GuestRatingsSection";
+import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSection";
+import GuestTestimonialsSection from "./components/GuestTestimonialsSection";
+import SEOContentSection from "./components/SEOContentSection";
+import GoldBottomBanner from "./components/GoldBottomBanner";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
-import FranchiseLongForm from "./components/FranchiseLongForm";
-// FranchiseIntroForm is now embedded directly in the Hero component
-
+import Section from "./components/Section";
 
 export const metadata: Metadata = {
   title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
   description:
-    "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
+    "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
   alternates: {
     canonical: "https://spaviafranchise.com/",
   },
   openGraph: {
     title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
     description:
-      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
+      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
     url: "https://spaviafranchise.com/",
     type: "website",
     images: [
@@ -43,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
     description:
-      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore startup costs, training, and support in the $19B spa industry.",
+      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
@@ -74,6 +72,22 @@ const homepageFaqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
+      name: "How much does it cost to open a Spavia day spa franchise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The initial investment to open a Spavia day spa franchise ranges from $496K to $796K, which includes build-out, equipment, and initial operating capital. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs and expected returns.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What spa services does a Spavia franchise offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia day spas offer a full menu of resort-inspired wellness services including massage therapy (Swedish, deep tissue, hot stone), facials and advanced skin care, body treatments, waxing, lash and brow services, and retail products. This diverse service mix creates multiple revenue streams and drives strong guest retention through membership programs.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "What kind of leadership experience does Spavia provide?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -86,6 +100,22 @@ const homepageFaqJsonLd = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Spavia generates revenue through diverse streams, including spa treatments, beauty services, and retail products. Multiple revenue streams are vital for stability and growth, enabling your business to thrive while successfully meeting guest needs and maximizing earning potential. Revenue streams include massage, facials/skin care, waxing, lash & brow treatments, body treatments, retail, gift cards, and spa packages.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What financing options are available for a Spavia franchise?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Spavia franchise candidates have access to several financing options, including SBA-eligible loan programs, which are among the most popular financing routes for franchise investments. The Spavia team provides guidance throughout the financing process and can connect you with franchise-friendly lenders. Candidates typically need a minimum net worth and liquid capital to qualify.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to open a Spavia day spa?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The typical timeline from signing a franchise agreement to opening day is approximately 10 to 14 months. This includes site selection, lease negotiation, buildout and construction, equipment installation, staff hiring, and comprehensive training. Spavia's experienced real estate and construction teams support you through every stage of the process.",
       },
     },
     {
@@ -106,18 +136,31 @@ const homepageFaqJsonLd = {
     },
     {
       "@type": "Question",
-      name: "How much does it cost to open a Spavia day spa franchise?",
+      name: "Do I need spa industry experience to own a Spavia franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The initial investment to open a Spavia day spa franchise ranges from $496K to $796K, which includes build-out, equipment, and initial operating capital. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs and expected returns.",
+        text: "No prior spa or wellness industry experience is required. Spavia's comprehensive training program covers everything from spa operations and service delivery to marketing, hiring, and financial management. Many successful Spavia franchise owners come from backgrounds in corporate management, finance, healthcare, and other industries.",
       },
     },
   ],
 };
 
+const aggregateRatingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Spavia Day Spa",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.7",
+    reviewCount: "134662",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
 export default function Home() {
   return (
-    <ThemeProvider>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
@@ -128,136 +171,71 @@ export default function Home() {
           __html: JSON.stringify(homepageVideoJsonLd),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingJsonLd),
+        }}
+      />
       <NavBar />
       <main className="flex flex-col">
-        {/* 1. HERO — value prop, 5-second test */}
+        {/* 1. HERO — video bg + embedded lead capture form */}
         <Hero />
 
-        {/* 2. SOCIAL PROOF — stats, investment comparison (trust first) */}
+        {/* 2. PROOF — bold gold numbers on black */}
         <ProofSection />
 
-        {/* 4. AWARDS — trust logos, brand credibility */}
+        {/* 3. SCHEDULE CALL — gold banner CTA */}
+        <ScheduleCallBanner />
+
+        {/* 4. AWARDS — trust logos on black */}
         <AwardsSection />
 
-        {/* 5. FRANCHISEE VIDEO — 80% conversion lift from video testimonials */}
-        <Section className="bg-gray-50 py-20">
-          <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
-            Hear From Our Franchisees
-          </h2>
-          <p className="text-gray-600 text-center mb-4 max-w-2xl mx-auto">
-            Franchise owners share what it&apos;s like to build a business with Spavia.
-          </p>
+        {/* 5. GUEST RATINGS — 4.7 stars, 134K reviews */}
+        <GuestRatingsSection />
 
-          {/* Quote overlay */}
-          <blockquote className="max-w-2xl mx-auto text-center mb-8">
-            <p className="text-lg italic text-gray-700 leading-relaxed">
-              &ldquo;Spavia is more than just a business — it is a network of passionate,
-              caring individuals that have come together to make a difference in the
-              lives of our guests and team.&rdquo;
-            </p>
-            <cite className="block mt-3 text-sm font-semibold text-[#C2A878] not-italic">
-              — Kari, Spavia Owner, Centennial, CO
-            </cite>
-          </blockquote>
+        {/* 6. FRANCHISEE TESTIMONIALS — carousel on black */}
+        <FranchiseeTestimonialsSection />
 
-          <video
-            src="/our-franchisees/video1.mp4"
-            controls
-            preload="metadata"
-            poster="/hero-bg.jpg"
-            className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
-          />
+        {/* 7. GUEST TESTIMONIALS — review cards on white */}
+        <GuestTestimonialsSection />
 
-          <div className="text-center mt-6">
-            <Link
-              href="/our-franchisees"
-              className="text-[#C2A878] font-medium hover:underline"
-            >
-              Meet more franchise owners →
-            </Link>
-          </div>
-        </Section>
+        {/* 8. SEO CONTENT — keyword-rich content on black */}
+        <SEOContentSection />
 
-        {/* 6. THEME SELECTION — interactive differentiator, rewards the scroll */}
-        <Section className="bg-white pt-20 pb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-2 scroll-mt-24">
-            Choose Your Award Winning Spa Design
-          </h2>
-          <p className="text-gray-600 text-center mb-6">
-            Select a theme to see how your spa can look and feel.
-          </p>
-          <ThemeSelector />
-          <ThemeGallery />
-          <div className="text-center mt-4">
-            <a
-              href="#franchise-form"
-              className="inline-block bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold px-8 py-3 rounded-lg shadow transition"
-            >
-              Bring This Design to Your Market
-            </a>
-          </div>
-        </Section>
-
-        {/* 7. PROCESS — reduce anxiety, show clear path before main form */}
-        <ProcessSection />
-
-        {/* 8. MAIN FORM — primary conversion point (~70% scroll depth) */}
-        <Section id="franchise-form" className="bg-white py-20">
-          <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
-            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
-              Request Franchise Information
-            </h2>
-            <p className="text-center text-gray-700 mb-6">
-              Learn more about opening a Spavia location in your community.
-            </p>
-            <FranchiseLongForm />
-          </div>
-          <div className="text-center mt-8">
-            <p className="text-sm text-gray-500 mb-2">Prefer to talk first?</p>
-            <a
-              href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-[#C2A878] font-semibold hover:underline"
-            >
-              Schedule a Call →
-            </a>
-          </div>
-        </Section>
-
-        {/* 9. FAQ — handle remaining objections */}
+        {/* 9. FAQ — expanded with keyword questions */}
         <FAQ />
 
-        {/* 10. SPAVIA CARES — brand values, character (post-conversion) */}
-        <SpaviaCaresSection />
+        {/* 10. GOLD BOTTOM BANNER — dual CTA */}
+        <GoldBottomBanner />
 
         {/* 11. EXPLORE LINKS — keep non-converters on site */}
-        <Section className="bg-gray-50 py-16">
+        <Section className="bg-black py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
+            <h2 className="text-2xl font-bold text-center mb-8 text-white">
               Explore More
             </h2>
             <div className="grid sm:grid-cols-3 gap-4">
               <Link
                 href="/franchise-cost"
-                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
               >
-                <p className="font-bold text-gray-900 mb-1">Franchise Cost</p>
-                <p className="text-sm text-gray-600">Full investment breakdown</p>
+                <p className="font-bold text-white mb-1">Franchise Cost</p>
+                <p className="text-sm text-white/60">Full investment breakdown</p>
               </Link>
               <Link
                 href="/franchise-opportunities"
-                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
               >
-                <p className="font-bold text-gray-900 mb-1">Available Markets</p>
-                <p className="text-sm text-gray-600">Find territories by state</p>
+                <p className="font-bold text-white mb-1">Available Markets</p>
+                <p className="text-sm text-white/60">Find territories by state</p>
               </Link>
               <Link
                 href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
-                className="block p-5 rounded-xl border border-gray-200 bg-white hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
               >
-                <p className="font-bold text-gray-900 mb-1">Spavia vs. Woodhouse</p>
-                <p className="text-sm text-gray-600">Side-by-side comparison</p>
+                <p className="font-bold text-white mb-1">Spavia vs. Woodhouse</p>
+                <p className="text-sm text-white/60">Side-by-side comparison</p>
               </Link>
             </div>
           </div>
@@ -268,6 +246,6 @@ export default function Home() {
 
       {/* Floating Button */}
       <FloatingButton />
-    </ThemeProvider>
+    </>
   );
 }

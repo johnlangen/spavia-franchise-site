@@ -3,13 +3,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useTheme } from "./ThemeProvider";
 
 const MotionLink = motion(Link);
 
 export default function FloatingButton() {
-  // Trigger re-render on theme change (accent color)
-  useTheme();
 
   /** -----------------------------
    * DESKTOP VISIBILITY (hero-based)
@@ -69,7 +66,7 @@ export default function FloatingButton() {
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          style={{ backgroundColor: "var(--accent)" }}
+          style={{ backgroundColor: "#C2A878" }}
           whileHover={{ scale: 1.03 }}
         >
           Get Started
@@ -87,10 +84,9 @@ export default function FloatingButton() {
           transition={{ duration: 0.35, ease: "easeOut" }}
         >
           <Link
-            href="#franchise-form"
+            href="/get-started"
             className="block w-full text-center rounded-xl py-4 font-semibold
-                       shadow-xl text-white"
-            style={{ backgroundColor: "var(--accent)" }}
+                       shadow-xl text-white bg-[#C2A878]"
           >
             Get Started
           </Link>

@@ -1,0 +1,130 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Paul",
+    role: "Spavia Owner, Chicago, IL",
+    text: "As a Spavia owner, what fills my cup is seeing the daily growth of team members as they challenge themselves and helping to guide them along. Each day brings a new discovery for someone, as they realize that by digging deep, they learn, grow, and earn guest loyalty by giving their best effort.",
+    image: "/our-franchisees/image4.jpg",
+  },
+  {
+    name: "Kari",
+    role: "Spavia Owner, Centennial, CO",
+    text: "I chose Spavia because it is more than just a business — it is a network of passionate, caring individuals that have come together to make a difference in the lives of our guests and team.",
+    image: "/our-franchisees/image1.jpg",
+  },
+  {
+    name: "Nivin",
+    role: "Spavia Owner, Fredericksburg, VA",
+    text: "Everything we do is about the guest experience. We say it, we do it and we firmly believe it. With this mentality, productivity increases and revenue follows.",
+    image: "/our-franchisees/image2.jpg",
+  },
+  {
+    name: "Patricia",
+    role: "Spavia Owner, Orlando, FL",
+    text: "The Spavia National team has a passion for what they do. I love the branding and level of knowledge that they readily share. This is especially important to me since I came from 25 years in the banking industry and was not in the spa industry before.",
+    image: "/our-franchisees/image3.jpg",
+  },
+];
+
+export default function FranchiseeTestimonialsSection() {
+  const [index, setIndex] = useState(0);
+
+  const next = useCallback(
+    () => setIndex((i) => (i + 1) % testimonials.length),
+    []
+  );
+  const prev = () =>
+    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
+
+  // Auto-rotate every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(next, 6000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const t = testimonials[index];
+
+  return (
+    <section className="bg-black py-20 px-6 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
+
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
+          What Our Franchise Partners Are Saying
+        </h2>
+
+        <div className="relative flex items-center justify-center min-h-[340px] md:min-h-[280px]">
+          {/* Arrows */}
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 text-white/50 hover:text-[#C2A878] transition cursor-pointer z-10"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -60 }}
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+              className="flex flex-col items-center text-center max-w-2xl mx-auto px-10"
+            >
+              <Image
+                src={t.image}
+                alt={t.name}
+                width={120}
+                height={120}
+                className="rounded-full object-cover shadow-lg mb-6 border-2 border-[#C2A878]/30"
+              />
+              <p className="text-white/85 italic text-base md:text-lg leading-relaxed mb-5">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <p className="text-[#C2A878] font-semibold">
+                — {t.name}, {t.role}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-white/50 hover:text-[#C2A878] transition cursor-pointer z-10"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className={`w-2 h-2 rounded-full transition cursor-pointer ${
+                i === index ? "bg-[#C2A878]" : "bg-white/25"
+              }`}
+              aria-label={`Go to testimonial ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        <p className="text-white/40 text-xs text-center mt-10 max-w-xl mx-auto">
+          Spavia franchise owners come from diverse professional backgrounds — from
+          banking and corporate careers to lifelong wellness enthusiasts — and find
+          success through Spavia&apos;s proven systems and hands-on support.
+        </p>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
+    </section>
+  );
+}
