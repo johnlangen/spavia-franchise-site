@@ -5,40 +5,40 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Katelyn B.",
-    location: "Centennial, CO",
-    text: "Every service I have ever gotten here has been amazing! So relaxing and luxurious. The staff are all so kind and knowledgeable. I always leave feeling rejuvenated.",
-    service: "Massage & Facial",
+    name: "Jessica E.",
+    location: "Sparta, NJ",
+    text: "I was immediately greeted and offered a tour of the spa. The establishment was very pleasant and I felt quite at ease. My therapist was truly excellent — she addressed every area with remarkable skill. I felt fantastic afterward, like a completely new person. I would rate this with ten stars.",
+    service: "Full Body Massage",
   },
   {
-    name: "Jeri L.",
-    location: "Centennial, CO",
-    text: "Best spa in Denver! Wonderful atmosphere, highly skilled therapists, and always a perfect experience. I've been a member for years and will never go anywhere else.",
-    service: "Massage Therapy",
-  },
-  {
-    name: "Allie P.",
-    location: "Centennial, CO",
-    text: "Absolutely love Spavia! The facials are incredible and my skin has never looked better. The team truly cares about the guest experience from the moment you walk in.",
+    name: "Rosemary J.",
+    location: "Reno, NV",
+    text: "This was the most amazing experience of luxury I've ever had. The creams and facial massage were not just relaxing, but heavenly. I absolutely recommend Spavia!",
     service: "Facial & Skin Care",
   },
   {
-    name: "Michelle H.",
-    location: "Centennial, CO",
-    text: "I had the most amazing deep tissue massage. My therapist listened to exactly what I needed and the pressure was perfect. The spa itself is beautiful — so calming and clean.",
+    name: "Lina S.",
+    location: "Naples, FL",
+    text: "A great spa with attention to every detail. Everything was super clean and all the associates were very well trained and welcoming. I was given one of the best massages — I almost fell asleep. I will definitely be back.",
+    service: "Massage Therapy",
+  },
+  {
+    name: "Marie S.",
+    location: "Sparta, NJ",
+    text: "Love the membership they offer! It helps me be more consistent in my self care. I have received wonderful deep tissue massages that have helped loosen chronic muscle pain in my neck and shoulders. The front desk staff are very friendly and the facilities are always clean.",
     service: "Deep Tissue Massage",
   },
   {
-    name: "Lisa M.",
-    location: "Centennial, CO",
-    text: "From the warm greeting at the front desk to the incredible body treatment, everything was five-star. Spavia has set the bar for what a day spa experience should be.",
-    service: "Body Treatment",
+    name: "Maddie C.",
+    location: "Reno, NV",
+    text: "The environment was so relaxing and I felt so taken care of. I had a Hot Stone Massage and a Facial with a Warmed-Oil Scalp treatment. I left feeling so relaxed and pampered. I will definitely be returning!",
+    service: "Hot Stone Massage",
   },
   {
-    name: "Sarah K.",
-    location: "Centennial, CO",
-    text: "Spavia is my go-to for self care. The membership is such great value and I love that I can try different services. Every therapist I've had has been outstanding.",
-    service: "Spa Membership",
+    name: "Craig M.",
+    location: "Naples, FL",
+    text: "My wife said her massage was fabulous! Mine worked out all the knots and I left feeling great. The massage was exactly what we requested. We will be going back for another couples massage!",
+    service: "Couples Massage",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function GuestTestimonialsSection() {
         </div>
 
         <p className="text-gray-500 text-sm text-center mt-10 max-w-2xl mx-auto leading-relaxed">
-          Spavia day spa guests consistently rate their experiences 4.7+ stars
+          Spavia day spa guests consistently rate their experiences 4.8+ stars
           across massage, facial, and body treatment services. Strong guest
           satisfaction translates directly to membership retention, repeat visits,
           and stable franchise revenue.
