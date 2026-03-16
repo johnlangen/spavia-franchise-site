@@ -5,107 +5,143 @@ import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import { ThemeProvider } from "./ThemeProvider";
 import Link from "next/link";
-import Image from "next/image";
+import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+
+const steps = [
+  {
+    number: "1",
+    title: "Schedule A Call",
+    description:
+      "Too excited to wait? Take the initiative and schedule a call with our franchise development team today.",
+    cta: {
+      label: "Schedule A Call",
+      href: "https://calendly.com/tyler-spaviadayspa/new-meeting",
+    },
+  },
+  {
+    number: "2",
+    title: "Explore The Opportunity",
+    description:
+      "Through presentations and calls, we'll help you discover everything you need to know about Spavia ownership.",
+  },
+  {
+    number: "3",
+    title: "Submit An Application",
+    description:
+      "When you're ready, you'll submit an application and we'll guide you through every step of the process.",
+  },
+];
 
 export default function ThankYouContent() {
   return (
     <ThemeProvider>
-      <main className="bg-gradient-to-b from-black to-[#141414] text-white flex flex-col min-h-screen">
-        <NavBar />
-        <Breadcrumbs items={[{ label: "Thank You" }]} />
+      <main className="flex flex-col min-h-screen">
+        <div className="bg-black">
+          <NavBar />
+        </div>
+        <div className="bg-white">
+          <Breadcrumbs items={[{ label: "Thank You" }]} />
+        </div>
 
-        <section className="flex flex-col md:flex-row items-center justify-center px-6 pt-28 pb-20 gap-12 max-w-7xl mx-auto">
-          
-          {/* Image — second on mobile, first on desktop */}
-          <div className="w-full md:w-1/2 order-2 md:order-1">
-            <div className="relative w-full h-[240px] md:h-[500px] rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/image2.jpg"
-                alt="Spavia Thank You"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
+        {/* ── Section 1: Thank You (white) ── */}
+        <section className="bg-white px-6 pt-20 pb-16 md:pt-28 md:pb-20">
+          <div className="max-w-2xl mx-auto text-center">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-[#C2A878]/10"
+            >
+              <Check className="h-10 w-10 text-[#C2A878]" strokeWidth={3} />
+            </motion.div>
 
-          {/* Content — first on mobile */}
-          <div className="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              THANK YOU FOR REACHING OUT
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-6"
+            >
+              Thank You for Reaching Out
+            </motion.h1>
 
-            <p className="text-lg text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto md:mx-0">
-              We’re excited to share more about Spavia’s differentiated model and
-              superior guest experience with you. We look forward to getting in
-              touch with you soon. In the meantime, head to our{" "}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto"
+            >
+              We&apos;re excited to share more about Spavia&apos;s
+              differentiated model and superior guest experience with you. We
+              look forward to getting in touch soon. In the meantime, head to
+              our{" "}
               <Link
                 href="https://spaviadayspa.com"
-                className="text-[#C2A878] underline"
+                className="text-[#C2A878] font-medium hover:underline"
               >
                 website
               </Link>{" "}
               to discover more about Spavia, or{" "}
               <Link
                 href="https://spaviadayspa.com/location"
-                className="text-[#C2A878] underline"
+                className="text-[#C2A878] font-medium hover:underline"
               >
                 visit one of our many locations
               </Link>{" "}
               to experience a treatment for yourself.
-            </p>
+            </motion.p>
+          </div>
+        </section>
 
-            {/* Next steps container */}
-            <div className="bg-white/5 rounded-2xl p-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center md:text-left">
-                HERE ARE YOUR NEXT STEPS
-              </h2>
+        {/* ── Section 2: Next Steps (black) ── */}
+        <section className="bg-black px-6 py-16 md:py-20 relative">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                
-                {/* Step 1 */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    Schedule A Call
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    Too excited to wait for our call? Take the initiative and
-                    schedule a call by clicking the button below.
-                  </p>
-                  <Link
-                    href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-                    target="_blank"
-                    className="inline-block border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition"
-                  >
-                    Schedule A Call
-                  </Link>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12 font-[family-name:var(--font-recoleta)]">
+              Here Are Your Next Steps
+            </h2>
 
-                {/* Step 2 */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    Explore The Opportunity
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    Through presentations and calls, we’ll help you discover
-                    everything you need to know about Spavia ownership.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+              {steps.map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * idx }}
+                  className="flex flex-row md:flex-col items-start gap-4 md:gap-0 md:text-center"
+                >
+                  {/* Step number */}
+                  <div className="flex-shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-[#C2A878] flex items-center justify-center md:mx-auto md:mb-5">
+                    <span className="text-[#C2A878] text-xl md:text-2xl font-bold font-[family-name:var(--font-recoleta)]">
+                      {step.number}
+                    </span>
+                  </div>
 
-                {/* Step 3 */}
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    Submit An Application
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    When you’re ready, you’ll submit an application, and we’ll
-                    guide you through the process.
-                  </p>
-                </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-white/60 text-sm leading-relaxed mb-4">
+                      {step.description}
+                    </p>
 
-              </div>
+                    {step.cta && (
+                      <Link
+                        href={step.cta.href}
+                        target="_blank"
+                        className="inline-block bg-[#C2A878] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#b09466] transition w-full md:w-auto text-center"
+                      >
+                        {step.cta.label}
+                      </Link>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
         </section>
 
         <Footer />
