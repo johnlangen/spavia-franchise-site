@@ -232,8 +232,11 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                   <input
                     id="intro-phone"
                     name="phone"
+                    type="tel"
                     placeholder="Phone"
                     autoComplete="tel"
+                    pattern="[\d\s\-\(\)\+\.]{7,}"
+                    title="Please enter a valid phone number"
                     className={inputStyle}
                   />
                 </div>
@@ -244,6 +247,9 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                     name="zip"
                     placeholder="ZIP code"
                     autoComplete="postal-code"
+                    inputMode="numeric"
+                    pattern="[0-9]{5}"
+                    title="Please enter a 5-digit ZIP code"
                     required
                     value={zip}
                     onChange={(e) => setZip(e.target.value)}

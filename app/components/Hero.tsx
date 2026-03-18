@@ -350,8 +350,11 @@ export default function Hero() {
                   <input
                     id="hero-phone"
                     name="phone"
+                    type="tel"
                     placeholder="Phone"
                     autoComplete="tel"
+                    pattern="[\d\s\-\(\)\+\.]{7,}"
+                    title="Please enter a valid phone number"
                     className={inputStyle}
                   />
                   <label htmlFor="hero-zip" className="sr-only">
@@ -362,6 +365,9 @@ export default function Hero() {
                     name="zip"
                     placeholder="ZIP code"
                     autoComplete="postal-code"
+                    inputMode="numeric"
+                    pattern="[0-9]{5}"
+                    title="Please enter a 5-digit ZIP code"
                     required
                     className={inputStyle}
                   />

@@ -167,9 +167,12 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
               <label htmlFor="long-phone" className="form-label">Phone</label>
               <input
                 id="long-phone"
+                type="tel"
                 required
                 placeholder="555-123-4567"
                 autoComplete="tel"
+                pattern="[\d\s\-\(\)\+\.]{7,}"
+                title="Please enter a valid phone number"
                 className="form-input"
                 value={step1.phone}
                 onChange={(e) =>
@@ -185,6 +188,9 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 required
                 placeholder="80202"
                 autoComplete="postal-code"
+                inputMode="numeric"
+                pattern="[0-9]{5}"
+                title="Please enter a 5-digit ZIP code"
                 className="form-input"
                 value={step1.zip}
                 onChange={(e) =>

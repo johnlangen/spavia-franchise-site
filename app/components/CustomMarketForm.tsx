@@ -228,8 +228,11 @@ export default function CustomMarketForm() {
                 <input
                   id="cm-phone"
                   name="phone"
+                  type="tel"
                   placeholder="Phone"
                   autoComplete="tel"
+                  pattern="[\d\s\-\(\)\+\.]{7,}"
+                  title="Please enter a valid phone number"
                   className={inputStyle}
                 />
               </div>
@@ -242,6 +245,9 @@ export default function CustomMarketForm() {
                   name="zip"
                   placeholder="ZIP code"
                   autoComplete="postal-code"
+                  inputMode="numeric"
+                  pattern="[0-9]{5}"
+                  title="Please enter a 5-digit ZIP code"
                   required
                   className={inputStyle}
                 />
