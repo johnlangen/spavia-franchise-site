@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -201,30 +202,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2025/11/20/spavia-day-spa-named-to-2025-franchise-times-top-400-as-the-brand-celebrates-its-20th-year-with-design-led-growth-and-affordable-luxury-at-scale"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia Named to 2025 Franchise Times Top 400
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo"
-                className="text-[#C2A878] hover:underline"
-              >
-                How $8 Could Feed Every Hungry Child: A Thanksgiving Reflection
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
-                className="text-[#C2A878] hover:underline"
-              >
-                3 Reasons to Invest in a Day Spa Franchise
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

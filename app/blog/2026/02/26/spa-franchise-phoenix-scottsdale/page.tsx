@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -53,8 +54,9 @@ const jsonLd = {
       datePublished: "2026-02-26",
       dateModified: "2026-02-26",
       author: {
-        "@type": "Organization",
-        name: "Spavia Day Spa",
+        "@type": "Person",
+        name: "Tyler Woodard",
+        jobTitle: "Director of Franchise Development",
         url: "https://spaviafranchise.com",
       },
       publisher: {
@@ -812,49 +814,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/blog/2026/02/19/spa-franchise-opportunities-guide"
-                  className="text-[#C2A878] hover:underline"
-                >
-                  The Complete Guide to Spa Franchise Opportunities in 2026
-                  &rarr;
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
-                  className="text-[#C2A878] hover:underline"
-                >
-                  Day Spa vs. Med Spa Franchise: Which Is Right for You?
-                  &rarr;
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
-                  className="text-[#C2A878] hover:underline"
-                >
-                  Spavia vs. Woodhouse Spa Franchise: A Side-by-Side
-                  Comparison &rarr;
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/steps-to-ownership"
-                  className="text-[#C2A878] hover:underline"
-                >
-                  Steps to Spa Franchise Ownership &rarr;
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/franchise-opportunities/arizona"
-                  className="text-[#C2A878] hover:underline"
-                >
-                  Arizona Franchise Opportunities &rarr;
-                </Link>
-              </li>
+              {getRelatedPosts("/blog/2026/02/26/spa-franchise-phoenix-scottsdale").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -868,6 +834,20 @@ export default function Page() {
               https://spaviafranchise.com/blog/2026/02/26/spa-franchise-phoenix-scottsdale
             </a>
           </p>
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              TW
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Tyler Woodard</p>
+              <p className="text-sm text-gray-500 mb-1">Director of Franchise Development</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Tyler guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
+              </p>
+            </div>
+          </div>
+
 
           <div className="mt-12">
             <Link

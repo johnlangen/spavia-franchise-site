@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "Spavia’s 20-Year Journey of Giving Back | Spavia Day Spa",
@@ -252,30 +253,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia: 2023 Reflections and Anticipations for 2024
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
-                className="text-[#C2A878] hover:underline"
-              >
-                The Power of a National Brand with a Local Focus
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
-                className="text-[#C2A878] hover:underline"
-              >
-                Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

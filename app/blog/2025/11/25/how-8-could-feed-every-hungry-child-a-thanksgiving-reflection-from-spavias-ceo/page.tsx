@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -271,32 +272,29 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
-                className="text-[#C2A878] hover:underline"
-              >
-                The Power of Community: How Spavia Gives Back
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus"
-                className="text-[#C2A878] hover:underline"
-              >
-                The Power of a National Brand with a Local Focus
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia Co-Founder Named “Woman of Wonder”
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              TW
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Tyler Woodard</p>
+              <p className="text-sm text-gray-500 mb-1">Director of Franchise Development</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Tyler guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
+              </p>
+            </div>
+          </div>
+
 
 <div className="mt-12">
             <Link

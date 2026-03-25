@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "The Power of a National Brand with a Local Focus | Spavia Franchise Blog",
@@ -183,30 +184,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
-                className="text-[#C2A878] hover:underline"
-              >
-                3 Reasons to Invest in a Day Spa Franchise
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2024/03/05/cost-effective-day-spa-franchise"
-                className="text-[#C2A878] hover:underline"
-              >
-                A Cost-Effective Day Spa Franchise: The Spavia Advantage
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2024/04/16/spa-franchise-opportunities"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spa Franchise Opportunities: Where Passion Meets Profit
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/08/28/the-power-of-a-national-brand-with-a-local-focus").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

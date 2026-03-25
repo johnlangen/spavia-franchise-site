@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "The Power of Franchisee Success Stories | Spavia Franchise Blog",
@@ -215,30 +216,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
-                className="text-[#C2A878] hover:underline"
-              >
-                How Day Spa Franchisees Are Capitalizing on Wellness
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/07/29/beyond-a-franchise-building-a-legacy-with-spavia"
-                className="text-[#C2A878] hover:underline"
-              >
-                Beyond a Franchise: Building a Legacy with Spavia
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2023/11/28/reasons-to-invest-in-a-day-spa-franchise"
-                className="text-[#C2A878] hover:underline"
-              >
-                3 Reasons to Invest in a Day Spa Franchise
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/06/24/the-power-of-franchisee-success-stories-how-spavia-franchisees-are-thriving").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

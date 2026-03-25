@@ -4,6 +4,7 @@ import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -203,32 +204,29 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia: 2023 Reflections and Anticipations for 2024
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia’s Brand Evolution: Pioneering Wellness
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
-                className="text-[#C2A878] hover:underline"
-              >
-                Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/11/20/spavia-day-spa-named-to-2025-franchise-times-top-400-as-the-brand-celebrates-its-20th-year-with-design-led-growth-and-affordable-luxury-at-scale").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              TW
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Tyler Woodard</p>
+              <p className="text-sm text-gray-500 mb-1">Director of Franchise Development</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Tyler guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
+              </p>
+            </div>
+          </div>
+
 
 <div className="mt-12">
             <Link

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "Spavia: 2023 Reflections and Exciting Anticipations for 2024",
@@ -170,30 +171,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
-                className="text-[#C2A878] hover:underline"
-              >
-                Celebrating 20 Years of Spavia: A Look Back and a Vision Forward
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/03/10/the-power-of-community-how-spavia-stands-out-by-giving-back"
-                className="text-[#C2A878] hover:underline"
-              >
-                The Power of Community: How Spavia Gives Back
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia’s Brand Evolution: Pioneering Wellness
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
+import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -174,30 +175,13 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <h3 className="text-lg font-semibold mb-4">Related Articles</h3>
             <ul className="space-y-3">
-            <li>
-              <Link
-                href="/blog/2024/01/04/spavia-2023-reflections-and-exciting-anticipations-for-2024"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia: 2023 Reflections and Anticipations for 2024
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2024/02/02/how-day-spa-franchisees-are-capitalizing-on-health-and-wellness-in-the-new-year"
-                className="text-[#C2A878] hover:underline"
-              >
-                How Day Spa Franchisees Are Capitalizing on Wellness
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog/2025/04/11/spavias-guest-care-in-the-evolving-wellness--spa-franchise-industry"
-                className="text-[#C2A878] hover:underline"
-              >
-                Spavia’s Guest Care in the Evolving Wellness Industry
-              </Link>
-            </li>
+              {getRelatedPosts("/blog/2025/05/14/spavias-brand-evolution-pioneering-wellness-and-staying-ahead-in-a-changing-world").map((rp) => (
+                <li key={rp.href}>
+                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                    {rp.title} &rarr;
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
