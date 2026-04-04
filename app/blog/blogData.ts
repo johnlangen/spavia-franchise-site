@@ -21,7 +21,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-04-04",
     tags: ["franchise-guide", "getting-started", "operations"],
     readingTime: 13,
-    featured: true,
   },
   {
     title: "Why Women Entrepreneurs Are Choosing Spa Franchises",
@@ -42,6 +41,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-10",
     tags: ["getting-started", "investment", "franchise-guide"],
     readingTime: 14,
+    featured: true,
   },
   {
     title: "Why Phoenix & Scottsdale Are the Hottest Markets for a Spa Franchise in 2026",
