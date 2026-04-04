@@ -13,6 +13,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Do You Have What It Takes? Traits of Successful Spa Franchise Owners",
+    excerpt:
+      "What separates thriving spa franchise owners from the rest? Discover the 7 traits that drive success at Spavia Day Spa\u2014from people-first leadership to operational discipline\u2014and find out if you have what it takes.",
+    image: "/blog/blog26.png",
+    href: "/blog/2026/04/04/traits-successful-spa-franchise-owners",
+    date: "2026-04-04",
+    tags: ["franchise-guide", "getting-started", "operations"],
+    readingTime: 13,
+    featured: true,
+  },
+  {
     title: "Why Women Entrepreneurs Are Choosing Spa Franchises",
     excerpt:
       "Women represent 35% of all franchise owners and growing. Discover why spa franchises rank among the best franchise opportunities for women entrepreneurs in 2026\u2014from financial performance to financing resources.",
@@ -31,7 +42,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-10",
     tags: ["getting-started", "investment", "franchise-guide"],
     readingTime: 14,
-    featured: true,
   },
   {
     title: "Why Phoenix & Scottsdale Are the Hottest Markets for a Spa Franchise in 2026",
