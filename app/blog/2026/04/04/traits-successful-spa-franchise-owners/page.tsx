@@ -544,9 +544,9 @@ export default function Page() {
                     className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}
                   >
                     <td className="px-4 py-3 font-medium">{trait}</td>
-                    <td className="px-4 py-3 text-center">&cir;</td>
-                    <td className="px-4 py-3 text-center">&cir;</td>
-                    <td className="px-4 py-3 text-center">&cir;</td>
+                    <td className="px-4 py-3 text-center">&#9675;</td>
+                    <td className="px-4 py-3 text-center">&#9675;</td>
+                    <td className="px-4 py-3 text-center">&#9675;</td>
                   </tr>
                 ))}
               </tbody>
