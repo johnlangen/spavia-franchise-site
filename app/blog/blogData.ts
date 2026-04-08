@@ -13,6 +13,16 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Beauty Franchise vs. Wellness Franchise: Where\u2019s the Growth?",
+    excerpt:
+      "Beauty and wellness franchises are booming, but which sector offers better growth? Compare market size, revenue models, and investment potential to find your best fit.",
+    image: "/blog/blog27.png",
+    href: "/blog/2026/04/08/beauty-franchise-vs-wellness-franchise",
+    date: "2026-04-08",
+    tags: ["comparisons", "investment", "franchise-guide"],
+    readingTime: 10,
+  },
+  {
     title: "Do You Have What It Takes? Traits of Successful Spa Franchise Owners",
     excerpt:
       "What separates thriving spa franchise owners from the rest? Discover the 7 traits that drive success at Spavia Day Spa\u2014from people-first leadership to operational discipline\u2014and find out if you have what it takes.",
