@@ -9,6 +9,7 @@ import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSe
 import GuestTestimonialsSection from "./components/GuestTestimonialsSection";
 import SEOContentSection from "./components/SEOContentSection";
 import GoldBottomBanner from "./components/GoldBottomBanner";
+import ChatSection from "./components/ChatSection";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Link from "next/link";
@@ -185,7 +186,10 @@ export default function Home() {
         {/* 2. PROOF — bold gold numbers on black */}
         <ProofSection />
 
-        {/* 3. SCHEDULE CALL — gold banner CTA */}
+        {/* 3. ASK SPAVIA — embedded AI chat */}
+        <ChatSection />
+
+        {/* 4. SCHEDULE CALL — gold banner CTA */}
         <ScheduleCallBanner />
 
         {/* 4. AWARDS — trust logos on black */}

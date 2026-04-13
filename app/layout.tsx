@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Script from "next/script";
 import FloatingButton from "./components/FloatingButton";
+import ChatWidget from "./components/ChatWidget";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 const recoleta = localFont({
@@ -117,6 +118,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <FloatingButton />
+          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>
