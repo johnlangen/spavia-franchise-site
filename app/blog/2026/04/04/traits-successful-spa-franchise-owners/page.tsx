@@ -175,7 +175,7 @@ export default function Page() {
             might surprise you.
           </p>
           <p className="text-lg mb-6 leading-relaxed">
-            Spavia Day Spa has nearly 90 locations across the country, and its
+            Spavia Day Spa has over 60 locations across the country, and its
             most successful franchise owners come from remarkably different
             backgrounds&mdash;corporate executives, healthcare professionals,
             military leaders, hospitality managers, husband-and-wife teams, and
@@ -338,7 +338,7 @@ export default function Page() {
             guard&mdash;especially those coming from senior corporate roles where
             they were the decision-makers. Franchise ownership is a different
             model. You are buying into a proven system, one that has been refined
-            over nearly 20 years and across nearly 90 locations. The owners who
+            over nearly 20 years and across over 60 locations. The owners who
             succeed fastest are the ones who approach the system with curiosity
             and humility rather than immediately trying to change it.
           </p>
