@@ -102,27 +102,27 @@ export async function POST(req: Request) {
           }
           controller.close();
 
-          // Fire-and-forget: save conversation to Supabase
+          // Save conversation to Supabase with retry
           if (sessionId) {
             const allMessages = [
               ...messages,
               { role: "assistant", content: fullResponse },
             ];
-            supabase
-              .from("chat_conversations")
-              .upsert(
-                {
-                  session_id: sessionId,
-                  messages: allMessages,
-                  page_url: pageUrl || null,
-                  updated_at: new Date().toISOString(),
-                },
-                { onConflict: "session_id" }
-              )
-              .then(({ error }) => {
-                if (error)
-                  console.error("Chat save error:", error);
-              });
+            const saveData = {
+              session_id: sessionId,
+              messages: allMessages,
+              page_url: pageUrl || null,
+              updated_at: new Date().toISOString(),
+            };
+
+            for (let attempt = 0; attempt < 3; attempt++) {
+              const { error } = await supabase
+                .from("chat_conversations")
+                .upsert(saveData, { onConflict: "session_id" });
+              if (!error) break;
+              console.error(`Chat save attempt ${attempt + 1} failed:`, error);
+              if (attempt < 2) await new Promise((r) => setTimeout(r, 500));
+            }
           }
         } catch (err) {
           console.error("Stream error:", err);
