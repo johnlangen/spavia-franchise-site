@@ -27,7 +27,7 @@ const whoWeAreFaqs = [
   {
     question: "What leadership and support team does Spavia have?",
     answer:
-      "Spavia's support team includes a Chief Operating Officer with over 10 years of franchise operations experience, a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+      "Spavia's support team includes a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
   },
 ];
 
@@ -52,13 +52,7 @@ Before Spavia, Allison excelled as a Macy’s buyer and regional manager, follow
 ];
 
 const team = [
-  {
-    name: "Courtney Allison",
-    role: "Chief Operating Officer",
-    image: "/who-we-are/image3.png",
-    bio: `With over 10 years of experience as a franchise operations leader, Courtney has a proven track record of supporting franchisees in high-growth systems. Her strong background in operations and training, coupled with her passion for driving franchisee success and profitability, makes her an invaluable asset to the team.`,
-  },
-  {
+{
     name: "Tyler Woodard",
     role: "Director of Franchise Development",
     image: "/who-we-are/image5.png",

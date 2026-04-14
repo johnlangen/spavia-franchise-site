@@ -146,8 +146,7 @@ export default function Page() {
               the knowledge and confidence to succeed.
             </li>
             <li>
-              <strong>Operational Support:</strong> Seasoned professionals,
-              including Chief Operating Officer Courtney Allison, are there to
+              <strong>Operational Support:</strong> Seasoned professionals
               provide the strategic guidance you need.
             </li>
             <li>

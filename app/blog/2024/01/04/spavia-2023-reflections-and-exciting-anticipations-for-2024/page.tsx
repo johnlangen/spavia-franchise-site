@@ -127,10 +127,7 @@ export default function Page() {
           <p className="mb-6 leading-relaxed">
             The past year witnessed the integration of key members of our executive
             leadership team, infusing Spavia with fresh perspectives and unparalleled
-            expertise. Seasoned franchise veteran Courtney Allison has joined us as Chief
-            Operating Officer, contributing a wealth of experience. Similarly, Dana
-            Benfield has been appointed Chief Marketing Officer, bringing over two decades
-            of marketing mastery to elevate our brand. Our leadership team offers
+            expertise. Our leadership team offers
             extensive corporate support to our franchisees and is eager to continue
             strengthening our brand among consumers, contributing to the ever-changing
             landscape of health and wellness.
