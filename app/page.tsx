@@ -183,11 +183,11 @@ export default function Home() {
         {/* 1. HERO — video bg + embedded lead capture form */}
         <Hero />
 
-        {/* 2. PROOF — bold gold numbers on black */}
-        <ProofSection />
-
-        {/* 3. ASK SPAVIA — embedded AI chat */}
+        {/* 2. ASK SPAVIA — embedded AI chat */}
         <ChatSection />
+
+        {/* 3. PROOF — bold gold numbers on black */}
+        <ProofSection />
 
         {/* 4. SCHEDULE CALL — gold banner CTA */}
         <ScheduleCallBanner />
