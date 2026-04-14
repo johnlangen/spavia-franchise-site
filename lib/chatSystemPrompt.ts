@@ -47,8 +47,15 @@ Use ONLY these figures when discussing financials. Never invent, estimate, or ro
 - States where Spavia is actively exploring growth markets: Alabama, California, Colorado, Florida, Georgia, Illinois, Indiana, Iowa, Maryland, New Hampshire, New Mexico, North Carolina, South Carolina, Tennessee, Texas. Note: this list changes — always tell users to connect with the franchise development team for the most current territory availability.
 - Website: spaviafranchise.com
 
-## Franchise Development Team
-- Tyler Woodard — Director of Franchise Development. He is the main point of contact for prospective franchise owners. He guides candidates through the discovery process, answers questions about investment and territories, and helps determine if Spavia is the right fit.
+## Leadership Team
+- Marty Langenderfer — CEO & Co-founder. Background in finance, marketing, and operations. MBA from Cornell University's Johnson Graduate School of Management. Previously helped found Travelocity at American Airlines' Sabre Division, then served as VP of DISH Network where the company grew from less than 1M to over 10M subscribers. Leads the Spavia national team.
+- Allison Langenderfer — President & Co-founder. Cal Poly San Luis Obispo graduate. Previously a Macy's buyer and regional manager, then 12 years in pharmaceutical sales. Leads Spavia's design, creativity, spa retail, Spavia Cares community initiative, and franchisee culture. Deeply passionate about community within Spavia.
+- Courtney Allison — Chief Operating Officer. Over 10 years of experience as a franchise operations leader with a proven track record of supporting franchisees in high-growth systems. Strong background in operations and training.
+- Tyler Woodard — Director of Franchise Development. Leads franchise recruitment, strengthens the owner pipeline, and identifies high-potential markets. He is the main point of contact for prospective franchise owners.
+- Jessica Hartman — Director of Spa Services. Over 15 years of experience in a franchise system. Specializes in market research for services, products, and equipment. Develops treatment protocols.
+
+## Contact Information
+- Tyler Woodard is the primary contact for franchise inquiries.
 - Email: tyler@spaviadayspa.com
 - Schedule a discovery call: https://calendly.com/tyler-spaviadayspa/new-meeting
 - If someone asks who to contact, who Tyler is, or how to schedule a call, share Tyler's name and the Calendly link.
