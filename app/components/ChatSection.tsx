@@ -13,11 +13,8 @@ interface Message {
 /* ---------- PRESET QUESTIONS ---------- */
 const PRESETS = [
   { label: "Investment Cost", question: "What does it cost to open a Spavia?" },
-  { label: "Experience Needed", question: "Do I need spa experience?" },
   { label: "Average Revenue", question: "What's the average revenue?" },
   { label: "Getting Started", question: "How do I get started?" },
-  { label: "Training & Support", question: "What training do you provide?" },
-  { label: "Available Markets", question: "What territories are available?" },
 ];
 
 /* ---------- COMPONENT ---------- */
@@ -183,67 +180,75 @@ export default function ChatSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-[#FAFAF8] rounded-2xl border border-gray-200 overflow-hidden shadow-sm"
         >
-          {/* Content area — fixed height to prevent snap scroll jump */}
-          <div className="min-h-[280px]">
-            {/* Preset Questions (before chat starts) */}
-            {!hasStarted && (
-              <div className="p-6 md:p-8">
-                <p className="text-sm text-gray-500 mb-4 font-medium">
-                  Common questions:
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {PRESETS.map((p) => (
-                    <button
-                      key={p.label}
-                      onClick={() => sendMessage(p.question)}
-                      className="group text-left p-4 rounded-xl bg-white border border-gray-200
-                                 hover:border-[#C2A878] hover:shadow-md transition-all duration-200"
-                    >
-                      <span className="text-sm font-semibold text-gray-800 group-hover:text-[#C2A878] transition-colors">
-                        {p.label}
-                      </span>
-                      <p className="text-xs text-gray-400 mt-1 leading-snug">
-                        {p.question}
-                      </p>
-                    </button>
-                  ))}
-                </div>
+          {/* Content area — always shows welcome + messages, chips before first send */}
+          <div
+            ref={messagesContainerRef}
+            className="min-h-[320px] max-h-[60vh] md:max-h-[460px] overflow-y-auto
+                       p-5 md:p-8 space-y-4"
+            style={{ overscrollBehavior: "contain" }}
+          >
+            {/* Welcome bubble — always visible */}
+            <div className="flex justify-start">
+              <div className="max-w-[88%] md:max-w-[75%] px-5 py-3.5 text-sm leading-relaxed
+                              bg-white text-gray-800 rounded-2xl rounded-bl-sm
+                              border border-gray-100 shadow-sm">
+                Hi! Ask me anything about the Spavia franchise — investment,
+                training, territories, or how to get started.
               </div>
+            </div>
+
+            {/* Preset chips — only before first message */}
+            {!hasStarted && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-wrap gap-2 pt-1"
+              >
+                {PRESETS.map((p) => (
+                  <button
+                    key={p.label}
+                    onClick={() => sendMessage(p.question)}
+                    className="text-sm px-4 py-2.5 rounded-full
+                               border border-[#C2A878]/40 bg-white text-[#8B7355]
+                               hover:bg-[#C2A878]/10 hover:border-[#C2A878]
+                               active:scale-95 transition-all duration-150
+                               font-medium whitespace-nowrap"
+                  >
+                    {p.label}
+                  </button>
+                ))}
+              </motion.div>
             )}
 
             {/* Messages */}
-            {hasStarted && (
-              <div ref={messagesContainerRef} className="max-h-[400px] overflow-y-auto p-6 md:p-8 space-y-4">
-              {messages.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className={`flex ${
-                    msg.role === "user" ? "justify-end" : "justify-start"
+            {messages.map((msg, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className={`flex ${
+                  msg.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`max-w-[85%] md:max-w-[75%] px-5 py-3.5 text-sm leading-relaxed whitespace-pre-wrap ${
+                    msg.role === "user"
+                      ? "bg-[#C2A878] text-white rounded-2xl rounded-br-sm"
+                      : "bg-white text-gray-800 rounded-2xl rounded-bl-sm border border-gray-100 shadow-sm"
                   }`}
                 >
-                  <div
-                    className={`max-w-[80%] md:max-w-[70%] px-5 py-3.5 text-sm leading-relaxed whitespace-pre-wrap ${
-                      msg.role === "user"
-                        ? "bg-[#C2A878] text-white rounded-2xl rounded-br-sm"
-                        : "bg-white text-gray-800 rounded-2xl rounded-bl-sm border border-gray-100 shadow-sm"
-                    }`}
-                  >
-                    {msg.content ? (
-                      <LinkifyText text={msg.content} isUser={msg.role === "user"} />
-                    ) : (
-                      isStreaming && i === messages.length - 1 ? (
-                        <TypingDots />
-                      ) : null
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-              <div />
-            </div>
-            )}
+                  {msg.content ? (
+                    <LinkifyText text={msg.content} isUser={msg.role === "user"} />
+                  ) : (
+                    isStreaming && i === messages.length - 1 ? (
+                      <TypingDots />
+                    ) : null
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Email Capture */}
@@ -258,23 +263,27 @@ export default function ChatSection() {
                 <div className="px-4 md:px-8 py-3 bg-[#FAFAF7] flex items-center gap-2">
                   <input
                     type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    enterKeyHint="send"
                     value={emailInput}
                     onChange={(e) => setEmailInput(e.target.value)}
                     placeholder="Your email for follow-up"
-                    className="flex-1 text-sm px-3 py-2 rounded-lg border border-gray-200
+                    className="flex-1 min-w-0 text-base md:text-sm px-3 py-2.5 rounded-lg border border-gray-200
                                focus:outline-none focus:border-[#C2A878] bg-white text-gray-900 placeholder:text-gray-400"
                     onKeyDown={(e) => e.key === "Enter" && submitEmail()}
                   />
                   <button
                     onClick={submitEmail}
-                    className="text-xs font-semibold px-3 py-2 rounded-lg
-                               bg-[#C2A878] text-white hover:bg-[#B09868] transition-colors"
+                    className="text-sm font-semibold px-4 py-2.5 rounded-lg shrink-0
+                               bg-[#C2A878] text-white hover:bg-[#B09868] transition-colors
+                               active:scale-95"
                   >
                     Send
                   </button>
                   <button
                     onClick={() => setEmailDismissed(true)}
-                    className="text-gray-400 hover:text-gray-600 p-1"
+                    className="text-gray-400 hover:text-gray-600 p-2 shrink-0"
                     aria-label="Dismiss"
                   >
                     <X className="w-4 h-4" />
@@ -293,22 +302,25 @@ export default function ChatSection() {
           )}
 
           {/* Input */}
-          <div className="border-t border-gray-200 p-4 md:px-8 bg-white">
+          <div className="border-t border-gray-200 p-3 md:p-4 md:px-8 bg-white">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
                 sendMessage(input);
               }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-2 md:gap-3"
             >
               <input
                 ref={inputRef}
                 type="text"
+                inputMode="text"
+                autoComplete="off"
+                enterKeyHint="send"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask anything about the Spavia franchise..."
+                placeholder="Ask about the Spavia franchise..."
                 disabled={isStreaming}
-                className="flex-1 text-sm px-5 py-3 rounded-xl border border-gray-200
+                className="flex-1 min-w-0 text-base md:text-sm px-4 md:px-5 py-3 rounded-xl border border-gray-200
                            focus:outline-none focus:border-[#C2A878]
                            disabled:opacity-50 bg-gray-50 text-gray-900
                            placeholder:text-gray-400"
@@ -317,13 +329,13 @@ export default function ChatSection() {
               <button
                 type="submit"
                 disabled={!input.trim() || isStreaming}
-                className="p-3 rounded-xl bg-[#C2A878] text-white
-                           hover:bg-[#B09868] transition-colors
+                className="w-12 h-12 md:w-11 md:h-11 flex items-center justify-center rounded-xl bg-[#C2A878] text-white
+                           hover:bg-[#B09868] transition-all
                            disabled:opacity-40 disabled:cursor-not-allowed
-                           shrink-0"
+                           active:scale-95 shrink-0"
                 aria-label="Send message"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-5 h-5 md:w-4 md:h-4" />
               </button>
             </form>
           </div>

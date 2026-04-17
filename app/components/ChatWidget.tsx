@@ -316,23 +316,27 @@ export default function ChatWidget() {
                   <div className="px-4 py-3 bg-[#FAFAF7] flex items-center gap-2">
                     <input
                       type="email"
+                      inputMode="email"
+                      autoComplete="email"
+                      enterKeyHint="send"
                       value={emailInput}
                       onChange={(e) => setEmailInput(e.target.value)}
                       placeholder="Your email for follow-up"
-                      className="flex-1 text-sm px-3 py-2 rounded-lg border border-gray-200
+                      className="flex-1 min-w-0 text-base md:text-sm px-3 py-2.5 rounded-lg border border-gray-200
                                  focus:outline-none focus:border-[#C2A878] bg-white text-gray-900 placeholder:text-gray-400"
                       onKeyDown={(e) => e.key === "Enter" && submitEmail()}
                     />
                     <button
                       onClick={submitEmail}
-                      className="text-xs font-semibold px-3 py-2 rounded-lg
-                                 bg-[#C2A878] text-white hover:bg-[#B09868] transition-colors"
+                      className="text-sm font-semibold px-4 py-2.5 rounded-lg shrink-0
+                                 bg-[#C2A878] text-white hover:bg-[#B09868] transition-colors
+                                 active:scale-95"
                     >
                       Send
                     </button>
                     <button
                       onClick={() => setEmailDismissed(true)}
-                      className="text-gray-400 hover:text-gray-600 p-1"
+                      className="text-gray-400 hover:text-gray-600 p-2 shrink-0"
                       aria-label="Dismiss"
                     >
                       <X className="w-4 h-4" />
@@ -362,21 +366,26 @@ export default function ChatWidget() {
                 <input
                   ref={inputRef}
                   type="text"
+                  inputMode="text"
+                  autoComplete="off"
+                  enterKeyHint="send"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about Spavia franchise..."
                   disabled={isStreaming}
-                  className="flex-1 text-sm px-4 py-2.5 rounded-xl border border-gray-200
+                  className="flex-1 min-w-0 text-base md:text-sm px-4 py-3 rounded-xl border border-gray-200
                              focus:outline-none focus:border-[#C2A878]
-                             disabled:opacity-50 bg-gray-50 text-gray-900"
+                             disabled:opacity-50 bg-gray-50 text-gray-900
+                             placeholder:text-gray-400"
                   maxLength={1000}
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || isStreaming}
-                  className="p-2.5 rounded-xl bg-[#C2A878] text-white
-                             hover:bg-[#B09868] transition-colors
-                             disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#C2A878] text-white
+                             hover:bg-[#B09868] transition-all
+                             disabled:opacity-40 disabled:cursor-not-allowed
+                             active:scale-95 shrink-0"
                   aria-label="Send message"
                 >
                   <Send className="w-4 h-4" />
