@@ -25,10 +25,10 @@ export default function AwardsSection() {
         </h2>
         <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8" />
 
-        <div className="overflow-hidden relative">
+        <div className="overflow-hidden relative marquee-mask">
           <div className="flex animate-marquee whitespace-nowrap items-center">
-            {awards.concat(awards).map((award, i) => (
-              <div key={i} className="flex-shrink-0 px-8">
+            {[...awards, ...awards].map((award, i) => (
+              <div key={i} className="flex-shrink-0 px-8" aria-hidden={i >= awards.length}>
                 <Image
                   src={award.src}
                   alt={award.alt}
