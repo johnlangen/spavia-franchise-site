@@ -18,6 +18,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title:
+      "Which Wellness Franchise Segment Is Right for You? A Side-by-Side Comparison",
+    excerpt:
+      "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side \u2014 investment range, growth rate, revenue model, and who each one fits. A franchise director's guide.",
+    image: "/blog/blog28.png",
+    href: "/blog/2026/04/23/wellness-franchise-segments-compared",
+    date: "2026-04-23",
+    tags: ["comparisons", "franchise-guide", "investment"],
+    readingTime: 9,
+    featured: true,
+  },
+  {
     title: "Beauty Franchise vs. Wellness Franchise: Where\u2019s the Growth?",
     excerpt:
       "Beauty and wellness franchises are booming, but which sector offers better growth? Compare market size, revenue models, and investment potential to find your best fit.",
