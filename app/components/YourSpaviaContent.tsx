@@ -39,15 +39,14 @@ const limitedMarkets = [
   "Rhode Island",
 ];
 
+// 6 images designed for a 3-col bento: [1 is the hero (2x2)]
 const galleryImages = [
-  "/media/front-desk-wide.webp",
-  "/media/treatment-room-moody.webp",
-  "/media/retreat-leather-chair.webp",
-  "/media/spa-boutique-shelves.webp",
-  "/media/couples-treatment-room.webp",
-  "/media/fireplace-deer-mantle.webp",
-  "/media/guest-robe-fireplace.webp",
-  "/media/signature-massage-candle.webp",
+  { src: "/media/front-desk-wide.webp", alt: "Spavia front desk welcome area" },
+  { src: "/media/treatment-room-moody.webp", alt: "Spavia treatment room with ambient lighting" },
+  { src: "/media/retreat-leather-chair.webp", alt: "Spavia Retreat Room with leather chair" },
+  { src: "/media/spa-boutique-shelves.webp", alt: "Spavia Spa Boutique retail shelves" },
+  { src: "/media/couples-treatment-room.webp", alt: "Spavia couples treatment room" },
+  { src: "/media/fireplace-deer-mantle.webp", alt: "Spavia Retreat Room fireplace" },
 ];
 
 const yourSpaviaFaqs = [
@@ -259,20 +258,53 @@ export default function YourSpaviaContent() {
 
       {/* Image Carousel */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="hidden md:grid md:grid-cols-3 gap-6">
-            {galleryImages.map((src, i) => (
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-3">
+            Inside a Spavia
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
+            A look at the spaces, treatments, and details that make up the
+            Spavia guest experience.
+          </p>
+
+          {/* Desktop — 3-col bento mosaic, hero top-left takes a 2x2 block */}
+          <div className="hidden md:grid md:grid-cols-3 md:auto-rows-[260px] gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl shadow-md"
+            >
               <Image
-                key={src}
-                src={src}
-                alt={`Spa interior ${i + 1}`}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md object-cover h-[400px] w-full"
+                src={galleryImages[0].src}
+                alt={galleryImages[0].alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 66vw"
+                className="object-cover"
               />
+            </motion.div>
+            {galleryImages.slice(1).map((img, i) => (
+              <motion.div
+                key={img.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (i + 1) * 0.06 }}
+                className="relative overflow-hidden rounded-xl shadow-md"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </motion.div>
             ))}
           </div>
 
+          {/* Mobile — single-image carousel */}
           <div className="md:hidden relative w-full">
             <AnimatePresence mode="wait">
               <motion.div
@@ -284,31 +316,47 @@ export default function YourSpaviaContent() {
                 className="w-full"
               >
                 <Image
-                  src={galleryImages[currentImageIndex]}
-                  alt={`Spa interior ${currentImageIndex + 1}`}
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-md object-cover w-full"
+                  src={galleryImages[currentImageIndex].src}
+                  alt={galleryImages[currentImageIndex].alt}
+                  width={1200}
+                  height={800}
+                  sizes="100vw"
+                  className="rounded-xl shadow-md object-cover w-full aspect-[3/2]"
                 />
               </motion.div>
             </AnimatePresence>
 
-            {/* Controls */}
-            <div className="flex justify-between items-center px-4 absolute inset-x-0 inset-y-0">
+            <div className="flex justify-between items-center px-2 absolute inset-x-0 inset-y-0 pointer-events-none">
               <button
                 onClick={prevImage}
-                className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors"
+                className="pointer-events-auto p-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors active:scale-95"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={24} />
               </button>
               <button
                 onClick={nextImage}
-                className="p-2 rounded-full bg-white/70 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors"
+                className="pointer-events-auto p-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 hover:bg-white transition-colors active:scale-95"
                 aria-label="Next image"
               >
                 <ChevronRight size={24} />
               </button>
+            </div>
+
+            {/* Dot indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {galleryImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentImageIndex(i)}
+                  aria-label={`Go to image ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === currentImageIndex
+                      ? "w-6 bg-[#C2A878]"
+                      : "w-1.5 bg-gray-300"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>

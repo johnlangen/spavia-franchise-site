@@ -154,7 +154,13 @@ export default function WhoWeAreContent() {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-[#C2A878]">
             Your Support Team
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            className={`grid gap-8 ${
+              team.length <= 2
+                ? "md:grid-cols-2 max-w-3xl mx-auto"
+                : "md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
             {team.map((member, i) => (
               <motion.div
                 key={i}
