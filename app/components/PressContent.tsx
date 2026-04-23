@@ -12,6 +12,13 @@ const pressItems = [
     year: "2026",
     items: [
       {
+        title: "Spavia Named a 2026 FranServe Fran-tastic Brand",
+        source: "FranServe Inc.",
+        date: "April 2026",
+        description:
+          "Spavia was selected as one of FranServe's 2026 Fran-tastic Brands, recognized for responsible franchising, turnkey model, operational support, training, industry leadership, scalability, and transparency. FranServe CEO Alesia Visconti said, \"Brands that make the 2026 Fran-tastic Brands list value people taking control of their future through business ownership. We are recognizing these fran-tastic brands for going the extra mile in supporting their franchisees and for adhering to responsible franchising.\"",
+      },
+      {
         title: "A Year in Review: Reflecting on 20 Years of Growth, Innovation, and Purpose",
         source: "International Franchise Association",
         date: "January 2026",
@@ -268,14 +275,16 @@ export default function PressContent() {
                     <p className="text-gray-600 leading-relaxed mb-4">
                       {item.description}
                     </p>
-                    <Link
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#C2A878] font-medium hover:underline text-sm"
-                    >
-                      Read on {item.source} →
-                    </Link>
+                    {item.link && (
+                      <Link
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#C2A878] font-medium hover:underline text-sm"
+                      >
+                        Read on {item.source} →
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </div>

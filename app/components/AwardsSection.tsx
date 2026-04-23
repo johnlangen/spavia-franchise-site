@@ -13,6 +13,7 @@ const awards = [
   { src: "/awards/award7.png", alt: "Cities South Magazine" },
   { src: "/awards/award8.png", alt: "FranServe" },
   { src: "/awards/award9.png", alt: "2025 Franchise Innovation Winner" },
+  { src: "/awards/award10.png", alt: "2026 FranServe Fran-tastic Brand" },
 ];
 
 export default function AwardsSection() {
