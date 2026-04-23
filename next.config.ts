@@ -30,16 +30,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // -----------------------------------------------------------------
-      // Canonicalization: www → non-www (enforce a single hostname so
-      // Google stops splitting ranking signals across variants).
+      // Canonicalization (www vs non-www) is handled at the Vercel domain
+      // level, NOT here. Adding a Next.js-level www→non-www redirect while
+      // Vercel is redirecting the other direction creates a loop
+      // (ERR_TOO_MANY_REDIRECTS). Configure the preferred canonical domain
+      // in Vercel → Project → Settings → Domains.
       // http → https is handled automatically by Vercel at the edge.
       // -----------------------------------------------------------------
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.spaviafranchise.com" }],
-        destination: "https://spaviafranchise.com/:path*",
-        permanent: true,
-      },
 
       // -----------------------------------------------------------------
       // WordPress-era ghost URLs (still indexed by Google, returning 404s
