@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
@@ -113,8 +114,21 @@ export default function FranchiseCostContent() {
         <Breadcrumbs items={[{ label: "Franchise Cost" }]} />
 
         {/* ═══════ HERO ═══════ */}
-        <section className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] pt-28 pb-20 text-center text-white px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
+        <section className="relative overflow-hidden pt-28 pb-20 text-center text-white px-4 sm:px-6">
+          {/* Background photo */}
+          <div className="absolute inset-0">
+            <Image
+              src="/media/front-desk-wide.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/80" />
+          </div>
+
+          <div className="relative max-w-4xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -135,15 +149,15 @@ export default function FranchiseCostContent() {
 
             {/* Key metrics */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
+              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
                 <p className="text-xl font-bold">$496K – $796K</p>
                 <p className="text-xs text-white/70">Total Initial Investment*</p>
               </div>
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
+              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
                 <p className="text-xl font-bold">$59,500</p>
                 <p className="text-xs text-white/70">Franchise Fee</p>
               </div>
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
+              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
                 <p className="text-xl font-bold">$1,146,952</p>
                 <p className="text-xs text-white/70">Avg Gross Sales*</p>
               </div>

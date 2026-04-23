@@ -150,11 +150,33 @@ export default function OurFranchiseesContent() {
         </div>
       </section>
 
-      {/* Ideal Entrepreneur */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-12">Ideal Entrepreneur</h2>
-          <div className="grid md:grid-cols-2 gap-12">
+      {/* Ideal Entrepreneur — warm dark with subtle lifestyle backdrop */}
+      <section className="relative py-20 overflow-hidden text-white bg-[#17120d]">
+        {/* Background photo at low opacity for warmth/texture */}
+        <div className="absolute inset-0">
+          <Image
+            src="/media/retreat-leather-chair.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-15"
+            priority={false}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#17120d]/90 via-[#17120d]/80 to-[#17120d]/95" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <p className="text-sm tracking-[0.2em] text-[#C2A878] font-semibold uppercase mb-3">
+            Who Thrives Here
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ideal Entrepreneur
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto mb-12">
+            The franchisees who build the best Spavias share a few traits in
+            common. No prior spa experience needed &mdash; just these.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {entrepreneurTraits.map((trait, i) => {
               const Icon = trait.icon;
               return (
@@ -162,12 +184,15 @@ export default function OurFranchiseesContent() {
                   key={i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="p-6 border border-white/20 rounded-lg hover:bg-white/5 transition"
+                  className="p-6 rounded-xl border border-[#C2A878]/30 bg-black/40 backdrop-blur-sm hover:border-[#C2A878] transition-colors"
                 >
-                  <Icon className="w-12 h-12 mx-auto mb-4 text-[#C2A878]" />
-                  <h3 className="text-xl font-semibold mb-2">{trait.title}</h3>
-                  <p className="text-gray-300 text-sm">{trait.description}</p>
+                  <Icon className="w-10 h-10 mx-auto mb-4 text-[#C2A878]" />
+                  <h3 className="text-lg font-semibold mb-2">{trait.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {trait.description}
+                  </p>
                 </motion.div>
               );
             })}
