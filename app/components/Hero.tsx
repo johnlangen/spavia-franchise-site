@@ -123,9 +123,9 @@ export default function Hero() {
     >
       {/* ---------- BACKGROUND ---------- */}
 
-      {/* Static fallback image */}
+      {/* Static fallback image (shown while video loads or if autoplay fails) */}
       <img
-        src="/your-spavia/image1.jpg"
+        src="/media/guest-robe-fireplace.webp"
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -137,7 +137,8 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        className={`absolute inset-0 w-full h-full object-cover object-[center_30%] transition-opacity duration-700 ${
+        poster="/media/guest-robe-fireplace.webp"
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
       >

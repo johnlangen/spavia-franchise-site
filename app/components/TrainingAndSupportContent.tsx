@@ -47,15 +47,15 @@ const journeyItems = [
     title: "Strategic Sessions with Founders & Leadership Team",
     content:
       "Hear directly from our Founders and Leadership Team on what to expect when becoming a Spavia franchise partner. This is where the journey begins — grounded in vision, passion, and clarity.",
-    imageSrc: "/training-and-support/image1.jpg",
-    imageAlt: "Strategic Sessions",
+    imageSrc: "/media/logo-stone-wall.webp",
+    imageAlt: "Spavia brand signage in a day spa location",
   },
   {
     title: "On-Site Operations Training",
     content:
       "Hands-on training for you and your team. Learn systems, procedures, and guest engagement in a live spa environment to ensure confidence on day one.",
-    imageSrc: "/training-and-support/image2.jpg",
-    imageAlt: "On-Site Training",
+    imageSrc: "/media/cupping-therapy-scrubs.webp",
+    imageAlt: "Spavia specialist in branded scrubs performing cupping therapy",
   },
   {
     title: "Spa Services Training",
@@ -66,22 +66,22 @@ const journeyItems = [
       "Deep dives with Spavia Trainers",
       "Hands-on training to ensure excellence in every guest experience",
     ],
-    imageSrc: "/training-and-support/image3.jpg",
-    imageAlt: "Spa Services Training",
+    imageSrc: "/media/facial-fan-brush.webp",
+    imageAlt: "Facial treatment technique with fan brush application",
   },
   {
     title: "E-Learning – Spavia University",
     content:
       "Access training 24/7 with our e-learning LMS suite. Includes video, text, quizzes, and reporting to keep your team engaged and accountable.",
-    imageSrc: "/training-and-support/image4.jpg",
-    imageAlt: "E-Learning",
+    imageSrc: "/media/skincare-product-serum.webp",
+    imageAlt: "Spavia skincare product knowledge and training",
   },
   {
     title: "Classroom Training – Denver, CO",
     content:
       "New owners meet the Spavia team and undergo in-depth training covering Operations, Marketing, Economics, Spa Services, and Systems. Grand Opening Training: Marketing, POS, and over 15 guides to prepare you for a successful launch.",
-    imageSrc: "/training-and-support/image5.jpg",
-    imageAlt: "Classroom Training",
+    imageSrc: "/media/reception-guest-experience.webp",
+    imageAlt: "Spavia front desk and guest experience in a Denver-area location",
   },
 ];
 

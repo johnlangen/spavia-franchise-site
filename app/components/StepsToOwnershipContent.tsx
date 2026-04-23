@@ -117,14 +117,19 @@ export default function StepsToOwnershipContent() {
         {/* Image Gallery */}
         <section className="snap-start py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-            {["image1.jpg", "image2.jpg", "image3.jpg"].map((img, idx) => (
+            {[
+              { src: "/media/exterior-storefront.webp", alt: "Spavia storefront exterior at dusk" },
+              { src: "/media/logo-stone-wall.webp", alt: "Spavia brand signage on a stone feature wall" },
+              { src: "/media/reception-guest-experience.webp", alt: "Spavia front desk welcoming a guest" },
+            ].map((img, idx) => (
               <motion.img
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
-                src={`/steps-to-ownership/${img}`}
-                alt={`Step ${idx + 1}`}
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
                 className="rounded-xl shadow-lg w-full h-[350px] object-cover"
               />
             ))}

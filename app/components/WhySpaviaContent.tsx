@@ -177,11 +177,12 @@ export default function WhySpaviaContent() {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="/why-spavia/image1.png"
-              alt="Exceptional Guest Experience"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-md"
+              src="/media/signature-massage-candle.webp"
+              alt="Spavia signature massage treatment in a moody candlelit treatment room"
+              width={1920}
+              height={1280}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-xl shadow-md w-full h-auto"
             />
           </motion.div>
           <motion.div
@@ -236,11 +237,12 @@ export default function WhySpaviaContent() {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="/why-spavia/image2.png"
-              alt="Proven Concept"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-md"
+              src="/media/reception-guest-experience.webp"
+              alt="Spavia reception area with guest being greeted by a team member"
+              width={1920}
+              height={1280}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-xl shadow-md w-full h-auto"
             />
           </motion.div>
         </div>

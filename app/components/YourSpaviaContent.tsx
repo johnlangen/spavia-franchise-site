@@ -40,9 +40,14 @@ const limitedMarkets = [
 ];
 
 const galleryImages = [
-  "/your-spavia/image1.jpg",
-  "/your-spavia/image2.jpg",
-  "/your-spavia/image3.jpg",
+  "/media/front-desk-wide.webp",
+  "/media/treatment-room-moody.webp",
+  "/media/retreat-leather-chair.webp",
+  "/media/spa-boutique-shelves.webp",
+  "/media/couples-treatment-room.webp",
+  "/media/fireplace-deer-mantle.webp",
+  "/media/guest-robe-fireplace.webp",
+  "/media/signature-massage-candle.webp",
 ];
 
 const yourSpaviaFaqs = [
