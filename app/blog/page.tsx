@@ -6,16 +6,16 @@ import BlogGrid from "../components/BlogGrid";
 import { blogPosts } from "./blogData";
 
 export const metadata: Metadata = {
-  title: "Blog | Spavia Day Spa Franchise | Insights & Resources",
+  title: "Spavia Blog: Spa Franchise Guides, Comparisons & Data",
   description:
-    "Explore Spavia's blog for insights on spa franchising, investment costs, wellness industry trends, and building a successful day spa business.",
+    "Spa franchise guides: Spavia vs. Woodhouse, day spa vs. med spa, investment breakdowns, and owner stories. Written for serious franchise buyers.",
   alternates: {
     canonical: "https://spaviafranchise.com/blog",
   },
   openGraph: {
-    title: "Blog | Spavia Day Spa Franchise | Insights & Resources",
+    title: "Spavia Blog: Spa Franchise Guides, Comparisons & Data",
     description:
-      "Explore Spavia's blog for insights on spa franchising, investment costs, wellness industry trends, and building a successful day spa business.",
+      "Spa franchise guides: Spavia vs. Woodhouse, day spa vs. med spa, investment breakdowns, and owner stories. Written for serious franchise buyers.",
     url: "https://spaviafranchise.com/blog",
     type: "website",
     images: [
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Spavia Day Spa Franchise | Insights & Resources",
+    title: "Spavia Blog: Spa Franchise Guides, Comparisons & Data",
     description:
-      "Explore Spavia's blog for insights on spa franchising, investment costs, wellness industry trends, and building a successful day spa business.",
+      "Spa franchise guides: Spavia vs. Woodhouse, day spa vs. med spa, investment breakdowns, and owner stories. Written for serious franchise buyers.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

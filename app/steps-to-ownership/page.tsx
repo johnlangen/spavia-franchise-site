@@ -97,16 +97,16 @@ const stepsToOwnershipFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Spa Ownership | Spavia Spa Franchise | Luxury Spa Franchises",
+  title: "Steps to Spa Franchise Ownership: Your 10-14 Month Path",
   description:
-    "Learn the step by step process of spa ownership with Spavia and find answers to frequently asked questions.",
+    "Inquiry to grand opening in 10–14 months. See the full Spavia franchise process: discovery calls, Meet the Team Day, site selection, and launch.",
   alternates: {
     canonical: "https://spaviafranchise.com/steps-to-ownership",
   },
   openGraph: {
-    title: "Spa Ownership | Spavia Spa Franchise | Luxury Spa Franchises",
+    title: "Steps to Spa Franchise Ownership: Your 10-14 Month Path",
     description:
-      "Learn the step by step process of spa ownership with Spavia and find answers to frequently asked questions.",
+      "Inquiry to grand opening in 10–14 months. See the full Spavia franchise process: discovery calls, Meet the Team Day, site selection, and launch.",
     url: "https://spaviafranchise.com/steps-to-ownership",
     type: "website",
     images: [
@@ -120,9 +120,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Ownership | Spavia Spa Franchise | Luxury Spa Franchises",
+    title: "Steps to Spa Franchise Ownership: Your 10-14 Month Path",
     description:
-      "Learn the step by step process of spa ownership with Spavia and find answers to frequently asked questions.",
+      "Inquiry to grand opening in 10–14 months. See the full Spavia franchise process: discovery calls, Meet the Team Day, site selection, and launch.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

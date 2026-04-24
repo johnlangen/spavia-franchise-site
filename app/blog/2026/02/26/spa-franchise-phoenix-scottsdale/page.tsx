@@ -7,19 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Spa Franchise in Phoenix & Scottsdale AZ | Spavia Territory Available",
+  title: "Phoenix & Scottsdale Spa Franchise: Open Territories 2026",
   description:
-    "Phoenix and Scottsdale are booming markets for spa franchise investment. Explore why Spavia's day spa franchise model is ideal for the Valley's wellness-driven population. Limited territories available.",
+    "Phoenix and Scottsdale are two of the hottest spa franchise markets in 2026. Wellness demographics, Spavia territories available, and why now.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/26/spa-franchise-phoenix-scottsdale",
   },
   openGraph: {
-    title:
-      "Spa Franchise in Phoenix & Scottsdale AZ | Spavia Territory Available",
+    title: "Phoenix & Scottsdale Spa Franchise: Open Territories 2026",
     description:
-      "Phoenix and Scottsdale are booming markets for spa franchise investment. Explore why Spavia's day spa franchise model is ideal for the Valley's wellness-driven population.",
+      "Phoenix and Scottsdale are two of the hottest spa franchise markets in 2026. Wellness demographics, Spavia territories available, and why now.",
     url: "https://spaviafranchise.com/blog/2026/02/26/spa-franchise-phoenix-scottsdale",
     type: "article",
     images: [
@@ -33,10 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Spa Franchise in Phoenix & Scottsdale AZ | Spavia Territory Available",
+    title: "Phoenix & Scottsdale Spa Franchise: Open Territories 2026",
     description:
-      "Phoenix and Scottsdale are booming markets for spa franchise investment. Limited Spavia territories available.",
+      "Phoenix and Scottsdale are two of the hottest spa franchise markets in 2026. Spavia territories available now.",
     images: ["https://spaviafranchise.com/blog/blog23.jpg"],
   },
 };
@@ -49,7 +46,7 @@ const jsonLd = {
       headline:
         "Why Phoenix & Scottsdale Are the Hottest Markets for a Spa Franchise in 2026",
       description:
-        "Phoenix and Scottsdale are booming markets for spa franchise investment. Explore why Spavia's day spa franchise model is ideal for the Valley's wellness-driven population.",
+        "Phoenix and Scottsdale are two of the hottest spa franchise markets in 2026. Wellness demographics, Spavia territories available, and why now.",
       image: "https://spaviafranchise.com/blog/blog23.jpg",
       datePublished: "2026-02-26",
       dateModified: "2026-02-26",

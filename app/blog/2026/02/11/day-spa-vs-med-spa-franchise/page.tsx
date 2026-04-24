@@ -7,18 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Day Spa vs Med Spa Franchise: Which Is Right for You? | Spavia Franchise Blog",
+  title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
   description:
-    "Compare day spa and med spa franchise models side by side. Investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
+    "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
   },
   openGraph: {
-    title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+    title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
     description:
-      "Compare day spa and med spa franchise models side by side, including investment costs, profit margins, licensing requirements, and ROI.",
+      "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
     url: "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
     type: "article",
     images: [
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Day Spa vs. Med Spa Franchise: Which Is Right for You?",
+    title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
     description:
-      "Compare day spa and med spa franchise models side by side, including investment costs, profit margins, licensing requirements, and ROI.",
+      "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
     images: ["https://spaviafranchise.com/blog/blog20.jpg"],
   },
 };

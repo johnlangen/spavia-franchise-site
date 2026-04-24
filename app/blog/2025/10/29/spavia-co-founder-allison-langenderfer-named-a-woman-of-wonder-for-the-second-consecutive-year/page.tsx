@@ -7,18 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Spavia Co-Founder Allison Langenderfer Named a “Woman of Wonder” for the Second Consecutive Year | Spavia Franchise Blog",
+  title: "Allison Langenderfer Named Woman of Wonder 2 Years Running",
   description:
-    "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been recognized by Franchise Dictionary Magazine as a 'Woman of Wonder' for 2025 — her second consecutive year receiving this honor.",
+    "Spavia co-founder Allison Langenderfer named a Franchise Dictionary Woman of Wonder for the 2nd consecutive year — recognized for leadership and impact.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year",
   },
   openGraph: {
-    title: "Spavia Co-Founder Allison Langenderfer Named a Woman of Wonder for the Second Consecutive Year",
+    title: "Allison Langenderfer Named Woman of Wonder 2 Years Running",
     description:
-      "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been named to Franchise Dictionary Magazines 50 Women of Wonder list.",
+      "Spavia co-founder Allison Langenderfer named a Franchise Dictionary Woman of Wonder for the 2nd consecutive year — recognized for leadership and impact.",
     url: "https://spaviafranchise.com/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year",
     type: "article",
     images: [
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spavia Co-Founder Allison Langenderfer Named a Woman of Wonder for the Second Consecutive Year",
+    title: "Allison Langenderfer Named Woman of Wonder 2 Years Running",
     description:
-      "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been named to Franchise Dictionary Magazines 50 Women of Wonder list.",
+      "Spavia co-founder Allison Langenderfer named a Franchise Dictionary Woman of Wonder for the 2nd consecutive year — recognized for leadership and impact.",
     images: ["https://spaviafranchise.com/blog/blog16.png"],
   },
 };
@@ -50,7 +49,9 @@ const jsonLd = {
       "datePublished": "2025-10-29",
       "dateModified": "2025-10-29",
       "author": {
-        "name": "Spavia Day Spa",
+        "@type": "Person",
+        "name": "Marty Langenderfer",
+        "jobTitle": "CEO & Co-Founder",
         "url": "https://spaviafranchise.com"
       },
       "publisher": {
@@ -212,7 +213,21 @@ export default function Page() {
             </ul>
           </div>
 
-<div className="mt-12">
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              ML
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Marty Langenderfer</p>
+              <p className="text-sm text-gray-500 mb-1">CEO & Co-Founder</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Marty co-founded Spavia in 2005 and oversees brand strategy, franchise development, and operations across 60+ locations nationwide.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

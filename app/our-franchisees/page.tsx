@@ -41,16 +41,16 @@ const ourFranchiseesFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Our Franchisees | Spavia Spa Franchise Owners",
+  title: "Meet Spavia Franchise Owners: Revenue, Stories, Lessons",
   description:
-    "Meet Spavia spa franchise owners – passionate entrepreneurs building thriving communities and delivering exceptional wellness experiences nationwide.",
+    "Hear from Spavia day spa franchise owners across the U.S. — why they chose Spavia, what they earn, and what daily ownership actually looks like.",
   alternates: {
     canonical: "https://spaviafranchise.com/our-franchisees",
   },
   openGraph: {
-    title: "Our Franchisees | Spavia Spa Franchise Owners",
+    title: "Meet Spavia Franchise Owners: Revenue, Stories, Lessons",
     description:
-      "Meet Spavia spa franchise owners – passionate entrepreneurs building thriving communities and delivering exceptional wellness experiences nationwide.",
+      "Hear from Spavia day spa franchise owners across the U.S. — why they chose Spavia, what they earn, and what daily ownership actually looks like.",
     url: "https://spaviafranchise.com/our-franchisees",
     type: "website",
     images: [
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Franchisees | Spavia Spa Franchise Owners",
+    title: "Meet Spavia Franchise Owners: Revenue, Stories, Lessons",
     description:
-      "Meet Spavia spa franchise owners – passionate entrepreneurs building thriving communities and delivering exceptional wellness experiences nationwide.",
+      "Hear from Spavia day spa franchise owners across the U.S. — why they chose Spavia, what they earn, and what daily ownership actually looks like.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

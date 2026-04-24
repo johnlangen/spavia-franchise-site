@@ -496,6 +496,95 @@ export default function Page() {
             ownership model, and operator.
           </p>
 
+          {/* ── Sources & FDD References ── */}
+          <h2 className="text-2xl font-semibold mb-4">
+            Sources &amp; FDD References
+          </h2>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+              <thead className="bg-gray-800 text-white">
+                <tr>
+                  <th className="px-4 py-3 text-left">Figure Cited</th>
+                  <th className="px-4 py-3 text-left">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-white border-t">
+                  <td className="px-4 py-3">
+                    Spavia total initial investment: $496,450 &ndash; $795,950
+                  </td>
+                  <td className="px-4 py-3">
+                    Spavia Franchise Disclosure Document, Item 7
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 border-t">
+                  <td className="px-4 py-3">
+                    Spavia average unit volume: $1,146,952
+                  </td>
+                  <td className="px-4 py-3">
+                    Spavia Franchise Disclosure Document, Item 19, Part III
+                  </td>
+                </tr>
+                <tr className="bg-white border-t">
+                  <td className="px-4 py-3">
+                    Spavia average owner cash flow: $236,208
+                  </td>
+                  <td className="px-4 py-3">
+                    Spavia Franchise Disclosure Document, Item 19, Part III
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 border-t">
+                  <td className="px-4 py-3">
+                    Spavia operating margin: 20.6%
+                  </td>
+                  <td className="px-4 py-3">
+                    Spavia Franchise Disclosure Document, Item 19, Part III
+                  </td>
+                </tr>
+                <tr className="bg-white border-t">
+                  <td className="px-4 py-3">
+                    Global wellness economy: $6.8T (2024), 7.9% YoY growth,
+                    projected ~$10T by 2029
+                  </td>
+                  <td className="px-4 py-3">
+                    Global Wellness Institute, 2024 Global Wellness Economy
+                    Monitor
+                  </td>
+                </tr>
+                <tr className="bg-gray-50 border-t">
+                  <td className="px-4 py-3">
+                    82% of U.S. consumers prioritize personal health &amp;
+                    well-being
+                  </td>
+                  <td className="px-4 py-3">
+                    McKinsey &amp; Company, &quot;Still feeling good: The US
+                    wellness market continues to boom&quot; (2024)
+                  </td>
+                </tr>
+                <tr className="bg-white border-t">
+                  <td className="px-4 py-3">
+                    Segment investment ranges &amp; growth rates (Fitness,
+                    Massage, Recovery, Med Spa, Nutrition)
+                  </td>
+                  <td className="px-4 py-3">
+                    Industry estimates compiled from IBISWorld, Franchise
+                    Business Review, and segment-leading franchisor FDDs
+                    (approximations; always verify with each brand&apos;s
+                    current FDD)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-500 mb-10">
+            Financial performance representations for Spavia are sourced from
+            Item 19 of our current Franchise Disclosure Document. Individual
+            results vary by market, ownership model, and operator. This article
+            does not constitute an offer to sell or a solicitation to buy a
+            franchise. Offerings are made only by an FDD delivered in
+            compliance with applicable state and federal law.
+          </p>
+
           {/* ── CTA ── */}
           <div className="bg-gray-50 rounded-xl p-8 text-center mb-10 border border-gray-200">
             <h2 className="text-2xl font-semibold mb-3">

@@ -49,16 +49,16 @@ const yourSpaviaFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Your Spavia | Spa Franchise Investment Opportunities",
+  title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
   description:
-    "Discover how Spavia delivers financial success through wellness. Learn about financial requirements, recurring revenue streams, industry growth, and available markets.",
+    "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
   alternates: {
     canonical: "https://spaviafranchise.com/your-spavia",
   },
   openGraph: {
-    title: "Your Spavia | Spa Franchise Investment Opportunities",
+    title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
     description:
-      "Discover how Spavia delivers financial success through wellness. Learn about financial requirements, recurring revenue streams, industry growth, and available markets.",
+      "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
     url: "https://spaviafranchise.com/your-spavia",
     type: "website",
     images: [
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your Spavia | Spa Franchise Investment Opportunities",
+    title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
     description:
-      "Discover how Spavia delivers financial success through wellness. Learn about financial requirements, recurring revenue streams, industry growth, and available markets.",
+      "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

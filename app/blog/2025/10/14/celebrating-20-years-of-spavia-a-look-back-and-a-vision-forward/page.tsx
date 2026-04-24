@@ -7,18 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward | Spavia Franchise Blog",
+  title: "Spavia at 20: How We Built 60+ Locations With Wellness",
   description:
-    "Celebrate 20 years of Spavia’s mission of accessible luxury, personalized wellness, and community-focused spa experiences. Explore our founders’ vision, key milestones, and the future of the Spavia brand.",
+    "Spavia celebrates 20 years — from one spa in 2005 to 60+ locations today. Founder stories, brand milestones, and what's next in wellness franchising.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward",
   },
   openGraph: {
-    title: "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward",
+    title: "Spavia at 20: How We Built 60+ Locations With Wellness",
     description:
-      "Celebrate 20 years of Spavias mission of accessible luxury, personalized wellness, and community-focused spa experiences.",
+      "Spavia celebrates 20 years — from one spa in 2005 to 60+ locations today. Founder stories, brand milestones, and what's next in wellness franchising.",
     url: "https://spaviafranchise.com/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward",
     type: "article",
     images: [
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward",
+    title: "Spavia at 20: How We Built 60+ Locations With Wellness",
     description:
-      "Celebrate 20 years of Spavias mission of accessible luxury, personalized wellness, and community-focused spa experiences.",
+      "Spavia celebrates 20 years — from one spa in 2005 to 60+ locations today. Founder stories, brand milestones, and what's next in wellness franchising.",
     images: ["https://spaviafranchise.com/blog/blog15.png"],
   },
 };
@@ -50,7 +49,9 @@ const jsonLd = {
       "datePublished": "2025-10-14",
       "dateModified": "2025-10-14",
       "author": {
-        "name": "Spavia Day Spa",
+        "@type": "Person",
+        "name": "Marty Langenderfer",
+        "jobTitle": "CEO & Co-Founder",
         "url": "https://spaviafranchise.com"
       },
       "publisher": {
@@ -261,7 +262,21 @@ export default function Page() {
             </ul>
           </div>
 
-<div className="mt-12">
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              ML
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Marty Langenderfer</p>
+              <p className="text-sm text-gray-500 mb-1">CEO & Co-Founder</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Marty co-founded Spavia in 2005 and oversees brand strategy, franchise development, and operations across 60+ locations nationwide.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

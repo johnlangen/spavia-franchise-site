@@ -17,16 +17,16 @@ import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
 
 export const metadata: Metadata = {
-  title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
+  title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
   description:
-    "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
+    "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
   alternates: {
     canonical: "https://spaviafranchise.com/",
   },
   openGraph: {
-    title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
+    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
     description:
-      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
+      "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
     url: "https://spaviafranchise.com/",
     type: "website",
     images: [
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Day Spa Franchise | Own a Spavia Wellness Spa Franchise",
+    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
     description:
-      "Own a Spavia day spa franchise — a proven wellness franchise with avg gross sales over $1.1M. Explore spa franchise costs, training, support, and available markets in the $19B spa industry.",
+      "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

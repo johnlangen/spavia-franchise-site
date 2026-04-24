@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import FranchiseCostContent from "../components/FranchiseCostContent";
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Cost | How Much Does a Spavia Franchise Cost?",
+  title: "Spa Franchise Cost: $496K–$796K to Open a Spavia Day Spa",
   description:
-    "Spavia day spa franchise costs range from $496K to $796K. Explore the full investment breakdown, franchise fees, ongoing royalties, and financing options.",
+    "The full Spavia day spa franchise cost breakdown: $496K–$796K initial investment, $59,500 franchise fee, 6% royalty, SBA-friendly financing options.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-cost",
   },
   openGraph: {
-    title: "Spa Franchise Cost | How Much Does a Spavia Franchise Cost?",
+    title: "Spa Franchise Cost: $496K–$796K to Open a Spavia Day Spa",
     description:
-      "Spavia day spa franchise costs range from $496K to $796K. Explore the full investment breakdown, franchise fees, ongoing royalties, and financing options.",
+      "The full Spavia day spa franchise cost breakdown: $496K–$796K initial investment, $59,500 franchise fee, 6% royalty, SBA-friendly financing options.",
     url: "https://spaviafranchise.com/franchise-cost",
     type: "website",
     images: [
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Cost | How Much Does a Spavia Franchise Cost?",
+    title: "Spa Franchise Cost: $496K–$796K to Open a Spavia Day Spa",
     description:
-      "Spavia day spa franchise costs range from $496K to $796K. Explore the full investment breakdown, franchise fees, ongoing royalties, and financing options.",
+      "The full Spavia day spa franchise cost breakdown: $496K–$796K initial investment, $59,500 franchise fee, 6% royalty, SBA-friendly financing options.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

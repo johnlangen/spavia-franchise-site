@@ -5,25 +5,25 @@ import { getStateBySlug } from "../../data/markets";
 const state = getStateBySlug("north-carolina")!;
 
 export const metadata: Metadata = {
-  title: "Spa Franchise in North Carolina | Spavia Day Spa | Charlotte & Raleigh",
+  title: "North Carolina Spa Franchise: Charlotte & Raleigh Open",
   description:
-    "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, Chatham County, Iredell County, and more. Proven model, recurring revenue, full training & support.",
+    "Spavia spa franchise in North Carolina — Charlotte, Raleigh, and surrounding metros. Market data, open territories, and how to get started.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-opportunities/north-carolina",
   },
   openGraph: {
-    title: "Spa Franchise in North Carolina | Spavia Day Spa",
+    title: "North Carolina Spa Franchise: Charlotte & Raleigh Open",
     description:
-      "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, and the Research Triangle.",
+      "Spavia spa franchise in North Carolina — Charlotte, Raleigh, and surrounding metros. Market data, open territories, and how to get started.",
     url: "https://spaviafranchise.com/franchise-opportunities/north-carolina",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise in North Carolina | Spavia Day Spa",
+    title: "North Carolina Spa Franchise: Charlotte & Raleigh Open",
     description:
-      "Explore Spavia day spa franchise opportunities in North Carolina. Data-driven market analysis for Charlotte, Raleigh, and the Research Triangle.",
+      "Spavia spa franchise in North Carolina — Charlotte, Raleigh, and surrounding metros. Market data, open territories, and how to get started.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

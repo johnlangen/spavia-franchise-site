@@ -7,18 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Spa Franchise Opportunities 2026 | Complete Guide | Spavia",
+  title: "The 2026 Spa Franchise Buyer's Guide: Brands & Investment",
   description:
-    "Explore the best spa franchise opportunities in 2026. Compare costs, revenue models, and top brands. Learn why Spavia is a leading day spa franchise investment.",
+    "Your complete 2026 spa franchise buyer's guide: compare Spavia, Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, pros and cons of each.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/19/spa-franchise-opportunities-guide",
   },
   openGraph: {
-    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    title: "The 2026 Spa Franchise Buyer's Guide: Brands & Investment",
     description:
-      "Everything you need to know about spa franchise opportunities in 2026, including costs, revenue models, and top brands.",
+      "Your complete 2026 spa franchise buyer's guide: compare Spavia, Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, pros and cons of each.",
     url: "https://spaviafranchise.com/blog/2026/02/19/spa-franchise-opportunities-guide",
     type: "article",
     images: [
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    title: "The 2026 Spa Franchise Buyer's Guide: Brands & Investment",
     description:
-      "Everything you need to know about spa franchise opportunities in 2026, including costs, revenue models, and top brands.",
+      "Your complete 2026 spa franchise buyer's guide: compare Spavia, Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, pros and cons of each.",
     images: ["https://spaviafranchise.com/blog/blog22.png"],
   },
 };

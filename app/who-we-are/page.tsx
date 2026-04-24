@@ -41,16 +41,16 @@ const whoWeAreFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Who We Are | Meet the Founders of Spavia Franchise",
+  title: "Meet the Founders of Spavia: 20 Years, 60+ Spa Locations",
   description:
-    "Meet the founders and leadership team behind Spavia Franchise. Discover our vision, passion, and commitment to redefining the spa industry.",
+    "Meet co-founders Marty and Allison Langenderfer — the couple behind Spavia's 60+ day spa locations and 20-year track record in wellness franchising.",
   alternates: {
     canonical: "https://spaviafranchise.com/who-we-are",
   },
   openGraph: {
-    title: "Who We Are | Meet the Founders of Spavia Franchise",
+    title: "Meet the Founders of Spavia: 20 Years, 60+ Spa Locations",
     description:
-      "Meet the founders and leadership team behind Spavia Franchise. Discover our vision, passion, and commitment to redefining the spa industry.",
+      "Meet co-founders Marty and Allison Langenderfer — the couple behind Spavia's 60+ day spa locations and 20-year track record in wellness franchising.",
     url: "https://spaviafranchise.com/who-we-are",
     type: "website",
     images: [
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Who We Are | Meet the Founders of Spavia Franchise",
+    title: "Meet the Founders of Spavia: 20 Years, 60+ Spa Locations",
     description:
-      "Meet the founders and leadership team behind Spavia Franchise. Discover our vision, passion, and commitment to redefining the spa industry.",
+      "Meet co-founders Marty and Allison Langenderfer — the couple behind Spavia's 60+ day spa locations and 20-year track record in wellness franchising.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

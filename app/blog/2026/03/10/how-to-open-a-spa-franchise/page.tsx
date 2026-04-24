@@ -7,18 +7,17 @@ import Image from "next/image";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "How to Open a Spa Franchise | Step-by-Step Owner's Timeline",
+  title: "How to Open a Spa Franchise: 8-Step Timeline for Owners",
   description:
-    "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the timeline, costs, and steps to spa ownership.",
+    "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/03/10/how-to-open-a-spa-franchise",
   },
   openGraph: {
-    title: "How to Open a Spa Franchise | Step-by-Step Owner\u2019s Timeline",
+    title: "How to Open a Spa Franchise: 8-Step Timeline for Owners",
     description:
-      "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the timeline, costs, and steps to spa ownership.",
+      "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
     url: "https://spaviafranchise.com/blog/2026/03/10/how-to-open-a-spa-franchise",
     type: "article",
     images: [
@@ -32,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Open a Spa Franchise | Step-by-Step Owner\u2019s Timeline",
+    title: "How to Open a Spa Franchise: 8-Step Timeline for Owners",
     description:
-      "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the timeline, costs, and steps to spa ownership.",
+      "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
     images: ["https://spaviafranchise.com/blog/blog24.png"],
   },
 };
@@ -47,7 +46,7 @@ const jsonLd = {
       headline:
         "How to Open a Spa Franchise: A Step-by-Step Owner\u2019s Timeline",
       description:
-        "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the timeline, costs, and steps to spa ownership.",
+        "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
       image: "https://spaviafranchise.com/blog/blog24.png",
       datePublished: "2026-03-10",
       dateModified: "2026-03-10",

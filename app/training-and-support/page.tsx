@@ -49,16 +49,16 @@ const trainingFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Training and Support | Spavia Spa Franchises",
+  title: "Spa Franchise Training & Support | 120 Years of Expertise",
   description:
-    "Spavia's franchising team offers top-notch training and support from spa industry experts who have over 100 years of spa and beauty experience.",
+    "End-to-end training for Spavia spa franchise owners — site selection, classroom training in Denver, operations, marketing, and ongoing coaching.",
   alternates: {
     canonical: "https://spaviafranchise.com/training-and-support",
   },
   openGraph: {
-    title: "Spa Franchise Training and Support | Spavia Spa Franchises",
+    title: "Spa Franchise Training & Support | 120 Years of Expertise",
     description:
-      "Spavia's franchising team offers top-notch training and support from spa industry experts who have over 100 years of spa and beauty experience.",
+      "End-to-end training for Spavia spa franchise owners — site selection, classroom training in Denver, operations, marketing, and ongoing coaching.",
     url: "https://spaviafranchise.com/training-and-support",
     type: "website",
     images: [
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Training and Support | Spavia Spa Franchises",
+    title: "Spa Franchise Training & Support | 120 Years of Expertise",
     description:
-      "Spavia's franchising team offers top-notch training and support from spa industry experts who have over 100 years of spa and beauty experience.",
+      "End-to-end training for Spavia spa franchise owners — site selection, classroom training in Denver, operations, marketing, and ongoing coaching.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

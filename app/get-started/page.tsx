@@ -41,16 +41,16 @@ const getStartedFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Opportunities | Get Started With Spavia",
+  title: "Get Started With Spavia: Request Your Franchise Overview",
   description:
-    "Join the $6.3 Trillion wellness industry with Spavia franchise opportunities. Proven spa model, membership revenue, and full training & support. Get started today.",
+    "Request the Spavia franchise overview — investment breakdown, open territories, and next steps. A Spavia team member responds within 24–48 hours.",
   alternates: {
     canonical: "https://spaviafranchise.com/get-started",
   },
   openGraph: {
-    title: "Spa Franchise Opportunities | Get Started With Spavia",
+    title: "Get Started With Spavia: Request Your Franchise Overview",
     description:
-      "Learn how to open a Spavia Day Spa. Explore our proven franchise model, membership revenue system, and full training & support.",
+      "Request the Spavia franchise overview — investment breakdown, open territories, and next steps. A Spavia team member responds within 24–48 hours.",
     url: "https://spaviafranchise.com/get-started",
     type: "website",
     images: [
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Opportunities | Get Started With Spavia",
+    title: "Get Started With Spavia: Request Your Franchise Overview",
     description:
-      "Learn how to open a Spavia Day Spa. Explore our proven franchise model, membership revenue system, and training & support.",
+      "Request the Spavia franchise overview — investment breakdown, open territories, and next steps. Responses within 24–48 hours.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

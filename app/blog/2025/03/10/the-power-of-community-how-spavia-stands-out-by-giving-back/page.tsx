@@ -49,7 +49,9 @@ const jsonLd = {
       "datePublished": "2025-03-10",
       "dateModified": "2025-03-10",
       "author": {
-        "name": "Spavia Day Spa",
+        "@type": "Person",
+        "name": "Allison Langenderfer",
+        "jobTitle": "President & Co-Founder",
         "url": "https://spaviafranchise.com"
       },
       "publisher": {
@@ -263,7 +265,21 @@ export default function Page() {
             </ul>
           </div>
 
-<div className="mt-12">
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              AL
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Allison Langenderfer</p>
+              <p className="text-sm text-gray-500 mb-1">President & Co-Founder</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Allison co-founded Spavia in 2005 and leads the brand's design, retail, training, and community impact initiatives.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

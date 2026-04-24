@@ -7,17 +7,17 @@ import Footer from "../../../../../components/Footer";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Opportunities - Wellness Industry | Spavia Day Spa",
+  title: "Best Spa Franchise Opportunities in 2026 | Spavia Guide",
   description:
-    "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+    "Compare the top spa franchise opportunities in 2026: Spavia vs. Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, and which fits you.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities",
   },
   openGraph: {
-    title: "Spa Franchise Opportunities: Where Passion Meets Profit",
+    title: "Best Spa Franchise Opportunities in 2026 | Spavia Guide",
     description:
-      "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+      "Compare the top spa franchise opportunities in 2026: Spavia vs. Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, and which fits you.",
     url: "https://spaviafranchise.com/blog/2024/04/16/spa-franchise-opportunities",
     type: "article",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Opportunities: Where Passion Meets Profit",
+    title: "Best Spa Franchise Opportunities in 2026 | Spavia Guide",
     description:
-      "Turn your passion for wellness into a profitable venture with our spa franchise opportunities. Take the first step towards financial success!",
+      "Compare the top spa franchise opportunities in 2026: Spavia vs. Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, and which fits you.",
     images: ["https://spaviafranchise.com/blog/blog2.jpg"],
   },
 };
@@ -49,7 +49,9 @@ const jsonLd = {
       "datePublished": "2024-04-16",
       "dateModified": "2024-04-16",
       "author": {
-        "name": "Spavia Day Spa",
+        "@type": "Person",
+        "name": "Tyler Woodard",
+        "jobTitle": "Director of Franchise Development",
         "url": "https://spaviafranchise.com"
       },
       "publisher": {
@@ -265,7 +267,21 @@ export default function Page() {
             </ul>
           </div>
 
-<div className="mt-12">
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+              TW
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">Tyler Woodard</p>
+              <p className="text-sm text-gray-500 mb-1">Director of Franchise Development</p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Tyler guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <Link
               href="/blog"
               className="inline-block text-[#C2A878] hover:underline font-medium"

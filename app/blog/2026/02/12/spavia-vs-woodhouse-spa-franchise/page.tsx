@@ -6,18 +6,17 @@ import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import { getRelatedPosts, blogPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
-  title:
-    "Spavia vs Woodhouse Spa Franchise: Side-by-Side Comparison (2026) | Spavia Blog",
+  title: "Spavia vs Woodhouse: Spa Franchise Compared Side-by-Side",
   description:
-    "Compare Spavia and Woodhouse spa franchise models side by side. Investment costs, revenue, franchise fees, training, and which spa franchise is right for you.",
+    "Spavia vs Woodhouse spa franchise: investment ($496K vs $1.48M+), revenue ($1.1M vs $2.46M), fees, and which model fits your goals. FDD data inside.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
   },
   openGraph: {
-    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    title: "Spavia vs Woodhouse: Spa Franchise Compared Side-by-Side",
     description:
-      "Compare Spavia and Woodhouse spa franchise models side by side, including investment costs, revenue, franchise fees, and training.",
+      "Spavia vs Woodhouse spa franchise: investment ($496K vs $1.48M+), revenue ($1.1M vs $2.46M), fees, and which model fits your goals. FDD data inside.",
     url: "https://spaviafranchise.com/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
     type: "article",
     images: [
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    title: "Spavia vs Woodhouse: Spa Franchise Compared Side-by-Side",
     description:
-      "Compare Spavia and Woodhouse spa franchise models side by side, including investment costs, revenue, franchise fees, and training.",
+      "Spavia vs Woodhouse spa franchise: investment ($496K vs $1.48M+), revenue ($1.1M vs $2.46M), fees, and which model fits your goals. FDD data inside.",
     images: ["https://spaviafranchise.com/blog/blog21.jpg"],
   },
 };
