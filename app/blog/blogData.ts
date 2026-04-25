@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
       "Which Wellness Franchise Segment Is Right for You? A Side-by-Side Comparison",
     excerpt:
       "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side \u2014 investment range, growth rate, revenue model, and who each one fits. A franchise director's guide.",
-    image: "/blog/blog28.png",
+    image: "/blog/blog28.webp",
     href: "/blog/2026/04/23/wellness-franchise-segments-compared",
     date: "2026-04-23",
     tags: ["comparisons", "franchise-guide", "investment"],
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     title: "Do You Have What It Takes? Traits of Successful Spa Franchise Owners",
     excerpt:
       "What separates thriving spa franchise owners from the rest? Discover the 7 traits that drive success at Spavia Day Spa\u2014from people-first leadership to operational discipline\u2014and find out if you have what it takes.",
-    image: "/blog/blog26.png",
+    image: "/blog/blog26.webp",
     href: "/blog/2026/04/04/traits-successful-spa-franchise-owners",
     date: "2026-04-04",
     tags: ["franchise-guide", "getting-started", "operations"],
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why Women Entrepreneurs Are Choosing Spa Franchises",
     excerpt:
       "Women represent 35% of all franchise owners and growing. Discover why spa franchises rank among the best franchise opportunities for women entrepreneurs in 2026\u2014from financial performance to financing resources.",
-    image: "/blog/blog25.png",
+    image: "/blog/blog25.webp",
     href: "/blog/2026/03/25/women-entrepreneurs-spa-franchise",
     date: "2026-03-25",
     tags: ["franchise-guide", "getting-started", "investment"],
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Open a Spa Franchise: A Step-by-Step Owner\u2019s Timeline",
     excerpt:
       "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the 8-step timeline, financing options, and what to expect at every phase of ownership.",
-    image: "/blog/blog24.png",
+    image: "/blog/blog24.webp",
     href: "/blog/2026/03/10/how-to-open-a-spa-franchise",
     date: "2026-03-10",
     tags: ["getting-started", "investment", "franchise-guide"],
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Complete Guide to Spa Franchise Opportunities in 2026",
     excerpt:
       "Everything you need to know about spa franchise opportunities in 2026 \u2014 compare costs, revenue models, and top brands to find the right investment for you.",
-    image: "/blog/blog22.png",
+    image: "/blog/blog22.webp",
     href: "/blog/2026/02/19/spa-franchise-opportunities-guide",
     date: "2026-02-19",
     tags: ["franchise-guide", "investment", "comparisons"],
@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     title: "Spavia Co-Founder Allison Langenderfer Named a \u201CWoman of Wonder\u201D for the Second Consecutive Year",
     excerpt:
       "Allison Langenderfer, President and Co-Founder of Spavia Day Spa, has been named to Franchise Dictionary Magazine\u2019s \u201C50 Women of Wonder\u201D list for the second consecutive year, recognizing her leadership and community impact.",
-    image: "/blog/blog16.png",
+    image: "/blog/blog16.webp",
     href: "/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year",
     date: "2025-10-29",
     tags: ["awards", "brand-story"],
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
     title: "Celebrating 20 Years of Spavia: A Look Back and a Vision Forward",
     excerpt:
       "Spavia celebrates 20 years of inspiring wellness through accessible luxury, founder-led passion, and community-driven growth.",
-    image: "/blog/blog15.png",
+    image: "/blog/blog15.webp",
     href: "/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward",
     date: "2025-10-14",
     tags: ["brand-story", "community"],

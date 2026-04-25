@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog25.png",
+        url: "https://spaviafranchise.com/blog/blog25.webp",
         width: 1200,
         height: 675,
         alt: "Women entrepreneurs in spa franchise ownership",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Why Women Entrepreneurs Are Choosing Spa Franchises | Spavia",
     description:
       "Women represent 35% of all franchise owners and growing. Discover why spa franchises are among the best franchise opportunities for women entrepreneurs in 2026.",
-    images: ["https://spaviafranchise.com/blog/blog25.png"],
+    images: ["https://spaviafranchise.com/blog/blog25.webp"],
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
         "Why Women Entrepreneurs Are Choosing Spa Franchises",
       description:
         "Women represent 35% of all franchise owners and growing. Discover why spa franchises are among the best franchise opportunities for women entrepreneurs in 2026.",
-      image: "https://spaviafranchise.com/blog/blog25.png",
+      image: "https://spaviafranchise.com/blog/blog25.webp",
       datePublished: "2026-03-25",
       dateModified: "2026-03-25",
       author: {
@@ -158,7 +158,7 @@ export default function Page() {
           </p>
 
           <Image
-            src="/blog/blog25.png"
+            src="/blog/blog25.webp"
             alt="Women entrepreneurs exploring spa franchise ownership opportunities"
             width={1200}
             height={675}

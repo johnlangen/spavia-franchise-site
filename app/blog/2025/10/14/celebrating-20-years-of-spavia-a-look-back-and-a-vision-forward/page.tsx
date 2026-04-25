@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog15.png",
+        url: "https://spaviafranchise.com/blog/blog15.webp",
         width: 1200,
         height: 675,
         alt: "Celebrating 20 years of Spavia",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Spavia at 20: How We Built 60+ Locations With Wellness",
     description:
       "Spavia celebrates 20 years — from one spa in 2005 to 60+ locations today. Founder stories, brand milestones, and what's next in wellness franchising.",
-    images: ["https://spaviafranchise.com/blog/blog15.png"],
+    images: ["https://spaviafranchise.com/blog/blog15.webp"],
   },
 };
 
@@ -64,7 +64,7 @@ const jsonLd = {
       "mainEntityOfPage": {
         "@id": "https://spaviafranchise.com/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward"
       },
-      "image": "https://spaviafranchise.com/blog/blog15.png"
+      "image": "https://spaviafranchise.com/blog/blog15.webp"
 
     },
   ],
@@ -96,7 +96,7 @@ export default function Page() {
 
 
           <Image
-                src="/blog/blog15.png"
+                src="/blog/blog15.webp"
                 alt="Celebrating 20 Years of Spavia"
                 width={1200}
                 height={675}

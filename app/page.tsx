@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
 import FAQ from "./components/FAQ";
 import ProofSection from "./components/ProofSection";
@@ -9,12 +10,15 @@ import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSe
 import GuestTestimonialsSection from "./components/GuestTestimonialsSection";
 import SEOContentSection from "./components/SEOContentSection";
 import GoldBottomBanner from "./components/GoldBottomBanner";
-import ChatSection from "./components/ChatSection";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
+
+const ChatSection = dynamic(() => import("./components/ChatSection"), {
+  loading: () => <div className="min-h-[600px]" aria-hidden="true" />,
+});
 
 export const metadata: Metadata = {
   title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",

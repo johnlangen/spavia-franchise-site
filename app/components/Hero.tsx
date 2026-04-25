@@ -136,7 +136,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/media/guest-robe-fireplace.webp"
         className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
           videoReady ? "opacity-100" : "opacity-0"

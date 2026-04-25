@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog24.png",
+        url: "https://spaviafranchise.com/blog/blog24.webp",
         width: 1200,
         height: 675,
         alt: "How to open a spa franchise step-by-step timeline",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "How to Open a Spa Franchise: 8-Step Timeline for Owners",
     description:
       "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
-    images: ["https://spaviafranchise.com/blog/blog24.png"],
+    images: ["https://spaviafranchise.com/blog/blog24.webp"],
   },
 };
 
@@ -47,7 +47,7 @@ const jsonLd = {
         "How to Open a Spa Franchise: A Step-by-Step Owner\u2019s Timeline",
       description:
         "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
-      image: "https://spaviafranchise.com/blog/blog24.png",
+      image: "https://spaviafranchise.com/blog/blog24.webp",
       datePublished: "2026-03-10",
       dateModified: "2026-03-10",
       author: {
@@ -163,7 +163,7 @@ export default function Page() {
           <p className="text-sm text-gray-500 mb-6">Published March 10, 2026</p>
 
           <Image
-            src="/blog/blog24.png"
+            src="/blog/blog24.webp"
             alt="How to open a spa franchise step-by-step timeline"
             width={1200}
             height={675}

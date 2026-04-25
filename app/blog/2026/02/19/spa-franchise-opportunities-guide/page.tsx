@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog22.png",
+        url: "https://spaviafranchise.com/blog/blog22.webp",
         width: 1200,
         height: 675,
         alt: "Complete guide to spa franchise opportunities 2026",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "The 2026 Spa Franchise Buyer's Guide: Brands & Investment",
     description:
       "Your complete 2026 spa franchise buyer's guide: compare Spavia, Woodhouse, Hand & Stone, Massage Envy. Investment ranges, revenue, pros and cons of each.",
-    images: ["https://spaviafranchise.com/blog/blog22.png"],
+    images: ["https://spaviafranchise.com/blog/blog22.webp"],
   },
 };
 
@@ -47,7 +47,7 @@ const jsonLd = {
         "The Complete Guide to Spa Franchise Opportunities in 2026",
       description:
         "Explore the best spa franchise opportunities in 2026. Compare costs, revenue models, and top brands. Learn why Spavia is a leading day spa franchise investment.",
-      image: "https://spaviafranchise.com/blog/blog22.png",
+      image: "https://spaviafranchise.com/blog/blog22.webp",
       datePublished: "2026-02-19",
       dateModified: "2026-02-19",
       author: {
@@ -168,7 +168,7 @@ export default function Page() {
           </p>
 
           <Image
-            src="/blog/blog22.png"
+            src="/blog/blog22.webp"
             alt="Spa franchise opportunities guide 2026 - Spavia Day Spa interior"
             width={1200}
             height={675}

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog16.png",
+        url: "https://spaviafranchise.com/blog/blog16.webp",
         width: 1200,
         height: 675,
         alt: "Allison Langenderfer named Woman of Wonder",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Allison Langenderfer Named Woman of Wonder 2 Years Running",
     description:
       "Spavia co-founder Allison Langenderfer named a Franchise Dictionary Woman of Wonder for the 2nd consecutive year — recognized for leadership and impact.",
-    images: ["https://spaviafranchise.com/blog/blog16.png"],
+    images: ["https://spaviafranchise.com/blog/blog16.webp"],
   },
 };
 
@@ -64,7 +64,7 @@ const jsonLd = {
       "mainEntityOfPage": {
         "@id": "https://spaviafranchise.com/blog/2025/10/29/spavia-co-founder-allison-langenderfer-named-a-woman-of-wonder-for-the-second-consecutive-year"
       },
-      "image": "https://spaviafranchise.com/blog/blog14.png"
+      "image": "https://spaviafranchise.com/blog/blog14.webp"
 
     },
   ],
@@ -92,7 +92,7 @@ export default function Page() {
           </h1>
 
           <Image
-                src="/blog/blog14.png"
+                src="/blog/blog14.webp"
                 alt="Allison Langenderfer Woman of Wonder"
                 width={1200}
                 height={675}

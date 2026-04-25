@@ -203,7 +203,7 @@ export default function Page() {
           </p>
 
           <Image
-                src="/blog/blog3.png"
+                src="/blog/blog3.webp"
                 alt="Spavia Franchise Opportunities - Spa Ownership"
                 width={1200}
                 height={675}

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog26.png",
+        url: "https://spaviafranchise.com/blog/blog26.webp",
         width: 1200,
         height: 675,
         alt: "Successful spa franchise owner traits",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Traits of Successful Spa Franchise Owners | Spavia",
     description:
       "What separates thriving spa franchise owners from the rest? Discover the 7 traits that drive success at Spavia Day Spa\u2014and find out if you have what it takes.",
-    images: ["https://spaviafranchise.com/blog/blog26.png"],
+    images: ["https://spaviafranchise.com/blog/blog26.webp"],
   },
 };
 
@@ -50,7 +50,7 @@ const jsonLd = {
         "Do You Have What It Takes? Traits of Successful Spa Franchise Owners",
       description:
         "What separates thriving spa franchise owners from the rest? Discover the 7 traits that drive success at Spavia Day Spa\u2014and find out if you have what it takes.",
-      image: "https://spaviafranchise.com/blog/blog26.png",
+      image: "https://spaviafranchise.com/blog/blog26.webp",
       datePublished: "2026-04-04",
       dateModified: "2026-04-04",
       author: {
@@ -158,7 +158,7 @@ export default function Page() {
           </p>
 
           <Image
-            src="/blog/blog26.png"
+            src="/blog/blog26.webp"
             alt="Spavia franchise team members representing successful spa franchise ownership"
             width={1200}
             height={675}

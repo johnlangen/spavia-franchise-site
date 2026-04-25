@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog28.png",
+        url: "https://spaviafranchise.com/blog/blog28.webp",
         width: 1200,
         height: 675,
         alt: "Wellness franchise segments compared",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "Which Wellness Franchise Segment Is Right for You? A Side-by-Side Comparison",
     description:
       "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side.",
-    images: ["https://spaviafranchise.com/blog/blog28.png"],
+    images: ["https://spaviafranchise.com/blog/blog28.webp"],
   },
 };
 
@@ -49,7 +49,7 @@ const jsonLd = {
         "Which Wellness Franchise Segment Is Right for You? A Side-by-Side Comparison",
       description:
         "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side — investment range, growth rate, revenue model, and who each one fits.",
-      image: "https://spaviafranchise.com/blog/blog28.png",
+      image: "https://spaviafranchise.com/blog/blog28.webp",
       datePublished: "2026-04-23",
       dateModified: "2026-04-23",
       author: {
