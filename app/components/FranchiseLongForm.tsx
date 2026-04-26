@@ -48,6 +48,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
   /* ───────── FINAL SUBMIT ───────── */
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
     setError("");
 
@@ -352,7 +353,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 disabled={loading}
                 className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
               >
-                {loading ? "Submitting…" : "Submit Request"}
+                {loading ? "Submitting…" : error ? "Try Again" : "Submit Request"}
               </Button>
 
               <p className="mt-2 text-xs text-center text-gray-500">
@@ -391,7 +392,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
         .form-select:focus {
           outline: none;
           border-color: #c2a878;
-          box-shadow: 0 0 0 1px rgba(194, 168, 120, 0.35);
+          box-shadow: 0 0 0 3px rgba(194, 168, 120, 0.45);
         }
       `}</style>
     </div>

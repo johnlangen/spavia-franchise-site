@@ -24,6 +24,15 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [zip, setZip] = useState("");
+  const [zipError, setZipError] = useState("");
+
+  const validateZip = (value: string) => {
+    if (value && !/^[0-9]{5}$/.test(value)) {
+      setZipError("Please enter a 5-digit ZIP code");
+    } else {
+      setZipError("");
+    }
+  };
 
   /* ---------------- STEP 1 ---------------- */
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -45,6 +54,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
   /* ---------------- STEP 2 ---------------- */
   const handleStep2 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
     setError("");
 
@@ -108,7 +118,8 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
     placeholder:text-gray-500
     focus:outline-none
     focus:ring-2
-    focus:ring-[#C2A878]/40
+    focus:ring-[#C2A878]
+    focus:ring-offset-1
     focus:border-[#C2A878]
   `;
 
@@ -141,6 +152,10 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
 
           <p className="mt-6 text-xs text-gray-500">
             We respect your privacy. Your information is never shared.
+          </p>
+
+          <p className="mt-3 text-xs text-gray-500 italic">
+            Designed for prospective owners with $200K+ liquid capital and $500K+ net worth.
           </p>
         </div>
 
@@ -249,12 +264,24 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                     autoComplete="postal-code"
                     inputMode="numeric"
                     pattern="[0-9]{5}"
-                    title="Please enter a 5-digit ZIP code"
+                    maxLength={5}
                     required
                     value={zip}
-                    onChange={(e) => setZip(e.target.value)}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      setZip(val);
+                      if (zipError) validateZip(val);
+                    }}
+                    onBlur={(e) => validateZip(e.target.value)}
+                    aria-invalid={!!zipError}
+                    aria-describedby={zipError ? "intro-zip-error" : undefined}
                     className={inputStyle}
                   />
+                  {zipError && (
+                    <p id="intro-zip-error" className="mt-1 text-xs text-red-600">
+                      {zipError}
+                    </p>
+                  )}
                 </div>
 
                 <div className="sm:col-span-2">
@@ -273,7 +300,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                     disabled={loading}
                     className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
                   >
-                    {loading ? "Submitting..." : "Request Info"}
+                    {loading ? "Submitting..." : error ? "Try Again" : "Request Info"}
                   </Button>
 
                   <p className="mt-2 text-[11px] text-center text-gray-500">

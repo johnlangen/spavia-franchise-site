@@ -46,6 +46,16 @@ export default function Hero() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
+  const [zip, setZip] = useState("");
+  const [zipError, setZipError] = useState("");
+
+  const validateZip = (value: string) => {
+    if (value && !/^[0-9]{5}$/.test(value)) {
+      setZipError("Please enter a 5-digit ZIP code");
+    } else {
+      setZipError("");
+    }
+  };
 
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,6 +73,7 @@ export default function Hero() {
 
   const handleStep2 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
     setLoading(true);
     setError("");
 
@@ -110,9 +121,9 @@ export default function Hero() {
   };
 
   const inputStyle = `
-    w-full rounded-lg border border-white/30 bg-white/10 backdrop-blur-md
-    px-4 py-2.5 text-white placeholder:text-white/60
-    focus:outline-none focus:ring-2 focus:ring-[#C2A878]/60 focus:border-[#C2A878]
+    w-full rounded-lg border border-white/40 bg-white/15 backdrop-blur-md
+    px-4 py-2.5 text-white placeholder:text-white/70
+    focus:outline-none focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] focus:bg-white/20
     text-sm
   `;
 
@@ -368,10 +379,27 @@ export default function Hero() {
                     autoComplete="postal-code"
                     inputMode="numeric"
                     pattern="[0-9]{5}"
-                    title="Please enter a 5-digit ZIP code"
+                    maxLength={5}
                     required
+                    value={zip}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      setZip(val);
+                      if (zipError) validateZip(val);
+                    }}
+                    onBlur={(e) => validateZip(e.target.value)}
+                    aria-invalid={!!zipError}
+                    aria-describedby={zipError ? "hero-zip-error" : undefined}
                     className={inputStyle}
                   />
+                  {zipError && (
+                    <p
+                      id="hero-zip-error"
+                      className="text-[11px] text-red-200"
+                    >
+                      {zipError}
+                    </p>
+                  )}
 
                   {error && (
                     <div
@@ -388,9 +416,12 @@ export default function Hero() {
                     disabled={loading}
                     className="w-full bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold py-2.5 rounded-lg transition text-sm cursor-pointer disabled:opacity-60"
                   >
-                    {loading ? "Submitting..." : "Request Info"}
+                    {loading ? "Submitting..." : error ? "Try Again" : "Request Info"}
                   </button>
 
+                  <p className="text-[10px] text-center text-white/50 mt-1 italic">
+                    Designed for prospective owners with $200K+ liquid &amp; $500K+ net worth.
+                  </p>
                   <p className="text-[10px] text-center text-white/40 mt-1">
                     By submitting, you agree Spavia may contact you by email,
                     phone, or text regarding franchise opportunities.
