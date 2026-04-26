@@ -374,7 +374,11 @@ export default function Hero() {
                   />
 
                   {error && (
-                    <div className="rounded-lg bg-red-500/20 border border-red-400/30 px-3 py-2 text-xs text-red-200">
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="rounded-lg bg-red-500/20 border border-red-400/30 px-3 py-2 text-xs text-red-200"
+                    >
                       {error}
                     </div>
                   )}

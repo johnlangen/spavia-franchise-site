@@ -259,7 +259,11 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
 
                 <div className="sm:col-span-2">
                   {error && (
-                    <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                    <div
+                      role="alert"
+                      aria-live="polite"
+                      className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"
+                    >
                       {error}
                     </div>
                   )}

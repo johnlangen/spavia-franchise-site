@@ -68,12 +68,17 @@ export default function FAQ() {
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const buttonId = `faq-button-${index}`;
+            const panelId = `faq-panel-${index}`;
             return (
               <div
                 key={index}
                 className="border-b pb-4 transition-colors"
               >
                 <button
+                  id={buttonId}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                   onClick={() =>
                     setOpenIndex(isOpen ? null : index)
                   }
@@ -81,6 +86,7 @@ export default function FAQ() {
                 >
                   {faq.question}
                   <span
+                    aria-hidden="true"
                     className={`text-2xl font-bold transform transition-transform duration-300 ${
                       isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
                     }`}
@@ -90,6 +96,10 @@ export default function FAQ() {
                 </button>
 
                 <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  hidden={!isOpen}
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
                   }`}

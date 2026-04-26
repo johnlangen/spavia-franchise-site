@@ -48,13 +48,15 @@ export default function NavBar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
-          {isOpen ? "✕" : "☰"}
+          <span aria-hidden="true">{isOpen ? "✕" : "☰"}</span>
         </button>
       </div>
 
       {/* Mobile Menu with animation */}
       <div
+        id="mobile-menu"
         className={`lg:hidden bg-black px-6 overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? "max-h-[28rem] opacity-100 py-4" : "max-h-0 opacity-0"
         }`}

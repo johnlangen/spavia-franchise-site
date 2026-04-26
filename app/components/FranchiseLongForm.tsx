@@ -339,7 +339,11 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
 
             <div className="md:col-span-2 pt-2">
               {error && (
-                <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                <div
+                  role="alert"
+                  aria-live="polite"
+                  className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"
+                >
                   {error}
                 </div>
               )}
