@@ -13,8 +13,9 @@ interface Message {
 /* ---------- PRESET QUESTIONS ---------- */
 const PRESETS = [
   { label: "Investment Cost", question: "What does it cost to open a Spavia?" },
-  { label: "Average Revenue", question: "What's the average revenue?" },
+  { label: "My Market", question: "Is my market available?" },
   { label: "Getting Started", question: "How do I get started?" },
+  { label: "Next Step", question: "What's my next step?" },
 ];
 
 /* ---------- COMPONENT ---------- */
@@ -49,12 +50,19 @@ export default function ChatSection() {
     }
   }, [messages]);
 
-  /* ---------- EMAIL CAPTURE TRIGGER ---------- */
+  /* ---------- EMAIL CAPTURE TRIGGER ----------
+     Trigger after the FIRST assistant response finishes streaming.
+     98% of users send only one message, so waiting for 3 means we never capture anyone. */
   useEffect(() => {
-    if (userMessageCount >= 3 && !emailSubmitted && !emailDismissed) {
+    if (
+      userMessageCount >= 1 &&
+      !isStreaming &&
+      !emailSubmitted &&
+      !emailDismissed
+    ) {
       setShowEmailCapture(true);
     }
-  }, [userMessageCount, emailSubmitted, emailDismissed]);
+  }, [userMessageCount, isStreaming, emailSubmitted, emailDismissed]);
 
   /* ---------- EMAIL SUBMIT ---------- */
   const submitEmail = async () => {

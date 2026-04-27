@@ -13,9 +13,9 @@ interface Message {
 /* ---------- PRESET QUESTIONS ---------- */
 const PRESETS = [
   "What does it cost to open a Spavia?",
-  "Do I need spa experience?",
-  "What's the average revenue?",
+  "Is my market available?",
   "How do I get started?",
+  "What's my next step?",
 ];
 
 /* ---------- COMPONENT ---------- */
@@ -58,12 +58,19 @@ export default function ChatWidget() {
     }
   }, [isOpen]);
 
-  /* ---------- EMAIL CAPTURE TRIGGER ---------- */
+  /* ---------- EMAIL CAPTURE TRIGGER ----------
+     Trigger after the FIRST assistant response finishes streaming.
+     98% of users send only one message, so waiting for 3 means we never capture anyone. */
   useEffect(() => {
-    if (userMessageCount >= 3 && !emailSubmitted && !emailDismissed) {
+    if (
+      userMessageCount >= 1 &&
+      !isStreaming &&
+      !emailSubmitted &&
+      !emailDismissed
+    ) {
       setShowEmailCapture(true);
     }
-  }, [userMessageCount, emailSubmitted, emailDismissed]);
+  }, [userMessageCount, isStreaming, emailSubmitted, emailDismissed]);
 
   /* ---------- SEND MESSAGE ---------- */
   const sendMessage = async (text: string) => {
