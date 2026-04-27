@@ -124,7 +124,7 @@ export default function Hero() {
     w-full rounded-lg border border-white/40 bg-white/15 backdrop-blur-md
     px-4 py-2.5 text-white placeholder:text-white/70
     focus:outline-none focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] focus:bg-white/20
-    text-sm
+    text-base
   `;
 
   return (
@@ -211,7 +211,7 @@ export default function Hero() {
               <div className="sm:hidden flex items-center justify-center gap-3">
                 <button
                   onClick={prevMetric}
-                  className="h-8 w-8 rounded-full border border-white/30 text-white/80"
+                  className="h-11 w-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center text-xl"
                   aria-label="Previous metric"
                 >
                   &lsaquo;
@@ -237,7 +237,7 @@ export default function Hero() {
 
                 <button
                   onClick={nextMetric}
-                  className="h-8 w-8 rounded-full border border-white/30 text-white/80"
+                  className="h-11 w-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center text-xl"
                   aria-label="Next metric"
                 >
                   &rsaquo;
@@ -328,7 +328,7 @@ export default function Hero() {
                   transition={{ duration: 0.2 }}
                   className="space-y-2.5"
                 >
-                  <div className="grid grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                       <label htmlFor="hero-firstName" className="sr-only">
                         First name

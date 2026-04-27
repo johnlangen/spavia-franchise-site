@@ -44,7 +44,7 @@ export default function NavBar() {
 
         {/* Hamburger — visible below lg */}
         <button
-          className="lg:hidden text-white text-2xl focus:outline-none cursor-pointer transition-transform duration-200 hover:scale-110 hover:opacity-80"
+          className="lg:hidden h-12 w-12 flex items-center justify-center text-white text-2xl focus:outline-none cursor-pointer transition-transform duration-200 hover:scale-110 hover:opacity-80"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}

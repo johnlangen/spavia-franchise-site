@@ -380,7 +380,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
           border: 1px solid #d6d3c8;
           border-radius: 0.5rem;
           padding: 0.7rem 0.9rem;
-          font-size: 0.95rem;
+          font-size: 1rem;
           color: #1f2937;
         }
 

@@ -78,7 +78,10 @@ export default function FloatingButton() {
           ============================= */}
       {showMobile && (
         <motion.div
-          className="md:hidden fixed bottom-4 left-0 right-0 z-50 px-4"
+          className="md:hidden fixed left-0 right-0 z-50 px-4"
+          style={{
+            bottom: "calc(1rem + env(safe-area-inset-bottom))",
+          }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
