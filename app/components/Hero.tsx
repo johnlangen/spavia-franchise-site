@@ -157,7 +157,7 @@ export default function Hero() {
       </video>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/45" />
 
       {/* ---------- CONTENT: Split Layout ---------- */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-0">
