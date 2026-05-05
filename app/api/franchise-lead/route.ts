@@ -4,6 +4,30 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
+    // Server-side validation: backstop against junk/spam leads
+    const email = String(body.email || "").trim();
+    const phoneDigits = String(body.phone || "").replace(/\D/g, "");
+    const zip = String(body.zip || "").trim();
+    const firstName = String(body.firstName || "").trim();
+    const lastName = String(body.lastName || "").trim();
+
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    // US phone: 10 digits, or 11 digits starting with country code 1
+    const phoneValid =
+      phoneDigits.length === 10 ||
+      (phoneDigits.length === 11 && phoneDigits.startsWith("1"));
+    const zipValid = /^[0-9]{5}$/.test(zip);
+
+    if (!emailValid || !phoneValid || !zipValid || !firstName || !lastName) {
+      return NextResponse.json(
+        {
+          error:
+            "Please provide your name, a valid email, a US phone number, and ZIP code.",
+        },
+        { status: 400 }
+      );
+    }
+
     // 1️⃣ Create / update contact (sync = upsert, won't fail on duplicates)
     const contactRes = await fetch(
       `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contact/sync`,

@@ -250,8 +250,9 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                     type="tel"
                     placeholder="Phone"
                     autoComplete="tel"
-                    pattern="[\d\s\-\(\)\+\.]{7,}"
-                    title="Please enter a valid phone number"
+                    required
+                    pattern="[\d\s\-\(\)\.]{10,14}"
+                    title="Please enter a valid US phone number"
                     className={inputStyle}
                   />
                 </div>
