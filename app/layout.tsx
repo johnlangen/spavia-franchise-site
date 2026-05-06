@@ -7,6 +7,7 @@ import FloatingButton from "./components/FloatingButton";
 import ChatWidget from "./components/ChatWidget";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Analytics from "./components/Analytics";
+import AttributionTracker from "./components/AttributionTracker";
 
 const recoleta = localFont({
   src: [
@@ -121,6 +122,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <Analytics />
         </Suspense>
+        <AttributionTracker />
         <ThemeProvider>
           {children}
           <FloatingButton />

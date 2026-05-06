@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { getAttribution } from "../lib/attribution";
 
 declare global {
   interface Window {
@@ -55,6 +56,7 @@ export default function CustomMarketForm() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const attribution = getAttribution();
 
     const payload = {
       email,
@@ -63,6 +65,7 @@ export default function CustomMarketForm() {
       phone: formData.get("phone"),
       zip: formData.get("zip"),
       leadSource,
+      attribution,
     };
 
     try {

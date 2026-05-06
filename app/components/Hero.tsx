@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { getAttribution } from "../lib/attribution";
 
 declare global {
   interface Window {
@@ -78,6 +79,7 @@ export default function Hero() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const attribution = getAttribution();
     const payload = {
       email,
       firstName: formData.get("firstName"),
@@ -90,13 +92,13 @@ export default function Hero() {
       fetch("/api/franchise-lead-short-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource: "homepage-hero" }),
+        body: JSON.stringify({ ...payload, leadSource: "homepage-hero", attribution }),
       }).catch(() => {});
 
       const res = await fetch("/api/franchise-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource: "homepage-hero" }),
+        body: JSON.stringify({ ...payload, leadSource: "homepage-hero", attribution }),
       });
 
       if (res.ok) {

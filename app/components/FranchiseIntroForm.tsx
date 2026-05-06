@@ -5,6 +5,7 @@ import { useState } from "react";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
+import { getAttribution } from "../lib/attribution";
 
 declare global {
   interface Window {
@@ -59,6 +60,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const attribution = getAttribution();
 
     const payload = {
       email,
@@ -73,13 +75,13 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
       fetch("/api/franchise-lead-short-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource }),
+        body: JSON.stringify({ ...payload, leadSource, attribution }),
       }).catch(() => {});
 
       const res = await fetch("/api/franchise-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource }),
+        body: JSON.stringify({ ...payload, leadSource, attribution }),
       });
 
       if (res.ok) {

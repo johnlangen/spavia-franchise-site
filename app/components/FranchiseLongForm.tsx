@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
+import { getAttribution } from "../lib/attribution";
 
 declare global {
   interface Window {
@@ -53,6 +54,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const attribution = getAttribution();
 
     const payload = {
       firstName: formData.get("firstName"),
@@ -72,13 +74,13 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
       fetch("/api/franchise-lead-long-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource }),
+        body: JSON.stringify({ ...payload, leadSource, attribution }),
       }).catch(() => {});
 
       const res = await fetch("/api/franchise-lead-long", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource }),
+        body: JSON.stringify({ ...payload, leadSource, attribution }),
       });
 
       if (res.ok) {

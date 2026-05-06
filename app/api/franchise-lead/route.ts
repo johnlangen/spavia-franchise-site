@@ -1,5 +1,30 @@
 import { NextResponse } from "next/server";
 
+// AC custom field IDs for first-touch attribution. Configure in .env.local once
+// the corresponding custom fields are created in ActiveCampaign. Any field left
+// unset is silently skipped — no error, just won't write that value to AC.
+const AC_ATTRIBUTION_FIELDS: Record<string, string | undefined> = {
+  utm_source: process.env.AC_FIELD_UTM_SOURCE,
+  utm_medium: process.env.AC_FIELD_UTM_MEDIUM,
+  utm_campaign: process.env.AC_FIELD_UTM_CAMPAIGN,
+  utm_content: process.env.AC_FIELD_UTM_CONTENT,
+  utm_term: process.env.AC_FIELD_UTM_TERM,
+  referrer: process.env.AC_FIELD_REFERRER,
+  landing_page: process.env.AC_FIELD_LANDING_PAGE,
+};
+
+function buildAttributionFieldValues(
+  attribution: Record<string, string | undefined> | undefined
+): { field: string; value: string }[] {
+  if (!attribution) return [];
+  return Object.entries(AC_ATTRIBUTION_FIELDS)
+    .filter(([key, fieldId]) => fieldId && attribution[key])
+    .map(([key, fieldId]) => ({
+      field: fieldId as string,
+      value: String(attribution[key]),
+    }));
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -29,6 +54,11 @@ export async function POST(req: Request) {
     }
 
     // 1️⃣ Create / update contact (sync = upsert, won't fail on duplicates)
+    const fieldValues = [
+      ...(body.zip ? [{ field: "90", value: body.zip }] : []),
+      ...buildAttributionFieldValues(body.attribution),
+    ];
+
     const contactRes = await fetch(
       `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contact/sync`,
       {
@@ -44,9 +74,7 @@ export async function POST(req: Request) {
             firstName: body.firstName,
             lastName: body.lastName,
             phone: body.phone,
-            fieldValues: body.zip
-              ? [{ field: "90", value: body.zip }]
-              : [],
+            fieldValues,
           },
         }),
       }
