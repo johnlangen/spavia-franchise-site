@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { Suspense } from "react";
 import FloatingButton from "./components/FloatingButton";
 import ChatWidget from "./components/ChatWidget";
 import { ThemeProvider } from "./components/ThemeProvider";
+import Analytics from "./components/Analytics";
 
 const recoleta = localFont({
   src: [
@@ -99,15 +101,16 @@ export default function RootLayout({
       {/* ✅ GOOGLE ANALYTICS (GA4) */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-6N6Q7GX5D4"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="ga4-init" strategy="lazyOnload">
+      <Script id="ga4-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-6N6Q7GX5D4', {
             anonymize_ip: true,
+            send_page_view: false,
           });
         `}
       </Script>
@@ -115,6 +118,9 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <ThemeProvider>
           {children}
           <FloatingButton />
