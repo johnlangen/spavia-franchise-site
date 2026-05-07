@@ -41,16 +41,16 @@ const whySpaviaFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Why Spavia? 60+ Locations, $1.1M Avg Revenue, 20 Years",
+  title: "Why Spavia? 63 Locations, $1.1M Median Revenue, 20 Years",
   description:
-    "Why prospective franchisees choose Spavia: 60+ spa locations, $1.1M average gross sales, 50%+ membership revenue, and a 20-year proven model.",
+    "Why prospective franchisees choose Spavia: 63 spa locations, $1.1M+ median gross sales (2026 FDD, Item 19), 50%+ membership revenue, and a 20-year proven model.",
   alternates: {
     canonical: "https://spaviafranchise.com/why-spavia",
   },
   openGraph: {
-    title: "Why Spavia? 60+ Locations, $1.1M Avg Revenue, 20 Years",
+    title: "Why Spavia? 63 Locations, $1.1M Median Revenue, 20 Years",
     description:
-      "Why prospective franchisees choose Spavia: 60+ spa locations, $1.1M average gross sales, 50%+ membership revenue, and a 20-year proven model.",
+      "Why prospective franchisees choose Spavia: 63 spa locations, $1.1M+ median gross sales (2026 FDD, Item 19), 50%+ membership revenue, and a 20-year proven model.",
     url: "https://spaviafranchise.com/why-spavia",
     type: "website",
     images: [
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Why Spavia? 60+ Locations, $1.1M Avg Revenue, 20 Years",
+    title: "Why Spavia? 63 Locations, $1.1M Median Revenue, 20 Years",
     description:
-      "Why prospective franchisees choose Spavia: 60+ spa locations, $1.1M average gross sales, 50%+ membership revenue, and a 20-year proven model.",
+      "Why prospective franchisees choose Spavia: 63 spa locations, $1.1M+ median gross sales (2026 FDD, Item 19), 50%+ membership revenue, and a 20-year proven model.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

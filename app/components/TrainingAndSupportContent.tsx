@@ -89,7 +89,7 @@ const trainingFaqs = [
   {
     question: "What kind of training does Spavia provide new franchise owners?",
     answer:
-      "Spavia provides comprehensive training including strategic sessions with founders and leadership, on-site operations training in a live spa environment, a three-step spa services training process (e-learning, deep dives with trainers, and hands-on training), access to Spavia University e-learning platform, and classroom training at headquarters in Denver, Colorado.",
+      "Per the 2026 FDD, Item 11, Spavia's Initial Training Program covers 26 hours of classroom training across 14 subject areas (operations, marketing, memberships, recruiting, spa services, and more) plus 14 to 21 hours of on-site training at your spa near opening. Training is delivered through pre-opening webinars, classroom sessions at our designated training facility in Greenwood Village, Colorado, and on-site instruction. The Initial Training Fee covers tuition for you and up to two additional trainees.",
   },
   {
     question: "Does Spavia offer ongoing support after opening?",
@@ -165,6 +165,50 @@ export default function TrainingAndSupportContent() {
             training and support from spa industry experts who bring over 120
             years of combined experience in spa and beauty.
           </motion.p>
+        </div>
+      </section>
+
+      {/* Training by the Numbers (2026 FDD, Item 11) */}
+      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-center mb-3 text-gray-900"
+          >
+            Training by the Numbers
+          </motion.h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 text-base">
+            Spavia&apos;s Initial Training Program is structured, hands-on, and built
+            on 20 years of operating experience.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <p className="text-[#C2A878] text-4xl font-bold mb-2">26</p>
+              <p className="text-gray-700 text-sm font-medium">Hours of Classroom Training</p>
+              <p className="text-gray-500 text-xs mt-1">Across 14 subject areas</p>
+            </div>
+            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <p className="text-[#C2A878] text-4xl font-bold mb-2">14&ndash;21</p>
+              <p className="text-gray-700 text-sm font-medium">Hours of On-Site Training</p>
+              <p className="text-gray-500 text-xs mt-1">At your spa near opening</p>
+            </div>
+            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <p className="text-[#C2A878] text-4xl font-bold mb-2">3</p>
+              <p className="text-gray-700 text-sm font-medium">Trainees Covered</p>
+              <p className="text-gray-500 text-xs mt-1">By the Initial Training Fee</p>
+            </div>
+            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <p className="text-[#C2A878] text-4xl font-bold mb-2">~173</p>
+              <p className="text-gray-700 text-sm font-medium">Page Operations Manual</p>
+              <p className="text-gray-500 text-xs mt-1">Plus online System Site updates</p>
+            </div>
+          </div>
+          <p className="text-gray-400 text-[10px] mt-10 text-center">
+            Source: 2026 Spavia Franchise Disclosure Document, Item 11.
+          </p>
         </div>
       </section>
 

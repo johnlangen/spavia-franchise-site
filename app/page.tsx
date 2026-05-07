@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
 import FAQ from "./components/FAQ";
 import ProofSection from "./components/ProofSection";
@@ -15,22 +14,19 @@ import Footer from "./components/Footer";
 import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
-
-const ChatSection = dynamic(() => import("./components/ChatSection"), {
-  loading: () => <div className="min-h-[600px]" aria-hidden="true" />,
-});
+import TalkToTylerSection from "./components/TalkToTylerSection";
 
 export const metadata: Metadata = {
-  title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
+  title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
   description:
-    "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
+    "Spavia is a proven day spa franchise with 63 locations and $1.1M+ median gross sales (2026 FDD, Item 19). Explore investment, training, and open territories.",
   alternates: {
     canonical: "https://spaviafranchise.com/",
   },
   openGraph: {
-    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
+    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
     description:
-      "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
+      "Spavia is a proven day spa franchise with 63 locations and $1.1M+ median gross sales (2026 FDD, Item 19). Explore investment, training, and open territories.",
     url: "https://spaviafranchise.com/",
     type: "website",
     images: [
@@ -44,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Avg Revenue",
+    title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
     description:
-      "Spavia is a proven day spa franchise with 60+ locations and $1.1M+ average gross sales. Explore investment, training, and open territories.",
+      "Spavia is a proven day spa franchise with 63 locations and $1.1M+ median gross sales (2026 FDD, Item 19). Explore investment, training, and open territories.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
@@ -80,7 +76,7 @@ const homepageFaqJsonLd = {
       name: "How much does it cost to open a Spavia day spa franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The initial investment to open a Spavia day spa franchise ranges from $496K to $796K, which includes build-out, equipment, and initial operating capital. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs and expected returns.",
+        text: "The total estimated initial investment to open a Spavia day spa franchise ranges from $479,450 to $885,450, per the 2026 FDD, Item 7. This includes the franchise fee, build-out, equipment, signage, technology, and three months of additional funds. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs.",
       },
     },
     {
@@ -96,7 +92,7 @@ const homepageFaqJsonLd = {
       name: "What kind of leadership experience does Spavia provide?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our national team offers over 100 years of combined spa experience, providing expert insights and guidance for our franchise owners. This knowledge equips you with the tools to navigate the competitive spa landscape and build a successful franchise while delivering exceptional guest experiences.",
+        text: "Our national team offers over 120 years of combined spa experience, providing expert insights and guidance for our franchise owners. This knowledge equips you with the tools to navigate the competitive spa landscape and build a successful franchise while delivering exceptional guest experiences.",
       },
     },
     {
@@ -187,8 +183,8 @@ export default function Home() {
         {/* 1. HERO — video bg + embedded lead capture form */}
         <Hero />
 
-        {/* 2. ASK SPAVIA — embedded AI chat */}
-        <ChatSection />
+        {/* 2. TALK TO TYLER — direct path to a real conversation */}
+        <TalkToTylerSection />
 
         {/* 3. PROOF — bold gold numbers on black */}
         <ProofSection />

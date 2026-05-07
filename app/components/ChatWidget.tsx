@@ -10,12 +10,14 @@ interface Message {
   content: string;
 }
 
-/* ---------- PRESET QUESTIONS ---------- */
+/* ---------- PRESET QUESTIONS ----------
+   "What does it cost?" intentionally removed — it was 84% of usage with 0% email capture.
+   Remaining presets bias toward higher-intent, conversation-starting questions. */
 const PRESETS = [
-  "What does it cost to open a Spavia?",
   "Is my market available?",
   "How do I get started?",
-  "What's my next step?",
+  "What's the timeline to open?",
+  "Do I need spa industry experience?",
 ];
 
 /* ---------- COMPONENT ---------- */

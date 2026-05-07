@@ -10,7 +10,7 @@ const yourSpaviaFaqJsonLd = {
       name: "What are the financial requirements to open a Spavia franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia requires a minimum net worth of $500,000 and liquid capital of $200,000. The estimated initial investment ranges from $496,450 to $795,950, which includes build-out, equipment, and initial operating capital.",
+        text: "Spavia recommends a minimum net worth of $500,000 and liquid capital of $200,000. The total estimated initial investment ranges from $479,450 to $885,450, per the 2026 FDD, Item 7. This includes the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds.",
       },
     },
     {
@@ -49,16 +49,16 @@ const yourSpaviaFaqJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
+  title: "Spavia Franchise Investment: $479K–$885K to Own a Day Spa",
   description:
-    "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
+    "Spavia franchise investment: $479K–$885K to open per the 2026 FDD, $200K liquid recommended. 50%+ recurring membership revenue. See financial requirements and open markets.",
   alternates: {
     canonical: "https://spaviafranchise.com/your-spavia",
   },
   openGraph: {
-    title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
+    title: "Spavia Franchise Investment: $479K–$885K to Own a Day Spa",
     description:
-      "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
+      "Spavia franchise investment: $479K–$885K to open per the 2026 FDD, $200K liquid recommended. 50%+ recurring membership revenue. See financial requirements and open markets.",
     url: "https://spaviafranchise.com/your-spavia",
     type: "website",
     images: [
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spavia Franchise Investment: $496K–$796K to Own a Day Spa",
+    title: "Spavia Franchise Investment: $479K–$885K to Own a Day Spa",
     description:
-      "Spavia franchise investment: $496K–$796K to open, $200K liquid required. 50%+ recurring membership revenue. See financial requirements and open markets.",
+      "Spavia franchise investment: $479K–$885K to open per the 2026 FDD, $200K liquid recommended. 50%+ recurring membership revenue. See financial requirements and open markets.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

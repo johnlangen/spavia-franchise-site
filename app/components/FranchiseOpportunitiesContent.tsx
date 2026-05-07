@@ -26,8 +26,8 @@ const jsonLd = {
 const metrics = [
   {
     icon: DollarSign,
-    stat: "$1,146,952",
-    label: "Avg Gross Sales*",
+    stat: "$1,110,481",
+    label: "Median Gross Sales*",
   },
   {
     icon: Users,
@@ -36,12 +36,12 @@ const metrics = [
   },
   {
     icon: TrendingUp,
-    stat: "$496K – $796K",
+    stat: "$479K – $885K",
     label: "Initial Investment*",
   },
   {
     icon: MapPin,
-    stat: "60+",
+    stat: "63",
     label: "Franchise Locations",
   },
 ];
@@ -160,7 +160,7 @@ export default function FranchiseOpportunitiesContent() {
               ))}
             </div>
             <p className="mt-3 text-[10px] text-white/50">
-              *Results vary. See FDD Item 19 for details.
+              *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
             </p>
           </div>
         </section>

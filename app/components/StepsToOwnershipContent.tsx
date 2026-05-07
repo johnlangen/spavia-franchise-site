@@ -16,7 +16,7 @@ const faqItems = [
   {
     question: "How much can I make as a Spavia franchise?",
     answer:
-      "The federal trade commission and state franchise sales regulations do not allow franchisors to provide profit projections. However, if you become a qualified candidate, we would be happy to share our franchise disclosure document (FDD). The FDD will highlight our historical sales from our franchised locations.",
+      "The federal trade commission and state franchise sales regulations do not allow franchisors to provide profit projections. Per the 2026 FDD, Item 19, Part III, the median annual revenue (cash receipts) reported by 44 disclosed Spavia franchised locations was $1,110,481, with median cash flow from operations of $199,773 and a median operating margin of 18.4% over the 2025 measurement period. Results vary by location — request the full FDD for complete details.",
   },
   {
     question: "Do I need experience in the spa industry?",
@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: "How much are the royalties and other annual fees?",
     answer:
-      "Our current initial franchise fee is $59,500, Royalty fee is 6 percent of gross sales. Marketing fee is up to 1 percent of gross sales.",
+      "Per the 2026 FDD: the initial franchise fee is $59,500 and the initial training fee is $5,000 (Item 5). The royalty fee is 6% of Gross Sales and the Brand Fund contribution is 1% of Gross Sales (Item 6).",
   },
   {
     question: "Does Spavia offer financing?",
@@ -46,17 +46,17 @@ const faqItems = [
   {
     question: "What is the term of the franchise agreement?",
     answer:
-      "The term is 10 years, with a renewal option for an additional 10 years.",
+      "Per the 2026 FDD, Item 17, the initial term is 10 years, with the right to be considered for two consecutive additional 10-year renewal terms — up to 30 years total. Renewal is subject to standard conditions including good standing, completion of refresher training, and execution of the then-current franchise agreement.",
   },
   {
     question: "Can I own multiple Spavia locations?",
     answer:
-      "Yes, you are able to own multiple locations. In fact, many of our owners have chosen to purchase 3 or more.",
+      "Yes. Spavia offers multi-unit Development Agreements for qualified candidates. Per the 2026 FDD, Item 5, the Development Fee is $150,000 for the right to develop 3 Day Spas, plus $50,000 for each additional unit up to 5. Reduced per-unit fees apply for larger Development Schedules. Many of our owners have chosen to purchase 3 or more locations.",
   },
   {
     question: "What is the standard design space of a Spavia development?",
     answer:
-      "Our spas' ideal square footage is between 2,800 and 3,200 square feet.",
+      "Per the 2026 FDD, Item 1, a Spavia Day Spa typically occupies approximately 2,500 to 3,300 square feet of leased or owned space, with our recommended size being closer to 3,000 square feet, typically located in a high-end retail shopping center.",
   },
   {
     question: "What type of training will I receive?",

@@ -132,20 +132,20 @@ export default function StateMarketContent({ state }: StateMarketContentProps) {
               className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto"
             >
               <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$1,146,952</p>
-                <p className="text-xs text-white/70">Avg Gross Sales*</p>
+                <p className="text-xl font-bold">$1,110,481</p>
+                <p className="text-xs text-white/70">Median Gross Sales*</p>
               </div>
               <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
                 <p className="text-xl font-bold">1 in 2 Owners</p>
                 <p className="text-xs text-white/70">Achieve $1M+ Revenue*</p>
               </div>
               <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$496K - $796K</p>
+                <p className="text-xl font-bold">$479K - $885K</p>
                 <p className="text-xs text-white/70">Initial Investment*</p>
               </div>
             </motion.div>
             <p className="mt-3 text-[10px] text-white/50">
-              *Results vary. See FDD Item 19 for details.
+              *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
             </p>
 
             <a

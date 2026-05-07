@@ -12,7 +12,7 @@ const faqs: FAQItem[] = [
   {
     question: "How much does it cost to open a Spavia day spa franchise?",
     answer:
-      "The initial investment to open a Spavia day spa franchise ranges from $496K to $796K, which includes build-out, equipment, and initial operating capital. Spavia provides guidance on financing options and SBA-eligible loan programs to help qualified candidates get started. Request the franchise overview for a full breakdown of costs and expected returns.",
+      "The total estimated initial investment ranges from $479,450 to $885,450, per the 2026 FDD, Item 7. This includes the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds. Spavia provides guidance on financing options and SBA-eligible loan programs. Request the franchise overview for a full breakdown.",
   },
   {
     question: "What spa services does a Spavia franchise offer?",
@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
   {
     question: "What kind of leadership experience does Spavia provide?",
     answer:
-      "Our national team offers over 100 years of combined spa experience, providing expert insights and guidance for our franchise owners. This knowledge equips you with the tools to navigate the competitive spa landscape and build a successful franchise while delivering exceptional guest experiences.",
+      "Our national team offers over 120 years of combined spa experience, providing expert insights and guidance for our franchise owners. This knowledge equips you with the tools to navigate the competitive spa landscape and build a successful franchise while delivering exceptional guest experiences.",
   },
   {
     question: "How can Spavia franchisees generate revenue?",

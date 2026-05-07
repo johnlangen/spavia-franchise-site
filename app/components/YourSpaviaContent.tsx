@@ -22,8 +22,8 @@ const financials = [
   { label: "Net Worth", value: "$500,000", icon: DollarSign },
   { label: "Liquid Capital", value: "$200,000", icon: CreditCard },
   {
-    label: "Estimated Initial Investment",
-    value: "$496,450 – $795,950",
+    label: "Estimated Initial Investment*",
+    value: "$479,450 – $885,450",
     icon: BarChart,
   },
 ];
@@ -53,7 +53,7 @@ const yourSpaviaFaqs = [
   {
     question: "What are the financial requirements to open a Spavia franchise?",
     answer:
-      "Spavia requires a minimum net worth of $500,000 and liquid capital of $200,000. The estimated initial investment ranges from $496,450 to $795,950, which includes build-out, equipment, and initial operating capital.",
+      "Spavia recommends a minimum net worth of $500,000 and liquid capital of $200,000. The total estimated initial investment ranges from $479,450 to $885,450, per the 2026 FDD, Item 7. This includes the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds.",
   },
   {
     question: "How does Spavia generate recurring revenue?",
@@ -183,6 +183,9 @@ export default function YourSpaviaContent() {
             );
           })}
         </div>
+        <p className="max-w-6xl mx-auto px-6 mt-6 text-xs text-gray-500 text-center">
+          *Source: 2026 Spavia Franchise Disclosure Document, Item 7. Results vary by location.
+        </p>
       </section>
 
       {/* Economics */}

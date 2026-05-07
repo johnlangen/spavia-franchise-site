@@ -122,6 +122,78 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
+      {/* By the Numbers — Stability/Quality (2026 FDD, Item 20) */}
+      <section className="snap-start py-20 bg-black text-white px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold mb-3"
+          >
+            Selective by Design
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-white/70 max-w-2xl mx-auto mb-12 text-base"
+          >
+            Spavia grows carefully. We choose owners and locations with care, and the
+            data shows it &mdash; every owner is part of a brand we protect.
+          </motion.p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+                63
+              </p>
+              <p className="text-white/60 text-sm tracking-wide uppercase">
+                Locations Open
+              </p>
+              <p className="text-white/40 text-xs mt-1">As of Dec 31, 2025</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+                4
+              </p>
+              <p className="text-white/60 text-sm tracking-wide uppercase">
+                New Locations in 2025
+              </p>
+              <p className="text-white/40 text-xs mt-1">Net additions during 2025</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+                0
+              </p>
+              <p className="text-white/60 text-sm tracking-wide uppercase">
+                Terminations in 2025
+              </p>
+              <p className="text-white/40 text-xs mt-1">Zero closures system-wide</p>
+            </motion.div>
+          </div>
+          <p className="text-white/40 text-[10px] mt-12">
+            Source: 2026 Spavia Franchise Disclosure Document, Item 20.
+          </p>
+        </div>
+      </section>
+
       {/* Multiple Streams of Revenue */}
       <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">

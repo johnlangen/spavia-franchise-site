@@ -349,10 +349,17 @@ export default function ChatSection() {
           </div>
         </motion.div>
 
-        {/* Subtle disclaimer */}
+        {/* Subtle disclaimer + direct-to-Tyler escape hatch */}
         <p className="text-center text-xs text-gray-400 mt-4">
-          AI-powered assistant. For detailed information, connect with our
-          franchise development team.
+          AI-powered assistant.{" "}
+          <a
+            href="https://calendly.com/tyler-spaviadayspa/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#C2A878] font-medium hover:underline"
+          >
+            Prefer to talk? Schedule a call with Tyler &rarr;
+          </a>
         </p>
       </div>
     </section>

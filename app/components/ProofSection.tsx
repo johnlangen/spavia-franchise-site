@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "$1,146,952", label: "Avg Gross Sales*" },
+  { value: "$1,110,481", label: "Median Gross Sales*" },
   { value: "1 in 2", label: "Owners Achieve $1M+ Revenue*" },
-  { value: "$496K – $796K", label: "Initial Investment*" },
+  { value: "$479K – $885K", label: "Initial Investment**" },
 ];
 
 export default function ProofSection() {
@@ -42,7 +42,7 @@ export default function ProofSection() {
         </div>
 
         <p className="text-center text-gray-400 text-[10px] mt-10">
-          *Based on 2024 FDD Item 19 data. Results vary. See FDD for details.
+          *Source: 2026 Spavia FDD, Item 19, Part III (44 reporting locations, 2025 measurement period). **Source: 2026 Spavia FDD, Item 7. Results vary by location.
         </p>
       </div>
     </section>

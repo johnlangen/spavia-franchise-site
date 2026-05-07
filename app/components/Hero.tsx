@@ -18,9 +18,9 @@ export default function Hero() {
 
   /* ---------------- METRICS ---------------- */
   const metrics = [
-    { v: "$1,146,952", l: "Avg Gross Sales*" },
+    { v: "$1,110,481", l: "Median Gross Sales*" },
     { v: "1 in 2 Owners", l: "Achieve $1M+ Revenue*" },
-    { v: "$496K \u2013 $796K", l: "Initial Investment*" },
+    { v: "$479K \u2013 $885K", l: "Initial Investment*" },
   ];
 
   const [metricIndex, setMetricIndex] = useState(0);
@@ -247,7 +247,7 @@ export default function Hero() {
               </div>
 
               <p className="mt-3 text-[10px] text-white/50">
-                *Results vary. See FDD Item 19 for details.
+                *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
               </p>
             </motion.div>
           </div>

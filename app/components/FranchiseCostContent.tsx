@@ -20,7 +20,7 @@ const jsonLd = {
       name: "How much does a Spavia day spa franchise cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The total initial investment to open a Spavia Day Spa franchise ranges from $496,450 to $796,650. This includes the franchise fee, build-out, equipment, signage, initial inventory, and working capital.",
+        text: "The total estimated initial investment to open a Spavia Day Spa franchise ranges from $479,450 to $885,450, per the 2026 FDD, Item 7. This includes the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds.",
       },
     },
     {
@@ -28,7 +28,7 @@ const jsonLd = {
       name: "What is the Spavia franchise fee?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Spavia franchise fee is $59,500. This one-time fee is paid when you sign your franchise agreement and grants you the rights to operate under the Spavia brand with full training and support.",
+        text: "The Spavia initial franchise fee is $59,500, per the 2026 FDD, Item 5. This one-time fee is paid upon execution of the franchise agreement and grants you the rights to operate under the Spavia brand. An additional Initial Training Fee of $5,000 is also paid at that time.",
       },
     },
     {
@@ -36,7 +36,7 @@ const jsonLd = {
       name: "What are the ongoing fees for a Spavia franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia charges a 6% royalty fee on gross revenue and a 1% national marketing fund contribution. These fees support ongoing brand development, national advertising, technology platforms, and franchisee support services.",
+        text: "Spavia charges a 6% royalty fee on Gross Sales and a 1% Brand Fund contribution on Gross Sales, per the 2026 FDD, Item 6. These fees support ongoing brand development, national marketing, technology platforms, and franchisee support services.",
       },
     },
     {
@@ -52,7 +52,7 @@ const jsonLd = {
       name: "How much revenue does a Spavia franchise generate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia franchise locations average over $1.1 million in gross annual sales, with 1 in 2 franchise owners achieving $1M+ in revenue. Results vary by location — see the Franchise Disclosure Document (FDD) Item 19 for details.",
+        text: "Per the 2026 FDD, Item 19, Part III, the median annual revenue (cash receipts) for the 44 reporting Spavia franchised locations was $1,110,481, with median cash flow from operations of $199,773 and a median operating margin of 18.4%. Per the 2026 FDD, Item 19, Part II, 29 of 59 disclosed locations exceeded $1M in gross sales for the 2025 measurement period — roughly 1 in 2 owners. Results vary by location.",
       },
     },
     {
@@ -68,7 +68,7 @@ const jsonLd = {
       name: "How long until a Spavia franchise breaks even?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Timelines vary by location and market, but Spavia's membership-driven model is designed to build recurring revenue from day one. With 1 in 2 owners achieving $1M+ in annual revenue, the model is built for sustainable, long-term returns. Request the franchise overview for detailed financial projections.",
+        text: "Timelines vary by location and market, but Spavia's membership-driven model is designed to build recurring revenue from day one. Per the 2026 FDD, Item 19, Part II, 29 of 59 disclosed locations exceeded $1M in annual gross sales — roughly 1 in 2 owners. Request the franchise overview for detailed financial projections.",
       },
     },
     {
@@ -90,15 +90,21 @@ const jsonLd = {
   ],
 };
 
+// 2026 FDD, Item 7 — Estimated Initial Investment (Franchise Agreement)
 const costBreakdown = [
-  { item: "Franchise Fee", range: "$59,500" },
-  { item: "Real Estate & Build-Out", range: "$250,000 – $400,000" },
-  { item: "Equipment & Fixtures", range: "$60,000 – $100,000" },
-  { item: "Signage", range: "$10,000 – $25,000" },
-  { item: "Initial Inventory & Supplies", range: "$15,000 – $25,000" },
-  { item: "Grand Opening Marketing", range: "$15,000 – $25,000" },
-  { item: "Technology & POS", range: "$10,000 – $20,000" },
-  { item: "Working Capital (3–6 months)", range: "$75,000 – $140,000" },
+  { item: "Initial Franchise Fee", range: "$59,500" },
+  { item: "Initial Training Fee", range: "$5,000" },
+  { item: "Travel & Living Expenses (Initial Training)", range: "$1,000 – $2,000" },
+  { item: "Site Selection", range: "$0 – $2,000" },
+  { item: "Security Deposits (Lease & Utilities)", range: "$5,000 – $15,000" },
+  { item: "Business Licenses & Permits", range: "$1,000 – $11,000" },
+  { item: "Professional Fees", range: "$1,000 – $5,500" },
+  { item: "Pre-Construction, Architectural & Engineering", range: "$20,000 – $32,000" },
+  { item: "Leasehold Improvements", range: "$288,000 – $545,000" },
+  { item: "Signage & Graphics", range: "$12,000 – $22,000" },
+  { item: "Equipment & Supplies", range: "$70,000 – $100,000" },
+  { item: "Technology Fee (Pre-Opening)", range: "$1,950" },
+  { item: "Additional Funds (3 Months)", range: "$40,000 – $80,000" },
 ];
 
 export default function FranchiseCostContent() {
@@ -150,20 +156,20 @@ export default function FranchiseCostContent() {
             {/* Key metrics */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
               <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$496K – $796K</p>
+                <p className="text-xl font-bold">$479K – $885K</p>
                 <p className="text-xs text-white/70">Total Initial Investment*</p>
               </div>
               <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
                 <p className="text-xl font-bold">$59,500</p>
-                <p className="text-xs text-white/70">Franchise Fee</p>
+                <p className="text-xs text-white/70">Initial Franchise Fee*</p>
               </div>
               <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$1,146,952</p>
-                <p className="text-xs text-white/70">Avg Gross Sales*</p>
+                <p className="text-xl font-bold">$1,110,481</p>
+                <p className="text-xs text-white/70">Median Gross Sales**</p>
               </div>
             </div>
             <p className="mt-3 text-[10px] text-white/50">
-              *Results vary. See FDD Item 19 for details.
+              *Source: 2026 Spavia FDD, Item 7 &amp; Item 5. **Source: 2026 Spavia FDD, Item 19, Part III. Results vary by location.
             </p>
           </div>
         </section>
@@ -176,8 +182,8 @@ export default function FranchiseCostContent() {
             </h2>
             <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
               Here&apos;s what your initial investment covers when you open a Spavia
-              Day Spa franchise. All figures are estimated ranges from the Franchise
-              Disclosure Document (FDD).
+              Day Spa franchise. All figures are estimated ranges from the
+              2026 Franchise Disclosure Document (FDD), Item 7.
             </p>
 
             <div className="rounded-xl border border-gray-200 overflow-hidden">
@@ -197,10 +203,13 @@ export default function FranchiseCostContent() {
                 </div>
               ))}
               <div className="grid grid-cols-2 bg-[#C2A878]/10 border-t-2 border-[#C2A878]">
-                <div className="px-6 py-4 font-bold text-gray-900">Total Estimated Investment</div>
-                <div className="px-6 py-4 text-right font-bold text-gray-900">$496,450 – $796,650</div>
+                <div className="px-6 py-4 font-bold text-gray-900">Total Estimated Initial Investment</div>
+                <div className="px-6 py-4 text-right font-bold text-gray-900">$479,450 – $885,450</div>
               </div>
             </div>
+            <p className="mt-3 text-xs text-gray-500 text-center">
+              Source: 2026 Spavia Franchise Disclosure Document, Item 7. See the FDD for full notes and assumptions.
+            </p>
           </div>
         </section>
 
@@ -216,15 +225,15 @@ export default function FranchiseCostContent() {
                 <p className="text-2xl font-bold text-gray-900">6%</p>
                 <p className="text-sm text-gray-600 mt-1">Royalty Fee</p>
                 <p className="text-xs text-gray-500 mt-2">
-                  Percentage of gross revenue, supporting ongoing training, technology, and operations
+                  Percentage of Gross Sales (2026 FDD, Item 6), supporting ongoing training, technology, and operations
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
                 <TrendingUp className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
                 <p className="text-2xl font-bold text-gray-900">1%</p>
-                <p className="text-sm text-gray-600 mt-1">National Marketing Fund</p>
+                <p className="text-sm text-gray-600 mt-1">Brand Fund Contribution</p>
                 <p className="text-xs text-gray-500 mt-2">
-                  Contributes to national brand campaigns, digital marketing, and PR
+                  Percentage of Gross Sales (2026 FDD, Item 6) — funds national brand development, marketing, and PR
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
@@ -283,7 +292,7 @@ export default function FranchiseCostContent() {
               </div>
               <div className="grid grid-cols-3 bg-[#C2A878]/10 border-l-4 border-[#C2A878] text-sm">
                 <div className="px-4 py-3 font-bold text-gray-900">Spavia Day Spa</div>
-                <div className="px-4 py-3 text-center font-semibold text-gray-900">$496K – $796K</div>
+                <div className="px-4 py-3 text-center font-semibold text-gray-900">$479K – $885K</div>
                 <div className="px-4 py-3 text-center text-gray-700">$100K – $200K</div>
               </div>
               <div className="grid grid-cols-3 bg-white text-sm">
@@ -359,9 +368,9 @@ export default function FranchiseCostContent() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Timelines vary by location and market, but Spavia&apos;s
                   membership-driven model is designed to build recurring revenue from
-                  day one. With 1 in 2 owners achieving $1M+ in annual revenue, the
-                  model is built for sustainable, long-term returns. Request the
-                  franchise overview for detailed financial projections.
+                  day one. Per the 2026 FDD, Item 19, Part II, 29 of 59 disclosed
+                  locations exceeded $1M in annual gross sales — roughly 1 in 2 owners.
+                  Request the franchise overview for detailed financial projections.
                 </p>
               </div>
               <div>
@@ -369,10 +378,14 @@ export default function FranchiseCostContent() {
                   Are there multi-unit discount opportunities?
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Yes. Spavia offers multi-unit development agreements for qualified
-                  candidates who want to open multiple locations. Contact our
-                  franchise team to discuss multi-unit pricing and territory
-                  availability.
+                  Yes. Spavia offers multi-unit Development Agreements for qualified
+                  candidates. Per the 2026 FDD, Item 5, the Development Fee is
+                  $150,000 for the right to develop 3 Day Spas, plus an additional
+                  $50,000 for each unit up to 5. Reduced per-unit fees apply for
+                  larger Development Schedules ($45,000 per unit for 6 to 9 units).
+                  No additional initial franchise fee is charged on each unit opened
+                  under a Development Agreement. Contact our franchise team to
+                  discuss multi-unit territory availability.
                 </p>
               </div>
               <div>
@@ -380,9 +393,10 @@ export default function FranchiseCostContent() {
                   What is the royalty fee for?
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  The 6% royalty fee funds ongoing franchise support including
-                  technology platforms, training programs, operational guidance,
-                  vendor partnerships, and continuous brand development.
+                  The 6% royalty fee on Gross Sales (2026 FDD, Item 6) funds ongoing
+                  franchise support including technology platforms, training programs,
+                  operational guidance, vendor partnerships, and continuous brand
+                  development.
                 </p>
               </div>
             </div>
