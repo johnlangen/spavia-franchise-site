@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Phone, Calendar, Mail } from "lucide-react";
 
 declare global {
@@ -57,15 +58,23 @@ export default function TalkToTylerSection() {
         >
           {/* Tyler */}
           <div className="text-center md:text-left">
-            <div className="w-32 h-32 md:w-36 md:h-36 mx-auto md:mx-0 rounded-full
-                           bg-[#C2A878]/15 border-2 border-[#C2A878]/30
-                           flex items-center justify-center mb-4 overflow-hidden">
-              <span className="text-5xl font-bold text-[#C2A878] font-[family-name:var(--font-recoleta)]">
-                TW
-              </span>
+            <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto md:mx-0
+                           rounded-2xl overflow-hidden mb-4
+                           ring-1 ring-[#C2A878]/30 shadow-sm">
+              <Image
+                src="/who-we-are/image5.png"
+                alt="Tyler Woodard, Director of Franchise Development at Spavia"
+                fill
+                sizes="(max-width: 768px) 160px, 176px"
+                className="object-cover object-top"
+              />
             </div>
             <p className="text-gray-900 font-bold text-lg">Tyler Woodard</p>
-            <p className="text-sm text-gray-600">Director of Franchise Development</p>
+            <p className="text-sm text-gray-600 mb-3">Director of Franchise Development</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Your direct point of contact at Spavia. Tyler personally reviews every
+              market and candidate.
+            </p>
           </div>
 
           {/* Right: copy + CTAs */}
@@ -125,9 +134,6 @@ export default function TalkToTylerSection() {
                 Email Tyler
               </a>
             </div>
-            <p className="text-xs text-gray-400 mt-3">
-              Prefer to ask a quick question first? The chat widget is in the bottom-right corner.
-            </p>
           </div>
         </motion.div>
       </div>
