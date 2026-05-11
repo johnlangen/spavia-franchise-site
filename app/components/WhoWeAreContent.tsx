@@ -56,6 +56,7 @@ const team = [
     name: "Heather Holland",
     role: "Chief Operating Officer",
     image: "/who-we-are/heather-holland.png",
+    objectPosition: "center top",
     bio: `Heather brings over 20 years of executive operations leadership across wellness, hospitality, and franchising. She previously served as Chief Operating Officer of CorePower Yoga, scaling the company from 89 to 225 studios across 20 markets, and earlier led people, training, and legal operations at Le Pain Quotidien during its global expansion. A UC Berkeley graduate with a JD from the University of Colorado, she has built her career at the intersection of hospitality, wellness, and franchise operations.
 
 As Chief Operating Officer of Spavia, Heather leads company-wide operations, partnering with franchisees and the national support team to drive operational excellence, member growth, and continued brand expansion.`,
@@ -182,7 +183,8 @@ export default function WhoWeAreContent() {
                     src={member.image}
                     alt={member.name}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: ("objectPosition" in member && member.objectPosition) || "center" }}
                   />
                 </div>
                 <h3 className="text-base font-bold text-white">
