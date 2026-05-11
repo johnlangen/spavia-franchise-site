@@ -27,7 +27,7 @@ const whoWeAreFaqs = [
   {
     question: "What leadership and support team does Spavia have?",
     answer:
-      "Spavia's support team includes a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+      "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
   },
 ];
 
@@ -52,7 +52,15 @@ Before Spavia, Allison excelled as a Macy’s buyer and regional manager, follow
 ];
 
 const team = [
-{
+  {
+    name: "Heather Holland",
+    role: "Chief Operating Officer",
+    image: "/who-we-are/heather-holland.png",
+    bio: `Heather brings over 20 years of executive operations leadership across wellness, hospitality, and franchising. She previously served as Chief Operating Officer of CorePower Yoga, scaling the company from 89 to 225 studios across 20 markets, and earlier led people, training, and legal operations at Le Pain Quotidien during its global expansion. A UC Berkeley graduate with a JD from the University of Colorado, she has built her career at the intersection of hospitality, wellness, and franchise operations.
+
+As Chief Operating Officer of Spavia, Heather leads company-wide operations, partnering with franchisees and the national support team to drive operational excellence, member growth, and continued brand expansion.`,
+  },
+  {
     name: "Tyler Woodard",
     role: "Director of Franchise Development",
     image: "/who-we-are/image5.png",
