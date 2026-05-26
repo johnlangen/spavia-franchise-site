@@ -26,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/franchise-opportunities/tennessee`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-opportunities/texas`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-cost`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/day-spa-franchise`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/massage-franchise`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/why-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/your-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/steps-to-ownership`, changeFrequency: "monthly", priority: 0.8 },
