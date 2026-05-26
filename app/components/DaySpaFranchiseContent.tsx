@@ -2,16 +2,13 @@
 
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import Breadcrumbs from "./Breadcrumbs";
-import FranchiseIntroForm from "./FranchiseIntroForm";
+import LandingHero from "./LandingHero";
 import ProofSection from "./ProofSection";
 import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
 import ScheduleCallBanner from "./ScheduleCallBanner";
 import GoldBottomBanner from "./GoldBottomBanner";
 import FloatingButton from "./FloatingButton";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 
 const differentiators = [
   {
@@ -77,55 +74,21 @@ export default function DaySpaFranchiseContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <NavBar />
-      <Breadcrumbs items={[{ label: "Day Spa Franchise" }]} />
 
-      {/* Hero with form */}
-      <section className="bg-black text-white py-12 md:py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold mb-4 font-[family-name:var(--font-recoleta)] leading-tight"
-            >
-              Own a Day Spa Franchise With{" "}
-              <span className="text-[#C2A878]">$1.1M+ Median Revenue</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-white/80 text-lg mb-6 leading-relaxed"
-            >
-              Spavia is a proven day spa franchise opportunity with 63 locations,
-              a recurring-revenue membership model, and full operational support
-              from site selection to grand opening.
-            </motion.p>
-            <ul className="space-y-3 text-white/90 mb-6">
-              {[
-                "$479K – $885K total initial investment",
-                "$1,110,481 median gross sales (2026 FDD, Item 19)",
-                "1 in 2 owners achieve $1M+ revenue",
-                "10–14 month opening timeline",
-                "SBA-eligible financing",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-[#C2A878] mt-0.5 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-white/50">
-              Source: 2026 Spavia FDD, Items 7 & 19. Results vary by location.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-xl">
-            <FranchiseIntroForm leadSource="lp-day-spa-franchise" />
-          </div>
-        </div>
-      </section>
+      <LandingHero
+        headlineFirst="Own a Day Spa Franchise"
+        headlineSecond="With"
+        headlineHighlight="$1.1M+ Median Revenue"
+        subhead="Spavia is a proven day spa franchise opportunity with 63 locations, a recurring-revenue membership model, and full operational support from site selection to grand opening."
+        bullets={[
+          "$479K – $885K total initial investment",
+          "$1,110,481 median gross sales (2026 FDD, Item 19)",
+          "1 in 2 owners achieve $1M+ revenue",
+          "10–14 month opening timeline",
+          "SBA-eligible financing",
+        ]}
+        leadSource="lp-day-spa-franchise"
+      />
 
       <ProofSection />
 
