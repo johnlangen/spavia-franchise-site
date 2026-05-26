@@ -340,6 +340,112 @@ export default function FranchiseCostContent() {
           </div>
         </section>
 
+        {/* ═══════ COST COMPARISON BY SPA CATEGORY ═══════ */}
+        <section className="bg-gray-50 py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">
+              How Spa Franchise Costs Compare by Category
+            </h2>
+            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+              Total investment varies widely across the spa and wellness franchise
+              category. Here's how Spavia compares to massage franchises, med spa
+              franchises, and other spa formats.
+            </p>
+
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-sm border-collapse bg-white rounded-xl shadow-sm">
+                <thead>
+                  <tr className="bg-[#C2A878]/10 border-b border-[#C2A878]/30">
+                    <th className="text-left px-4 py-3 font-semibold text-gray-900">
+                      Franchise Category
+                    </th>
+                    <th className="text-left px-4 py-3 font-semibold text-gray-900">
+                      Typical Investment Range
+                    </th>
+                    <th className="text-left px-4 py-3 font-semibold text-gray-900">
+                      Key Difference
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-700">
+                  <tr className="border-b border-gray-200 bg-[#C2A878]/5">
+                    <td className="px-4 py-3 font-semibold">
+                      Spavia Day Spa Franchise
+                    </td>
+                    <td className="px-4 py-3">$479K – $885K</td>
+                    <td className="px-4 py-3">
+                      Full-service: massage, facials, body treatments, retail
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="px-4 py-3 font-medium">Massage franchise</td>
+                    <td className="px-4 py-3">$250K – $700K</td>
+                    <td className="px-4 py-3">
+                      Single-service category; lower ceiling per guest visit
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="px-4 py-3 font-medium">Facial franchise</td>
+                    <td className="px-4 py-3">$400K – $750K</td>
+                    <td className="px-4 py-3">
+                      Skin-care focused; narrower service mix
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-medium">Med spa franchise</td>
+                    <td className="px-4 py-3">$800K – $2M+</td>
+                    <td className="px-4 py-3">
+                      Requires physician medical director and clinical equipment
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-xs text-gray-500 mt-3">
+                Ranges represent typical industry totals across published 2024-2026
+                FDDs in each category. Specific brand costs vary; consult each
+                brand's FDD for exact figures.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-10">
+              <div className="bg-white rounded-xl border border-gray-200 p-5">
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Massage Franchise Cost
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Single-service massage franchises typically range $250K–$700K
+                  to open. Spavia delivers comparable membership economics with a
+                  broader revenue mix — massage plus facials, body treatments,
+                  and retail — for a higher average ticket per visit.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-gray-200 p-5">
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Med Spa Franchise Cost
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Med spa franchises typically run $800K–$2M+ to open because
+                  they require clinical equipment, a physician medical director,
+                  and additional licensing. Spavia's day spa model has
+                  significantly lower initial investment and faster ramp without
+                  the medical-procedure regulatory overhead.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-gray-200 p-5">
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Facial Franchise Cost
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Skin-care-focused franchises typically open at $400K–$750K.
+                  Spavia's investment is in a similar range, but with massage,
+                  body treatments, and waxing alongside facials — diversifying
+                  revenue and smoothing seasonality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════ SHORT FORM ═══════ */}
         <FranchiseIntroForm />
 
