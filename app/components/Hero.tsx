@@ -60,6 +60,9 @@ export default function Hero() {
 
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "form_step1_submitted", { form: "hero" });
+    }
     try {
       await fetch("/api/franchise-lead-step1", {
         method: "POST",
@@ -81,6 +84,12 @@ export default function Hero() {
     const formData = new FormData(e.currentTarget);
     const attribution = getAttribution();
     const liquidTier = String(formData.get("liquidTier") || "");
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "form_step2_submitted", {
+        form: "hero",
+        liquidTier,
+      });
+    }
     const payload = {
       email,
       firstName: formData.get("firstName"),

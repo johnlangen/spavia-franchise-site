@@ -33,6 +33,13 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "form_step1_submitted", {
+        form: "long",
+        leadSource: leadSource || "unspecified",
+      });
+    }
+
     try {
       await fetch("/api/franchise-lead-long-step1-db", {
         method: "POST",
@@ -56,6 +63,16 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
 
     const liquidAssets = String(formData.get("liquidAssets") || "");
     const netWorth = String(formData.get("netWorth") || "");
+
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "form_step2_submitted", {
+        form: "long",
+        liquidAssets,
+        netWorth,
+        leadSource: leadSource || "unspecified",
+      });
+    }
+
     const payload = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
