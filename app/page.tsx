@@ -15,6 +15,7 @@ import Link from "next/link";
 import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
 import TalkToTylerSection from "./components/TalkToTylerSection";
+import HomepageQuickOverview from "./components/HomepageQuickOverview";
 
 export const metadata: Metadata = {
   title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
@@ -182,6 +183,10 @@ export default function Home() {
       <main className="flex flex-col">
         {/* 1. HERO — video bg + embedded lead capture form */}
         <Hero />
+
+        {/* 1.5. QUICK OVERVIEW — 90-second education to convert shallow visitors
+            into informed scrollers. Three columns with deep-page click-paths. */}
+        <HomepageQuickOverview />
 
         {/* 2. TALK TO TYLER — direct path to a real conversation */}
         <TalkToTylerSection />
