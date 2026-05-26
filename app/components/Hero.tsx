@@ -80,12 +80,14 @@ export default function Hero() {
 
     const formData = new FormData(e.currentTarget);
     const attribution = getAttribution();
+    const liquidTier = String(formData.get("liquidTier") || "");
     const payload = {
       email,
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
       phone: formData.get("phone"),
       zip: formData.get("zip"),
+      liquidTier,
     };
 
     try {
@@ -108,6 +110,17 @@ export default function Hero() {
             value: 1.0,
             currency: "USD",
           });
+          const qualified = liquidTier === "$200K - $500K" ||
+            liquidTier === "$500K - $1MM" ||
+            liquidTier === "$1MM+";
+          if (qualified) {
+            window.gtag("event", "qualified_lead_submitted", { liquidTier });
+            window.gtag("event", "conversion", {
+              send_to: "AW-944657062/lfH3CPHQ3rMcEKalucID",
+              value: 100.0,
+              currency: "USD",
+            });
+          }
         }
         router.push("/thank-you");
         return;
@@ -262,9 +275,15 @@ export default function Hero() {
             <h2 className="text-white font-semibold text-lg mb-1">
               Get the Franchise Overview
             </h2>
-            <p className="text-white/60 text-xs mb-4">
+            <p className="text-white/60 text-xs mb-3">
               Free info kit &mdash; no obligation
             </p>
+
+            <div className="mb-4 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/10 px-3 py-2">
+              <p className="text-[11px] text-white/85 leading-relaxed">
+                <span className="font-semibold text-[#C2A878]">Spavia partners need $200K+ in liquid capital and $500K+ net worth.</span> Typical total investment: $479K&ndash;$885K.
+              </p>
+            </div>
 
             {/* Step indicator */}
             <div className="flex items-center gap-2 mb-4 text-xs text-white/50">
@@ -403,6 +422,33 @@ export default function Hero() {
                     </p>
                   )}
 
+                  <label htmlFor="hero-liquidTier" className="sr-only">
+                    Liquid capital available
+                  </label>
+                  <select
+                    id="hero-liquidTier"
+                    name="liquidTier"
+                    required
+                    defaultValue=""
+                    className={`${inputStyle} appearance-none`}
+                  >
+                    <option value="" disabled className="text-gray-900">
+                      Liquid capital available to invest
+                    </option>
+                    <option value="$0 - $200K" className="text-gray-900">
+                      $0 &ndash; $200K
+                    </option>
+                    <option value="$200K - $500K" className="text-gray-900">
+                      $200K &ndash; $500K
+                    </option>
+                    <option value="$500K - $1MM" className="text-gray-900">
+                      $500K &ndash; $1MM
+                    </option>
+                    <option value="$1MM+" className="text-gray-900">
+                      $1MM+
+                    </option>
+                  </select>
+
                   {error && (
                     <div
                       role="alert"
@@ -421,9 +467,6 @@ export default function Hero() {
                     {loading ? "Submitting..." : error ? "Try Again" : "Request Info"}
                   </button>
 
-                  <p className="text-[10px] text-center text-white/50 mt-1 italic">
-                    Designed for prospective owners with $200K+ liquid &amp; $500K+ net worth.
-                  </p>
                   <p className="text-[10px] text-center text-white/40 mt-1">
                     By submitting, you agree Spavia may contact you by email,
                     phone, or text regarding franchise opportunities.

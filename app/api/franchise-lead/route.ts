@@ -54,8 +54,11 @@ export async function POST(req: Request) {
     }
 
     // 1️⃣ Create / update contact (sync = upsert, won't fail on duplicates)
+    // Field 208 = Liquid Assets (shared with long-form). Short-form tier values
+    // map exactly: $0 - $200K, $200K - $500K, $500K - $1MM, $1MM+.
     const fieldValues = [
       ...(body.zip ? [{ field: "90", value: body.zip }] : []),
+      ...(body.liquidTier ? [{ field: "208", value: body.liquidTier }] : []),
       ...buildAttributionFieldValues(body.attribution),
     ];
 

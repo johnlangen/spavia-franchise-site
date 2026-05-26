@@ -27,8 +27,6 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     email: "",
     phone: "",
     zip: "",
-    state: "",
-    primaryGoal: "",
   });
 
   /* ───────── STEP 1 ───────── */
@@ -56,16 +54,17 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     const formData = new FormData(e.currentTarget);
     const attribution = getAttribution();
 
+    const liquidAssets = String(formData.get("liquidAssets") || "");
+    const netWorth = String(formData.get("netWorth") || "");
     const payload = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
       email: formData.get("email"),
       phone: formData.get("phone"),
       zip: formData.get("zip"),
-      state: formData.get("state"),
       primaryGoal: formData.get("primaryGoal"),
-      liquidAssets: formData.get("liquidAssets"),
-      netWorth: formData.get("netWorth"),
+      liquidAssets,
+      netWorth,
       creditScore: formData.get("creditScore"),
     };
 
@@ -91,6 +90,23 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             value: 1.0,
             currency: "USD",
           });
+          const liquidQualified = liquidAssets === "$200K - $500K" ||
+            liquidAssets === "$500K - $1MM" ||
+            liquidAssets === "$1MM+";
+          const netWorthQualified = netWorth === "$500K - $700K" ||
+            netWorth === "$700K +";
+          if (liquidQualified && netWorthQualified) {
+            window.gtag("event", "qualified_lead_submitted", {
+              liquidAssets,
+              netWorth,
+              form: "long",
+            });
+            window.gtag("event", "conversion", {
+              send_to: "AW-944657062/lfH3CPHQ3rMcEKalucID",
+              value: 100.0,
+              currency: "USD",
+            });
+          }
         }
         router.push("/thank-you");
         return;
@@ -202,18 +218,9 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
               />
             </div>
 
-            {/* ✅ STATE — EXPLICIT LIST (AS REQUESTED) */}
-            <div>
-              <label htmlFor="long-state" className="form-label">State</label>
-              <select
-                id="long-state"
-                required
-                className="form-select"
-                value={step1.state}
-                onChange={(e) =>
-                  setStep1({ ...step1, state: e.target.value })
-                }
-              >
+            {/* TODO: delete the hidden <select> + options below. State removed from form on 2026-05-26 (Tyler can derive from ZIP in AC). Kept inert as a hidden, non-interactive element so the JSX subtree below is preserved for the diff to be small. Safe to remove on next cleanup. */}
+            <div style={{ display: "none" }} aria-hidden="true">
+              <select aria-hidden="true" tabIndex={-1}>
                 <option value="">Select State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -268,29 +275,6 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
               </select>
             </div>
 
-            <div>
-              <label htmlFor="long-primaryGoal" className="form-label">Primary Goal</label>
-              <select
-                id="long-primaryGoal"
-                required
-                className="form-select"
-                value={step1.primaryGoal}
-                onChange={(e) =>
-                  setStep1({ ...step1, primaryGoal: e.target.value })
-                }
-              >
-                <option value="">Select Goal</option>
-                <option value="Financial Return">Financial Return</option>
-                <option value="Freedom of Schedule">Freedom of Schedule</option>
-                <option value="Portfolio Diversification">
-                  Portfolio Diversification
-                </option>
-                <option value="More Meaningful Career">
-                  More Meaningful Career
-                </option>
-              </select>
-            </div>
-
             <div className="md:col-span-2 pt-2">
               <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
                 Continue →
@@ -337,6 +321,23 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 <option value="620-679">620 – 679</option>
                 <option value="680-719">680 – 719</option>
                 <option value="720+">720+</option>
+              </select>
+            </div>
+
+            <div className="md:col-span-2">
+              <label htmlFor="long-primaryGoal" className="form-label">Primary Goal</label>
+              <select
+                id="long-primaryGoal"
+                name="primaryGoal"
+                required
+                className="form-select"
+                defaultValue=""
+              >
+                <option value="" disabled>Select Goal</option>
+                <option value="Financial Return">Financial Return</option>
+                <option value="Freedom of Schedule">Freedom of Schedule</option>
+                <option value="Portfolio Diversification">Portfolio Diversification</option>
+                <option value="More Meaningful Career">More Meaningful Career</option>
               </select>
             </div>
 

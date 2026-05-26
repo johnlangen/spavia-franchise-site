@@ -61,6 +61,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
 
     const formData = new FormData(e.currentTarget);
     const attribution = getAttribution();
+    const liquidTier = String(formData.get("liquidTier") || "");
 
     const payload = {
       email,
@@ -68,6 +69,7 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
       lastName: formData.get("lastName"),
       phone: formData.get("phone"),
       zip: formData.get("zip"),
+      liquidTier,
     };
 
     try {
@@ -92,6 +94,17 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
             value: 1.0,
             currency: "USD",
           });
+          const qualified = liquidTier === "$200K - $500K" ||
+            liquidTier === "$500K - $1MM" ||
+            liquidTier === "$1MM+";
+          if (qualified) {
+            window.gtag("event", "qualified_lead_submitted", { liquidTier });
+            window.gtag("event", "conversion", {
+              send_to: "AW-944657062/lfH3CPHQ3rMcEKalucID",
+              value: 100.0,
+              currency: "USD",
+            });
+          }
         }
         router.push("/thank-you");
         return;
@@ -152,12 +165,14 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
             </li>
           </ul>
 
-          <p className="mt-6 text-xs text-gray-500">
-            We respect your privacy. Your information is never shared.
-          </p>
+          <div className="mt-6 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/5 px-4 py-3">
+            <p className="text-sm text-gray-800 leading-relaxed">
+              <span className="font-semibold text-[#9c814f]">Spavia partners need $200K+ in liquid capital and $500K+ net worth.</span> Typical total initial investment: $479K&ndash;$885K (2026 FDD, Item 7).
+            </p>
+          </div>
 
-          <p className="mt-3 text-xs text-gray-500 italic">
-            Designed for prospective owners with $200K+ liquid capital and $500K+ net worth.
+          <p className="mt-3 text-xs text-gray-500">
+            We respect your privacy. Your information is never shared.
           </p>
         </div>
 
@@ -285,6 +300,27 @@ export default function FranchiseIntroForm({ leadSource }: FranchiseIntroFormPro
                       {zipError}
                     </p>
                   )}
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label htmlFor="intro-liquidTier" className="sr-only">
+                    Liquid capital available
+                  </label>
+                  <select
+                    id="intro-liquidTier"
+                    name="liquidTier"
+                    required
+                    defaultValue=""
+                    className={`${inputStyle} bg-white`}
+                  >
+                    <option value="" disabled>
+                      Liquid capital available to invest
+                    </option>
+                    <option value="$0 - $200K">$0 &ndash; $200K</option>
+                    <option value="$200K - $500K">$200K &ndash; $500K</option>
+                    <option value="$500K - $1MM">$500K &ndash; $1MM</option>
+                    <option value="$1MM+">$1MM+</option>
+                  </select>
                 </div>
 
                 <div className="sm:col-span-2">
