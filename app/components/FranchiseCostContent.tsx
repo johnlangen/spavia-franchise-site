@@ -490,8 +490,13 @@ export default function FranchiseCostContent() {
                   $50,000 for each unit up to 5. Reduced per-unit fees apply for
                   larger Development Schedules ($45,000 per unit for 6 to 9 units).
                   No additional initial franchise fee is charged on each unit opened
-                  under a Development Agreement. Contact our franchise team to
-                  discuss multi-unit territory availability.
+                  under a Development Agreement.{" "}
+                  <Link
+                    href="/multi-unit"
+                    className="text-[#9c814f] font-semibold hover:underline"
+                  >
+                    See the multi-unit development page →
+                  </Link>
                 </p>
               </div>
               <div>

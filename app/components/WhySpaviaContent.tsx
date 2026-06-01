@@ -396,6 +396,43 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
+      {/* Related model pages */}
+      <section className="bg-white py-12 px-6 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-3">
+            Related Franchise Models
+          </p>
+          <p className="text-gray-600 text-sm mb-6 max-w-2xl mx-auto">
+            Spavia offers different entry paths depending on your background
+            and goals. Explore the model that fits.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3 max-w-xl mx-auto">
+            <Link
+              href="/day-spa-franchise"
+              className="block p-4 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-left"
+            >
+              <p className="font-semibold text-gray-900 text-sm mb-1">
+                Day Spa Franchise →
+              </p>
+              <p className="text-xs text-gray-600">
+                Full-service entry point
+              </p>
+            </Link>
+            <Link
+              href="/multi-unit"
+              className="block p-4 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-left"
+            >
+              <p className="font-semibold text-gray-900 text-sm mb-1">
+                Multi-Unit Development →
+              </p>
+              <p className="text-xs text-gray-600">
+                Build a regional portfolio
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Next Page Link */}
       <div className="bg-black text-white py-10 text-center">
         <Link

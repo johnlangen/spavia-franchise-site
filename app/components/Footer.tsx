@@ -6,15 +6,15 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 items-center border-t border-gray-700">
-        {/* Left - Logo + Links */}
+      <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8 items-start border-t border-gray-700">
+        {/* Logo + Legal */}
         <div className="flex flex-col items-center md:items-start space-y-4">
           <img
             src="/spavia-logo.png"
             alt="Spavia Franchise"
             className="h-8 w-auto"
           />
-          <div className="flex space-x-4 text-sm">
+          <div className="flex flex-col space-y-1 text-sm">
             <Link
               href="https://spaviadayspa.com/privacy-policy"
               target="_blank"
@@ -22,7 +22,6 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-            <span>|</span>
             <Link
               href="https://spaviadayspa.com/terms-and-conditions"
               target="_blank"
@@ -36,13 +35,19 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Middle - Navigation */}
-        <div className="flex flex-col items-center space-y-2 text-sm uppercase tracking-wide">
+        {/* Explore Spavia */}
+        <div className="flex flex-col items-center md:items-start space-y-2 text-sm">
+          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-1">
+            Explore Spavia
+          </p>
           <Link href="/franchise-opportunities" className="hover:text-white">
             Franchise Opportunities
           </Link>
           <Link href="/franchise-cost" className="hover:text-white">
             Franchise Cost
+          </Link>
+          <Link href="/steps-to-ownership" className="hover:text-white">
+            Steps to Ownership
           </Link>
           <Link href="/blog" className="hover:text-white">
             Blog
@@ -62,7 +67,26 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* Right - Social Icons */}
+        {/* Franchise Models */}
+        <div className="flex flex-col items-center md:items-start space-y-2 text-sm">
+          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-1">
+            Franchise Models
+          </p>
+          <Link href="/day-spa-franchise" className="hover:text-white">
+            Day Spa Franchise
+          </Link>
+          <Link href="/massage-franchise" className="hover:text-white">
+            Massage Franchise
+          </Link>
+          <Link href="/wellness-franchise" className="hover:text-white">
+            Wellness Franchise
+          </Link>
+          <Link href="/multi-unit" className="hover:text-white">
+            Multi-Unit Development
+          </Link>
+        </div>
+
+        {/* Social */}
         <div className="flex flex-col items-center md:items-end space-y-4">
           <div className="flex space-x-4 text-xl">
             <Link

@@ -220,31 +220,71 @@ export default function Home() {
 
         {/* 11. EXPLORE LINKS — keep non-converters on site */}
         <Section className="bg-black py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-2xl font-bold text-center mb-8 text-white">
-              Explore More
+          <div className="max-w-5xl mx-auto px-6">
+            <h2 className="text-2xl font-bold text-center mb-2 text-white">
+              Explore the Franchise Models
             </h2>
-            <div className="grid sm:grid-cols-3 gap-4">
+            <p className="text-center text-white/60 text-sm mb-8 max-w-xl mx-auto">
+              Different intent, different fit. Find the Spavia path that
+              matches your background and goals.
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
               <Link
-                href="/franchise-cost"
+                href="/day-spa-franchise"
                 className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
               >
-                <p className="font-bold text-white mb-1">Franchise Cost</p>
-                <p className="text-sm text-white/60">Full investment breakdown</p>
+                <p className="font-bold text-white mb-1">Day Spa Franchise</p>
+                <p className="text-sm text-white/60">
+                  Full-service day spa entry point
+                </p>
+              </Link>
+              <Link
+                href="/massage-franchise"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-white mb-1">Massage Franchise</p>
+                <p className="text-sm text-white/60">
+                  Beyond single-service massage
+                </p>
+              </Link>
+              <Link
+                href="/wellness-franchise"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-white mb-1">Wellness Franchise</p>
+                <p className="text-sm text-white/60">
+                  Full-service wellness model
+                </p>
+              </Link>
+              <Link
+                href="/multi-unit"
+                className="block p-5 rounded-xl border-2 border-[#C2A878] bg-[#C2A878]/10 hover:bg-[#C2A878]/20 transition-colors text-center"
+              >
+                <p className="font-bold text-[#C2A878] mb-1">Multi-Unit</p>
+                <p className="text-sm text-white/80">
+                  Build a regional portfolio
+                </p>
+              </Link>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10 grid sm:grid-cols-3 gap-3 text-center">
+              <Link
+                href="/franchise-cost"
+                className="text-sm text-white/70 hover:text-[#C2A878] transition-colors"
+              >
+                Franchise Cost →
               </Link>
               <Link
                 href="/franchise-opportunities"
-                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
+                className="text-sm text-white/70 hover:text-[#C2A878] transition-colors"
               >
-                <p className="font-bold text-white mb-1">Available Markets</p>
-                <p className="text-sm text-white/60">Find territories by state</p>
+                Available Markets →
               </Link>
               <Link
-                href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
-                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
+                href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
+                className="text-sm text-white/70 hover:text-[#C2A878] transition-colors"
               >
-                <p className="font-bold text-white mb-1">Spavia vs. Woodhouse</p>
-                <p className="text-sm text-white/60">Side-by-side comparison</p>
+                Day Spa vs. Med Spa →
               </Link>
             </div>
           </div>

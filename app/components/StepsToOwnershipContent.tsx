@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import ProcessSection from "./ProcessSection";
@@ -180,8 +181,23 @@ export default function StepsToOwnershipContent() {
               })}
             </div>
 
+            {/* Multi-unit callout */}
+            <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-[#C2A878]/40 bg-[#C2A878]/5 px-6 py-5 text-center">
+              <p className="text-sm text-gray-700 mb-2">
+                <span className="font-semibold text-[#9c814f]">Building a regional portfolio?</span>{" "}
+                Spavia offers multi-unit Development Agreements with territory
+                protection and reduced franchise fees on each additional unit.
+              </p>
+              <Link
+                href="/multi-unit"
+                className="text-sm font-semibold text-[#9c814f] hover:underline"
+              >
+                See multi-unit development →
+              </Link>
+            </div>
+
             {/* Get Started Button */}
-            <div className="mt-16 text-center">
+            <div className="mt-12 text-center">
               <Button className="bg-[#C2A878] text-white hover:bg-[#b09466] px-8 py-4 text-lg">
                 <a href="/get-started">Get Started</a>
               </Button>
