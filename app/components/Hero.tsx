@@ -193,7 +193,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="font-semibold leading-tight mb-3 text-[26px] sm:text-3xl md:text-[42px]"
+              className="font-semibold leading-tight mb-3 text-[26px] sm:text-3xl md:text-[52px] lg:text-[60px]"
             >
               <span className="block">Own a Day Spa Franchise</span>
               <span className="block">in the Wellness Industry</span>
@@ -204,7 +204,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg text-white/85 mb-6"
+              className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg lg:text-xl text-white/85 mb-6"
             >
               Join 60+ Spavia day spa franchise owners bringing affordable luxury
               wellness to their communities, with many locations exceeding
