@@ -21,7 +21,7 @@ export default function TalkToTylerSection() {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24 px-6">
+    <section className="bg-[#f5f1ea] py-16 md:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

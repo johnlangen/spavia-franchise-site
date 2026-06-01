@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import Hero from "./components/Hero";
 import FAQ from "./components/FAQ";
-import ProofSection from "./components/ProofSection";
 import AwardsSection from "./components/AwardsSection";
-import ScheduleCallBanner from "./components/ScheduleCallBanner";
 import GuestRatingsSection from "./components/GuestRatingsSection";
 import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSection";
 import GuestTestimonialsSection from "./components/GuestTestimonialsSection";
@@ -16,6 +14,7 @@ import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
 import TalkToTylerSection from "./components/TalkToTylerSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
+import OurStorySection from "./components/OurStorySection";
 
 export const metadata: Metadata = {
   title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
@@ -188,34 +187,31 @@ export default function Home() {
             into informed scrollers. Three columns with deep-page click-paths. */}
         <HomepageQuickOverview />
 
-        {/* 2. TALK TO TYLER — direct path to a real conversation */}
+        {/* 3. TALK TO TYLER — direct path to a real conversation */}
         <TalkToTylerSection />
 
-        {/* 3. PROOF — bold gold numbers on black */}
-        <ProofSection />
-
-        {/* 4. SCHEDULE CALL — gold banner CTA */}
-        <ScheduleCallBanner />
-
-        {/* 4. AWARDS — trust logos on black */}
+        {/* 4. AWARDS — press / award logos */}
         <AwardsSection />
 
-        {/* 5. GUEST RATINGS — 4.7 stars, 134K reviews */}
-        <GuestRatingsSection />
+        {/* 5. OUR STORY — editorial founder narrative (no repeated stats) */}
+        <OurStorySection />
 
-        {/* 6. FRANCHISEE TESTIMONIALS — carousel on black */}
+        {/* 6. FRANCHISEE TESTIMONIALS — carousel */}
         <FranchiseeTestimonialsSection />
 
-        {/* 7. GUEST TESTIMONIALS — review cards on white */}
+        {/* 7. GUEST RATINGS — 4.8 stars, 30K+ reviews */}
+        <GuestRatingsSection />
+
+        {/* 8. GUEST TESTIMONIALS — review cards on white */}
         <GuestTestimonialsSection />
 
-        {/* 8. SEO CONTENT — keyword-rich content on black */}
+        {/* 9. SEO CONTENT — keyword-rich content on black */}
         <SEOContentSection />
 
-        {/* 9. FAQ — expanded with keyword questions */}
+        {/* 10. FAQ — expanded with keyword questions */}
         <FAQ />
 
-        {/* 10. GOLD BOTTOM BANNER — dual CTA */}
+        {/* 11. GOLD BOTTOM BANNER — single final CTA */}
         <GoldBottomBanner />
 
         {/* 11. EXPLORE LINKS — keep non-converters on site */}
