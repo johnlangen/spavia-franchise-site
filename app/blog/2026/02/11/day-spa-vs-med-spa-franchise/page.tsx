@@ -191,6 +191,48 @@ export default function Page() {
             to get a personalized overview.
           </p>
 
+          {/* ── Who Actually Buys ── */}
+          <h2 className="text-2xl font-semibold mb-3">
+            Who Is Actually Buying Med Spa Franchises in 2026?
+          </h2>
+
+          <p className="mb-6 leading-relaxed">
+            Here&apos;s an under-discussed fact about the med spa franchise
+            boom: the people buying these franchises are almost never doctors.
+          </p>
+
+          <p className="mb-6 leading-relaxed">
+            The fastest-growing med spa franchise systems in 2026 are being
+            built by business operators &mdash; multi-unit restaurant
+            owners, fitness franchise operators, real estate executives,
+            hospitality professionals, and corporate executives diversifying
+            into wellness. They share a common background: they&apos;ve already
+            proven they can scale a service-based business. They are not
+            learning the fundamentals of franchise operations &mdash;
+            they&apos;re applying established competencies to a higher-margin
+            category.
+          </p>
+
+          <p className="mb-6 leading-relaxed">
+            This matters because it means the prospects choosing med spa
+            franchises today are the same prospects who could be a Spavia
+            franchisee. They&apos;re not picking med spa because they have
+            clinical credentials. They&apos;re picking it because the
+            &ldquo;medical aesthetics&rdquo; growth narrative is louder right
+            now &mdash; even though the unit economics, ramp time, and
+            operational complexity often favor day spa franchising for the
+            same buyer.
+          </p>
+
+          <p className="mb-10 leading-relaxed">
+            If you&apos;re a business operator weighing day spa vs. med spa,
+            the comparison below isn&apos;t academic. It&apos;s the actual
+            decision most successful operators in this category are making
+            right now &mdash; and increasingly choosing day spa because of
+            the lower investment, faster ramp, simpler operations, and
+            comparable margins.
+          </p>
+
           {/* ── What's the Difference ── */}
           <h2 className="text-2xl font-semibold mb-3">
             What&apos;s the Difference Between a Day Spa and a Med Spa?

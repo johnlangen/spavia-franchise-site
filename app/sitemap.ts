@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/day-spa-franchise`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/massage-franchise`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/wellness-franchise`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/multi-unit`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/why-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/your-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/steps-to-ownership`, changeFrequency: "monthly", priority: 0.8 },

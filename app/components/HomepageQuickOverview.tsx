@@ -110,13 +110,84 @@ export default function HomepageQuickOverview() {
           })}
         </div>
 
-        {/* Secondary line — moves to deeper pages */}
+        {/* Middle-position framing — where Spavia sits in the category */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-10 text-center"
+          className="mt-14 mb-2"
+        >
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-900 text-center mb-3 font-[family-name:var(--font-recoleta)]">
+            Where Spavia Sits in the Spa Franchise Category
+          </h3>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8 text-sm md:text-base">
+            Spavia occupies the accessible-luxury middle: full-service depth
+            without the premium-luxury price tag, recurring membership
+            economics without the mass-market chain feel.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-center">
+              <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">
+                Mass-market chains
+              </p>
+              <p className="text-2xl font-bold text-gray-900 mb-1 font-[family-name:var(--font-recoleta)]">
+                Single-service
+              </p>
+              <p className="text-sm text-gray-600 mb-3">
+                Membership-driven but narrower service mix. Lower per-visit
+                ticket.
+              </p>
+              <p className="text-xs text-gray-500">
+                Massage-only or facial-only models
+              </p>
+            </div>
+
+            <div className="rounded-2xl border-2 border-[#C2A878] bg-[#C2A878]/5 p-6 text-center relative shadow-md">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C2A878] text-white text-[10px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full">
+                Spavia
+              </span>
+              <p className="text-xs uppercase tracking-widest text-[#9c814f] font-semibold mb-2">
+                Accessible Luxury
+              </p>
+              <p className="text-2xl font-bold text-gray-900 mb-1 font-[family-name:var(--font-recoleta)]">
+                Full-service
+              </p>
+              <p className="text-sm text-gray-800 mb-3">
+                Massage, facials, body, retail. Membership economics + multi-
+                service revenue mix. $479K–$885K investment.
+              </p>
+              <p className="text-xs text-[#9c814f] font-semibold">
+                $1.1M+ median gross sales
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-center">
+              <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">
+                Premium luxury chains
+              </p>
+              <p className="text-2xl font-bold text-gray-900 mb-1 font-[family-name:var(--font-recoleta)]">
+                Boutique-premium
+              </p>
+              <p className="text-sm text-gray-600 mb-3">
+                Higher per-visit ticket, but $1.5M–$2.7M investment range and
+                narrower buyer pool.
+              </p>
+              <p className="text-xs text-gray-500">
+                Resort-style premium positioning
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Secondary line — moves to deeper pages */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 text-center"
         >
           <p className="text-gray-600 text-sm">
             Want the deeper view first?{" "}
@@ -135,10 +206,10 @@ export default function HomepageQuickOverview() {
             </Link>
             {" · "}
             <Link
-              href="/training-and-support"
+              href="/multi-unit"
               className="font-semibold text-[#9c814f] hover:underline"
             >
-              See our training & support
+              Multi-unit development
             </Link>
           </p>
         </motion.div>
