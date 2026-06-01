@@ -58,7 +58,7 @@ export default function HomepageQuickOverview() {
             What You Should Know Before You Inquire
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            The honest version of the Spavia franchise opportunity — investment,
+            The honest version of the Spavia franchise opportunity: investment,
             revenue, and what you'll actually operate. No fluff.
           </p>
         </motion.div>

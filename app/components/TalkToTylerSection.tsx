@@ -41,8 +41,8 @@ export default function TalkToTylerSection() {
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Most candidates have specific questions about market availability,
-            financing, and timing &mdash; the kind of answers that don&apos;t
-            fit in a form. A 15-minute intro call with our Director of Franchise
+            financing, and timing. The kind of answers that don&apos;t fit in
+            a form. A 15-minute intro call with our Director of Franchise
             Development gets you there.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ export default function TalkToTylerSection() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">15-minute intro call.</span>{" "}
-                  No pressure, no commitment &mdash; just a conversation about whether Spavia
+                  No pressure, no commitment. Just a conversation about whether Spavia
                   fits your goals.
                 </p>
               </li>
@@ -105,8 +105,8 @@ export default function TalkToTylerSection() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Honest answers.</span>{" "}
-                  Financing, timeline, what owners actually earn, why some candidates aren&apos;t a fit
-                  &mdash; we&apos;d rather find out early.
+                  Financing, timeline, what owners actually earn, why some candidates aren&apos;t a fit.
+                  We&apos;d rather find out early.
                 </p>
               </li>
             </ul>

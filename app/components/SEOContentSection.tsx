@@ -7,17 +7,17 @@ const blocks = [
   {
     heading: "A Proven Day Spa Franchise Model",
     content:
-      "The U.S. spa industry generates over $19 billion annually, and consumer demand for wellness services continues to accelerate. Spavia day spa franchises are built on a membership-driven model that delivers predictable recurring revenue, strong guest retention, and multiple income streams — from massage therapy and facials to body treatments, waxing, and retail products. With 63 franchised locations open as of December 31, 2025 (2026 FDD, Item 20), Spavia provides franchise owners with a turnkey system for entering one of the fastest-growing segments in health and wellness.",
+      "The U.S. spa industry generates over $19 billion annually, and consumer demand for wellness services continues to accelerate. Spavia day spa franchises are built on a membership-driven model that delivers predictable recurring revenue, strong guest retention, and multiple income streams: massage therapy, facials, body treatments, waxing, and retail products. With 63 franchised locations open as of December 31, 2025 (2026 FDD, Item 20), Spavia provides franchise owners with a turnkey system for entering one of the fastest-growing segments in health and wellness.",
   },
   {
     heading: "Spa Franchise Investment and Returns",
     content:
-      "The total estimated initial investment to open a Spavia day spa franchise ranges from $479,450 to $885,450 (2026 FDD, Item 7), including the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds. Per the 2026 FDD, Item 19, Part III, the median annual revenue (cash receipts) for the 44 reporting locations was $1,110,481 over the 2025 measurement period. Per Item 19, Part II, 29 of 59 disclosed locations exceeded $1M in annual gross sales — roughly 1 in 2 owners. Financing options include SBA-eligible loans through third-party lenders. Results vary by location.",
+      "The total estimated initial investment to open a Spavia day spa franchise ranges from $479,450 to $885,450 (2026 FDD, Item 7), including the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds. Per the 2026 FDD, Item 19, Part III, the median annual revenue (cash receipts) for the 44 reporting locations was $1,110,481 over the 2025 measurement period. Per Item 19, Part II, 29 of 59 disclosed locations exceeded $1M in annual gross sales, roughly 1 in 2 owners. Financing options include SBA-eligible loans through third-party lenders. Results vary by location.",
   },
   {
     heading: "Comprehensive Franchise Training & Support",
     content:
-      "Spavia's franchise support system covers every phase of ownership — from site selection and lease negotiation to buildout management, pre-opening marketing, and ongoing operational coaching. New franchise owners complete an intensive training program that covers spa operations, team hiring and management, guest experience standards, and marketing strategy. Post-opening, Spavia provides dedicated field support, national marketing programs, and a network of experienced franchise owners to learn from.",
+      "Spavia's franchise support system covers every phase of ownership: site selection, lease negotiation, buildout management, pre-opening marketing, and ongoing operational coaching. New franchise owners complete an intensive training program that covers spa operations, team hiring and management, guest experience standards, and marketing strategy. Post-opening, Spavia provides dedicated field support, national marketing programs, and a network of experienced franchise owners to learn from.",
   },
   {
     heading: "Available Markets Nationwide",

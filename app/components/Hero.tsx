@@ -207,7 +207,7 @@ export default function Hero() {
               className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg text-white/85 mb-6"
             >
               Join 60+ Spavia day spa franchise owners bringing affordable luxury
-              wellness to their communities &mdash; with many locations exceeding
+              wellness to their communities, with many locations exceeding
               $1M in annual sales.*
             </motion.p>
 
@@ -285,7 +285,7 @@ export default function Hero() {
               Get the Franchise Overview
             </h2>
             <p className="text-white/60 text-xs mb-3">
-              Free info kit &mdash; no obligation
+              Free info kit. No obligation.
             </p>
 
             <div className="mb-4 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/10 px-3 py-2">

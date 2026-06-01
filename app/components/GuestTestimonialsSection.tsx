@@ -7,7 +7,7 @@ const reviews = [
   {
     name: "Jessica E.",
     location: "Sparta, NJ",
-    text: "I was immediately greeted and offered a tour of the spa. The establishment was very pleasant and I felt quite at ease. My therapist was truly excellent — she addressed every area with remarkable skill. I felt fantastic afterward, like a completely new person. I would rate this with ten stars.",
+    text: "I was immediately greeted and offered a tour of the spa. The establishment was very pleasant and I felt quite at ease. My therapist was truly excellent, addressing every area with remarkable skill. I felt fantastic afterward, like a completely new person. I would rate this with ten stars.",
     service: "Full Body Massage",
   },
   {
@@ -19,7 +19,7 @@ const reviews = [
   {
     name: "Lina S.",
     location: "Naples, FL",
-    text: "A great spa with attention to every detail. Everything was super clean and all the associates were very well trained and welcoming. I was given one of the best massages — I almost fell asleep. I will definitely be back.",
+    text: "A great spa with attention to every detail. Everything was super clean and all the associates were very well trained and welcoming. I was given one of the best massages and I almost fell asleep. I will definitely be back.",
     service: "Massage Therapy",
   },
   {

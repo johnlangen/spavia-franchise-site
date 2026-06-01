@@ -44,8 +44,8 @@ export default function OurStorySection() {
               Most guests wanted resort-level experience without resort-level
               prices. Most prospective owners wanted real economics without
               the operational complexity of a clinical med spa or the ceiling
-              of single-service massage. The market had a clear middle &mdash;
-              and nobody was occupying it well.
+              of single-service massage. The market had a clear middle, and
+              nobody was occupying it well.
             </p>
             <p>
               Spavia became that middle. Accessible luxury. Full-service depth.
@@ -70,11 +70,11 @@ export default function OurStorySection() {
               </span>
               <p className="text-gray-800 text-lg md:text-xl leading-relaxed font-[family-name:var(--font-recoleta)] italic mb-4">
                 We never wanted to build a chain. We wanted to build a brand
-                people would drive across town for &mdash; and owners would
-                build their lives around.
+                people would drive across town for, and owners would build
+                their lives around.
               </p>
               <p className="text-sm text-gray-600">
-                &mdash; Allison Langenderfer, Co-Founder
+                Allison Langenderfer, Co-Founder
               </p>
             </div>
           </motion.div>

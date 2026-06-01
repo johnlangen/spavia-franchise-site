@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Kari",
     role: "Spavia Owner, Centennial, CO",
-    text: "I chose Spavia because it is more than just a business — it is a network of passionate, caring individuals that have come together to make a difference in the lives of our guests and team.",
+    text: "I chose Spavia because it is more than just a business. It is a network of passionate, caring individuals that have come together to make a difference in the lives of our guests and team.",
     image: "/our-franchisees/image1.jpg",
   },
   {
@@ -85,7 +85,7 @@ export default function FranchiseeTestimonialsSection() {
                 &ldquo;{testimonials[index].text}&rdquo;
               </p>
               <p className="text-[#C2A878] font-semibold">
-                — {testimonials[index].name}, {testimonials[index].role}
+                {testimonials[index].name}, {testimonials[index].role}
               </p>
             </motion.div>
           </AnimatePresence>
@@ -114,9 +114,9 @@ export default function FranchiseeTestimonialsSection() {
         </div>
 
         <p className="text-gray-400 text-xs text-center mt-10 max-w-xl mx-auto">
-          Spavia franchise owners come from diverse professional backgrounds — from
-          banking and corporate careers to lifelong wellness enthusiasts — and find
-          success through Spavia&apos;s proven systems and hands-on support.
+          Spavia franchise owners come from diverse professional backgrounds: banking,
+          corporate careers, lifelong wellness enthusiasts. They find success
+          through Spavia&apos;s proven systems and hands-on support.
         </p>
       </div>
     </section>
