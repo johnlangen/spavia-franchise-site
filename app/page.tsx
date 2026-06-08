@@ -231,7 +231,7 @@ export default function Home() {
               >
                 <p className="font-bold text-white mb-1">Day Spa Franchise</p>
                 <p className="text-sm text-white/60">
-                  Full-service day spa entry point
+                  Full-service day spa franchise opportunity
                 </p>
               </Link>
               <Link

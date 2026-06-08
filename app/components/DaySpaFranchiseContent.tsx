@@ -54,6 +54,34 @@ const faqs = [
     q: "What's the difference between a day spa franchise and a med spa franchise?",
     a: "A day spa franchise like Spavia offers wellness, beauty, and relaxation services (massage, facials, body treatments, waxing) without medical procedures. Med spa franchises offer procedures like injectables, laser, and microneedling — which require a physician medical director and different licensing. Day spa franchises typically have lower initial investment and faster ramp.",
   },
+  {
+    q: "Are day spa franchises a good investment?",
+    a: "Day spa franchises tend to perform best when they're built on recurring revenue rather than one-off visits. Spavia's membership model produced median gross sales of $1,110,481 in 2025 (2026 FDD, Item 19), with 1 in 2 reporting locations exceeding $1M. As with any franchise, results vary by owner, market, and execution, and the FDD provides the full financial picture so you can evaluate the opportunity with real numbers.",
+  },
+  {
+    q: "What makes Spavia one of the best day spa franchise opportunities?",
+    a: "Spavia pairs a 20-year operating history and 63 locations with a recurring-membership model, multiple in-demand service lines, and end-to-end owner support. It sits in the 'accessible luxury' segment: premium enough to command membership pricing, yet broad enough to attract mainstream wellness guests. That positioning is what separates it from single-service and purely transactional spa concepts.",
+  },
+  {
+    q: "Where can I open a Spavia day spa franchise?",
+    a: "Spavia is actively awarding territories across the United States, with availability in many growing suburban and metro markets. During the discovery process we'll review open territories near you and help identify a site that fits the model.",
+  },
+];
+
+const independentPath = [
+  "Build brand awareness from zero in your market",
+  "Design operations, pricing, and service menus by trial and error",
+  "Negotiate equipment and product pricing on your own",
+  "Solve hiring, training, and retention without a playbook",
+  "A longer, riskier path to consistent profitability",
+];
+
+const franchisePath = [
+  "Launch under a trusted brand with 20 years and 63 locations",
+  "A proven membership model and department-by-department playbooks",
+  "National vendor pricing and an established supply chain",
+  "Full training in operations, service, marketing, and hiring",
+  "Guided support from site selection through grand opening",
 ];
 
 const faqJsonLd = {
@@ -92,6 +120,46 @@ export default function DaySpaFranchiseContent() {
 
       <ProofSection />
 
+      {/* What is a day spa franchise — topical overview */}
+      <section className="bg-[#FAF8F5] py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-3 text-center">
+            The Opportunity
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6 font-[family-name:var(--font-recoleta)]">
+            What Is a Day Spa Franchise?
+          </h2>
+          <div className="space-y-5 text-gray-600 leading-relaxed">
+            <p>
+              A day spa franchise lets you open and run a full-service spa under
+              an established brand, with the training, systems, and buying power
+              of a national network behind you, instead of building every part of
+              the business from scratch. For many owners, it&apos;s the difference
+              between learning the industry the hard way and stepping into a model
+              that already works.
+            </p>
+            <p>
+              Spavia is a day spa franchise built around{" "}
+              <span className="text-gray-900 font-semibold">
+                recurring memberships
+              </span>{" "}
+              rather than one-off appointments. Guests join for monthly massage,
+              facial, and body treatments, giving owners predictable revenue that
+              doesn&apos;t rise and fall with walk-in traffic. A single visit can
+              span several services like massage, facials, waxing, lash &amp; brow,
+              and retail, which lifts average ticket and smooths seasonality.
+            </p>
+            <p>
+              Since 2005, Spavia has grown to 63 locations and now ranks among the
+              most established day spa franchise opportunities in the
+              accessible-luxury segment. Owners come from corporate, finance,
+              healthcare, and entrepreneurial backgrounds, and no prior spa
+              experience is required.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Differentiators */}
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -114,6 +182,56 @@ export default function DaySpaFranchiseContent() {
                 <p className="text-gray-600 text-sm leading-relaxed">{d.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Franchise vs. independent comparison */}
+      <section className="bg-[#FAF8F5] py-16 md:py-20 px-6 border-t border-black/5">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
+            Day Spa Franchise vs. Going It Alone
+          </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+            First-time owners often weigh opening an independent day spa against
+            joining a proven franchise. Here&apos;s how the two paths compare.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white border border-gray-200 p-7">
+              <h3 className="text-lg font-semibold text-gray-900 mb-5">
+                Opening an Independent Day Spa
+              </h3>
+              <ul className="space-y-3">
+                {independentPath.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm text-gray-600 leading-relaxed"
+                  >
+                    <span className="text-gray-300 mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative rounded-2xl bg-white border-2 border-[#C2A878] p-7 shadow-sm">
+              <span className="absolute -top-3 left-7 bg-[#C2A878] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                Spavia
+              </span>
+              <h3 className="text-lg font-semibold text-gray-900 mb-5 mt-1">
+                A Spavia Day Spa Franchise
+              </h3>
+              <ul className="space-y-3">
+                {franchisePath.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm text-gray-700 leading-relaxed"
+                  >
+                    <span className="text-[#C2A878] mt-0.5">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
