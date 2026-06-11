@@ -224,7 +224,7 @@ export default function Home() {
               Different intent, different fit. Find the Spavia path that
               matches your background and goals.
             </p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
               <Link
                 href="/day-spa-franchise"
                 className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
@@ -241,6 +241,15 @@ export default function Home() {
                 <p className="font-bold text-white mb-1">Massage Franchise</p>
                 <p className="text-sm text-white/60">
                   Beyond single-service massage
+                </p>
+              </Link>
+              <Link
+                href="/facial-franchise"
+                className="block p-5 rounded-xl border border-white/20 bg-white/5 hover:border-[#C2A878] transition-colors text-center"
+              >
+                <p className="font-bold text-white mb-1">Facial Franchise</p>
+                <p className="text-sm text-white/60">
+                  Beyond single-service facials
                 </p>
               </Link>
               <Link

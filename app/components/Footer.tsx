@@ -78,6 +78,9 @@ export default function Footer() {
           <Link href="/massage-franchise" className="hover:text-white">
             Massage Franchise
           </Link>
+          <Link href="/facial-franchise" className="hover:text-white">
+            Facial Franchise
+          </Link>
           <Link href="/wellness-franchise" className="hover:text-white">
             Wellness Franchise
           </Link>
