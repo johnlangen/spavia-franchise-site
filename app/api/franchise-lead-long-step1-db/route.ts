@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabaseServer";
+import { syncPartialToAC } from "@/lib/acPartial";
 
 export async function POST(req: Request) {
   try {
@@ -22,6 +23,8 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    void syncPartialToAC({ email, firstName, lastName, phone, zip });
 
     const { error } = await supabase
       .from("franchise_leads")
