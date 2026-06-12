@@ -15,6 +15,8 @@ import Section from "./components/Section";
 import TalkToTylerSection from "./components/TalkToTylerSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
 import OurStorySection from "./components/OurStorySection";
+import PhotoStrip from "./components/PhotoStrip";
+import SpaviaCaresSection from "./components/SpaviaCaresSection";
 
 export const metadata: Metadata = {
   title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
@@ -183,6 +185,9 @@ export default function Home() {
         {/* 1. HERO — video bg + embedded lead capture form */}
         <Hero />
 
+        {/* 1.2. PHOTO STRIP — real interiors, Sway, and what's-next concepts */}
+        <PhotoStrip />
+
         {/* 1.5. QUICK OVERVIEW — 90-second education to convert shallow visitors
             into informed scrollers. Three columns with deep-page click-paths. */}
         <HomepageQuickOverview />
@@ -195,6 +200,9 @@ export default function Home() {
 
         {/* 5. OUR STORY — editorial founder narrative (no repeated stats) */}
         <OurStorySection />
+
+        {/* 5.5. SPAVIA CARES — community giving, brand character */}
+        <SpaviaCaresSection />
 
         {/* 6. FRANCHISEE TESTIMONIALS — carousel */}
         <FranchiseeTestimonialsSection />
@@ -272,7 +280,13 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/10 grid sm:grid-cols-3 gap-3 text-center">
+            <div className="mt-8 pt-6 border-t border-white/10 grid sm:grid-cols-4 gap-3 text-center">
+              <Link
+                href="/whats-new"
+                className="text-sm text-white/70 hover:text-[#C2A878] transition-colors"
+              >
+                What&apos;s New at Spavia →
+              </Link>
               <Link
                 href="/franchise-cost"
                 className="text-sm text-white/70 hover:text-[#C2A878] transition-colors"
