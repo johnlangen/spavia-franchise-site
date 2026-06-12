@@ -54,7 +54,8 @@ export default function WhatsNewContent() {
                 Sway is Spavia&apos;s neighborhood wellness club — sauna, cold
                 plunge, recovery, skincare, and modern massage in a design-forward
                 space. Three corporate studios are open today, the first for over
-                a year, and the first franchisees have already signed.
+                a year, the first franchisees have already signed, and Sway was
+                voted #4 Best Day Spa in America by USA Today 10Best.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 For franchise candidates, Sway means you&apos;re joining a
@@ -80,41 +81,40 @@ export default function WhatsNewContent() {
                 The innovation pipeline
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
-                Robotic massage and recovery suites
+                Robotic massage and remedy rooms
               </h2>
               <p className="text-gray-700 leading-relaxed">
                 The next chapter of spa economics is service that doesn&apos;t
-                depend entirely on therapist hiring. Robotic massage and
-                self-guided recovery suites are preparing for pilot within the
-                Spavia family — starting with Sway, and potentially Spavia
-                locations in the future. They complement our therapists rather
-                than replace them, and open revenue that runs even when the
-                schedule is full.
+                depend entirely on therapist hiring. Aescape robotic massage and
+                self-guided remedy rooms are live and bookable at Sway today —
+                and we&apos;re exploring bringing them to Spavia locations.
+                They complement our therapists rather than replace them, and
+                open revenue that runs even when the schedule is full.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <figure className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
                 <Image
-                  src="/media/aescape-robot-massage.webp"
+                  src="/media/aescape-robotic-table.webp"
                   alt="Aescape robotic massage table"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <figcaption className="absolute bottom-4 left-4 rounded-full bg-black/55 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
-                  Robotic massage · heading into pilot
+                  Aescape robotic massage · live at Sway
                 </figcaption>
               </figure>
               <figure className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
                 <Image
-                  src="/media/sway-recovery-suite.webp"
-                  alt="Recovery suite design concept with cold plunge and sauna"
+                  src="/media/sway-remedy-room.webp"
+                  alt="Sway remedy room with red light therapy and cold plunge"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <figcaption className="absolute bottom-4 left-4 rounded-full bg-black/55 px-4 py-1.5 text-sm text-white backdrop-blur-sm">
-                  Recovery suite · design concept
+                  Remedy room · live at Sway
                 </figcaption>
               </figure>
             </div>
