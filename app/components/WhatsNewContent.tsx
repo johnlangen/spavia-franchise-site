@@ -16,7 +16,7 @@ export default function WhatsNewContent() {
       <main className="bg-white">
         {/* HEADER */}
         <section className="bg-black text-white pt-32 pb-16 px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Breadcrumbs items={[{ label: "What's New at Spavia" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">
               What&apos;s new at Spavia

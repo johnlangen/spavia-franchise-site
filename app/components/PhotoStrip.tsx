@@ -63,9 +63,11 @@ export default function PhotoStrip() {
           {FRAMES.map((f) => (
             <Frame key={f.src} {...f} />
           ))}
-          {FRAMES.map((f) => (
-            <Frame key={`dup-${f.src}`} {...f} />
-          ))}
+          <div className="strip-dup" aria-hidden="true">
+            {FRAMES.map((f) => (
+              <Frame key={`dup-${f.src}`} {...f} />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -78,10 +80,38 @@ export default function PhotoStrip() {
           display: flex;
           gap: 16px;
           width: max-content;
-          animation: strip-drift 75s linear infinite;
         }
-        .strip-viewport:hover .strip-track {
-          animation-play-state: paused;
+        .strip-dup {
+          display: contents;
+        }
+        /* Desktop (hover-capable): auto-drift, pause on hover */
+        @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+          .strip-track {
+            animation: strip-drift 75s linear infinite;
+          }
+          .strip-viewport:hover .strip-track {
+            animation-play-state: paused;
+          }
+        }
+        /* Touch devices + reduced motion: natural swipeable row, no
+           animation (tap-to-pause via sticky hover confused people) */
+        @media (hover: none), (prefers-reduced-motion: reduce) {
+          .strip-viewport {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            padding-left: 1.5rem;
+            scroll-padding-left: 1.5rem;
+          }
+          .strip-track {
+            padding-right: 1.5rem;
+          }
+          .strip-track :global(figure) {
+            scroll-snap-align: start;
+          }
+          .strip-dup {
+            display: none;
+          }
         }
         @keyframes strip-drift {
           from {
@@ -89,14 +119,6 @@ export default function PhotoStrip() {
           }
           to {
             transform: translateX(calc(-50% - 8px));
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .strip-viewport {
-            overflow-x: auto;
-          }
-          .strip-track {
-            animation: none;
           }
         }
       `}</style>
