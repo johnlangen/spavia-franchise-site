@@ -206,9 +206,14 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg lg:text-xl text-white/85 mb-6"
             >
-              Join 60+ Spavia day spa franchise owners bringing affordable luxury
-              wellness to their communities, with many locations exceeding
-              $1M in annual sales.*
+              <span className="sm:hidden">
+                Join 60+ owners building $1M+ day spas in their communities.*
+              </span>
+              <span className="hidden sm:inline">
+                Join 60+ Spavia day spa franchise owners bringing affordable
+                luxury wellness to their communities, with many locations
+                exceeding $1M in annual sales.*
+              </span>
             </motion.p>
 
             {/* ---------- METRICS ---------- */}
@@ -284,13 +289,18 @@ export default function Hero() {
             <h2 className="text-white font-semibold text-lg mb-1">
               Get the Franchise Overview
             </h2>
-            <p className="text-white/60 text-xs mb-3">
+            <p className="hidden sm:block text-white/60 text-xs mb-3">
               Free info kit. No obligation.
             </p>
 
-            <div className="mb-4 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/10 px-3 py-2">
+            <div className="mt-2 sm:mt-0 mb-4 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/10 px-3 py-2">
               <p className="text-[11px] text-white/85 leading-relaxed">
-                <span className="font-semibold text-[#C2A878]">Spavia partners need $200K+ in liquid capital and $500K+ net worth.</span> Typical total investment: $479K&ndash;$885K.
+                <span className="sm:hidden">
+                  <span className="font-semibold text-[#C2A878]">Requires $200K+ liquid · $500K+ net worth.</span>
+                </span>
+                <span className="hidden sm:inline">
+                  <span className="font-semibold text-[#C2A878]">Spavia partners need $200K+ in liquid capital and $500K+ net worth.</span> Typical total investment: $479K&ndash;$885K.
+                </span>
               </p>
             </div>
 

@@ -12,6 +12,30 @@ const pressItems = [
     year: "2026",
     items: [
       {
+        title: "Spavia Taps CorePower Exec to Scale Wellness Brands to 200 Locations",
+        source: "Athletech News",
+        date: "June 2026",
+        description:
+          "Athletech News covered Spavia's appointment of Heather Holland, a former CorePower Yoga executive, as Chief Operating Officer, with a mandate to scale the Spavia and Sway platform to 200 locations.",
+        link: "https://athletechnews.com/spavia-taps-corepower-exec-to-scale-wellness-brands-to-200-locations/",
+      },
+      {
+        title: "Spavia Names Heather Holland COO to Support Next Phase of Growth",
+        source: "Skin Inc.",
+        date: "June 2026",
+        description:
+          "Spa industry trade publication Skin Inc. reported on Spavia naming Heather Holland as COO. The announcement, issued via Business Wire, was syndicated by 67 outlets including Yahoo Finance, reaching 12M+ potential readers.",
+        link: "https://www.skininc.com/business/industry-news/news/22967876/spavia-names-heather-holland-coo-to-support-next-phase-of-growth-for-spavia",
+      },
+      {
+        title: "Success Stories: Spavia",
+        source: "American Spa",
+        date: "2026",
+        description:
+          "American Spa profiled Spavia as a spa business success story, highlighting the brand's resort-inspired model and franchise growth.",
+        link: "https://www.americanspa.com/spa-business/success-stories-spavia",
+      },
+      {
         title: "Spavia Named a 2026 FranServe Fran-tastic Brand",
         source: "FranServe Inc.",
         date: "April 2026",

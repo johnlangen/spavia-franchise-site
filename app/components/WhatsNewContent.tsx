@@ -72,6 +72,82 @@ export default function WhatsNewContent() {
           </div>
         </section>
 
+        {/* LEADERSHIP + PRESS */}
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-[auto_1fr] gap-10 items-center mb-14">
+              <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden mx-auto md:mx-0">
+                <Image
+                  src="/who-we-are/heather-holland.png"
+                  alt="Heather Holland, Chief Operating Officer at Spavia"
+                  fill
+                  sizes="224px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+                  New leadership
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+                  Heather Holland named COO
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Spavia named Heather Holland — a former CorePower Yoga
+                  executive who helped scale one of fitness&apos;s most loved
+                  brands — as Chief Operating Officer, with a mandate to grow
+                  the Spavia and Sway platform to 200 locations.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  The announcement was syndicated by 67 outlets including
+                  Yahoo Finance, reaching 12M+ potential readers.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  outlet: "Athletech News",
+                  headline: "Spavia Taps CorePower Exec to Scale Wellness Brands to 200 Locations",
+                  href: "https://athletechnews.com/spavia-taps-corepower-exec-to-scale-wellness-brands-to-200-locations/",
+                },
+                {
+                  outlet: "Skin Inc.",
+                  headline: "Spavia Names Heather Holland COO to Support Next Phase of Growth",
+                  href: "https://www.skininc.com/business/industry-news/news/22967876/spavia-names-heather-holland-coo-to-support-next-phase-of-growth-for-spavia",
+                },
+                {
+                  outlet: "Yahoo Finance",
+                  headline: "Spavia Names Heather Holland COO",
+                  href: "https://finance.yahoo.com/sectors/healthcare/articles/spavia-names-heather-holland-coo-130000013.html",
+                },
+                {
+                  outlet: "American Spa",
+                  headline: "Success Stories: Spavia",
+                  href: "https://www.americanspa.com/spa-business/success-stories-spavia",
+                },
+              ].map((p) => (
+                <a
+                  key={p.outlet}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-xl border border-gray-200 p-5 hover:border-[#C2A878] transition-colors"
+                >
+                  <p className="text-xs font-semibold tracking-widest uppercase text-[#9c8457] mb-2">
+                    {p.outlet}
+                  </p>
+                  <p className="font-semibold text-gray-900 text-sm leading-snug">
+                    {p.headline}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-3">Read the story →</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* INNOVATION PIPELINE */}
         <section className="bg-[#faf8f4] py-20 px-6">
           <div className="max-w-6xl mx-auto">
@@ -151,16 +227,18 @@ export default function WhatsNewContent() {
                 Atlas: your performance platform
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Every Spavia owner gets Atlas, our in-house analytics platform.
-                A weekly scoreboard tracks the two numbers that drive a spa&apos;s
-                growth, your front desk gets a daily prep list, and you can see
-                exactly where you rank across the franchise — and what the top
-                locations do differently.
+                Every Spavia owner gets Atlas, our in-house analytics platform
+                powered by the latest AI models. A weekly scoreboard tracks the
+                two numbers that drive a spa&apos;s growth, your front desk gets
+                a daily prep list, and you can see exactly where you rank across
+                the franchise — and what the top locations do differently.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                No spreadsheets, no guesswork. It&apos;s the kind of tooling
-                single-location owners can&apos;t build for themselves — and it
-                comes with the system.
+                And you can simply ask it questions. Atlas&apos;s built-in
+                intelligence knows your location&apos;s numbers and how the
+                franchise works, and it gets smarter about your business over
+                time. No spreadsheets, no guesswork — the kind of tooling
+                single-location owners can&apos;t build for themselves.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
