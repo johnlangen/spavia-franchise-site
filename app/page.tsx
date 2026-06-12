@@ -16,7 +16,6 @@ import TalkToTylerSection from "./components/TalkToTylerSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
 import OurStorySection from "./components/OurStorySection";
 import PhotoStrip from "./components/PhotoStrip";
-import SpaviaCaresSection from "./components/SpaviaCaresSection";
 
 export const metadata: Metadata = {
   title: "Spavia Franchise: Own a Day Spa With $1.1M+ Median Revenue",
@@ -200,9 +199,6 @@ export default function Home() {
 
         {/* 5. OUR STORY — editorial founder narrative (no repeated stats) */}
         <OurStorySection />
-
-        {/* 5.5. SPAVIA CARES — community giving, brand character */}
-        <SpaviaCaresSection />
 
         {/* 6. FRANCHISEE TESTIMONIALS — carousel */}
         <FranchiseeTestimonialsSection />

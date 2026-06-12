@@ -11,7 +11,9 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<ThemeKey | null>("mountain");
+  // No default theme: --accent stays brand gold until a visitor explicitly
+  // picks a design concept (the old site-wide selector no longer exists).
+  const [theme, setTheme] = useState<ThemeKey | null>(null);
 
   // Keep a global CSS var in sync with the theme
   useEffect(() => {

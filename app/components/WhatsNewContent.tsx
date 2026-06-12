@@ -6,8 +6,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import FloatingButton from "./FloatingButton";
 import Breadcrumbs from "./Breadcrumbs";
-import ThemeSelector from "./ThemeSelector";
-import ThemeGallery from "./ThemeGallery";
+import DesignConcepts from "./DesignConcepts";
 import SpaviaCaresSection from "./SpaviaCaresSection";
 
 export default function WhatsNewContent() {
@@ -137,8 +136,49 @@ export default function WhatsNewContent() {
                 aesthetic.
               </p>
             </div>
-            <ThemeSelector />
-            <ThemeGallery />
+            <DesignConcepts />
+          </div>
+        </section>
+
+        {/* ATLAS */}
+        <section className="bg-[#faf8f4] py-20 px-6">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+                Smarter ownership
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+                Atlas: your performance platform
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Every Spavia owner gets Atlas, our in-house analytics platform.
+                A weekly scoreboard tracks the two numbers that drive a spa&apos;s
+                growth, your front desk gets a daily prep list, and you can see
+                exactly where you rank across the franchise — and what the top
+                locations do differently.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                No spreadsheets, no guesswork. It&apos;s the kind of tooling
+                single-location owners can&apos;t build for themselves — and it
+                comes with the system.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { label: "Weekly scoreboard", detail: "The two numbers that compound" },
+                { label: "Daily prep", detail: "Your team's morning list" },
+                { label: "Franchise rankings", detail: "See where you stand" },
+                { label: "Coaching built in", detail: "What top spas do differently" },
+              ].map((f) => (
+                <div
+                  key={f.label}
+                  className="rounded-xl border border-[#C2A878]/40 bg-white p-5"
+                >
+                  <p className="font-bold text-gray-900 mb-1">{f.label}</p>
+                  <p className="text-sm text-gray-600">{f.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

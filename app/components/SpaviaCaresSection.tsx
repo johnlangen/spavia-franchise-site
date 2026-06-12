@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTheme } from "./ThemeProvider";
-import { themes } from "../themeConfig";
 import Link from "next/link";
 
 
@@ -31,13 +29,10 @@ const stories = [
 ];
 
 export default function SpaviaCaresSection() {
-  const { theme } = useTheme();
-  const themeColor = theme ? themes[theme].color : "#C2A878";
-
   return (
     <section
       className="py-20 text-white"
-      style={{ backgroundColor: themeColor }}
+      style={{ backgroundColor: "#C2A878" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Logo + Heading */}
