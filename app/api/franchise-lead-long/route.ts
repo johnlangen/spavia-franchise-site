@@ -13,6 +13,9 @@ const AC_ATTRIBUTION_FIELDS: Record<string, string | undefined> = {
   utm_term: process.env.AC_FIELD_UTM_TERM,
   referrer: process.env.AC_FIELD_REFERRER,
   landing_page: process.env.AC_FIELD_LANDING_PAGE,
+  // Fallback is the live AC field id ("Google Click ID") — Vercel has no
+  // AC_FIELD_GCLID env var yet, and the field id is stable.
+  gclid: process.env.AC_FIELD_GCLID || "354",
 };
 
 function buildAttributionFieldValues(

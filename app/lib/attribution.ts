@@ -1,4 +1,5 @@
 const STORAGE_KEY = "spavia_first_touch_v1";
+const CLICK_ID_KEY = "spavia_click_id_v1";
 
 export interface Attribution {
   utm_source?: string;
@@ -9,11 +10,25 @@ export interface Attribution {
   referrer?: string;
   landing_page?: string;
   captured_at?: string;
+  gclid?: string;
+}
+
+// Google click IDs are last-touch (unlike the first-touch UTM block above):
+// offline conversion import credits the most recent ad click, so a fresh
+// gclid always overwrites a stored one. wbraid/gbraid (iOS) are stored with
+// a prefix so an import script can route them to the right upload column.
+function captureClickId(params: URLSearchParams): void {
+  const gclid = params.get("gclid");
+  const wbraid = params.get("wbraid");
+  const gbraid = params.get("gbraid");
+  const value = gclid || (wbraid && `wbraid:${wbraid}`) || (gbraid && `gbraid:${gbraid}`);
+  if (value) localStorage.setItem(CLICK_ID_KEY, value);
 }
 
 export function captureAttribution(): void {
   if (typeof window === "undefined") return;
   try {
+    captureClickId(new URL(window.location.href).searchParams);
     if (localStorage.getItem(STORAGE_KEY)) return;
 
     const url = new URL(window.location.href);
@@ -40,8 +55,10 @@ export function getAttribution(): Attribution {
   if (typeof window === "undefined") return {};
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return {};
-    return JSON.parse(stored) as Attribution;
+    const attribution: Attribution = stored ? (JSON.parse(stored) as Attribution) : {};
+    const clickId = localStorage.getItem(CLICK_ID_KEY);
+    if (clickId) attribution.gclid = clickId;
+    return attribution;
   } catch {
     return {};
   }
