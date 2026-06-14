@@ -7,18 +7,18 @@ import Link from "next/link";
 // coming next. Duplicated list = seamless CSS loop; pauses on hover and
 // respects prefers-reduced-motion (falls back to manual horizontal scroll).
 const FRAMES = [
-  { src: "/media/front-desk-wide.webp", chip: "Spavia · Welcome desk" },
-  { src: "/media/fireplace-retreat-wide.webp", chip: "Spavia · Retreat lounge" },
-  { src: "/media/couples-treatment-room.webp", chip: "Spavia · Couples retreat" },
-  { src: "/media/salt-stone-therapy.webp", chip: "Spavia · Salt stone massage" },
+  { src: "/media/spavia-massage-candlelit.webp", chip: "Spavia · Massage therapy" },
+  { src: "/media/spavia-reception.webp", chip: "Spavia · Welcome" },
+  { src: "/media/spavia-facial.webp", chip: "Spavia · Facials & skin care" },
+  { src: "/media/spavia-hot-stones.webp", chip: "Spavia · Hot stone therapy" },
+  { src: "/media/spavia-storefront-dusk.webp", chip: "Spavia · Your neighborhood spa" },
+  { src: "/media/spavia-robe-fireplace.webp", chip: "Spavia · The experience" },
   { src: "/media/sway-storefront.webp", chip: "Sway by Spavia · Denver" },
   { src: "/media/sway-sauna.webp", chip: "Sway · Sauna" },
   { src: "/media/aescape-robotic-table.webp", chip: "Sway · Robotic massage" },
   { src: "/media/sway-remedy-room.webp", chip: "Sway · Remedy room" },
-  { src: "/media/hallway-tree-mural.webp", chip: "Spavia · Design detail" },
-  { src: "/media/lounge-bookshelf-nook.webp", chip: "Spavia · Guest lounge" },
-  { src: "/media/guest-robe-fireplace.webp", chip: "Spavia · Guest experience" },
-  { src: "/media/retail-browsing-lifestyle.webp", chip: "Spavia · Retail boutique" },
+  { src: "/media/spavia-treatment-room.webp", chip: "Spavia · Treatment suite" },
+  { src: "/media/spavia-lounge.webp", chip: "Spavia · Retreat lounge" },
 ];
 
 function Frame({ src, chip }: { src: string; chip: string }) {

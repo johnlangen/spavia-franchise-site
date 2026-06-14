@@ -7,7 +7,21 @@ import Footer from "./Footer";
 import FloatingButton from "./FloatingButton";
 import Breadcrumbs from "./Breadcrumbs";
 import DesignConcepts from "./DesignConcepts";
+import PhotoGallery, { GalleryPhoto } from "./PhotoGallery";
 import SpaviaCaresSection from "./SpaviaCaresSection";
+
+const GALLERY: GalleryPhoto[] = [
+  { src: "/media/spavia-massage-candlelit.webp", alt: "Candlelit massage at Spavia", caption: "Massage therapy", span: "wide" },
+  { src: "/media/spavia-facial.webp", alt: "Facial treatment at Spavia", caption: "Facials & skin care", span: "tall" },
+  { src: "/media/spavia-reception.webp", alt: "Spavia reception desk", caption: "Welcome" },
+  { src: "/media/spavia-hot-stones.webp", alt: "Hot stone therapy", caption: "Hot stone therapy" },
+  { src: "/media/spavia-wordmark.webp", alt: "Spavia signage on stone wall", caption: "Designed for its community", span: "wide" },
+  { src: "/media/spavia-treatment-room.webp", alt: "Spavia treatment suite", caption: "Treatment suite", span: "tall" },
+  { src: "/media/spavia-storefront-dusk.webp", alt: "Spavia storefront at dusk", caption: "Your neighborhood spa" },
+  { src: "/media/spavia-robe-fireplace.webp", alt: "Guest relaxing by the fireplace", caption: "The experience" },
+  { src: "/media/spavia-lounge.webp", alt: "Spavia retreat lounge", caption: "Retreat lounge" },
+  { src: "/media/spavia-facial-stones.webp", alt: "Facial with warm stones", caption: "Restorative facials" },
+];
 
 export default function WhatsNewContent() {
   return (
@@ -257,6 +271,26 @@ export default function WhatsNewContent() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* GALLERY */}
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-10">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+                Step inside
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Real spaces, real treatments
+              </h2>
+              <p className="text-gray-700 leading-relaxed">
+                A look inside Spavia — the design, the services, and the
+                resort-inspired feeling guests come back for. Tap any photo to
+                view it full screen.
+              </p>
+            </div>
+            <PhotoGallery photos={GALLERY} />
           </div>
         </section>
 
