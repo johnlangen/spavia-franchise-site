@@ -84,13 +84,10 @@ export default function PhotoStrip() {
         .strip-dup {
           display: contents;
         }
-        /* Desktop (hover-capable): auto-drift, pause on hover */
+        /* Desktop (hover-capable): continuous auto-drift, never pauses */
         @media (hover: hover) and (prefers-reduced-motion: no-preference) {
           .strip-track {
             animation: strip-drift 75s linear infinite;
-          }
-          .strip-viewport:hover .strip-track {
-            animation-play-state: paused;
           }
         }
         /* Touch devices + reduced motion: natural swipeable row, no
