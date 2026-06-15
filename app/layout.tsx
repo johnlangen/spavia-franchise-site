@@ -83,6 +83,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
+        {/* If JS is disabled, scroll-reveal elements never get .reveal-in —
+            show them so content is never invisible. */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
       </head>
 
       {/* ✅ GOOGLE ADS BASE TAG */}

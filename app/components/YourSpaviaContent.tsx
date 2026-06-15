@@ -3,6 +3,7 @@
 import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import { motion, AnimatePresence } from "framer-motion";
+import Reveal from "./Reveal";
 import Image from "next/image";
 import {
   DollarSign,
@@ -126,33 +127,22 @@ export default function YourSpaviaContent() {
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
         <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-6"
-          >
-            Your Spavia
-          </motion.h1>
+          <Reveal>
+            <h1 className="text-5xl font-bold mb-6">Your Spavia</h1>
+          </Reveal>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="max-w-3xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed"
-          >
-            Financial Success Through Wellness
-          </motion.h2>
+          <Reveal delay={300}>
+            <h2 className="max-w-3xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed">
+              Financial Success Through Wellness
+            </h2>
+          </Reveal>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.8 }}
-            className="max-w-3xl mx-auto text-lg leading-relaxed mt-4"
-          >
-            At Spavia, your investment goes beyond profitability — it’s about
-            bringing an oasis of relaxation and rejuvenation to your community.
-          </motion.p>
+          <Reveal delay={450}>
+            <p className="max-w-3xl mx-auto text-lg leading-relaxed mt-4">
+              At Spavia, your investment goes beyond profitability — it’s about
+              bringing an oasis of relaxation and rejuvenation to your community.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -167,19 +157,15 @@ export default function YourSpaviaContent() {
           {financials.map((item, i) => {
             const Icon = item.icon;
             return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="p-8 rounded-xl shadow-lg border border-gray-200 bg-gradient-to-b from-white to-gray-50 hover:shadow-xl hover:-translate-y-1 transition transform"
-              >
-                <Icon className="w-12 h-12 text-[#C2A878] mx-auto mb-4" />
-                <p className="text-3xl font-bold text-[#C2A878] mb-2">
-                  {item.value}
-                </p>
-                <p className="text-gray-700">{item.label}</p>
-              </motion.div>
+              <Reveal key={i} delay={i * 100}>
+                <div className="p-8 rounded-xl shadow-lg border border-gray-200 bg-gradient-to-b from-white to-gray-50 hover:shadow-xl hover:-translate-y-1 transition transform">
+                  <Icon className="w-12 h-12 text-[#C2A878] mx-auto mb-4" />
+                  <p className="text-3xl font-bold text-[#C2A878] mb-2">
+                    {item.value}
+                  </p>
+                  <p className="text-gray-700">{item.label}</p>
+                </div>
+              </Reveal>
             );
           })}
         </div>
@@ -272,13 +258,7 @@ export default function YourSpaviaContent() {
 
           {/* Desktop — 3-col bento mosaic, hero top-left takes a 2x2 block */}
           <div className="hidden md:grid md:grid-cols-3 md:auto-rows-[260px] gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl shadow-md"
-            >
+            <Reveal className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl shadow-md">
               <Image
                 src={galleryImages[0].src}
                 alt={galleryImages[0].alt}
@@ -286,14 +266,11 @@ export default function YourSpaviaContent() {
                 sizes="(max-width: 768px) 100vw, 66vw"
                 className="object-cover"
               />
-            </motion.div>
+            </Reveal>
             {galleryImages.slice(1).map((img, i) => (
-              <motion.div
+              <Reveal
                 key={img.src}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i + 1) * 0.06 }}
+                delay={(i + 1) * 60}
                 className="relative overflow-hidden rounded-xl shadow-md"
               >
                 <Image
@@ -303,7 +280,7 @@ export default function YourSpaviaContent() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-              </motion.div>
+              </Reveal>
             ))}
           </div>
 
