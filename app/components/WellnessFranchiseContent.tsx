@@ -7,7 +7,6 @@ import ProofSection from "./ProofSection";
 import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
 import ScheduleCallBanner from "./ScheduleCallBanner";
 import GoldBottomBanner from "./GoldBottomBanner";
-import FloatingButton from "./FloatingButton";
 import Link from "next/link";
 
 const differentiators = [
@@ -177,7 +176,6 @@ export default function WellnessFranchiseContent() {
 
       <GoldBottomBanner />
       <Footer />
-      <FloatingButton />
     </>
   );
 }

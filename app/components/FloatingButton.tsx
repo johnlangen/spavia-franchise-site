@@ -2,11 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const MotionLink = motion(Link);
 
+// Routes where a "Get Started" CTA is redundant or wrong (the form page
+// itself, and the post-submit thank-you page).
+const HIDDEN_ROUTES = ["/get-started", "/thank-you"];
+
 export default function FloatingButton() {
+  const pathname = usePathname();
+  const hidden = HIDDEN_ROUTES.includes(pathname);
 
   /** -----------------------------
    * DESKTOP VISIBILITY (hero-based)
@@ -29,7 +36,7 @@ export default function FloatingButton() {
 
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   /** -----------------------------
    * MOBILE VISIBILITY (scroll-based)
@@ -38,19 +45,25 @@ export default function FloatingButton() {
 
   useEffect(() => {
     const hero = document.getElementById("hero");
-    if (!hero) return;
-  
+    // Pages without a hero (every inner page) have nothing to scroll past —
+    // show the mobile CTA immediately instead of leaving it hidden.
+    if (!hero) {
+      setShowMobile(true);
+      return;
+    }
+
     const onScroll = () => {
       const heroBottom = hero.getBoundingClientRect().bottom;
       setShowMobile(heroBottom < 0);
     };
-  
+
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll(); // run once after mount
-  
+
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  
+  }, [pathname]);
+
+  if (hidden) return null;
 
   return (
     <>

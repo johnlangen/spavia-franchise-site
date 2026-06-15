@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import FloatingButton from "./FloatingButton";
 import Breadcrumbs from "./Breadcrumbs";
 import DesignConcepts from "./DesignConcepts";
 import PhotoGallery, { GalleryPhoto } from "./PhotoGallery";
@@ -318,7 +317,6 @@ export default function WhatsNewContent() {
 
         <Footer />
       </main>
-      <FloatingButton />
     </>
   );
 }

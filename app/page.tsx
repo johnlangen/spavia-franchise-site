@@ -10,7 +10,6 @@ import GoldBottomBanner from "./components/GoldBottomBanner";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Link from "next/link";
-import FloatingButton from "./components/FloatingButton";
 import Section from "./components/Section";
 import TalkToTylerSection from "./components/TalkToTylerSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
@@ -313,7 +312,6 @@ export default function Home() {
       </main>
 
       {/* Floating Button */}
-      <FloatingButton />
     </>
   );
 }

@@ -7,7 +7,6 @@ import ProofSection from "./ProofSection";
 import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
 import ScheduleCallBanner from "./ScheduleCallBanner";
 import GoldBottomBanner from "./GoldBottomBanner";
-import FloatingButton from "./FloatingButton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Building2, Shield, TrendingUp, Layers, Briefcase, Users } from "lucide-react";
@@ -383,7 +382,6 @@ export default function MultiUnitContent() {
 
       <GoldBottomBanner />
       <Footer />
-      <FloatingButton />
     </>
   );
 }
