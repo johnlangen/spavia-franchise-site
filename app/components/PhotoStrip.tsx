@@ -17,7 +17,7 @@ const FRAMES = [
   { src: "/media/sway-sauna.webp", chip: "Sway · Sauna" },
   { src: "/media/aescape-robotic-table.webp", chip: "Sway · Robotic massage" },
   { src: "/media/sway-remedy-room.webp", chip: "Sway · Remedy room" },
-  { src: "/media/spavia-treatment-room.webp", chip: "Spavia · Treatment suite" },
+  { src: "/media/spavia-wordmark.webp", chip: "Spavia · Designed for you" },
   { src: "/media/spavia-lounge.webp", chip: "Spavia · Retreat lounge" },
 ];
 
