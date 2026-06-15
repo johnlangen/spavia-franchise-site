@@ -95,8 +95,8 @@ export default function TalkToTylerSection() {
                   <span className="text-[#C2A878] text-xs font-bold">2</span>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-semibold text-gray-900">Specific market data.</span>{" "}
-                  Tyler reviews availability and pricing for your target territory before the call.
+                  <span className="font-semibold text-gray-900">Get to know the brand.</span>{" "}
+                  Tyler walks you through how Spavia works and what ownership actually looks like.
                 </p>
               </li>
               <li className="flex items-start gap-3">
