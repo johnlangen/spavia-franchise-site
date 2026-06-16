@@ -14,6 +14,7 @@ import Section from "./components/Section";
 import TalkToTylerSection from "./components/TalkToTylerSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
 import OurStorySection from "./components/OurStorySection";
+import FounderLedSection from "./components/FounderLedSection";
 import PhotoStrip from "./components/PhotoStrip";
 import ExperienceBand from "./components/ExperienceBand";
 
@@ -199,6 +200,9 @@ export default function Home() {
 
         {/* 5. OUR STORY — editorial founder narrative (no repeated stats) */}
         <OurStorySection />
+
+        {/* 5.2. FOUNDER-LED — independent ownership vs PE roll-ups */}
+        <FounderLedSection />
 
         {/* 5.5. EXPERIENCE BAND — cinematic full-bleed brand photography */}
         <ExperienceBand />
