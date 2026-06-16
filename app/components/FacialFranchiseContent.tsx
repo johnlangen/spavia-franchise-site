@@ -65,12 +65,41 @@ const faqJsonLd = {
   })),
 };
 
+const franchiseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Facial Spa Franchise Opportunity",
+  name: "Spavia Facial Spa Franchise",
+  provider: {
+    "@type": "Organization",
+    "@id": "https://spaviafranchise.com/#organization",
+    name: "Spavia Franchise",
+  },
+  areaServed: "US",
+  description:
+    "Own a Spavia facial and skincare spa franchise — a full-service, membership-based day spa franchise pairing facials and advanced skincare with massage, body treatments, and retail.",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "USD",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      priceCurrency: "USD",
+      minPrice: 479450,
+      maxPrice: 885450,
+    },
+  },
+};
+
 export default function FacialFranchiseContent() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(franchiseJsonLd) }}
       />
       <NavBar />
 

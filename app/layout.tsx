@@ -39,9 +39,20 @@ const globalJsonLd = {
       "@type": "Organization",
       "@id": "https://spaviafranchise.com/#organization",
       name: "Spavia Day Spa",
+      alternateName: ["Spavia Franchise", "Spavia"],
+      legalName: "Spavia International LLC",
       url: "https://spaviafranchise.com",
+      foundingDate: "2005",
+      areaServed: "US",
       description:
-        "Spavia is the premier spa franchise brand that delivers a resort-like massage and spa experience to your neighborhood in an ever-growing spa industry.",
+        "Spavia is a luxury day spa franchise and franchisor offering franchise ownership opportunities across the U.S. Spavia's full-service membership model delivers a resort-like massage, facial, and body-treatment experience, with 60+ locations and median unit gross sales of $1.1M+.",
+      knowsAbout: [
+        "Day spa franchise",
+        "Massage franchise",
+        "Facial spa franchise",
+        "Wellness franchise",
+        "Spa franchise ownership",
+      ],
       logo: {
         "@type": "ImageObject",
         url: "https://spaviafranchise.com/spavia-logo.png",
