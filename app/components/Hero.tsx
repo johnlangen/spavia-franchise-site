@@ -196,8 +196,7 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="font-semibold leading-tight mb-3 text-[26px] sm:text-3xl md:text-[52px] lg:text-[60px]"
             >
-              <span className="block">Own a Day Spa Franchise</span>
-              <span className="block">in the Wellness Industry</span>
+              Own a Day Spa Franchise
             </motion.h1>
 
             {/* Subhead */}
