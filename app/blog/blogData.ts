@@ -1,4 +1,4 @@
-// Shared blog post metadata — used by BlogGrid, tag pages, related articles, and blog index JSON-LD
+// Shared blog post metadata, used by BlogGrid, tag pages, related articles, and blog index JSON-LD
 //
 // Post pruning history:
 // - 2026-04-23: Removed 15 posts with <10s avg engagement and 0% GSC CTR
@@ -21,8 +21,8 @@ export const blogPosts: BlogPost[] = [
     title:
       "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
     excerpt:
-      "Most major spa and massage franchises — Hand & Stone, Massage Envy, Woodhouse, Elements, VIO — are now owned by private equity. See who owns what, and why founder-led, independently held ownership matters when you buy a franchise.",
-    image: "/blog/blog23.jpg",
+      "Most major spa and massage franchises, Hand & Stone, Massage Envy, Woodhouse, Elements, VIO, are now owned by private equity. See who owns what, and why founder-led, independently held ownership matters when you buy a franchise.",
+    image: "/blog/spavia-ownership-hero.jpg",
     href: "/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led",
     date: "2026-06-16",
     tags: ["franchise-guide", "comparisons"],

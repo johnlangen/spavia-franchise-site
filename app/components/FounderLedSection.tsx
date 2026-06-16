@@ -7,7 +7,7 @@ const points = [
   {
     title: "Aligned interests",
     body:
-      "Our success is tied to the long-term health of the brand and its owners — not to a fund hitting a return by a target date.",
+      "Our success is tied to the long-term health of the brand and its owners, not to a fund hitting a return by a target date.",
   },
   {
     title: "No exit clock",
@@ -17,7 +17,7 @@ const points = [
   {
     title: "Founders you can reach",
     body:
-      "The family whose name is on the brand is still here — still building it, still answering the phone.",
+      "The family whose name is on the brand is still here, still building it, still answering the phone.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function FounderLedSection() {
             Many of the biggest names in spa and massage franchising are now
             owned by private equity firms. Spavia isn&apos;t. Two decades in,
             we&apos;re still independently held and led by the family that
-            started it in 2005 &mdash; so the decisions get made for the
+            started it in 2005, so the decisions get made for the
             long-term health of the brand and its owners.
           </p>
         </motion.div>

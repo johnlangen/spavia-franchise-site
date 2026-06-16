@@ -9,7 +9,7 @@ import { getRelatedPosts } from "../../../../blogData";
 export const metadata: Metadata = {
   title: "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
   description:
-    "Most major spa and massage franchises are now owned by private equity. See who owns Hand & Stone, Massage Envy, Woodhouse, Elements & VIO — and why founder-led ownership matters when you buy a franchise.",
+    "Most major spa and massage franchises are now owned by private equity. See who owns Hand & Stone, Massage Envy, Woodhouse, Elements & VIO, and why founder-led ownership matters when you buy a franchise.",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
     description:
-      "Most major spa and massage franchises are now owned by private equity firms. See who owns what — and why founder-led ownership matters for franchisees.",
+      "Most major spa and massage franchises are now owned by private equity firms. See who owns what, and why founder-led ownership matters for franchisees.",
     url: "https://spaviafranchise.com/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led",
     type: "article",
     images: [
       {
-        url: "https://spaviafranchise.com/blog/blog23.jpg",
+        url: "https://spaviafranchise.com/blog/spavia-ownership-hero.jpg",
         width: 1200,
         height: 675,
-        alt: "Who owns the major spa franchises — private equity vs. founder-led",
+        alt: "Who owns the major spa franchises, private equity vs. founder-led",
       },
     ],
   },
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
     description:
-      "Most major spa and massage franchises are now owned by private equity firms. See who owns what — and why founder-led ownership matters.",
-    images: ["https://spaviafranchise.com/blog/blog23.jpg"],
+      "Most major spa and massage franchises are now owned by private equity firms. See who owns what, and why founder-led ownership matters.",
+    images: ["https://spaviafranchise.com/blog/spavia-ownership-hero.jpg"],
   },
 };
 
@@ -46,8 +46,8 @@ const jsonLd = {
       headline:
         "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
       description:
-        "A look at who owns the major U.S. spa and massage franchises — and what private-equity vs. founder-led ownership means for a prospective franchisee.",
-      image: "https://spaviafranchise.com/blog/blog23.jpg",
+        "A look at who owns the major U.S. spa and massage franchises, and what private-equity vs. founder-led ownership means for a prospective franchisee.",
+      image: "https://spaviafranchise.com/blog/spavia-ownership-hero.jpg",
       datePublished: "2026-06-16",
       dateModified: "2026-06-16",
       author: {
@@ -95,7 +95,7 @@ const jsonLd = {
           name: "Does it matter who owns a franchise you buy?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. A franchise agreement typically runs 10 years, so the franchisor's owner shapes a decade of decisions — royalty and fee changes, support investment, brand strategy, and growth pace. Private-equity owners generally operate on a defined hold period and aim to resell the brand, which means a franchisee may have two or three different corporate owners over the life of a single agreement.",
+            text: "Yes. A franchise agreement typically runs 10 years, so the franchisor's owner shapes a decade of decisions, royalty and fee changes, support investment, brand strategy, and growth pace. Private-equity owners generally operate on a defined hold period and aim to resell the brand, which means a franchisee may have two or three different corporate owners over the life of a single agreement.",
           },
         },
         {
@@ -103,7 +103,7 @@ const jsonLd = {
           name: "What is a private-equity hold period?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A hold period is how long a private-equity fund typically owns a company before selling it — usually three to seven years. The fund's goal is to grow the business and sell it at a profit within that window, after which the brand passes to a new owner.",
+            text: "A hold period is how long a private-equity fund typically owns a company before selling it, usually three to seven years. The fund's goal is to grow the business and sell it at a profit within that window, after which the brand passes to a new owner.",
           },
         },
       ],
@@ -146,18 +146,30 @@ export default function Page() {
           <p className="text-sm text-gray-500 mb-6">Published June 16, 2026</p>
 
           <Image
-            src="/blog/blog23.jpg"
-            alt="Who owns the major spa franchises — private equity vs. founder-led ownership"
+            src="/blog/spavia-ownership-hero.jpg"
+            alt="A Spavia day spa storefront at dusk"
             width={1200}
             height={675}
-            className="w-full rounded mb-8"
+            className="w-full rounded mb-8 aspect-[16/9] object-cover"
           />
+
+          {/* ── Founder pull-quote ── */}
+          <figure className="border-l-4 border-[#C2A878] bg-[#faf7f2] rounded-r-xl px-7 py-6 mb-10">
+            <blockquote className="text-xl md:text-2xl leading-relaxed text-gray-800 font-[family-name:var(--font-recoleta)] italic">
+              &ldquo;When you own a Spavia, you&apos;re partnering with the
+              family that built it, not a fund that&apos;s passing
+              through.&rdquo;
+            </blockquote>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              Allison Langenderfer, Co-Founder, Spavia
+            </figcaption>
+          </figure>
 
           {/* ── Intro ── */}
           <p className="text-lg mb-6 leading-relaxed">
             When you buy a franchise, you aren&apos;t just buying a brand and a
-            playbook. You&apos;re entering a relationship &mdash; usually a
-            10-year agreement &mdash; with whoever <em>owns</em> that brand. And
+            playbook. You&apos;re entering a relationship, usually a
+            10-year agreement, with whoever <em>owns</em> that brand. And
             in the spa and massage category, the answer to &ldquo;who owns
             it?&rdquo; has quietly changed.
           </p>
@@ -165,8 +177,8 @@ export default function Page() {
           <p className="mb-6 leading-relaxed">
             Over the past decade, private-equity firms have rolled up most of
             the biggest names in spa and massage franchising. That isn&apos;t
-            inherently good or bad &mdash; private equity brings real capital and
-            expertise &mdash; but it changes the incentives behind the brand
+            inherently good or bad, private equity brings real capital and
+            expertise, but it changes the incentives behind the brand
             you&apos;d be tying your investment to. Here&apos;s who owns what,
             what private-equity ownership actually means for a franchisee, and
             where Spavia stands.
@@ -179,7 +191,7 @@ export default function Page() {
 
           <p className="mb-6 leading-relaxed">
             If you&apos;re comparing spa franchise opportunities in 2026, most of
-            the brands on your list are owned by private-equity funds &mdash;
+            the brands on your list are owned by private-equity funds,
             often firms that have already bought and sold the brand at least
             once. Here&apos;s the current ownership of the major players:
           </p>
@@ -231,7 +243,7 @@ export default function Page() {
                   <td className="px-5 py-3 font-semibold">Spavia</td>
                   <td className="px-5 py-3">Day spa</td>
                   <td className="px-5 py-3 font-medium text-[#9c814f]">
-                    Founding family &mdash; independently held
+                    Founding family, independently held
                   </td>
                   <td className="px-5 py-3">2005</td>
                 </tr>
@@ -241,7 +253,7 @@ export default function Page() {
 
           <p className="mb-10 leading-relaxed">
             A few of these are part of larger private-equity platforms. WellBiz
-            Brands &mdash; which owns Elements Massage &mdash; also owns Drybar,
+            Brands, which owns Elements Massage, also owns Drybar,
             Amazing Lash Studio, and Radiant Waxing under the same fund. The
             point isn&apos;t that any of these are bad businesses. It&apos;s that
             the brand you&apos;d sign a decade-long agreement with is, in most
@@ -294,7 +306,7 @@ export default function Page() {
               <ul className="space-y-2 text-sm leading-relaxed text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-gray-400 mt-1">&bull;</span>
-                  A defined hold period &mdash; typically 3&ndash;7 years &mdash;
+                  A defined hold period, typically 3&ndash;7 years,
                   before the brand is sold again
                 </li>
                 <li className="flex items-start gap-2">
@@ -317,7 +329,7 @@ export default function Page() {
               A franchise agreement usually runs 10 years. A private-equity hold
               period usually runs 3&ndash;7. That math means you may have{" "}
               <strong>two or three different corporate owners</strong> over the
-              life of a single agreement &mdash; each with its own priorities,
+              life of a single agreement, each with its own priorities,
               leadership, and plans for your brand.
             </p>
           </div>
@@ -329,7 +341,7 @@ export default function Page() {
             As of 2026, Spavia is independently held and led by the Langenderfer
             family that founded the brand in Denver in 2005. There&apos;s no
             fund behind it and no hold clock running. The people whose name is on
-            the brand are the same people making the decisions &mdash; and
+            the brand are the same people making the decisions, and
             they&apos;re still here.
           </p>
 
@@ -337,7 +349,7 @@ export default function Page() {
             {[
               {
                 label: "Aligned interests",
-                desc: "Decisions made for the long-term health of the brand and its owners — not a fund's return by a target date.",
+                desc: "Decisions made for the long-term health of the brand and its owners, not a fund's return by a target date.",
               },
               {
                 label: "No exit clock",
@@ -345,7 +357,7 @@ export default function Page() {
               },
               {
                 label: "Founders you can reach",
-                desc: "The family that built the brand is still building it — and still answering the phone.",
+                desc: "The family that built the brand is still building it, and still answering the phone.",
               },
             ].map((item) => (
               <div
@@ -374,9 +386,9 @@ export default function Page() {
 
           <ul className="space-y-3 mb-10">
             {[
-              "Who owns the franchisor today — a founder, a family, or a private-equity fund?",
+              "Who owns the franchisor today, a founder, a family, or a private-equity fund?",
               "How many times has the brand been sold, and when?",
-              "If it's PE-owned, where is the fund in its hold period — and what happens to franchisees when it sells again?",
+              "If it's PE-owned, where is the fund in its hold period, and what happens to franchisees when it sells again?",
               "Will the people I'm meeting today still be here in five years?",
               "Have royalties or fees changed under the current owner?",
             ].map((q) => (
@@ -396,7 +408,7 @@ export default function Page() {
             </h2>
             <p className="text-gray-300 mb-6 max-w-lg mx-auto leading-relaxed">
               At Spavia, the franchise conversation starts with the family and
-              team that built the brand &mdash; not a fund. If founder-led,
+              team that built the brand, not a fund. If founder-led,
               independently held ownership matters to you, let&apos;s talk.
             </p>
             <a
@@ -457,7 +469,7 @@ export default function Page() {
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 Yes. A franchise agreement typically runs 10 years, so the
-                franchisor&apos;s owner shapes a decade of decisions &mdash;
+                franchisor&apos;s owner shapes a decade of decisions,
                 royalty and fee changes, support investment, brand strategy, and
                 growth pace. Private-equity owners generally operate on a defined
                 hold period and aim to resell the brand, so a franchisee may have
@@ -475,7 +487,7 @@ export default function Page() {
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 A hold period is how long a private-equity fund typically owns a
-                company before selling it &mdash; usually three to seven years.
+                company before selling it, usually three to seven years.
                 The fund aims to grow the business and sell at a profit within
                 that window, after which the brand passes to a new owner.
               </div>
@@ -489,24 +501,24 @@ export default function Page() {
             </h3>
             <ul className="text-xs text-gray-500 space-y-1 leading-relaxed">
               <li>
-                BusinessWire / Kirkland &amp; Ellis &mdash; Levine Leichtman
+                BusinessWire / Kirkland &amp; Ellis, Levine Leichtman
                 Capital Partners sells Hand &amp; Stone to Harvest Partners
                 (2022)
               </li>
               <li>
-                Roark Capital &mdash; Massage Envy acquisition (2012)
+                Roark Capital, Massage Envy acquisition (2012)
               </li>
               <li>
-                TSG Consumer Partners &mdash; acquisition of Radiance Holdings /
+                TSG Consumer Partners, acquisition of Radiance Holdings /
                 Woodhouse Spa (2022)
               </li>
               <li>
-                FranchiseWire / GlobeNewswire &mdash; Transom Capital acquires
+                FranchiseWire / GlobeNewswire, Transom Capital acquires
                 WellBiz Brands (Elements Massage, Drybar) from KSL Capital
                 Partners (2026)
               </li>
               <li>
-                Freeman Spogli / PR Newswire &mdash; majority investment in VIO
+                Freeman Spogli / PR Newswire, majority investment in VIO
                 Med Spa (2024)
               </li>
             </ul>
