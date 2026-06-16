@@ -4,7 +4,6 @@ import FAQ from "./components/FAQ";
 import AwardsSection from "./components/AwardsSection";
 import GuestRatingsSection from "./components/GuestRatingsSection";
 import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSection";
-import GuestTestimonialsSection from "./components/GuestTestimonialsSection";
 import SEOContentSection from "./components/SEOContentSection";
 import GoldBottomBanner from "./components/GoldBottomBanner";
 import NavBar from "./components/NavBar";
@@ -213,10 +212,7 @@ export default function Home() {
         {/* 7. GUEST RATINGS — 4.8 stars, 30K+ reviews */}
         <GuestRatingsSection />
 
-        {/* 8. GUEST TESTIMONIALS — review cards on white */}
-        <GuestTestimonialsSection />
-
-        {/* 9. SEO CONTENT — keyword-rich content on black */}
+        {/* 8. THE OPPORTUNITY — stats + cards (light) */}
         <SEOContentSection />
 
         {/* 10. FAQ — expanded with keyword questions */}

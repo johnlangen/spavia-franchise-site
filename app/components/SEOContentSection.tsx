@@ -3,58 +3,90 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const stats = [
+  { value: "$479K–$885K", label: "To open (2026 FDD, Item 7)" },
+  { value: "$1.1M", label: "Median unit revenue, 44 locations" },
+  { value: "63", label: "Locations open nationwide" },
+  { value: "~1 in 2", label: "Owners over $1M gross sales" },
+];
+
 const blocks = [
   {
-    heading: "A Proven Day Spa Franchise Model",
+    heading: "A proven model",
     content:
-      "The U.S. spa industry generates over $19 billion annually, and consumer demand for wellness services continues to accelerate. Spavia day spa franchises are built on a membership-driven model that delivers predictable recurring revenue, strong guest retention, and multiple income streams: massage therapy, facials, body treatments, waxing, and retail products. With 63 franchised locations open as of December 31, 2025 (2026 FDD, Item 20), Spavia provides franchise owners with a turnkey system for entering one of the fastest-growing segments in health and wellness.",
+      "A membership-driven day spa with recurring revenue across massage, facials, body treatments, waxing, and retail.",
   },
   {
-    heading: "Spa Franchise Investment and Returns",
+    heading: "Investment & returns",
     content:
-      "The total estimated initial investment to open a Spavia day spa franchise ranges from $479,450 to $885,450 (2026 FDD, Item 7), including the franchise fee, training fee, build-out, equipment, signage, technology, and three months of additional funds. Per the 2026 FDD, Item 19, Part III, the median annual revenue (cash receipts) for the 44 reporting locations was $1,110,481 over the 2025 measurement period. Per Item 19, Part II, 29 of 59 disclosed locations exceeded $1M in annual gross sales, roughly 1 in 2 owners. Financing options include SBA-eligible loans through third-party lenders. Results vary by location.",
+      "Open for $479K–$885K, with SBA-eligible financing through third-party lenders. Results vary by location.",
   },
   {
-    heading: "Comprehensive Franchise Training & Support",
+    heading: "Training & support",
     content:
-      "Spavia's franchise support system covers every phase of ownership: site selection, lease negotiation, buildout management, pre-opening marketing, and ongoing operational coaching. New franchise owners complete an intensive training program that covers spa operations, team hiring and management, guest experience standards, and marketing strategy. Post-opening, Spavia provides dedicated field support, national marketing programs, and a network of experienced franchise owners to learn from.",
+      "Site selection, lease and buildout, pre-opening marketing, intensive onboarding, and ongoing field support.",
   },
   {
-    heading: "Available Markets Nationwide",
+    heading: "Markets nationwide",
     content:
-      "Spavia is actively growing in markets across the United States, with territories available in major metros and high-growth suburban communities. Whether you're exploring franchise opportunities in your local market or looking to develop in a new region, Spavia's real estate team helps identify optimal locations based on demographics, traffic patterns, and competitive analysis. Multi-unit development agreements are also available for qualified candidates.",
+      "Territories in major metros and growth suburbs, with multi-unit development for qualified owners.",
   },
 ];
 
 export default function SEOContentSection() {
   return (
-    <section className="bg-black py-20 px-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
+    <section className="relative bg-[#f5f1ea] py-20 md:py-24 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C2A878]/40 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-bold text-white text-center mb-14"
+          className="text-center mb-12"
         >
-          Why Own a Spavia Day Spa Franchise
-        </motion.h2>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[#C2A878] font-semibold mb-4">
+            The Opportunity
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)]">
+            Why Own a Spavia Day Spa Franchise
+          </h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+        {/* Stat band */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-[#C2A878]/30 py-8"
+        >
+          {stats.map((s) => (
+            <div key={s.value} className="text-center">
+              <p className="text-2xl md:text-3xl font-bold text-[#9c814f] font-[family-name:var(--font-recoleta)]">
+                {s.value}
+              </p>
+              <p className="text-xs text-gray-600 mt-1 leading-snug">{s.label}</p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 gap-5">
           {blocks.map((block, idx) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              key={block.heading}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               viewport={{ once: true }}
+              className="rounded-2xl bg-white border border-gray-200 p-6"
             >
-              <h3 className="text-[#C2A878] font-semibold text-lg mb-3">
+              <h3 className="text-[#9c814f] font-semibold text-base mb-2 font-[family-name:var(--font-recoleta)]">
                 {block.heading}
               </h3>
-              <p className="text-white/75 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 {block.content}
               </p>
             </motion.div>
@@ -71,7 +103,7 @@ export default function SEOContentSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C2A878]/40 to-transparent" />
     </section>
   );
 }

@@ -34,7 +34,7 @@ export default function ExperienceBand() {
               People don&apos;t forget how a Spavia makes them feel
             </h2>
             <p className="text-white/80 text-base md:text-lg mb-6">
-              That feeling is what keeps members coming back — and what makes a
+              That feeling is what keeps members coming back, and what makes a
               Spavia franchise a business worth owning.
             </p>
             <Link

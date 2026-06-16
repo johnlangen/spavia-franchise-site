@@ -16,7 +16,7 @@ export default function GuestRatingsSection() {
           viewport={{ once: true }}
           className="text-2xl md:text-3xl font-bold text-white mb-8"
         >
-          Our Day Spa Guests Love Us
+          Proven Demand You&apos;d Own
         </motion.h2>
 
         <motion.div
@@ -45,10 +45,9 @@ export default function GuestRatingsSection() {
         </motion.div>
 
         <p className="text-white/60 text-sm md:text-base mt-8 max-w-2xl mx-auto leading-relaxed">
-          Spavia day spa franchise locations consistently earn top guest ratings
-          for massage therapy, facials, and wellness services. Our membership
-          model and focus on the guest experience drive industry-leading retention
-          and satisfaction across every market we serve.
+          That isn&apos;t just guest satisfaction. It&apos;s the repeat,
+          membership-driven demand that makes a Spavia a business worth owning,
+          market after market.
         </p>
       </div>
 
