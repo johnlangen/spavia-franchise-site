@@ -111,7 +111,7 @@ export default function YourSpaviaContent() {
         <Breadcrumbs items={[{ label: "Your Spavia" }]} />
 
       {/* Hero with Video */}
-      <section className="relative overflow-hidden pt-40 pb-20 text-center text-white px-6">
+      <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-6">
         {/* Background video */}
         <video
           autoPlay

@@ -112,7 +112,7 @@ export default function OurFranchiseesContent() {
         <Breadcrumbs items={[{ label: "Our Franchisees" }]} />
 
       {/* Hero with Video */}
-      <section className="relative overflow-hidden pt-40 pb-24 text-center text-white px-6 sm:px-8">
+      <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-6 sm:px-8">
         {/* Video background */}
         <video
           autoPlay

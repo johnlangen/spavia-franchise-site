@@ -133,7 +133,7 @@ export default function TrainingAndSupportContent() {
         <Breadcrumbs items={[{ label: "Training & Support" }]} />
 
       {/* Hero with video background */}
-      <section className="snap-start relative overflow-hidden pt-40 pb-28 text-center text-white px-4 sm:px-6">
+      <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
         <video
           autoPlay
           loop

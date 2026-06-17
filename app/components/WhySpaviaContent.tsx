@@ -65,7 +65,7 @@ export default function WhySpaviaContent() {
         <Breadcrumbs items={[{ label: "Why Spavia" }]} />
 
       {/* Hero with video + black tint */}
-      <section className="snap-start relative overflow-hidden pt-40 pb-24 text-center text-white px-4 sm:px-6">
+      <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
         <video
           autoPlay
           loop

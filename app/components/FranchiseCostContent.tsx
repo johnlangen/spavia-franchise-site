@@ -120,7 +120,7 @@ export default function FranchiseCostContent() {
         <Breadcrumbs items={[{ label: "Franchise Cost" }]} />
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative overflow-hidden pt-28 pb-20 text-center text-white px-4 sm:px-6">
+        <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
           {/* Background photo */}
           <div className="absolute inset-0">
             <Image
