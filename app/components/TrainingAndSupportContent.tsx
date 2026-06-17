@@ -130,7 +130,7 @@ export default function TrainingAndSupportContent() {
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
       <NavBar />
-        <Breadcrumbs items={[{ label: "Training & Support" }]} />
+        <Breadcrumbs sticky items={[{ label: "Training & Support" }]} />
 
       {/* Hero with video background */}
       <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">

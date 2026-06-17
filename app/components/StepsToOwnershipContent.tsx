@@ -78,7 +78,7 @@ export default function StepsToOwnershipContent() {
     <ThemeProvider>
       <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
         <NavBar />
-        <Breadcrumbs items={[{ label: "Steps to Ownership" }]} />
+        <Breadcrumbs sticky items={[{ label: "Steps to Ownership" }]} />
 
         {/* Hero */}
         <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] min-h-[60svh] flex items-center justify-center py-20 text-center text-white relative overflow-hidden">

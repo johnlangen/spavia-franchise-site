@@ -62,7 +62,7 @@ export default function WhySpaviaContent() {
   return (
     <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
       <NavBar />
-        <Breadcrumbs items={[{ label: "Why Spavia" }]} />
+        <Breadcrumbs sticky items={[{ label: "Why Spavia" }]} />
 
       {/* Hero with video + black tint */}
       <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
