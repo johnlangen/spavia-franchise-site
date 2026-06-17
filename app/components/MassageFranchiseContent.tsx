@@ -3,6 +3,7 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import LandingHero from "./LandingHero";
+import Breadcrumbs from "./Breadcrumbs";
 import ProofSection from "./ProofSection";
 import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
 import ScheduleCallBanner from "./ScheduleCallBanner";
@@ -102,6 +103,7 @@ export default function MassageFranchiseContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(franchiseJsonLd) }}
       />
       <NavBar />
+      <Breadcrumbs items={[{ label: "Massage Franchise" }]} />
 
       <LandingHero
         headlineFirst="A Massage Franchise"

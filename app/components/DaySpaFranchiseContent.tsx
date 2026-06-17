@@ -3,6 +3,7 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import LandingHero from "./LandingHero";
+import Breadcrumbs from "./Breadcrumbs";
 import ProofSection from "./ProofSection";
 import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
 import ScheduleCallBanner from "./ScheduleCallBanner";
@@ -101,6 +102,7 @@ export default function DaySpaFranchiseContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <NavBar />
+      <Breadcrumbs items={[{ label: "Day Spa Franchise" }]} />
 
       <LandingHero
         headlineFirst="Own a Day Spa Franchise"
