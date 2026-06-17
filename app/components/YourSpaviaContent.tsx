@@ -139,7 +139,7 @@ export default function YourSpaviaContent() {
 
           <Reveal delay={450}>
             <p className="max-w-3xl mx-auto text-lg leading-relaxed mt-4">
-              At Spavia, your investment goes beyond profitability — it’s about
+              At Spavia, your investment goes beyond profitability. It’s about
               bringing an oasis of relaxation and rejuvenation to your community.
             </p>
           </Reveal>
@@ -153,17 +153,21 @@ export default function YourSpaviaContent() {
             Financial Requirements
           </h2>
         </div>
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-6 items-stretch">
           {financials.map((item, i) => {
             const Icon = item.icon;
             return (
-              <Reveal key={i} delay={i * 100}>
-                <div className="p-8 rounded-xl shadow-lg border border-gray-200 bg-gradient-to-b from-white to-gray-50 hover:shadow-xl hover:-translate-y-1 transition transform">
-                  <Icon className="w-12 h-12 text-[#C2A878] mx-auto mb-4" />
-                  <p className="text-3xl font-bold text-[#C2A878] mb-2">
+              <Reveal key={i} delay={i * 100} className="h-full">
+                <div className="group h-full flex flex-col items-center justify-center text-center px-8 py-12 rounded-2xl border border-[#C2A878]/25 bg-[#faf7f2] shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_34px_rgba(194,168,120,0.20)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#C2A878]/12 ring-1 ring-[#C2A878]/30">
+                    <Icon className="w-6 h-6 text-[#C2A878]" />
+                  </div>
+                  <p className="text-3xl font-bold text-gray-900 mb-3 leading-tight font-[family-name:var(--font-recoleta)]">
                     {item.value}
                   </p>
-                  <p className="text-gray-700">{item.label}</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#9c814f] font-semibold">
+                    {item.label}
+                  </p>
                 </div>
               </Reveal>
             );
@@ -214,7 +218,7 @@ export default function YourSpaviaContent() {
           <h2 className="text-3xl font-bold mb-6">Spa Industry Size</h2>
           <ul className="space-y-3 text-lg">
             <li>
-              Wellness is on the rise — Global wellness market expected to reach{" "}
+              Wellness is on the rise. Global wellness market expected to reach{" "}
               <span className="font-semibold">$8.5 trillion by 2027</span>
             </li>
             <li>22% of wellness growth is attributed to the spa segment</li>
