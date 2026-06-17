@@ -81,7 +81,7 @@ export default function StepsToOwnershipContent() {
         <Breadcrumbs sticky items={[{ label: "Steps to Ownership" }]} />
 
         {/* Hero */}
-        <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] min-h-[60svh] flex items-center justify-center py-20 text-center text-white relative overflow-hidden">
+        <section className="snap-start bg-gradient-to-b from-[#C2A878] to-[#e3d6b7] min-h-[60svh] flex flex-col items-center justify-center py-20 text-center text-white relative overflow-hidden">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
