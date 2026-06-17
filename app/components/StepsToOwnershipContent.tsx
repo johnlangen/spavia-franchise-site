@@ -76,7 +76,7 @@ export default function StepsToOwnershipContent() {
 
   return (
     <ThemeProvider>
-      <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
+      <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
         <NavBar />
         <Breadcrumbs items={[{ label: "Steps to Ownership" }]} />
 

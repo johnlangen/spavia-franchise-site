@@ -60,7 +60,7 @@ export default function WhySpaviaContent() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
-    <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
+    <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
       <NavBar />
         <Breadcrumbs items={[{ label: "Why Spavia" }]} />
 
