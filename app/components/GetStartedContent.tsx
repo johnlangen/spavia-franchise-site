@@ -46,7 +46,7 @@ export default function GetStartedContent() {
             Request Franchise Information
           </h1>
           <p className="text-gray-500 text-sm text-center mb-6">
-            A Spavia representative will contact you within 24–48 hours.
+            A Spavia representative will contact you within one business day.
           </p>
 
           <FranchiseLongForm />
