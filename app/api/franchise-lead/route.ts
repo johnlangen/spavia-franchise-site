@@ -131,6 +131,34 @@ export async function POST(req: Request) {
       // Don't fail the whole submission for a list subscribe issue
     }
 
+    // 2.5️⃣ Remove the "Incomplete Lead" tag if present. This lead just
+    // completed step 2, so the partial-capture tag (applied at step 1) is
+    // now stale and shouldn't label a finished lead. Same tag id as acPartial.
+    try {
+      const incompleteTagId = process.env.AC_TAG_INCOMPLETE || "214";
+      const ctRes = await fetch(
+        `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contacts/${contactId}/contactTags`,
+        { headers: { "Api-Token": process.env.ACTIVE_CAMPAIGN_API_KEY! } }
+      );
+      if (ctRes.ok) {
+        const ctData = await ctRes.json();
+        const link = ctData.contactTags?.find(
+          (ct: { id: string; tag: string }) => ct.tag === incompleteTagId
+        );
+        if (link?.id) {
+          await fetch(
+            `${process.env.ACTIVE_CAMPAIGN_API_URL}/api/3/contactTags/${link.id}`,
+            {
+              method: "DELETE",
+              headers: { "Api-Token": process.env.ACTIVE_CAMPAIGN_API_KEY! },
+            }
+          );
+        }
+      }
+    } catch (err) {
+      console.error("Remove Incomplete Lead tag failed (non-fatal):", err);
+    }
+
     // 3️⃣ Tag contact for campaign tracking (if leadSource provided)
     if (body.leadSource && contactId) {
       try {
