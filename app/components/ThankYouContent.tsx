@@ -6,20 +6,7 @@ import Footer from "./Footer";
 import { ThemeProvider } from "./ThemeProvider";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
-
-const CALENDLY_URL = "https://calendly.com/tyler-spaviadayspa/new-meeting";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-function trackScheduleClick(location: string) {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", "schedule_call_clicked", { location });
-  }
-}
+import Link from "next/link";
 
 export default function ThankYouContent() {
   return (
@@ -32,8 +19,8 @@ export default function ThankYouContent() {
           <Breadcrumbs items={[{ label: "Thank You" }]} />
         </div>
 
-        {/* ── Section 1: Thank You + immediate CTA (white) ── */}
-        <section className="bg-white px-6 pt-12 pb-10 md:pt-16 md:pb-12">
+        {/* ── Section 1: Thank You (white) ── */}
+        <section className="bg-white px-6 pt-12 pb-16 md:pt-16 md:pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -50,7 +37,7 @@ export default function ThankYouContent() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
             >
-              You're In — Now Pick a Time
+              You&apos;re In — We&apos;ll Be In Touch
             </motion.h1>
 
             <motion.p
@@ -59,9 +46,10 @@ export default function ThankYouContent() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              The fastest path forward is a 15-minute intro call with Tyler, our
-              Director of Franchise Development. Most candidates know within
-              minutes whether Spavia is the right fit.
+              Our founding team personally reviews every request and will reach
+              out within one business day to schedule your 15-minute intro
+              call. Most candidates know within minutes whether Spavia is the
+              right fit.
             </motion.p>
 
             <motion.div
@@ -69,39 +57,27 @@ export default function ThankYouContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackScheduleClick("hero_cta")}
+              <Link
+                href="/steps-to-ownership"
                 className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#b09466] transition text-lg shadow-lg"
               >
-                Schedule My 15-Minute Call →
-              </a>
+                See the Steps to Ownership →
+              </Link>
               <p className="mt-3 text-sm text-gray-500">
-                Or pick a time directly on Tyler's calendar below.
+                In a hurry? Email{" "}
+                <a
+                  href="mailto:marty@spaviadayspa.com"
+                  className="text-[#C2A878] font-medium hover:underline"
+                >
+                  marty@spaviadayspa.com
+                </a>{" "}
+                and we&apos;ll get right back to you.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* ── Section 2: Embedded Calendly (white) ── */}
-        <section className="bg-white px-4 pb-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-              <iframe
-                src={CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=c2a878"}
-                width="100%"
-                height="720"
-                frameBorder="0"
-                title="Schedule a call with Tyler"
-                className="block"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 3: What to expect (black) ── */}
+        {/* ── Section 2: What to expect (black) ── */}
         <section className="bg-black px-6 py-14 md:py-16 relative">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
 
@@ -110,7 +86,7 @@ export default function ThankYouContent() {
               What Happens Next
             </h2>
             <p className="text-white/60 text-center mb-10 max-w-xl mx-auto">
-              We've already received your information. Here's what to expect from here.
+              We&apos;ve already received your information. Here&apos;s what to expect from here.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
@@ -119,7 +95,7 @@ export default function ThankYouContent() {
                   number: "1",
                   title: "Intro Call",
                   description:
-                    "A 15-minute conversation with Tyler. He'll learn about your goals and walk you through Spavia's franchise model.",
+                    "A 15-minute conversation with our founding team. We'll learn about your goals and walk you through Spavia's franchise model.",
                 },
                 {
                   number: "2",
@@ -160,15 +136,12 @@ export default function ThankYouContent() {
             </div>
 
             <div className="mt-12 text-center">
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackScheduleClick("bottom_cta")}
+              <Link
+                href="/why-spavia"
                 className="inline-block bg-[#C2A878] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#b09466] transition"
               >
-                Schedule Your Call Now
-              </a>
+                Explore Why Spavia While You Wait
+              </Link>
             </div>
           </div>
 

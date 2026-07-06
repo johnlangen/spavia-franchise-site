@@ -80,9 +80,7 @@ export default function ProcessSection() {
                 <p className="text-gray-700 mb-4">{step.description}</p>
                 {step.button && (
                   <a
-                    href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/get-started"
                   >
                     <Button
                       variant="primary"

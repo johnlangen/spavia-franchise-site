@@ -62,12 +62,6 @@ const team = [
 As Chief Operating Officer of Spavia, Heather leads company-wide operations, partnering with franchisees and the national support team to drive operational excellence, member growth, and continued brand expansion.`,
   },
   {
-    name: "Tyler Woodard",
-    role: "Director of Franchise Development",
-    image: "/who-we-are/image5.png",
-    bio: `Tyler brings extensive experience in franchise growth, sales strategy, and multi-unit development, with a proven track record of helping brands scale with intention. As Director of Franchise Development, he leads franchise recruitment efforts, strengthens the owner pipeline, and identifies high-potential markets to support Spavia’s continued expansion and long-term success.`,
-  },
-  {
     name: "Jessica Hartman",
     role: "Director of Spa Services",
     image: "/who-we-are/image6.png",

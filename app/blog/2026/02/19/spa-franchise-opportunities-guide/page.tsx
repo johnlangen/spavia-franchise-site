@@ -51,9 +51,8 @@ const jsonLd = {
       datePublished: "2026-02-19",
       dateModified: "2026-02-19",
       author: {
-        "@type": "Person",
-        name: "Tyler Woodard",
-        jobTitle: "Director of Franchise Development",
+        "@type": "Organization",
+        name: "Spavia Franchise Team",
         url: "https://spaviafranchise.com",
       },
       publisher: {
@@ -717,13 +716,13 @@ export default function Page() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
             <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
-              TW
+              S
             </div>
             <div>
-              <p className="font-semibold text-gray-900">Tyler Woodard</p>
-              <p className="text-sm text-gray-500 mb-1">Director of Franchise Development</p>
+              <p className="font-semibold text-gray-900">Spavia Franchise Team</p>
+              <p className="text-sm text-gray-500 mb-1">Founder-Led Franchise Development</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Tyler guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
+                Our founder-led team guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
               </p>
             </div>
           </div>

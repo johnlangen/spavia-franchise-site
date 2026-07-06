@@ -10,12 +10,12 @@ declare global {
   }
 }
 
-export default function TalkToTylerSection() {
+export default function TalkToFounderSection() {
   const trackScheduleClick = () => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "schedule_call_clicked", {
         event_category: "engagement",
-        event_label: "homepage_tyler_section",
+        event_label: "homepage_founder_section",
       });
     }
   };
@@ -33,7 +33,7 @@ export default function TalkToTylerSection() {
           <div className="inline-flex items-center gap-2 bg-[#C2A878]/10 px-4 py-2 rounded-full mb-4">
             <Phone className="w-4 h-4 text-[#C2A878]" />
             <span className="text-sm font-semibold text-[#C2A878] tracking-wide uppercase">
-              Talk to Tyler
+              Talk to Our Founder
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -42,8 +42,8 @@ export default function TalkToTylerSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Most candidates have specific questions about market availability,
             financing, and timing. The kind of answers that don&apos;t fit in
-            a form. A 15-minute intro call with our Director of Franchise
-            Development gets you there.
+            a form. At Spavia, that conversation happens with the co-founder
+            who built the brand, not a sales team.
           </p>
         </motion.div>
 
@@ -56,23 +56,23 @@ export default function TalkToTylerSection() {
                      bg-gradient-to-br from-gray-50 to-white border border-gray-200
                      rounded-2xl p-8 md:p-10 shadow-sm"
         >
-          {/* Tyler */}
+          {/* Marty */}
           <div className="text-center md:text-left">
             <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto md:mx-0
                            rounded-2xl overflow-hidden mb-4
                            ring-1 ring-[#C2A878]/30 shadow-sm">
               <Image
-                src="/who-we-are/image5.png"
-                alt="Tyler Woodard, Director of Franchise Development at Spavia"
+                src="/who-we-are/image1.png"
+                alt="Marty Langenderfer, CEO and Co-founder of Spavia"
                 fill
                 sizes="(max-width: 768px) 160px, 176px"
                 className="object-cover object-top"
               />
             </div>
-            <p className="text-gray-900 font-bold text-lg">Tyler Woodard</p>
-            <p className="text-sm text-gray-600 mb-3">Director of Franchise Development</p>
+            <p className="text-gray-900 font-bold text-lg">Marty Langenderfer</p>
+            <p className="text-sm text-gray-600 mb-3">CEO &amp; Co-founder</p>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Your direct point of contact at Spavia. Tyler personally reviews every
+              Marty co-founded Spavia and still personally reviews every
               market and candidate.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function TalkToTylerSection() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Get to know the brand.</span>{" "}
-                  Tyler walks you through how Spavia works and what ownership actually looks like.
+                  Marty walks you through how Spavia works and what ownership actually looks like.
                 </p>
               </li>
               <li className="flex items-start gap-3">
@@ -113,25 +113,23 @@ export default function TalkToTylerSection() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/get-started"
                 onClick={trackScheduleClick}
                 className="inline-flex items-center justify-center gap-2
                            bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold
                            px-6 py-3.5 rounded-lg transition shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
-                Schedule a Call with Tyler
+                Request an Intro Call
               </a>
               <a
-                href="mailto:tyler@spaviadayspa.com"
+                href="mailto:marty@spaviadayspa.com"
                 className="inline-flex items-center justify-center gap-2
                            bg-white hover:bg-gray-50 text-gray-900 font-semibold
                            px-6 py-3.5 rounded-lg transition border border-gray-300"
               >
                 <Mail className="w-4 h-4" />
-                Email Tyler
+                Email Marty
               </a>
             </div>
           </div>

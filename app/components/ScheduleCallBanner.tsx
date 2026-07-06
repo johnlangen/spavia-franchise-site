@@ -20,9 +20,7 @@ export default function ScheduleCallBanner() {
           markets, investment details, and what it takes to open a Spavia day spa.
         </p>
         <a
-          href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/get-started"
           className="inline-block bg-white text-[#C2A878] font-semibold px-8 py-3 rounded-lg hover:bg-white/90 transition shadow-md"
         >
           Schedule a Call

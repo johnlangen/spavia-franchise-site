@@ -135,7 +135,7 @@ export default function ChatWidget() {
         updated[updated.length - 1] = {
           role: "assistant",
           content:
-            "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or reach out to our team directly at tyler@spaviadayspa.com.",
+            "I'm sorry, I'm having trouble connecting right now. Please try again in a moment, or reach out to our team directly at marty@spaviadayspa.com.",
         };
         return updated;
       });

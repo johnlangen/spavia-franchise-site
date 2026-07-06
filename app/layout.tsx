@@ -64,8 +64,8 @@ const globalJsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Franchise Development",
-        email: "tyler@spaviadayspa.com",
-        url: "https://calendly.com/tyler-spaviadayspa/new-meeting",
+        email: "marty@spaviadayspa.com",
+        url: "/get-started",
         availableLanguage: "English",
       },
     },

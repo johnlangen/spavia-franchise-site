@@ -53,9 +53,8 @@ const jsonLd = {
       datePublished: "2026-04-23",
       dateModified: "2026-04-23",
       author: {
-        "@type": "Person",
-        name: "Tyler Woodard",
-        jobTitle: "Director of Franchise Development",
+        "@type": "Organization",
+        name: "Spavia Franchise Team",
         url: "https://spaviafranchise.com",
       },
       publisher: {
@@ -147,8 +146,7 @@ export default function Page() {
           </h1>
 
           <p className="text-sm text-gray-500 mb-8">
-            Published April 23, 2026 &middot; By Tyler Woodard, Director of
-            Franchise Development
+            Published April 23, 2026 &middot; By the Spavia Franchise Team
           </p>
 
           {/* ── Intro ── */}
@@ -625,19 +623,13 @@ export default function Page() {
           {/* ── Author Bio ── */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
             <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
-              TW
+              S
             </div>
             <div>
-              <p className="font-semibold text-gray-900">Tyler Woodard</p>
-              <p className="text-sm text-gray-500 mb-1">
-                Director of Franchise Development
-              </p>
+              <p className="font-semibold text-gray-900">Spavia Franchise Team</p>
+              <p className="text-sm text-gray-500 mb-1">Founder-Led Franchise Development</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Tyler guides prospective franchise owners through every step
-                of the Spavia discovery process, from initial inquiry through
-                grand opening. He has worked with hundreds of candidates
-                evaluating wellness franchise opportunities across the United
-                States.
+                Our founder-led team guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening. We have worked with hundreds of candidates evaluating wellness franchise opportunities across the United States.
               </p>
             </div>
           </div>

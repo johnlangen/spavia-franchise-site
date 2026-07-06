@@ -10,7 +10,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Section from "./components/Section";
-import TalkToTylerSection from "./components/TalkToTylerSection";
+import TalkToFounderSection from "./components/TalkToFounderSection";
 import HomepageQuickOverview from "./components/HomepageQuickOverview";
 import OurStorySection from "./components/OurStorySection";
 import FounderLedSection from "./components/FounderLedSection";
@@ -191,8 +191,8 @@ export default function Home() {
             into informed scrollers. Three columns with deep-page click-paths. */}
         <HomepageQuickOverview />
 
-        {/* 3. TALK TO TYLER — direct path to a real conversation */}
-        <TalkToTylerSection />
+        {/* 3. TALK TO OUR FOUNDER — direct path to a real conversation */}
+        <TalkToFounderSection />
 
         {/* 4. AWARDS — press / award logos */}
         <AwardsSection />

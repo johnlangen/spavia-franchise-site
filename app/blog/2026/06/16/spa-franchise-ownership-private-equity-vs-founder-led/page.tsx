@@ -51,9 +51,8 @@ const jsonLd = {
       datePublished: "2026-06-16",
       dateModified: "2026-06-16",
       author: {
-        "@type": "Person",
-        name: "Tyler Woodard",
-        jobTitle: "Director of Franchise Development",
+        "@type": "Organization",
+        name: "Spavia Franchise Team",
         url: "https://spaviafranchise.com",
       },
       publisher: {
@@ -412,9 +411,7 @@ export default function Page() {
               independently held ownership matters to you, let&apos;s talk.
             </p>
             <a
-              href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/get-started"
               className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b09466] transition-colors text-lg"
             >
               Book a Call with Our Franchise Team &rarr;
@@ -557,17 +554,13 @@ export default function Page() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
             <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
-              TW
+              S
             </div>
             <div>
-              <p className="font-semibold text-gray-900">Tyler Woodard</p>
-              <p className="text-sm text-gray-500 mb-1">
-                Director of Franchise Development
-              </p>
+              <p className="font-semibold text-gray-900">Spavia Franchise Team</p>
+              <p className="text-sm text-gray-500 mb-1">Founder-Led Franchise Development</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Tyler guides prospective franchise owners through every step of
-                the Spavia discovery process, from initial inquiry to grand
-                opening.
+                Our founder-led team guides prospective franchise owners through every step of the Spavia discovery process, from initial inquiry to grand opening.
               </p>
             </div>
           </div>

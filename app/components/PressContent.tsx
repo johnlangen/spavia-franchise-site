@@ -336,7 +336,7 @@ export default function PressContent() {
             about Spavia Day Spa, please contact our team.
           </p>
           <a
-            href="mailto:tyler@spaviadayspa.com"
+            href="mailto:marty@spaviadayspa.com"
             className="inline-block bg-[#C2A878] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
           >
             Contact Us

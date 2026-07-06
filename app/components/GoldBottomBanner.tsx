@@ -19,7 +19,7 @@ export default function GoldBottomBanner() {
         <p className="text-white/85 text-sm md:text-base mb-8 max-w-2xl mx-auto">
           Join 60+ Spavia franchise owners building thriving wellness businesses
           in communities across the country. Request your free franchise overview
-          or schedule a call with our development team.
+          and an intro call with our founding team.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
@@ -28,14 +28,6 @@ export default function GoldBottomBanner() {
           >
             Request Franchise Info
           </Link>
-          <a
-            href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/10 transition"
-          >
-            Schedule a Call
-          </a>
         </div>
       </div>
     </section>

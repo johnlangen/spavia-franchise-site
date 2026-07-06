@@ -52,14 +52,12 @@ export default function GetStartedContent() {
           <FranchiseLongForm />
 
           <p className="text-center text-gray-500 text-sm mt-6">
-            Prefer to talk first?{" "}
+            Prefer to talk first? Email{" "}
             <a
-              href="https://calendly.com/tyler-spaviadayspa/new-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:marty@spaviadayspa.com"
               className="text-[#C2A878] font-medium hover:underline"
             >
-              Schedule a Call →
+              marty@spaviadayspa.com
             </a>
           </p>
           <p className="text-center text-gray-400 text-xs mt-2">
