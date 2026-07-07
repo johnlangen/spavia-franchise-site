@@ -100,6 +100,9 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
       });
 
       if (res.ok) {
+        const liquidQualified = liquidAssets === "$200K - $500K" ||
+          liquidAssets === "$500K - $1MM" ||
+          liquidAssets === "$1MM+";
         // Fire Google Ads conversion
         if (typeof window.gtag === "function") {
           window.gtag("event", "conversion", {
@@ -107,9 +110,6 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             value: 1.0,
             currency: "USD",
           });
-          const liquidQualified = liquidAssets === "$200K - $500K" ||
-            liquidAssets === "$500K - $1MM" ||
-            liquidAssets === "$1MM+";
           const netWorthQualified = netWorth === "$500K - $700K" ||
             netWorth === "$700K +";
           if (liquidQualified && netWorthQualified) {
@@ -125,7 +125,8 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             });
           }
         }
-        router.push("/thank-you");
+        // Qualified leads go straight to the CEO's calendar on the thank-you page
+        router.push(liquidQualified ? "/thank-you?ceo=1" : "/thank-you");
         return;
       }
 

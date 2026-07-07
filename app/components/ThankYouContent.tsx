@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
@@ -8,7 +9,30 @@ import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function ThankYouContent() {
+const CEO_CALENDLY_URL = "https://calendly.com/marty-spaviadayspa/45min";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
+  // Track bookings made in the embedded Calendly (it posts a message on schedule)
+  useEffect(() => {
+    if (!ceo) return;
+    const onMessage = (e: MessageEvent) => {
+      if (
+        e.origin === "https://calendly.com" &&
+        e.data?.event === "calendly.event_scheduled" &&
+        typeof window.gtag === "function"
+      ) {
+        window.gtag("event", "ceo_call_booked", { source: "thank_you_embed" });
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [ceo]);
   return (
     <ThemeProvider>
       <main className="flex flex-col min-h-screen">
@@ -37,7 +61,9 @@ export default function ThankYouContent() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
             >
-              You&apos;re In — We&apos;ll Be In Touch
+              {ceo
+                ? "You're In — Talk Directly With Our CEO"
+                : "You're In — We'll Be In Touch"}
             </motion.h1>
 
             <motion.p
@@ -46,36 +72,59 @@ export default function ThankYouContent() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
-              Our founding team personally reviews every request and will reach
-              out within one business day to schedule your 15-minute intro
-              call. Most candidates know within minutes whether Spavia is the
-              right fit.
+              {ceo
+                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below and you'll meet one-on-one with Marty Langenderfer, Spavia's co-founder and CEO."
+                : "Our founding team personally reviews every request and will reach out within one business day to schedule your 15-minute intro call. Most candidates know within minutes whether Spavia is the right fit."}
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Link
-                href="/steps-to-ownership"
-                className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#b09466] transition text-lg shadow-lg"
+            {!ceo && (
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
               >
-                See the Steps to Ownership →
-              </Link>
-              <p className="mt-3 text-sm text-gray-500">
-                In a hurry? Email{" "}
-                <a
-                  href="mailto:marty@spaviadayspa.com"
-                  className="text-[#C2A878] font-medium hover:underline"
+                <Link
+                  href="/steps-to-ownership"
+                  className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#b09466] transition text-lg shadow-lg"
                 >
-                  marty@spaviadayspa.com
-                </a>{" "}
-                and we&apos;ll get right back to you.
-              </p>
-            </motion.div>
+                  See the Steps to Ownership →
+                </Link>
+                <p className="mt-3 text-sm text-gray-500">
+                  In a hurry? Email{" "}
+                  <a
+                    href="mailto:marty@spaviadayspa.com"
+                    className="text-[#C2A878] font-medium hover:underline"
+                  >
+                    marty@spaviadayspa.com
+                  </a>{" "}
+                  and we&apos;ll get right back to you.
+                </p>
+              </motion.div>
+            )}
           </div>
         </section>
+
+        {/* ── Qualified path: embedded CEO calendar ── */}
+        {ceo && (
+          <section className="bg-white px-4 pb-16">
+            <div className="max-w-4xl mx-auto">
+              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                <iframe
+                  src={CEO_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=c2a878"}
+                  width="100%"
+                  height="720"
+                  frameBorder="0"
+                  title="Schedule a call with Marty Langenderfer, Spavia CEO"
+                  className="block"
+                />
+              </div>
+              <p className="mt-3 text-center text-sm text-gray-500">
+                Prefer we reach out instead? We&apos;ll email you within one
+                business day either way.
+              </p>
+            </div>
+          </section>
+        )}
 
         {/* ── Section 2: What to expect (black) ── */}
         <section className="bg-black px-6 py-14 md:py-16 relative">
@@ -91,12 +140,19 @@ export default function ThankYouContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
               {[
-                {
-                  number: "1",
-                  title: "Intro Call",
-                  description:
-                    "A 15-minute conversation with our founding team. We'll learn about your goals and walk you through Spavia's franchise model.",
-                },
+                ceo
+                  ? {
+                      number: "1",
+                      title: "Your Call With Marty",
+                      description:
+                        "A 45-minute discovery conversation with our co-founder and CEO covering your goals, your market, and how Spavia works.",
+                    }
+                  : {
+                      number: "1",
+                      title: "Intro Call",
+                      description:
+                        "A 15-minute conversation with our founding team. We'll learn about your goals and walk you through Spavia's franchise model.",
+                    },
                 {
                   number: "2",
                   title: "Discovery Sessions",

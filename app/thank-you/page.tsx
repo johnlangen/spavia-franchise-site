@@ -36,6 +36,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <ThankYouContent />;
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ ceo?: string }>;
+}) {
+  const params = await searchParams;
+  return <ThankYouContent ceo={params.ceo === "1"} />;
 }
