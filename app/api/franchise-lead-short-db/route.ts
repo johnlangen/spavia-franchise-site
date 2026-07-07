@@ -20,6 +20,7 @@ export async function POST(req: Request) {
           phone: phone || null,
           source: leadSource || "short_full",
           stage: "hero_completed",
+          completed_at: new Date().toISOString(),
         },
         { onConflict: "email" }
       );

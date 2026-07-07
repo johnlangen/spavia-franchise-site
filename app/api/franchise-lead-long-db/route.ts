@@ -42,6 +42,7 @@ export async function POST(req: Request) {
           credit_score: creditScore,
           source: leadSource || "long_form",
           stage: "long_completed",
+          completed_at: new Date().toISOString(),
         },
         { onConflict: "email" }
       );
