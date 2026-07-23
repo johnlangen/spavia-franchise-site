@@ -85,7 +85,7 @@ export default function TalkToFounderSection() {
                   <span className="text-[#C2A878] text-xs font-bold">1</span>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-semibold text-gray-900">15-minute intro call.</span>{" "}
+                  <span className="font-semibold text-gray-900">45-minute discovery call.</span>{" "}
                   No pressure, no commitment. Just a conversation about whether Spavia
                   fits your goals.
                 </p>
@@ -120,7 +120,7 @@ export default function TalkToFounderSection() {
                            px-6 py-3.5 rounded-lg transition shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
-                Request an Intro Call
+                Request a Discovery Call
               </a>
               <a
                 href="mailto:allison@spaviadayspa.com"

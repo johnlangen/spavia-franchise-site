@@ -12,17 +12,17 @@ const getStartedFaqs = [
   {
     question: "How do I get started with a Spavia franchise?",
     answer:
-      "Complete the franchise inquiry form above to receive the Spavia Franchise Information Kit. A Spavia representative will contact you within 24\u201348 hours to discuss the opportunity.",
+      "Complete the franchise inquiry form above to receive the Spavia Franchise Information Kit. Our founding team will contact you within one business day to discuss the opportunity.",
   },
   {
     question: "What happens after I submit the franchise inquiry form?",
     answer:
-      "After submitting the form, a Spavia representative will reach out within 24\u201348 hours. The first step is typically a 15-minute introductory call to learn more about each other and determine if Spavia is the right fit.",
+      "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book a 45-minute discovery call directly with Allison Langenderfer, Spavia's co-founder and president.",
   },
   {
     question: "What is the franchise ownership process at Spavia?",
     answer:
-      "The Spavia franchise process includes an introductory call, two discovery sessions covering culture, design, support systems, marketing, operations, and economics, meetings with franchise partners and executives, a Meet the Team Day in Denver, Colorado, and then franchise award.",
+      "The Spavia franchise process starts with a discovery call with our co-founder, followed by deeper sessions covering culture, design, support systems, marketing, operations, and economics, validation with current owners, a Meet the Team Day in Denver, Colorado, and then franchise award.",
   },
   {
     question: "How large is the wellness industry opportunity?",
@@ -54,10 +54,10 @@ export default function GetStartedContent() {
           <p className="text-center text-gray-500 text-sm mt-6">
             Prefer to talk first? Email{" "}
             <a
-              href="mailto:marty@spaviadayspa.com"
+              href="mailto:allison@spaviadayspa.com"
               className="text-[#C2A878] font-medium hover:underline"
             >
-              marty@spaviadayspa.com
+              allison@spaviadayspa.com
             </a>
           </p>
           <p className="text-center text-gray-400 text-xs mt-2">

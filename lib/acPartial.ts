@@ -12,6 +12,7 @@ export interface PartialLead {
   lastName?: string;
   phone?: string;
   zip?: string;
+  liquidAssets?: string;
 }
 
 export async function syncPartialToAC(lead: PartialLead): Promise<void> {
@@ -31,7 +32,14 @@ export async function syncPartialToAC(lead: PartialLead): Promise<void> {
             ...(lead.firstName ? { firstName: lead.firstName } : {}),
             ...(lead.lastName ? { lastName: lead.lastName } : {}),
             ...(lead.phone ? { phone: lead.phone } : {}),
-            ...(lead.zip ? { fieldValues: [{ field: "90", value: lead.zip }] } : {}),
+            fieldValues: [
+              ...(lead.zip ? [{ field: "90", value: lead.zip }] : []),
+              // 208 = Liquid Assets — captured on step 1 so even partial
+              // leads are scoreable in AC
+              ...(lead.liquidAssets
+                ? [{ field: "208", value: lead.liquidAssets }]
+                : []),
+            ],
           },
         }),
       }

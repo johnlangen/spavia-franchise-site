@@ -67,7 +67,7 @@ const faqItems = [
   {
     question: "What are the next steps in the process?",
     answer:
-      "Once you have filled out our form, the next step is a 15 minute introductory call to learn more about whether or not Spavia is an excellent fit.",
+      "Once you have filled out our form, qualified candidates book a 45-minute discovery call with Allison Langenderfer, our co-founder and president, to learn whether Spavia is an excellent fit.",
   },
 ];
 

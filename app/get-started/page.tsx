@@ -10,7 +10,7 @@ const getStartedFaqJsonLd = {
       name: "How do I get started with a Spavia franchise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Complete the franchise inquiry form on the Get Started page to receive the Spavia Franchise Information Kit. A Spavia representative will contact you within 24\u201348 hours to discuss the opportunity.",
+        text: "Complete the franchise inquiry form on the Get Started page to receive the Spavia Franchise Information Kit. Our founding team will contact you within one business day to discuss the opportunity.",
       },
     },
     {
@@ -18,7 +18,7 @@ const getStartedFaqJsonLd = {
       name: "What happens after I submit the franchise inquiry form?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "After submitting the form, a Spavia representative will reach out within 24\u201348 hours. The first step is typically a 15-minute introductory call to learn more about each other and determine if Spavia is the right fit.",
+        text: "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book a 45-minute discovery call directly with Allison Langenderfer, Spavia's co-founder and president.",
       },
     },
     {
@@ -26,7 +26,7 @@ const getStartedFaqJsonLd = {
       name: "What is the franchise ownership process at Spavia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Spavia franchise process includes an introductory call, two discovery sessions covering culture, design, support systems, marketing, operations, and economics, meetings with franchise partners and executives, a Meet the Team Day in Denver, Colorado, and then franchise award.",
+        text: "The Spavia franchise process starts with a discovery call with our co-founder, followed by deeper sessions covering culture, design, support systems, marketing, operations, and economics, validation with current owners, a Meet the Team Day in Denver, Colorado, and then franchise award.",
       },
     },
     {

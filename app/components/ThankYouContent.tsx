@@ -75,7 +75,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             >
               {ceo
                 ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below and you'll meet one-on-one with Allison Langenderfer, Spavia's co-founder and president. Family-owned since 2005, no private equity, and the people who built the brand still take these calls themselves."
-                : "Our founding team personally reviews every request and will reach out within one business day to schedule your 15-minute intro call. Most candidates know within minutes whether Spavia is the right fit."}
+                : "Our founding team personally reviews every request and will reach out within one business day with your next step. Most candidates know within minutes whether Spavia is the right fit."}
             </motion.p>
 
             {!ceo && (
@@ -93,10 +93,10 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 <p className="mt-3 text-sm text-gray-500">
                   In a hurry? Email{" "}
                   <a
-                    href="mailto:marty@spaviadayspa.com"
+                    href="mailto:allison@spaviadayspa.com"
                     className="text-[#C2A878] font-medium hover:underline"
                   >
-                    marty@spaviadayspa.com
+                    allison@spaviadayspa.com
                   </a>{" "}
                   and we&apos;ll get right back to you.
                 </p>
@@ -150,16 +150,23 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                     }
                   : {
                       number: "1",
-                      title: "Intro Call",
+                      title: "Discovery Call",
                       description:
-                        "A 15-minute conversation with our founding team. We'll learn about your goals and walk you through Spavia's franchise model.",
+                        "A conversation with Allison, our co-founder and president. She'll learn about your goals and walk you through Spavia's franchise model.",
                     },
-                {
-                  number: "2",
-                  title: "Discovery Sessions",
-                  description:
-                    "Two deeper sessions covering culture, design, support systems, marketing, operations, and unit economics.",
-                },
+                ceo
+                  ? {
+                      number: "2",
+                      title: "Deeper Discovery",
+                      description:
+                        "We go deeper on design, support systems, marketing, operations, and unit economics, and you validate with current Spavia owners.",
+                    }
+                  : {
+                      number: "2",
+                      title: "Discovery Sessions",
+                      description:
+                        "Two deeper sessions covering culture, design, support systems, marketing, operations, and unit economics.",
+                    },
                 {
                   number: "3",
                   title: "Meet the Team Day",

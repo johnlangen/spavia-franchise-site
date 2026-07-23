@@ -14,6 +14,7 @@ export async function POST(req: Request) {
       zip,
       state,
       primaryGoal,
+      liquidAssets,
       leadSource,
     } = body;
 
@@ -24,7 +25,7 @@ export async function POST(req: Request) {
       );
     }
 
-    void syncPartialToAC({ email, firstName, lastName, phone, zip });
+    void syncPartialToAC({ email, firstName, lastName, phone, zip, liquidAssets });
 
     const { error } = await supabase
       .from("franchise_leads")
@@ -37,6 +38,7 @@ export async function POST(req: Request) {
           zip,
           state,
           primary_goal: primaryGoal,
+          liquid_assets: liquidAssets,
           source: leadSource || "long_form",
           stage: "long_started",
         },

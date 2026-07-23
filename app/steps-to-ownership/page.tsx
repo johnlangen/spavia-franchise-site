@@ -90,7 +90,7 @@ const stepsToOwnershipFaqJsonLd = {
       name: "What are the next steps in the process?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Once you have filled out the form, the next step is a 15-minute introductory call to learn more about whether or not Spavia is an excellent fit.",
+        text: "Once you have filled out the form, qualified candidates book a 45-minute discovery call with Allison Langenderfer, Spavia's co-founder and president, to learn whether Spavia is an excellent fit.",
       },
     },
   ],

@@ -27,6 +27,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     email: "",
     phone: "",
     zip: "",
+    liquidAssets: "",
   });
 
   /* ───────── STEP 1 ───────── */
@@ -36,6 +37,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", "form_step1_submitted", {
         form: "long",
+        liquidAssets: step1.liquidAssets,
         leadSource: leadSource || "unspecified",
       });
     }
@@ -236,6 +238,28 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
               />
             </div>
 
+            <div className="md:col-span-2">
+              <label htmlFor="long-liquidAssets-s1" className="form-label">Liquid Capital Available</label>
+              <select
+                id="long-liquidAssets-s1"
+                required
+                className="form-select"
+                value={step1.liquidAssets}
+                onChange={(e) =>
+                  setStep1({ ...step1, liquidAssets: e.target.value })
+                }
+              >
+                <option value="">Select range</option>
+                <option value="$0 - $200K">$0 – $200K</option>
+                <option value="$200K - $500K">$200K – $500K</option>
+                <option value="$500K - $1MM">$500K – $1MM</option>
+                <option value="$1MM+">$1MM+</option>
+              </select>
+              <p className="mt-1 text-xs text-gray-500">
+                Spavia ownership requires a minimum of $200K in liquid capital.
+              </p>
+            </div>
+
             <div className="md:col-span-2 pt-2">
               <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
                 Continue →
@@ -251,18 +275,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
               <input key={k} type="hidden" name={k} value={v} />
             ))}
 
-            <div>
-              <label htmlFor="long-liquidAssets" className="form-label">Liquid Assets</label>
-              <select id="long-liquidAssets" name="liquidAssets" required className="form-select">
-                <option value="">Select range</option>
-                <option value="$0 - $200K">$0 – $200K</option>
-                <option value="$200K - $500K">$200K – $500K</option>
-                <option value="$500K - $1MM">$500K – $1MM</option>
-                <option value="$1MM+">$1MM+</option>
-              </select>
-            </div>
-
-            <div>
+            <div className="md:col-span-2">
               <label htmlFor="long-netWorth" className="form-label">Estimated Net Worth</label>
               <select id="long-netWorth" name="netWorth" required className="form-select">
                 <option value="">Select range</option>
