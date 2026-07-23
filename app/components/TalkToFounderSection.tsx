@@ -56,24 +56,24 @@ export default function TalkToFounderSection() {
                      bg-gradient-to-br from-gray-50 to-white border border-gray-200
                      rounded-2xl p-8 md:p-10 shadow-sm"
         >
-          {/* Marty */}
+          {/* Allison */}
           <div className="text-center md:text-left">
             <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto md:mx-0
                            rounded-2xl overflow-hidden mb-4
                            ring-1 ring-[#C2A878]/30 shadow-sm">
               <Image
-                src="/who-we-are/image1.png"
-                alt="Marty Langenderfer, CEO and Co-founder of Spavia"
+                src="/who-we-are/image2.png"
+                alt="Allison Langenderfer, co-founder and president of Spavia"
                 fill
                 sizes="(max-width: 768px) 160px, 176px"
                 className="object-cover object-top"
               />
             </div>
-            <p className="text-gray-900 font-bold text-lg">Marty Langenderfer</p>
-            <p className="text-sm text-gray-600 mb-3">CEO &amp; Co-founder</p>
+            <p className="text-gray-900 font-bold text-lg">Allison Langenderfer</p>
+            <p className="text-sm text-gray-600 mb-3">Co-Founder &amp; President</p>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Marty co-founded Spavia and still personally reviews every
-              market and candidate.
+              Allison co-founded Spavia in 2005. Family-owned ever since,
+              no private equity, and she still reviews every market and candidate.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function TalkToFounderSection() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Get to know the brand.</span>{" "}
-                  Marty walks you through how Spavia works and what ownership actually looks like.
+                  Allison walks you through how Spavia works and what ownership actually looks like.
                 </p>
               </li>
               <li className="flex items-start gap-3">
@@ -123,13 +123,13 @@ export default function TalkToFounderSection() {
                 Request an Intro Call
               </a>
               <a
-                href="mailto:marty@spaviadayspa.com"
+                href="mailto:allison@spaviadayspa.com"
                 className="inline-flex items-center justify-center gap-2
                            bg-white hover:bg-gray-50 text-gray-900 font-semibold
                            px-6 py-3.5 rounded-lg transition border border-gray-300"
               >
                 <Mail className="w-4 h-4" />
-                Email Marty
+                Email Allison
               </a>
             </div>
           </div>
