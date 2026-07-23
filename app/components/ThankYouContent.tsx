@@ -9,7 +9,8 @@ import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const CEO_CALENDLY_URL = "https://calendly.com/marty-spaviadayspa/45min";
+const FOUNDER_CALENDLY_URL =
+  "https://calendly.com/allison-spaviadayspa/discovery-call";
 
 declare global {
   interface Window {
@@ -62,7 +63,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
             >
               {ceo
-                ? "You're In — Talk Directly With Our CEO"
+                ? "You're In — Meet Our Founder"
                 : "You're In — We'll Be In Touch"}
             </motion.h1>
 
@@ -73,7 +74,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
               {ceo
-                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below and you'll meet one-on-one with Marty Langenderfer, Spavia's co-founder and CEO."
+                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below and you'll meet one-on-one with Allison Langenderfer, Spavia's co-founder and president. Family-owned since 2005, no private equity, and the people who built the brand still take these calls themselves."
                 : "Our founding team personally reviews every request and will reach out within one business day to schedule your 15-minute intro call. Most candidates know within minutes whether Spavia is the right fit."}
             </motion.p>
 
@@ -110,11 +111,11 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             <div className="max-w-4xl mx-auto">
               <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
                 <iframe
-                  src={CEO_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=c2a878"}
+                  src={FOUNDER_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=c2a878"}
                   width="100%"
                   height="720"
                   frameBorder="0"
-                  title="Schedule a call with Marty Langenderfer, Spavia CEO"
+                  title="Schedule a discovery call with Allison Langenderfer, Spavia co-founder and president"
                   className="block"
                 />
               </div>
@@ -143,9 +144,9 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 ceo
                   ? {
                       number: "1",
-                      title: "Your Call With Marty",
+                      title: "Your Call With Allison",
                       description:
-                        "A 45-minute discovery conversation with our co-founder and CEO covering your goals, your market, and how Spavia works.",
+                        "A 45-minute discovery conversation with our co-founder and president covering your goals, your market, and how Spavia works.",
                     }
                   : {
                       number: "1",
