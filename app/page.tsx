@@ -4,6 +4,7 @@ import FAQ from "./components/FAQ";
 import AwardsSection from "./components/AwardsSection";
 import GuestRatingsSection from "./components/GuestRatingsSection";
 import FranchiseeTestimonialsSection from "./components/FranchiseeTestimonialsSection";
+import FranchiseeVideoTestimonial from "./components/FranchiseeVideoTestimonial";
 import SEOContentSection from "./components/SEOContentSection";
 import GoldBottomBanner from "./components/GoldBottomBanner";
 import NavBar from "./components/NavBar";
@@ -205,6 +206,16 @@ export default function Home() {
 
         {/* 5.5. EXPERIENCE BAND — cinematic full-bleed brand photography */}
         <ExperienceBand />
+
+        {/* 5.8. OWNER VIDEO — named franchisee, lazy-loaded facade */}
+        <section className="bg-[#17120d] px-6 py-20">
+          <FranchiseeVideoTestimonial
+            variant="dark"
+            eyebrow="In Their Words"
+            heading="An Owner on Why She Started"
+            intro="Merirae Tackett owns Spavia Reno with her husband. Ninety seconds, unscripted."
+          />
+        </section>
 
         {/* 6. FRANCHISEE TESTIMONIALS — carousel */}
         <FranchiseeTestimonialsSection />

@@ -8,6 +8,7 @@ import { ThemeProvider } from "./ThemeProvider";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
 
 const FOUNDER_CALENDLY_URL =
   "https://calendly.com/allison-spaviadayspa/discovery-call";
@@ -126,6 +127,19 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             </div>
           </section>
         )}
+
+        {/* ── Owner testimonial — warms up the call before it happens ── */}
+        <section className="bg-gray-50 px-6 py-14 md:py-16">
+          <FranchiseeVideoTestimonial
+            eyebrow="In Their Words"
+            heading={
+              ceo
+                ? "Before Your Call, Hear From an Owner"
+                : "While You Wait, Hear From an Owner"
+            }
+            intro="Merirae and her husband own Spavia Reno. She talks about why she wishes they had started sooner."
+          />
+        </section>
 
         {/* ── Section 2: What to expect (black) ── */}
         <section className="bg-black px-6 py-14 md:py-16 relative">

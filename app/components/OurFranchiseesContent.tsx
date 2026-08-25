@@ -17,6 +17,7 @@ import {
 import Footer from "./Footer";
 import Image from "next/image";
 import Link from "next/link";
+import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
 
 const entrepreneurTraits = [
   {
@@ -207,6 +208,15 @@ export default function OurFranchiseesContent() {
           src="/our-franchisees/video1.mp4"
           controls
           className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
+        />
+      </section>
+
+      {/* Owner spotlight — named video testimonial */}
+      <section className="py-20 bg-white px-6">
+        <FranchiseeVideoTestimonial
+          eyebrow="Owner Spotlight"
+          heading="Merirae Tackett, Spavia Reno"
+          intro="On why a diversified revenue model matters, and why she wishes they had started 20 years sooner."
         />
       </section>
 

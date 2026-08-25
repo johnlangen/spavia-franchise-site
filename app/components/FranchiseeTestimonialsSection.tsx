@@ -25,6 +25,12 @@ const testimonials = [
     image: "/our-franchisees/image2.jpg",
   },
   {
+    name: "Merirae",
+    role: "Spavia Owner, Reno, NV",
+    text: "If you are considering a franchise opportunity, I say start sooner rather than later. I really wish my husband and I had started this much younger in our career. When you choose a franchise that has a great road map for success, it makes everything easy. I just think it was the best decision we ever made.",
+    image: "/testimonials/merirae-tackett.jpg",
+  },
+  {
     name: "Patricia",
     role: "Spavia Owner, Orlando, FL",
     text: "The Spavia National team has a passion for what they do. I love the branding and level of knowledge that they readily share. This is especially important to me since I came from 25 years in the banking industry and was not in the spa industry before.",
