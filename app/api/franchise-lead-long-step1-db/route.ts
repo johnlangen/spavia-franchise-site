@@ -16,6 +16,7 @@ export async function POST(req: Request) {
       primaryGoal,
       liquidAssets,
       leadSource,
+      attribution,
     } = body;
 
     if (!email) {
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
       );
     }
 
-    void syncPartialToAC({ email, firstName, lastName, phone, zip, liquidAssets });
+    void syncPartialToAC({ email, firstName, lastName, phone, zip, liquidAssets, attribution });
 
     const { error } = await supabase
       .from("franchise_leads")

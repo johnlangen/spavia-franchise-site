@@ -67,7 +67,7 @@ export default function Hero() {
       await fetch("/api/franchise-lead-step1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, leadSource: "homepage-hero" }),
+        body: JSON.stringify({ email, leadSource: "homepage-hero", attribution: getAttribution() }),
       });
     } catch (err) {
       console.error("Step 1 DB save failed", err);

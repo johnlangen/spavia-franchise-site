@@ -6,6 +6,33 @@
 
 const AC_TAG_INCOMPLETE = process.env.AC_TAG_INCOMPLETE || "214";
 
+// Same first-touch attribution field map as the full-submit routes
+// (app/api/franchise-lead*/route.ts). Any field left unset is silently
+// skipped. Without this, step-1 abandoners land in AC with no attribution
+// at all — invisible to campaign A/B measurement.
+const AC_ATTRIBUTION_FIELDS: Record<string, string | undefined> = {
+  utm_source: process.env.AC_FIELD_UTM_SOURCE,
+  utm_medium: process.env.AC_FIELD_UTM_MEDIUM,
+  utm_campaign: process.env.AC_FIELD_UTM_CAMPAIGN,
+  utm_content: process.env.AC_FIELD_UTM_CONTENT,
+  utm_term: process.env.AC_FIELD_UTM_TERM,
+  referrer: process.env.AC_FIELD_REFERRER,
+  landing_page: process.env.AC_FIELD_LANDING_PAGE,
+  gclid: process.env.AC_FIELD_GCLID || "354",
+};
+
+function buildAttributionFieldValues(
+  attribution: Record<string, string | undefined> | undefined
+): { field: string; value: string }[] {
+  if (!attribution) return [];
+  return Object.entries(AC_ATTRIBUTION_FIELDS)
+    .filter(([key, fieldId]) => fieldId && attribution[key])
+    .map(([key, fieldId]) => ({
+      field: fieldId as string,
+      value: String(attribution[key]),
+    }));
+}
+
 export interface PartialLead {
   email: string;
   firstName?: string;
@@ -13,6 +40,7 @@ export interface PartialLead {
   phone?: string;
   zip?: string;
   liquidAssets?: string;
+  attribution?: Record<string, string | undefined>;
 }
 
 export async function syncPartialToAC(lead: PartialLead): Promise<void> {
@@ -39,6 +67,7 @@ export async function syncPartialToAC(lead: PartialLead): Promise<void> {
               ...(lead.liquidAssets
                 ? [{ field: "208", value: lead.liquidAssets }]
                 : []),
+              ...buildAttributionFieldValues(lead.attribution),
             ],
           },
         }),

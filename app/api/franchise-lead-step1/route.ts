@@ -4,13 +4,13 @@ import { syncPartialToAC } from "@/lib/acPartial";
 
 export async function POST(req: Request) {
   try {
-    const { email, leadSource } = await req.json();
+    const { email, leadSource, attribution } = await req.json();
 
     if (!email) {
       return NextResponse.json({ error: "Email required" }, { status: 400 });
     }
 
-    void syncPartialToAC({ email });
+    void syncPartialToAC({ email, attribution });
 
     const { error } = await supabase
       .from("franchise_leads")

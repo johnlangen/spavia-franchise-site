@@ -41,7 +41,7 @@ export default function CustomMarketForm() {
       await fetch("/api/franchise-lead-step1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, leadSource }),
+        body: JSON.stringify({ email, leadSource, attribution: getAttribution() }),
       });
     } catch (err) {
       console.error("Step 1 save failed", err);

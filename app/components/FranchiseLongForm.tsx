@@ -46,7 +46,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
       await fetch("/api/franchise-lead-long-step1-db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...step1, leadSource }),
+        body: JSON.stringify({ ...step1, leadSource, attribution: getAttribution() }),
       });
     } catch {}
 
