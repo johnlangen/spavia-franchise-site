@@ -6,7 +6,7 @@ const pressJsonLd = {
   "@type": "CollectionPage",
   name: "Spavia Day Spa Press & Recognition",
   description:
-    "Awards, press coverage, and industry recognition for Spavia Day Spa franchise, including Franchise Times Top 400, Inc. 5000, Entrepreneur Franchise 500, and more.",
+    "Awards, press coverage, and industry recognition for Spavia Day Spa franchise, including Newsweek Readers' Choice, Inc. 5000, Franchise Times Top 400, Entrepreneur Franchise 500, and more.",
   url: "https://spaviafranchise.com/press",
   isPartOf: {
     "@type": "WebSite",
@@ -23,14 +23,14 @@ const pressJsonLd = {
 export const metadata: Metadata = {
   title: "Press & Recognition | Spavia Day Spa Franchise",
   description:
-    "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Franchise Times Top 400, Inc. 5000, Entrepreneur Franchise 500, and more.",
+    "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Newsweek Readers' Choice, Inc. 5000, Franchise Times Top 400, Entrepreneur Franchise 500, and more.",
   alternates: {
     canonical: "https://spaviafranchise.com/press",
   },
   openGraph: {
     title: "Press & Recognition | Spavia Day Spa Franchise",
     description:
-      "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Franchise Times Top 400, Inc. 5000, Entrepreneur Franchise 500, and more.",
+      "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Newsweek Readers' Choice, Inc. 5000, Franchise Times Top 400, Entrepreneur Franchise 500, and more.",
     url: "https://spaviafranchise.com/press",
     type: "website",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Press & Recognition | Spavia Day Spa Franchise",
     description:
-      "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Franchise Times Top 400, Inc. 5000, Entrepreneur Franchise 500, and more.",
+      "Spavia Day Spa franchise press coverage, awards, and industry recognition. Featured in Newsweek Readers' Choice, Inc. 5000, Franchise Times Top 400, Entrepreneur Franchise 500, and more.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

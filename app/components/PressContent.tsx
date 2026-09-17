@@ -12,6 +12,22 @@ const pressItems = [
     year: "2026",
     items: [
       {
+        title: "Spavia Named a 2026 Newsweek Readers' Choice Awards Winner for Best Massage Chain",
+        source: "Newsweek",
+        date: "September 2026",
+        description:
+          "Spavia Day Spa was named a Top 10 Best Massage Chain in the 2026 Newsweek Readers' Choice Awards. Nominees were selected by an expert panel and Newsweek editors, and winners were decided by daily reader votes.",
+        link: "https://www.newsweek.com/readerschoice/best-massage-chain-2026",
+      },
+      {
+        title: "Spavia Climbs to No. 3,221 on the 2026 Inc. 5000",
+        source: "Inc. Magazine",
+        date: "August 2026",
+        description:
+          "Spavia returned to the Inc. 5000 list of America's fastest-growing private companies at No. 3,221, with 92% three-year revenue growth, up 1,690 spots from its 2024 ranking of No. 4,911.",
+        link: "https://www.inc.com/profile/spavia-day-spa",
+      },
+      {
         title: "Spavia Taps CorePower Exec to Scale Wellness Brands to 200 Locations",
         source: "Athletech News",
         date: "June 2026",
@@ -117,11 +133,11 @@ const pressItems = [
     year: "2024",
     items: [
       {
-        title: "Spavia Named to Inc. 5000",
+        title: "Spavia Named to Inc. 5000 at No. 4,911",
         source: "Inc. Magazine",
         date: "2024",
         description:
-          "Spavia Day Spa was named to the prestigious Inc. 5000 list, recognizing the brand among the fastest-growing private companies in America.",
+          "Spavia Day Spa was named to the Inc. 5000 list at No. 4,911, recognizing the brand among the fastest-growing private companies in America.",
         link: "https://www.inc.com/profile/spavia-day-spa",
       },
       {

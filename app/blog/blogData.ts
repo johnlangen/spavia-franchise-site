@@ -19,6 +19,18 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     title:
+      "How to Read Franchise Awards: What Spavia's 2026 Inc. 5000 and Newsweek Wins Actually Mean",
+    excerpt:
+      "Spavia climbed 1,690 spots to No. 3,221 on the 2026 Inc. 5000 and was named a Newsweek Readers' Choice Top 10 Best Massage Chain. Here's how each award is decided, what it tells a franchise buyer, and the homework no award can do for you.",
+    image: "/blog/spavia-2026-recognition-hero.jpg",
+    href: "/blog/2026/09/17/spavia-2026-awards-how-to-read-franchise-rankings",
+    date: "2026-09-17",
+    tags: ["awards", "franchise-guide", "brand-story"],
+    readingTime: 7,
+    featured: true,
+  },
+  {
+    title:
       "Who Owns the Major Spa Franchises? Private Equity vs. Founder-Led",
     excerpt:
       "Most major spa and massage franchises, Hand & Stone, Massage Envy, Woodhouse, Elements, VIO, are now owned by private equity. See who owns what, and why founder-led, independently held ownership matters when you buy a franchise.",

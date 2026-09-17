@@ -23,7 +23,17 @@ export default function AwardsSection() {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
           Awards, Press, and Recognition
         </h2>
-        <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-8" />
+        <div className="h-1 w-32 bg-[#C2A878] mx-auto mb-6" />
+
+        {/* 2026 honors without licensed badges (Newsweek badge requires separate licensing), so text only */}
+        <div className="flex flex-wrap justify-center gap-2 px-4 mb-8">
+          <span className="rounded-full bg-[#faf7f2] px-4 py-1.5 text-sm text-gray-700">
+            <span className="font-semibold text-gray-900">2026 Inc. 5000</span>, No. 3,221
+          </span>
+          <span className="rounded-full bg-[#faf7f2] px-4 py-1.5 text-sm text-gray-700">
+            <span className="font-semibold text-gray-900">2026 Newsweek Readers&apos; Choice</span>, Top 10 Best Massage Chain
+          </span>
+        </div>
 
         <div className="overflow-hidden relative marquee-mask">
           <div className="flex animate-marquee whitespace-nowrap items-center">

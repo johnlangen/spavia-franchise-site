@@ -400,6 +400,17 @@ export default function Page() {
             ))}
           </ul>
 
+          <p className="mb-10 leading-relaxed">
+            Weighing a brand&apos;s awards too? Here&apos;s{" "}
+            <Link
+              href="/blog/2026/09/17/spavia-2026-awards-how-to-read-franchise-rankings"
+              className="text-[#C2A878] underline"
+            >
+              how to read franchise awards and rankings
+            </Link>
+            , and what each one actually measures.
+          </p>
+
           {/* ── CTA ── */}
           <div className="rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-10">
             <h2 className="text-2xl font-bold mb-3">
