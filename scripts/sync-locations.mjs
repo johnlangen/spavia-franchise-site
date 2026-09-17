@@ -68,6 +68,16 @@ const STATE_NAMES = {
 // The locator stores a few internal shorthands in the city field.
 const CITY_FIXES = { "West Plano": "Plano", "Chicago/West Loop": "Chicago" };
 
+// Coordinates the locator gets wrong, keyed by its own location id. Only add an
+// entry with evidence -- the ZIP check below is what surfaces these.
+const COORD_OVERRIDES = {
+  // Spavia Fairfield, 29040 Hwy 290, Cypress TX 77433. The locator's point
+  // (30.1166557, -96.086116) reverse-geocodes to ZCTA 77445 in Waller County,
+  // ~22mi northwest near Hempstead. This point is inside ZCTA 77433 in Harris
+  // County, matching the address the spa's own page publishes.
+  44444: { lat: 29.993129, lon: -95.751465 },
+};
+
 /* ------------------------------------------------------------------ *
  * Projection: recover lat/lon -> @svg-maps/usa coordinates
  * ------------------------------------------------------------------ */
@@ -267,6 +277,37 @@ async function mapLimit(items, limit, fn) {
   return out;
 }
 
+const TIGERWEB_ZCTA =
+  "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/2/query";
+
+/** Centroid of a ZIP Code Tabulation Area, or null if it can't be looked up. */
+async function zipCentroid(zip) {
+  const params = new URLSearchParams({
+    where: `BASENAME='${zip}'`,
+    outFields: "BASENAME,CENTLAT,CENTLON",
+    returnGeometry: "false",
+    f: "json",
+  });
+  try {
+    const body = await getText(`${TIGERWEB_ZCTA}?${params}`);
+    const attrs = JSON.parse(body).features?.[0]?.attributes;
+    if (!attrs) return null;
+    return [parseFloat(attrs.CENTLAT), parseFloat(attrs.CENTLON)];
+  } catch {
+    return null; // advisory check only -- never fail the sync on it
+  }
+}
+
+/** Great-circle distance in km. */
+function haversine([lat1, lon1], [lat2, lon2]) {
+  const R = 6371;
+  const dLat = rad(lat2 - lat1), dLon = rad(lon2 - lon1);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
 async function isComingSoon(url) {
   try {
     return /coming\s+soon\s+to\s*:/i.test(await getText(url));
@@ -314,8 +355,9 @@ const locations = markers.map((m, i) => {
   if (isSpavia && !/^spavia\b/i.test(name)) name = `Spavia ${name}`;
 
   const city = CITY_FIXES[(m.city || "").trim()] || (m.city || "").trim();
-  const lat = parseFloat(m.lat);
-  const lon = parseFloat(m.lon);
+  const override = COORD_OVERRIDES[m.id];
+  const lat = override ? override.lat : parseFloat(m.lat);
+  const lon = override ? override.lon : parseFloat(m.lon);
 
   let x = null, y = null;
   if (Number.isFinite(lat) && Number.isFinite(lon) && !INSET_STATES.has(state)) {
@@ -345,6 +387,38 @@ const locations = markers.map((m, i) => {
     y: y === null ? null : Number(y.toFixed(2)),
   };
 });
+
+// Advisory: is each plotted point anywhere near the ZIP its address claims?
+//
+// The state point-in-polygon test is too coarse to catch a bad coordinate --
+// the locator had Spavia Fairfield 38km away in the wrong county but still
+// inside Texas. Distance to the claimed ZIP's centroid separates that cleanly:
+// every good pin sits within 5km, that one sat at 38km.
+const MAX_ZIP_DISTANCE_KM = 25;
+
+if (!process.argv.includes("--skip-zip-check")) {
+  console.log("Checking coordinates against claimed ZIP codes...");
+  const checked = locations.filter((l) => l.zip && Number.isFinite(l.lat));
+  const centroids = await mapLimit(checked, 4, (l) => zipCentroid(l.zip.slice(0, 5)));
+
+  let worst = 0, skipped = 0, flagged = 0;
+  checked.forEach((loc, i) => {
+    if (!centroids[i]) { skipped++; return; }
+    const km = haversine([loc.lat, loc.lon], centroids[i]);
+    worst = Math.max(worst, km);
+    if (km > MAX_ZIP_DISTANCE_KM) {
+      flagged++;
+      warnings.push(
+        `${loc.name}: coordinate is ${km.toFixed(0)}km from ZIP ${loc.zip} ` +
+        `(${loc.city}, ${loc.state}) -- check this pin`
+      );
+    }
+  });
+  console.log(
+    `  ${checked.length - flagged - skipped} within ${MAX_ZIP_DISTANCE_KM}km, ` +
+    `${flagged} flagged, ${skipped} not checked (worst ${worst.toFixed(1)}km)`
+  );
+}
 
 locations.sort((a, b) =>
   a.stateName.localeCompare(b.stateName) || a.city.localeCompare(b.city) ||
