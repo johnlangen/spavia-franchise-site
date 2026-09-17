@@ -34,7 +34,7 @@ const whoWeAreFaqJsonLd = {
       name: "What leadership and support team does Spavia have?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia's support team includes a Chief Operating Officer with over 10 years of franchise operations experience, a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+        text: "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
       },
     },
   ],

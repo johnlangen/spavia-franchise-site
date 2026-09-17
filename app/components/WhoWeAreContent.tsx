@@ -27,7 +27,7 @@ const whoWeAreFaqs = [
   {
     question: "What leadership and support team does Spavia have?",
     answer:
-      "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Director of Franchise Development focused on recruitment and market growth, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+      "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
   },
 ];
 
@@ -52,6 +52,15 @@ Before Spavia, Allison excelled as a Macy’s buyer and regional manager, follow
 ];
 
 const team = [
+  {
+    name: "Alisa Anderson",
+    role: "Vice President of Franchise Development",
+    image: "/who-we-are/alisa-anderson.png",
+    objectPosition: "center 30%",
+    bio: `Alisa brings 30 years in sales, marketing, and business development, including 15 years in franchising and time as a multi-unit franchise owner herself. A U.S. Air Force veteran, she has spent her career helping brands grow and helping entrepreneurs become owners.
+
+As Vice President of Franchise Development, Alisa leads Spavia's franchise growth, guiding prospective owners from their first conversation through opening. Off the clock, you'll find her at Pilates, traveling, enjoying the outdoors, or spending time with her grandchildren.`,
+  },
   {
     name: "Heather Holland",
     role: "Chief Operating Officer",
