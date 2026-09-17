@@ -21,12 +21,12 @@ export const blogPosts: BlogPost[] = [
     title:
       "How to Read Franchise Awards: What Spavia's 2026 Inc. 5000 and Newsweek Wins Actually Mean",
     excerpt:
-      "Spavia climbed 1,690 spots to No. 3,221 on the 2026 Inc. 5000 and was named a Newsweek Readers' Choice Top 10 Best Massage Chain. Here's how each award is decided, what it tells a franchise buyer, and the homework no award can do for you.",
+      "Spavia climbed 1,690 spots to No. 3,221 on the 2026 Inc. 5000 and was named a Newsweek Readers' Choice Top 10 Best Massage Chain. Here's how each award is decided and what it tells a franchise buyer.",
     image: "/blog/spavia-2026-recognition-hero.jpg",
     href: "/blog/2026/09/17/spavia-2026-awards-how-to-read-franchise-rankings",
     date: "2026-09-17",
     tags: ["awards", "franchise-guide", "brand-story"],
-    readingTime: 7,
+    readingTime: 6,
     featured: true,
   },
   {

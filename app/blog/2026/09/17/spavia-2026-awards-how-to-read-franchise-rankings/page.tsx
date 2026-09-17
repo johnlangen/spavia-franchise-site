@@ -13,7 +13,7 @@ const HERO = "https://spaviafranchise.com/blog/spavia-2026-recognition-hero.jpg"
 export const metadata: Metadata = {
   title: "How to Read Franchise Awards: Spavia's 2026 Inc. 5000 and Newsweek Wins",
   description:
-    "Spavia climbed 1,690 spots on the 2026 Inc. 5000 and was named a Newsweek Readers' Choice Top 10 Best Massage Chain. Here's what each award actually measures, and what a franchise buyer should verify instead.",
+    "Spavia climbed 1,690 spots on the 2026 Inc. 5000 and was named a Newsweek Readers' Choice Top 10 Best Massage Chain. Here's what each award actually measures, and what it tells a franchise buyer.",
   alternates: { canonical: URL },
   openGraph: {
     title: "How to Read Franchise Awards: Spavia's 2026 Inc. 5000 and Newsweek Wins",
@@ -46,15 +46,11 @@ const faqs = [
   },
   {
     q: "Is the Inc. 5000 a good signal when choosing a franchise?",
-    a: "It's a useful signal about the franchisor's own momentum, because Inc. ranks companies by percentage revenue growth over three years. It does not measure how individual franchise locations perform. For unit-level results, read Item 19 of the franchise disclosure document (FDD) and talk to current owners.",
+    a: "It's a useful signal about the franchisor's own momentum, because Inc. ranks companies by percentage revenue growth over three years. It does not measure how individual franchise locations perform.",
   },
   {
     q: "What is the Newsweek Readers' Choice Award?",
     a: "Newsweek's Readers' Choice Awards are consumer-voted. An expert panel nominates brands, Newsweek editors finalize the field, and readers vote once per category per day during the voting window. The 2026 Best Massage Chain winners were announced on September 16, 2026.",
-  },
-  {
-    q: "What should a franchise buyer look at besides awards?",
-    a: "Awards show direction, not detail. Before you invest, review FDD Item 19 (financial performance), Item 20 (openings, closures, and transfers, plus contact information for current and former owners), and Item 3 (litigation). Then call several franchisees, confirm your territory is available, and meet the leadership team you would be working with.",
   },
 ];
 
@@ -66,7 +62,7 @@ const jsonLd = {
       headline:
         "How to Read Franchise Awards: What Spavia's 2026 Inc. 5000 and Newsweek Wins Actually Mean",
       description:
-        "What an Inc. 5000 climb and a Newsweek Readers' Choice win tell a prospective spa franchise owner, how different franchise awards are decided, and what to verify instead.",
+        "What an Inc. 5000 climb and a Newsweek Readers' Choice win tell a prospective spa franchise owner, and how different franchise awards are decided.",
       image: HERO,
       datePublished: "2026-09-17",
       dateModified: "2026-09-17",
@@ -163,29 +159,6 @@ const timeline = [
   },
 ];
 
-const verify = [
-  {
-    item: "FDD Item 19",
-    what: "Financial performance of actual locations. This is where unit-level revenue lives, not in a ranking.",
-  },
-  {
-    item: "FDD Item 20",
-    what: "Openings, closures, and transfers over three years, plus contact info for current and former owners.",
-  },
-  {
-    item: "FDD Item 3",
-    what: "Litigation history. Short is good. Explained is fine. Missing context is a question to ask.",
-  },
-  {
-    item: "Owner calls",
-    what: "Call five or more franchisees, including a few you pick yourself from the Item 20 list.",
-  },
-  {
-    item: "The people",
-    what: "Meet the leadership team you'll work with for the next decade, and ask who owns the brand.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -254,8 +227,8 @@ export default function Page() {
 
           <p className="mb-8 leading-relaxed">
             Franchise marketing is full of badges, and they don&apos;t all mean
-            the same thing. So here&apos;s what we won, how each award is
-            actually decided, and the homework no award can do for you.
+            the same thing. So here&apos;s what we won, and how each award
+            is actually decided.
           </p>
 
           {/* ── The Short Version ── */}
@@ -281,12 +254,7 @@ export default function Page() {
               <li className="py-3 last:pb-0">
                 <span className="font-semibold">What it means for you:</span>{" "}
                 <span className="text-gray-300">
-                  a growing franchisor and a brand guests choose. Verify the
-                  rest in the FDD and on{" "}
-                  <a href="#verify" className="text-[#C2A878] underline">
-                    owner calls
-                  </a>
-                  .
+                  a growing franchisor and a brand guests choose.
                 </span>
               </li>
             </ul>
@@ -576,59 +544,14 @@ export default function Page() {
             .
           </p>
 
-          {/* ── What awards can't tell you ── */}
-          <h2 id="verify" className="text-2xl font-semibold mb-4 scroll-mt-28">
-            The Homework No Award Can Do for You
-          </h2>
-
-          <p className="mb-6 leading-relaxed">
-            Awards point you in a direction. The decision still comes down to
-            documents and conversations. Whatever brand you&apos;re considering,
-            including ours, check these before you sign.
-          </p>
-
-          <div className="rounded-2xl border border-gray-200 divide-y divide-gray-100 mb-6">
-            {verify.map((v, i) => (
-              <div key={v.item} className="flex items-start gap-4 px-5 py-4">
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-semibold text-gray-900">{v.item}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {v.what}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="mb-14 leading-relaxed">
-            Not sure where to start? Our{" "}
-            <Link
-              href="/steps-to-ownership"
-              className="text-[#C2A878] underline"
-            >
-              steps to ownership
-            </Link>{" "}
-            walk through the whole process, and our post on{" "}
-            <Link
-              href="/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led"
-              className="text-[#C2A878] underline"
-            >
-              who owns the major spa franchises
-            </Link>{" "}
-            covers the ownership question in depth.
-          </p>
-
           {/* ── CTA ── */}
           <div className="rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-10">
             <h2 className="text-2xl font-bold mb-3">
               Look Past the Badges With Us
             </h2>
             <p className="text-gray-300 mb-6 max-w-lg mx-auto leading-relaxed">
-              We&apos;ll walk you through the FDD, connect you with owners, and
-              answer the hard questions. Start with a short conversation.
+              We&apos;ll walk you through the FDD and answer the hard
+              questions. Start with a short conversation.
             </p>
             <a
               href="/get-started"
@@ -704,10 +627,6 @@ export default function Page() {
                 >
                   Entrepreneur, Franchise 500 directory
                 </a>
-              </li>
-              <li>
-                Federal Trade Commission, Franchise Rule disclosure items
-                (Items 3, 19, and 20)
               </li>
             </ul>
           </div>
