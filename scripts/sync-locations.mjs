@@ -392,8 +392,19 @@ const locations = markers.map((m, i) => {
 //
 // The state point-in-polygon test is too coarse to catch a bad coordinate --
 // the locator had Spavia Fairfield 38km away in the wrong county but still
-// inside Texas. Distance to the claimed ZIP's centroid separates that cleanly:
-// every good pin sits within 5km, that one sat at 38km.
+// inside Texas. Distance to the claimed ZIP's centroid catches that: the bad
+// pin measured 38km, while every current pin is within 12km.
+//
+// The threshold has to clear large rural ZIPs. Reno's 89511 runs into the
+// desert, so a legitimate address there sits 12.0km from the centroid; 25km
+// leaves headroom without missing a Fairfield-sized error.
+//
+// KNOW THE LIMIT: this is a coarse filter for gross errors, not a correctness
+// proof. A wrong point that still lands inside a large ZCTA is invisible to it.
+// Measured case: a known-bad coordinate for Springfield IL sits 9.6km from the
+// 62704 centroid -- below Reno's legitimate 12.0km, so no threshold catches
+// both. If a second coordinate source is ever added here, disagreement between
+// sources is the stronger signal, with this check as the tiebreaker.
 const MAX_ZIP_DISTANCE_KM = 25;
 
 if (!process.argv.includes("--skip-zip-check")) {
