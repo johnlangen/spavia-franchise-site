@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import YourSpaviaContent from "../components/YourSpaviaContent";
+import locationData from "../data/spavia-locations.json";
+
+const { open, comingSoon, states } = locationData.counts;
 
 const yourSpaviaFaqJsonLd = {
   "@context": "https://schema.org",
@@ -43,6 +46,14 @@ const yourSpaviaFaqJsonLd = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Spavia is available in most U.S. states. Limited markets include Colorado, North Dakota, South Dakota, Alaska, Hawaii, Maryland, New Jersey, and Rhode Island. Click on the interactive map on the Your Spavia page for territory details.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many Spavia locations are there?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `There are ${open} Spavia locations open across ${states} states, with ${comingSoon} more opening soon. Each spa is independently owned and operated by a Spavia franchise partner.`,
       },
     },
   ],

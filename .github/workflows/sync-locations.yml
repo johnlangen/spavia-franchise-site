@@ -1,0 +1,46 @@
+name: Sync Spavia locations
+
+# Re-pulls the location list from Spavia's corporate store locator and commits
+# it only when something actually changed, so a normal week costs no deploy.
+on:
+  schedule:
+    - cron: "0 11 * * 1" # Mondays, 11:00 UTC
+  workflow_dispatch: # or run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Pull latest locations
+        run: npm run sync:locations
+
+      - name: Commit if the list changed
+        run: |
+          # generatedAt changes on every run, so only treat a change in the
+          # locations themselves as worth a commit and a deploy.
+          if git diff --quiet -- app/data/spavia-locations.json; then
+            echo "No changes."
+            exit 0
+          fi
+          if [ -z "$(git diff -- app/data/spavia-locations.json | grep -E '^[+-]' | grep -vE '^[+-]{3}' | grep -v '"generatedAt"')" ]; then
+            echo "Only the generated date moved; skipping commit."
+            git checkout -- app/data/spavia-locations.json
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data/spavia-locations.json
+          git commit -m "Sync Spavia location list from corporate store locator"
+          git push
