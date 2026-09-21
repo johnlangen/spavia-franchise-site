@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { supabase } from "@/lib/supabaseServer";
 import { syncPartialToAC } from "@/lib/acPartial";
 
@@ -26,7 +26,10 @@ export async function POST(req: Request) {
       );
     }
 
-    void syncPartialToAC({ email, firstName, lastName, phone, zip, liquidAssets, attribution });
+    // after() keeps the function alive until the AC sync finishes. A bare
+    // fire-and-forget promise gets frozen once the response is sent, which
+    // left partials in AC with no "Incomplete Lead" tag.
+    after(() => syncPartialToAC({ email, firstName, lastName, phone, zip, liquidAssets, attribution }));
 
     const { error } = await supabase
       .from("franchise_leads")
