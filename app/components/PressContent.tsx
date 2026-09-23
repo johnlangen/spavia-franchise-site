@@ -52,6 +52,14 @@ const pressItems = [
         link: "https://www.americanspa.com/spa-business/success-stories-spavia",
       },
       {
+        title: "Allison Langenderfer Named to Denver's Top 50 Women Leaders",
+        source: "Denver Women Leaders",
+        date: "2026",
+        description:
+          "Spavia Co-Founder Allison Langenderfer was named No. 34 on the 2026 Top 50 list from Denver Women Leaders, the Denver chapter of the Women Leaders Association, for growing Spavia into a nationally recognized spa brand through thoughtful design and disciplined franchising.",
+        link: "https://denver-womans-network.org/top-50.html",
+      },
+      {
         title: "Spavia Named a 2026 FranServe Fran-tastic Brand",
         source: "FranServe Inc.",
         date: "April 2026",
