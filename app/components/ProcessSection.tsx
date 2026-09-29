@@ -7,25 +7,30 @@ import Button from "./Button";
 
 const steps = [
   {
-    title: "Introductory Call",
+    title: "Intro Call",
     description:
-      "We want to get to know you! Review brand history and answer any initial questions.",
+      "We want to get to know you! A one-on-one call with Alisa Anderson, our VP of Franchise Development, to learn your goals and answer your first questions.",
     button: "Schedule a Call",
   },
   {
-    title: "Discovery 1",
+    title: "Brand Overview",
     description:
-      "We will focus on the Spavia difference, culture and design. You will receive the Franchise Disclosure Document.",
+      "We focus on the Spavia difference: our guest experience, our culture, and our four signature designs.",
   },
   {
-    title: "Discovery 2",
+    title: "FDD Review",
     description:
-      "We will review our Support Systems, Marketing, Operations, Economics.",
+      "You receive the Franchise Disclosure Document, and we walk through it together and answer your questions.",
   },
   {
-    title: "Meet Our Franchise Partners and Executive Team",
+    title: "Market & Territory",
     description:
-      "Speak with our Franchise partners and meet our Executive team.",
+      "We look at your market together and review our Support Systems, Marketing, Operations, and Economics.",
+  },
+  {
+    title: "Validation",
+    description:
+      "We connect you with current Spavia franchise partners so you can hear what ownership is really like.",
   },
   {
     title: "Meet the Team Day",
@@ -33,9 +38,9 @@ const steps = [
       "Join us for two days in Denver, Colorado. You will hear from key team members and have 1:1 time with our Founders and Executive Team.",
   },
   {
-    title: "Franchise Awarded",
+    title: "Franchise Agreement",
     description:
-      "Franchise agreements delivered & signed. Welcome to the Spavia family.",
+      "Franchise agreement delivered & signed. Welcome to the Spavia family.",
   },
 ];
 

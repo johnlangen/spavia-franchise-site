@@ -22,7 +22,7 @@ const getStartedFaqs = [
   {
     question: "What is the franchise ownership process at Spavia?",
     answer:
-      "The Spavia franchise process starts with an intro call with our VP of Franchise Development, followed by deeper sessions covering culture, design, support systems, marketing, operations, and economics, validation with current owners, a Meet the Team Day in Denver, Colorado, and then franchise award.",
+      "The Spavia franchise process has seven steps: an intro call with our VP of Franchise Development, a Brand Overview, FDD Review, a Market & Territory review, Validation with current franchise partners, Meet the Team Day in Denver, Colorado, and the Franchise Agreement.",
   },
   {
     question: "How large is the wellness industry opportunity?",

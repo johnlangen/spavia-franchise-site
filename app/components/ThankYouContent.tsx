@@ -164,22 +164,22 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                     }
                   : {
                       number: "1",
-                      title: "Discovery Call",
+                      title: "Your Intro Call",
                       description:
                         "A conversation with Alisa Anderson, our VP of Franchise Development. She'll learn about your goals and walk you through Spavia's franchise model.",
                     },
                 ceo
                   ? {
                       number: "2",
-                      title: "Deeper Discovery",
+                      title: "Brand Overview to Validation",
                       description:
-                        "We go deeper on design, support systems, marketing, operations, and unit economics, and you validate with current Spavia owners.",
+                        "A Brand Overview, FDD Review, and a look at your market and our support, marketing, operations, and economics. Then we connect you with current Spavia franchise partners.",
                     }
                   : {
                       number: "2",
-                      title: "Discovery Sessions",
+                      title: "Brand Overview to Validation",
                       description:
-                        "Two deeper sessions covering culture, design, support systems, marketing, operations, and unit economics.",
+                        "A Brand Overview, FDD Review, and a look at your market and our support, marketing, operations, and economics. Then we connect you with current Spavia franchise partners.",
                     },
                 {
                   number: "3",
