@@ -11,7 +11,7 @@ import Link from "next/link";
 import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
 
 const FOUNDER_CALENDLY_URL =
-  "https://calendly.com/allison-spaviadayspa/discovery-call";
+  "https://calendly.com/alisa-spaviadayspa/intro-call";
 
 declare global {
   interface Window {
@@ -64,7 +64,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
             >
               {ceo
-                ? "You're In — Meet Our Founder"
+                ? "You're In: Book Your Intro Call"
                 : "You're In — We'll Be In Touch"}
             </motion.h1>
 
@@ -75,7 +75,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
               {ceo
-                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below and you'll meet one-on-one with Allison Langenderfer, Spavia's co-founder and president. Family-owned since 2005, no private equity, and the people who built the brand still take these calls themselves."
+                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below for a one-on-one intro call with Alisa Anderson, our VP of Franchise Development. Spavia has been family-owned since 2005, with no private equity."
                 : "Our founding team personally reviews every request and will reach out within one business day with your next step. Most candidates know within minutes whether Spavia is the right fit."}
             </motion.p>
 
@@ -116,7 +116,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                   width="100%"
                   height="720"
                   frameBorder="0"
-                  title="Schedule a discovery call with Allison Langenderfer, Spavia co-founder and president"
+                  title="Schedule an intro call with Alisa Anderson, Spavia VP of Franchise Development"
                   className="block"
                 />
               </div>
@@ -158,15 +158,15 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 ceo
                   ? {
                       number: "1",
-                      title: "Your Call With Allison",
+                      title: "Your Intro Call",
                       description:
-                        "A 45-minute discovery conversation with our co-founder and president covering your goals, your market, and how Spavia works.",
+                        "A one-on-one call with Alisa Anderson, our VP of Franchise Development, covering your goals, your market, and how Spavia works.",
                     }
                   : {
                       number: "1",
                       title: "Discovery Call",
                       description:
-                        "A conversation with Allison, our co-founder and president. She'll learn about your goals and walk you through Spavia's franchise model.",
+                        "A conversation with Alisa Anderson, our VP of Franchise Development. She'll learn about your goals and walk you through Spavia's franchise model.",
                     },
                 ceo
                   ? {

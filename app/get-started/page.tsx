@@ -18,7 +18,7 @@ const getStartedFaqJsonLd = {
       name: "What happens after I submit the franchise inquiry form?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book a 45-minute discovery call directly with Allison Langenderfer, Spavia's co-founder and president.",
+        text: "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book an intro call directly with Alisa Anderson, Spavia's VP of Franchise Development.",
       },
     },
     {
@@ -26,7 +26,7 @@ const getStartedFaqJsonLd = {
       name: "What is the franchise ownership process at Spavia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Spavia franchise process starts with a discovery call with our co-founder, followed by deeper sessions covering culture, design, support systems, marketing, operations, and economics, validation with current owners, a Meet the Team Day in Denver, Colorado, and then franchise award.",
+        text: "The Spavia franchise process starts with an intro call with our VP of Franchise Development, followed by deeper sessions covering culture, design, support systems, marketing, operations, and economics, validation with current owners, a Meet the Team Day in Denver, Colorado, and then franchise award.",
       },
     },
     {

@@ -90,7 +90,7 @@ const stepsToOwnershipFaqJsonLd = {
       name: "What are the next steps in the process?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Once you have filled out the form, qualified candidates book a 45-minute discovery call with Allison Langenderfer, Spavia's co-founder and president, to learn whether Spavia is an excellent fit.",
+        text: "Once you have filled out the form, qualified candidates book an intro call with Alisa Anderson, Spavia's VP of Franchise Development, to learn whether Spavia is an excellent fit.",
       },
     },
   ],
