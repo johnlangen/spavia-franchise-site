@@ -33,7 +33,7 @@ export default function TalkToFounderSection() {
           <div className="inline-flex items-center gap-2 bg-[#C2A878]/10 px-4 py-2 rounded-full mb-4">
             <Phone className="w-4 h-4 text-[#C2A878]" />
             <span className="text-sm font-semibold text-[#C2A878] tracking-wide uppercase">
-              Talk to Our Founder
+              Talk to Alisa
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -42,8 +42,8 @@ export default function TalkToFounderSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Most candidates have specific questions about market availability,
             financing, and timing. The kind of answers that don&apos;t fit in
-            a form. At Spavia, that conversation happens with the co-founder
-            who built the brand, not a sales team.
+            a form. At Spavia, that conversation happens one-on-one with Alisa
+            Anderson, who leads franchise development for our family-owned brand.
           </p>
         </motion.div>
 
@@ -56,24 +56,24 @@ export default function TalkToFounderSection() {
                      bg-gradient-to-br from-gray-50 to-white border border-gray-200
                      rounded-2xl p-8 md:p-10 shadow-sm"
         >
-          {/* Allison */}
+          {/* Alisa */}
           <div className="text-center md:text-left">
             <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto md:mx-0
                            rounded-2xl overflow-hidden mb-4
                            ring-1 ring-[#C2A878]/30 shadow-sm">
               <Image
-                src="/who-we-are/image2.png"
-                alt="Allison Langenderfer, co-founder and president of Spavia"
+                src="/who-we-are/alisa-anderson.png"
+                alt="Alisa Anderson, Vice President of Franchise Development at Spavia"
                 fill
                 sizes="(max-width: 768px) 160px, 176px"
                 className="object-cover object-top"
               />
             </div>
-            <p className="text-gray-900 font-bold text-lg">Allison Langenderfer</p>
-            <p className="text-sm text-gray-600 mb-3">Co-Founder &amp; President</p>
+            <p className="text-gray-900 font-bold text-lg">Alisa Anderson</p>
+            <p className="text-sm text-gray-600 mb-3">VP of Franchise Development</p>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Allison co-founded Spavia in 2005. Family-owned ever since,
-              no private equity, and she still reviews every market and candidate.
+              15 years in franchising and a former multi-unit franchise owner
+              herself. Spavia has been family-owned since 2005, with no private equity.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function TalkToFounderSection() {
                   <span className="text-[#C2A878] text-xs font-bold">1</span>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-semibold text-gray-900">45-minute discovery call.</span>{" "}
+                  <span className="font-semibold text-gray-900">A quick intro call.</span>{" "}
                   No pressure, no commitment. Just a conversation about whether Spavia
                   fits your goals.
                 </p>
@@ -96,7 +96,7 @@ export default function TalkToFounderSection() {
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Get to know the brand.</span>{" "}
-                  Allison walks you through how Spavia works and what ownership actually looks like.
+                  Alisa walks you through how Spavia works and what ownership actually looks like.
                 </p>
               </li>
               <li className="flex items-start gap-3">
@@ -120,16 +120,16 @@ export default function TalkToFounderSection() {
                            px-6 py-3.5 rounded-lg transition shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
-                Request a Discovery Call
+                Request an Intro Call
               </a>
               <a
-                href="mailto:allison@spaviadayspa.com"
+                href="mailto:alisa@spaviadayspa.com"
                 className="inline-flex items-center justify-center gap-2
                            bg-white hover:bg-gray-50 text-gray-900 font-semibold
                            px-6 py-3.5 rounded-lg transition border border-gray-300"
               >
                 <Mail className="w-4 h-4" />
-                Email Allison
+                Email Alisa
               </a>
             </div>
           </div>

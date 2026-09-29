@@ -54,10 +54,10 @@ export default function GetStartedContent() {
           <p className="text-center text-gray-500 text-sm mt-6">
             Prefer to talk first? Email{" "}
             <a
-              href="mailto:allison@spaviadayspa.com"
+              href="mailto:alisa@spaviadayspa.com"
               className="text-[#C2A878] font-medium hover:underline"
             >
-              allison@spaviadayspa.com
+              alisa@spaviadayspa.com
             </a>
           </p>
           <p className="text-center text-gray-400 text-xs mt-2">

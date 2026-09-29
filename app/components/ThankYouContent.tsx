@@ -94,10 +94,10 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 <p className="mt-3 text-sm text-gray-500">
                   In a hurry? Email{" "}
                   <a
-                    href="mailto:allison@spaviadayspa.com"
+                    href="mailto:alisa@spaviadayspa.com"
                     className="text-[#C2A878] font-medium hover:underline"
                   >
-                    allison@spaviadayspa.com
+                    alisa@spaviadayspa.com
                   </a>{" "}
                   and we&apos;ll get right back to you.
                 </p>
