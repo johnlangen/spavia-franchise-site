@@ -210,8 +210,8 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 required
                 placeholder="555-123-4567"
                 autoComplete="tel"
-                pattern="[\d\s\-\(\)\+\.]{7,}"
-                title="Please enter a valid phone number"
+                pattern="[\d\s\-\(\)\+\.]{10,17}"
+                title="Please enter a valid US phone number"
                 className="form-input"
                 value={step1.phone}
                 onChange={(e) =>
