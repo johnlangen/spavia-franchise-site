@@ -2,16 +2,14 @@ import { Metadata } from "next";
 import FranchiseCostContent from "../components/FranchiseCostContent";
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Cost: $479K–$885K | Spavia Day Spa, Massage & Med Spa Comparison",
-  description:
-    "Spavia day spa franchise cost: $479K–$885K (2026 FDD). Compare against massage franchise cost, med spa franchise cost, and facial franchise cost. 6% royalty, SBA financing.",
+  title: "Spavia Franchise Cost & Fees: $479K–$885K (2026)",
+  description: "See Spavia franchise costs, the $59,500 franchise fee, ongoing fees and $200K liquid capital requirement. Explore the 2026 FDD investment breakdown.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-cost",
   },
   openGraph: {
-    title: "Spa Franchise Cost: $479K–$885K | Spavia vs Massage & Med Spa",
-    description:
-      "Spavia day spa franchise cost: $479K–$885K (2026 FDD). Compare against massage franchise cost, med spa franchise cost, and facial franchise cost. 6% royalty, SBA financing.",
+    title: "Spavia Franchise Cost & Fees: $479K–$885K (2026)",
+    description: "See Spavia franchise costs, the $59,500 franchise fee, ongoing fees and $200K liquid capital requirement. Explore the 2026 FDD investment breakdown.",
     url: "https://spaviafranchise.com/franchise-cost",
     type: "website",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Cost: $479K–$885K | Spavia vs Massage & Med Spa",
-    description:
-      "Spavia day spa franchise cost: $479K–$885K (2026 FDD). Compare against massage franchise cost, med spa franchise cost, and facial franchise cost.",
+    title: "Spavia Franchise Cost & Fees: $479K–$885K (2026)",
+    description: "See Spavia franchise costs, the $59,500 franchise fee, ongoing fees and $200K liquid capital requirement. Explore the 2026 FDD investment breakdown.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

@@ -16,7 +16,7 @@ const jsonLd = {
   "@type": "WebPage",
   name: "Spavia Franchise Opportunities by State",
   description:
-    "Explore Spavia day spa franchise opportunities across 16 states. Data-driven market analysis identifies top-scoring markets for spa franchise success.",
+    "Explore Spavia day spa franchise opportunities across 16 states. Research candidate markets, then confirm territory availability with the franchise development team.",
   url: "https://spaviafranchise.com/franchise-opportunities",
   publisher: {
     "@id": "https://spaviafranchise.com/#organization",
@@ -142,8 +142,8 @@ export default function FranchiseOpportunitiesContent() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10"
             >
-              Our data-driven approach identifies the best markets for spa
-              franchise success. Explore our top-scoring opportunities by state.
+              Explore market research for your preferred state, then talk with Alisa
+              about territory availability, investment and your plans for ownership.
             </motion.p>
 
             {/* Key metrics */}
@@ -224,6 +224,17 @@ export default function FranchiseOpportunitiesContent() {
                 run the numbers.
               </p>
               <CustomMarketForm />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">From market research to a Spavia franchise opportunity</h2>
+            <div className="grid md:grid-cols-3 gap-8 text-gray-600 leading-relaxed">
+              <div><h3 className="font-bold text-gray-900 mb-3">1. Explore the market</h3><p>Use the state pages to learn about candidate areas and bring your preferred city to the conversation. The franchise team confirms current territory availability; a market listing does not reserve a territory.</p></div>
+              <div><h3 className="font-bold text-gray-900 mb-3">2. Review the model</h3><p>Spavia is a <Link href="/day-spa-franchise" className="text-[#705b31] underline">full-service day spa franchise</Link>. The estimated initial investment is $479,450–$885,450 under the 2026 FDD, Item 7. Review the <Link href="/franchise-cost" className="text-[#705b31] underline">costs and fees</Link> alongside the $200K liquid capital and $500K net worth requirements.</p></div>
+              <div><h3 className="font-bold text-gray-900 mb-3">3. Talk with Alisa</h3><p>Alisa Anderson leads franchise development and can discuss your goals, timeline and next steps. Explore <Link href="/multi-unit" className="text-[#705b31] underline">multi-unit development</Link> if you are considering several locations, or see the <Link href="/steps-to-ownership" className="text-[#705b31] underline">path to ownership</Link>.</p></div>
             </div>
           </div>
         </section>

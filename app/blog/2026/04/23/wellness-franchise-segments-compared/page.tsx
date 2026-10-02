@@ -1,3 +1,5 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
@@ -51,7 +53,7 @@ const jsonLd = {
         "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side — investment range, growth rate, revenue model, and who each one fits.",
       image: "https://spaviafranchise.com/blog/blog28.webp",
       datePublished: "2026-04-23",
-      dateModified: "2026-04-23",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -80,7 +82,7 @@ const jsonLd = {
           name: "What are the main wellness franchise segments?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The major wellness franchise segments are day spa, med spa, massage therapy, fitness/gym, recovery (cryotherapy, float, IV hydration), and nutrition/juice. Each segment has a different investment range, growth trajectory, and revenue model. Day spa franchises typically require $496K–$796K, while med spa franchises range from $500K to $1.5M+.",
+            text: "The major wellness franchise segments are day spa, med spa, massage therapy, fitness/gym, recovery (cryotherapy, float, IV hydration), and nutrition/juice. Each segment has a different investment range, growth trajectory, and revenue model. Spavia is one day spa example, with an estimated investment of $479K–$885K, while med spa franchises range from $500K to $1.5M+.",
           },
         },
         {
@@ -175,6 +177,8 @@ export default function Page() {
           </p>
 
           {/* ── At a Glance ── */}
+          <FranchiseFinancialNote />
+
           <h2 className="text-2xl font-semibold mb-4">
             The Six Wellness Franchise Segments at a Glance
           </h2>
@@ -206,9 +210,9 @@ export default function Page() {
                   <td className="px-4 py-3 text-center">Established</td>
                 </tr>
                 <tr className="bg-white border-t">
-                  <td className="px-4 py-3 font-medium">Day Spa</td>
+                  <td className="px-4 py-3 font-medium">Day Spa (Spavia investment)</td>
                   <td className="px-4 py-3 text-center font-semibold">
-                    $496K &ndash; $796K
+                    $479K &ndash; $885K
                   </td>
                   <td className="px-4 py-3 text-center">8&ndash;10%</td>
                   <td className="px-4 py-3 text-center">Membership</td>
@@ -255,7 +259,7 @@ export default function Page() {
           </h2>
           <p className="mb-4 leading-relaxed">
             Day spa is the segment Spavia operates in, so I&apos;ll lead with
-            it. The typical investment runs <strong>$496K to $796K</strong>,
+            it. Spavia’s estimated investment runs <strong>$479K to $885K</strong>,
             placing it between low-overhead concepts like nutrition and the
             capital-heavy med spa category. The model combines massage, facials,
             body treatments, waxing, and a curated retail boutique under one
@@ -268,8 +272,8 @@ export default function Page() {
             services plus discounts, which creates predictable recurring
             revenue and smooths out seasonal fluctuations. Spavia&apos;s
             three-tier membership is the foundation of our{" "}
-            <strong>$1,146,952 average unit volume</strong> and{" "}
-            <strong>20.6% operating margins</strong>
+            <strong>$1,110,481 median annual revenue</strong> and{" "}
+            <strong>18.4% median operating margin</strong>
             <span className="text-xs">*</span>.
           </p>
           <p className="mb-10 leading-relaxed">
@@ -468,10 +472,10 @@ export default function Page() {
             lower than the full-luxury competitors. We&apos;ve been
             franchising for nearly 20 years, we have{" "}
             <strong>over 60 locations</strong> across the country, and our
-            FDD Item 19 reports an average unit volume of{" "}
-            <strong>$1,146,952</strong>, average owner cash flow of{" "}
-            <strong>$236,208</strong>, and operating margins of{" "}
-            <strong>20.6%</strong>
+            FDD Item 19 reports median annual revenue of{" "}
+            <strong>$1,110,481</strong>, median cash flow from operations of{" "}
+            <strong>$199,773</strong>, and a median operating margin of{" "}
+            <strong>18.4%</strong>
             <span className="text-xs">*</span>. For a detailed breakdown, see{" "}
             <Link
               href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
@@ -509,7 +513,7 @@ export default function Page() {
               <tbody>
                 <tr className="bg-white border-t">
                   <td className="px-4 py-3">
-                    Spavia total initial investment: $496,450 &ndash; $795,950
+                    Spavia total initial investment: $479,450 &ndash; $885,450
                   </td>
                   <td className="px-4 py-3">
                     Spavia Franchise Disclosure Document, Item 7
@@ -517,7 +521,7 @@ export default function Page() {
                 </tr>
                 <tr className="bg-gray-50 border-t">
                   <td className="px-4 py-3">
-                    Spavia average unit volume: $1,146,952
+                    Spavia median annual revenue: $1,110,481
                   </td>
                   <td className="px-4 py-3">
                     Spavia Franchise Disclosure Document, Item 19, Part III
@@ -525,7 +529,7 @@ export default function Page() {
                 </tr>
                 <tr className="bg-white border-t">
                   <td className="px-4 py-3">
-                    Spavia average owner cash flow: $236,208
+                    Spavia median cash flow from operations: $199,773
                   </td>
                   <td className="px-4 py-3">
                     Spavia Franchise Disclosure Document, Item 19, Part III
@@ -533,7 +537,7 @@ export default function Page() {
                 </tr>
                 <tr className="bg-gray-50 border-t">
                   <td className="px-4 py-3">
-                    Spavia operating margin: 20.6%
+                    Spavia median operating margin: 18.4%
                   </td>
                   <td className="px-4 py-3">
                     Spavia Franchise Disclosure Document, Item 19, Part III
@@ -642,6 +646,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
       <Footer />

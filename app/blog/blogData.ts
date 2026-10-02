@@ -10,7 +10,8 @@ export type BlogPost = {
   excerpt: string;
   image: string;
   href: string;
-  date: string; // YYYY-MM-DD
+  date: string; // Original publication date, YYYY-MM-DD
+  updatedDate?: string; // Set only after a significant content update
   tags: string[];
   readingTime: number; // minutes
   featured?: boolean;
@@ -48,6 +49,7 @@ export const blogPosts: BlogPost[] = [
       "Compare day spa, med spa, fitness, massage, recovery, and nutrition franchise segments side by side \u2014 investment range, growth rate, revenue model, and who each one fits. A franchise director's guide.",
     image: "/blog/blog28.webp",
     href: "/blog/2026/04/23/wellness-franchise-segments-compared",
+    updatedDate: "2026-10-02",
     date: "2026-04-23",
     tags: ["comparisons", "franchise-guide", "investment"],
     readingTime: 9,
@@ -59,6 +61,7 @@ export const blogPosts: BlogPost[] = [
       "Beauty and wellness franchises are booming, but which sector offers better growth? Compare market size, revenue models, and investment potential to find your best fit.",
     image: "/blog/blog27.png",
     href: "/blog/2026/04/08/beauty-franchise-vs-wellness-franchise",
+    updatedDate: "2026-10-02",
     date: "2026-04-08",
     tags: ["comparisons", "investment", "franchise-guide"],
     readingTime: 10,
@@ -79,6 +82,7 @@ export const blogPosts: BlogPost[] = [
       "Women represent 35% of all franchise owners and growing. Discover why spa franchises rank among the best franchise opportunities for women entrepreneurs in 2026\u2014from financial performance to financing resources.",
     image: "/blog/blog25.webp",
     href: "/blog/2026/03/25/women-entrepreneurs-spa-franchise",
+    updatedDate: "2026-10-02",
     date: "2026-03-25",
     tags: ["franchise-guide", "getting-started", "investment"],
     readingTime: 12,
@@ -89,6 +93,7 @@ export const blogPosts: BlogPost[] = [
       "Your complete guide to opening a spa franchise\u2014from the first phone call to grand opening day. Learn the 8-step timeline, financing options, and what to expect at every phase of ownership.",
     image: "/blog/blog24.webp",
     href: "/blog/2026/03/10/how-to-open-a-spa-franchise",
+    updatedDate: "2026-10-02",
     date: "2026-03-10",
     tags: ["getting-started", "investment", "franchise-guide"],
     readingTime: 14,
@@ -100,26 +105,29 @@ export const blogPosts: BlogPost[] = [
       "Phoenix and Scottsdale are booming markets for spa franchise investment. Explore why Spavia's day spa franchise model is ideal for the Valley's wellness-driven population. Limited territories available.",
     image: "/blog/blog23.jpg",
     href: "/blog/2026/02/26/spa-franchise-phoenix-scottsdale",
+    updatedDate: "2026-10-02",
     date: "2026-02-26",
     tags: ["market-insights", "investment"],
     readingTime: 12,
   },
   {
-    title: "The Complete Guide to Spa Franchise Opportunities in 2026",
+    title: "Spa Franchise Opportunities: Compare Costs & Ownership Models",
     excerpt:
-      "Everything you need to know about spa franchise opportunities in 2026 \u2014 compare costs, revenue models, and top brands to find the right investment for you.",
+      "Compare published spa franchise investments, service models and owner responsibilities using current brand sources.",
     image: "/blog/blog22.webp",
     href: "/blog/2026/02/19/spa-franchise-opportunities-guide",
+    updatedDate: "2026-10-02",
     date: "2026-02-19",
     tags: ["franchise-guide", "investment", "comparisons"],
     readingTime: 10,
   },
   {
-    title: "Spavia vs. Woodhouse Spa Franchise: A Side-by-Side Comparison",
+    title: "Spavia vs. Woodhouse Spa Franchise: Costs & Ownership",
     excerpt:
-      "Compare Spavia and Woodhouse spa franchise models side by side \u2014 investment costs, revenue, franchise fees, training, and which spa franchise is right for you.",
+      "Compare Spavia and Woodhouse investment ranges, capital requirements, spa formats and support using current published sources.",
     image: "/blog/blog21.jpg",
     href: "/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise",
+    updatedDate: "2026-10-02",
     date: "2026-02-12",
     tags: ["comparisons", "investment"],
     readingTime: 6,
@@ -130,6 +138,7 @@ export const blogPosts: BlogPost[] = [
       "Compare day spa and med spa franchise models side by side \u2014 investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
     image: "/blog/blog20.jpg",
     href: "/blog/2026/02/11/day-spa-vs-med-spa-franchise",
+    updatedDate: "2026-10-02",
     date: "2026-02-11",
     tags: ["comparisons", "investment", "franchise-guide"],
     readingTime: 11,

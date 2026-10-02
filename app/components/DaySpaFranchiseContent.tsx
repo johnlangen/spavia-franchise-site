@@ -14,12 +14,12 @@ const differentiators = [
   {
     title: "Membership-driven recurring revenue",
     body:
-      "Spavia's day spa model is built around recurring monthly memberships, not transactional walk-ins. The average Spavia owner builds a predictable membership base that drives consistent monthly revenue independent of foot traffic.",
+      "Spavia's day spa model is built around recurring monthly memberships, not transactional walk-ins. Memberships support regular guest visits alongside appointments from non-members.",
   },
   {
     title: "Multi-service revenue streams",
     body:
-      "Massage, facials, body treatments, waxing, lash & brow, and retail. Multiple revenue lines smooth seasonality and let a single guest visit produce $150+ in average ticket.",
+      "Massage, facials, body treatments, waxing, lash & brow, and retail. The service mix gives guests several reasons to return and owners multiple departments to develop.",
   },
   {
     title: "Resort-inspired guest experience",
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What revenue can a Spavia day spa franchise generate?",
-    a: "Spavia franchisees reported median gross sales of $1,110,481 in 2025, with 1 in 2 reporting locations exceeding $1M (2026 FDD, Item 19, 44 reporting locations).",
+    a: "The 2026 FDD, Item 19, Part III reports median annual revenue (cash receipts) of $1,110,481 among 44 reporting franchised locations for 2025. This is revenue, not owner income; individual results vary.",
   },
   {
     q: "Do I need spa industry experience to open a Spavia day spa?",
@@ -73,7 +73,7 @@ const independentPath = [
   "Design operations, pricing, and service menus by trial and error",
   "Negotiate equipment and product pricing on your own",
   "Solve hiring, training, and retention without a playbook",
-  "A longer, riskier path to consistent profitability",
+  "Develop your own operating systems and vendor relationships",
 ];
 
 const franchisePath = [
@@ -234,6 +234,18 @@ export default function DaySpaFranchiseContent() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">What does a day spa franchise owner do?</h2>
+          <div className="grid md:grid-cols-3 gap-8 text-gray-600 leading-relaxed">
+            <div><h3 className="font-bold text-gray-900 mb-3">Build the team</h3><p>Owners lead the business and hire appropriately licensed massage therapists, estheticians and other team members. You do not need to perform treatments yourself. Recruiting, scheduling and developing people are part of the ownership role.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Develop guest relationships</h3><p>Memberships create an opportunity for repeat visits. The team brings that model to life through service quality, appointment availability, local marketing and guest care. Massage, facials and retail each play a role in the experience.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Run the local business</h3><p>Franchise support provides systems and guidance while owners manage their location. Review your capital, time commitment and market with Alisa to understand how the model fits your plans.</p></div>
+          </div>
+          <p className="mt-8 text-gray-600">Explore <Link href="/training-and-support" className="text-[#705b31] underline">training and owner support</Link>, review <Link href="/franchise-cost" className="text-[#705b31] underline">day spa franchise costs</Link>, and research <Link href="/franchise-opportunities" className="text-[#705b31] underline">markets by state</Link>.</p>
         </div>
       </section>
 

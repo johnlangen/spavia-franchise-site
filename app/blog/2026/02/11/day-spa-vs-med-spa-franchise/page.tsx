@@ -1,15 +1,17 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
-import { getRelatedPosts, blogPosts } from "../../../../blogData";
+import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
   description:
-    "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
+    "Day spa vs. med spa franchise: compare investment ($479K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
   alternates: {
     canonical:
       "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
     description:
-      "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
+      "Day spa vs. med spa franchise: compare investment ($479K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
     url: "https://spaviafranchise.com/blog/2026/02/11/day-spa-vs-med-spa-franchise",
     type: "article",
     images: [
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Day Spa vs Med Spa Franchise: Cost, Margins, ROI Compared",
     description:
-      "Day spa vs. med spa franchise: compare investment ($496K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
+      "Day spa vs. med spa franchise: compare investment ($479K vs. $600K+), licensing, profit margins, and ROI. Which spa franchise model is right for you?",
     images: ["https://spaviafranchise.com/blog/blog20.jpg"],
   },
 };
@@ -49,7 +51,7 @@ const jsonLd = {
         "Compare day spa and med spa franchise models side by side. Investment costs, profit margins, licensing requirements, and ROI to help you choose the right spa franchise.",
       image: "https://spaviafranchise.com/blog/blog20.jpg",
       datePublished: "2026-02-11",
-      dateModified: "2026-02-11",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -78,7 +80,7 @@ const jsonLd = {
           name: "How much does it cost to open a spa franchise?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Day spa franchises typically range from $295,000 to $800,000, while med spa franchises start at $550,000 and can exceed $1 million. Spavia's investment range of $496K–$796K is competitive for an affordable luxury day spa brand with proven unit economics.",
+            text: "Day spa franchises typically range from $295,000 to $800,000, while med spa franchises start at $550,000 and can exceed $1 million. Spavia's investment range of $479K–$885K is competitive for an affordable luxury day spa brand with proven unit economics.",
           },
         },
         {
@@ -189,6 +191,8 @@ export default function Page() {
           </p>
 
           {/* ── Who Actually Buys ── */}
+          <FranchiseFinancialNote />
+
           <h2 className="text-2xl font-semibold mb-3">
             Who Is Actually Buying Med Spa Franchises in 2026?
           </h2>
@@ -337,7 +341,7 @@ export default function Page() {
 
           <p className="mb-10 leading-relaxed">
             For context, Spavia Day Spa&apos;s total franchise investment
-            ranges from $496,450 to $795,950, positioning it competitively in
+            ranges from $479,450 to $885,450, positioning it competitively in
             the day spa spectrum with a proven model that has generated
             average unit volumes of over $1 million at mature locations.
           </p>
@@ -382,11 +386,11 @@ export default function Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#C2A878] mt-1">&bull;</span>
-                  Spavia avg. unit volume: <strong className="ml-1">$1,146,952</strong> (mature locations)
+                  Spavia median annual revenue: <strong className="ml-1">$1,110,481</strong> (44 reporting locations, 2025)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#C2A878] mt-1">&bull;</span>
-                  Spavia EBITDA average: <strong className="ml-1">20.6%</strong>
+                  Spavia median operating margin: <strong className="ml-1">18.4%</strong>
                 </li>
               </ul>
             </div>
@@ -713,7 +717,7 @@ export default function Page() {
               },
               {
                 label: "Lower Investment",
-                desc: "$496K\u2013$796K vs. competitors at $600K\u2013$2.7M",
+                desc: "$479K\u2013$885K vs. competitors at $600K\u2013$2.7M",
               },
               {
                 label: "Design-Led",
@@ -776,7 +780,7 @@ export default function Page() {
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 Day spa franchises typically range from <strong>$295,000 to $800,000</strong>,
                 while med spa franchises start at $550,000 and can exceed $1
-                million. Spavia&apos;s investment range of $496K&ndash;$796K
+                million. Spavia&apos;s investment range of $479K&ndash;$885K
                 is competitive for an affordable luxury day spa brand with
                 proven unit economics.
               </div>
@@ -910,6 +914,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
 

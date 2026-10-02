@@ -1,10 +1,12 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
-import { getRelatedPosts, blogPosts } from "../../../../blogData";
+import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "How to Open a Spa Franchise: 8-Step Timeline for Owners",
@@ -49,7 +51,7 @@ const jsonLd = {
         "Open a spa franchise in 10–14 months. The 8-step timeline from inquiry to grand opening — costs, financing, training, and what to expect at every phase.",
       image: "https://spaviafranchise.com/blog/blog24.webp",
       datePublished: "2026-03-10",
-      dateModified: "2026-03-10",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -94,7 +96,7 @@ const jsonLd = {
           name: "How much does it cost to open a spa franchise?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Total investment varies by brand. Spa franchise investments typically range from under $500,000 to over $2 million for luxury or medical spa concepts. Spavia\u2019s total investment range is $496,000 to $796,000, which includes buildout, equipment, initial marketing, and working capital.",
+            text: "Total investment varies by brand. Spa franchise investments typically range from under $500,000 to over $2 million for luxury or medical spa concepts. Spavia\u2019s total investment range is $479,450 to $885,450, which includes buildout, equipment, initial marketing, and working capital.",
           },
         },
         {
@@ -192,6 +194,8 @@ export default function Page() {
           {/* ════════════════════════════════════════════ */}
           {/* STEP 1 */}
           {/* ════════════════════════════════════════════ */}
+          <FranchiseFinancialNote />
+
           <div className="flex items-center gap-3 mb-4">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
               1
@@ -472,7 +476,7 @@ export default function Page() {
           <p className="mb-6 leading-relaxed">
             With a clear picture of the investment required, it is time to
             finalize your funding strategy. Most spa franchise investments fall
-            between $496,000 and $800,000, depending on the brand, location, and
+            between $479,450 and $800,000, depending on the brand, location, and
             buildout scope. Here are the most common financing paths:
           </p>
 
@@ -517,7 +521,7 @@ export default function Page() {
             <p className="font-semibold text-gray-900 mb-1">Spavia Insight</p>
             <p className="leading-relaxed text-gray-700">
               Spavia&apos;s franchise investment ranges from{" "}
-              <strong>$496,000 to $796,000</strong>, and the brand is
+              <strong>$479,450 to $885,450</strong>, and the brand is
               SBA-approved &mdash; meaning lenders are already familiar with the
               model and the application process is streamlined.{" "}
               <Link
@@ -1049,7 +1053,7 @@ export default function Page() {
               },
               {
                 q: "How much does it cost to open a spa franchise?",
-                a: "Total investment varies by brand. Spa franchise investments typically range from under $500,000 to over $2 million for luxury or medical spa concepts. Spavia\u2019s total investment range is $496,000 to $796,000, which includes buildout, equipment, initial marketing, and working capital.",
+                a: "Total investment varies by brand. Spa franchise investments typically range from under $500,000 to over $2 million for luxury or medical spa concepts. Spavia\u2019s total investment range is $479,450 to $885,450, which includes buildout, equipment, initial marketing, and working capital.",
               },
               {
                 q: "What financing options are available for a spa franchise?",
@@ -1125,6 +1129,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
 

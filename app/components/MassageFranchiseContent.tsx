@@ -12,48 +12,44 @@ import Link from "next/link";
 
 const differentiators = [
   {
-    title: "More than just massage — full-service spa revenue",
-    body:
-      "Massage-only franchise concepts limit your revenue ceiling. Spavia franchises offer massage alongside facials, body treatments, waxing, and lash & brow services — multiple revenue lines from a single guest visit, with average tickets significantly higher than single-service models.",
+    "title": "A service mix built around regular visits",
+    "body": "Spavia offers massage, facials, body treatments, waxing and retail within one day spa. Members can build a routine around more than one service. The mix gives owners several departments to manage and develop within one guest experience."
   },
   {
-    title: "Membership model designed for retention",
-    body:
-      "Like the leading massage franchises, Spavia operates on a recurring monthly membership model. Unlike them, our members get access to a broader service menu — improving retention because guests aren't pigeonholed into a single service.",
+    "title": "Memberships and the guest experience",
+    "body": "The monthly membership model supports repeat visits. Owners still need to earn renewals through service quality, appointment availability and guest care. A consistent guest experience and local marketing help the team build those relationships."
   },
   {
-    title: "Resort-inspired environment, not a clinical chain",
-    body:
-      "Spavia is positioned as 'accessible luxury' — a guest experience designed to feel like a resort spa, at membership-friendly pricing. This differentiates us from clinical-feeling massage chains and supports premium membership rates.",
+    "title": "A resort-inspired setting",
+    "body": "Spavia combines treatment rooms with a retreat area and a focus on the guest experience. Compare the space, build-out requirements and service menu with each franchise you research, rather than assuming all massage brands use the same format."
   },
   {
-    title: "Operational infrastructure, not just a logo",
-    body:
-      "Site selection, lease negotiation, build-out, hiring, training, marketing, vendor relationships — full franchisor support through opening and beyond. 120+ years of combined leadership spa experience.",
-  },
+    "title": "Support for the business you operate",
+    "body": "Franchise support covers site selection, build-out guidance, training, marketing and ongoing operations. The owner remains responsible for building a team, managing the business and applying the operating standards in the local market."
+  }
 ];
 
 const faqs = [
   {
-    q: "How much does it cost to open a Spavia massage franchise?",
-    a: "Total estimated initial investment ranges from $479,450 to $885,450 (2026 FDD, Item 7), including the $59,500 franchise fee, build-out, equipment, technology, and three months of operating reserves. SBA-eligible financing is available.",
+    "q": "How much does it cost to open a Spavia massage franchise?",
+    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment, including the $59,500 franchise fee (2026 FDD, Items 5 and 7). Candidates need at least $200,000 in liquid capital and $500,000 net worth. Liquid capital is a qualification requirement, not the total cost to open."
   },
   {
-    q: "What's the revenue potential of a Spavia franchise vs. a massage-only franchise?",
-    a: "Spavia franchisees reported median gross sales of $1,110,481 in 2025 (2026 FDD, Item 19, 44 reporting locations). Our multi-service revenue model — massage, facials, body treatments, retail — typically generates higher per-visit revenue than single-service massage franchises.",
+    "q": "Is Spavia a massage-only franchise?",
+    "a": "No. Massage is one core service within a Spavia day spa, alongside facials, body treatments, waxing and retail. This is one full-service franchise opportunity, not a separate massage-only format."
   },
   {
-    q: "How does Spavia compare to massage-only franchises like Massage Envy or Hand & Stone?",
-    a: "Massage Envy and Hand & Stone are massage-focused membership franchises. Spavia offers the same recurring-membership economics but with a broader service mix (facials, body treatments, waxing, lash & brow, retail), a more upscale guest experience, and resort-inspired design. The result: higher average ticket and stronger membership retention.",
+    "q": "How does Spavia compare with Massage Envy and Hand & Stone?",
+    "a": "All three offer massage and skincare services, so service breadth alone does not distinguish them. Compare investment requirements, guest experience, ownership structure, territory availability, training and the current FDD for each. Spavia is a family-owned, founder-led day spa brand with a membership model."
   },
   {
-    q: "Do I need to be a massage therapist to open a Spavia franchise?",
-    a: "No. Spavia franchise owners are business operators, not service providers. You hire licensed massage therapists, estheticians, and other service professionals — most owners come from corporate, finance, healthcare, or entrepreneurial backgrounds.",
+    "q": "Do I need to be a massage therapist to own a Spavia?",
+    "a": "You do not need to personally provide treatments. Owners manage the business and hire appropriately licensed service professionals. Recruiting, scheduling, team development and guest service are central operating responsibilities."
   },
   {
-    q: "How long is the Spavia franchise training program?",
-    a: "Spavia's training program covers operations, hiring, service delivery, marketing, financial management, and member retention. Training begins pre-opening and continues with ongoing support through field visits, regional managers, and franchisee community programs.",
-  },
+    "q": "What revenue does Spavia disclose?",
+    "a": "The 2026 FDD, Item 19, Part III reports median annual revenue (cash receipts) of $1,110,481 among 44 reporting franchised locations for 2025. This is revenue, not owner income or a forecast. Review the reporting criteria and full financial disclosure; individual results vary."
+  }
 ];
 
 const faqJsonLd = {
@@ -108,8 +104,8 @@ export default function MassageFranchiseContent() {
       <LandingHero
         headlineFirst="A Massage Franchise"
         headlineSecond=""
-        headlineHighlight="Designed to Outperform"
-        subhead="Spavia is a full-service spa franchise built on the membership model — with massage as a core service, complemented by facials, body treatments, and retail to drive higher per-visit revenue than massage-only chains."
+        headlineHighlight="Within a Full-Service Spa"
+        subhead="Explore massage franchise ownership with Spavia: a full-service day spa combining massage, facials, body treatments and retail with a recurring membership model."
         bullets={[
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
           "Membership-driven recurring revenue",
@@ -125,11 +121,10 @@ export default function MassageFranchiseContent() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
-            Why Spavia Beats Massage-Only Franchises
+            What to compare in a massage franchise
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            Single-service massage franchises cap your revenue ceiling at one
-            type of guest visit. Spavia's full-service model unlocks more.
+            Massage is a core service at Spavia. The ownership opportunity is a full-service day spa, with facials, body treatments and retail alongside massage.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {differentiators.map((d) => (
@@ -144,6 +139,22 @@ export default function MassageFranchiseContent() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 font-[family-name:var(--font-recoleta)]">From massage franchise research to an ownership plan</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div><h3 className="font-bold text-gray-900 mb-3">Plan for the people who deliver treatments</h3><p className="text-gray-600 leading-relaxed">Ask how therapist recruiting, scheduling and retention fit the local labor market. A room produces no service revenue when it is unstaffed. Evaluate the support available and the time you can devote to leading the team.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Compare the whole opening budget</h3><p className="text-gray-600 leading-relaxed">Separate the franchise fee, total initial investment and liquid capital requirement. Build-out, equipment and working capital are different needs. Compare the same FDD items across brands before treating one headline price as a like-for-like quote.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Look beyond the sales figure</h3><p className="text-gray-600 leading-relaxed">Review the sample, measurement period and expenses behind Item 19. A median is not an average, and neither is a promise about a new location. Alisa can walk you through Spavia’s model and connect your questions to the next step.</p></div>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <li><Link href="/franchise-cost" className="text-[#705b31] underline underline-offset-4">Massage spa investment and fees</Link></li>
+            <li><Link href="/training-and-support" className="text-[#705b31] underline underline-offset-4">Training and operating support</Link></li>
+            <li><Link href="/franchise-opportunities" className="text-[#705b31] underline underline-offset-4">Explore Spavia markets</Link></li>
+          </ul>
         </div>
       </section>
 

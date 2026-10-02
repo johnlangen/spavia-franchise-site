@@ -1,3 +1,5 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
@@ -52,7 +54,7 @@ const jsonLd = {
         "Women represent 35% of all franchise owners and growing. Discover why spa franchises are among the best franchise opportunities for women entrepreneurs in 2026.",
       image: "https://spaviafranchise.com/blog/blog25.webp",
       datePublished: "2026-03-25",
-      dateModified: "2026-03-25",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -104,7 +106,7 @@ const jsonLd = {
           name: "How much does it cost to open a spa franchise?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Total investment for a premium day spa franchise like Spavia ranges from $496,450 to $795,950, which includes the franchise fee, buildout, equipment, and initial working capital. Most franchisors require a minimum of $200,000 in liquid capital and $500,000 in net worth. SBA loans and 401(k) rollovers are common financing approaches that can significantly reduce the out-of-pocket investment.",
+            text: "Total investment for a premium day spa franchise like Spavia ranges from $479,450 to $885,450, which includes the franchise fee, buildout, equipment, and initial working capital. Spavia requires a minimum of $200,000 in liquid capital and $500,000 in net worth. SBA loans and 401(k) rollovers are common financing approaches that can significantly reduce the out-of-pocket investment.",
           },
         },
         {
@@ -166,6 +168,8 @@ export default function Page() {
           />
 
           {/* ── The Rise of Women in Franchise Ownership ── */}
+          <FranchiseFinancialNote />
+
           <h2 className="text-2xl font-semibold mt-12 mb-4">
             The Rise of Women in Franchise Ownership
           </h2>
@@ -329,11 +333,11 @@ export default function Page() {
               </thead>
               <tbody>
                 {[
-                  ["Total Investment Range", "$496,450 \u2013 $795,950"],
+                  ["Total Investment Range", "$479,450 \u2013 $885,450"],
                   ["Franchise Fee", "$59,500"],
-                  ["Average Unit Volume (AUV)", "$1,146,952"],
-                  ["Average Owner Cash Flow", "$236,208"],
-                  ["Operating Margins", "20.6%"],
+                  ["Median annual revenue (cash receipts)", "$1,110,481"],
+                  ["Median cash flow from operations", "$199,773"],
+                  ["Median operating margin", "18.4%"],
                   ["Liquid Capital Required", "$200,000 minimum"],
                   ["Net Worth Required", "$500,000 minimum"],
                   ["Multi-Unit Pack", "$150,000 for 3 locations"],
@@ -351,7 +355,7 @@ export default function Page() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mb-8">
-            Source: Spavia 2025 Franchise Disclosure Document (FDD) Item 19
+            Source: Spavia 2026 Franchise Disclosure Document (FDD) Item 19
             Part III &amp; Item 7. See FDD for complete details.
           </p>
 
@@ -659,7 +663,7 @@ export default function Page() {
               },
               {
                 q: "How much does it cost to open a spa franchise?",
-                a: "Total investment for a premium day spa franchise like Spavia ranges from $496,450 to $795,950, which includes the franchise fee, buildout, equipment, and initial working capital. Most franchisors require a minimum of $200,000 in liquid capital and $500,000 in net worth. SBA loans and 401(k) rollovers are common financing approaches.",
+                a: "Total investment for a premium day spa franchise like Spavia ranges from $479,450 to $885,450, which includes the franchise fee, buildout, equipment, and initial working capital. Spavia requires a minimum of $200,000 in liquid capital and $500,000 in net worth. SBA loans and 401(k) rollovers are common financing approaches.",
               },
               {
                 q: "Is spa franchise ownership compatible with work-life balance?",
@@ -723,6 +727,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
 

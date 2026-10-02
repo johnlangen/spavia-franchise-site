@@ -1,10 +1,12 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
 import Image from "next/image";
-import { getRelatedPosts, blogPosts } from "../../../../blogData";
+import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "Phoenix & Scottsdale Spa Franchise: Open Territories 2026",
@@ -49,7 +51,7 @@ const jsonLd = {
         "Phoenix and Scottsdale are two of the hottest spa franchise markets in 2026. Wellness demographics, Spavia territories available, and why now.",
       image: "https://spaviafranchise.com/blog/blog23.jpg",
       datePublished: "2026-02-26",
-      dateModified: "2026-02-26",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -78,7 +80,7 @@ const jsonLd = {
           name: "How much does it cost to open a spa franchise in Phoenix?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The initial investment for a Spavia Day Spa franchise ranges from $496,000 to $796,000, which includes the franchise fee, buildout, equipment, initial marketing, and working capital. Costs can vary based on the specific Phoenix-area location and lease terms.",
+            text: "The initial investment for a Spavia Day Spa franchise ranges from $479,450 to $885,450, which includes the franchise fee, buildout, equipment, initial marketing, and working capital. Costs can vary based on the specific Phoenix-area location and lease terms.",
           },
         },
         {
@@ -118,7 +120,7 @@ const jsonLd = {
           name: "Is a spa franchise a profitable business?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Spavia franchise locations average $1,146,952 in gross sales, with 1 in 2 owners achieving $1M+ in revenue. The membership model provides recurring, predictable cash flow that supports strong unit economics. See our FDD Item 19 for detailed financial performance data.",
+            text: "The 2026 Spavia FDD, Item 19, Part III reports median annual revenue (cash receipts) of $1,110,481 among 44 reporting franchised locations for 2025. This is historical revenue, not owner income or a forecast. Individual results vary.",
           },
         },
       ],
@@ -187,6 +189,8 @@ export default function Page() {
             className="w-full rounded-xl mb-10"
             priority
           />
+
+          <FranchiseFinancialNote />
 
           {/* ── Table of Contents ── */}
           <nav className="bg-gradient-to-br from-gray-50 to-amber-50/40 rounded-xl p-6 mb-12 border border-[#C2A878]/20">
@@ -496,16 +500,16 @@ export default function Page() {
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div className="bg-white/10 rounded-xl p-5 text-center backdrop-blur">
                 <p className="text-sm text-gray-300 mb-1">
-                  Avg. Gross Sales*
+                  Median Annual Revenue*
                 </p>
-                <p className="text-3xl font-bold">$1,146,952</p>
+                <p className="text-3xl font-bold">$1,110,481</p>
               </div>
               <div className="bg-white/10 rounded-xl p-5 text-center backdrop-blur">
                 <p className="text-sm text-gray-300 mb-1">
                   Initial Investment*
                 </p>
                 <p className="text-3xl font-bold text-[#C2A878]">
-                  $496K &ndash; $796K
+                  $479K &ndash; $885K
                 </p>
               </div>
             </div>
@@ -769,7 +773,7 @@ export default function Page() {
             {[
               {
                 q: "How much does it cost to open a spa franchise in Phoenix?",
-                a: "The initial investment for a Spavia Day Spa franchise ranges from $496,000 to $796,000, which includes the franchise fee, buildout, equipment, initial marketing, and working capital. Costs can vary based on the specific Phoenix-area location and lease terms.",
+                a: "The initial investment for a Spavia Day Spa franchise ranges from $479,450 to $885,450, which includes the franchise fee, buildout, equipment, initial marketing, and working capital. Costs can vary based on the specific Phoenix-area location and lease terms.",
               },
               {
                 q: "Is Phoenix a good market for a spa franchise?",
@@ -789,7 +793,7 @@ export default function Page() {
               },
               {
                 q: "Is a spa franchise a profitable business?",
-                a: "Spavia franchise locations average $1,146,952 in gross sales, with 1 in 2 owners achieving $1M+ in revenue. The membership model provides recurring, predictable cash flow that supports strong unit economics. See our FDD Item 19 for detailed financial performance data.",
+                a: "The 2026 Spavia FDD, Item 19, Part III reports median annual revenue (cash receipts) of $1,110,481 among 44 reporting franchised locations for 2025. This is historical revenue, not owner income or a forecast. Individual results vary.",
               },
             ].map((item) => (
               <details key={item.q} className="group">
@@ -853,6 +857,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
 

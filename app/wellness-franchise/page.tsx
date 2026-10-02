@@ -2,16 +2,14 @@ import { Metadata } from "next";
 import WellnessFranchiseContent from "../components/WellnessFranchiseContent";
 
 export const metadata: Metadata = {
-  title: "Wellness Franchise Opportunity | Spavia | $1.1M+ Median Revenue",
-  description:
-    "Spavia is a full-service wellness franchise with $1.1M+ median gross sales (2026 FDD). $479K–$885K investment, recurring membership model, 63 locations, multi-service revenue mix.",
+  title: "Wellness Franchise Opportunities: The Spavia Spa Model",
+  description: "Compare wellness franchise models and explore Spavia’s membership-based day spa. See investment requirements, services, owner responsibilities and support.",
   alternates: {
     canonical: "https://spaviafranchise.com/wellness-franchise",
   },
   openGraph: {
-    title: "Wellness Franchise Opportunity | Spavia",
-    description:
-      "Spavia is a full-service wellness franchise with $1.1M+ median gross sales (2026 FDD). $479K–$885K investment, recurring membership model, 63 locations.",
+    title: "Wellness Franchise Opportunities: The Spavia Spa Model",
+    description: "Compare wellness franchise models and explore Spavia’s membership-based day spa. See investment requirements, services, owner responsibilities and support.",
     url: "https://spaviafranchise.com/wellness-franchise",
     type: "website",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wellness Franchise Opportunity | Spavia",
-    description:
-      "Spavia is a full-service wellness franchise with $1.1M+ median gross sales (2026 FDD). $479K–$885K investment, recurring membership model, 63 locations.",
+    title: "Wellness Franchise Opportunities: The Spavia Spa Model",
+    description: "Compare wellness franchise models and explore Spavia’s membership-based day spa. See investment requirements, services, owner responsibilities and support.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

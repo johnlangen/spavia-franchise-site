@@ -12,48 +12,44 @@ import Link from "next/link";
 
 const differentiators = [
   {
-    title: "More than a facial bar — full-service spa revenue",
-    body:
-      "Single-service facial concepts cap your revenue at one type of guest visit. Spavia franchises pair facials and advanced skincare with massage, body treatments, waxing, and lash & brow services — multiple revenue lines from a single membership, with average tickets well above facial-only models.",
+    "title": "Skincare alongside other spa services",
+    "body": "Facials and skincare retail sit alongside massage, body treatments and waxing. Guests can choose different services within the Spavia experience. Owners manage that broader menu rather than operating a standalone facial bar."
   },
   {
-    title: "Membership model built for skincare retention",
-    body:
-      "Skincare is inherently recurring — results come from regular treatment. Spavia's monthly membership model turns that into predictable revenue, and our broader service menu improves retention because members aren't locked into a single service.",
+    "title": "Memberships support regular visits",
+    "body": "Spavia’s membership model encourages an ongoing relationship with guests. Availability, service consistency and the team’s guest care matter to retention; a membership offer by itself does not ensure recurring visits."
   },
   {
-    title: "Resort-inspired experience, not a clinical skin bar",
-    body:
-      "Spavia is positioned as 'accessible luxury' — a guest experience designed to feel like a resort spa, at membership-friendly pricing. That differentiates us from fast, clinical facial bars and supports premium membership rates.",
+    "title": "An experience guests can return to",
+    "body": "The day spa setting includes a retreat area and treatment rooms designed around relaxation. Compare the atmosphere, appointment length, menu and investment with the facial concepts you are considering."
   },
   {
-    title: "Operational infrastructure, not just a logo",
-    body:
-      "Site selection, lease negotiation, build-out, hiring, training, marketing, vendor relationships — full franchisor support through opening and beyond. 120+ years of combined leadership spa experience.",
-  },
+    "title": "Training for the operating business",
+    "body": "Support covers site selection, build-out guidance, training, marketing and day-to-day operations. Owners lead the business and hire service professionals with the qualifications required for the treatments offered."
+  }
 ];
 
 const faqs = [
   {
-    q: "How much does it cost to open a Spavia facial franchise?",
-    a: "Total estimated initial investment ranges from $479,450 to $885,450 (2026 FDD, Item 7), including the $59,500 franchise fee, build-out, equipment, technology, and three months of operating reserves. SBA-eligible financing is available.",
+    "q": "How much does a Spavia facial franchise cost?",
+    "a": "The Spavia opportunity is a full-service day spa, with a total estimated investment of $479,450–$885,450 (2026 FDD, Item 7). The range includes the $59,500 franchise fee. Candidates need $200,000 or more in liquid capital and $500,000 or more in net worth."
   },
   {
-    q: "What's the revenue potential of a Spavia franchise vs. a facial-only franchise?",
-    a: "Spavia franchisees reported median gross sales of $1,110,481 in 2025 (2026 FDD, Item 19, 44 reporting locations). Our multi-service revenue model — facials, massage, body treatments, waxing, retail — typically generates higher per-visit revenue than single-service facial franchises.",
+    "q": "Can I open a facial-only Spavia?",
+    "a": "The franchise model presented here combines facials and skincare with massage, body treatments and retail. It is not a separate facial-only or express-service franchise. Discuss the current format and service standards with the franchise team."
   },
   {
-    q: "How does Spavia compare to facial bars like Heyday, Glowbar, or SkinSpa?",
-    a: "Those concepts are facial- and skincare-focused, often express-service formats. Spavia offers the same membership-driven economics but with a broader service mix (facials, massage, body treatments, waxing, lash & brow, retail), a more upscale guest experience, and resort-inspired design — driving higher average ticket and stronger member retention.",
+    "q": "What should I compare with a facial bar franchise?",
+    "a": "Compare the service menu, treatment space, staffing needs, initial investment, ongoing fees and owner responsibilities. Check each brand’s current disclosures rather than assuming a wider service menu produces higher profit."
   },
   {
-    q: "Do I need to be an esthetician to open a Spavia franchise?",
-    a: "No. Spavia franchise owners are business operators, not service providers. You hire licensed estheticians, massage therapists, and other service professionals — most owners come from corporate, finance, healthcare, or entrepreneurial backgrounds.",
+    "q": "Do I need to be an esthetician to own a Spavia franchise?",
+    "a": "You do not need to perform treatments yourself. Franchise owners operate the business and hire appropriately licensed estheticians, massage therapists and other team members. Treatment and facility requirements depend on the location and services."
   },
   {
-    q: "How long is the Spavia franchise training program?",
-    a: "Spavia's training program covers operations, hiring, service delivery, marketing, financial management, and member retention. Training begins pre-opening and continues with ongoing support through field visits, regional managers, and franchisee community programs.",
-  },
+    "q": "Where can I learn about training and available markets?",
+    "a": "Review Spavia’s training and support overview and state market research, then request a conversation with Alisa. The team confirms territory availability and the next steps for your proposed location."
+  }
 ];
 
 const faqJsonLd = {
@@ -109,7 +105,7 @@ export default function FacialFranchiseContent() {
         headlineFirst="A Facial & Skincare Franchise"
         headlineSecond=""
         headlineHighlight="Built for More Than Facials"
-        subhead="Spavia is a full-service spa franchise built on the membership model — with facials and advanced skincare at its core, complemented by massage, body treatments, and retail to drive higher per-visit revenue than facial-only concepts."
+        subhead="Explore facial and skincare franchise ownership within Spavia’s full-service day spa, with massage, body treatments and retail alongside skincare and a recurring membership model."
         bullets={[
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
           "Membership-driven recurring revenue",
@@ -125,11 +121,10 @@ export default function FacialFranchiseContent() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
-            Why Spavia Beats Facial-Only Franchises
+            A facial franchise within a full-service day spa
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            Single-service facial bars cap your revenue ceiling at one type of
-            guest visit. Spavia&apos;s full-service model unlocks more.
+            Spavia pairs skincare with massage and other spa services. Explore what that means for your team, investment and daily responsibilities as an owner.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {differentiators.map((d) => (
@@ -144,6 +139,22 @@ export default function FacialFranchiseContent() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 font-[family-name:var(--font-recoleta)]">What owning a skincare business involves</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div><h3 className="font-bold text-gray-900 mb-3">Lead a service team</h3><p className="text-gray-600 leading-relaxed">A skincare background can be useful, but ownership also involves hiring, scheduling, guest care and managing expenses. Consider whether you want to operate a multi-department spa or concentrate on one service category.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Match the investment to the format</h3><p className="text-gray-600 leading-relaxed">A facial studio and a full-service spa may have different room layouts, equipment and staffing plans. Spavia’s published investment covers its day spa format. Review the complete cost breakdown before comparing it with a smaller studio.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">Understand repeat visits and retail</h3><p className="text-gray-600 leading-relaxed">Facials and skincare products give guests different ways to engage with the spa. Ask how the team supports service consistency, product education and ongoing guest relationships, without assuming any particular retail or membership result.</p></div>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <li><Link href="/franchise-cost" className="text-[#705b31] underline underline-offset-4">Facial spa investment within the Spavia model</Link></li>
+            <li><Link href="/day-spa-franchise" className="text-[#705b31] underline underline-offset-4">Explore the full-service day spa</Link></li>
+            <li><Link href="/our-franchisees" className="text-[#705b31] underline underline-offset-4">Hear from Spavia franchise owners</Link></li>
+          </ul>
         </div>
       </section>
 

@@ -12,48 +12,44 @@ import Link from "next/link";
 
 const differentiators = [
   {
-    title: "Built on the $6.3T global wellness market",
-    body:
-      "Wellness is now larger than the global pharmaceutical industry. Spavia is positioned in the highest-growth segment: in-person experiential wellness, where consumers spend an estimated $2,500+ annually on services they could otherwise skip.",
+    "title": "A clear place in the wellness category",
+    "body": "Spavia offers non-medical spa services, including massage, facials, body treatments and retail. That is a different business from a fitness studio, recovery center or medical spa. Start with the services you want to operate and the guests you want to serve."
   },
   {
-    title: "Membership model, not transactional",
-    body:
-      "Unlike fitness studios or boutique service brands, Spavia operates a recurring-membership model. Members visit monthly, generating predictable revenue independent of foot traffic or seasonality.",
+    "title": "A membership-based business",
+    "body": "Monthly memberships support repeat guest relationships. Owners and their teams develop those relationships through consistent guest care, convenient appointment availability and local marketing."
   },
   {
-    title: "Multi-service revenue, not single-vertical",
-    body:
-      "Most wellness franchises specialize in one thing — yoga, cryotherapy, IV drip, recovery, sauna. Spavia delivers a full menu of services (massage, facials, body treatments, waxing, retail) so members don't need to leave for an adjacent need.",
+    "title": "Several services under one roof",
+    "body": "The service mix gives guests a choice between massage, facials and other treatments. It also means recruiting and scheduling different types of service professionals. Compare the operating responsibilities as carefully as the menu."
   },
   {
-    title: "Resort-inspired guest experience",
-    body:
-      "Spavia is positioned as 'accessible luxury' — premium enough to command membership pricing, broad enough to convert mainstream wellness consumers in any market.",
-  },
+    "title": "Founder-led support",
+    "body": "Spavia has remained family-owned and founder-led since 2005. Franchise support includes site selection, training, marketing and ongoing operations. Talk with the team about how that support applies to your experience and market."
+  }
 ];
 
 const faqs = [
   {
-    q: "How much does a wellness franchise like Spavia cost?",
-    a: "Spavia's total initial investment ranges from $479,450 to $885,450 (2026 FDD, Item 7). This is in line with most established wellness franchise opportunities and significantly less than med spa franchise concepts, which typically require $800K to $2M+ due to clinical equipment and physician requirements.",
+    "q": "How much does a wellness franchise like Spavia cost?",
+    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment (2026 FDD, Item 7). The initial franchise fee is $59,500. Candidates need at least $200,000 liquid capital and $500,000 net worth. Other wellness formats have their own costs and qualification criteria."
   },
   {
-    q: "How does Spavia compare to other wellness franchise opportunities?",
-    a: "Most wellness franchises specialize in a single service vertical — yoga (CorePower, YogaSix), recovery (Restore, Sweathouz), cryotherapy, or IV therapy. Spavia delivers a full-service wellness experience: massage, facials, body treatments, waxing, lash & brow, and retail. The multi-service mix smooths seasonality and increases per-guest revenue, while the membership model creates recurring monthly income.",
+    "q": "How is a day spa different from other wellness franchises?",
+    "a": "A day spa is a service business centered on massage, skincare and relaxation. Fitness studios focus on exercise, while recovery and medical concepts offer different services and may have different equipment and professional oversight needs. Compare the specific brand, not just the wellness label."
   },
   {
-    q: "What revenue do wellness franchise owners generate at Spavia?",
-    a: "Spavia franchisees reported median gross sales of $1,110,481 in 2025 (2026 FDD, Item 19, 44 reporting locations). About 1 in 2 reporting locations exceeded $1M in annual gross sales — a strong benchmark in the wellness franchise category.",
+    "q": "What revenue does Spavia disclose?",
+    "a": "The 2026 FDD, Item 19, Part III reports median annual revenue (cash receipts) of $1,110,481 among 44 reporting franchised locations for 2025. Revenue is not owner income. Review the full disclosure and its reporting criteria; individual results vary."
   },
   {
-    q: "Do I need prior wellness or spa experience to own a Spavia franchise?",
-    a: "No. Spavia franchise owners are business operators, not service providers. You hire licensed massage therapists, estheticians, and other wellness professionals. Many of our most successful owners come from corporate, finance, healthcare, and entrepreneurial backgrounds.",
+    "q": "Do I need prior spa experience to own a Spavia franchise?",
+    "a": "Owners do not need to personally deliver spa treatments. They lead the business and hire appropriately qualified professionals. Evaluate the role against your experience managing people, customer service and operating budgets."
   },
   {
-    q: "What support does Spavia provide to wellness franchise owners?",
-    a: "Site selection, lease negotiation, build-out management, hiring and training programs, marketing systems, vendor relationships, ongoing operational coaching, and a community of 63+ existing franchise owners. Our leadership team brings 120+ years of combined spa and wellness experience.",
-  },
+    "q": "Can I develop multiple Spavia locations?",
+    "a": "Spavia offers multi-unit development opportunities for qualified candidates. Opening several locations requires a plan for capital, local management and the development schedule. Discuss availability and agreement terms with the franchise team."
+  }
 ];
 
 const faqJsonLd = {
@@ -80,7 +76,7 @@ export default function WellnessFranchiseContent() {
         headlineFirst="The Wellness Franchise"
         headlineSecond="Built for"
         headlineHighlight="Recurring Revenue"
-        subhead="Spavia is a full-service wellness franchise operating in the accessible-luxury segment of the $6.3 trillion global wellness market — with a multi-service revenue model and recurring membership economics."
+        subhead="Explore a wellness franchise built around massage, skincare and relaxation. Spavia combines a full-service day spa with a membership model and support from a family-owned brand."
         bullets={[
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
           "Membership-driven recurring revenue model",
@@ -96,12 +92,10 @@ export default function WellnessFranchiseContent() {
       <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
-            Why Wellness Franchise Buyers Choose Spavia
+            Which wellness franchise model fits your goals?
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-            Most wellness franchises specialize in one service. Spavia is the
-            multi-service exception — designed for higher per-guest revenue
-            and member retention.
+            Wellness includes very different businesses. Spavia is a membership-based day spa focused on massage, skincare and relaxation, with an operating model built around a local service team.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {differentiators.map((d) => (
@@ -116,6 +110,22 @@ export default function WellnessFranchiseContent() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 font-[family-name:var(--font-recoleta)]">Compare wellness franchises on the decisions you will make</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div><h3 className="font-bold text-gray-900 mb-3">The service and staffing model</h3><p className="text-gray-600 leading-relaxed">List the professionals, treatment rooms and equipment each concept requires. A membership-based day spa, an exercise studio and a medical practice have different daily demands even when they all describe themselves as wellness businesses.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">The full investment and ongoing obligations</h3><p className="text-gray-600 leading-relaxed">Read the franchise fee, build-out estimate, operating reserve and ongoing fees together. Financing does not erase these obligations. Spavia’s cost breakdown provides a starting point for comparing its model with a specific alternative.</p></div>
+            <div><h3 className="font-bold text-gray-900 mb-3">The market and your ownership role</h3><p className="text-gray-600 leading-relaxed">Check whether the proposed territory is available, then consider demand, local competition, staffing and the site. Decide how you will lead the business and build a management team. A market score alone cannot establish that a location will succeed.</p></div>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            <li><Link href="/franchise-cost" className="text-[#705b31] underline underline-offset-4">Wellness spa costs and qualification</Link></li>
+            <li><Link href="/multi-unit" className="text-[#705b31] underline underline-offset-4">Multi-unit development</Link></li>
+            <li><Link href="/franchise-opportunities" className="text-[#705b31] underline underline-offset-4">Research franchise markets</Link></li>
+          </ul>
         </div>
       </section>
 

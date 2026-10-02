@@ -2,16 +2,14 @@ import { Metadata } from "next";
 import FacialFranchiseContent from "../components/FacialFranchiseContent";
 
 export const metadata: Metadata = {
-  title: "Facial Franchise Opportunity | Spavia Day Spa | $1.1M+ Revenue",
-  description:
-    "Exploring facial franchise opportunities? Spavia's full-service model — facials, skincare, massage, body treatments — generates $1.1M+ median gross sales. $479K–$885K to open. 63 locations.",
+  title: "Facial & Skincare Franchise Opportunities | Spavia",
+  description: "Explore a facial and skincare franchise within a full-service Spavia day spa. Compare the service model, $479K–$885K investment and owner responsibilities.",
   alternates: {
     canonical: "https://spaviafranchise.com/facial-franchise",
   },
   openGraph: {
-    title: "Facial Franchise Opportunity | Spavia Day Spa",
-    description:
-      "Exploring facial franchise opportunities? Spavia's full-service model — facials, skincare, massage, body treatments — generates $1.1M+ median gross sales. $479K–$885K to open.",
+    title: "Facial & Skincare Franchise Opportunities | Spavia",
+    description: "Explore a facial and skincare franchise within a full-service Spavia day spa. Compare the service model, $479K–$885K investment and owner responsibilities.",
     url: "https://spaviafranchise.com/facial-franchise",
     type: "website",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Facial Franchise Opportunity | Spavia Day Spa",
-    description:
-      "Exploring facial franchise opportunities? Spavia's full-service model — facials, skincare, massage, body treatments — generates $1.1M+ median gross sales.",
+    title: "Facial & Skincare Franchise Opportunities | Spavia",
+    description: "Explore a facial and skincare franchise within a full-service Spavia day spa. Compare the service model, $479K–$885K investment and owner responsibilities.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

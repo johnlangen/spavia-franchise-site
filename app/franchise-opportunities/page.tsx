@@ -2,16 +2,14 @@ import { Metadata } from "next";
 import FranchiseOpportunitiesContent from "../components/FranchiseOpportunitiesContent";
 
 export const metadata: Metadata = {
-  title: "Spa Franchise Territories by State | Open Markets 2026",
-  description:
-    "See open Spavia spa franchise territories across the U.S. — Arizona, Texas, Florida, North Carolina, Tennessee, and more. Limited markets available.",
+  title: "Spa Franchise Opportunities & Available Markets | Spavia",
+  description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-opportunities",
   },
   openGraph: {
-    title: "Spa Franchise Territories by State | Open Markets 2026",
-    description:
-      "See open Spavia spa franchise territories across the U.S. — Arizona, Texas, Florida, North Carolina, Tennessee, and more. Limited markets available.",
+    title: "Spa Franchise Opportunities & Available Markets | Spavia",
+    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
     url: "https://spaviafranchise.com/franchise-opportunities",
     type: "website",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spa Franchise Territories by State | Open Markets 2026",
-    description:
-      "See open Spavia spa franchise territories across the U.S. — Arizona, Texas, Florida, North Carolina, Tennessee, and more. Limited markets available.",
+    title: "Spa Franchise Opportunities & Available Markets | Spavia",
+    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

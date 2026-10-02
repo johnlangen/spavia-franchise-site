@@ -1,3 +1,5 @@
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
 import NavBar from "../../../../../components/NavBar";
 import Footer from "../../../../../components/Footer";
@@ -51,7 +53,7 @@ const jsonLd = {
         "Beauty and wellness franchises are booming, but which sector offers better growth? Compare market size, revenue models, and investment potential to find your best fit.",
       image: "https://spaviafranchise.com/blog/blog27.png",
       datePublished: "2026-04-08",
-      dateModified: "2026-04-08",
+      dateModified: "2026-10-02",
       author: {
         "@type": "Organization",
         name: "Spavia Franchise Team",
@@ -95,7 +97,7 @@ const jsonLd = {
           name: "Which is more profitable, a beauty franchise or a wellness franchise?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Profitability depends on the specific brand, market, and how effectively the owner executes the business model. However, wellness franchises with membership-driven revenue tend to produce more predictable cash flow and higher business valuations than transaction-based beauty models. Premium day spa franchises like Spavia average over $1.14 million in unit volume with 20.6% operating margins and $236,208 in average owner cash flow.",
+            text: "Profitability depends on the specific brand, market, and how effectively the owner executes the business model. Spavia’s 2026 FDD, Item 19, Part III reports $1,110,481 median annual revenue, an 18.4% median operating margin and $199,773 median cash flow from operations for 44 reporting franchised locations. These figures are not owner take-home pay and exclude the expenses detailed in the FDD; individual results vary.",
           },
         },
         {
@@ -173,6 +175,8 @@ export default function Page() {
           />
 
           {/* ── Two Industries, One Decision ── */}
+          <FranchiseFinancialNote />
+
           <h2 className="text-2xl font-semibold mt-12 mb-4">
             Two Industries, One Decision
           </h2>
@@ -435,7 +439,7 @@ export default function Page() {
                   ["Salon Suite (Salons by JC)", "$600K\u2013$1.4M", "$800K\u2013$1.2M", "Rent Collection"],
                   ["Lash/Brow (Amazing Lash)", "$300K\u2013$500K", "~$627K", "Membership + Transaction"],
                   ["Massage Chain (Massage Envy)", "$500K\u2013$1M", "~$1M", "Membership"],
-                  ["Day Spa (Spavia)", "$496K\u2013$796K", "$1,146,952 AUV", "Membership"],
+                  ["Day Spa (Spavia)", "$479K\u2013$885K", "$1,110,481 median revenue", "Membership"],
                   ["Med Spa", "$500K\u2013$1.5M+", "$800K\u2013$2M+", "Transaction + Membership"],
                 ].map(([type, investment, revenue, model], i) => (
                   <tr
@@ -460,10 +464,10 @@ export default function Page() {
           <p className="text-lg mb-10 leading-relaxed">
             The investment levels for beauty and wellness franchises overlap
             significantly, but the revenue potential and revenue quality differ.
-            A premium day spa franchise like Spavia delivers over $1.1 million in
-            average unit volume on a similar investment to many beauty franchise
-            concepts&mdash;but with the added advantage of membership-driven
-            recurring revenue and 20.6% operating margins.
+            Spavia’s 2026 FDD reports median annual revenue of $1,110,481 and a
+            median operating margin of 18.4% among 44 reporting locations in
+            Item 19, Part III. These historical figures are not a forecast or
+            owner take-home income; see the financial note above for context.
           </p>
 
           {/* ── Five Questions ── */}
@@ -569,7 +573,7 @@ export default function Page() {
 
           <ul className="space-y-3 mb-10">
             {[
-              "Higher average unit volume than most beauty-only or massage-only concepts, with Spavia averaging over $1.14 million in revenue.",
+              "Spavia’s 2026 FDD reports median annual revenue of $1,110,481 for 44 reporting franchised locations in Part III of Item 19. Individual results vary.",
               "Membership-driven recurring revenue that provides cash flow stability and commands higher business valuations.",
               "Multi-service offering that captures a wider share of each guest\u2019s wellness spending and reduces dependence on any single service category.",
               "Less market saturation than hair salons, nail studios, or massage-only chains, with significant territory availability in growing markets.",
@@ -626,7 +630,7 @@ export default function Page() {
               },
               {
                 q: "Which is more profitable, a beauty franchise or a wellness franchise?",
-                a: "Profitability depends on the specific brand, market, and how effectively the owner executes the business model. However, wellness franchises with membership-driven revenue tend to produce more predictable cash flow and higher business valuations than transaction-based beauty models. Premium day spa franchises like Spavia average over $1.14 million in unit volume with 20.6% operating margins and $236,208 in average owner cash flow.",
+                a: "Profitability depends on the specific brand, market, and how effectively the owner executes the business model. Spavia’s 2026 FDD, Item 19, Part III reports $1,110,481 median annual revenue, an 18.4% median operating margin and $199,773 median cash flow from operations for 44 reporting franchised locations. These figures are not owner take-home pay and exclude the expenses detailed in the FDD; individual results vary.",
               },
               {
                 q: "Is the beauty and wellness franchise market still growing?",
@@ -698,6 +702,7 @@ export default function Page() {
               &larr; Back to Blog
             </Link>
           </div>
+          <FranchiseResearchLinks />
         </article>
       </main>
 

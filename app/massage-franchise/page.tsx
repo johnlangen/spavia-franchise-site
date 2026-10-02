@@ -2,16 +2,14 @@ import { Metadata } from "next";
 import MassageFranchiseContent from "../components/MassageFranchiseContent";
 
 export const metadata: Metadata = {
-  title: "Massage Franchise Opportunity | Spavia Day Spa | $1.1M+ Revenue",
-  description:
-    "Looking at massage franchise opportunities? Spavia's full-service model — massage, facials, body treatments — generates $1.1M+ median gross sales. $479K–$885K to open. 63 locations.",
+  title: "Massage Franchise Opportunities, Costs & Support | Spavia",
+  description: "Considering a massage franchise? Explore Spavia’s massage and facial spa model, $479K–$885K investment, staffing responsibilities and franchise support.",
   alternates: {
     canonical: "https://spaviafranchise.com/massage-franchise",
   },
   openGraph: {
-    title: "Massage Franchise Opportunity | Spavia Day Spa",
-    description:
-      "Looking at massage franchise opportunities? Spavia's full-service model — massage, facials, body treatments — generates $1.1M+ median gross sales. $479K–$885K to open.",
+    title: "Massage Franchise Opportunities, Costs & Support | Spavia",
+    description: "Considering a massage franchise? Explore Spavia’s massage and facial spa model, $479K–$885K investment, staffing responsibilities and franchise support.",
     url: "https://spaviafranchise.com/massage-franchise",
     type: "website",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Massage Franchise Opportunity | Spavia Day Spa",
-    description:
-      "Looking at massage franchise opportunities? Spavia's full-service model — massage, facials, body treatments — generates $1.1M+ median gross sales.",
+    title: "Massage Franchise Opportunities, Costs & Support | Spavia",
+    description: "Considering a massage franchise? Explore Spavia’s massage and facial spa model, $479K–$885K investment, staffing responsibilities and franchise support.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };
