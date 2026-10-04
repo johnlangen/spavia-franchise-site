@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FranchiseResearchLinks() {
   return (
-    <aside aria-label="Continue your franchise research" className="my-10 rounded-xl border border-[#C2A878]/40 bg-[#C2A878]/5 p-6">
+    <aside aria-label="Continue your franchise research" className="my-10 rounded-sm border border-[#b38a5f]/40 bg-[#b38a5f]/5 p-6">
       <h2 className="text-xl font-bold text-gray-900 mb-3">Explore ownership with Spavia</h2>
       <p className="text-gray-600 mb-4">Connect your research to the costs, services and markets that fit your plans.</p>
       <ul className="grid sm:grid-cols-2 gap-3 text-sm">

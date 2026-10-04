@@ -1,15 +1,15 @@
 "use client";
+import PageHero from "./PageHero";
 
-import { motion } from "framer-motion";
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
-import Footer from "./Footer";
-import FranchiseIntroForm from "./FranchiseIntroForm";
-import { ThemeProvider } from "./ThemeProvider";
-import CustomMarketForm from "./CustomMarketForm";
-import { MapPin, TrendingUp, DollarSign, Users, BarChart3 } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Link from "next/link";
 import { getAllStates } from "../data/markets";
+import Breadcrumbs from "./Breadcrumbs";
+import CustomMarketForm from "./CustomMarketForm";
+import Footer from "./Footer";
+import FranchiseIntroForm from "./FranchiseIntroForm";
+import NavBar from "./NavBar";
+import { ThemeProvider } from "./ThemeProvider";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -22,29 +22,6 @@ const jsonLd = {
     "@id": "https://spaviafranchise.com/#organization",
   },
 };
-
-const metrics = [
-  {
-    icon: DollarSign,
-    stat: "$1,110,481",
-    label: "Median Gross Sales*",
-  },
-  {
-    icon: Users,
-    stat: "1 in 2 Owners",
-    label: "Achieve $1M+ Revenue*",
-  },
-  {
-    icon: TrendingUp,
-    stat: "$479K – $885K",
-    label: "Initial Investment*",
-  },
-  {
-    icon: MapPin,
-    stat: "63",
-    label: "Franchise Locations",
-  },
-];
 
 // Arizona is a standalone page (not in markets.ts), add it manually
 const arizonaCard = {
@@ -111,64 +88,17 @@ export default function FranchiseOpportunitiesContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 flex flex-col">
+      <main id="main-content" className="bg-white text-gray-900 flex flex-col brand-light">
         <NavBar />
         <Breadcrumbs items={[{ label: "Franchise Opportunities" }]} />
 
         {/* ═══════ HERO ═══════ */}
-        <section className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] pt-28 pb-20 text-center text-white px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#C2A878]/20 text-[#C2A878] text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
-            >
-              <BarChart3 className="w-4 h-4" />
-              16 States · 33+ Markets
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
-            >
-              Spa Franchise Opportunities Across the U.S.
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10"
-            >
-              Explore market research for your preferred state, then talk with Alisa
-              about territory availability, investment and your plans for ownership.
-            </motion.p>
-
-            {/* Key metrics */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
-              {metrics.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4 text-center"
-                >
-                  <item.icon className="w-5 h-5 mx-auto mb-2 text-[#C2A878]" />
-                  <p className="text-xl font-bold">{item.stat}</p>
-                  <p className="text-xs text-white/70">{item.label}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-[10px] text-white/50">
-              *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
-            </p>
-          </div>
-        </section>
+        <PageHero eyebrow="A national brand. A local opportunity." title="Spa Franchise Opportunities Across the U.S." intro="Explore market research for your preferred state, then talk with Alisa about territory availability, investment and your plans for ownership." image="/media/exterior-storefront.webp" alt="A Spavia day spa serving its local community" action={{href:"#market-research",label:"Explore markets by state"}} />
 
         {/* ═══════ STATE CARDS BY REGION ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6 brand-light">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">
+            <h2 id="market-research" className="text-3xl font-bold text-center mb-3 text-gray-900">
               Explore Hot Markets
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -186,12 +116,12 @@ export default function FranchiseOpportunitiesContent() {
                     <Link
                       key={state.slug}
                       href={`/franchise-opportunities/${state.slug}`}
-                      className="group bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md hover:border-[#C2A878] transition-all"
+                      className="group bg-white rounded-sm border border-gray-200 p-6 hover:border-[#b38a5f] transition-all brand-light"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
-                          <MapPin className="w-5 h-5 text-[#C2A878]" />
-                          <h4 className="text-lg font-bold text-gray-900 group-hover:text-[#C2A878] transition-colors">
+                          <MapPin className="w-5 h-5 text-[var(--accent-text)]" />
+                          <h4 className="text-lg font-bold text-gray-900 group-hover:text-[var(--accent-text)] transition-colors">
                             {state.name}
                           </h4>
                         </div>
@@ -228,7 +158,7 @@ export default function FranchiseOpportunitiesContent() {
           </div>
         </section>
 
-        <section className="bg-white py-16 px-6">
+        <section className="bg-white py-16 px-6 brand-light">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">From market research to a Spavia franchise opportunity</h2>
             <div className="grid md:grid-cols-3 gap-8 text-gray-600 leading-relaxed">

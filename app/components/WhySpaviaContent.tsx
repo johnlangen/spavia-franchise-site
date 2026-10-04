@@ -1,13 +1,16 @@
 "use client";
+import FaqList from "./FaqList";
+import GoldBottomBanner from "./GoldBottomBanner";
+import PageHero from "./PageHero";
 
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
-import AwardsSection from "./AwardsSection";
-import { motion, AnimatePresence } from "framer-motion";
-import Footer from "./Footer";
-import Link from "next/link";
+import { AnimatePresence,motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import AwardsSection from "./AwardsSection";
+import Breadcrumbs from "./Breadcrumbs";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
 
 const whySpaviaFaqs = [
   {
@@ -57,53 +60,20 @@ const revenueStreams = [
 
 export default function WhySpaviaContent() {
   const [active, setActive] = useState<number>(0);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
-    <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
+    <main id="main-content" className="text-gray-900">
       <NavBar />
         <Breadcrumbs sticky items={[{ label: "Why Spavia" }]} />
 
       {/* Hero with video + black tint */}
-      <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/why-spavia.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
-          >
-            Why Spavia
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
-          >
-            Redefining Spa Excellence with Purpose and Passion. Spavia provides
-            multiple streams of revenue and a proven system for success.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero eyebrow="The Spavia difference" title="Why Spavia" intro="Accessible luxury for your guests. A full-service membership model for your business. Explore the experience, people and operating support that set Spavia apart." image="/media/signature-massage-candle.webp" alt="A personalized Spavia massage treatment by candlelight" action={{href:"/franchise-cost",label:"Explore the investment"}} />
 
       {/* Expertise Intro */}
-      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -123,10 +93,10 @@ export default function WhySpaviaContent() {
       </section>
 
       {/* By the Numbers — Stability/Quality (2026 FDD, Item 20) */}
-      <section className="snap-start py-20 bg-black text-white px-4 sm:px-6">
+      <section className="py-20 bg-black text-white px-4 sm:px-6 brand-dark">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -135,7 +105,7 @@ export default function WhySpaviaContent() {
             Selective by Design
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -146,12 +116,12 @@ export default function WhySpaviaContent() {
           </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+              <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
                 63
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
@@ -160,12 +130,12 @@ export default function WhySpaviaContent() {
               <p className="text-white/40 text-xs mt-1">As of Dec 31, 2025</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+              <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
                 4
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
@@ -174,12 +144,12 @@ export default function WhySpaviaContent() {
               <p className="text-white/40 text-xs mt-1">Net additions during 2025</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <p className="text-[#C2A878] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+              <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
                 0
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
@@ -195,7 +165,7 @@ export default function WhySpaviaContent() {
       </section>
 
       {/* Multiple Streams of Revenue */}
-      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+      <section className="py-20 bg-gray-50 px-4 sm:px-6 brand-light">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">
             Multiple Streams of Revenue
@@ -209,7 +179,7 @@ export default function WhySpaviaContent() {
                 onClick={() => setActive(i)}
                 className={`w-12 h-12 rounded-full font-bold flex items-center justify-center transition cursor-pointer ${
                   active === i
-                    ? "bg-[#C2A878] text-white shadow-lg scale-110"
+                    ? "bg-[#b38a5f] text-white  scale-110"
                     : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
                 }`}
               >
@@ -222,11 +192,11 @@ export default function WhySpaviaContent() {
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="bg-white rounded-xl shadow-md p-8"
+              className="bg-white rounded-sm p-8 brand-light"
             >
               <h3 className="text-xl font-bold mb-4">
                 {revenueStreams[active].title}
@@ -240,10 +210,10 @@ export default function WhySpaviaContent() {
       </section>
 
       {/* Exceptional Guest Experience */}
-      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -254,11 +224,11 @@ export default function WhySpaviaContent() {
               width={1920}
               height={1280}
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-xl shadow-md w-full h-auto"
+              className="rounded-sm w-full h-auto"
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -278,10 +248,10 @@ export default function WhySpaviaContent() {
       </section>
 
       {/* Proven Concept */}
-      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
+      <section className="py-20 bg-gray-50 px-4 sm:px-6 brand-light">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -303,7 +273,7 @@ export default function WhySpaviaContent() {
             </ul>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -314,17 +284,17 @@ export default function WhySpaviaContent() {
               width={1920}
               height={1280}
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-xl shadow-md w-full h-auto"
+              className="rounded-sm w-full h-auto"
             />
           </motion.div>
         </div>
       </section>
 
       {/* What Our Guests Say */}
-      <section className="snap-start py-20 bg-white text-center px-4 sm:px-6">
+      <section className="py-20 bg-white text-center px-4 sm:px-6 brand-light">
         <div className="max-w-4xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-3xl font-bold mb-6"
@@ -332,7 +302,7 @@ export default function WhySpaviaContent() {
             What Our Guests Say
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-gray-700 leading-relaxed font-sans mb-8"
@@ -340,66 +310,38 @@ export default function WhySpaviaContent() {
             The greatest rewards come when you give of yourself...
           </motion.p>
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
             <video
               src="/why-spavia/video1.mp4"
               controls
-              className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
+              className="rounded-sm w-full max-w-3xl mx-auto"
             />
           </motion.div>
         </div>
       </section>
 
       {/* Awards */}
-      <section className="snap-start bg-gray-50 px-4 sm:px-6">
+      <section className="bg-gray-50 px-4 sm:px-6 brand-light">
         <AwardsSection />
       </section>
 
       {/* FAQ */}
-      <section className="snap-start py-20 bg-white px-4 sm:px-6">
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
-            {whySpaviaFaqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div key={index} className="border-b pb-4 transition-colors">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
-                  >
-                    {faq.question}
-                    <span
-                      className={`text-2xl font-bold transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
-                      }`}
-                    >
-                      {isOpen ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <FaqList items={whySpaviaFaqs} />
         </div>
       </section>
 
       {/* Related model pages */}
-      <section className="bg-white py-12 px-6 border-t border-gray-100">
+      <section className="bg-white py-12 px-6 border-t border-gray-100 brand-light">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-3">
+          <p className="text-xs uppercase tracking-widest text-[var(--accent-text)] font-semibold mb-3">
             Related Franchise Models
           </p>
           <p className="text-gray-600 text-sm mb-6 max-w-2xl mx-auto">
@@ -409,7 +351,7 @@ export default function WhySpaviaContent() {
           <div className="grid sm:grid-cols-2 gap-3 max-w-xl mx-auto">
             <Link
               href="/day-spa-franchise"
-              className="block p-4 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-left"
+              className="block p-4 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors text-left"
             >
               <p className="font-semibold text-gray-900 text-sm mb-1">
                 Day Spa Franchise →
@@ -420,7 +362,7 @@ export default function WhySpaviaContent() {
             </Link>
             <Link
               href="/multi-unit"
-              className="block p-4 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-left"
+              className="block p-4 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors text-left"
             >
               <p className="font-semibold text-gray-900 text-sm mb-1">
                 Multi-Unit Development →
@@ -434,14 +376,7 @@ export default function WhySpaviaContent() {
       </section>
 
       {/* Next Page Link */}
-      <div className="bg-black text-white py-10 text-center">
-        <Link
-          href="/training-and-support"
-          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
-        >
-          Next: Training & Support →
-        </Link>
-      </div>
+      <GoldBottomBanner />
 
       <Footer />
     </main>

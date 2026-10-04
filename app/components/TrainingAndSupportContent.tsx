@@ -1,13 +1,13 @@
 "use client";
+import FaqList from "./FaqList";
+import GoldBottomBanner from "./GoldBottomBanner";
+import PageHero from "./PageHero";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
 import AwardsSection from "./AwardsSection";
+import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
-import Link from "next/link";
+import NavBar from "./NavBar";
 
 const expertiseItems = [
   {
@@ -81,7 +81,8 @@ const journeyItems = [
     content:
       "New owners meet the Spavia team and undergo in-depth training covering Operations, Marketing, Economics, Spa Services, and Systems. Grand Opening Training: Marketing, POS, and over 15 guides to prepare you for a successful launch.",
     imageSrc: "/media/reception-guest-experience.webp",
-    imageAlt: "Spavia front desk and guest experience in a Denver-area location",
+    imageAlt:
+      "Spavia front desk and guest experience in a Denver-area location",
   },
 ];
 
@@ -102,7 +103,8 @@ const trainingFaqs = [
       "Spavia University is Spavia's e-learning LMS suite that provides 24/7 access to training including video, text, quizzes, and reporting to keep teams engaged and accountable.",
   },
   {
-    question: "How much spa industry experience does the Spavia leadership team have?",
+    question:
+      "How much spa industry experience does the Spavia leadership team have?",
     answer:
       "The Spavia national team brings over 120 years of combined experience in spa and beauty, providing expert insights and guidance from day one of your franchise journey.",
   },
@@ -114,337 +116,151 @@ const trainingFaqs = [
 ];
 
 export default function TrainingAndSupportContent() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [currentJourneyIndex, setCurrentJourneyIndex] = useState(0);
-
-  const paginate = (newDirection: number) => {
-    setCurrentJourneyIndex((prevIndex) => {
-      const newIndex = prevIndex + newDirection;
-      if (newIndex < 0) return journeyItems.length - 1;
-      if (newIndex >= journeyItems.length) return 0;
-      return newIndex;
-    });
-  };
-
   return (
-    <main className="text-gray-900 md:h-screen md:overflow-y-scroll md:snap-y md:snap-proximity">
+    <>
       <NavBar />
-        <Breadcrumbs sticky items={[{ label: "Training & Support" }]} />
-
-      {/* Hero with video background */}
-      <section className="snap-start relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/training.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
-          >
-            Training and Support
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-sans"
-          >
-            You Have the Dream, We Have the Knowledge. Spavia offers top-notch
-            training and support from spa industry experts who bring over 120
-            years of combined experience in spa and beauty.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Training by the Numbers (2026 FDD, Item 11) */}
-      <section className="snap-start py-20 bg-gray-50 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-3 text-gray-900"
-          >
-            Training by the Numbers
-          </motion.h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12 text-base">
-            Spavia&apos;s Initial Training Program is structured, hands-on, and built
-            on 20 years of operating experience.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-              <p className="text-[#C2A878] text-4xl font-bold mb-2">26</p>
-              <p className="text-gray-700 text-sm font-medium">Hours of Classroom Training</p>
-              <p className="text-gray-500 text-xs mt-1">Across 14 subject areas</p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-              <p className="text-[#C2A878] text-4xl font-bold mb-2">14&ndash;21</p>
-              <p className="text-gray-700 text-sm font-medium">Hours of On-Site Training</p>
-              <p className="text-gray-500 text-xs mt-1">At your spa near opening</p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-              <p className="text-[#C2A878] text-4xl font-bold mb-2">3</p>
-              <p className="text-gray-700 text-sm font-medium">Trainees Covered</p>
-              <p className="text-gray-500 text-xs mt-1">By the Initial Training Fee</p>
-            </div>
-            <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-              <p className="text-[#C2A878] text-4xl font-bold mb-2">~173</p>
-              <p className="text-gray-700 text-sm font-medium">Page Operations Manual</p>
-              <p className="text-gray-500 text-xs mt-1">Plus online System Site updates</p>
-            </div>
+      <Breadcrumbs items={[{ label: "Training & Support" }]} />
+      <main id="main-content">
+        <PageHero
+          eyebrow="From your first decision to your opening day"
+          title="Training and Support"
+          intro="Bring your leadership and your vision. Spavia provides training, operating systems and a national team to help you build—and keep building—your day spa business."
+          image="/media/facial-product-prep.webp"
+          alt="Preparing professional skin care products for a Spavia treatment"
+          action={{
+            href: "#training-program",
+            label: "Explore the training program",
+          }}
+        />
+        <section id="training-program" className="section-space">
+          <div className="site-container">
+            <p className="eyebrow">The foundation for your opening</p>
+            <h2 className="display-heading">
+              Structured training.
+              <br />
+              Practical preparation.
+            </h2>
+            <p className="body-copy mt-6 max-w-2xl">
+              Spavia’s Initial Training Program combines classroom learning with
+              on-site preparation for you and your team.
+            </p>
+            <dl className="training-facts">
+              <div>
+                <dd>26</dd>
+                <dt>
+                  Hours of classroom training
+                  <br />
+                  <span>Across 14 subject areas</span>
+                </dt>
+              </div>
+              <div>
+                <dd>14–21</dd>
+                <dt>
+                  Hours of on-site training
+                  <br />
+                  <span>At your spa near opening</span>
+                </dt>
+              </div>
+              <div>
+                <dd>3</dd>
+                <dt>
+                  Trainees covered
+                  <br />
+                  <span>By the Initial Training Fee</span>
+                </dt>
+              </div>
+              <div>
+                <dd>~173</dd>
+                <dt>
+                  Page operations manual
+                  <br />
+                  <span>Plus online System Site updates</span>
+                </dt>
+              </div>
+            </dl>
+            <p className="fine-print">Source: 2026 Spavia FDD, Item 11.</p>
           </div>
-          <p className="text-gray-400 text-[10px] mt-10 text-center">
-            Source: 2026 Spavia Franchise Disclosure Document, Item 11.
-          </p>
-        </div>
-      </section>
-
-      {/* Training Expertise (Accordion) */}
-      <section className="snap-start py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-10 text-center"
-          >
-            Training Expertise
-          </motion.h2>
-          <div className="space-y-4">
-            {expertiseItems.map((item, idx) => {
-              const isOpen = openIndex === idx;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className={`cursor-pointer rounded-xl border shadow-sm transition-all duration-300 ${
-                    isOpen
-                      ? "bg-white border-[#C2A878] shadow-lg"
-                      : "bg-gray-50 hover:shadow-md"
-                  }`}
+        </section>
+        <section className="section-space bg-[#f5f5f5]">
+          <div className="site-container editorial-grid">
+            <div>
+              <p className="eyebrow">The people and systems behind you</p>
+              <h2 className="display-heading">
+                Support for the work
+                <br />
+                you do every day.
+              </h2>
+              <p className="body-copy mt-6">
+                Explore the expertise available as you learn to lead your spa,
+                develop your team and build your local presence.
+              </p>
+            </div>
+            <FaqList
+              items={expertiseItems.map((item) => ({
+                question: item.title,
+                answer: item.content,
+              }))}
+            />
+          </div>
+        </section>
+        <section className="section-space">
+          <div className="site-container">
+            <p className="eyebrow">How you’ll learn</p>
+            <h2 className="display-heading mb-10">
+              From the classroom
+              <br />
+              to your own spa.
+            </h2>
+            <div className="training-stages">
+              {journeyItems.map((item, index) => (
+                <details
+                  key={item.title}
+                  name="training-stages"
+                  open={index === 0}
                 >
-                  <div className="flex justify-between items-center p-5">
-                    <span className="font-semibold text-lg">{item.title}</span>
-                    <motion.span
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-[#C2A878]"
-                    >
-                      ▼
-                    </motion.span>
-                  </div>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="content"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-5 pb-5 text-gray-700 text-sm leading-relaxed">
-                          {item.content}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Journey Sections Carousel */}
-      <section className="snap-start py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-10 text-center"
-          >
-            Your Franchise Journey
-          </motion.h2>
-
-          <div className="relative w-full">
-            <AnimatePresence initial={false} mode="wait">
-              <motion.div
-                key={currentJourneyIndex}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.45 }}
-                className="grid md:grid-cols-2 gap-8 items-center"
-              >
-                {/* Image */}
-                <div className="relative w-full h-64 sm:h-80 md:h-[450px] rounded-xl shadow-lg overflow-hidden">
-                  <Image
-                    src={journeyItems[currentJourneyIndex].imageSrc}
-                    alt={journeyItems[currentJourneyIndex].imageAlt}
-                    fill
-                    className="object-contain md:object-cover"
-                    priority
-                  />
-                </div>
-
-                {/* Text */}
-                <div className="relative pb-16 md:pb-0">
-                  <h3 className="text-2xl font-bold mb-4">
-                    {journeyItems[currentJourneyIndex].title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-3">
-                    {journeyItems[currentJourneyIndex].content}
-                  </p>
-                  {journeyItems[currentJourneyIndex].listItems && (
-                    <ol className="list-decimal list-inside space-y-1 text-gray-700">
-                      {journeyItems[currentJourneyIndex].listItems.map(
-                        (li, idx) => (
-                          <li key={idx}>{li}</li>
-                        )
+                  <summary>
+                    <span className="stage-number">0{index + 1}</span>
+                    <span>{item.title}</span>
+                    <span aria-hidden="true">+</span>
+                  </summary>
+                  <div className="training-stage-body">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      width={640}
+                      height={400}
+                      className="object-cover"
+                      sizes="(max-width:800px) 100vw, 45vw"
+                    />
+                    <div>
+                      <p className="body-copy">{item.content}</p>
+                      {item.listItems && (
+                        <ol className="list-decimal pl-5 mt-5 space-y-3">
+                          {item.listItems.map((line) => (
+                            <li key={line}>{line}</li>
+                          ))}
+                        </ol>
                       )}
-                    </ol>
-                  )}
-
-                  {/* Controls */}
-                  <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center mt-6 space-x-3 md:static md:mt-8">
-                    <button
-                      onClick={() => paginate(-1)}
-                      className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-                      aria-label="Previous step"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 19l-7-7 7-7"
-                        />
-                      </svg>
-                    </button>
-
-                    {journeyItems.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentJourneyIndex(idx)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          idx === currentJourneyIndex
-                            ? "bg-[#C2A878] scale-125 shadow-md"
-                            : "bg-gray-300 hover:bg-gray-400"
-                        }`}
-                        aria-label={`Go to step ${idx + 1}`}
-                      />
-                    ))}
-
-                    <button
-                      onClick={() => paginate(1)}
-                      className="p-2.5 bg-gray-300 rounded-full text-gray-800 hover:bg-gray-400 transition-colors cursor-pointer"
-                      aria-label="Next step"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </button>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                </details>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="snap-start py-20 bg-white px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {trainingFaqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div key={index} className="border-b pb-4 transition-colors">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
-                  >
-                    {faq.question}
-                    <span
-                      className={`text-2xl font-bold transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
-                      }`}
-                    >
-                      {isOpen ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
+        </section>
+        <section className="section-space bg-[#f5f5f5]">
+          <div className="site-container faq-layout">
+            <div>
+              <p className="eyebrow">Plan with clarity</p>
+              <h2 className="display-heading">Training & support questions.</h2>
+            </div>
+            <FaqList items={trainingFaqs} />
           </div>
-        </div>
-      </section>
-
-      {/* Awards */}
-      <section className="snap-start bg-gray-50">
+        </section>
         <AwardsSection />
-      </section>
-
-      {/* Next Page Link */}
-      <div className="bg-black text-white py-10 text-center">
-        <Link
-          href="/our-franchisees"
-          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
-        >
-          Next: Our Franchisees →
-        </Link>
-      </div>
-
+        <GoldBottomBanner />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

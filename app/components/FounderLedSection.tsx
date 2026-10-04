@@ -35,7 +35,7 @@ export default function FounderLedSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[#C2A878] font-semibold mb-4">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-text)] font-semibold mb-4">
             Ownership Matters
           </p>
           <h2 className="text-3xl md:text-5xl font-bold leading-[1.1] font-[family-name:var(--font-recoleta)]">
@@ -59,9 +59,9 @@ export default function FounderLedSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.1 }}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-[#C2A878]/40 transition-colors"
+              className="rounded-sm border border-white/10 bg-white/[0.03] p-7 hover:border-[#b38a5f]/40 transition-colors"
             >
-              <h3 className="text-lg font-semibold text-[#C2A878] mb-3 font-[family-name:var(--font-recoleta)]">
+              <h3 className="text-lg font-semibold text-[var(--accent-text)] mb-3 font-[family-name:var(--font-recoleta)]">
                 {p.title}
               </h3>
               <p className="text-white/70 text-sm leading-relaxed">{p.body}</p>
@@ -78,7 +78,7 @@ export default function FounderLedSection() {
         >
           <Link
             href="/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led"
-            className="inline-block text-sm font-semibold text-[#C2A878] hover:text-white transition-colors border-b border-[#C2A878]/40 hover:border-white pb-0.5"
+            className="inline-block text-sm font-semibold text-[var(--accent-text)] hover:text-white transition-colors border-b border-[#b38a5f]/40 hover:border-white pb-0.5"
           >
             See who actually owns the big spa franchises &rarr;
           </Link>

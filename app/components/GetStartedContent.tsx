@@ -1,119 +1,22 @@
-"use client";
-
-import { useState } from "react";
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
-import Footer from "./Footer";
-import AwardsSection from "./AwardsSection";
+import Image from "next/image";
 import Link from "next/link";
+import { getStartedFaqs } from "../data/getStartedFaq";
+import Breadcrumbs from "./Breadcrumbs";
+import FaqList from "./FaqList";
+import Footer from "./Footer";
 import FranchiseLongForm from "./FranchiseLongForm";
-
-const getStartedFaqs = [
-  {
-    question: "How do I get started with a Spavia franchise?",
-    answer:
-      "Complete the franchise inquiry form above to receive the Spavia Franchise Information Kit. Our founding team will contact you within one business day to discuss the opportunity.",
-  },
-  {
-    question: "What happens after I submit the franchise inquiry form?",
-    answer:
-      "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book an intro call directly with Alisa Anderson, Spavia's VP of Franchise Development.",
-  },
-  {
-    question: "What is the franchise ownership process at Spavia?",
-    answer:
-      "The Spavia franchise process has seven steps: an intro call with our VP of Franchise Development, a Brand Overview, FDD Review, a Market & Territory review, Validation with current franchise partners, Meet the Team Day in Denver, Colorado, and the Franchise Agreement.",
-  },
-  {
-    question: "How large is the wellness industry opportunity?",
-    answer:
-      "The global wellness industry is a $6.3 trillion market. Spavia franchise owners bring resort-like spa experiences to local communities, tapping into the growing demand for affordable luxury wellness services.",
-  },
-];
+import NavBar from "./NavBar";
 
 export default function GetStartedContent() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
-  return (
-    <main className="bg-white text-gray-900 flex flex-col">
-      <NavBar />
-      <Breadcrumbs items={[{ label: "Get Started" }]} />
-
-      {/* FORM SECTION */}
-      <section className="px-6 pt-10 md:pt-16 pb-16">
-        <div className="max-w-xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-center mb-2">
-            Request Franchise Information
-          </h1>
-          <p className="text-gray-500 text-sm text-center mb-6">
-            A Spavia representative will contact you within one business day.
-          </p>
-
-          <FranchiseLongForm />
-
-          <p className="text-center text-gray-500 text-sm mt-6">
-            Prefer to talk first? Email{" "}
-            <a
-              href="mailto:alisa@spaviadayspa.com"
-              className="text-[#C2A878] font-medium hover:underline"
-            >
-              alisa@spaviadayspa.com
-            </a>
-          </p>
-          <p className="text-center text-gray-400 text-xs mt-2">
-            Learn more about our{" "}
-            <Link
-              href="/steps-to-ownership"
-              className="text-[#C2A878] hover:underline"
-            >
-              Steps to Ownership
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {getStartedFaqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div key={index} className="border-b border-gray-200 pb-4">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
-                  >
-                    {faq.question}
-                    <span
-                      className={`text-2xl font-bold transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
-                      }`}
-                    >
-                      {isOpen ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* AWARDS */}
-      <AwardsSection />
-
-      <Footer />
-    </main>
-  );
+  return <><NavBar/><Breadcrumbs items={[{label:"Get Started"}]}/><main id="main-content">
+    <section className="section-space inquiry-page"><div className="site-container inquiry-grid">
+      <div><p className="eyebrow">Start a conversation</p><h1 className="display-heading">Request Franchise<br/>Information</h1><p className="body-copy mt-5">Tell us a little about yourself and the business you want to build. Alisa and the franchise development team will follow up within one business day.</p>
+        <div className="inquiry-contact"><Image src="/who-we-are/alisa-anderson.png" alt="Alisa Anderson" width={80} height={96}/><div><p>Alisa Anderson</p><span>VP of Franchise Development</span><a href="mailto:alisa@spaviadayspa.com">Email Alisa directly →</a></div></div>
+        <div className="inquiry-expectations"><h2>What comes next</h2><p>Receive the franchise overview, discuss your goals and market, and learn how Spavia ownership works.</p><Link href="/steps-to-ownership" className="text-link mt-4">See all seven steps to ownership →</Link></div>
+        <p className="fine-print mt-6">No obligation. Candidates need $200K+ in liquid capital and $500K+ net worth. <Link href="/franchise-cost" className="underline">Review investment details.</Link></p>
+      </div>
+      <FranchiseLongForm/>
+    </div></section>
+    <section className="section-space"><div className="site-container max-w-4xl"><p className="eyebrow">Before you begin</p><h2 className="display-heading mb-6">A few helpful answers.</h2><FaqList items={getStartedFaqs}/></div></section>
+  </main><Footer/></>;
 }

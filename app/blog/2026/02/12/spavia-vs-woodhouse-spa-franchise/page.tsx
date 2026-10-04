@@ -37,10 +37,10 @@ export default function Page() {
     </section>
     <section>
       <h2>Investment and candidate requirements</h2>
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-sm border border-gray-200">
         <table className="w-full min-w-[550px] text-sm text-left">
-          <caption className="text-left bg-gray-50 p-4 font-semibold">Published requirements checked October 2, 2026</caption>
-          <thead className="bg-gray-900 text-white"><tr><th scope="col" className="p-4">Measure</th><th scope="col" className="p-4">Spavia</th><th scope="col" className="p-4">Woodhouse</th></tr></thead>
+          <caption className="text-left bg-gray-50 p-4 font-semibold brand-light">Published requirements checked October 2, 2026</caption>
+          <thead className="bg-gray-900 text-white brand-dark"><tr><th scope="col" className="p-4">Measure</th><th scope="col" className="p-4">Spavia</th><th scope="col" className="p-4">Woodhouse</th></tr></thead>
           <tbody>
             {[
               ["Initial investment", "$479,450–$885,450", "$1,482,439–$2,697,879"],

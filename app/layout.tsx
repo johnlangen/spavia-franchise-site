@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import localFont from "next/font/local";
 import Script from "next/script";
 import { Suspense } from "react";
-import FloatingButton from "./components/FloatingButton";
-import ChatWidget from "./components/ChatWidget";
-import { ThemeProvider } from "./components/ThemeProvider";
 import Analytics from "./components/Analytics";
 import AttributionTracker from "./components/AttributionTracker";
+import ChatWidget from "./components/ChatWidget";
+import EngagementTracking from "./components/EngagementTracking";
+import FloatingButton from "./components/FloatingButton";
+import { ThemeProvider } from "./components/ThemeProvider";
+import "./globals.css";
 
 const recoleta = localFont({
   src: [
     {
-      path: "../public/fonts/Recoleta-Regular.otf",
+      path: "../public/fonts/Recoleta-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/Recoleta-Bold.otf",
+      path: "../public/fonts/Recoleta-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -88,57 +89,60 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={recoleta.variable}>
-
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalJsonLd) }}
         />
-        {/* If JS is disabled, scroll-reveal elements never get .reveal-in —
-            show them so content is never invisible. */}
-        <noscript>
-          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
-        </noscript>
       </head>
 
-      {/* ✅ GOOGLE ADS BASE TAG */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-944657062"
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-init" strategy="afterInteractive">
-        {`
+      {process.env.NODE_ENV === "production" && (
+        <>
+          {/* Google Ads and GA4: preserve production conversion configuration. */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=AW-944657062"
+            strategy="afterInteractive"
+          />
+          <Script id="google-ads-init" strategy="afterInteractive">
+            {`
+          if (["spaviafranchise.com", "www.spaviafranchise.com"].includes(window.location.hostname)) {
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
           gtag('js', new Date());
           gtag('config', 'AW-944657062');
+          }
         `}
-      </Script>
+          </Script>
 
-      {/* ✅ GOOGLE ANALYTICS (GA4) */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-6N6Q7GX5D4"
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
+          {/* ✅ GOOGLE ANALYTICS (GA4) */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-6N6Q7GX5D4"
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`
+          if (["spaviafranchise.com", "www.spaviafranchise.com"].includes(window.location.hostname)) {
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
           gtag('js', new Date());
           gtag('config', 'G-6N6Q7GX5D4', {
             anonymize_ip: true,
             send_page_view: false,
           });
+          }
         `}
-      </Script>
-
-      <body
-        className="antialiased"
-      >
+          </Script>
+        </>
+      )}
+      <body className="antialiased">
         <Suspense fallback={null}>
           <Analytics />
         </Suspense>
         <AttributionTracker />
+        <EngagementTracking />
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <ThemeProvider>
           {children}
           <FloatingButton />

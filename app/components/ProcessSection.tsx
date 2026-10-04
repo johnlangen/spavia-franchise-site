@@ -1,8 +1,4 @@
-"use client";
-
-import { useTheme } from "./ThemeProvider";
-import { themes } from "../themeConfig";
-import Button from "./Button";
+import Link from "next/link";
 
 const steps = [
   {
@@ -44,57 +40,38 @@ const steps = [
 ];
 
 export default function ProcessSection() {
-  const { theme } = useTheme();
-  const themeColor = theme ? themes[theme].color : "#C2A878"; // fallback bronze
-
   return (
-    <section className="py-12 md:py-16 bg-white" aria-labelledby="ownership-process-heading">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Title */}
-        <h2 id="ownership-process-heading" className="text-3xl font-bold text-center mb-8 text-gray-900">
-          The Franchise Ownership Process
-        </h2>
-
-        {/* Timeline */}
-        <ol
-          role="list"
-          className="relative ml-4 border-l-2 space-y-5"
-          style={{ borderColor: themeColor }}
-        >
-          {steps.map((step, idx) => (
-            <li key={step.title} className="relative pl-8 md:pl-10">
-              {/* Circle number */}
-              <div
-                aria-hidden="true"
-                className="absolute top-4 left-[-17px] w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                style={{ backgroundColor: themeColor }}
-              >
-                {idx + 1}
-              </div>
-
-              {/* Card */}
-              <div className="bg-white p-4 md:p-5 rounded-lg border border-gray-200">
-                <h3 className="text-lg font-semibold mb-1 text-gray-900">
-                  {step.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">{step.description}</p>
+    <section
+      className="section-space"
+      aria-labelledby="ownership-process-heading"
+    >
+      <div className="site-container process-layout">
+        <div>
+          <p className="eyebrow">Your path to ownership</p>
+          <h2 id="ownership-process-heading" className="display-heading">
+            The Franchise
+            <br />
+            Ownership Process
+          </h2>
+          <p className="body-copy mt-5">
+            A conversation starts it. A shared understanding moves it forward.
+            You’ll have opportunities to learn, ask and decide at every stage.
+          </p>
+        </div>
+        <ol className="ownership-steps">
+          {steps.map((step, index) => (
+            <li key={step.title}>
+              <span className="step-number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
                 {step.button && (
-                  <a
-                    href="/get-started"
-                    className="inline-block mt-4"
-                  >
-                    <Button
-                      variant="primary"
-                      style={{
-                        backgroundColor: themeColor,
-                        borderColor: themeColor,
-                      }}
-                    >
-                      {step.button}
-                    </Button>
-                  </a>
+                  <Link href="/get-started" className="text-link mt-3">
+                    {step.button} <span aria-hidden="true">→</span>
+                  </Link>
                 )}
-
               </div>
             </li>
           ))}

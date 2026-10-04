@@ -1,8 +1,8 @@
 "use client";
 
+import { AnimatePresence,motion } from "framer-motion";
+import { CheckCircle,X } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle } from "lucide-react";
 import type { CountyMarket } from "../data/markets";
 
 interface MarketReportModalProps {
@@ -93,7 +93,7 @@ export default function MarketReportModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.2 }}
-          className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 z-10"
+          className="relative bg-white rounded-sm shadow-2xl max-w-md w-full p-8 z-10 brand-light"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
@@ -119,7 +119,7 @@ export default function MarketReportModal({
               </p>
               <button
                 onClick={onClose}
-                className="bg-[#C2A878] hover:bg-[#b09668] text-white font-semibold px-6 py-2.5 rounded-full transition-colors"
+                className="bg-[#b38a5f] hover:bg-[#b09668] text-black font-semibold px-6 py-2.5 rounded-full transition-colors"
               >
                 Close
               </button>
@@ -154,7 +154,7 @@ export default function MarketReportModal({
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       autoComplete="given-name"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] outline-none"
+                      className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-[#b38a5f] focus:border-[#b38a5f] outline-none"
                     />
                   </div>
                   <div>
@@ -171,7 +171,7 @@ export default function MarketReportModal({
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       autoComplete="family-name"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] outline-none"
+                      className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-[#b38a5f] focus:border-[#b38a5f] outline-none"
                     />
                   </div>
                 </div>
@@ -190,7 +190,7 @@ export default function MarketReportModal({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     autoComplete="email"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] outline-none"
+                    className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-[#b38a5f] focus:border-[#b38a5f] outline-none"
                   />
                 </div>
 
@@ -208,7 +208,7 @@ export default function MarketReportModal({
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     autoComplete="tel"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] outline-none"
+                    className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-[#b38a5f] focus:border-[#b38a5f] outline-none"
                   />
                 </div>
 
@@ -221,7 +221,7 @@ export default function MarketReportModal({
                     type="text"
                     readOnly
                     value={marketLabel}
-                    className="w-full border border-gray-200 bg-gray-50 rounded-lg px-3 py-2 text-sm text-gray-600"
+                    className="w-full border border-gray-200 bg-gray-50 rounded-sm px-3 py-2 text-sm text-gray-600 brand-light"
                   />
                 </div>
 
@@ -232,7 +232,7 @@ export default function MarketReportModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#C2A878] hover:bg-[#b09668] disabled:opacity-50 text-white font-semibold py-3 rounded-full transition-colors"
+                  className="w-full bg-[#b38a5f] hover:bg-[#b09668] disabled:opacity-50 text-black font-semibold py-3 rounded-full transition-colors"
                 >
                   {loading ? "Submitting..." : "Send My Report"}
                 </button>

@@ -1,44 +1,8 @@
 import { Metadata } from "next";
 import GetStartedContent from "../components/GetStartedContent";
 
-const getStartedFaqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do I get started with a Spavia franchise?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Complete the franchise inquiry form on the Get Started page to receive the Spavia Franchise Information Kit. Our founding team will contact you within one business day to discuss the opportunity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What happens after I submit the franchise inquiry form?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book an intro call directly with Alisa Anderson, Spavia's VP of Franchise Development.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the franchise ownership process at Spavia?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Spavia franchise process has seven steps: an intro call with our VP of Franchise Development, a Brand Overview, FDD Review, a Market & Territory review, Validation with current franchise partners, Meet the Team Day in Denver, Colorado, and the Franchise Agreement.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How large is the wellness industry opportunity?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The global wellness industry is a $6.3 trillion market. Spavia franchise owners bring resort-like spa experiences to local communities, tapping into the growing demand for affordable luxury wellness services.",
-      },
-    },
-  ],
-};
+import { getStartedFaqs } from "../data/getStartedFaq";
+const getStartedFaqJsonLd = {"@context":"https://schema.org","@type":"FAQPage",mainEntity:getStartedFaqs.map(({question,answer})=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))};
 
 export const metadata: Metadata = {
   title: "Get Started With Spavia: Request Your Franchise Overview",

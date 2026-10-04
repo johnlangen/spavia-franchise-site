@@ -44,10 +44,10 @@ const reviews = [
 
 export default function GuestTestimonialsSection() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-white py-20 px-6 brand-light">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
@@ -60,13 +60,13 @@ export default function GuestTestimonialsSection() {
           {reviews.slice(0, 3).map((review, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-100"
+              className="bg-gray-50 rounded-sm p-6 border border-gray-100 brand-light"
             >
-              <div className="text-[#C2A878] text-4xl font-serif leading-none mb-3">
+              <div className="text-[var(--accent-text)] text-4xl font-serif leading-none mb-3">
                 &ldquo;
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-4">
@@ -76,7 +76,7 @@ export default function GuestTestimonialsSection() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-[#C2A878] text-[#C2A878]"
+                    className="w-4 h-4 fill-[#C2A878] text-[var(--accent-text)]"
                   />
                 ))}
               </div>
@@ -95,13 +95,13 @@ export default function GuestTestimonialsSection() {
           {reviews.slice(3, 6).map((review, idx) => (
             <motion.div
               key={idx + 3}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-100"
+              className="bg-gray-50 rounded-sm p-6 border border-gray-100 brand-light"
             >
-              <div className="text-[#C2A878] text-4xl font-serif leading-none mb-3">
+              <div className="text-[var(--accent-text)] text-4xl font-serif leading-none mb-3">
                 &ldquo;
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-4">
@@ -111,7 +111,7 @@ export default function GuestTestimonialsSection() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-[#C2A878] text-[#C2A878]"
+                    className="w-4 h-4 fill-[#C2A878] text-[var(--accent-text)]"
                   />
                 ))}
               </div>

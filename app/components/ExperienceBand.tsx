@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 // Full-bleed cinematic band — a single hero-grade photo with a short line of
 // copy. Breaks up the text sections and lets the new brand photography carry
@@ -39,7 +39,7 @@ export default function ExperienceBand() {
             </p>
             <Link
               href="/why-spavia"
-              className="inline-block rounded-full bg-[#C2A878] px-7 py-3 font-semibold text-white hover:bg-[#a98e5e] transition-colors"
+              className="inline-block rounded-full bg-[#b38a5f] px-7 py-3 font-semibold text-black hover:bg-[#a98e5e] transition-colors"
             >
               Why Spavia works
             </Link>

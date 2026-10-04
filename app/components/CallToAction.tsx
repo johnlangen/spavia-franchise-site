@@ -5,7 +5,7 @@ export default function CallToAction() {
     <div className="text-center mt-8">
       <a
         href="/get-started"
-        className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
+        className="inline-block bg-[#b38a5f] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
       >
         Schedule a Call
       </a>

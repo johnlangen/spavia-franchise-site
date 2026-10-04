@@ -46,7 +46,7 @@ export default function SEOContentSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[#C2A878] font-semibold mb-4">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-text)] font-semibold mb-4">
             The Opportunity
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)]">
@@ -60,11 +60,11 @@ export default function SEOContentSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-[#C2A878]/30 py-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-[#b38a5f]/30 py-8"
         >
           {stats.map((s) => (
             <div key={s.value} className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-[#9c814f] font-[family-name:var(--font-recoleta)]">
+              <p className="text-2xl md:text-3xl font-bold text-[var(--accent-text)] font-[family-name:var(--font-recoleta)]">
                 {s.value}
               </p>
               <p className="text-xs text-gray-600 mt-1 leading-snug">{s.label}</p>
@@ -81,9 +81,9 @@ export default function SEOContentSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl bg-white border border-gray-200 p-6"
+              className="rounded-sm bg-white border border-gray-200 p-6 brand-light"
             >
-              <h3 className="text-[#9c814f] font-semibold text-base mb-2 font-[family-name:var(--font-recoleta)]">
+              <h3 className="text-[var(--accent-text)] font-semibold text-base mb-2 font-[family-name:var(--font-recoleta)]">
                 {block.heading}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -96,7 +96,7 @@ export default function SEOContentSection() {
         <div className="text-center mt-12">
           <Link
             href="/get-started"
-            className="inline-block bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold px-8 py-3 rounded-lg transition"
+            className="inline-block bg-[#b38a5f] hover:bg-[#b09466] text-black font-semibold px-8 py-3 rounded-sm transition"
           >
             Request Franchise Information
           </Link>

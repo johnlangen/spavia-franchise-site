@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
-import { getRelatedPosts, blogPosts } from "../../../../blogData";
+import Footer from "../../../../../components/Footer";
+import NavBar from "../../../../../components/NavBar";
+import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -72,15 +72,16 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavBar />
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "How $8 Could Feed Every Hungry Child: A Thanksgiving Refl..." }]} />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Button */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             ← Back to Blog
           </Link>
@@ -134,7 +135,7 @@ export default function Page() {
             20th Anniversary facial, we are donating:
           </p>
 
-          <p className="text-xl font-semibold mb-4 text-[#C2A878]">$34,000 to Blessings in a Backpack</p>
+          <p className="text-xl font-semibold mb-4 text-[var(--accent-text)]">$34,000 to Blessings in a Backpack</p>
 
           <p className="mb-6 leading-relaxed">
             That translates into:
@@ -274,7 +275,7 @@ export default function Page() {
             <ul className="space-y-3">
               {getRelatedPosts("/blog/2025/11/25/how-8-could-feed-every-hungry-child-a-thanksgiving-reflection-from-spavias-ceo").map((rp) => (
                 <li key={rp.href}>
-                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                  <Link href={rp.href} className="text-[var(--accent-text)] hover:underline">
                     {rp.title} &rarr;
                   </Link>
                 </li>
@@ -283,7 +284,7 @@ export default function Page() {
           </div>
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -299,7 +300,7 @@ export default function Page() {
 <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               ← Back to Blog
             </Link>

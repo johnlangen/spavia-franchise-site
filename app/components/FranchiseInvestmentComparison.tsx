@@ -4,12 +4,12 @@ import { franchiseComparisons } from "../data/franchiseComparisons";
 export default function FranchiseInvestmentComparison() {
   return (
     <div>
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-sm border border-gray-200">
         <table className="w-full min-w-[600px] text-left text-sm">
-          <caption className="bg-gray-50 px-5 py-4 text-left font-semibold text-gray-900">
+          <caption className="bg-gray-50 px-5 py-4 text-left font-semibold text-gray-900 brand-light">
             Published initial investment for a single location
           </caption>
-          <thead className="bg-gray-900 text-white">
+          <thead className="bg-gray-900 text-white brand-dark">
             <tr><th scope="col" className="p-4">Brand</th><th scope="col" className="p-4">Initial investment</th><th scope="col" className="p-4">Service model</th></tr>
           </thead>
           <tbody>

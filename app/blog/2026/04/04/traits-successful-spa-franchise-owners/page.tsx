@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
-import { getRelatedPosts, formatDate, blogPosts } from "../../../../blogData";
+import Footer from "../../../../../components/Footer";
+import NavBar from "../../../../../components/NavBar";
+import { blogPosts,formatDate,getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -138,12 +138,12 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Button */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -188,7 +188,7 @@ export default function Page() {
             spa franchise owners</strong>. Whether you are actively evaluating{" "}
             <Link
               href="/blog/2026/02/19/spa-franchise-opportunities-guide"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               franchise opportunities
             </Link>{" "}
@@ -219,7 +219,7 @@ export default function Page() {
             owners who retain the best talent are the ones who treat their teams
             like family&mdash;not just labor.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You have a
               track record of building strong teams, whether in corporate
@@ -251,7 +251,7 @@ export default function Page() {
             to their work. The common thread is an intuitive understanding that
             great service is not a department&mdash;it is a culture.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You notice
               details in every service experience you have&mdash;the restaurant
@@ -285,7 +285,7 @@ export default function Page() {
             franchisor&rsquo;s proven playbook rather than trying to build
             everything from scratch.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You are
               organized and process-oriented, but comfortable delegating. You
@@ -310,7 +310,7 @@ export default function Page() {
           </p>
           <p className="text-lg mb-6 leading-relaxed">
             Spavia&rsquo;s culture is rooted in its WE CARE values and the{" "}
-            <Link href="/who-we-are" className="text-[#C2A878] hover:underline">
+            <Link href="/who-we-are" className="text-[var(--accent-text)] hover:underline">
               Spavia Cares initiative
             </Link>
             , in which each location supports local organizations and charitable
@@ -318,7 +318,7 @@ export default function Page() {
             business driver. Franchise owners who are naturally community-oriented
             build word-of-mouth networks that no paid advertising can replicate.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You are
               active in your community&mdash;coaching a team, volunteering,
@@ -348,7 +348,7 @@ export default function Page() {
             learning the system as designed, building a foundation of success,
             and then innovating from a position of understanding.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You are
               confident in your abilities but open to learning. You have
@@ -379,7 +379,7 @@ export default function Page() {
             ramp-up period, while those who plan for a 12&ndash;18 month
             trajectory to maturity build sustainable, profitable businesses.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You have
               managed budgets, reviewed P&amp;L statements, or run financial
@@ -412,7 +412,7 @@ export default function Page() {
             teams, how they talk about their business, and how they create a
             guest experience that keeps people coming back.
           </p>
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-4 rounded-r-lg mb-8">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-4 rounded-r-lg mb-8 brand-light">
             <p className="text-gray-700 leading-relaxed italic">
               <strong>You might already have this trait if:</strong> You value
               wellness and self-care in your own life. You light up when talking
@@ -451,7 +451,7 @@ export default function Page() {
               },
             ].map((item) => (
               <li key={item.bold} className="flex items-start gap-3 text-lg leading-relaxed">
-                <span className="text-[#C2A878] text-xl mt-0.5">&#10003;</span>
+                <span className="text-[var(--accent-text)] text-xl mt-0.5">&#10003;</span>
                 <span>
                   <strong>{item.bold}</strong> {item.text}
                 </span>
@@ -464,7 +464,7 @@ export default function Page() {
             community. Explore our{" "}
             <Link
               href="/blog/2026/03/25/women-entrepreneurs-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               guide for women entrepreneurs
             </Link>{" "}
@@ -482,7 +482,7 @@ export default function Page() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
-            <div className="rounded-xl border border-gray-200 p-6">
+            <div className="rounded-sm border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-3">Owner-Operator</h3>
               <p className="text-gray-600 leading-relaxed">
                 Active involvement in spa leadership and team culture. This
@@ -494,7 +494,7 @@ export default function Page() {
                 connection.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 p-6">
+            <div className="rounded-sm border border-gray-200 p-6">
               <h3 className="text-lg font-semibold mb-3">Semi-Active Owner</h3>
               <p className="text-gray-600 leading-relaxed">
                 The owner hires a Spa Director or General Manager and oversees
@@ -521,7 +521,7 @@ export default function Page() {
           <div className="overflow-x-auto mb-6">
             <table className="w-full border-collapse text-left">
               <thead>
-                <tr className="bg-gray-800 text-white">
+                <tr className="bg-gray-800 text-white brand-dark">
                   <th className="px-4 py-3 font-semibold">Trait</th>
                   <th className="px-4 py-3 font-semibold text-center">Strong</th>
                   <th className="px-4 py-3 font-semibold text-center">Growing</th>
@@ -601,7 +601,7 @@ export default function Page() {
             ].map((bg) => (
               <div
                 key={bg.title}
-                className="rounded-xl border border-gray-200 p-6"
+                className="rounded-sm border border-gray-200 p-6"
               >
                 <h3 className="text-lg font-semibold mb-2">{bg.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{bg.desc}</p>
@@ -617,7 +617,7 @@ export default function Page() {
             system. Learn more about{" "}
             <Link
               href="/blog/2026/03/10/how-to-open-a-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               how to open a spa franchise step by step
             </Link>
@@ -638,7 +638,7 @@ export default function Page() {
             </p>
             <Link
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
+              className="inline-block bg-[#b38a5f] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
             >
               Schedule Your Discovery Call
             </Link>
@@ -698,7 +698,7 @@ export default function Page() {
                 <li key={rp.href}>
                   <Link
                     href={rp.href}
-                    className="text-[#C2A878] hover:underline"
+                    className="text-[var(--accent-text)] hover:underline"
                   >
                     {rp.title} &rarr;
                   </Link>
@@ -709,7 +709,7 @@ export default function Page() {
 
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -724,7 +724,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

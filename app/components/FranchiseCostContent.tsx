@@ -1,16 +1,15 @@
 "use client";
+import GoldBottomBanner from "./GoldBottomBanner";
+import PageHero from "./PageHero";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import NavBar from "./NavBar";
+import { Check,DollarSign,Shield,TrendingUp } from "lucide-react";
+import Link from "next/link";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import FranchiseIntroForm from "./FranchiseIntroForm";
-import FranchiseLongForm from "./FranchiseLongForm";
-import { ThemeProvider } from "./ThemeProvider";
-import { DollarSign, TrendingUp, Shield, Check } from "lucide-react";
-import Link from "next/link";
 import FranchiseInvestmentComparison from "./FranchiseInvestmentComparison";
+import NavBar from "./NavBar";
+import { ThemeProvider } from "./ThemeProvider";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -76,69 +75,17 @@ export default function FranchiseCostContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 flex flex-col">
+      <main id="main-content" className="bg-white text-gray-900 flex flex-col brand-light">
         <NavBar />
         <Breadcrumbs items={[{ label: "Franchise Cost" }]} />
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-4 sm:px-6">
-          {/* Background photo */}
-          <div className="absolute inset-0">
-            <Image
-              src="/media/front-desk-wide.webp"
-              alt=""
-              fill
-              sizes="100vw"
-              priority
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/80" />
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
-            >
-              How Much Does a Spa Franchise Cost?
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10"
-            >
-              Everything you need to know about the Spavia Day Spa franchise investment,
-              from initial fees to ongoing costs and financing options.
-            </motion.p>
-
-            {/* Key metrics */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$479K – $885K</p>
-                <p className="text-xs text-white/70">Total Initial Investment*</p>
-              </div>
-              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$59,500</p>
-                <p className="text-xs text-white/70">Initial Franchise Fee*</p>
-              </div>
-              <div className="rounded-lg border border-[#C2A878]/40 bg-black/40 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$1,110,481</p>
-                <p className="text-xs text-white/70">Median Annual Revenue**</p>
-              </div>
-            </div>
-            <p className="mt-3 text-[10px] text-white/50">
-              *Source: 2026 Spavia FDD, Item 7 &amp; Item 5. **Source: 2026 Spavia FDD, Item 19, Part III. Results vary by location.
-            </p>
-          </div>
-        </section>
+        <PageHero eyebrow="The investment, in detail" title="How Much Does a Spa Franchise Cost?" intro="Plan for the whole business: your opening investment, ongoing fees and the capital to get started. Here is the Spavia cost breakdown from the 2026 Franchise Disclosure Document." action={{href:"#investment-breakdown",label:"See the investment breakdown"}}><dl><div><dt>Total estimated initial investment · Item 7</dt><dd>$479,450–$885,450</dd></div><div><dt>Initial franchise fee · Item 5</dt><dd>$59,500</dd></div></dl><p className="mt-5">Candidates need $200K+ liquid capital and $500K+ net worth. Investment requirements are discussed in detail with the franchise team.</p><Link href="/get-started" className="text-link mt-4">Talk through the investment →</Link></PageHero>
 
         {/* ═══════ COST BREAKDOWN ═══════ */}
-        <section className="bg-white py-20 px-6">
+        <section className="bg-white py-20 px-6 brand-light">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">
+            <h2 id="investment-breakdown" className="text-3xl font-bold text-center mb-3 text-gray-900">
               Investment Breakdown
             </h2>
             <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -147,8 +94,8 @@ export default function FranchiseCostContent() {
               2026 Franchise Disclosure Document (FDD), Item 7.
             </p>
 
-            <div className="rounded-xl border border-gray-200 overflow-hidden">
-              <div className="grid grid-cols-2 bg-gray-800 text-white text-sm font-semibold">
+            <div className="rounded-sm border border-gray-200 overflow-hidden">
+              <div className="grid grid-cols-2 bg-gray-800 text-white text-sm font-semibold brand-dark">
                 <div className="px-6 py-3">Category</div>
                 <div className="px-6 py-3 text-right">Estimated Range</div>
               </div>
@@ -163,7 +110,7 @@ export default function FranchiseCostContent() {
                   <div className="px-6 py-3 text-right text-gray-700">{row.range}</div>
                 </div>
               ))}
-              <div className="grid grid-cols-2 bg-[#C2A878]/10 border-t-2 border-[#C2A878]">
+              <div className="grid grid-cols-2 bg-[#b38a5f]/10 border-t-2 border-[#b38a5f]">
                 <div className="px-6 py-4 font-bold text-gray-900">Total Estimated Initial Investment</div>
                 <div className="px-6 py-4 text-right font-bold text-gray-900">$479,450 – $885,450</div>
               </div>
@@ -175,30 +122,30 @@ export default function FranchiseCostContent() {
         </section>
 
         {/* ═══════ ONGOING FEES ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6 brand-light">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
               Ongoing Fees
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
-                <DollarSign className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
+              <div className="bg-white rounded-sm p-6 border border-gray-100 text-center brand-light">
+                <DollarSign className="w-8 h-8 mx-auto mb-3 text-[var(--accent-text)]" />
                 <p className="text-2xl font-bold text-gray-900">6%</p>
                 <p className="text-sm text-gray-600 mt-1">Royalty Fee</p>
                 <p className="text-xs text-gray-500 mt-2">
                   Percentage of Gross Sales (2026 FDD, Item 6), supporting ongoing training, technology, and operations
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
-                <TrendingUp className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
+              <div className="bg-white rounded-sm p-6 border border-gray-100 text-center brand-light">
+                <TrendingUp className="w-8 h-8 mx-auto mb-3 text-[var(--accent-text)]" />
                 <p className="text-2xl font-bold text-gray-900">1%</p>
                 <p className="text-sm text-gray-600 mt-1">Brand Fund Contribution</p>
                 <p className="text-xs text-gray-500 mt-2">
                   Percentage of Gross Sales (2026 FDD, Item 6) — funds national brand development, marketing, and PR
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm text-center">
-                <Shield className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
+              <div className="bg-white rounded-sm p-6 border border-gray-100 text-center brand-light">
+                <Shield className="w-8 h-8 mx-auto mb-3 text-[var(--accent-text)]" />
                 <p className="text-2xl font-bold text-gray-900">SBA Listed</p>
                 <p className="text-sm text-gray-600 mt-1">Third-Party Financing</p>
                 <p className="text-xs text-gray-500 mt-2">
@@ -210,22 +157,22 @@ export default function FranchiseCostContent() {
         </section>
 
         {/* ═══════ FINANCIAL REQUIREMENTS ═══════ */}
-        <section className="bg-white py-20 px-6">
+        <section className="bg-white py-20 px-6 brand-light">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
               Financial Requirements
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div className="bg-gray-50 rounded-sm p-6 border border-gray-100 brand-light">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Liquid Capital</h3>
-                <p className="text-3xl font-bold text-[#C2A878]">$200K+</p>
+                <p className="text-3xl font-bold text-[var(--accent-text)]">$200K+</p>
                 <p className="text-sm text-gray-600 mt-2">
                   Cash or cash equivalents available for the initial investment and operating capital
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div className="bg-gray-50 rounded-sm p-6 border border-gray-100 brand-light">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Net Worth</h3>
-                <p className="text-3xl font-bold text-[#C2A878]">$500K+</p>
+                <p className="text-3xl font-bold text-[var(--accent-text)]">$500K+</p>
                 <p className="text-sm text-gray-600 mt-2">
                   Total assets minus liabilities, demonstrating financial stability
                 </p>
@@ -234,7 +181,7 @@ export default function FranchiseCostContent() {
           </div>
         </section>
 
-        <section className="bg-gray-50 py-16 px-6">
+        <section className="bg-gray-50 py-16 px-6 brand-light">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Compare spa franchise investment costs</h2>
             <p className="text-gray-600 mb-8">Compare named brands and their published investment ranges, then look at the services and support included in each model.</p>
@@ -243,7 +190,7 @@ export default function FranchiseCostContent() {
         </section>
 
         {/* ═══════ WHAT YOU GET ═══════ */}
-        <section className="bg-white py-20 px-6">
+        <section className="bg-white py-20 px-6 brand-light">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
               What Your Investment Includes
@@ -260,7 +207,7 @@ export default function FranchiseCostContent() {
                 "Ongoing operational support and coaching",
               ].map((item) => (
                 <div key={item} className="flex gap-3 items-start">
-                  <Check className="w-5 h-5 text-[#C2A878] mt-0.5 shrink-0" />
+                  <Check className="w-5 h-5 text-[var(--accent-text)] mt-0.5 shrink-0" />
                   <p className="text-gray-700">{item}</p>
                 </div>
               ))}
@@ -268,7 +215,7 @@ export default function FranchiseCostContent() {
           </div>
         </section>
 
-        <section className="bg-gray-50 py-16 px-6">
+        <section className="bg-gray-50 py-16 px-6 brand-light">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-5">What changes the cost of opening a spa?</h2>
             <div className="grid md:grid-cols-3 gap-6 text-gray-600 leading-relaxed">
@@ -283,7 +230,7 @@ export default function FranchiseCostContent() {
         <FranchiseIntroForm />
 
         {/* ═══════ FAQ ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6 brand-light">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
               Frequently Asked Questions About Spa Franchise Costs
@@ -326,7 +273,7 @@ export default function FranchiseCostContent() {
                   under a Development Agreement.{" "}
                   <Link
                     href="/multi-unit"
-                    className="text-[#9c814f] font-semibold hover:underline"
+                    className="text-[var(--accent-text)] font-semibold hover:underline"
                   >
                     See the multi-unit development page →
                   </Link>
@@ -348,7 +295,7 @@ export default function FranchiseCostContent() {
         </section>
 
         {/* ═══════ RELATED LINKS ═══════ */}
-        <section className="bg-white py-16 px-6">
+        <section className="bg-white py-16 px-6 brand-light">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
               Continue Exploring
@@ -356,28 +303,28 @@ export default function FranchiseCostContent() {
             <div className="grid sm:grid-cols-2 gap-4">
               <Link
                 href="/franchise-opportunities"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors"
               >
                 <p className="font-bold text-gray-900 mb-1">Available Territories</p>
                 <p className="text-sm text-gray-600">See franchise opportunities by state</p>
               </Link>
               <Link
                 href="/why-spavia"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors"
               >
                 <p className="font-bold text-gray-900 mb-1">Why Spavia</p>
                 <p className="text-sm text-gray-600">Discover what sets Spavia apart</p>
               </Link>
               <Link
                 href="/steps-to-ownership"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors"
               >
                 <p className="font-bold text-gray-900 mb-1">Steps to Ownership</p>
                 <p className="text-sm text-gray-600">Your path from inquiry to grand opening</p>
               </Link>
               <Link
                 href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors"
               >
                 <p className="font-bold text-gray-900 mb-1">Spavia vs. Woodhouse</p>
                 <p className="text-sm text-gray-600">Side-by-side franchise comparison</p>
@@ -386,19 +333,7 @@ export default function FranchiseCostContent() {
           </div>
         </section>
 
-        {/* ═══════ LONG FORM ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
-          <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
-            <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
-              Ready to Learn More?
-            </h2>
-            <p className="text-center text-gray-700 mb-6">
-              Request the full franchise overview including detailed cost
-              projections and available territories.
-            </p>
-            <FranchiseLongForm />
-          </div>
-        </section>
+        <GoldBottomBanner />
 
         <Footer />
       </main>

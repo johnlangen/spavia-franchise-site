@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, CheckCircle } from "lucide-react";
+import { AnimatePresence,motion } from "framer-motion";
+import { CheckCircle,MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { getAttribution } from "../lib/attribution";
 
 declare global {
@@ -27,7 +27,7 @@ export default function CustomMarketForm() {
   const leadSource = `custom_analysis_${citySlug}`;
 
   const inputStyle =
-    "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#C2A878]/40 focus:border-[#C2A878] text-sm";
+    "w-full rounded-sm border border-gray-300 px-4 py-3 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#b38a5f]/40 focus:border-[#b38a5f] text-base";
 
   const handleCitySubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -113,7 +113,7 @@ export default function CustomMarketForm() {
           <motion.form
             key="city"
             onSubmit={handleCitySubmit}
-            initial={{ opacity: 0, y: 8 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
@@ -132,7 +132,7 @@ export default function CustomMarketForm() {
             </div>
             <button
               type="submit"
-              className="bg-[#C2A878] hover:bg-[#b09668] text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap text-sm"
+              className="bg-[#b38a5f] hover:bg-[#b09668] text-black font-semibold px-6 py-3 rounded-sm transition-colors whitespace-nowrap text-sm"
             >
               Analyze My Market
             </button>
@@ -142,7 +142,7 @@ export default function CustomMarketForm() {
         {step === "email" && (
           <motion.div
             key="email"
-            initial={{ opacity: 0, y: 8 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
@@ -155,7 +155,7 @@ export default function CustomMarketForm() {
               <button
                 type="button"
                 onClick={() => setStep("city")}
-                className="text-xs text-[#C2A878] underline ml-1"
+                className="text-xs text-[var(--accent-text)] underline ml-1"
               >
                 change
               </button>
@@ -172,7 +172,7 @@ export default function CustomMarketForm() {
               />
               <button
                 type="submit"
-                className="bg-[#C2A878] hover:bg-[#b09668] text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap text-sm"
+                className="bg-[#b38a5f] hover:bg-[#b09668] text-black font-semibold px-6 py-3 rounded-sm transition-colors whitespace-nowrap text-sm"
               >
                 Continue
               </button>
@@ -183,7 +183,7 @@ export default function CustomMarketForm() {
         {step === "details" && (
           <motion.div
             key="details"
-            initial={{ opacity: 0, y: 8 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
@@ -257,14 +257,14 @@ export default function CustomMarketForm() {
               </div>
               <div className="col-span-2">
                 {error && (
-                  <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                  <div className="mb-3 rounded-sm bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
                     {error}
                   </div>
                 )}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#C2A878] hover:bg-[#b09668] disabled:opacity-50 text-white font-semibold py-3 rounded-lg transition-colors text-sm"
+                  className="w-full bg-[#b38a5f] hover:bg-[#b09668] disabled:opacity-50 text-black font-semibold py-3 rounded-sm transition-colors text-sm"
                 >
                   {loading
                     ? "Submitting..."

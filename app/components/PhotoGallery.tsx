@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useCallback,useEffect,useState } from "react";
 
 export interface GalleryPhoto {
   src: string;
@@ -51,7 +51,7 @@ export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
             <button
               key={p.src}
               onClick={() => setOpen(i)}
-              className={`group relative overflow-hidden rounded-xl ${span}`}
+              className={`group relative overflow-hidden rounded-sm ${span}`}
               aria-label={`Open photo: ${p.alt}`}
             >
               <Image
@@ -59,7 +59,7 @@ export default function PhotoGallery({ photos }: { photos: GalleryPhoto[] }) {
                 alt={p.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                className="object-cover transition-transform duration-700 ease-out"
               />
               <span className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
               {p.caption && (

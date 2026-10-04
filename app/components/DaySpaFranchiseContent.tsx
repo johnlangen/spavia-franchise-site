@@ -1,14 +1,14 @@
 "use client";
+import FaqList from "./FaqList";
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import LandingHero from "./LandingHero";
-import Breadcrumbs from "./Breadcrumbs";
-import ProofSection from "./ProofSection";
-import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
-import ScheduleCallBanner from "./ScheduleCallBanner";
-import GoldBottomBanner from "./GoldBottomBanner";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
+import Footer from "./Footer";
+import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
+import GoldBottomBanner from "./GoldBottomBanner";
+import LandingHero from "./LandingHero";
+import NavBar from "./NavBar";
+import ProofSection from "./ProofSection";
 
 const differentiators = [
   {
@@ -104,6 +104,7 @@ export default function DaySpaFranchiseContent() {
       <NavBar />
       <Breadcrumbs items={[{ label: "Day Spa Franchise" }]} />
 
+      <main id="main-content">
       <LandingHero
         headlineFirst="Own a Day Spa Franchise"
         headlineSecond="With"
@@ -112,7 +113,7 @@ export default function DaySpaFranchiseContent() {
         bullets={[
           "$479K – $885K total initial investment",
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
-          "1 in 2 owners achieve $1M+ revenue",
+          "33 of 59 disclosed locations exceeded $1M in 2025",
           "10–14 month opening timeline",
           "SBA-eligible financing",
         ]}
@@ -122,9 +123,9 @@ export default function DaySpaFranchiseContent() {
       <ProofSection />
 
       {/* What is a day spa franchise — topical overview */}
-      <section className="bg-[#FAF8F5] py-16 md:py-20 px-6">
+      <section className="bg-[#f5f5f5] py-16 md:py-20 px-6 brand-light">
         <div className="max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-3 text-center">
+          <p className="text-xs uppercase tracking-widest text-[var(--accent-text)] font-semibold mb-3 text-center">
             The Opportunity
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6 font-[family-name:var(--font-recoleta)]">
@@ -162,7 +163,7 @@ export default function DaySpaFranchiseContent() {
       </section>
 
       {/* Differentiators */}
-      <section className="bg-white py-16 md:py-20 px-6">
+      <section className="bg-white py-16 md:py-20 px-6 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             What Makes Spavia Different
@@ -175,7 +176,7 @@ export default function DaySpaFranchiseContent() {
             {differentiators.map((d) => (
               <div
                 key={d.title}
-                className="border-l-4 border-[#C2A878] pl-5"
+                className="border-l-4 border-[#b38a5f] pl-5"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {d.title}
@@ -188,7 +189,7 @@ export default function DaySpaFranchiseContent() {
       </section>
 
       {/* Franchise vs. independent comparison */}
-      <section className="bg-[#FAF8F5] py-16 md:py-20 px-6 border-t border-black/5">
+      <section className="bg-[#f5f5f5] py-16 md:py-20 px-6 border-t border-black/5 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             Day Spa Franchise vs. Going It Alone
@@ -198,7 +199,7 @@ export default function DaySpaFranchiseContent() {
             joining a proven franchise. Here&apos;s how the two paths compare.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl bg-white border border-gray-200 p-7">
+            <div className="rounded-sm bg-white border border-gray-200 p-7 brand-light">
               <h3 className="text-lg font-semibold text-gray-900 mb-5">
                 Opening an Independent Day Spa
               </h3>
@@ -214,8 +215,8 @@ export default function DaySpaFranchiseContent() {
                 ))}
               </ul>
             </div>
-            <div className="relative rounded-2xl bg-white border-2 border-[#C2A878] p-7 shadow-sm">
-              <span className="absolute -top-3 left-7 bg-[#C2A878] text-white text-xs font-semibold px-3 py-1 rounded-full">
+            <div className="relative rounded-sm bg-white border-2 border-[#b38a5f] p-7 brand-light">
+              <span className="absolute -top-3 left-7 bg-[#b38a5f] text-black text-xs font-semibold px-3 py-1 rounded-full">
                 Spavia
               </span>
               <h3 className="text-lg font-semibold text-gray-900 mb-5 mt-1">
@@ -227,7 +228,7 @@ export default function DaySpaFranchiseContent() {
                     key={item}
                     className="flex gap-3 text-sm text-gray-700 leading-relaxed"
                   >
-                    <span className="text-[#C2A878] mt-0.5">✓</span>
+                    <span className="text-[var(--accent-text)] mt-0.5">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -237,7 +238,7 @@ export default function DaySpaFranchiseContent() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-50 py-16 px-6 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">What does a day spa franchise owner do?</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-600 leading-relaxed">
@@ -252,54 +253,38 @@ export default function DaySpaFranchiseContent() {
       <FranchiseeTestimonialsSection />
 
       {/* FAQ */}
-      <section className="bg-white py-16 px-6">
+      <section className="bg-white py-16 px-6 brand-light">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 font-[family-name:var(--font-recoleta)]">
             Day Spa Franchise FAQ
           </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details
-                key={f.q}
-                className="group border-b border-gray-200 pb-4"
-              >
-                <summary className="flex justify-between items-center cursor-pointer font-semibold text-gray-900 text-lg hover:text-[#C2A878]">
-                  {f.q}
-                  <span className="text-2xl text-gray-400 group-open:rotate-180 transition-transform">
-                    ⌃
-                  </span>
-                </summary>
-                <p className="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqList items={faqs.map(({q,a})=>({question:q,answer:a}))} />
         </div>
       </section>
 
-      <ScheduleCallBanner />
 
       {/* Cross-link to related pages — keeps non-converters engaged */}
-      <section className="bg-black py-12 px-6">
+      <section className="bg-black py-12 px-6 brand-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold text-white mb-6">Explore More</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             <Link
               href="/franchise-cost"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Franchise Cost</p>
               <p className="text-xs text-white/60">Full investment breakdown</p>
             </Link>
             <Link
               href="/your-spavia"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">The Spavia Model</p>
               <p className="text-xs text-white/60">Services, membership, revenue</p>
             </Link>
             <Link
               href="/our-franchisees"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Our Franchisees</p>
               <p className="text-xs text-white/60">Real owners, real results</p>
@@ -309,6 +294,7 @@ export default function DaySpaFranchiseContent() {
       </section>
 
       <GoldBottomBanner />
+      </main>
       <Footer />
     </>
   );

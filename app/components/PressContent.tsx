@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NavBar from "./NavBar";
+import Link from "next/link";
+import AwardsSection from "./AwardsSection";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
-import AwardsSection from "./AwardsSection";
-import Link from "next/link";
+import NavBar from "./NavBar";
+import PageHero from "./PageHero";
 
 const pressItems = [
   {
@@ -225,35 +226,14 @@ const pressItems = [
 
 export default function PressContent() {
   return (
-    <main className="text-gray-900">
+    <main id="main-content" className="text-gray-900">
       <NavBar />
       <Breadcrumbs items={[{ label: "Press" }]} />
 
-      {/* Hero */}
-      <section className="bg-black text-white pt-32 pb-20 px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
-        >
-          Press &amp; Recognition
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed"
-        >
-          Spavia Day Spa has been recognized by leading industry publications and
-          organizations for its design-led growth, franchise excellence, and
-          commitment to community impact. Explore our latest press coverage and
-          awards below.
-        </motion.p>
-      </section>
+      <PageHero eyebrow="A growing brand, in good company" title="Press & Recognition" intro="Explore independent coverage of Spavia’s growth, franchise ownership and commitment to the communities we serve." image="/media/exterior-storefront.webp" alt="Spavia day spa welcoming its community" action={{href:"#press-coverage",label:"Explore the coverage"}} />
 
       {/* Key Highlights */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white brand-light">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
@@ -264,12 +244,12 @@ export default function PressContent() {
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="p-6"
               >
-                <p className="text-4xl font-bold text-[#C2A878] mb-2">
+                <p className="text-4xl font-bold text-[var(--accent-text)] mb-2">
                   {item.stat}
                 </p>
                 <p className="text-gray-600 font-medium">{item.label}</p>
@@ -280,7 +260,7 @@ export default function PressContent() {
       </section>
 
       {/* Press Timeline */}
-      <section className="py-20 bg-gray-50">
+      <section id="press-coverage" className="py-20 bg-gray-50 brand-light">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">
             Awards &amp; Press Coverage
@@ -289,12 +269,12 @@ export default function PressContent() {
           {pressItems.map((yearGroup) => (
             <div key={yearGroup.year} className="mb-16 last:mb-0">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={false}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 className="flex items-center mb-8"
               >
-                <span className="text-3xl font-bold text-[#C2A878] mr-4">
+                <span className="text-3xl font-bold text-[var(--accent-text)] mr-4">
                   {yearGroup.year}
                 </span>
                 <div className="flex-1 h-px bg-gray-300" />
@@ -304,10 +284,10 @@ export default function PressContent() {
                 {yearGroup.items.map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white border border-gray-200 rounded-sm p-6 transition-shadow brand-light"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                       <h3 className="text-xl font-semibold text-gray-900">
@@ -317,7 +297,7 @@ export default function PressContent() {
                         {item.date}
                       </span>
                     </div>
-                    <p className="text-sm text-[#C2A878] font-medium mb-3">
+                    <p className="text-sm text-[var(--accent-text)] font-medium mb-3">
                       {item.source}
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -328,7 +308,7 @@ export default function PressContent() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#C2A878] font-medium hover:underline text-sm"
+                        className="text-[var(--accent-text)] font-medium hover:underline text-sm"
                       >
                         Read on {item.source} →
                       </Link>
@@ -342,14 +322,14 @@ export default function PressContent() {
       </section>
 
       {/* Awards Marquee */}
-      <section className="bg-white">
+      <section className="bg-white brand-light">
         <AwardsSection />
       </section>
 
       {/* Media Contact / CTA */}
-      <section className="py-20 bg-black text-white text-center px-6">
+      <section className="py-20 bg-black text-white text-center px-6 brand-dark">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto"
@@ -361,7 +341,7 @@ export default function PressContent() {
           </p>
           <a
             href="mailto:marty@spaviadayspa.com"
-            className="inline-block bg-[#C2A878] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
+            className="inline-block bg-[#b38a5f] text-black px-8 py-3 rounded-sm font-semibold hover:bg-[#b09466] transition"
           >
             Contact Us
           </a>

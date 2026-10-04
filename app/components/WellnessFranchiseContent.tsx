@@ -1,14 +1,14 @@
 "use client";
+import FaqList from "./FaqList";
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import LandingHero from "./LandingHero";
-import Breadcrumbs from "./Breadcrumbs";
-import ProofSection from "./ProofSection";
-import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
-import ScheduleCallBanner from "./ScheduleCallBanner";
-import GoldBottomBanner from "./GoldBottomBanner";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
+import Footer from "./Footer";
+import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
+import GoldBottomBanner from "./GoldBottomBanner";
+import LandingHero from "./LandingHero";
+import NavBar from "./NavBar";
+import ProofSection from "./ProofSection";
 
 const differentiators = [
   {
@@ -72,6 +72,7 @@ export default function WellnessFranchiseContent() {
       <NavBar />
       <Breadcrumbs items={[{ label: "Wellness Franchise" }]} />
 
+      <main id="main-content">
       <LandingHero
         headlineFirst="The Wellness Franchise"
         headlineSecond="Built for"
@@ -89,7 +90,7 @@ export default function WellnessFranchiseContent() {
 
       <ProofSection />
 
-      <section className="bg-white py-16 md:py-20 px-6">
+      <section className="bg-white py-16 md:py-20 px-6 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             Which wellness franchise model fits your goals?
@@ -101,7 +102,7 @@ export default function WellnessFranchiseContent() {
             {differentiators.map((d) => (
               <div
                 key={d.title}
-                className="border-l-4 border-[#C2A878] pl-5"
+                className="border-l-4 border-[#b38a5f] pl-5"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {d.title}
@@ -113,7 +114,7 @@ export default function WellnessFranchiseContent() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-50 py-16 px-6 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 font-[family-name:var(--font-recoleta)]">Compare wellness franchises on the decisions you will make</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -131,53 +132,37 @@ export default function WellnessFranchiseContent() {
 
       <FranchiseeTestimonialsSection />
 
-      <section className="bg-white py-16 px-6">
+      <section className="bg-white py-16 px-6 brand-light">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 font-[family-name:var(--font-recoleta)]">
             Wellness Franchise FAQ
           </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details
-                key={f.q}
-                className="group border-b border-gray-200 pb-4"
-              >
-                <summary className="flex justify-between items-center cursor-pointer font-semibold text-gray-900 text-lg hover:text-[#C2A878]">
-                  {f.q}
-                  <span className="text-2xl text-gray-400 group-open:rotate-180 transition-transform">
-                    ⌃
-                  </span>
-                </summary>
-                <p className="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqList items={faqs.map(({q,a})=>({question:q,answer:a}))} />
         </div>
       </section>
 
-      <ScheduleCallBanner />
 
-      <section className="bg-black py-12 px-6">
+      <section className="bg-black py-12 px-6 brand-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold text-white mb-6">Explore More</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             <Link
               href="/franchise-cost"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Franchise Cost</p>
               <p className="text-xs text-white/60">Full investment breakdown</p>
             </Link>
             <Link
               href="/your-spavia"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">The Spavia Model</p>
               <p className="text-xs text-white/60">Services, membership, revenue</p>
             </Link>
             <Link
               href="/our-franchisees"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Our Franchisees</p>
               <p className="text-xs text-white/60">Real owners, real results</p>
@@ -187,6 +172,7 @@ export default function WellnessFranchiseContent() {
       </section>
 
       <GoldBottomBanner />
+      </main>
       <Footer />
     </>
   );

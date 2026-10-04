@@ -1,11 +1,11 @@
-import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
-import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
+import Footer from "../../../../../components/Footer";
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
+import NavBar from "../../../../../components/NavBar";
 import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
@@ -131,12 +131,12 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Link */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -183,7 +183,7 @@ export default function Page() {
             to learn how Spavia&apos;s affordable luxury franchise compares,{" "}
             <a
               href="/get-started"
-              className="text-[#C2A878] font-semibold hover:underline"
+              className="text-[var(--accent-text)] font-semibold hover:underline"
             >
               book a call with our franchise team
             </a>{" "}
@@ -282,47 +282,47 @@ export default function Page() {
           </p>
 
           {/* ── TABLE 1: Investment Costs ── */}
-          <div className="overflow-x-auto mb-8 rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-x-auto mb-8 rounded-sm border border-gray-200 shadow-sm">
             <table className="w-full text-sm text-left">
               <thead>
-                <tr className="bg-[#C2A878] text-white">
+                <tr className="bg-[#b38a5f] text-black">
                   <th className="px-5 py-3 font-semibold">Cost Category</th>
                   <th className="px-5 py-3 font-semibold">Day Spa Franchise</th>
                   <th className="px-5 py-3 font-semibold">Med Spa Franchise</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Total Investment</td>
                   <td className="px-5 py-3">$295K &ndash; $800K</td>
                   <td className="px-5 py-3">$550K &ndash; $1M+</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Franchise Fee</td>
                   <td className="px-5 py-3">$26K &ndash; $60K</td>
                   <td className="px-5 py-3">$25K &ndash; $80K</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Equipment</td>
                   <td className="px-5 py-3">$20K &ndash; $50K</td>
                   <td className="px-5 py-3">$50K &ndash; $300K+</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Medical Director</td>
                   <td className="px-5 py-3 text-green-700 font-medium">Not required</td>
                   <td className="px-5 py-3">$12K &ndash; $30K/year</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Malpractice Insurance</td>
                   <td className="px-5 py-3">~$1,700/year</td>
                   <td className="px-5 py-3">$2,500 &ndash; $3,500+/year</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Time to Open</td>
                   <td className="px-5 py-3">6 &ndash; 12 months</td>
                   <td className="px-5 py-3">12 &ndash; 18 months</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Min. Liquid Capital</td>
                   <td className="px-5 py-3">$120K &ndash; $150K</td>
                   <td className="px-5 py-3">$500K+</td>
@@ -358,7 +358,7 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {/* Med Spa Card */}
-            <div className="rounded-xl border border-gray-200 p-5">
+            <div className="rounded-sm border border-gray-200 p-5">
               <h3 className="font-semibold text-lg mb-3">Med Spa Revenue</h3>
               <ul className="space-y-2 text-sm leading-relaxed">
                 <li className="flex items-start gap-2">
@@ -377,19 +377,19 @@ export default function Page() {
             </div>
 
             {/* Day Spa Card */}
-            <div className="rounded-xl border-2 border-[#C2A878] bg-[#faf7f2] p-5">
+            <div className="rounded-sm border-2 border-[#b38a5f] bg-[#f5f5f5] p-5 brand-light">
               <h3 className="font-semibold text-lg mb-3">Day Spa Revenue</h3>
               <ul className="space-y-2 text-sm leading-relaxed">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Avg. revenue range: <strong className="ml-1">$500K&ndash;$2M+</strong> per location
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Spavia median annual revenue: <strong className="ml-1">$1,110,481</strong> (44 reporting locations, 2025)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Spavia median operating margin: <strong className="ml-1">18.4%</strong>
                 </li>
               </ul>
@@ -397,7 +397,7 @@ export default function Page() {
           </div>
 
           {/* Takeaway Callout */}
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-10">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-10 brand-light">
             <p className="font-semibold text-gray-900 mb-1">The takeaway:</p>
             <p className="leading-relaxed text-gray-700">
               Med spas may offer higher raw margins on individual treatments
@@ -420,7 +420,7 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {/* Med Spa Regs */}
-            <div className="rounded-xl border border-red-200 bg-red-50/50 p-5">
+            <div className="rounded-sm border border-red-200 bg-red-50/50 p-5">
               <h3 className="font-semibold text-lg mb-3 text-red-800">
                 Med Spa Requirements
               </h3>
@@ -449,7 +449,7 @@ export default function Page() {
             </div>
 
             {/* Day Spa Regs */}
-            <div className="rounded-xl border border-green-200 bg-green-50/50 p-5">
+            <div className="rounded-sm border border-green-200 bg-green-50/50 p-5">
               <h3 className="font-semibold text-lg mb-3 text-green-800">
                 Day Spa Requirements
               </h3>
@@ -484,7 +484,7 @@ export default function Page() {
           </p>
 
           {/* ── Mid-Article CTA ── */}
-          <div className="rounded-xl bg-[#faf7f2] border border-[#C2A878]/30 px-6 py-6 mb-10 text-center">
+          <div className="rounded-sm bg-[#f5f5f5] border border-[#b38a5f]/30 px-6 py-6 mb-10 text-center brand-light">
             <p className="font-semibold text-gray-900 text-lg mb-1">
               See how affordable luxury franchising works
             </p>
@@ -494,7 +494,7 @@ export default function Page() {
             </p>
             <a
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#b09466] transition-colors"
+              className="inline-block bg-[#b38a5f] text-black font-semibold px-6 py-3 rounded-sm hover:bg-[#b09466] transition-colors"
             >
               Schedule a Call &rarr;
             </a>
@@ -546,72 +546,72 @@ export default function Page() {
             Side-by-Side Comparison
           </h2>
 
-          <div className="overflow-x-auto mb-10 rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-x-auto mb-10 rounded-sm border border-gray-200 shadow-sm">
             <table className="w-full text-sm text-left">
               <thead>
-                <tr className="bg-[#C2A878] text-white">
+                <tr className="bg-[#b38a5f] text-black">
                   <th className="px-5 py-3 font-semibold">Factor</th>
                   <th className="px-5 py-3 font-semibold">Day Spa Franchise</th>
                   <th className="px-5 py-3 font-semibold">Med Spa Franchise</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Total Investment</td>
                   <td className="px-5 py-3">$295K&ndash;$800K</td>
                   <td className="px-5 py-3">$550K&ndash;$1M+</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Physician Required</td>
                   <td className="px-5 py-3 text-green-700 font-medium">No</td>
                   <td className="px-5 py-3 text-red-600 font-medium">Yes &mdash; mandatory</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Time to Open</td>
                   <td className="px-5 py-3">6&ndash;12 months</td>
                   <td className="px-5 py-3">12&ndash;18 months</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Time to Profitability</td>
                   <td className="px-5 py-3">1&ndash;2 years</td>
                   <td className="px-5 py-3">3&ndash;4 years</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Equipment Cost</td>
                   <td className="px-5 py-3">$20K&ndash;$50K</td>
                   <td className="px-5 py-3">$50K&ndash;$300K+</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Staff Requirements</td>
                   <td className="px-5 py-3">Licensed estheticians</td>
                   <td className="px-5 py-3">MDs, NPs, PAs, RNs</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Regulatory Risk</td>
                   <td className="px-5 py-3 text-green-700 font-medium">Low</td>
                   <td className="px-5 py-3 text-red-600 font-medium">High (FDA, CPOM, HIPAA)</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Revenue Range</td>
                   <td className="px-5 py-3">$500K&ndash;$2M+</td>
                   <td className="px-5 py-3">$1M&ndash;$2M+</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Profit Margins</td>
                   <td className="px-5 py-3">10&ndash;25%</td>
                   <td className="px-5 py-3">20&ndash;40%</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Membership Retention</td>
                   <td className="px-5 py-3">60&ndash;75%</td>
                   <td className="px-5 py-3">~70%</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">Market Growth Rate</td>
                   <td className="px-5 py-3">8.6% annually</td>
                   <td className="px-5 py-3">15.8% CAGR</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">Owner Lifestyle</td>
                   <td className="px-5 py-3">More operational flexibility</td>
                   <td className="px-5 py-3">Medical oversight demands</td>
@@ -627,7 +627,7 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {/* Med Spa Fit */}
-            <div className="rounded-xl border border-gray-200 p-5">
+            <div className="rounded-sm border border-gray-200 p-5">
               <h3 className="font-semibold text-lg mb-3">
                 A med spa franchise may be right if you&hellip;
               </h3>
@@ -652,29 +652,29 @@ export default function Page() {
             </div>
 
             {/* Day Spa Fit */}
-            <div className="rounded-xl border-2 border-[#C2A878] bg-[#faf7f2] p-5">
+            <div className="rounded-sm border-2 border-[#b38a5f] bg-[#f5f5f5] p-5 brand-light">
               <h3 className="font-semibold text-lg mb-3">
                 A day spa franchise may be right if you&hellip;
               </h3>
               <ul className="space-y-2 text-sm leading-relaxed text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Want a lower entry point with proven returns
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Prefer simpler regulatory requirements
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Value recurring, membership-driven revenue
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Want to open faster and reach profitability in 1&ndash;2 years
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Are drawn to a community-focused wellness business
                 </li>
               </ul>
@@ -682,7 +682,7 @@ export default function Page() {
           </div>
 
           {/* Franchisee Background Callout */}
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-10">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-10 brand-light">
             <p className="leading-relaxed text-gray-700">
               Many of Spavia&apos;s franchisees came from careers outside the
               spa industry &mdash; finance, tech, healthcare administration,
@@ -734,9 +734,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-4"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-4"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -748,7 +748,7 @@ export default function Page() {
           </div>
 
           {/* ── Final CTA Box ── */}
-          <div className="rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-10">
+          <div className="rounded-sm bg-gray-900 text-white px-8 py-10 text-center mb-10 brand-dark">
             <h2 className="text-2xl font-bold mb-3">
               Ready to Explore Spa Franchise Ownership?
             </h2>
@@ -760,7 +760,7 @@ export default function Page() {
             </p>
             <a
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b09466] transition-colors text-lg"
+              className="inline-block bg-[#b38a5f] text-black font-semibold px-8 py-3.5 rounded-sm hover:bg-[#b09466] transition-colors text-lg"
             >
               Book a Call with Our Franchise Team &rarr;
             </a>
@@ -771,11 +771,11 @@ export default function Page() {
             Frequently Asked Questions About Spa Franchises
           </h2>
 
-          <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 mb-10 overflow-hidden">
+          <div className="divide-y divide-gray-200 rounded-sm border border-gray-200 mb-10 overflow-hidden">
             <details className="group">
               <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                 How much does it cost to open a spa franchise?
-                <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 Day spa franchises typically range from <strong>$295,000 to $800,000</strong>,
@@ -789,7 +789,7 @@ export default function Page() {
             <details className="group">
               <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                 Is owning a day spa franchise profitable?
-                <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 Yes. Profitability depends on brand, location, and membership
@@ -804,7 +804,7 @@ export default function Page() {
             <details className="group">
               <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                 Do I need a medical license to own a spa franchise?
-                <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 <strong>Not for a day spa franchise.</strong> Day spas require only licensed
@@ -819,7 +819,7 @@ export default function Page() {
             <details className="group">
               <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                 How long does it take to open a spa franchise?
-                <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 Day spa franchises typically take <strong>6 to 12 months</strong> from
@@ -834,7 +834,7 @@ export default function Page() {
             <details className="group">
               <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                 What is the difference between a wellness franchise and a spa franchise?
-                <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
               </summary>
               <div className="px-6 pb-5 pt-1 text-gray-700 leading-relaxed">
                 A wellness franchise is a broader category that includes day
@@ -884,7 +884,7 @@ export default function Page() {
             <ul className="space-y-3">
               {getRelatedPosts("/blog/2026/02/11/day-spa-vs-med-spa-franchise").map((rp) => (
                 <li key={rp.href}>
-                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                  <Link href={rp.href} className="text-[var(--accent-text)] hover:underline">
                     {rp.title} &rarr;
                   </Link>
                 </li>
@@ -893,7 +893,7 @@ export default function Page() {
           </div>
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -909,7 +909,7 @@ export default function Page() {
 <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

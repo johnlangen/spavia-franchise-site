@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect,useState } from "react";
 
 export default function MobileCTA() {
   const [open, setOpen] = useState(true);
@@ -21,7 +21,7 @@ export default function MobileCTA() {
         <div className="bg-black/90 backdrop-blur p-3 flex items-center justify-between">
           <a
             href="/get-started"
-            className="flex-1 text-center text-white py-3 rounded-lg font-semibold shadow-lg transition"
+            className="flex-1 text-center text-white py-3 rounded-sm font-semibold shadow-lg transition"
             style={{ backgroundColor: "var(--accent)" }} // ✅ theme-based color
           >
             Get Started

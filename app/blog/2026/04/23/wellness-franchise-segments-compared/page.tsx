@@ -1,10 +1,10 @@
-import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
-import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
+import Footer from "../../../../../components/Footer";
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
+import NavBar from "../../../../../components/NavBar";
 import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
@@ -133,11 +133,11 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -184,8 +184,8 @@ export default function Page() {
           </h2>
 
           <div className="overflow-x-auto mb-4">
-            <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-              <thead className="bg-gray-800 text-white">
+            <table className="w-full text-sm border border-gray-200 rounded-sm overflow-hidden">
+              <thead className="bg-gray-800 text-white brand-dark">
                 <tr>
                   <th className="px-4 py-3 text-left">Segment</th>
                   <th className="px-4 py-3 text-center">Investment Range</th>
@@ -195,21 +195,21 @@ export default function Page() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3 font-medium">Fitness / Gym</td>
                   <td className="px-4 py-3 text-center">$200K &ndash; $1M+</td>
                   <td className="px-4 py-3 text-center">3&ndash;5%</td>
                   <td className="px-4 py-3 text-center">Membership</td>
                   <td className="px-4 py-3 text-center">Mature</td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3 font-medium">Massage Therapy</td>
                   <td className="px-4 py-3 text-center">$400K &ndash; $1M</td>
                   <td className="px-4 py-3 text-center">5&ndash;7%</td>
                   <td className="px-4 py-3 text-center">Membership</td>
                   <td className="px-4 py-3 text-center">Established</td>
                 </tr>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3 font-medium">Day Spa (Spavia investment)</td>
                   <td className="px-4 py-3 text-center font-semibold">
                     $479K &ndash; $885K
@@ -218,7 +218,7 @@ export default function Page() {
                   <td className="px-4 py-3 text-center">Membership</td>
                   <td className="px-4 py-3 text-center">High Growth</td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3 font-medium">Recovery / Cryo</td>
                   <td className="px-4 py-3 text-center">$300K &ndash; $800K</td>
                   <td className="px-4 py-3 text-center">10&ndash;15%</td>
@@ -227,7 +227,7 @@ export default function Page() {
                   </td>
                   <td className="px-4 py-3 text-center">Emerging</td>
                 </tr>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3 font-medium">Med Spa</td>
                   <td className="px-4 py-3 text-center">$500K &ndash; $1.5M+</td>
                   <td className="px-4 py-3 text-center">12&ndash;19%</td>
@@ -236,7 +236,7 @@ export default function Page() {
                   </td>
                   <td className="px-4 py-3 text-center">Growing</td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3 font-medium">Nutrition / Juice</td>
                   <td className="px-4 py-3 text-center">$150K &ndash; $500K</td>
                   <td className="px-4 py-3 text-center">6&ndash;8%</td>
@@ -304,7 +304,7 @@ export default function Page() {
             comparison, see our{" "}
             <Link
               href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               day spa vs. med spa franchise breakdown
             </Link>
@@ -377,7 +377,7 @@ export default function Page() {
           </p>
 
           <div className="space-y-6 mb-10">
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 1. What does your membership-to-revenue ratio look like?
               </h3>
@@ -390,7 +390,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 2. What does your Item 19 actually say?
               </h3>
@@ -403,7 +403,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 3. Which territories are available in the markets I care
                 about?
@@ -414,7 +414,7 @@ export default function Page() {
                 territory map, not a reassurance. See our{" "}
                 <Link
                   href="/franchise-opportunities"
-                  className="text-[#C2A878] hover:underline"
+                  className="text-[var(--accent-text)] hover:underline"
                 >
                   current open territories
                 </Link>
@@ -422,7 +422,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 4. How does the franchisor support real estate and
                 construction?
@@ -435,7 +435,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 5. Can you put me in touch with multiple existing owners?
               </h3>
@@ -448,7 +448,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#C2A878] pl-4">
+            <div className="border-l-4 border-[#b38a5f] pl-4">
               <h3 className="font-semibold text-lg mb-1">
                 6. What does ongoing support actually look like month to
                 month?
@@ -479,14 +479,14 @@ export default function Page() {
             <span className="text-xs">*</span>. For a detailed breakdown, see{" "}
             <Link
               href="/blog/2026/02/12/spavia-vs-woodhouse-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               our head-to-head with Woodhouse
             </Link>{" "}
             and the{" "}
             <Link
               href="/blog/2026/03/10/how-to-open-a-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               step-by-step opening timeline
             </Link>
@@ -503,15 +503,15 @@ export default function Page() {
             Sources &amp; FDD References
           </h2>
           <div className="overflow-x-auto mb-4">
-            <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
-              <thead className="bg-gray-800 text-white">
+            <table className="w-full text-sm border border-gray-200 rounded-sm overflow-hidden">
+              <thead className="bg-gray-800 text-white brand-dark">
                 <tr>
                   <th className="px-4 py-3 text-left">Figure Cited</th>
                   <th className="px-4 py-3 text-left">Source</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3">
                     Spavia total initial investment: $479,450 &ndash; $885,450
                   </td>
@@ -519,7 +519,7 @@ export default function Page() {
                     Spavia Franchise Disclosure Document, Item 7
                   </td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3">
                     Spavia median annual revenue: $1,110,481
                   </td>
@@ -527,7 +527,7 @@ export default function Page() {
                     Spavia Franchise Disclosure Document, Item 19, Part III
                   </td>
                 </tr>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3">
                     Spavia median cash flow from operations: $199,773
                   </td>
@@ -535,7 +535,7 @@ export default function Page() {
                     Spavia Franchise Disclosure Document, Item 19, Part III
                   </td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3">
                     Spavia median operating margin: 18.4%
                   </td>
@@ -543,7 +543,7 @@ export default function Page() {
                     Spavia Franchise Disclosure Document, Item 19, Part III
                   </td>
                 </tr>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3">
                     Global wellness economy: $6.8T (2024), 7.9% YoY growth,
                     projected ~$10T by 2029
@@ -553,7 +553,7 @@ export default function Page() {
                     Monitor
                   </td>
                 </tr>
-                <tr className="bg-gray-50 border-t">
+                <tr className="bg-gray-50 border-t brand-light">
                   <td className="px-4 py-3">
                     82% of U.S. consumers prioritize personal health &amp;
                     well-being
@@ -563,7 +563,7 @@ export default function Page() {
                     wellness market continues to boom&quot; (2024)
                   </td>
                 </tr>
-                <tr className="bg-white border-t">
+                <tr className="bg-white border-t brand-light">
                   <td className="px-4 py-3">
                     Segment investment ranges &amp; growth rates (Fitness,
                     Massage, Recovery, Med Spa, Nutrition)
@@ -588,7 +588,7 @@ export default function Page() {
           </p>
 
           {/* ── CTA ── */}
-          <div className="bg-gray-50 rounded-xl p-8 text-center mb-10 border border-gray-200">
+          <div className="bg-gray-50 rounded-sm p-8 text-center mb-10 border border-gray-200 brand-light">
             <h2 className="text-2xl font-semibold mb-3">
               Still Deciding Which Segment Fits You?
             </h2>
@@ -599,7 +599,7 @@ export default function Page() {
             </p>
             <Link
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
+              className="inline-block bg-[#b38a5f] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
             >
               Schedule a Discovery Call
             </Link>
@@ -615,7 +615,7 @@ export default function Page() {
                 <li key={rp.href}>
                   <Link
                     href={rp.href}
-                    className="text-[#C2A878] hover:underline"
+                    className="text-[var(--accent-text)] hover:underline"
                   >
                     {rp.title} &rarr;
                   </Link>
@@ -626,7 +626,7 @@ export default function Page() {
 
           {/* ── Author Bio ── */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -641,7 +641,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

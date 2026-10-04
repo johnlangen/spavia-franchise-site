@@ -1,119 +1,124 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+
+const groups = [
+  {
+    label: "Your opportunity",
+    links: [
+      ["Franchise cost", "/franchise-cost"],
+      ["Available markets", "/franchise-opportunities"],
+      ["Steps to ownership", "/steps-to-ownership"],
+      ["Multi-unit development", "/multi-unit"],
+      ["Request franchise info", "/get-started"],
+    ],
+  },
+  {
+    label: "The Spavia difference",
+    links: [
+      ["Why Spavia", "/why-spavia"],
+      ["Our story & team", "/who-we-are"],
+      ["Meet our owners", "/our-franchisees"],
+      ["Training & support", "/training-and-support"],
+      ["Your Spavia", "/your-spavia"],
+    ],
+  },
+  {
+    label: "Explore the model",
+    links: [
+      ["Day spa franchise", "/day-spa-franchise"],
+      ["Massage franchise", "/massage-franchise"],
+      ["Facial franchise", "/facial-franchise"],
+      ["Wellness franchise", "/wellness-franchise"],
+      ["Franchise insights", "/blog"],
+      ["Press & recognition", "/press"],
+      ["What’s new", "/whats-new"],
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8 items-start border-t border-gray-700">
-        {/* Logo + Legal */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
-          <img
-            src="/spavia-logo.png"
-            alt="Spavia Franchise"
-            className="h-8 w-auto"
-          />
-          <div className="flex flex-col space-y-1 text-sm">
-            <Link
+    <footer className="site-footer">
+      <div className="site-container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Link href="/" aria-label="Spavia franchise home">
+              <Image
+                src="/spavia-logo.png"
+                alt="Spavia"
+                width={170}
+                height={46}
+              />
+            </Link>
+            <p>
+              Locally owned spas.
+              <br />A nationwide community.
+              <br />
+              Family-owned since 2005.
+            </p>
+            <a href="mailto:alisa@spaviadayspa.com">alisa@spaviadayspa.com</a>
+          </div>
+          {groups.map((group) => (
+            <nav key={group.label} aria-label={group.label}>
+              <p>{group.label}</p>
+              <ul>
+                {group.links.map(([label, href]) => (
+                  <li key={href}>
+                    <Link href={href}>{label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Spavia. All rights reserved.</p>
+          <div>
+            <a
               href="https://spaviadayspa.com/privacy-policy"
               target="_blank"
-              className="hover:text-white"
+              rel="noopener noreferrer"
             >
               Privacy Policy
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://spaviadayspa.com/terms-and-conditions"
               target="_blank"
-              className="hover:text-white"
+              rel="noopener noreferrer"
             >
               Terms & Conditions
-            </Link>
+            </a>
+            <a
+              href="https://spaviadayspa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Spavia Day Spa ↗
+            </a>
           </div>
-          <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} Spavia. All Rights Reserved.
-          </p>
         </div>
-
-        {/* Explore Spavia */}
-        <div className="flex flex-col items-center md:items-start space-y-2 text-sm">
-          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-1">
-            Explore Spavia
-          </p>
-          <Link href="/franchise-opportunities" className="hover:text-white">
-            Franchise Opportunities
-          </Link>
-          <Link href="/franchise-cost" className="hover:text-white">
-            Franchise Cost
-          </Link>
-          <Link href="/steps-to-ownership" className="hover:text-white">
-            Steps to Ownership
-          </Link>
-          <Link href="/blog" className="hover:text-white">
-            Blog
-          </Link>
-          <Link href="/press" className="hover:text-white">
-            Press
-          </Link>
-          <Link href="/get-started" className="hover:text-white">
-            Request Info
-          </Link>
-          <Link
-            href="https://spaviadayspa.com/"
+        <div className="footer-social">
+          <a
+            href="https://www.facebook.com/SpaviaDaySpa/"
             target="_blank"
-            className="hover:text-white"
+            rel="noopener noreferrer"
           >
-            SpaviaDaySpa
-          </Link>
-        </div>
-
-        {/* Franchise Models */}
-        <div className="flex flex-col items-center md:items-start space-y-2 text-sm">
-          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-1">
-            Franchise Models
-          </p>
-          <Link href="/day-spa-franchise" className="hover:text-white">
-            Day Spa Franchise
-          </Link>
-          <Link href="/massage-franchise" className="hover:text-white">
-            Massage Franchise
-          </Link>
-          <Link href="/facial-franchise" className="hover:text-white">
-            Facial Franchise
-          </Link>
-          <Link href="/wellness-franchise" className="hover:text-white">
-            Wellness Franchise
-          </Link>
-          <Link href="/multi-unit" className="hover:text-white">
-            Multi-Unit Development
-          </Link>
-        </div>
-
-        {/* Social */}
-        <div className="flex flex-col items-center md:items-end space-y-4">
-          <div className="flex space-x-4 text-xl">
-            <Link
-              href="https://www.facebook.com/SpaviaDaySpa/"
-              target="_blank"
-              className="hover:text-white"
-            >
-              <FaFacebookF />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/spavia/"
-              target="_blank"
-              className="hover:text-white"
-            >
-              <FaLinkedinIn />
-            </Link>
-            <Link
-              href="https://www.instagram.com/spaviadayspa/"
-              target="_blank"
-              className="hover:text-white"
-            >
-              <FaInstagram />
-            </Link>
-          </div>
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/spaviadayspa/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/company/spavia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>

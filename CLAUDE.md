@@ -18,6 +18,7 @@ Spavia Day Spa franchise lead generation website. Converts prospective franchise
 - `npm run dev` — local dev server (Turbopack)
 - `npm run build` — production build (always run before pushing)
 - `npm run lint` — ESLint
+- `npm test` — mocked lead-flow regression tests; never submit synthetic production leads
 
 ## Project Structure
 ```
@@ -25,7 +26,7 @@ app/
   page.tsx              # Homepage (server component, imports client components)
   layout.tsx            # Root layout — global JSON-LD (Organization + WebSite), GA4, Google Ads
   sitemap.ts            # Dynamic sitemap generation (/sitemap.xml)
-  globals.css           # Tailwind, custom fonts, snap scroll, ActiveCampaign overrides
+  globals.css           # Shared neutral design system, typography, responsive layouts and form styles
   blog/
     page.tsx            # Blog index
     [year]/[month]/[day]/[slug]/page.tsx  # 21 blog posts
@@ -41,11 +42,12 @@ app/
   components/
     NavBar.tsx           # Sticky nav, hamburger below lg (1024px)
     Footer.tsx
-    Hero.tsx             # Video hero with metrics carousel
+    Hero.tsx             # Still-photo introduction, intent-aware copy and overview section
     Breadcrumbs.tsx      # Reusable breadcrumbs + BreadcrumbList JSON-LD
-    FranchiseIntroForm.tsx  # 2-step short form (email -> details)
+    FranchiseOverviewForm.tsx # Shared 2-step short form (email -> details)
+    FranchiseIntroForm.tsx  # Section wrapper for the shared short form
     FranchiseLongForm.tsx   # 2-step long form (info -> financials)
-    FloatingButton.tsx      # Sticky CTA (desktop pill + mobile bottom bar)
+    FloatingButton.tsx      # Mobile inquiry bar, hidden when form is visible or being edited
     BlogGrid.tsx            # Blog listing cards with Next.js Image
     FAQ.tsx                 # Accordion FAQ (homepage)
     ThemeProvider.tsx        # React Context for spa design themes
@@ -56,10 +58,12 @@ app/
 ## Key Patterns
 
 ### Forms
-- Two form types: FranchiseIntroForm (short, on homepage) and FranchiseLongForm (detailed, on homepage + /get-started)
+- Two form types: FranchiseOverviewForm (short, shared by homepage/landing/intro sections) and FranchiseLongForm (detailed, on /get-started)
 - Both are 2-step: capture basic info first (saved to Supabase immediately), then complete submission to ActiveCampaign
 - API routes submit to ActiveCampaign API and add contacts to "Organic Lead List"
 - Forms have proper `<label>` + `htmlFor`/`id` associations and `autoComplete` attributes
+- Preserve leadSource values, attribution, GA event dimensions, Ads conversion IDs and qualification thresholds when changing presentation. Alisa handles franchise inquiries; the legacy `ceo=1` thank-you query opens her intro-call calendar.
+- Production analytics initialize only on spaviafranchise.com and www.spaviafranchise.com. CTA and section-view events are diagnostics, not additional conversions.
 
 ### SEO
 - Every page has: Metadata (title, description, canonical, OG, Twitter), Breadcrumbs with BreadcrumbList schema
@@ -69,10 +73,10 @@ app/
 - Sitemap at /sitemap.xml covers all pages + blog posts
 
 ### Styling
-- Brand gold color: `#C2A878` (used everywhere as accent)
+- Black, white and neutral gray surfaces; copper `#b38a5f` sparingly. Use `--accent-text` for accessible accent text on `.brand-light` and `.brand-dark` surfaces. Avoid large solid gold banners.
 - Tailwind utilities preferred. Some inline styles for theme-dynamic colors (`var(--accent)`)
 - FranchiseLongForm uses `<style jsx>` for form-specific classes — keep as-is
-- Desktop snap scroll enabled via globals.css (`scroll-snap-type: y mandatory` at md+)
+- Use normal document scrolling and visible content. Prefer still photography, deliberate video playback, native FAQ details and directly visible owner proof over autoplay or rotating carousels.
 
 ### Content Pages
 - Each core page has a `*Content.tsx` client component in /components/ that contains all the page UI

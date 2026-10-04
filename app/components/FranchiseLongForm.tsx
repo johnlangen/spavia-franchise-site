@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Button from "./Button";
 import { useRouter } from "next/navigation";
+import { useEffect,useRef,useState } from "react";
 import { getAttribution } from "../lib/attribution";
+import Button from "./Button";
 
 declare global {
   interface Window {
@@ -16,10 +16,15 @@ interface FranchiseLongFormProps {
 }
 
 export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps) {
+  const [continuing, setContinuing] = useState(false);
+  const continuingRef = useRef(false);
+  const phoneRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [step, setStep] = useState<1 | 2>(1);
   const router = useRouter();
+  const netWorthRef = useRef<HTMLSelectElement>(null);
+  useEffect(() => { if (step === 2) netWorthRef.current?.focus(); }, [step]);
 
   const [step1, setStep1] = useState({
     firstName: "",
@@ -33,6 +38,16 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
   /* ───────── STEP 1 ───────── */
   const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (continuingRef.current) return;
+    const digits = step1.phone.replace(/\D/g, "");
+    if (!(digits.length === 10 || (digits.length === 11 && digits.startsWith("1")))) {
+      setError("Please enter a valid 10-digit US phone number, including area code.");
+      phoneRef.current?.focus();
+      return;
+    }
+    setError("");
+    continuingRef.current = true;
+    setContinuing(true);
 
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("event", "form_step1_submitted", {
@@ -51,6 +66,8 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
     } catch {}
 
     setStep(2);
+    setContinuing(false);
+    continuingRef.current = false;
   };
 
   /* ───────── FINAL SUBMIT ───────── */
@@ -127,7 +144,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             });
           }
         }
-        // Qualified leads go straight to the CEO's calendar on the thank-you page
+        // Preserve the existing liquid-capital route to Alisa’s calendar (legacy ceo query key)
         router.push(liquidQualified ? "/thank-you?ceo=1" : "/thank-you");
         return;
       }
@@ -148,7 +165,8 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
   };
 
   return (
-    <div className="mx-auto max-w-3xl bg-white rounded-2xl shadow-xl p-6 md:p-8">
+    <div className="long-lead-form mx-auto max-w-3xl bg-white border border-gray-300 rounded-sm p-6 md:p-8 brand-light">
+      <p className="form-progress" role="status">Step {step} of 2 — {step === 1 ? "Your contact details" : "Your ownership goals"}</p>
       <form
         onSubmit={step === 1 ? handleStep1 : handleSubmit}
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -205,6 +223,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             <div>
               <label htmlFor="long-phone" className="form-label">Phone</label>
               <input
+                ref={phoneRef}
                 id="long-phone"
                 type="tel"
                 required
@@ -261,8 +280,9 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             </div>
 
             <div className="md:col-span-2 pt-2">
-              <Button className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]">
-                Continue →
+              {error && <div role="alert" className="form-error mb-3">{error}</div>}
+              <Button disabled={continuing} className="w-full">
+                {continuing ? "Continuing…" : "Continue →"}
               </Button>
             </div>
           </>
@@ -277,7 +297,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
 
             <div className="md:col-span-2">
               <label htmlFor="long-netWorth" className="form-label">Estimated Net Worth</label>
-              <select id="long-netWorth" name="netWorth" required className="form-select">
+              <select ref={netWorthRef} id="long-netWorth" name="netWorth" required className="form-select">
                 <option value="">Select range</option>
                 <option value="$0 - $150K">$0 – $150K</option>
                 <option value="$150K - $350K">$150K – $350K</option>
@@ -320,7 +340,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 <div
                   role="alert"
                   aria-live="polite"
-                  className="mb-3 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"
+                  className="mb-3 rounded-sm bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"
                 >
                   {error}
                 </div>
@@ -328,7 +348,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
 
               <Button
                 disabled={loading}
-                className="w-full bg-[#C2A878] text-white hover:bg-[#b09466]"
+                className="w-full"
               >
                 {loading ? "Submitting…" : error ? "Try Again" : "Submit Request"}
               </Button>

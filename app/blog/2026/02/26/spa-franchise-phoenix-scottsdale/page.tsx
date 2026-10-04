@@ -1,11 +1,11 @@
-import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
-import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
+import Footer from "../../../../../components/Footer";
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
+import NavBar from "../../../../../components/NavBar";
 import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
@@ -147,11 +147,11 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -161,7 +161,7 @@ export default function Page() {
             <span className="inline-block bg-amber-900/10 text-amber-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               Local Market Guide
             </span>
-            <span className="inline-block bg-[#C2A878]/10 text-[#C2A878] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            <span className="inline-block bg-[#b38a5f]/10 text-[var(--accent-text)] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               Phoenix / Scottsdale
             </span>
             <span className="text-sm text-gray-500">
@@ -186,14 +186,14 @@ export default function Page() {
             alt="Spavia day spa franchise location in Phoenix Arizona"
             width={1200}
             height={675}
-            className="w-full rounded-xl mb-10"
+            className="w-full rounded-sm mb-10"
             priority
           />
 
           <FranchiseFinancialNote />
 
           {/* ── Table of Contents ── */}
-          <nav className="bg-gradient-to-br from-gray-50 to-amber-50/40 rounded-xl p-6 mb-12 border border-[#C2A878]/20">
+          <nav className="bg-gradient-to-br from-gray-50 to-amber-50/40 rounded-sm p-6 mb-12 border border-[#b38a5f]/20">
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">
               In This Guide
             </h2>
@@ -211,9 +211,9 @@ export default function Page() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="text-gray-700 hover:text-[#C2A878] transition-colors"
+                    className="text-gray-700 hover:text-[var(--accent-text)] transition-colors"
                   >
-                    <span className="text-[#C2A878] font-semibold mr-2">
+                    <span className="text-[var(--accent-text)] font-semibold mr-2">
                       {i + 1}.
                     </span>
                     {item.label}
@@ -288,9 +288,9 @@ export default function Page() {
             ].map((s) => (
               <div
                 key={s.label}
-                className="relative overflow-hidden rounded-xl border border-[#C2A878]/20 p-5 bg-gradient-to-br from-white to-amber-50/60"
+                className="relative overflow-hidden rounded-sm border border-[#b38a5f]/20 p-5 bg-gradient-to-br from-white to-amber-50/60"
               >
-                <p className="text-3xl font-bold text-[#C2A878] mb-1">
+                <p className="text-3xl font-bold text-[var(--accent-text)] mb-1">
                   {s.stat}
                 </p>
                 <p className="font-semibold text-gray-900 text-sm">
@@ -335,13 +335,13 @@ export default function Page() {
           </p>
 
           {/* ── Reach callout ── */}
-          <div className="rounded-xl bg-gray-900 text-white px-6 py-6 mb-10 flex flex-col sm:flex-row items-center gap-6">
+          <div className="rounded-sm bg-gray-900 text-white px-6 py-6 mb-10 flex flex-col sm:flex-row items-center gap-6 brand-dark">
             <div className="flex-1 text-center sm:text-left">
               <p className="text-sm uppercase tracking-wider text-gray-400 mb-1">
                 Combined Metro Audience
               </p>
               <p className="text-4xl font-bold">
-                ~12<span className="text-[#C2A878]">M</span>
+                ~12<span className="text-[var(--accent-text)]">M</span>
               </p>
               <p className="text-gray-400 text-sm mt-1">
                 consumer reach for a targeted spa franchise campaign
@@ -381,8 +381,8 @@ export default function Page() {
           {/* ── Three pillars — unique alternating layout ── */}
           <div className="space-y-6 mb-10">
             {/* Pillar 1 */}
-            <div className="rounded-xl border border-gray-200 overflow-hidden">
-              <div className="bg-[#C2A878] px-5 py-2.5">
+            <div className="rounded-sm border border-gray-200 overflow-hidden">
+              <div className="bg-[#b38a5f] px-5 py-2.5">
                 <h3 className="text-white font-semibold">
                   Demand Is Outpacing Supply
                 </h3>
@@ -400,8 +400,8 @@ export default function Page() {
             </div>
 
             {/* Pillar 2 */}
-            <div className="rounded-xl border border-gray-200 overflow-hidden">
-              <div className="bg-gray-900 px-5 py-2.5">
+            <div className="rounded-sm border border-gray-200 overflow-hidden">
+              <div className="bg-gray-900 px-5 py-2.5 brand-dark">
                 <h3 className="text-white font-semibold">
                   Membership Models Drive Recurring Revenue
                 </h3>
@@ -421,8 +421,8 @@ export default function Page() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="rounded-xl border border-gray-200 overflow-hidden">
-              <div className="bg-[#C2A878] px-5 py-2.5">
+            <div className="rounded-sm border border-gray-200 overflow-hidden">
+              <div className="bg-[#b38a5f] px-5 py-2.5">
                 <h3 className="text-white font-semibold">
                   Multiple Revenue Streams
                 </h3>
@@ -477,10 +477,10 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-gray-200 p-5 hover:border-[#C2A878]/50 hover:shadow-md transition-all"
+                className="rounded-sm border border-gray-200 p-5 hover:border-[#b38a5f]/50 hover:shadow-md transition-all"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                     &#10003;
                   </span>
                   <h3 className="font-semibold">{item.title}</h3>
@@ -493,22 +493,22 @@ export default function Page() {
           </div>
 
           {/* ── Financial Performance — standout box ── */}
-          <div className="rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 text-white px-8 py-8 mb-10">
+          <div className="rounded-sm bg-gradient-to-br from-gray-900 to-gray-800 text-white px-8 py-8 mb-10 brand-dark">
             <h3 className="text-lg font-semibold mb-5 text-center">
               Proven Financial Performance
             </h3>
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div className="bg-white/10 rounded-xl p-5 text-center backdrop-blur">
+              <div className="bg-white/10 rounded-sm p-5 text-center backdrop-blur">
                 <p className="text-sm text-gray-300 mb-1">
                   Median Annual Revenue*
                 </p>
                 <p className="text-3xl font-bold">$1,110,481</p>
               </div>
-              <div className="bg-white/10 rounded-xl p-5 text-center backdrop-blur">
+              <div className="bg-white/10 rounded-sm p-5 text-center backdrop-blur">
                 <p className="text-sm text-gray-300 mb-1">
                   Initial Investment*
                 </p>
-                <p className="text-3xl font-bold text-[#C2A878]">
+                <p className="text-3xl font-bold text-[var(--accent-text)]">
                   $479K &ndash; $885K
                 </p>
               </div>
@@ -519,7 +519,7 @@ export default function Page() {
           </div>
 
           {/* ── Mid-Article CTA ── */}
-          <div className="rounded-xl bg-[#faf7f2] border border-[#C2A878]/30 px-6 py-6 mb-12 text-center">
+          <div className="rounded-sm bg-[#f5f5f5] border border-[#b38a5f]/30 px-6 py-6 mb-12 text-center brand-light">
             <p className="font-semibold text-gray-900 text-lg mb-1">
               Interested in the Phoenix &amp; Scottsdale market?
             </p>
@@ -530,13 +530,13 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
-                className="inline-block bg-white border border-[#C2A878] text-[#C2A878] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#C2A878] hover:text-white transition-colors text-sm"
+                className="inline-block bg-white border border-[#b38a5f] text-[var(--accent-text)] font-semibold px-5 py-2.5 rounded-sm hover:bg-[#b38a5f] hover:text-black transition-colors text-sm brand-light"
               >
                 Day Spa vs. Med Spa &rarr;
               </Link>
               <Link
                 href="/blog/2026/02/19/spa-franchise-opportunities-guide"
-                className="inline-block bg-white border border-[#C2A878] text-[#C2A878] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#C2A878] hover:text-white transition-colors text-sm"
+                className="inline-block bg-white border border-[#b38a5f] text-[var(--accent-text)] font-semibold px-5 py-2.5 rounded-sm hover:bg-[#b38a5f] hover:text-black transition-colors text-sm brand-light"
               >
                 Full Franchise Guide &rarr;
               </Link>
@@ -554,7 +554,7 @@ export default function Page() {
           </h2>
 
           {/* ── Urgency banner ── */}
-          <div className="rounded-lg bg-amber-50 border-l-4 border-[#C2A878] px-5 py-3 mb-6">
+          <div className="rounded-sm bg-amber-50 border-l-4 border-[#b38a5f] px-5 py-3 mb-6">
             <p className="font-semibold text-amber-900 text-sm">
               Limited territories are now available in the Phoenix and
               Scottsdale markets. Early movers secure the strongest trade areas.
@@ -592,12 +592,12 @@ export default function Page() {
             ].map((t, i) => (
               <div
                 key={t.area}
-                className={`rounded-xl border border-gray-200 p-4 ${
+                className={`rounded-sm border border-gray-200 p-4 ${
                   i === 4 ? "sm:col-span-2" : ""
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C2A878]/10 text-[#C2A878] text-xs font-bold">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#b38a5f]/10 text-[var(--accent-text)] text-xs font-bold">
                     {String.fromCharCode(9679)}
                   </span>
                   <div>
@@ -661,9 +661,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.trait}
-                className="flex items-start gap-4 rounded-xl border border-gray-200 p-5"
+                className="flex items-start gap-4 rounded-sm border border-gray-200 p-5"
               >
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -717,11 +717,11 @@ export default function Page() {
               <div key={item.step} className="flex items-stretch gap-4">
                 {/* ── Timeline connector ── */}
                 <div className="flex flex-col items-center">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-sm z-10">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-sm z-10">
                     {item.step}
                   </span>
                   {i < arr.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-[#C2A878]/20" />
+                    <div className="w-0.5 flex-1 bg-[#b38a5f]/20" />
                   )}
                 </div>
                 {/* ── Content ── */}
@@ -736,10 +736,10 @@ export default function Page() {
           </div>
 
           {/* ── Primary CTA ── */}
-          <div className="relative overflow-hidden rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-12">
+          <div className="relative overflow-hidden rounded-sm bg-gray-900 text-white px-8 py-10 text-center mb-12 brand-dark">
             {/* Decorative accent */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-[#C2A878]/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#C2A878]/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#b38a5f]/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#b38a5f]/10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
             <div className="relative z-10">
               <h2 className="text-2xl font-bold mb-3">
@@ -752,7 +752,7 @@ export default function Page() {
               </p>
               <Link
                 href="/get-started"
-                className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b09466] transition-colors text-lg"
+                className="inline-block bg-[#b38a5f] text-black font-semibold px-8 py-3.5 rounded-sm hover:bg-[#b09466] transition-colors text-lg"
               >
                 Request the Franchise Overview &rarr;
               </Link>
@@ -769,7 +769,7 @@ export default function Page() {
             Frequently Asked Questions: Spa Franchise in Phoenix
           </h2>
 
-          <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 mb-10 overflow-hidden">
+          <div className="divide-y divide-gray-200 rounded-sm border border-gray-200 mb-10 overflow-hidden">
             {[
               {
                 q: "How much does it cost to open a spa franchise in Phoenix?",
@@ -799,7 +799,7 @@ export default function Page() {
               <details key={item.q} className="group">
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                   {item.q}
-                  <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">
+                  <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">
                     +
                   </span>
                 </summary>
@@ -816,7 +816,7 @@ export default function Page() {
             <ul className="space-y-3">
               {getRelatedPosts("/blog/2026/02/26/spa-franchise-phoenix-scottsdale").map((rp) => (
                 <li key={rp.href}>
-                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                  <Link href={rp.href} className="text-[var(--accent-text)] hover:underline">
                     {rp.title} &rarr;
                   </Link>
                 </li>
@@ -836,7 +836,7 @@ export default function Page() {
           </p>
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -852,7 +852,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

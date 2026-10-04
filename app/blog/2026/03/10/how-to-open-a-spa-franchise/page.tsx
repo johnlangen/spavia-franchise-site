@@ -1,11 +1,11 @@
-import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
-import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
+import Footer from "../../../../../components/Footer";
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
+import NavBar from "../../../../../components/NavBar";
 import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
@@ -147,12 +147,12 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Link */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -168,7 +168,7 @@ export default function Page() {
             alt="How to open a spa franchise step-by-step timeline"
             width={1200}
             height={675}
-            className="w-full rounded-xl mb-8"
+            className="w-full rounded-sm mb-8"
           />
 
           {/* ── Intro ── */}
@@ -197,7 +197,7 @@ export default function Page() {
           <FranchiseFinancialNote />
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               1
             </span>
             <h2 className="text-2xl font-semibold">
@@ -240,7 +240,7 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.q}
-                className="rounded-lg border border-gray-200 p-4"
+                className="rounded-sm border border-gray-200 p-4"
               >
                 <p className="font-semibold text-sm mb-1">{item.q}</p>
                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -259,7 +259,7 @@ export default function Page() {
           {/* STEP 2 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               2
             </span>
             <h2 className="text-2xl font-semibold">
@@ -304,7 +304,7 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-4"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-4"
               >
                 <span className="text-xl mt-0.5">{item.icon}</span>
                 <div>
@@ -323,7 +323,7 @@ export default function Page() {
             discovery process.{" "}
             <Link
               href="/get-started"
-              className="text-[#C2A878] font-semibold hover:underline"
+              className="text-[var(--accent-text)] font-semibold hover:underline"
             >
               Request your free Spavia franchise overview here &rarr;
             </Link>
@@ -333,7 +333,7 @@ export default function Page() {
           {/* STEP 3 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               3
             </span>
             <h2 className="text-2xl font-semibold">
@@ -372,34 +372,34 @@ export default function Page() {
           </p>
 
           {/* FDD Items Callout */}
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-6">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-6 brand-light">
             <p className="font-semibold text-gray-900 mb-3">
               Key FDD Items to Review
             </p>
             <ul className="space-y-2 text-sm leading-relaxed text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#C2A878] font-bold mt-0.5">5</span>
+                <span className="text-[var(--accent-text)] font-bold mt-0.5">5</span>
                 <span>
                   <strong>Initial Fees</strong> &mdash; Franchise fee, technology
                   fees, and other upfront costs.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#C2A878] font-bold mt-0.5">6</span>
+                <span className="text-[var(--accent-text)] font-bold mt-0.5">6</span>
                 <span>
                   <strong>Other Fees</strong> &mdash; Royalties, marketing fund
                   contributions, and ongoing technology or support fees.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#C2A878] font-bold mt-0.5">7</span>
+                <span className="text-[var(--accent-text)] font-bold mt-0.5">7</span>
                 <span>
                   <strong>Estimated Initial Investment</strong> &mdash; The full
                   range of startup costs, from buildout to working capital.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#C2A878] font-bold mt-0.5">19</span>
+                <span className="text-[var(--accent-text)] font-bold mt-0.5">19</span>
                 <span>
                   <strong>Financial Performance</strong> &mdash; Revenue data
                   from existing franchise locations. Not all franchises include
@@ -407,7 +407,7 @@ export default function Page() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#C2A878] font-bold mt-0.5">20</span>
+                <span className="text-[var(--accent-text)] font-bold mt-0.5">20</span>
                 <span>
                   <strong>Outlets and Franchisee Information</strong> &mdash; A
                   summary of franchised and corporate outlets over the prior
@@ -418,7 +418,7 @@ export default function Page() {
           </div>
 
           {/* Pro Tip */}
-          <div className="rounded-xl border border-green-200 bg-green-50/50 px-6 py-4 mb-6">
+          <div className="rounded-sm border border-green-200 bg-green-50/50 px-6 py-4 mb-6">
             <p className="text-sm leading-relaxed text-gray-700">
               <strong className="text-green-800">Pro Tip:</strong> Hire a
               franchise attorney to review your FDD. Franchise law is a
@@ -440,7 +440,7 @@ export default function Page() {
             process.{" "}
             <Link
               href="/our-franchisees"
-              className="text-[#C2A878] font-semibold hover:underline"
+              className="text-[var(--accent-text)] font-semibold hover:underline"
             >
               Meet Spavia franchise owners &rarr;
             </Link>
@@ -457,7 +457,7 @@ export default function Page() {
             any document can convey.{" "}
             <Link
               href="/who-we-are"
-              className="text-[#C2A878] font-semibold hover:underline"
+              className="text-[var(--accent-text)] font-semibold hover:underline"
             >
               Learn about Spavia&apos;s leadership &rarr;
             </Link>
@@ -467,7 +467,7 @@ export default function Page() {
           {/* STEP 4 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               4
             </span>
             <h2 className="text-2xl font-semibold">Secure Your Financing</h2>
@@ -482,8 +482,8 @@ export default function Page() {
 
           <div className="grid sm:grid-cols-3 gap-4 mb-6">
             {/* SBA */}
-            <div className="rounded-xl border border-gray-200 p-5">
-              <p className="font-bold text-lg mb-2 text-[#C2A878]">SBA Loans</p>
+            <div className="rounded-sm border border-gray-200 p-5">
+              <p className="font-bold text-lg mb-2 text-[var(--accent-text)]">SBA Loans</p>
               <p className="text-sm text-gray-600 leading-relaxed">
                 The SBA 7(a) program offers competitive rates and terms up to 10
                 years. Most lenders require a 10&ndash;20% equity injection. The
@@ -493,8 +493,8 @@ export default function Page() {
             </div>
 
             {/* ROBS */}
-            <div className="rounded-xl border border-gray-200 p-5">
-              <p className="font-bold text-lg mb-2 text-[#C2A878]">ROBS</p>
+            <div className="rounded-sm border border-gray-200 p-5">
+              <p className="font-bold text-lg mb-2 text-[var(--accent-text)]">ROBS</p>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Rollover as Business Startup allows you to invest qualifying
                 retirement funds (401(k), 403(b), IRA) without early withdrawal
@@ -504,8 +504,8 @@ export default function Page() {
             </div>
 
             {/* Conventional */}
-            <div className="rounded-xl border border-gray-200 p-5">
-              <p className="font-bold text-lg mb-2 text-[#C2A878]">
+            <div className="rounded-sm border border-gray-200 p-5">
+              <p className="font-bold text-lg mb-2 text-[var(--accent-text)]">
                 Conventional
               </p>
               <p className="text-sm text-gray-600 leading-relaxed">
@@ -517,7 +517,7 @@ export default function Page() {
           </div>
 
           {/* Spavia Insight */}
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-10">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-10 brand-light">
             <p className="font-semibold text-gray-900 mb-1">Spavia Insight</p>
             <p className="leading-relaxed text-gray-700">
               Spavia&apos;s franchise investment ranges from{" "}
@@ -526,7 +526,7 @@ export default function Page() {
               model and the application process is streamlined.{" "}
               <Link
                 href="/steps-to-ownership"
-                className="text-[#C2A878] font-semibold hover:underline"
+                className="text-[var(--accent-text)] font-semibold hover:underline"
               >
                 See the full steps to ownership &rarr;
               </Link>
@@ -537,7 +537,7 @@ export default function Page() {
           {/* STEP 5 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               5
             </span>
             <h2 className="text-2xl font-semibold">
@@ -584,9 +584,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-4"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-4"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -605,7 +605,7 @@ export default function Page() {
           </p>
 
           {/* ── Mid-Article CTA ── */}
-          <div className="rounded-xl bg-[#faf7f2] border border-[#C2A878]/30 px-6 py-6 mb-10 text-center">
+          <div className="rounded-sm bg-[#f5f5f5] border border-[#b38a5f]/30 px-6 py-6 mb-10 text-center brand-light">
             <p className="font-semibold text-gray-900 text-lg mb-1">
               Ready to explore available territories?
             </p>
@@ -615,7 +615,7 @@ export default function Page() {
             </p>
             <a
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#b09466] transition-colors"
+              className="inline-block bg-[#b38a5f] text-black font-semibold px-6 py-3 rounded-sm hover:bg-[#b09466] transition-colors"
             >
               Schedule a Call &rarr;
             </a>
@@ -625,7 +625,7 @@ export default function Page() {
           {/* STEP 6 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               6
             </span>
             <h2 className="text-2xl font-semibold">Build Out Your Spa</h2>
@@ -640,27 +640,27 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {/* Timeline Card */}
-            <div className="rounded-xl border-2 border-[#C2A878] bg-[#faf7f2] p-5">
+            <div className="rounded-sm border-2 border-[#b38a5f] bg-[#f5f5f5] p-5 brand-light">
               <h3 className="font-semibold text-lg mb-3">Buildout Timeline</h3>
               <ul className="space-y-2 text-sm leading-relaxed text-gray-700">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Construction: <strong className="ml-1">10&ndash;16 weeks</strong>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Full process (lease to inspection):{" "}
                   <strong className="ml-1">3&ndash;5 months</strong>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#C2A878] mt-1">&bull;</span>
+                  <span className="text-[var(--accent-text)] mt-1">&bull;</span>
                   Permitting varies by municipality &mdash; factor in early
                 </li>
               </ul>
             </div>
 
             {/* What&apos;s Included Card */}
-            <div className="rounded-xl border border-gray-200 p-5">
+            <div className="rounded-sm border border-gray-200 p-5">
               <h3 className="font-semibold text-lg mb-3">
                 What the Buildout Includes
               </h3>
@@ -693,7 +693,7 @@ export default function Page() {
             coming back.{" "}
             <Link
               href="/your-spavia"
-              className="text-[#C2A878] font-semibold hover:underline"
+              className="text-[var(--accent-text)] font-semibold hover:underline"
             >
               Explore Spavia&apos;s award-winning spa designs &rarr;
             </Link>
@@ -703,7 +703,7 @@ export default function Page() {
           {/* STEP 7 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               7
             </span>
             <h2 className="text-2xl font-semibold">
@@ -746,9 +746,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-3"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-3"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -768,7 +768,7 @@ export default function Page() {
             descriptions, compensation benchmarks, and hiring playbooks.
           </p>
 
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-10">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-10 brand-light">
             <p className="leading-relaxed text-gray-700">
               For franchise systems that emphasize culture &mdash; like
               Spavia&apos;s <strong>WE CARE</strong> values (Welcome, Exceed,
@@ -776,7 +776,7 @@ export default function Page() {
               fit is just as important as hiring for skill.{" "}
               <Link
                 href="/training-and-support"
-                className="text-[#C2A878] font-semibold hover:underline"
+                className="text-[var(--accent-text)] font-semibold hover:underline"
               >
                 Learn about Spavia&apos;s training &amp; support &rarr;
               </Link>
@@ -787,7 +787,7 @@ export default function Page() {
           {/* STEP 8 */}
           {/* ════════════════════════════════════════════ */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white font-bold text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black font-bold text-lg">
               8
             </span>
             <h2 className="text-2xl font-semibold">
@@ -827,9 +827,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-4"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-4"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -862,17 +862,17 @@ export default function Page() {
             for opening a spa franchise from start to finish:
           </p>
 
-          <div className="overflow-x-auto mb-6 rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-x-auto mb-6 rounded-sm border border-gray-200 shadow-sm">
             <table className="w-full text-sm text-left">
               <thead>
-                <tr className="bg-[#C2A878] text-white">
+                <tr className="bg-[#b38a5f] text-black">
                   <th className="px-5 py-3 font-semibold">Phase</th>
                   <th className="px-5 py-3 font-semibold">Timeframe</th>
                   <th className="px-5 py-3 font-semibold">Key Activities</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">
                     Discovery &amp; Research
                   </td>
@@ -881,7 +881,7 @@ export default function Page() {
                     Inquiry, intro call, brand research, FDD received
                   </td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">
                     Due Diligence &amp; Validation
                   </td>
@@ -890,7 +890,7 @@ export default function Page() {
                     FDD review, validation calls, executive meeting
                   </td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">
                     Financing &amp; Agreement
                   </td>
@@ -899,7 +899,7 @@ export default function Page() {
                     Loan approval, ROBS setup, franchise agreement signed
                   </td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">
                     Site Selection &amp; Lease
                   </td>
@@ -908,7 +908,7 @@ export default function Page() {
                     Territory mapping, site tours, lease negotiation
                   </td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">
                     Buildout &amp; Construction
                   </td>
@@ -917,7 +917,7 @@ export default function Page() {
                     Permitting, construction, equipment installation
                   </td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 brand-light">
                   <td className="px-5 py-3 font-medium">
                     Training &amp; Hiring
                   </td>
@@ -926,7 +926,7 @@ export default function Page() {
                     Franchise training, staff recruitment, onboarding
                   </td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-white brand-light">
                   <td className="px-5 py-3 font-medium">
                     Pre-Opening &amp; Launch
                   </td>
@@ -939,7 +939,7 @@ export default function Page() {
             </table>
           </div>
 
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-10">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-10 brand-light">
             <p className="font-semibold text-gray-900 mb-1">
               Total timeline: 9&ndash;12 months
             </p>
@@ -992,9 +992,9 @@ export default function Page() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 p-4"
+                className="flex items-start gap-3 rounded-sm border border-gray-200 p-4"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C2A878] text-white text-xs font-bold">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b38a5f] text-black text-xs font-bold">
                   &#10003;
                 </span>
                 <div>
@@ -1008,7 +1008,7 @@ export default function Page() {
           </div>
 
           {/* ── Final CTA Box ── */}
-          <div className="rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-10">
+          <div className="rounded-sm bg-gray-900 text-white px-8 py-10 text-center mb-10 brand-dark">
             <h2 className="text-2xl font-bold mb-3">
               Ready to Start Your Spa Franchise Journey?
             </h2>
@@ -1021,13 +1021,13 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/get-started"
-                className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b09466] transition-colors text-lg"
+                className="inline-block bg-[#b38a5f] text-black font-semibold px-8 py-3.5 rounded-sm hover:bg-[#b09466] transition-colors text-lg"
               >
                 Request Franchise Info &rarr;
               </Link>
               <a
                 href="/get-started"
-                className="inline-block border-2 border-[#C2A878] text-[#C2A878] font-semibold px-8 py-3.5 rounded-lg hover:bg-[#C2A878] hover:text-white transition-colors text-lg"
+                className="inline-block border-2 border-[#b38a5f] text-[var(--accent-text)] font-semibold px-8 py-3.5 rounded-sm hover:bg-[#b38a5f] hover:text-black transition-colors text-lg"
               >
                 Book a Call
               </a>
@@ -1041,7 +1041,7 @@ export default function Page() {
             Frequently Asked Questions About Opening a Spa Franchise
           </h2>
 
-          <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 mb-10 overflow-hidden">
+          <div className="divide-y divide-gray-200 rounded-sm border border-gray-200 mb-10 overflow-hidden">
             {[
               {
                 q: "How long does it take to open a spa franchise?",
@@ -1071,7 +1071,7 @@ export default function Page() {
               <details key={faq.q} className="group">
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                   {faq.q}
-                  <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">
+                  <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">
                     +
                   </span>
                 </summary>
@@ -1099,7 +1099,7 @@ export default function Page() {
             <ul className="space-y-3">
               {getRelatedPosts("/blog/2026/03/10/how-to-open-a-spa-franchise").map((rp) => (
                 <li key={rp.href}>
-                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                  <Link href={rp.href} className="text-[var(--accent-text)] hover:underline">
                     {rp.title} &rarr;
                   </Link>
                 </li>
@@ -1108,7 +1108,7 @@ export default function Page() {
           </div>
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -1124,7 +1124,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

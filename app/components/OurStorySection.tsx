@@ -17,7 +17,7 @@ export default function OurStorySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[#C2A878] font-semibold mb-4">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-text)] font-semibold mb-4">
             Our Story
           </p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] font-[family-name:var(--font-recoleta)] max-w-3xl mx-auto">
@@ -61,9 +61,9 @@ export default function OurStorySection() {
             className="relative"
           >
             {/* Decorative pull-quote panel */}
-            <div className="relative rounded-2xl bg-white border border-[#C2A878]/30 p-7 md:p-9 shadow-sm">
+            <div className="relative rounded-sm bg-white border border-[#b38a5f]/30 p-7 md:p-9 shadow-sm brand-light">
               <span
-                className="absolute -top-3 -left-2 text-7xl text-[#C2A878]/30 font-[family-name:var(--font-recoleta)] leading-none"
+                className="absolute -top-3 -left-2 text-7xl text-[var(--accent-text)]/30 font-[family-name:var(--font-recoleta)] leading-none"
                 aria-hidden="true"
               >
                 &ldquo;
@@ -86,11 +86,11 @@ export default function OurStorySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="border-t border-[#C2A878]/30 pt-10"
+          className="border-t border-[#b38a5f]/30 pt-10"
         >
           <div className="grid grid-cols-3 gap-4 md:gap-8 text-center mb-10">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-[#C2A878] font-semibold mb-2">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--accent-text)] font-semibold mb-2">
                 2005
               </p>
               <p className="text-sm md:text-base text-gray-700">
@@ -98,7 +98,7 @@ export default function OurStorySection() {
               </p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-[#C2A878] font-semibold mb-2">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--accent-text)] font-semibold mb-2">
                 2007
               </p>
               <p className="text-sm md:text-base text-gray-700">
@@ -106,7 +106,7 @@ export default function OurStorySection() {
               </p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-[#C2A878] font-semibold mb-2">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--accent-text)] font-semibold mb-2">
                 Today
               </p>
               <p className="text-sm md:text-base text-gray-700">
@@ -118,7 +118,7 @@ export default function OurStorySection() {
           <div className="text-center">
             <Link
               href="/who-we-are"
-              className="inline-block text-sm font-semibold text-[#9c814f] hover:text-[#C2A878] transition-colors border-b border-[#C2A878]/40 hover:border-[#C2A878] pb-0.5"
+              className="inline-block text-sm font-semibold text-[var(--accent-text)] hover:text-[var(--accent-text)] transition-colors border-b border-[#b38a5f]/40 hover:border-[#b38a5f] pb-0.5"
             >
               Read the full Spavia story &rarr;
             </Link>

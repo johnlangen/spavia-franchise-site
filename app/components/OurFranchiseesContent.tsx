@@ -1,22 +1,15 @@
 "use client";
+import FaqList from "./FaqList";
+import GoldBottomBanner from "./GoldBottomBanner";
+import PageHero from "./PageHero";
 
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
+import { ClipboardCheck, Heart, Star, Users } from "lucide-react";
 import AwardsSection from "./AwardsSection";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import {
-  Users,
-  ClipboardCheck,
-  Heart,
-  Star,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import Breadcrumbs from "./Breadcrumbs";
+import NavBar from "./NavBar";
 
-import Footer from "./Footer";
 import Image from "next/image";
-import Link from "next/link";
+import Footer from "./Footer";
 import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
 
 const entrepreneurTraits = [
@@ -80,7 +73,8 @@ const ourFranchiseesFaqs = [
       "Spavia seeks natural leaders with a drive to succeed, a genuine passion for the spa and wellness industry, and a commitment to being highly engaged within the franchise system. Ideal candidates demonstrate resilience, a results-oriented mindset, and dedication to contributing to the overall effectiveness of Spavia.",
   },
   {
-    question: "Do I need prior spa or wellness experience to own a Spavia franchise?",
+    question:
+      "Do I need prior spa or wellness experience to own a Spavia franchise?",
     answer:
       "No. Spavia welcomes entrepreneurs from all backgrounds. For example, one franchise owner came from 25 years in the banking industry with no prior spa experience. Spavia's comprehensive training programs prepare owners regardless of their previous industry experience.",
   },
@@ -90,242 +84,114 @@ const ourFranchiseesFaqs = [
       "Spavia franchise owners operate across the United States, including locations in markets like Chicago, IL; Centennial, CO; Fredericksburg, VA; and Orlando, FL, among others.",
   },
   {
-    question: "What do current Spavia franchise owners say about the experience?",
+    question:
+      "What do current Spavia franchise owners say about the experience?",
     answer:
       "Spavia franchise owners consistently highlight the strong support from the national team, the brand's passion and knowledge, and the rewarding experience of building a wellness business. Owners describe Spavia as more than just a business \u2014 it's a network of passionate, caring individuals making a difference in the lives of guests and team members.",
   },
 ];
 
 export default function OurFranchiseesContent() {
-  const [index, setIndex] = useState(0);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-
-  const nextTestimonial = () =>
-    setIndex((prev) => (prev + 1) % testimonials.length);
-  const prevTestimonial = () =>
-    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-
-  const testimonial = testimonials[index];
-
   return (
-    <main className="text-gray-900">
+    <>
       <NavBar />
-        <Breadcrumbs items={[{ label: "Our Franchisees" }]} />
-
-      {/* Hero with Video */}
-      <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-6 sm:px-8">
-        {/* Video background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/franchisee.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-6"
-          >
-            Our Franchisees
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="max-w-3xl mx-auto text-lg leading-relaxed"
-          >
-            Passionate Entrepreneurs, Thriving Communities. At Spavia, our
-            franchisees are the backbone of our brand and the key to our
-            success. Each franchisee brings a unique passion for wellness and a
-            commitment to creating extraordinary experiences for our guests.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Ideal Entrepreneur — warm dark with subtle lifestyle backdrop */}
-      <section className="relative py-20 overflow-hidden text-white bg-[#17120d]">
-        {/* Background photo at low opacity for warmth/texture */}
-        <div className="absolute inset-0">
-          <Image
-            src="/media/retreat-leather-chair.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover opacity-15"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#17120d]/90 via-[#17120d]/80 to-[#17120d]/95" />
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <p className="text-sm tracking-[0.2em] text-[#C2A878] font-semibold uppercase mb-3">
-            Who Thrives Here
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ideal Entrepreneur
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-12">
-            The franchisees who build the best Spavias share a few traits in
-            common. No prior spa experience needed &mdash; just these.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {entrepreneurTraits.map((trait, i) => {
-              const Icon = trait.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="p-6 rounded-xl border border-[#C2A878]/30 bg-black/40 backdrop-blur-sm hover:border-[#C2A878] transition-colors"
-                >
-                  <Icon className="w-10 h-10 mx-auto mb-4 text-[#C2A878]" />
-                  <h3 className="text-lg font-semibold mb-2">{trait.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {trait.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Franchisee Video */}
-      <section className="py-20 bg-white text-center px-6">
-        <h2 className="text-3xl font-bold mb-6">Hear From Our Franchisees</h2>
-        <video
-          src="/our-franchisees/video1.mp4"
-          controls
-          className="rounded-xl shadow-md w-full max-w-3xl mx-auto"
+      <Breadcrumbs items={[{ label: "Our Franchisees" }]} />
+      <main id="main-content">
+        <PageHero
+          eyebrow="People who made it their own"
+          title="Our Franchisees"
+          intro="Different backgrounds. Different communities. Hear from the owners building their businesses with Spavia—and the people behind their decision to begin."
+          image="/testimonials/merirae-tackett.jpg"
+          alt="Merirae Tackett, Spavia franchise owner in Reno, Nevada"
+          action={{ href: "#owner-stories", label: "Hear from Spavia owners" }}
         />
-      </section>
-
-      {/* Owner spotlight — named video testimonial */}
-      <section className="py-20 bg-white px-6">
-        <FranchiseeVideoTestimonial
-          eyebrow="Owner Spotlight"
-          heading="Merirae Tackett, Spavia Reno"
-          intro="On why a diversified revenue model matters, and why she wishes they had started 20 years sooner."
-        />
-      </section>
-
-      {/* Testimonial Carousel */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            What Our Franchise Partners Are Saying
-          </h2>
-
-          <div className="relative h-[550px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center mx-auto max-w-3xl absolute inset-0 md:static"
-              >
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={176}
-                  height={176}
-                  className="rounded-full mb-6 object-cover shadow-md"
-                />
-                <div className="h-32 overflow-y-auto mb-6">
-                  <p className="text-gray-700 italic text-lg leading-relaxed">
-                    “{testimonial.text}”
-                  </p>
-                </div>
-                <p className="font-semibold text-[#C2A878] text-lg">
-                  – {testimonial.name}, {testimonial.role}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Arrows */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2 cursor-pointer"
-            >
-              <ChevronLeft size={56} />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-[#C2A878] transition px-2 cursor-pointer"
-            >
-              <ChevronRight size={56} />
-            </button>
+        <section id="owner-stories" className="section-space">
+          <div className="site-container">
+            <FranchiseeVideoTestimonial
+              eyebrow="Inside the business"
+              heading="Merirae Tackett, Spavia Reno"
+              intro="On balancing massage and skin care, building a business with her husband, and why she wishes they had started sooner."
+            />
+            <details className="owner-film">
+              <summary>
+                Watch more perspectives on Spavia ownership{" "}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <video
+                src="/our-franchisees/video1.mp4"
+                controls
+                preload="none"
+                poster="/our-franchisees/image4.jpg"
+                className="w-full"
+                aria-label="Spavia franchise owners share their experience"
+              />
+            </details>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 bg-white px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {ourFranchiseesFaqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={idx} className="border-b pb-4 transition-colors">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
-                  >
-                    {faq.question}
-                    <span
-                      className={`text-2xl font-bold transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
-                      }`}
-                    >
-                      {isOpen ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+        </section>
+        <section className="section-space bg-[#f5f5f5]">
+          <div className="site-container">
+            <p className="eyebrow">In their own words</p>
+            <h2 className="display-heading">
+              The work. The people. The reasons they chose Spavia.
+            </h2>
+            <div className="owner-portraits">
+              {testimonials.map((owner) => (
+                <figure key={owner.name}>
+                  <Image
+                    src={owner.image}
+                    alt={owner.name}
+                    width={176}
+                    height={176}
+                  />
+                  <div>
+                    <blockquote>“{owner.text}”</blockquote>
+                    <figcaption>
+                      <strong>{owner.name}</strong> · {owner.role}
+                    </figcaption>
                   </div>
-                </div>
-              );
-            })}
+                </figure>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Awards */}
-      <section className="bg-gray-50">
+        </section>
+        <section className="section-space">
+          <div className="site-container editorial-grid">
+            <div>
+              <p className="eyebrow">Could this be your community?</p>
+              <h2 className="display-heading">
+                Leadership matters.
+                <br />
+                Spa experience is something you can learn.
+              </h2>
+              <p className="body-copy mt-6">
+                Owners come from many industries. What connects them is a
+                commitment to their teams, their guests and the business they
+                are building.
+              </p>
+            </div>
+            <div className="support-chapters">
+              {entrepreneurTraits.map((trait) => (
+                <div key={trait.title}>
+                  <h3>{trait.title}</h3>
+                  <p>{trait.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="section-space bg-[#f5f5f5]">
+          <div className="site-container faq-layout">
+            <div>
+              <p className="eyebrow">Before you take the next step</p>
+              <h2 className="display-heading">Questions about ownership.</h2>
+            </div>
+            <FaqList items={ourFranchiseesFaqs} />
+          </div>
+        </section>
         <AwardsSection />
-      </section>
-
-      {/* Next Page Link */}
-      <div className="bg-black text-white py-10 text-center">
-        <Link
-          href="/your-spavia"
-          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
-        >
-          Next: Your Spavia →
-        </Link>
-      </div>
-
+        <GoldBottomBanner />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -1,16 +1,16 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import Link from "next/link";
 import { useEffect } from "react";
-import NavBar from "./NavBar";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
-import { ThemeProvider } from "./ThemeProvider";
-import { Check } from "lucide-react";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
+import NavBar from "./NavBar";
+import { ThemeProvider } from "./ThemeProvider";
 
-const FOUNDER_CALENDLY_URL =
+const ALISA_CALENDLY_URL =
   "https://calendly.com/alisa-spaviadayspa/intro-call";
 
 declare global {
@@ -37,28 +37,28 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
   }, [ceo]);
   return (
     <ThemeProvider>
-      <main className="flex flex-col min-h-screen">
-        <div className="bg-black">
+      <main id="main-content" className="flex flex-col min-h-screen">
+        <div className="bg-black brand-dark">
           <NavBar />
         </div>
-        <div className="bg-white">
+        <div className="bg-white brand-light">
           <Breadcrumbs items={[{ label: "Thank You" }]} />
         </div>
 
         {/* ── Section 1: Thank You (white) ── */}
-        <section className="bg-white px-6 pt-12 pb-16 md:pt-16 md:pb-20">
+        <section className="bg-white px-6 pt-12 pb-16 md:pt-16 md:pb-20 brand-light">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={false}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C2A878]/10"
+              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#b38a5f]/10"
             >
-              <Check className="h-8 w-8 text-[#C2A878]" strokeWidth={3} />
+              <Check className="h-8 w-8 text-[var(--accent-text)]" strokeWidth={3} />
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
@@ -69,25 +69,25 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
               {ceo
-                ? "Based on what you shared, you meet our ownership criteria. Skip the back and forth: pick a time below for a one-on-one intro call with Alisa Anderson, our VP of Franchise Development. Spavia has been family-owned since 2005, with no private equity."
-                : "Our founding team personally reviews every request and will reach out within one business day with your next step. Most candidates know within minutes whether Spavia is the right fit."}
+                ? "Thank you for sharing your plans. Pick a time below for an intro call with Alisa Anderson, our VP of Franchise Development, to explore your goals, your market and whether Spavia is a fit."
+                : "Alisa and our franchise development team will review your inquiry and reach out within one business day. Your first conversation covers your goals, your market and the questions that matter to you."}
             </motion.p>
 
             {!ceo && (
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <Link
                   href="/steps-to-ownership"
-                  className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-4 rounded-lg hover:bg-[#b09466] transition text-lg shadow-lg"
+                  className="inline-block bg-[#b38a5f] text-black font-semibold px-8 py-4 rounded-sm hover:bg-[#b09466] transition text-lg"
                 >
                   See the Steps to Ownership →
                 </Link>
@@ -95,7 +95,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                   In a hurry? Email{" "}
                   <a
                     href="mailto:alisa@spaviadayspa.com"
-                    className="text-[#C2A878] font-medium hover:underline"
+                    className="text-[var(--accent-text)] font-medium hover:underline"
                   >
                     alisa@spaviadayspa.com
                   </a>{" "}
@@ -106,13 +106,13 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
           </div>
         </section>
 
-        {/* ── Qualified path: embedded CEO calendar ── */}
+        {/* ── Qualified path: embedded intro-call calendar ── */}
         {ceo && (
-          <section className="bg-white px-4 pb-16">
+          <section className="bg-white px-4 pb-16 brand-light">
             <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+              <div className="rounded-sm overflow-hidden border border-gray-200">
                 <iframe
-                  src={FOUNDER_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=c2a878"}
+                  src={ALISA_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=806240"}
                   width="100%"
                   height="720"
                   frameBorder="0"
@@ -129,7 +129,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
         )}
 
         {/* ── Owner testimonial — warms up the call before it happens ── */}
-        <section className="bg-gray-50 px-6 py-14 md:py-16">
+        <section className="bg-gray-50 px-6 py-14 md:py-16 brand-light">
           <FranchiseeVideoTestimonial
             eyebrow="In Their Words"
             heading={
@@ -142,7 +142,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
         </section>
 
         {/* ── Section 2: What to expect (black) ── */}
-        <section className="bg-black px-6 py-14 md:py-16 relative">
+        <section className="bg-black px-6 py-14 md:py-16 relative brand-dark">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
 
           <div className="max-w-4xl mx-auto">
@@ -190,13 +190,13 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               ].map((step, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * idx }}
                   className="flex flex-row md:flex-col items-start gap-4 md:gap-0 md:text-center"
                 >
-                  <div className="flex-shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-[#C2A878] flex items-center justify-center md:mx-auto md:mb-5">
-                    <span className="text-[#C2A878] text-xl md:text-2xl font-bold font-[family-name:var(--font-recoleta)]">
+                  <div className="flex-shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-[#b38a5f] flex items-center justify-center md:mx-auto md:mb-5">
+                    <span className="text-[var(--accent-text)] text-xl md:text-2xl font-bold font-[family-name:var(--font-recoleta)]">
                       {step.number}
                     </span>
                   </div>
@@ -216,7 +216,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             <div className="mt-12 text-center">
               <Link
                 href="/why-spavia"
-                className="inline-block bg-[#C2A878] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#b09466] transition"
+                className="inline-block bg-[#b38a5f] text-black font-semibold px-6 py-3 rounded-sm hover:bg-[#b09466] transition"
               >
                 Explore Why Spavia While You Wait
               </Link>

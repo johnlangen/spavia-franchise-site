@@ -1,501 +1,115 @@
-"use client";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { getAttribution } from "../lib/attribution";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import Image from "next/image";
+import Link from "next/link";
+import { Suspense } from "react";
+import FranchiseIntent from "./FranchiseIntent";
+import FranchiseOverviewForm from "./FranchiseOverviewForm";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
-  const router = useRouter();
-
-  /* ---------------- METRICS ---------------- */
-  const metrics = [
-    { v: "$1,110,481", l: "Median Gross Sales*" },
-    { v: "1 in 2 Owners", l: "Achieve $1M+ Revenue*" },
-    { v: "$479K \u2013 $885K", l: "Initial Investment*" },
-  ];
-
-  const [metricIndex, setMetricIndex] = useState(0);
-
-  const prevMetric = () =>
-    setMetricIndex((i) => (i === 0 ? metrics.length - 1 : i - 1));
-  const nextMetric = () =>
-    setMetricIndex((i) => (i === metrics.length - 1 ? 0 : i + 1));
-
-  // Attempt autoplay \u2014 reveal on success, remove video entirely on failure
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => setVideoReady(true))
-        .catch(() => video.remove());
-    }
-  }, []);
-
-  /* ---------------- FORM STATE ---------------- */
-  const [step, setStep] = useState<1 | 2>(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [email, setEmail] = useState("");
-  const [zip, setZip] = useState("");
-  const [zipError, setZipError] = useState("");
-
-  const validateZip = (value: string) => {
-    if (value && !/^[0-9]{5}$/.test(value)) {
-      setZipError("Please enter a 5-digit ZIP code");
-    } else {
-      setZipError("");
-    }
-  };
-
-  const handleStep1 = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "form_step1_submitted", { form: "hero" });
-    }
-    try {
-      await fetch("/api/franchise-lead-step1", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, leadSource: "homepage-hero", attribution: getAttribution() }),
-      });
-    } catch (err) {
-      console.error("Step 1 DB save failed", err);
-    }
-    setStep(2);
-  };
-
-  const handleStep2 = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (loading) return;
-    setLoading(true);
-    setError("");
-
-    const formData = new FormData(e.currentTarget);
-    const attribution = getAttribution();
-    const liquidTier = String(formData.get("liquidTier") || "");
-    if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "form_step2_submitted", {
-        form: "hero",
-        liquidTier,
-      });
-    }
-    const payload = {
-      email,
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      phone: formData.get("phone"),
-      zip: formData.get("zip"),
-      liquidTier,
-    };
-
-    try {
-      fetch("/api/franchise-lead-short-db", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource: "homepage-hero", attribution }),
-      }).catch(() => {});
-
-      const res = await fetch("/api/franchise-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, leadSource: "homepage-hero", attribution }),
-      });
-
-      if (res.ok) {
-        if (typeof window.gtag === "function") {
-          window.gtag("event", "conversion", {
-            send_to: "AW-944657062/OhOICIf4y_cbEKalucID",
-            value: 1.0,
-            currency: "USD",
-          });
-          const qualified = liquidTier === "$200K - $500K" ||
-            liquidTier === "$500K - $1MM" ||
-            liquidTier === "$1MM+";
-          if (qualified) {
-            window.gtag("event", "qualified_lead_submitted", { liquidTier });
-            window.gtag("event", "conversion", {
-              send_to: "AW-944657062/lfH3CPHQ3rMcEKalucID",
-              value: 100.0,
-              currency: "USD",
-            });
-          }
-        }
-        router.push("/thank-you");
-        return;
-      }
-
-      const data = await res.json().catch(() => null);
-      setError(data?.error || "Something went wrong. Please try again.");
-    } catch {
-      setError("Unable to connect. Please check your connection and try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const inputStyle = `
-    w-full rounded-lg border border-white/40 bg-white/15 backdrop-blur-md
-    px-4 py-2.5 text-white placeholder:text-white/70
-    focus:outline-none focus:ring-2 focus:ring-[#C2A878] focus:border-[#C2A878] focus:bg-white/20
-    text-base
-  `;
-
   return (
-    <section
-      id="hero"
-      className="relative min-h-[100svh] flex items-center overflow-hidden"
-    >
-      {/* ---------- BACKGROUND ---------- */}
-
-      {/* Static fallback image (shown while video loads or if autoplay fails) */}
-      <img
-        src="/media/guest-robe-fireplace.webp"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
-
-      {/* Video layer */}
-      <video
-        ref={videoRef}
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/media/guest-robe-fireplace.webp"
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
-          videoReady ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
-
-      {/* Dark overlay for text legibility — uniform base + left scrim on desktop */}
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-black/65 via-black/20 to-transparent" />
-
-      {/* ---------- CONTENT: Split Layout ---------- */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-0">
-        <div className="grid md:grid-cols-[1fr_380px] gap-8 md:gap-12 items-center">
-          {/* ── LEFT: Headline + Metrics ── */}
-          <div className="text-white text-center md:text-left">
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="font-semibold leading-tight mb-3 text-[26px] sm:text-3xl md:text-[52px] lg:text-[60px]"
-            >
-              Own a Day Spa Franchise
-            </motion.h1>
-
-            {/* Subhead */}
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-sm sm:max-w-xl mx-auto md:mx-0 text-sm sm:text-base md:text-lg lg:text-xl text-white/85 mb-6"
-            >
-              <span className="sm:hidden">
-                Join 60+ owners building $1M+ day spas in their communities.*
-              </span>
-              <span className="hidden sm:inline">
-                Join 60+ Spavia day spa franchise owners bringing affordable
-                luxury wellness to their communities, with many locations
-                exceeding $1M in annual sales.*
-              </span>
-            </motion.p>
-
-            {/* ---------- METRICS ---------- */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="max-w-sm sm:max-w-xl mx-auto md:mx-0"
-            >
-              {/* Desktop */}
-              <div className="hidden sm:grid grid-cols-3 gap-2.5">
-                {metrics.map((x) => (
-                  <div
-                    key={x.l}
-                    className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-3 py-2"
-                  >
-                    <p className="text-sm font-medium">{x.v}</p>
-                    <p className="text-[10px] text-white/70 mt-0.5">{x.l}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Mobile carousel */}
-              <div className="sm:hidden flex items-center justify-center gap-3">
-                <button
-                  onClick={prevMetric}
-                  className="h-11 w-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center text-xl"
-                  aria-label="Previous metric"
-                >
-                  &lsaquo;
-                </button>
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={metricIndex}
-                    initial={{ opacity: 0, x: 16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -16 }}
-                    transition={{ duration: 0.2 }}
-                    className="min-w-[220px] rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2.5"
-                  >
-                    <p className="text-base font-medium">
-                      {metrics[metricIndex].v}
-                    </p>
-                    <p className="text-[11px] text-white/70 mt-0.5">
-                      {metrics[metricIndex].l}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-
-                <button
-                  onClick={nextMetric}
-                  className="h-11 w-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center text-xl"
-                  aria-label="Next metric"
-                >
-                  &rsaquo;
-                </button>
-              </div>
-
-              <p className="mt-3 text-[10px] text-white/50">
-                *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* ── RIGHT: Lead Capture Form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="rounded-2xl border border-white/20 bg-black/30 backdrop-blur-lg p-6"
+    <>
+      <section id="hero" className="home-hero" data-section="home_intro">
+        <div className="home-hero-copy">
+          <Suspense
+            fallback={
+              <p className="eyebrow hero-intent">Spavia franchise ownership</p>
+            }
           >
-            <h2 className="text-white font-semibold text-lg mb-1">
-              Get the Franchise Overview
-            </h2>
-            <p className="hidden sm:block text-white/60 text-xs mb-3">
-              Free info kit. No obligation.
-            </p>
-
-            <div className="mt-2 sm:mt-0 mb-4 rounded-lg border border-[#C2A878]/40 bg-[#C2A878]/10 px-3 py-2">
-              <p className="text-[11px] text-white/85 leading-relaxed">
-                <span className="sm:hidden">
-                  <span className="font-semibold text-[#C2A878]">Requires $200K+ liquid · $500K+ net worth.</span>
-                </span>
-                <span className="hidden sm:inline">
-                  <span className="font-semibold text-[#C2A878]">Spavia partners need $200K+ in liquid capital and $500K+ net worth.</span> Typical total investment: $479K&ndash;$885K.
-                </span>
-              </p>
-            </div>
-
-            {/* Step indicator */}
-            <div className="flex items-center gap-2 mb-4 text-xs text-white/50">
-              <div
-                className={`h-5 w-5 rounded-full text-center leading-5 text-white text-[10px] ${
-                  step >= 1 ? "bg-[#C2A878]" : "bg-white/20"
-                }`}
-              >
-                1
-              </div>
-              <div className="h-px w-5 bg-white/20" />
-              <div
-                className={`h-5 w-5 rounded-full text-center leading-5 text-white text-[10px] ${
-                  step === 2 ? "bg-[#C2A878]" : "bg-white/20"
-                }`}
-              >
-                2
-              </div>
-              <span className="ml-1.5">Step {step} of 2</span>
-            </div>
-
-            <AnimatePresence mode="wait">
-              {step === 1 && (
-                <motion.form
-                  key="hero-step1"
-                  onSubmit={handleStep1}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-3"
-                >
-                  <label htmlFor="hero-email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="hero-email"
-                    type="email"
-                    placeholder="Email address"
-                    autoComplete="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={inputStyle}
-                  />
-
-                  <button
-                    type="submit"
-                    className="w-full bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold py-2.5 rounded-lg transition text-sm cursor-pointer"
-                  >
-                    Get the Franchise Overview
-                  </button>
-                </motion.form>
-              )}
-
-              {step === 2 && (
-                <motion.form
-                  key="hero-step2"
-                  onSubmit={handleStep2}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-2.5"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    <div>
-                      <label htmlFor="hero-firstName" className="sr-only">
-                        First name
-                      </label>
-                      <input
-                        id="hero-firstName"
-                        name="firstName"
-                        placeholder="First name"
-                        autoComplete="given-name"
-                        required
-                        className={inputStyle}
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="hero-lastName" className="sr-only">
-                        Last name
-                      </label>
-                      <input
-                        id="hero-lastName"
-                        name="lastName"
-                        placeholder="Last name"
-                        autoComplete="family-name"
-                        required
-                        className={inputStyle}
-                      />
-                    </div>
-                  </div>
-                  <label htmlFor="hero-phone" className="sr-only">
-                    Phone
-                  </label>
-                  <input
-                    id="hero-phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone"
-                    autoComplete="tel"
-                    pattern="[\d\s\-\(\)\+\.]{7,}"
-                    title="Please enter a valid phone number"
-                    className={inputStyle}
-                  />
-                  <label htmlFor="hero-zip" className="sr-only">
-                    ZIP code
-                  </label>
-                  <input
-                    id="hero-zip"
-                    name="zip"
-                    placeholder="ZIP code"
-                    autoComplete="postal-code"
-                    inputMode="numeric"
-                    pattern="[0-9]{5}"
-                    maxLength={5}
-                    required
-                    value={zip}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setZip(val);
-                      if (zipError) validateZip(val);
-                    }}
-                    onBlur={(e) => validateZip(e.target.value)}
-                    aria-invalid={!!zipError}
-                    aria-describedby={zipError ? "hero-zip-error" : undefined}
-                    className={inputStyle}
-                  />
-                  {zipError && (
-                    <p
-                      id="hero-zip-error"
-                      className="text-[11px] text-red-200"
-                    >
-                      {zipError}
-                    </p>
-                  )}
-
-                  <label htmlFor="hero-liquidTier" className="sr-only">
-                    Liquid capital available
-                  </label>
-                  <select
-                    id="hero-liquidTier"
-                    name="liquidTier"
-                    required
-                    defaultValue=""
-                    className={`${inputStyle} appearance-none`}
-                  >
-                    <option value="" disabled className="text-gray-900">
-                      Liquid capital available to invest
-                    </option>
-                    <option value="$0 - $200K" className="text-gray-900">
-                      $0 &ndash; $200K
-                    </option>
-                    <option value="$200K - $500K" className="text-gray-900">
-                      $200K &ndash; $500K
-                    </option>
-                    <option value="$500K - $1MM" className="text-gray-900">
-                      $500K &ndash; $1MM
-                    </option>
-                    <option value="$1MM+" className="text-gray-900">
-                      $1MM+
-                    </option>
-                  </select>
-
-                  {error && (
-                    <div
-                      role="alert"
-                      aria-live="polite"
-                      className="rounded-lg bg-red-500/20 border border-red-400/30 px-3 py-2 text-xs text-red-200"
-                    >
-                      {error}
-                    </div>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-[#C2A878] hover:bg-[#b09466] text-white font-semibold py-2.5 rounded-lg transition text-sm cursor-pointer disabled:opacity-60"
-                  >
-                    {loading ? "Submitting..." : error ? "Try Again" : "Request Info"}
-                  </button>
-
-                  <p className="text-[10px] text-center text-white/40 mt-1">
-                    By submitting, you agree Spavia may contact you by email,
-                    phone, or text regarding franchise opportunities.
-                  </p>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          </motion.div>
+            <FranchiseIntent />
+          </Suspense>
+          <h1>
+            Own a day spa franchise.
+            <br />
+            <span>
+              Make room for
+              <br className="hidden xl:block" /> something more.
+            </span>
+          </h1>
+          <p className="home-hero-description">
+            A day spa franchise built around massage, facials and the feeling
+            that brings guests back. Bring accessible luxury to your
+            community—with a family-owned brand beside you.
+          </p>
+          <div className="hero-actions">
+            <a
+              href="#franchise-overview"
+              className="button button-primary"
+              data-track="cta_overview"
+            >
+              Get the Franchise Overview <span aria-hidden="true">→</span>
+            </a>
+            <Link
+              href="/franchise-cost"
+              className="text-link"
+              data-track="cta_investment"
+            >
+              Explore the investment
+            </Link>
+          </div>
+          <div className="hero-signature">
+            <span>Family-owned since 2005</span>
+            <span>60+ spas across the U.S.</span>
+          </div>
         </div>
-      </div>
-    </section>
+        <figure className="home-hero-photo">
+          <Image
+            src="/media/guest-robe-fireplace.webp"
+            alt="A Spavia guest unwinds by the fireplace in a plush robe"
+            fill
+            priority
+            sizes="(max-width: 800px) 100vw, 50vw"
+            className="object-cover"
+          />
+          <figcaption>
+            <span>The experience you’ll bring to life</span>
+            <p>Relax. Recenter. Renew.</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section
+        id="franchise-overview"
+        className="home-overview"
+        data-section="home_overview"
+      >
+        <div className="site-container home-overview-grid">
+          <div>
+            <p className="eyebrow">A business with substance</p>
+            <h2 className="display-heading">
+              A thoughtful first step.
+              <br />A clearer picture.
+            </h2>
+            <p className="body-copy mt-5 max-w-lg">
+              Start with the essentials: what you’re building, what it takes to
+              open and the team that will help you get there.
+            </p>
+            <dl className="overview-facts">
+              <div>
+                <dt>Total initial investment*</dt>
+                <dd>$479K–$885K</dd>
+              </div>
+              <div>
+                <dt>The business model</dt>
+                <dd>
+                  One spa.
+                  <br />
+                  Multiple revenue streams.
+                </dd>
+              </div>
+            </dl>
+            <p className="fine-print">
+              *Estimated $479,450–$885,450. 2026 Spavia FDD, Item 7.
+            </p>
+            <Link
+              href="/day-spa-franchise"
+              className="text-link mt-5"
+              data-track="cta_business_model"
+            >
+              Explore the full-service day spa model{" "}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <FranchiseOverviewForm leadSource="homepage-hero" formType="hero" />
+        </div>
+      </section>
+    </>
   );
 }

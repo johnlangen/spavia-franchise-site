@@ -12,7 +12,7 @@ export default function MapModal({ isOpen, onClose, stateName }: {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-      <div className="bg-white max-w-lg w-full p-6 rounded-lg shadow-xl relative">
+      <div className="bg-white max-w-lg w-full p-6 rounded-sm shadow-xl relative brand-light">
         <button 
           className="absolute top-3 right-3 text-gray-500 hover:text-black"
           onClick={onClose}
@@ -28,7 +28,7 @@ export default function MapModal({ isOpen, onClose, stateName }: {
         </p>
         <a 
           href="/get-started"
-          className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+          className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition brand-dark"
         >
           Contact Us
         </a>

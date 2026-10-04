@@ -1,11 +1,11 @@
 "use client";
 
+import { AnimatePresence,motion } from "framer-motion";
+import { ChevronLeft,ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "./ThemeProvider";
+import { useCallback,useEffect,useState } from "react";
 import { themes } from "../themeConfig";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 export default function ThemeGallery() {
   const { theme } = useTheme();
@@ -91,7 +91,7 @@ export default function ThemeGallery() {
                   alt={`${themeData.name} design ${idx + 1}`}
                   fill
                   sizes="280px"
-                  className="rounded-lg shadow object-cover"
+                  className="rounded-sm shadow object-cover"
                 />
               </div>
             ))}
@@ -102,7 +102,7 @@ export default function ThemeGallery() {
       {/* ── Mobile: swipeable single image ── */}
       <div className="md:hidden">
         <div
-          className="relative w-full aspect-[3/2] overflow-hidden rounded-xl shadow-lg bg-gray-100"
+          className="relative w-full aspect-[3/2] overflow-hidden rounded-sm shadow-lg bg-gray-100 brand-light"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

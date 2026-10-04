@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
 import Breadcrumbs from "./Breadcrumbs";
 import DesignConcepts from "./DesignConcepts";
-import PhotoGallery, { GalleryPhoto } from "./PhotoGallery";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
+import PageHero from "./PageHero";
+import PhotoGallery,{ GalleryPhoto } from "./PhotoGallery";
 import SpaviaCaresSection from "./SpaviaCaresSection";
 
 const GALLERY: GalleryPhoto[] = [
@@ -26,27 +27,14 @@ export default function WhatsNewContent() {
   return (
     <>
       <NavBar />
-      <main className="bg-white">
-        {/* HEADER */}
-        <section className="bg-black text-white pt-32 pb-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <Breadcrumbs items={[{ label: "What's New at Spavia" }]} />
-            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">
-              What&apos;s new at Spavia
-            </h1>
-            <p className="text-lg text-white/75 max-w-2xl">
-              Spavia is becoming a wellness platform. A second brand is open and
-              growing, new design concepts are rolling out, and the next
-              generation of spa economics is heading into pilot. Here&apos;s
-              what franchise candidates are asking about.
-            </p>
-          </div>
-        </section>
+      <Breadcrumbs items={[{ label: "What’s New at Spavia" }]} />
+      <main id="main-content" className="bg-white brand-light">
+        <PageHero eyebrow="The next chapter of Spavia" title="What’s new at Spavia" intro="New spa designs, a growing leadership team and a second brand. Explore what is open today, what is being tested, and what it could mean for your ownership journey." image="/media/spavia-reception.webp" alt="Spavia reception with modern design details" action={{href:"#whats-next",label:"Explore what’s changing"}} />
 
         {/* SWAY */}
-        <section className="py-20 px-6">
+        <section id="whats-next" className="py-20 px-6">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 md:h-[420px] rounded-2xl overflow-hidden">
+            <div className="relative h-80 md:h-[420px] rounded-sm overflow-hidden">
               <Image
                 src="/media/sway-storefront.webp"
                 alt="Sway by Spavia storefront in Denver"
@@ -56,7 +44,7 @@ export default function WhatsNewContent() {
               />
             </div>
             <div>
-              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                 A second brand
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
@@ -77,7 +65,7 @@ export default function WhatsNewContent() {
               </p>
               <Link
                 href="/get-started"
-                className="inline-block rounded-full bg-[#C2A878] px-7 py-3 font-semibold text-white hover:bg-[#a98e5e] transition-colors"
+                className="inline-block rounded-full bg-[#b38a5f] px-7 py-3 font-semibold text-black hover:bg-[#a98e5e] transition-colors"
               >
                 Talk to us about the platform
               </Link>
@@ -86,10 +74,10 @@ export default function WhatsNewContent() {
         </section>
 
         {/* LEADERSHIP + PRESS */}
-        <section className="py-20 px-6 bg-white">
+        <section className="py-20 px-6 bg-white brand-light">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-[auto_1fr] gap-10 items-center mb-14">
-              <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden mx-auto md:mx-0">
+              <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-sm overflow-hidden mx-auto md:mx-0">
                 <Image
                   src="/who-we-are/heather-holland.png"
                   alt="Heather Holland, Chief Operating Officer at Spavia"
@@ -99,7 +87,7 @@ export default function WhatsNewContent() {
                 />
               </div>
               <div>
-                <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+                <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                   New leadership
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
@@ -146,9 +134,9 @@ export default function WhatsNewContent() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-xl border border-gray-200 p-5 hover:border-[#C2A878] transition-colors"
+                  className="block rounded-sm border border-gray-200 p-5 hover:border-[#b38a5f] transition-colors"
                 >
-                  <p className="text-xs font-semibold tracking-widest uppercase text-[#9c8457] mb-2">
+                  <p className="text-xs font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-2">
                     {p.outlet}
                   </p>
                   <p className="font-semibold text-gray-900 text-sm leading-snug">
@@ -162,10 +150,10 @@ export default function WhatsNewContent() {
         </section>
 
         {/* INNOVATION PIPELINE */}
-        <section className="bg-[#faf8f4] py-20 px-6">
+        <section className="bg-[#f5f5f5] py-20 px-6 brand-light">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-12">
-              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                 The innovation pipeline
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
@@ -181,7 +169,7 @@ export default function WhatsNewContent() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <figure className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
+              <figure className="relative h-72 md:h-96 rounded-sm overflow-hidden">
                 <Image
                   src="/media/aescape-robotic-table.webp"
                   alt="Aescape robotic massage table"
@@ -193,7 +181,7 @@ export default function WhatsNewContent() {
                   Aescape robotic massage · live at Sway
                 </figcaption>
               </figure>
-              <figure className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
+              <figure className="relative h-72 md:h-96 rounded-sm overflow-hidden">
                 <Image
                   src="/media/sway-remedy-room.webp"
                   alt="Sway remedy room with red light therapy and cold plunge"
@@ -213,7 +201,7 @@ export default function WhatsNewContent() {
         <section className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                 Design concepts
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -230,10 +218,10 @@ export default function WhatsNewContent() {
         </section>
 
         {/* ATLAS */}
-        <section className="bg-[#faf8f4] py-20 px-6">
+        <section className="bg-[#f5f5f5] py-20 px-6 brand-light">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                 Smarter ownership
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
@@ -263,7 +251,7 @@ export default function WhatsNewContent() {
               ].map((f) => (
                 <div
                   key={f.label}
-                  className="rounded-xl border border-[#C2A878]/40 bg-white p-5"
+                  className="rounded-sm border border-[#b38a5f]/40 bg-white p-5 brand-light"
                 >
                   <p className="font-bold text-gray-900 mb-1">{f.label}</p>
                   <p className="text-sm text-gray-600">{f.detail}</p>
@@ -274,10 +262,10 @@ export default function WhatsNewContent() {
         </section>
 
         {/* GALLERY */}
-        <section className="py-20 px-6 bg-white">
+        <section className="py-20 px-6 bg-white brand-light">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mb-10">
-              <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+              <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
                 Step inside
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -297,7 +285,7 @@ export default function WhatsNewContent() {
         <SpaviaCaresSection />
 
         {/* CTA */}
-        <section className="bg-black text-white py-20 px-6 text-center">
+        <section className="bg-black text-white py-20 px-6 text-center brand-dark">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Want to see where this is going?
@@ -308,7 +296,7 @@ export default function WhatsNewContent() {
             </p>
             <Link
               href="/get-started"
-              className="inline-block rounded-full bg-[#C2A878] px-8 py-4 font-semibold text-white hover:bg-[#a98e5e] transition-colors"
+              className="inline-block rounded-full bg-[#b38a5f] px-8 py-4 font-semibold text-black hover:bg-[#a98e5e] transition-colors"
             >
               Get the franchise overview
             </Link>

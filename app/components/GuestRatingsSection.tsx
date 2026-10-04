@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 
 export default function GuestRatingsSection() {
   return (
-    <section className="bg-black py-20 px-6 relative overflow-hidden">
+    <section className="bg-black py-20 px-6 relative overflow-hidden brand-dark">
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C2A878] to-transparent" />
 
       <div className="max-w-4xl mx-auto text-center">
@@ -26,7 +26,7 @@ export default function GuestRatingsSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-3"
         >
-          <p className="text-[#C2A878] text-6xl md:text-7xl font-bold font-[family-name:var(--font-recoleta)]">
+          <p className="text-[var(--accent-text)] text-6xl md:text-7xl font-bold font-[family-name:var(--font-recoleta)]">
             4.8
           </p>
 
@@ -34,7 +34,7 @@ export default function GuestRatingsSection() {
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className="w-7 h-7 fill-[#C2A878] text-[#C2A878]"
+                className="w-7 h-7 fill-[#C2A878] text-[var(--accent-text)]"
               />
             ))}
           </div>

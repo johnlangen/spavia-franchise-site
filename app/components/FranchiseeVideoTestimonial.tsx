@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { Play } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const VIDEO_ID = "5Wt55D3qbmE";
 const OWNER = "Merirae Tackett";
@@ -41,7 +41,7 @@ export default function FranchiseeVideoTestimonial({
   };
 
   return (
-    <div className={`max-w-4xl mx-auto ${className}`}>
+    <div className={`w-full max-w-4xl mx-auto ${className}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -65,7 +65,7 @@ export default function FranchiseeVideoTestimonial({
       {(eyebrow || heading) && (
         <div className="text-center mb-8">
           {eyebrow && (
-            <p className="text-sm tracking-[0.2em] text-[#C2A878] font-semibold uppercase mb-3">
+            <p className="text-sm tracking-[0.2em] text-[var(--accent-text)] font-semibold uppercase mb-3">
               {eyebrow}
             </p>
           )}
@@ -90,7 +90,7 @@ export default function FranchiseeVideoTestimonial({
         </div>
       )}
 
-      <div className="relative aspect-video rounded-2xl overflow-hidden border border-gray-200/20 shadow-sm bg-black">
+      <div className="relative aspect-video rounded-sm overflow-hidden border border-gray-200/20 shadow-sm bg-black brand-dark">
         {playing ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
@@ -115,9 +115,9 @@ export default function FranchiseeVideoTestimonial({
             />
             <span className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#C2A878] shadow-lg transition-transform group-hover:scale-105">
+              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#b38a5f] shadow-lg transition-transform">
                 <Play
-                  className="h-8 w-8 text-white translate-x-[2px]"
+                  className="h-8 w-8 text-black translate-x-[2px]"
                   fill="currentColor"
                 />
               </span>

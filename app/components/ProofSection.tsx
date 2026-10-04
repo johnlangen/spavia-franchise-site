@@ -10,10 +10,10 @@ const stats = [
 
 export default function ProofSection() {
   return (
-    <section className="bg-white py-20 relative overflow-hidden">
+    <section className="bg-white py-20 relative overflow-hidden brand-light">
       <div className="max-w-5xl mx-auto px-6">
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -26,12 +26,12 @@ export default function ProofSection() {
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               viewport={{ once: true }}
             >
-              <p className="text-[#C2A878] text-4xl md:text-5xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
+              <p className="text-[var(--accent-text)] text-4xl md:text-5xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
                 {stat.value}
               </p>
               <p className="text-gray-500 text-sm tracking-wide uppercase">

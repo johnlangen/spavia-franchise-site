@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
+import Footer from "../../../../../components/Footer";
+import NavBar from "../../../../../components/NavBar";
 import { getRelatedPosts } from "../../../../blogData";
 
 const URL =
@@ -175,16 +175,16 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
 
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9c814f] mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-text)] mb-3">
             2026 Recognition
           </p>
           <h1 className="text-4xl font-bold mb-6 leading-tight">
@@ -206,7 +206,7 @@ export default function Page() {
           />
 
           {/* ── Founder pull-quote ── */}
-          <figure className="border-l-4 border-[#C2A878] bg-[#faf7f2] rounded-r-xl px-7 py-6 mb-10">
+          <figure className="border-l-4 border-[#b38a5f] bg-[#f5f5f5] rounded-r-xl px-7 py-6 mb-10 brand-light">
             <blockquote className="text-xl md:text-2xl leading-relaxed text-gray-800 font-[family-name:var(--font-recoleta)] italic">
               &ldquo;Growth you can measure and guests who show up to vote for
               you. Those are the two things I&apos;d want to see if I were
@@ -232,8 +232,8 @@ export default function Page() {
           </p>
 
           {/* ── The Short Version ── */}
-          <div className="rounded-2xl bg-gray-900 text-white px-7 py-7 mb-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C2A878] mb-4">
+          <div className="rounded-sm bg-gray-900 text-white px-7 py-7 mb-14 brand-dark">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-text)] mb-4">
               The Short Version
             </p>
             <ul className="divide-y divide-white/10">
@@ -272,19 +272,19 @@ export default function Page() {
             No. 3,221, with 92% three-year growth.
           </p>
 
-          <div className="rounded-2xl border border-gray-200 px-6 py-7 mb-6">
+          <div className="rounded-sm border border-gray-200 px-6 py-7 mb-6">
             <div className="flex items-baseline justify-between mb-6">
               <p className="text-sm font-semibold text-gray-900">
                 Inc. 5000 rank
               </p>
-              <p className="text-sm font-semibold text-[#9c814f]">
+              <p className="text-sm font-semibold text-[var(--accent-text)]">
                 +1,690 spots
               </p>
             </div>
 
             <div className="relative h-24">
               {/* track */}
-              <div className="absolute left-0 right-0 top-10 h-2 rounded-full bg-gray-100" />
+              <div className="absolute left-0 right-0 top-10 h-2 rounded-full bg-gray-100 brand-light" />
               {/* climb */}
               <div
                 className="absolute top-10 h-2 rounded-full bg-gradient-to-r from-[#e8dcc4] to-[#C2A878]"
@@ -297,7 +297,7 @@ export default function Page() {
               {/* No. 4,911 sits under 2% from the left edge, so anchor it left instead of centering */}
               <div className="absolute top-0 left-0 flex flex-col items-start">
                 <span className="text-[11px] text-gray-500 mb-1">2024</span>
-                <span className="mt-1 h-5 w-5 rounded-full border-2 border-[#C2A878] bg-white" />
+                <span className="mt-1 h-5 w-5 rounded-full border-2 border-[#b38a5f] bg-white brand-light" />
                 <span className="mt-2 text-sm font-semibold text-gray-700 whitespace-nowrap">
                   No. 4,911
                 </span>
@@ -307,10 +307,10 @@ export default function Page() {
                 className="absolute top-0 -translate-x-1/2 flex flex-col items-center"
                 style={{ left: `${rankToPct(INC_2026)}%` }}
               >
-                <span className="text-[11px] text-[#9c814f] font-semibold mb-1">
+                <span className="text-[11px] text-[var(--accent-text)] font-semibold mb-1">
                   2026
                 </span>
-                <span className="mt-1 h-5 w-5 rounded-full bg-[#C2A878] ring-4 ring-[#C2A878]/25" />
+                <span className="mt-1 h-5 w-5 rounded-full bg-[#b38a5f] ring-4 ring-[#b38a5f]/25" />
                 <span className="mt-2 text-sm font-bold text-gray-900 whitespace-nowrap">
                   No. 3,221
                 </span>
@@ -370,15 +370,15 @@ export default function Page() {
             ].map((s, i) => (
               <li
                 key={s.step}
-                className={`relative rounded-xl px-4 py-4 ${
+                className={`relative rounded-sm px-4 py-4 ${
                   s.gold
-                    ? "bg-[#C2A878] text-white"
-                    : "bg-[#faf7f2] text-gray-900"
+                    ? "bg-[#b38a5f] text-white"
+                    : "bg-[#f5f5f5] text-gray-900"
                 }`}
               >
                 <span
                   className={`block text-[11px] font-semibold mb-1 ${
-                    s.gold ? "text-white/80" : "text-[#9c814f]"
+                    s.gold ? "text-white/80" : "text-[var(--accent-text)]"
                   }`}
                 >
                   Step {i + 1}
@@ -396,7 +396,7 @@ export default function Page() {
                 {i < 3 && (
                   <span
                     aria-hidden
-                    className="hidden sm:flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 h-5 w-5 items-center justify-center rounded-full bg-white text-[#C2A878] text-xs shadow"
+                    className="hidden sm:flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 h-5 w-5 items-center justify-center rounded-full bg-white text-[var(--accent-text)] text-xs shadow brand-light"
                   >
                     &rarr;
                   </span>
@@ -436,8 +436,8 @@ export default function Page() {
             looking at.
           </p>
 
-          <div className="rounded-2xl border border-gray-200 overflow-hidden mb-4">
-            <div className="hidden md:grid grid-cols-[1.1fr_1fr_1fr_1fr] gap-4 bg-[#faf7f2] px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
+          <div className="rounded-sm border border-gray-200 overflow-hidden mb-4">
+            <div className="hidden md:grid grid-cols-[1.1fr_1fr_1fr_1fr] gap-4 bg-[#f5f5f5] px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-gray-500 brand-light">
               <span>Award type</span>
               <span>Who decides</span>
               <span>What it measures</span>
@@ -452,7 +452,7 @@ export default function Page() {
                   <div>
                     <p className="font-semibold text-gray-900">{d.type}</p>
                     <p className="text-xs text-gray-500">{d.example}</p>
-                    <span className="inline-block mt-2 rounded-full bg-[#C2A878]/15 px-2.5 py-0.5 text-[11px] font-semibold text-[#9c814f]">
+                    <span className="inline-block mt-2 rounded-full bg-[#b38a5f]/15 px-2.5 py-0.5 text-[11px] font-semibold text-[var(--accent-text)]">
                       Spavia: {d.spavia}
                     </span>
                   </div>
@@ -479,7 +479,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 mb-14">
+          <div className="rounded-sm bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 mb-14 brand-light">
             <p className="font-semibold text-gray-900 mb-1">
               One more type to watch for:
             </p>
@@ -501,19 +501,19 @@ export default function Page() {
             time. Here&apos;s ours since 2020.
           </p>
 
-          <ol className="relative mb-14 ml-3 border-l-2 border-dotted border-[#C2A878]/60">
+          <ol className="relative mb-14 ml-3 border-l-2 border-dotted border-[#b38a5f]/60">
             {timeline.map((t) => (
               <li key={t.year} className="relative pl-8 pb-7 last:pb-0">
                 <span
                   className={`absolute -left-[9px] top-1 h-4 w-4 rounded-full ${
                     t.current
-                      ? "bg-[#C2A878] ring-4 ring-[#C2A878]/25"
-                      : "bg-white border-2 border-[#C2A878]"
+                      ? "bg-[#b38a5f] ring-4 ring-[#b38a5f]/25"
+                      : "bg-white border-2 border-[#b38a5f]"
                   }`}
                 />
                 <p
                   className={`text-sm font-bold mb-2 ${
-                    t.current ? "text-[#9c814f]" : "text-gray-900"
+                    t.current ? "text-[var(--accent-text)]" : "text-gray-900"
                   }`}
                 >
                   {t.year}
@@ -538,14 +538,14 @@ export default function Page() {
 
           <p className="mb-14 -mt-6 text-sm text-gray-500">
             Full list with links on our{" "}
-            <Link href="/press" className="text-[#C2A878] underline">
+            <Link href="/press" className="text-[var(--accent-text)] underline">
               press and awards page
             </Link>
             .
           </p>
 
           {/* ── CTA ── */}
-          <div className="rounded-2xl bg-gray-900 text-white px-8 py-10 text-center mb-10">
+          <div className="rounded-sm bg-gray-900 text-white px-8 py-10 text-center mb-10 brand-dark">
             <h2 className="text-2xl font-bold mb-3">
               Look Past the Badges With Us
             </h2>
@@ -555,7 +555,7 @@ export default function Page() {
             </p>
             <a
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b09466] transition-colors text-lg"
+              className="inline-block bg-[#b38a5f] text-black font-semibold px-8 py-3.5 rounded-sm hover:bg-[#b09466] transition-colors text-lg"
             >
               Book a Call with Our Franchise Team &rarr;
             </a>
@@ -566,12 +566,12 @@ export default function Page() {
             Frequently Asked Questions
           </h2>
 
-          <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 mb-10 overflow-hidden">
+          <div className="divide-y divide-gray-200 rounded-sm border border-gray-200 mb-10 overflow-hidden">
             {faqs.map((f) => (
               <details key={f.q} className="group">
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                   {f.q}
-                  <span className="ml-4 text-[#C2A878] transition-transform group-open:rotate-45 text-xl leading-none">
+                  <span className="ml-4 text-[var(--accent-text)] transition-transform group-open:rotate-45 text-xl leading-none">
                     +
                   </span>
                 </summary>
@@ -649,7 +649,7 @@ export default function Page() {
                 <li key={rp.href}>
                   <Link
                     href={rp.href}
-                    className="text-[#C2A878] hover:underline"
+                    className="text-[var(--accent-text)] hover:underline"
                   >
                     {rp.title} &rarr;
                   </Link>
@@ -660,7 +660,7 @@ export default function Page() {
 
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -679,7 +679,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

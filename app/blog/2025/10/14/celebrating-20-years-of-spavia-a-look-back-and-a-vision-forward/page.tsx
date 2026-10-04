@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
-import { getRelatedPosts, blogPosts } from "../../../../blogData";
+import Footer from "../../../../../components/Footer";
+import NavBar from "../../../../../components/NavBar";
+import { getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title: "Spavia at 20: How We Built 60+ Locations With Wellness",
@@ -73,15 +73,16 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavBar />
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Celebrating 20 Years of Spavia: A Look Back and a Vision ..." }]} />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Button */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             ← Back to Blog
           </Link>
@@ -158,7 +159,7 @@ export default function Page() {
             opportunity{" "}
             <a
               href="https://spaviafranchise.com/"
-              className="text-[#C2A878] hover:underline font-semibold"
+              className="text-[var(--accent-text)] hover:underline font-semibold"
             >
               here
             </a>
@@ -218,7 +219,7 @@ export default function Page() {
             Explore services or find a location near you{" "}
             <a
               href="https://spaviadayspa.com/"
-              className="text-[#C2A878] hover:underline font-semibold"
+              className="text-[var(--accent-text)] hover:underline font-semibold"
             >
               here
             </a>
@@ -229,7 +230,7 @@ export default function Page() {
             Inspired to bring Spavia to your community?{" "}
             <a
               href="https://spaviafranchise.com/"
-              className="text-[#C2A878] hover:underline font-semibold"
+              className="text-[var(--accent-text)] hover:underline font-semibold"
             >
               Learn more about franchise opportunities →
             </a>
@@ -254,7 +255,7 @@ export default function Page() {
             <ul className="space-y-3">
               {getRelatedPosts("/blog/2025/10/14/celebrating-20-years-of-spavia-a-look-back-and-a-vision-forward").map((rp) => (
                 <li key={rp.href}>
-                  <Link href={rp.href} className="text-[#C2A878] hover:underline">
+                  <Link href={rp.href} className="text-[var(--accent-text)] hover:underline">
                     {rp.title} &rarr;
                   </Link>
                 </li>
@@ -264,7 +265,7 @@ export default function Page() {
 
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               ML
             </div>
             <div>
@@ -279,7 +280,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               ← Back to Blog
             </Link>

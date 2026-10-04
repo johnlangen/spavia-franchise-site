@@ -1,33 +1,48 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
+/** Shared closing invitation, retained under its existing import name. */
 export default function GoldBottomBanner() {
   return (
-    <section className="bg-[#C2A878] py-16 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-white mb-4"
-        >
-          Start Your Spa Franchise Journey Today
-        </motion.h2>
-        <p className="text-white/85 text-sm md:text-base mb-8 max-w-2xl mx-auto">
-          Join 60+ Spavia franchise owners building thriving wellness businesses
-          in communities across the country. Request your free franchise overview
-          and an intro call with our founding team.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <section className="closing-invitation" data-section="closing_invitation">
+      <div className="site-container closing-grid">
+        <div className="closing-person">
+          <Image
+            src="/who-we-are/alisa-anderson.png"
+            alt="Alisa Anderson, Spavia VP of Franchise Development"
+            width={112}
+            height={136}
+          />
+          <p>
+            Alisa Anderson
+            <span>
+              Your first conversation.
+              <br />A real person.
+            </span>
+          </p>
+        </div>
+        <div>
+          <p className="eyebrow">Let’s explore what comes next</p>
+          <h2 className="display-heading">
+            Your questions.
+            <br />A conversation worth having.
+          </h2>
+          <p className="body-copy mt-4">
+            Talk through your goals, your market and whether owning a Spavia is
+            the right fit.
+          </p>
+        </div>
+        <div className="closing-actions">
           <Link
             href="/get-started"
-            className="bg-white text-[#C2A878] font-semibold px-8 py-3 rounded-lg hover:bg-white/90 transition shadow-md"
+            className="button button-primary"
+            data-track="cta_closing_inquiry"
           >
-            Request Franchise Info
+            Request Franchise Info <span aria-hidden="true">→</span>
           </Link>
+          <a href="mailto:alisa@spaviadayspa.com" className="text-link">
+            Email Alisa directly
+          </a>
         </div>
       </div>
     </section>

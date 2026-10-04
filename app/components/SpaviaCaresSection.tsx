@@ -28,10 +28,10 @@ const stories = [
 
 export default function SpaviaCaresSection() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-white py-20 px-6 brand-light">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-12">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#9c8457] mb-3">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[var(--accent-text)] mb-3">
             Spavia Cares
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
@@ -48,7 +48,7 @@ export default function SpaviaCaresSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stories.map((s) => (
             <figure key={s.title}>
-              <div className="relative aspect-square overflow-hidden rounded-xl mb-3">
+              <div className="relative aspect-square overflow-hidden rounded-sm mb-3">
                 <Image
                   src={s.img}
                   alt={s.title}
@@ -72,7 +72,7 @@ export default function SpaviaCaresSection() {
         <div className="mt-10">
           <Link
             href="/who-we-are"
-            className="text-sm font-semibold text-[#9c8457] hover:text-[#7d6943] transition-colors"
+            className="text-sm font-semibold text-[var(--accent-text)] hover:text-[#7d6943] transition-colors"
           >
             Meet the founders and team →
           </Link>

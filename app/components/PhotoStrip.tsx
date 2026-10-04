@@ -23,7 +23,7 @@ const FRAMES = [
 
 function Frame({ src, chip }: { src: string; chip: string }) {
   return (
-    <figure className="relative h-64 md:h-80 w-[300px] md:w-[400px] flex-shrink-0 overflow-hidden rounded-xl">
+    <figure className="relative h-64 md:h-80 w-[300px] md:w-[400px] flex-shrink-0 overflow-hidden rounded-sm">
       <Image
         src={src}
         alt={chip.replace("·", "—")}
@@ -40,7 +40,7 @@ function Frame({ src, chip }: { src: string; chip: string }) {
 
 export default function PhotoStrip() {
   return (
-    <section className="bg-[#faf8f4] py-14 overflow-hidden" aria-label="Inside Spavia and Sway">
+    <section className="bg-[#f5f5f5] py-14 overflow-hidden brand-light" aria-label="Inside Spavia and Sway">
       <div className="max-w-6xl mx-auto px-6 mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -52,7 +52,7 @@ export default function PhotoStrip() {
         </div>
         <Link
           href="/whats-new"
-          className="text-sm font-semibold text-[#9c8457] hover:text-[#7d6943] transition-colors whitespace-nowrap"
+          className="text-sm font-semibold text-[var(--accent-text)] hover:text-[#7d6943] transition-colors whitespace-nowrap"
         >
           See what&apos;s new at Spavia →
         </Link>

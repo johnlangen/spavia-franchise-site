@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight,DollarSign,Sparkles,TrendingUp } from "lucide-react";
 import Link from "next/link";
-import { DollarSign, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
 
 const columns = [
   {
@@ -42,7 +42,7 @@ const columns = [
 
 export default function HomepageQuickOverview() {
   return (
-    <section className="bg-white py-16 md:py-20 px-6 border-t border-gray-100">
+    <section className="bg-white py-16 md:py-20 px-6 border-t border-gray-100 brand-light">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -51,7 +51,7 @@ export default function HomepageQuickOverview() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="text-xs uppercase tracking-widest text-[#C2A878] font-semibold mb-3">
+          <p className="text-xs uppercase tracking-widest text-[var(--accent-text)] font-semibold mb-3">
             Spavia in 90 Seconds
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)]">
@@ -73,11 +73,11 @@ export default function HomepageQuickOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-gray-50 rounded-2xl border border-gray-200 p-6 flex flex-col"
+                className="bg-gray-50 rounded-sm border border-gray-200 p-6 flex flex-col brand-light"
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="h-10 w-10 rounded-full bg-[#C2A878]/15 flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-5 w-5 text-[#C2A878]" />
+                  <div className="h-10 w-10 rounded-full bg-[#b38a5f]/15 flex items-center justify-center flex-shrink-0">
+                    <Icon className="h-5 w-5 text-[var(--accent-text)]" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 leading-tight">
                     {col.title}
@@ -100,7 +100,7 @@ export default function HomepageQuickOverview() {
 
                 <Link
                   href={col.link.href}
-                  className="mt-6 inline-flex items-center justify-between rounded-lg border border-[#C2A878] text-[#9c814f] px-4 py-2.5 text-sm font-semibold hover:bg-[#C2A878]/10 transition-colors group"
+                  className="mt-6 inline-flex items-center justify-between rounded-sm border border-[#b38a5f] text-[var(--accent-text)] px-4 py-2.5 text-sm font-semibold hover:bg-[#b38a5f]/10 transition-colors group"
                 >
                   <span>{col.link.label}</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
@@ -122,21 +122,21 @@ export default function HomepageQuickOverview() {
             Want the deeper view first?{" "}
             <Link
               href="/why-spavia"
-              className="font-semibold text-[#9c814f] hover:underline"
+              className="font-semibold text-[var(--accent-text)] hover:underline"
             >
               Read Why Spavia
             </Link>
             {" · "}
             <Link
               href="/our-franchisees"
-              className="font-semibold text-[#9c814f] hover:underline"
+              className="font-semibold text-[var(--accent-text)] hover:underline"
             >
               Meet our franchisees
             </Link>
             {" · "}
             <Link
               href="/multi-unit"
-              className="font-semibold text-[#9c814f] hover:underline"
+              className="font-semibold text-[var(--accent-text)] hover:underline"
             >
               Multi-unit development
             </Link>

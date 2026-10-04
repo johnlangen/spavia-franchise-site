@@ -1,16 +1,16 @@
 "use client";
+import PageHero from "./PageHero";
 
-import { motion } from "framer-motion";
-import NavBar from "./NavBar";
+import { Check,MapPin,Sun,TrendingUp,Users } from "lucide-react";
+import Link from "next/link";
+import AwardsSection from "./AwardsSection";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import FranchiseIntroForm from "./FranchiseIntroForm";
 import FranchiseLongForm from "./FranchiseLongForm";
-import AwardsSection from "./AwardsSection";
+import NavBar from "./NavBar";
 import ProofSection from "./ProofSection";
 import { ThemeProvider } from "./ThemeProvider";
-import { Check, MapPin, TrendingUp, Users, Sun } from "lucide-react";
-import Link from "next/link";
 
 const arizonaJsonLd = {
   "@context": "https://schema.org",
@@ -69,96 +69,20 @@ export default function ArizonaContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(arizonaJsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 flex flex-col">
+      <main id="main-content" className="bg-white text-gray-900 flex flex-col brand-light">
         <NavBar />
         <Breadcrumbs
           items={[{ label: "Franchise Opportunities", href: "/franchise-opportunities" }, { label: "Arizona" }]}
         />
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative overflow-hidden pt-28 pb-20 text-center text-white px-4 sm:px-6 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]">
-          {/* Background video */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/hero-bg.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/50" />
-
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block bg-[#C2A878] text-black text-sm font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide"
-            >
-              Now Expanding to Arizona
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
-            >
-              Own a Spavia Day Spa Franchise in Arizona
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8"
-            >
-              Bring affordable luxury wellness to Scottsdale, Phoenix, Mesa,
-              Tempe, Chandler, and Gilbert with a proven franchise model.
-            </motion.p>
-
-            {/* Key metrics */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto"
-            >
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$1,110,481</p>
-                <p className="text-xs text-white/70">Median Gross Sales*</p>
-              </div>
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">1 in 2 Owners</p>
-                <p className="text-xs text-white/70">Achieve $1M+ Revenue*</p>
-              </div>
-              <div className="rounded-lg border border-white/20 bg-white/10 backdrop-blur-md px-4 py-4">
-                <p className="text-xl font-bold">$479K - $885K</p>
-                <p className="text-xs text-white/70">Initial Investment*</p>
-              </div>
-            </motion.div>
-            <p className="mt-3 text-[10px] text-white/50">
-              *Source: 2026 Spavia FDD, Item 7 &amp; Item 19. Results vary by location.
-            </p>
-
-            {/* Scroll CTA */}
-            <a
-              href="#arizona-form"
-              className="mt-8 inline-flex flex-col items-center gap-1 text-sm text-white/75 hover:text-white transition"
-            >
-              <span>Request the Franchise Overview</span>
-              <span className="text-lg animate-bounce">&#8595;</span>
-            </a>
-          </div>
-        </section>
+        <PageHero eyebrow="Build in the Arizona communities you know" title="Own a Spavia Day Spa Franchise in Arizona" intro="Explore the Phoenix and Scottsdale market opportunity, review the investment and discuss your preferred territory with Alisa." image="/media/exterior-storefront.webp" alt="A Spavia day spa storefront" action={{href:"#arizona-form",label:"Discuss your Arizona market"}} />
 
         {/* ═══════ SHORT FORM ═══════ */}
         <FranchiseIntroForm leadSource="arizona_short" />
 
         {/* ═══════ WHY ARIZONA ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6 brand-light">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">
               Why Arizona Is the Perfect Market for Spavia
@@ -173,9 +97,9 @@ export default function ArizonaContent() {
               {marketStats.map((item) => (
                 <div
                   key={item.label}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center"
+                  className="bg-white rounded-sm border border-gray-100 p-6 text-center brand-light"
                 >
-                  <item.icon className="w-8 h-8 mx-auto mb-3 text-[#C2A878]" />
+                  <item.icon className="w-8 h-8 mx-auto mb-3 text-[var(--accent-text)]" />
                   <p className="text-2xl font-bold text-gray-900">{item.stat}</p>
                   <p className="text-sm text-gray-600">{item.label}</p>
                 </div>
@@ -185,7 +109,7 @@ export default function ArizonaContent() {
         </section>
 
         {/* ═══════ PRIME TERRITORIES ═══════ */}
-        <section className="bg-white py-20 px-6">
+        <section className="bg-white py-20 px-6 brand-light">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-3 text-gray-900">
               Prime Territories Available
@@ -198,9 +122,9 @@ export default function ArizonaContent() {
               {cities.map((city) => (
                 <div
                   key={city}
-                  className="bg-gray-50 rounded-lg p-5 border border-gray-100 hover:border-[#C2A878] transition-colors"
+                  className="bg-gray-50 rounded-sm p-5 border border-gray-100 hover:border-[#b38a5f] transition-colors brand-light"
                 >
-                  <MapPin className="w-5 h-5 text-[#C2A878] mx-auto mb-2" />
+                  <MapPin className="w-5 h-5 text-[var(--accent-text)] mx-auto mb-2" />
                   <p className="font-semibold text-gray-900">{city}</p>
                   <p className="text-xs text-green-600 font-medium mt-1">
                     Territory Available
@@ -212,7 +136,7 @@ export default function ArizonaContent() {
         </section>
 
         {/* ═══════ WHY SPAVIA (value props) ═══════ */}
-        <section className="bg-gray-50 py-20 px-6">
+        <section className="bg-gray-50 py-20 px-6 brand-light">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Why Franchise Owners Choose Spavia
@@ -238,10 +162,10 @@ export default function ArizonaContent() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm"
+                  className="bg-white rounded-sm p-6 border border-gray-100 brand-light"
                 >
                   <div className="flex gap-3 items-start">
-                    <Check className="w-5 h-5 text-[#C2A878] mt-0.5 shrink-0" />
+                    <Check className="w-5 h-5 text-[var(--accent-text)] mt-0.5 shrink-0" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-1">
                         {item.title}
@@ -262,7 +186,7 @@ export default function ArizonaContent() {
         <AwardsSection />
 
         {/* ═══════ EXPLORE MORE ═══════ */}
-        <section className="bg-white py-16 px-6">
+        <section className="bg-white py-16 px-6 brand-light">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">
               Continue Exploring
@@ -270,21 +194,21 @@ export default function ArizonaContent() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link
                 href="/franchise-cost"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors text-center"
               >
                 <p className="font-bold text-gray-900 mb-1">Franchise Cost</p>
                 <p className="text-sm text-gray-600">Full investment breakdown</p>
               </Link>
               <Link
                 href="/franchise-opportunities"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors text-center"
               >
                 <p className="font-bold text-gray-900 mb-1">All Markets</p>
                 <p className="text-sm text-gray-600">See all available states</p>
               </Link>
               <Link
                 href="/why-spavia"
-                className="block p-5 rounded-xl border border-gray-200 hover:border-[#C2A878] transition-colors text-center"
+                className="block p-5 rounded-sm border border-gray-200 hover:border-[#b38a5f] transition-colors text-center"
               >
                 <p className="font-bold text-gray-900 mb-1">Why Spavia</p>
                 <p className="text-sm text-gray-600">What sets us apart</p>
@@ -294,8 +218,8 @@ export default function ArizonaContent() {
         </section>
 
         {/* ═══════ LONG FORM ═══════ */}
-        <section id="arizona-form" className="bg-gray-50 py-20 px-6">
-          <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
+        <section id="arizona-form" className="bg-gray-50 py-20 px-6 brand-light">
+          <div className="max-w-xl mx-auto bg-white p-8 rounded-sm border border-gray-200 brand-light">
             <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">
               Request Arizona Franchise Information
             </h2>

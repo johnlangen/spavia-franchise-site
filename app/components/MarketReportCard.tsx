@@ -1,14 +1,14 @@
 "use client";
 
-import { CountyMarket } from "../data/markets";
 import {
-  MapPin,
-  Lock,
-  DollarSign,
-  GraduationCap,
-  Users,
-  Shield,
+DollarSign,
+GraduationCap,
+Lock,
+MapPin,
+Shield,
+Users,
 } from "lucide-react";
+import { CountyMarket } from "../data/markets";
 
 interface MarketReportCardProps {
   county: CountyMarket;
@@ -27,12 +27,12 @@ export default function MarketReportCard({
         : "Proven demand";
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow brand-light">
       {/* Header */}
       <div className="px-6 pt-6 pb-4 border-b border-gray-100">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-start gap-2">
-            <MapPin className="w-5 h-5 text-[#C2A878] mt-0.5 shrink-0" />
+            <MapPin className="w-5 h-5 text-[var(--accent-text)] mt-0.5 shrink-0" />
             <div>
               <h3 className="font-bold text-gray-900 text-lg">
                 {county.countyName}
@@ -112,8 +112,8 @@ export default function MarketReportCard({
       </div>
 
       {/* Blurred section */}
-      <div className="relative mx-6 mb-6 rounded-lg overflow-hidden">
-        <div className="filter blur-[6px] select-none pointer-events-none bg-gray-50 p-4 space-y-3">
+      <div className="relative mx-6 mb-6 rounded-sm overflow-hidden">
+        <div className="filter blur-[6px] select-none pointer-events-none bg-gray-50 p-4 space-y-3 brand-light">
           {/* Score breakdown bars */}
           <p className="text-xs font-bold text-gray-700">Score Breakdown</p>
           {[
@@ -165,10 +165,10 @@ export default function MarketReportCard({
         </div>
 
         {/* CTA overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-white/60 backdrop-blur-sm rounded-lg">
+        <div className="absolute inset-0 flex items-center justify-center bg-white/60 backdrop-blur-sm rounded-sm">
           <button
             onClick={() => onRequestReport(county)}
-            className="flex items-center gap-2 bg-[#C2A878] hover:bg-[#b09668] text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-colors cursor-pointer"
+            className="flex items-center gap-2 bg-[#b38a5f] hover:bg-[#b09668] text-black font-semibold px-5 py-2.5 rounded-full shadow-md transition-colors cursor-pointer"
           >
             <Lock className="w-4 h-4" />
             Request Your Free Market Report

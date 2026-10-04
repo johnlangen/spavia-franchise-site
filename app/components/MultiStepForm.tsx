@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import Link from "next/link";
 
 const states = [
   "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
@@ -110,10 +110,10 @@ export default function MultiStepForm() {
   };
   
   const inputClass =
-    "w-full border border-gray-300 rounded px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#C2A878]";
+    "w-full border border-gray-300 rounded px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#b38a5f]";
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg mx-auto">
+    <div className="bg-white shadow-lg rounded-sm p-8 max-w-lg mx-auto brand-light">
       <h2 className="text-2xl font-bold text-center mb-2 text-gray-900">
         Franchise Inquiry Form – Start Your Spavia Journey
       </h2>
@@ -159,7 +159,7 @@ export default function MultiStepForm() {
             <button
               type="button"
               onClick={handleNext}
-              className="w-full bg-[#C2A878] text-white py-2 rounded hover:bg-[#b09466] transition"
+              className="w-full bg-[#b38a5f] text-black py-2 rounded hover:bg-[#b09466] transition"
             >
               Next Step
             </button>
@@ -216,7 +216,7 @@ export default function MultiStepForm() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="px-4 py-2 bg-[#C2A878] text-white rounded hover:bg-[#b09466] transition"
+                className="px-4 py-2 bg-[#b38a5f] text-black rounded hover:bg-[#b09466] transition"
               >
                 Next Step
               </button>
@@ -259,7 +259,7 @@ export default function MultiStepForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`px-4 py-2 rounded text-white bg-[#C2A878] hover:bg-[#b09466] transition ${
+                className={`px-4 py-2 rounded text-white bg-[#b38a5f] hover:bg-[#b09466] transition ${
                   loading ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
@@ -273,7 +273,7 @@ export default function MultiStepForm() {
       {/* Success Popup Modal */}
       {showSuccess && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-          <div className="bg-white max-w-md w-full p-6 rounded-lg shadow-xl text-center relative">
+          <div className="bg-white max-w-md w-full p-6 rounded-sm shadow-xl text-center relative brand-light">
             <button
               className="absolute top-3 right-3 text-gray-500 hover:text-black"
               onClick={() => setShowSuccess(false)}
@@ -286,7 +286,7 @@ export default function MultiStepForm() {
             </p>
             <Link
               href="/"
-              className="inline-block bg-[#C2A878] text-white px-5 py-2 rounded-full hover:bg-[#b09466] transition"
+              className="inline-block bg-[#b38a5f] text-black px-5 py-2 rounded-full hover:bg-[#b09466] transition"
             >
               Back to Home
             </Link>

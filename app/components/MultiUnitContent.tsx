@@ -1,16 +1,16 @@
 "use client";
+import FaqList from "./FaqList";
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import LandingHero from "./LandingHero";
-import Breadcrumbs from "./Breadcrumbs";
-import ProofSection from "./ProofSection";
-import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
-import ScheduleCallBanner from "./ScheduleCallBanner";
-import GoldBottomBanner from "./GoldBottomBanner";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Building2, Shield, TrendingUp, Layers, Briefcase, Users } from "lucide-react";
+import { Briefcase,Building2,Layers,TrendingUp,Users } from "lucide-react";
+import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
+import Footer from "./Footer";
+import FranchiseeTestimonialsSection from "./FranchiseeTestimonialsSection";
+import GoldBottomBanner from "./GoldBottomBanner";
+import LandingHero from "./LandingHero";
+import NavBar from "./NavBar";
+import ProofSection from "./ProofSection";
 
 const targetProfiles = [
   {
@@ -123,6 +123,7 @@ export default function MultiUnitContent() {
       <NavBar />
       <Breadcrumbs items={[{ label: "Multi-Unit Franchise" }]} />
 
+      <main id="main-content">
       <LandingHero
         headlineFirst="Build a Spavia"
         headlineSecond="Portfolio —"
@@ -141,7 +142,7 @@ export default function MultiUnitContent() {
       <ProofSection />
 
       {/* Who this is for */}
-      <section className="bg-white py-16 md:py-20 px-6">
+      <section className="bg-white py-16 md:py-20 px-6 brand-light">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             Built for Operators Who Already Scale Service Businesses
@@ -158,14 +159,14 @@ export default function MultiUnitContent() {
               return (
                 <motion.div
                   key={p.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-200"
+                  className="flex gap-4 p-6 bg-gray-50 rounded-sm border border-gray-200 brand-light"
                 >
-                  <div className="h-12 w-12 rounded-full bg-[#C2A878]/15 flex items-center justify-center flex-shrink-0">
-                    <Icon className="h-6 w-6 text-[#C2A878]" />
+                  <div className="h-12 w-12 rounded-full bg-[#b38a5f]/15 flex items-center justify-center flex-shrink-0">
+                    <Icon className="h-6 w-6 text-[var(--accent-text)]" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -183,7 +184,7 @@ export default function MultiUnitContent() {
       </section>
 
       {/* The Multi-Unit Math */}
-      <section className="bg-gray-50 py-16 md:py-20 px-6">
+      <section className="bg-gray-50 py-16 md:py-20 px-6 brand-light">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             The Multi-Unit Math
@@ -195,8 +196,8 @@ export default function MultiUnitContent() {
 
           {/* Scale Math */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 text-center">
-              <p className="text-[#C2A878] text-xs uppercase tracking-widest font-semibold mb-2">
+            <div className="bg-white rounded-sm border border-gray-200 p-6 text-center brand-light">
+              <p className="text-[var(--accent-text)] text-xs uppercase tracking-widest font-semibold mb-2">
                 Single Unit
               </p>
               <p className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-2">
@@ -204,11 +205,11 @@ export default function MultiUnitContent() {
               </p>
               <p className="text-gray-500 text-sm">Median annual gross sales*</p>
             </div>
-            <div className="bg-white rounded-2xl border-2 border-[#C2A878] p-6 text-center relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C2A878] text-white text-[10px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full">
+            <div className="bg-white rounded-sm border-2 border-[#b38a5f] p-6 text-center relative brand-light">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#b38a5f] text-black text-[10px] uppercase tracking-widest font-semibold px-3 py-1 rounded-full">
                 Common Goal
               </span>
-              <p className="text-[#C2A878] text-xs uppercase tracking-widest font-semibold mb-2">
+              <p className="text-[var(--accent-text)] text-xs uppercase tracking-widest font-semibold mb-2">
                 3-Unit Portfolio
               </p>
               <p className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-2">
@@ -218,8 +219,8 @@ export default function MultiUnitContent() {
                 Combined annual gross sales (illustrative)
               </p>
             </div>
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 text-center">
-              <p className="text-[#C2A878] text-xs uppercase tracking-widest font-semibold mb-2">
+            <div className="bg-white rounded-sm border border-gray-200 p-6 text-center brand-light">
+              <p className="text-[var(--accent-text)] text-xs uppercase tracking-widest font-semibold mb-2">
                 5-Unit Portfolio
               </p>
               <p className="text-3xl md:text-4xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-2">
@@ -243,14 +244,14 @@ export default function MultiUnitContent() {
             {multiUnitAdvantages.map((a, i) => (
               <motion.div
                 key={a.title}
-                initial={{ opacity: 0, y: 16 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-white rounded-xl border border-gray-200 p-5"
+                className="bg-white rounded-sm border border-gray-200 p-5 brand-light"
               >
                 <div className="flex items-start gap-3">
-                  <Layers className="h-5 w-5 text-[#C2A878] mt-0.5 flex-shrink-0" />
+                  <Layers className="h-5 w-5 text-[var(--accent-text)] mt-0.5 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
                       {a.title}
@@ -267,7 +268,7 @@ export default function MultiUnitContent() {
       </section>
 
       {/* Phased rollout */}
-      <section className="bg-white py-16 md:py-20 px-6">
+      <section className="bg-white py-16 md:py-20 px-6 brand-light">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4 font-[family-name:var(--font-recoleta)]">
             A Typical Multi-Unit Rollout
@@ -297,16 +298,16 @@ export default function MultiUnitContent() {
             ].map((p, i) => (
               <motion.div
                 key={p.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full border-2 border-[#C2A878] text-[#C2A878] font-bold mb-4 font-[family-name:var(--font-recoleta)]">
+                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full border-2 border-[#b38a5f] text-[var(--accent-text)] font-bold mb-4 font-[family-name:var(--font-recoleta)]">
                   {i + 1}
                 </div>
-                <p className="text-[#C2A878] text-xs uppercase tracking-widest font-semibold mb-1">
+                <p className="text-[var(--accent-text)] text-xs uppercase tracking-widest font-semibold mb-1">
                   {p.phase}
                 </p>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
@@ -324,47 +325,32 @@ export default function MultiUnitContent() {
       <FranchiseeTestimonialsSection />
 
       {/* FAQ */}
-      <section className="bg-gray-50 py-16 px-6">
+      <section className="bg-gray-50 py-16 px-6 brand-light">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 font-[family-name:var(--font-recoleta)]">
             Multi-Unit Development FAQ
           </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <details
-                key={f.q}
-                className="group border-b border-gray-200 pb-4"
-              >
-                <summary className="flex justify-between items-center cursor-pointer font-semibold text-gray-900 text-lg hover:text-[#C2A878]">
-                  {f.q}
-                  <span className="text-2xl text-gray-400 group-open:rotate-180 transition-transform">
-                    ⌃
-                  </span>
-                </summary>
-                <p className="mt-3 text-gray-600 leading-relaxed">{f.a}</p>
-              </details>
-            ))}
-          </div>
+          <FaqList items={faqs.map(({q,a})=>({question:q,answer:a}))} />
         </div>
       </section>
 
-      <ScheduleCallBanner />
+
 
       {/* Explore More */}
-      <section className="bg-black py-12 px-6">
+      <section className="bg-black py-12 px-6 brand-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold text-white mb-6">Explore More</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             <Link
               href="/franchise-cost"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Franchise Cost</p>
               <p className="text-xs text-white/60">Full investment breakdown</p>
             </Link>
             <Link
               href="/your-spavia"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">The Spavia Model</p>
               <p className="text-xs text-white/60">
@@ -373,7 +359,7 @@ export default function MultiUnitContent() {
             </Link>
             <Link
               href="/our-franchisees"
-              className="block p-4 rounded-xl border border-white/20 hover:border-[#C2A878] transition-colors"
+              className="block p-4 rounded-sm border border-white/20 hover:border-[#b38a5f] transition-colors"
             >
               <p className="font-bold text-white text-sm">Our Franchisees</p>
               <p className="text-xs text-white/60">Real owners, real results</p>
@@ -383,6 +369,7 @@ export default function MultiUnitContent() {
       </section>
 
       <GoldBottomBanner />
+      </main>
       <Footer />
     </>
   );

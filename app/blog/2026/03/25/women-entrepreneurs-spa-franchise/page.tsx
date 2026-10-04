@@ -1,12 +1,12 @@
-import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
-import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
 import { Metadata } from "next";
-import NavBar from "../../../../../components/NavBar";
-import Footer from "../../../../../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "../../../../../components/Breadcrumbs";
-import Image from "next/image";
-import { getRelatedPosts, formatDate, blogPosts } from "../../../../blogData";
+import Footer from "../../../../../components/Footer";
+import FranchiseFinancialNote from "../../../../../components/FranchiseFinancialNote";
+import FranchiseResearchLinks from "../../../../../components/FranchiseResearchLinks";
+import NavBar from "../../../../../components/NavBar";
+import { blogPosts,formatDate,getRelatedPosts } from "../../../../blogData";
 
 export const metadata: Metadata = {
   title:
@@ -140,12 +140,12 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="bg-white text-gray-900 py-20 px-6">
-        <article className="max-w-3xl mx-auto">
+      <main id="main-content" className="bg-white text-gray-900 py-20 px-6 brand-light">
+        <article className="franchise-article max-w-3xl mx-auto">
           {/* Back Button */}
           <Link
             href="/blog"
-            className="inline-block mb-8 text-[#C2A878] hover:underline font-medium"
+            className="inline-block mb-8 text-[var(--accent-text)] hover:underline font-medium"
           >
             &larr; Back to Blog
           </Link>
@@ -180,7 +180,7 @@ export default function Page() {
               href="https://franchisebusinessreview.com/post/breaking-barriers-the-top-100-franchises-for-women-in-2025/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               Franchise Business Review
             </a>
@@ -301,7 +301,7 @@ export default function Page() {
           </p>
           <p className="text-lg mb-10 leading-relaxed">
             Programs like{" "}
-            <Link href="/who-we-are" className="text-[#C2A878] hover:underline">
+            <Link href="/who-we-are" className="text-[var(--accent-text)] hover:underline">
               Spavia Cares
             </Link>
             , which supports local charitable organizations, give franchise
@@ -326,7 +326,7 @@ export default function Page() {
           <div className="overflow-x-auto mb-6">
             <table className="w-full border-collapse text-left">
               <thead>
-                <tr className="bg-gray-800 text-white">
+                <tr className="bg-gray-800 text-white brand-dark">
                   <th className="px-4 py-3 font-semibold">Financial Metric</th>
                   <th className="px-4 py-3 font-semibold">Benchmark</th>
                 </tr>
@@ -374,7 +374,7 @@ export default function Page() {
             breakdown in our{" "}
             <Link
               href="/blog/2026/02/19/spa-franchise-opportunities-guide"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               Complete Guide to Spa Franchise Opportunities in 2026
             </Link>
@@ -418,7 +418,7 @@ export default function Page() {
             ].map((path) => (
               <div
                 key={path.title}
-                className="rounded-xl border border-gray-200 p-6"
+                className="rounded-sm border border-gray-200 p-6"
               >
                 <h3 className="text-lg font-semibold mb-2">{path.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{path.desc}</p>
@@ -451,7 +451,7 @@ export default function Page() {
             business coaches, on-site visits, and more. Learn about our{" "}
             <Link
               href="/training-and-support"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               training and support program
             </Link>
@@ -471,7 +471,7 @@ export default function Page() {
             comparison, see our guide to{" "}
             <Link
               href="/blog/2026/02/11/day-spa-vs-med-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               Day Spa vs. Med Spa Franchise
             </Link>
@@ -515,7 +515,7 @@ export default function Page() {
           </p>
 
           {/* ── Financing for Women ── */}
-          <div className="bg-[#faf7f2] border-l-4 border-[#C2A878] px-6 py-5 rounded-r-lg mb-10">
+          <div className="bg-[#f5f5f5] border-l-4 border-[#b38a5f] px-6 py-5 rounded-r-lg mb-10 brand-light">
             <h3 className="text-lg font-semibold mb-3">
               Financing Resources for Women Franchise Owners
             </h3>
@@ -528,7 +528,7 @@ export default function Page() {
                 href="https://www.sba.gov/blog/2024/2024-03/how-does-sba-help-women-entrepreneurs-finance-their-business-ventures"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C2A878] hover:underline"
+                className="text-[var(--accent-text)] hover:underline"
               >
                 U.S. Small Business Administration
               </a>
@@ -552,7 +552,7 @@ export default function Page() {
                   href="https://www.score.org/women-entrepreneurs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#C2A878] hover:underline"
+                  className="text-[var(--accent-text)] hover:underline"
                 >
                   free business advice specifically for women
                 </a>
@@ -609,7 +609,7 @@ export default function Page() {
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-sm shrink-0 mt-0.5">
                   {item.step}
                 </div>
                 <div>
@@ -625,7 +625,7 @@ export default function Page() {
             our full{" "}
             <Link
               href="/blog/2026/03/10/how-to-open-a-spa-franchise"
-              className="text-[#C2A878] hover:underline"
+              className="text-[var(--accent-text)] hover:underline"
             >
               step-by-step guide to opening a spa franchise
             </Link>{" "}
@@ -636,7 +636,7 @@ export default function Page() {
           <div className="text-center my-12">
             <Link
               href="/get-started"
-              className="inline-block bg-[#C2A878] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
+              className="inline-block bg-[#b38a5f] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#b09466] transition"
             >
               Schedule Your Introductory Call
             </Link>
@@ -696,7 +696,7 @@ export default function Page() {
                 <li key={rp.href}>
                   <Link
                     href={rp.href}
-                    className="text-[#C2A878] hover:underline"
+                    className="text-[var(--accent-text)] hover:underline"
                   >
                     {rp.title} &rarr;
                   </Link>
@@ -707,7 +707,7 @@ export default function Page() {
 
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-gray-200 flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#C2A878] flex items-center justify-center text-white font-bold text-lg shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#b38a5f] flex items-center justify-center text-black font-bold text-lg shrink-0">
               S
             </div>
             <div>
@@ -722,7 +722,7 @@ export default function Page() {
           <div className="mt-12">
             <Link
               href="/blog"
-              className="inline-block text-[#C2A878] hover:underline font-medium"
+              className="inline-block text-[var(--accent-text)] hover:underline font-medium"
             >
               &larr; Back to Blog
             </Link>

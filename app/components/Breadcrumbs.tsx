@@ -7,12 +7,11 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
-  /** Pin the bar just under the nav. Needed on snap-scroll pages where the
-      bar would otherwise be snapped under the sticky nav and hidden. */
+  /** Retained for existing callers; breadcrumbs now use normal page scrolling. */
   sticky?: boolean;
 }
 
-export default function Breadcrumbs({ items, sticky = false }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   const allItems = [{ label: "Home", href: "/" }, ...items];
 
   const jsonLd = {
@@ -35,12 +34,10 @@ export default function Breadcrumbs({ items, sticky = false }: BreadcrumbsProps)
       {/* Consistent full-width light bar so breadcrumbs stay readable on every
           page, including those whose dark hero starts directly under the nav. */}
       <div
-        className={`bg-white border-b border-gray-100${
-          sticky ? " md:sticky md:top-[80px] lg:top-[72px] z-40" : ""
-        }`}
+        className="bg-white border-b border-gray-100 brand-light"
       >
-        <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 py-3">
-          <ol className="flex flex-wrap items-center gap-1 text-sm text-gray-500">
+        <nav aria-label="Breadcrumb" className="site-container py-3">
+          <ol className="flex flex-wrap items-center gap-2 text-xs text-gray-500">
             {allItems.map((item, index) => {
               const isLast = index === allItems.length - 1;
               return (
@@ -55,7 +52,7 @@ export default function Breadcrumbs({ items, sticky = false }: BreadcrumbsProps)
                   ) : (
                     <Link
                       href={item.href}
-                      className="hover:text-[#C2A878] transition-colors"
+                      className="hover:text-[var(--accent-text)] transition-colors"
                     >
                       {item.label}
                     </Link>

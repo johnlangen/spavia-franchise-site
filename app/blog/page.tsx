@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import NavBar from "../components/NavBar";
+import BlogGrid from "../components/BlogGrid";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
-import BlogGrid from "../components/BlogGrid";
+import NavBar from "../components/NavBar";
 import { blogPosts } from "./blogData";
 
 export const metadata: Metadata = {
@@ -68,11 +68,9 @@ export default function Page() {
       />
       <NavBar />
       <Breadcrumbs items={[{ label: "Blog" }]} />
-      <main className="bg-white text-gray-900 py-32 px-6 [scroll-snap-type:none]">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-16 text-center tracking-tight">
-            Blog
-          </h1>
+      <main id="main-content" className="bg-white text-gray-900 section-space brand-light">
+        <div className="site-container">
+          <header className="article-index-heading"><p className="eyebrow">The ownership journal</p><h1>Your guide to spa franchise ownership.</h1><p className="body-copy">Franchise costs, honest comparisons and perspectives from the people building Spavia. Find the answers that help you make an informed decision.</p></header>
           <BlogGrid />
         </div>
       </main>

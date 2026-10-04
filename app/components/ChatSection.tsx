@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Send, MessageCircle, X } from "lucide-react";
+import { AnimatePresence,motion } from "framer-motion";
+import { MessageCircle,Send,X } from "lucide-react";
+import { useEffect,useRef,useState } from "react";
 
 /* ---------- TYPES ---------- */
 interface Message {
@@ -154,7 +154,7 @@ export default function ChatSection() {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24 px-6" style={{ scrollSnapAlign: "none" }}>
+    <section className="bg-white py-16 md:py-24 px-6 brand-light" style={{ scrollSnapAlign: "none" }}>
       <div className="max-w-4xl mx-auto">
         {/* --- HEADER --- */}
         <div className="text-center mb-10">
@@ -164,9 +164,9 @@ export default function ChatSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 bg-[#C2A878]/10 px-4 py-2 rounded-full mb-4">
-              <MessageCircle className="w-4 h-4 text-[#C2A878]" />
-              <span className="text-sm font-semibold text-[#C2A878] tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 bg-[#b38a5f]/10 px-4 py-2 rounded-full mb-4">
+              <MessageCircle className="w-4 h-4 text-[var(--accent-text)]" />
+              <span className="text-sm font-semibold text-[var(--accent-text)] tracking-wide uppercase">
                 Ask Spavia
               </span>
             </div>
@@ -186,20 +186,20 @@ export default function ChatSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-[#FAFAF8] rounded-2xl border border-gray-200 overflow-hidden shadow-sm"
+          className="bg-[#FAFAF8] rounded-sm border border-gray-200 overflow-hidden shadow-sm"
         >
           {/* Content area — always shows welcome + messages, chips before first send */}
           <div
             ref={messagesContainerRef}
             className="min-h-[320px] max-h-[60vh] md:max-h-[460px] overflow-y-auto
-                       p-5 md:p-8 space-y-4"
+ p-5 md:p-8 space-y-4"
             style={{ overscrollBehavior: "contain" }}
           >
             {/* Welcome bubble — always visible */}
             <div className="flex justify-start">
               <div className="max-w-[88%] md:max-w-[75%] px-5 py-3.5 text-sm leading-relaxed
-                              bg-white text-gray-800 rounded-2xl rounded-bl-sm
-                              border border-gray-100 shadow-sm">
+ bg-white text-gray-800 rounded-sm rounded-bl-sm
+ border border-gray-100 shadow-sm brand-light">
                 Hi! Ask me anything about the Spavia franchise — investment,
                 training, territories, or how to get started.
               </div>
@@ -218,10 +218,10 @@ export default function ChatSection() {
                     key={p.label}
                     onClick={() => sendMessage(p.question)}
                     className="text-sm px-4 py-2.5 rounded-full
-                               border border-[#C2A878]/40 bg-white text-[#8B7355]
-                               hover:bg-[#C2A878]/10 hover:border-[#C2A878]
-                               active:scale-95 transition-all duration-150
-                               font-medium whitespace-nowrap"
+ border border-[#b38a5f]/40 bg-white text-[var(--accent-text)]
+ hover:bg-[#b38a5f]/10 hover:border-[#b38a5f]
+ active:scale-95 transition-all duration-150
+ font-medium whitespace-nowrap brand-light"
                   >
                     {p.label}
                   </button>
@@ -243,8 +243,8 @@ export default function ChatSection() {
                 <div
                   className={`max-w-[85%] md:max-w-[75%] px-5 py-3.5 text-sm leading-relaxed whitespace-pre-wrap ${
                     msg.role === "user"
-                      ? "bg-[#C2A878] text-white rounded-2xl rounded-br-sm"
-                      : "bg-white text-gray-800 rounded-2xl rounded-bl-sm border border-gray-100 shadow-sm"
+                      ? "bg-[#b38a5f] text-white rounded-sm rounded-br-sm"
+                      : "bg-white text-gray-800 rounded-sm rounded-bl-sm border border-gray-100 shadow-sm"
                   }`}
                 >
                   {msg.content ? (
@@ -268,7 +268,7 @@ export default function ChatSection() {
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden border-t border-gray-200"
               >
-                <div className="px-4 md:px-8 py-3 bg-[#FAFAF7] flex items-center gap-2">
+                <div className="px-4 md:px-8 py-3 bg-[#f5f5f5] flex items-center gap-2 brand-light">
                   <input
                     type="email"
                     inputMode="email"
@@ -277,15 +277,15 @@ export default function ChatSection() {
                     value={emailInput}
                     onChange={(e) => setEmailInput(e.target.value)}
                     placeholder="Your email for follow-up"
-                    className="flex-1 min-w-0 text-base md:text-sm px-3 py-2.5 rounded-lg border border-gray-200
-                               focus:outline-none focus:border-[#C2A878] bg-white text-gray-900 placeholder:text-gray-400"
+                    className="flex-1 min-w-0 text-base md:text-sm px-3 py-2.5 rounded-sm border border-gray-200
+ focus:outline-none focus:border-[#b38a5f] bg-white text-gray-900 placeholder:text-gray-400 brand-light"
                     onKeyDown={(e) => e.key === "Enter" && submitEmail()}
                   />
                   <button
                     onClick={submitEmail}
-                    className="text-sm font-semibold px-4 py-2.5 rounded-lg shrink-0
-                               bg-[#C2A878] text-white hover:bg-[#B09868] transition-colors
-                               active:scale-95"
+                    className="text-sm font-semibold px-4 py-2.5 rounded-sm shrink-0
+ bg-[#b38a5f] text-black hover:bg-[#B09868] transition-colors
+ active:scale-95"
                   >
                     Send
                   </button>
@@ -302,15 +302,15 @@ export default function ChatSection() {
           </AnimatePresence>
 
           {emailSubmitted && (
-            <div className="px-4 md:px-8 py-2 bg-[#FAFAF7] border-t border-gray-200">
-              <p className="text-xs text-[#C2A878] font-medium text-center">
+            <div className="px-4 md:px-8 py-2 bg-[#f5f5f5] border-t border-gray-200 brand-light">
+              <p className="text-xs text-[var(--accent-text)] font-medium text-center">
                 Thanks! Our team may follow up with you.
               </p>
             </div>
           )}
 
           {/* Input */}
-          <div className="border-t border-gray-200 p-3 md:p-4 md:px-8 bg-white">
+          <div className="border-t border-gray-200 p-3 md:p-4 md:px-8 bg-white brand-light">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -328,19 +328,19 @@ export default function ChatSection() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about the Spavia franchise..."
                 disabled={isStreaming}
-                className="flex-1 min-w-0 text-base md:text-sm px-4 md:px-5 py-3 rounded-xl border border-gray-200
-                           focus:outline-none focus:border-[#C2A878]
-                           disabled:opacity-50 bg-gray-50 text-gray-900
-                           placeholder:text-gray-400"
+                className="flex-1 min-w-0 text-base md:text-sm px-4 md:px-5 py-3 rounded-sm border border-gray-200
+ focus:outline-none focus:border-[#b38a5f]
+ disabled:opacity-50 bg-gray-50 text-gray-900
+ placeholder:text-gray-400 brand-light"
                 maxLength={1000}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isStreaming}
-                className="w-12 h-12 md:w-11 md:h-11 flex items-center justify-center rounded-xl bg-[#C2A878] text-white
-                           hover:bg-[#B09868] transition-all
-                           disabled:opacity-40 disabled:cursor-not-allowed
-                           active:scale-95 shrink-0"
+                className="w-12 h-12 md:w-11 md:h-11 flex items-center justify-center rounded-sm bg-[#b38a5f] text-black
+ hover:bg-[#B09868] transition-all
+ disabled:opacity-40 disabled:cursor-not-allowed
+ active:scale-95 shrink-0"
                 aria-label="Send message"
               >
                 <Send className="w-5 h-5 md:w-4 md:h-4" />
@@ -354,7 +354,7 @@ export default function ChatSection() {
           AI-powered assistant.{" "}
           <a
             href="/get-started"
-            className="text-[#C2A878] font-medium hover:underline"
+            className="text-[var(--accent-text)] font-medium hover:underline"
           >
             Prefer to talk? Request an intro call &rarr;
           </a>
@@ -377,7 +377,7 @@ function LinkifyText({ text, isUser }: { text: string; isUser: boolean }) {
             href={part}
             target="_blank"
             rel="noopener noreferrer"
-            className={`underline break-all ${isUser ? "text-white/90" : "text-[#C2A878]"}`}
+            className={`underline break-all ${isUser ? "text-white/90" : "text-[var(--accent-text)]"}`}
           >
             {part}
           </a>

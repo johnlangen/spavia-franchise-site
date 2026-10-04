@@ -1,7 +1,7 @@
 "use client";
 
+import { ThemeKey,themes } from "../themeConfig";
 import { useTheme } from "./ThemeProvider";
-import { themes, ThemeKey } from "../themeConfig";
 
 export default function ThemeSelector() {
   const { theme, setTheme } = useTheme();
@@ -15,11 +15,12 @@ export default function ThemeSelector() {
         return (
           <button
             key={key}
+            aria-pressed={isActive}
             onClick={() => setTheme(key)}
-            className={`px-5 py-2 rounded font-semibold border transition-all duration-200 ease-in-out transform hover:scale-105 hover:shadow-lg cursor-pointer`}
+            className={`px-5 py-2 rounded font-semibold border transition-all duration-200 ease-in-out transform   cursor-pointer`}
             style={{
-              backgroundColor: isActive ? themeColor : "white",
-              color: isActive ? "white" : "#C2A878", // gold text for inactive
+              backgroundColor: isActive ? "#1a1a1a" : "white",
+              color: isActive ? "white" : "#806240", // gold text for inactive
               borderColor: isActive ? themeColor : "#C2A878",
             }}
           >

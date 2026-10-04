@@ -1,24 +1,26 @@
 "use client";
+import FaqList from "./FaqList";
+import GoldBottomBanner from "./GoldBottomBanner";
+import PageHero from "./PageHero";
 
-import NavBar from "./NavBar";
-import Breadcrumbs from "./Breadcrumbs";
-import { motion, AnimatePresence } from "framer-motion";
-import Reveal from "./Reveal";
-import Image from "next/image";
-import {
-  DollarSign,
-  CreditCard,
-  BarChart,
-  X,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { useMemo, useState } from "react";
 import usa from "@svg-maps/usa";
-import AwardsSection from "./AwardsSection";
-import Footer from "./Footer";
-import Link from "next/link";
+import { AnimatePresence,motion } from "framer-motion";
+import {
+BarChart,
+ChevronLeft,
+ChevronRight,
+CreditCard,
+DollarSign,
+X,
+} from "lucide-react";
+import Image from "next/image";
+import { useMemo,useState } from "react";
 import locationData from "../data/spavia-locations.json";
+import AwardsSection from "./AwardsSection";
+import Breadcrumbs from "./Breadcrumbs";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
+import Reveal from "./Reveal";
 
 interface SpaviaLocation {
   id: string;
@@ -122,7 +124,6 @@ export default function YourSpaviaContent() {
     null
   );
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const limitedSet = useMemo(() => new Set(limitedMarkets), []);
 
@@ -168,48 +169,15 @@ export default function YourSpaviaContent() {
   };
 
   return (
-    <main className="text-gray-900">
+    <main id="main-content" className="text-gray-900">
       <NavBar />
         <Breadcrumbs items={[{ label: "Your Spavia" }]} />
 
       {/* Hero with Video */}
-      <section className="relative overflow-hidden min-h-[60svh] flex items-center justify-center py-20 text-center text-white px-6">
-        {/* Background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        <div className="relative z-10">
-          <Reveal>
-            <h1 className="text-5xl font-bold mb-6">Your Spavia</h1>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <h2 className="max-w-3xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed">
-              Financial Success Through Wellness
-            </h2>
-          </Reveal>
-
-          <Reveal delay={450}>
-            <p className="max-w-3xl mx-auto text-lg leading-relaxed mt-4">
-              At Spavia, your investment goes beyond profitability. It’s about
-              bringing an oasis of relaxation and rejuvenation to your community.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero eyebrow="Picture your future spa" title="Your Spavia" intro="A welcoming retreat with your community at its heart. Explore the investment requirements, spa design concepts and location guidance that turn the idea into a place of your own." image="/media/fireplace-retreat-wide.webp" alt="A comfortable Spavia retreat room with a fireplace" action={{href:"#design-concepts",label:"Explore the spa designs"}} />
 
       {/* Financial Requirements */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white brand-light">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">
             Financial Requirements
@@ -220,14 +188,14 @@ export default function YourSpaviaContent() {
             const Icon = item.icon;
             return (
               <Reveal key={i} delay={i * 100} className="h-full">
-                <div className="group h-full flex flex-col items-center justify-center text-center px-8 py-12 rounded-2xl border border-[#C2A878]/25 bg-[#faf7f2] shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_34px_rgba(194,168,120,0.20)] hover:-translate-y-1 transition-all duration-300">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#C2A878]/12 ring-1 ring-[#C2A878]/30">
-                    <Icon className="w-6 h-6 text-[#C2A878]" />
+                <div className="group h-full flex flex-col items-center justify-center text-center px-8 py-12 rounded-sm border border-[#b38a5f]/25 bg-[#f5f5f5] shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_34px_rgba(194,168,120,0.20)] hover:-translate-y-1 transition-all duration-300 brand-light">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#b38a5f]/12 ring-1 ring-[#b38a5f]/30">
+                    <Icon className="w-6 h-6 text-[var(--accent-text)]" />
                   </div>
                   <p className="text-3xl font-bold text-gray-900 mb-3 leading-tight font-[family-name:var(--font-recoleta)]">
                     {item.value}
                   </p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#9c814f] font-semibold">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--accent-text)] font-semibold">
                     {item.label}
                   </p>
                 </div>
@@ -241,10 +209,10 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Economics */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 brand-light">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
+            <h3 className="text-xl font-semibold mb-4 text-[var(--accent-text)]">
               Recurring Revenue
             </h3>
             <p>
@@ -254,7 +222,7 @@ export default function YourSpaviaContent() {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
+            <h3 className="text-xl font-semibold mb-4 text-[var(--accent-text)]">
               Diversity of Revenue
             </h3>
             <p>
@@ -263,7 +231,7 @@ export default function YourSpaviaContent() {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#C2A878]">
+            <h3 className="text-xl font-semibold mb-4 text-[var(--accent-text)]">
               Advanced Pricing Strategy
             </h3>
             <p>
@@ -275,7 +243,7 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Industry Size */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white brand-light">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Spa Industry Size</h2>
           <ul className="space-y-3 text-lg">
@@ -293,7 +261,7 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Location with JLL */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 brand-light">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Finding Your Location</h2>
           <p className="max-w-3xl mx-auto mb-8">
@@ -312,9 +280,9 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Image Carousel */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white brand-light">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-3">
+          <h2 id="design-concepts" className="text-center text-3xl md:text-4xl font-bold mb-3">
             Inside a Spavia
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
@@ -324,7 +292,7 @@ export default function YourSpaviaContent() {
 
           {/* Desktop — 3-col bento mosaic, hero top-left takes a 2x2 block */}
           <div className="hidden md:grid md:grid-cols-3 md:auto-rows-[260px] gap-4">
-            <Reveal className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-xl shadow-md">
+            <Reveal className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-sm">
               <Image
                 src={galleryImages[0].src}
                 alt={galleryImages[0].alt}
@@ -337,7 +305,7 @@ export default function YourSpaviaContent() {
               <Reveal
                 key={img.src}
                 delay={(i + 1) * 60}
-                className="relative overflow-hidden rounded-xl shadow-md"
+                className="relative overflow-hidden rounded-sm"
               >
                 <Image
                   src={img.src}
@@ -355,7 +323,7 @@ export default function YourSpaviaContent() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentImageIndex}
-                initial={{ opacity: 0, x: 20 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
@@ -367,7 +335,7 @@ export default function YourSpaviaContent() {
                   width={1200}
                   height={800}
                   sizes="100vw"
-                  className="rounded-xl shadow-md object-cover w-full aspect-[3/2]"
+                  className="rounded-sm object-cover w-full aspect-[3/2]"
                 />
               </motion.div>
             </AnimatePresence>
@@ -398,7 +366,7 @@ export default function YourSpaviaContent() {
                   aria-label={`Go to image ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all ${
                     i === currentImageIndex
-                      ? "w-6 bg-[#C2A878]"
+                      ? "w-6 bg-[#b38a5f]"
                       : "w-1.5 bg-gray-300"
                   }`}
                 />
@@ -409,7 +377,7 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Interactive Available Markets */}
-      <section className="py-20 bg-gray-50 text-center">
+      <section className="py-20 bg-gray-50 text-center brand-light">
         <h2 className="text-3xl font-bold mb-4">Available Markets</h2>
         <p className="mb-6 text-gray-700">
           {locationCounts.open} Spavias open across {locationCounts.states}{" "}
@@ -434,11 +402,11 @@ export default function YourSpaviaContent() {
             <span className="text-sm font-semibold">Limited Market</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-[#1a1a1a] ring-2 ring-white"></span>
+            <span className="w-3 h-3 rounded-full bg-[#1a1a1a] ring-2 ring-white brand-dark"></span>
             <span className="text-sm font-semibold">Spavia open</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-white border-2 border-[#1a1a1a]"></span>
+            <span className="w-3 h-3 rounded-full bg-white border-2 border-[#1a1a1a] brand-light"></span>
             <span className="text-sm font-semibold">Opening soon</span>
           </div>
         </div>
@@ -511,7 +479,7 @@ export default function YourSpaviaContent() {
           </svg>
 
           {(hoveredLocation || hoveredState) && (
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded shadow whitespace-nowrap">
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded shadow whitespace-nowrap brand-dark">
               {hoveredLocation
                 ? `${hoveredLocation.name} — ${hoveredLocation.city}, ${hoveredLocation.state}`
                 : hoveredState}
@@ -525,7 +493,7 @@ export default function YourSpaviaContent() {
       </section>
 
       {/* Existing Spavia locations */}
-      <section className="py-20 bg-white px-4 sm:px-6">
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <h2 className="text-3xl font-bold text-center mb-4">
@@ -545,7 +513,7 @@ export default function YourSpaviaContent() {
               { value: locationCounts.states, label: "States" },
             ].map((stat) => (
               <div key={stat.label} className="py-4">
-                <div className="text-4xl font-bold text-[#C2A878]">
+                <div className="text-4xl font-bold text-[var(--accent-text)]">
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
@@ -556,7 +524,7 @@ export default function YourSpaviaContent() {
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-8">
             {[...byStateName.entries()].map(([stateName, locs]) => (
               <div key={stateName} className="break-inside-avoid mb-8">
-                <h3 className="font-bold text-gray-900 border-b border-[#C2A878] pb-1 mb-3">
+                <h3 className="font-bold text-gray-900 border-b border-[#b38a5f] pb-1 mb-3">
                   {stateName}
                   <span className="text-gray-400 font-normal text-sm ml-2">
                     {locs.length}
@@ -569,14 +537,14 @@ export default function YourSpaviaContent() {
                         href={loc.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-900 hover:text-[#C2A878] transition-colors"
+                        className="font-medium text-gray-900 hover:text-[var(--accent-text)] transition-colors"
                       >
                         {loc.name}
                       </a>
                       <div className="text-gray-500">
                         {loc.city}, {loc.state}
                         {loc.status === "coming-soon" && (
-                          <span className="ml-2 inline-block rounded-full border border-[#C2A878] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#C2A878]">
+                          <span className="ml-2 inline-block rounded-full border border-[#b38a5f] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--accent-text)]">
                             Opening soon
                           </span>
                         )}
@@ -598,7 +566,7 @@ export default function YourSpaviaContent() {
       {selectedState && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
           <div
-            className="bg-white max-w-lg w-full p-6 rounded-lg shadow-xl relative"
+            className="bg-white max-w-lg w-full p-6 rounded-sm relative brand-light"
             role="dialog"
             aria-modal="true"
             aria-labelledby="stateDialogTitle"
@@ -637,7 +605,7 @@ export default function YourSpaviaContent() {
                           href={loc.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-medium hover:text-[#C2A878] transition-colors"
+                          className="font-medium hover:text-[var(--accent-text)] transition-colors"
                         >
                           {loc.name}
                         </a>{" "}
@@ -662,7 +630,7 @@ export default function YourSpaviaContent() {
             </p>
             <a
               href="/get-started"
-              className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+              className="inline-block bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition brand-dark"
             >
               Contact Us
             </a>
@@ -671,57 +639,22 @@ export default function YourSpaviaContent() {
       )}
 
       {/* FAQ */}
-      <section className="py-20 bg-white px-4 sm:px-6">
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
-            {yourSpaviaFaqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div key={index} className="border-b pb-4 transition-colors">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full text-left flex justify-between items-center font-semibold text-lg text-gray-900 hover:text-[#C2A878] transition-colors cursor-pointer"
-                  >
-                    {faq.question}
-                    <span
-                      className={`text-2xl font-bold transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#C2A878]" : "rotate-0 text-gray-500"
-                      }`}
-                    >
-                      {isOpen ? "\u2212" : "+"}
-                    </span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <FaqList items={yourSpaviaFaqs} />
         </div>
       </section>
 
       {/* Awards */}
-      <section className="snap-start bg-gray-50">
+      <section className="bg-gray-50 brand-light">
         <AwardsSection />
       </section>
 
       {/* Next Page Link */}
-      <div className="bg-black text-white py-10 text-center">
-        <Link
-          href="/steps-to-ownership"
-          className="inline-block bg-[#C2A878] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b09466] transition"
-        >
-          Next: Steps to Ownership →
-        </Link>
-      </div>
+      <GoldBottomBanner />
 
       <Footer />
     </main>
