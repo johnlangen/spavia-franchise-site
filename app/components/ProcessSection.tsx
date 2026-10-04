@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { themes } from "../themeConfig";
 import Button from "./Button";
@@ -49,43 +48,40 @@ export default function ProcessSection() {
   const themeColor = theme ? themes[theme].color : "#C2A878"; // fallback bronze
 
   return (
-    <section className="py-26 bg-white">
+    <section className="py-12 md:py-16 bg-white" aria-labelledby="ownership-process-heading">
       <div className="max-w-4xl mx-auto px-6">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+        <h2 id="ownership-process-heading" className="text-3xl font-bold text-center mb-8 text-gray-900">
           The Franchise Ownership Process
         </h2>
 
         {/* Timeline */}
-        <div
-          className="relative border-l-2"
+        <ol
+          role="list"
+          className="relative ml-4 border-l-2 space-y-5"
           style={{ borderColor: themeColor }}
         >
           {steps.map((step, idx) => (
-            <div key={idx} className="relative mb-12 pl-12">
+            <li key={step.title} className="relative pl-8 md:pl-10">
               {/* Circle number */}
               <div
-                className="absolute top-0 left-[-20px] w-10 h-10 rounded-full flex items-center justify-center text-white font-bold shadow-md"
+                aria-hidden="true"
+                className="absolute top-4 left-[-17px] w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold"
                 style={{ backgroundColor: themeColor }}
               >
                 {idx + 1}
               </div>
 
               {/* Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md border"
-              >
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">
+              <div className="bg-white p-4 md:p-5 rounded-lg border border-gray-200">
+                <h3 className="text-lg font-semibold mb-1 text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 mb-4">{step.description}</p>
+                <p className="text-gray-700 leading-relaxed">{step.description}</p>
                 {step.button && (
                   <a
                     href="/get-started"
+                    className="inline-block mt-4"
                   >
                     <Button
                       variant="primary"
@@ -99,10 +95,10 @@ export default function ProcessSection() {
                   </a>
                 )}
 
-              </motion.div>
-            </div>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

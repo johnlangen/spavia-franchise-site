@@ -6,7 +6,7 @@ const BASE = "https://spaviafranchise.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [
     // ── Core Pages ──
-    { url: `${BASE}/`, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${BASE}/`, lastModified: new Date("2026-10-04"), changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/get-started`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-opportunities`, lastModified: new Date("2026-10-02"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/franchise-opportunities/alabama`, changeFrequency: "monthly", priority: 0.9 },
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/whats-new`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/why-spavia`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/your-spavia`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/steps-to-ownership`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/steps-to-ownership`, lastModified: new Date("2026-10-04"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/training-and-support`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/who-we-are`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/our-franchisees`, changeFrequency: "monthly", priority: 0.7 },

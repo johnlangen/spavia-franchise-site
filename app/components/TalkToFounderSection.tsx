@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Calendar, Mail } from "lucide-react";
 
 declare global {
@@ -79,33 +80,30 @@ export default function TalkToFounderSection() {
 
           {/* Right: copy + CTAs */}
           <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              What your conversation with Alisa covers
+            </h3>
             <ul className="space-y-3 mb-7">
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#C2A878]/15 flex items-center justify-center mt-0.5 shrink-0">
-                  <span className="text-[#C2A878] text-xs font-bold">1</span>
-                </div>
+                <span aria-hidden="true" className="w-2 h-2 mt-2 rounded-full bg-[#C2A878] shrink-0" />
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  <span className="font-semibold text-gray-900">A quick intro call.</span>{" "}
+                  <span className="font-semibold text-gray-900">Your goals.</span>{" "}
                   No pressure, no commitment. Just a conversation about whether Spavia
                   fits your goals.
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#C2A878]/15 flex items-center justify-center mt-0.5 shrink-0">
-                  <span className="text-[#C2A878] text-xs font-bold">2</span>
-                </div>
+                <span aria-hidden="true" className="w-2 h-2 mt-2 rounded-full bg-[#C2A878] shrink-0" />
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Get to know the brand.</span>{" "}
                   Alisa walks you through how Spavia works and what ownership actually looks like.
                 </p>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#C2A878]/15 flex items-center justify-center mt-0.5 shrink-0">
-                  <span className="text-[#C2A878] text-xs font-bold">3</span>
-                </div>
+                <span aria-hidden="true" className="w-2 h-2 mt-2 rounded-full bg-[#C2A878] shrink-0" />
                 <p className="text-gray-700 text-sm leading-relaxed">
                   <span className="font-semibold text-gray-900">Honest answers.</span>{" "}
-                  Financing, timeline, what owners actually earn, why some candidates aren&apos;t a fit.
+                  Financing, timeline, the FDD’s financial results, and why some candidates aren&apos;t a fit.
                   We&apos;d rather find out early.
                 </p>
               </li>
@@ -132,6 +130,12 @@ export default function TalkToFounderSection() {
                 Email Alisa
               </a>
             </div>
+            <Link
+              href="/steps-to-ownership"
+              className="inline-block mt-5 text-sm font-semibold text-[#705b31] underline underline-offset-4"
+            >
+              See all seven steps to ownership →
+            </Link>
           </div>
         </motion.div>
       </div>
