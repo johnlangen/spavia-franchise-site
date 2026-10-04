@@ -1,4 +1,4 @@
-/** Progressive motion: HTML stays visible; only entering, offscreen content animates. */
+/** Progressive motion: HTML is visible by default; only offscreen content is prepared. */
 export function startSiteMotion() {
   if (
     !("IntersectionObserver" in window) ||
@@ -12,6 +12,7 @@ export function startSiteMotion() {
   const smallScreen = window.matchMedia("(max-width: 800px)");
   const seen = new WeakSet<Element>();
   const watched = new Set<HTMLElement>();
+  // Includes paused entrances waiting below the fold as well as running ones.
   const playing = new Map<HTMLElement, Animation>();
   const selector = "[data-motion], main section h2, .franchise-article h2";
   const protectedArea =
@@ -35,6 +36,43 @@ export function startSiteMotion() {
     seen.add(element);
   };
 
+  const prepare = (element: HTMLElement) => {
+    const mobile = smallScreen.matches;
+    const photo = element.dataset.motion === "photo";
+    const delay = Math.min(
+      Math.max(Number(element.dataset.motionDelay) || 0, 0),
+      mobile ? 100 : 200,
+    );
+    const keyframes = photo
+      ? [
+          { clipPath: "inset(10% 7% 10% 7%)", opacity: 0.3 },
+          { clipPath: "inset(0 0 0 0)", opacity: 1 },
+        ]
+      : [
+          { transform: `translate3d(0, ${mobile ? 32 : 44}px, 0)`, opacity: 0.15 },
+          { transform: "translate3d(0, 0, 0)", opacity: 1 },
+        ];
+    let animation: Animation | undefined;
+    try {
+      animation = element.animate(keyframes, {
+        duration: photo ? 1300 : 1050,
+        delay,
+        easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        fill: "backwards",
+      });
+      // Prepare below the fold, so a slow scroll never shows full-opacity
+      // content that suddenly turns faint when it reaches the entry line.
+      // The temporary appearance belongs to this cancellable animation only.
+      animation.pause();
+      animation.currentTime = 0;
+      playing.set(element, animation);
+      animation.onfinish = animation.oncancel = () => playing.delete(element);
+    } catch {
+      animation?.cancel();
+      // Unsupported animation APIs leave the original HTML readable.
+    }
+  };
+
   const createObserver = () => new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -44,36 +82,14 @@ export function startSiteMotion() {
         watched.delete(element);
         if (seen.has(element)) continue;
         seen.add(element);
-        if (preference.matches || document.hidden || protect(element)) continue;
-
-        const mobile = smallScreen.matches;
-        const photo = element.dataset.motion === "photo";
-        const delay = Math.min(
-          Math.max(Number(element.dataset.motionDelay) || 0, 0),
-          mobile ? 100 : 200,
-        );
-        // Nothing is hidden while waiting for JS, an observer or a delayed animation.
-        // The animation owns its temporary appearance and releases it when finished.
-        const keyframes = photo
-          ? [
-              { clipPath: "inset(10% 7% 10% 7%)", opacity: 0.3 },
-              { clipPath: "inset(0 0 0 0)", opacity: 1 },
-            ]
-          : [
-              { transform: `translate3d(0, ${mobile ? 32 : 44}px, 0)`, opacity: 0.15 },
-              { transform: "translate3d(0, 0, 0)", opacity: 1 },
-            ];
+        if (preference.matches || document.hidden || protect(element)) {
+          settle(element);
+          continue;
+        }
         try {
-          const animation = element.animate(keyframes, {
-            duration: photo ? 1300 : 1050,
-            delay,
-            easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            fill: "backwards",
-          });
-          playing.set(element, animation);
-          animation.onfinish = animation.oncancel = () => playing.delete(element);
+          playing.get(element)?.play();
         } catch {
-          // Unsupported keyframes are cosmetic; content remains readable.
+          settle(element);
         }
       }
     },
@@ -93,8 +109,7 @@ export function startSiteMotion() {
     }
     for (const element of watched) {
       if (!element.isConnected) {
-        observer.unobserve(element);
-        watched.delete(element);
+        settle(element);
       }
     }
     const candidates = [...document.querySelectorAll<HTMLElement>(selector)].filter(
@@ -112,6 +127,7 @@ export function startSiteMotion() {
       if (bounds[index].top < window.innerHeight) {
         seen.add(element);
       } else {
+        prepare(element);
         watched.add(element);
         observer.observe(element);
       }
@@ -120,8 +136,10 @@ export function startSiteMotion() {
   const scheduleScan = () => {
     if (!frame) frame = window.requestAnimationFrame(scan);
   };
-  const stopPlaying = () => {
-    for (const element of playing.keys()) settle(element);
+  const stopPlaying = (includeWaiting = true) => {
+    for (const element of playing.keys()) {
+      if (includeWaiting || !watched.has(element)) settle(element);
+    }
   };
   const preferenceChanged = () => {
     if (preference.matches) {
@@ -139,13 +157,15 @@ export function startSiteMotion() {
     }
   };
   const visibility = () => {
-    if (document.hidden) stopPlaying();
+    if (document.hidden) stopPlaying(false);
   };
+  const print = () => stopPlaying();
   const mutations = new MutationObserver(scheduleScan);
   mutations.observe(document.body, { childList: true, subtree: true });
   document.addEventListener("focusin", focus);
   document.addEventListener("visibilitychange", visibility);
   window.addEventListener("resize", scheduleScan, { passive: true });
+  window.addEventListener("beforeprint", print);
   preference.addEventListener("change", preferenceChanged);
   scan();
 
@@ -158,6 +178,7 @@ export function startSiteMotion() {
     document.removeEventListener("focusin", focus);
     document.removeEventListener("visibilitychange", visibility);
     window.removeEventListener("resize", scheduleScan);
+    window.removeEventListener("beforeprint", print);
     preference.removeEventListener("change", preferenceChanged);
   };
 }

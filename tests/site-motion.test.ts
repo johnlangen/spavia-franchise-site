@@ -14,9 +14,9 @@ const unobserve = vi.fn();
 const disconnect = vi.fn();
 const frames: FrameRequestCallback[] = [];
 const observerOptions: IntersectionObserverInit[] = [];
-const animations: { cancel: ReturnType<typeof vi.fn>; onfinish: (() => void) | null; oncancel: (() => void) | null }[] = [];
+const animations: { cancel: ReturnType<typeof vi.fn>; pause: ReturnType<typeof vi.fn>; play: ReturnType<typeof vi.fn>; currentTime: number; onfinish: (() => void) | null; oncancel: (() => void) | null }[] = [];
 const animate = vi.fn<(keyframes: Keyframe[], options: KeyframeAnimationOptions) => (typeof animations)[number]>(() => {
-  const animation = { cancel: vi.fn(), onfinish: null, oncancel: null };
+  const animation = { cancel: vi.fn(), pause: vi.fn(), play: vi.fn(), currentTime: 0, onfinish: null, oncancel: null };
   animations.push(animation);
   return animation;
 });
@@ -92,9 +92,12 @@ describe("motion preserves access to the franchise content", () => {
     cleanup = startSiteMotion();
     expect(observe).toHaveBeenCalledWith(story);
     expect(story.style.opacity).toBe("");
+    expect(animations[0].pause).toHaveBeenCalled();
+    expect(animations[0].play).not.toHaveBeenCalled();
     enter(story);
     enter(story);
     expect(animate).toHaveBeenCalledTimes(1);
+    expect(animations[0].play).toHaveBeenCalledTimes(1);
     expect(unobserve).toHaveBeenCalledWith(story);
     expect(story.style.opacity).toBe("");
   });
@@ -192,6 +195,25 @@ describe("motion preserves access to the franchise content", () => {
     cleanup = undefined;
     expect(animations[0].cancel).toHaveBeenCalled();
     expect(disconnect).toHaveBeenCalled();
+  });
+
+  it("makes a waiting story immediately readable when its link receives focus", () => {
+    document.body.innerHTML = '<div data-motion="rise"><a href="/get-started">Request info</a></div>';
+    const story = bounds(document.querySelector("div")!);
+    cleanup = startSiteMotion();
+    document.querySelector("a")!.focus();
+    expect(animations[0].cancel).toHaveBeenCalled();
+    enter(story);
+    expect(animations[0].play).not.toHaveBeenCalled();
+  });
+
+  it("restores waiting content before printing", () => {
+    document.body.innerHTML = '<div data-motion="rise">Financial details</div>';
+    bounds(document.querySelector("div")!);
+    cleanup = startSiteMotion();
+    window.dispatchEvent(new Event("beforeprint"));
+    expect(animations[0].cancel).toHaveBeenCalled();
+    expect(unobserve).toHaveBeenCalledWith(document.querySelector("div"));
   });
 
   it("leaves content usable when animation APIs are unavailable", () => {
