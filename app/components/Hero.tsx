@@ -63,6 +63,7 @@ export default function Hero() {
           </div>
           <div className="hero-signature">
             <span>Family-owned since 2005</span>
+            <span>Not PE-backed</span>
             <span>60+ spas across the U.S.</span>
           </div>
         </div>

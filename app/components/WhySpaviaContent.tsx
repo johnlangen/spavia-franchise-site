@@ -338,6 +338,31 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
+      {/* Ownership: family-owned vs private equity */}
+      <section className="bg-gray-50 py-16 px-6 brand-light">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-[var(--accent-text)] font-semibold mb-3">
+            Family-owned. Not PE-backed.
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Who owns your franchisor matters
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-6">
+            Many of the largest spa and massage franchises are now owned by
+            private equity firms, which typically buy to sell within three to
+            seven years. Spavia is still led by the family that founded it in
+            2005, so decisions get made for the long-term health of the brand
+            and its owners.
+          </p>
+          <Link
+            href="/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led"
+            className="text-sm font-semibold text-[var(--accent-text)] border-b border-[#b38a5f]/40 pb-0.5"
+          >
+            See who owns the big spa franchises →
+          </Link>
+        </div>
+      </section>
+
       {/* Related model pages */}
       <section className="bg-white py-12 px-6 border-t border-gray-100 brand-light">
         <div className="max-w-4xl mx-auto text-center">

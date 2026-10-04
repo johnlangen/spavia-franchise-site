@@ -249,7 +249,7 @@ export default function HomepageStory() {
       >
         <div className="site-container founder-story-grid">
           <div data-motion="rise">
-            <p className="eyebrow">Family-owned since 2005</p>
+            <p className="eyebrow">Family-owned since 2005. Not PE-backed.</p>
             <h2 className="display-heading">
               The people who started it
               <br />
@@ -258,20 +258,47 @@ export default function HomepageStory() {
             <p className="body-copy mt-5">
               Allison and Marty Langenderfer founded Spavia in Denver with a
               belief that resort-inspired wellness should feel within reach.
-              Today, that belief connects a nationwide community of locally
-              owned spas.
+              Many of the biggest names in spa and massage franchising are now
+              owned by private equity firms. Spavia isn’t. The family that
+              started it still leads it.
             </p>
-            <p className="body-copy mt-4">
-              You’ll meet the founders and national team as part of your
-              ownership process—and get to know the people behind the brand
-              you’re considering.
-            </p>
+            <div className="support-chapters">
+              <div>
+                <span>No exit clock</span>
+                <p>
+                  Private equity typically buys to sell within three to seven
+                  years. Spavia isn’t being built toward a flip.
+                </p>
+              </div>
+              <div>
+                <span>Aligned interests</span>
+                <p>
+                  Our success is tied to the long-term health of the brand and
+                  its owners, not a fund’s target return.
+                </p>
+              </div>
+              <div>
+                <span>Founders you can reach</span>
+                <p>
+                  You’ll meet the founders as part of your ownership process,
+                  and they’re still here after you open.
+                </p>
+              </div>
+            </div>
             <Link
               href="/who-we-are"
-              className="text-link mt-6"
+              className="text-link"
               data-track="cta_founders"
             >
               Meet the Spavia team <span aria-hidden="true">→</span>
+            </Link>
+            <Link
+              href="/blog/2026/06/16/spa-franchise-ownership-private-equity-vs-founder-led"
+              className="text-link mt-4"
+              data-track="cta_pe_ownership"
+            >
+              See who owns the big spa franchises{" "}
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
           <div className="founder-portraits">
