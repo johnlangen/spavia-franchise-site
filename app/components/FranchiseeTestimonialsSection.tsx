@@ -55,7 +55,7 @@ export default function FranchiseeTestimonialsSection() {
         </div>
         <div className="owner-perspectives-grid">
           {[testimonials[1], testimonials[4]].map((owner) => (
-            <figure key={owner.name}>
+            <figure key={owner.name} data-motion="rise">
               <blockquote>“{owner.text}”</blockquote>
               <figcaption>
                 <Image

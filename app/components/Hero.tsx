@@ -86,7 +86,7 @@ export default function Hero() {
         data-section="home_overview"
       >
         <div className="site-container home-overview-grid">
-          <div>
+          <div data-motion="rise">
             <p className="eyebrow">A business with substance</p>
             <h2 className="display-heading">
               A thoughtful first step.
@@ -99,7 +99,7 @@ export default function Hero() {
             </p>
           </div>
           <div>
-            <dl className="overview-facts">
+            <dl className="overview-facts" data-motion="rise">
               <div>
                 <dt>Total initial investment*</dt>
                 <dd>$479K–$885K</dd>

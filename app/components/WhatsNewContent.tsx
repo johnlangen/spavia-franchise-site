@@ -34,7 +34,7 @@ export default function WhatsNewContent() {
         {/* SWAY */}
         <section id="whats-next" className="py-20 px-6">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 md:h-[420px] rounded-sm overflow-hidden">
+            <div data-motion="photo" className="relative h-80 md:h-[420px] rounded-sm overflow-hidden">
               <Image
                 src="/media/sway-storefront.webp"
                 alt="Sway by Spavia storefront in Denver"
@@ -77,7 +77,7 @@ export default function WhatsNewContent() {
         <section className="py-20 px-6 bg-white brand-light">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-[auto_1fr] gap-10 items-center mb-14">
-              <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-sm overflow-hidden mx-auto md:mx-0">
+              <div data-motion="photo" className="relative w-44 h-44 md:w-56 md:h-56 rounded-sm overflow-hidden mx-auto md:mx-0">
                 <Image
                   src="/who-we-are/heather-holland.png"
                   alt="Heather Holland, Chief Operating Officer at Spavia"

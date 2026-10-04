@@ -102,7 +102,7 @@ export default function WhoWeAreContent() {
                 key={i}
                 className="bg-white rounded-sm transition p-6 max-w-[500px] mx-auto flex flex-col brand-light"
               >
-                <div className="w-full bg-gray-100 rounded-sm mb-4 overflow-hidden h-48 sm:h-72 brand-light">
+                <div data-motion="photo" className="w-full bg-gray-100 rounded-sm mb-4 overflow-hidden h-48 sm:h-72 brand-light">
                   <img
                     src={f.image}
                     alt={f.name}
@@ -138,6 +138,7 @@ export default function WhoWeAreContent() {
           >
             {team.map((member, i) => (
               <motion.div
+                data-motion="rise"
                 key={i}
                 initial={false}
                 whileInView={{ opacity: 1 }}

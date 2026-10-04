@@ -292,7 +292,7 @@ export default function YourSpaviaContent() {
 
           {/* Desktop — 3-col bento mosaic, hero top-left takes a 2x2 block */}
           <div className="hidden md:grid md:grid-cols-3 md:auto-rows-[260px] gap-4">
-            <Reveal className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-sm">
+            <Reveal variant="photo" className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-sm">
               <Image
                 src={galleryImages[0].src}
                 alt={galleryImages[0].alt}
@@ -304,6 +304,7 @@ export default function YourSpaviaContent() {
             {galleryImages.slice(1).map((img, i) => (
               <Reveal
                 key={img.src}
+                variant="photo"
                 delay={(i + 1) * 60}
                 className="relative overflow-hidden rounded-sm"
               >

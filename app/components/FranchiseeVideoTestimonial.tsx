@@ -115,7 +115,7 @@ export default function FranchiseeVideoTestimonial({
             />
             <span className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#b38a5f] shadow-lg transition-transform">
+              <span className="owner-play-icon flex h-20 w-20 items-center justify-center rounded-full bg-[#b38a5f] shadow-lg">
                 <Play
                   className="h-8 w-8 text-black translate-x-[2px]"
                   fill="currentColor"

@@ -12,7 +12,7 @@ export default function TalkToFounderSection() {
   return (
     <section className="section-space alisa-story" data-section="home_alisa">
       <div className="site-container alisa-grid">
-        <div className="alisa-portrait">
+        <div className="alisa-portrait" data-motion="photo">
           <Image
             src="/who-we-are/alisa-anderson.png"
             alt="Alisa Anderson, Vice President of Franchise Development at Spavia"
@@ -21,7 +21,7 @@ export default function TalkToFounderSection() {
             className="object-cover object-top"
           />
         </div>
-        <div>
+        <div data-motion="rise">
           <p className="eyebrow">Talk to Alisa</p>
           <h2 className="display-heading">
             A real conversation.

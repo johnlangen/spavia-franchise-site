@@ -1,0 +1,195 @@
+/* One calm motion vocabulary, shared across marketing pages and controls. */
+:root {
+  --ease-spavia: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The resting state is always the readable state, including without JavaScript. */
+.button {
+  transition: background-color 220ms ease, border-color 220ms ease,
+    color 220ms ease, transform 180ms var(--ease-spavia), box-shadow 220ms ease;
+}
+.button > [aria-hidden="true"],
+.text-link > [aria-hidden="true"] {
+  transition: transform 300ms var(--ease-spavia);
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.text-link {
+  position: relative;
+}
+.text-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms var(--ease-spavia);
+  pointer-events: none;
+}
+.text-link:focus-visible::after {
+  transform: scaleX(1);
+}
+.button:focus-visible > [aria-hidden="true"],
+.text-link:focus-visible > [aria-hidden="true"] {
+  transform: translateX(4px);
+}
+
+.nav-group > button svg {
+  transition: transform 240ms var(--ease-settle);
+}
+.nav-group > button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.nav-dropdown:not([hidden]),
+.mobile-navigation:not([hidden]) {
+  transform-origin: top;
+  animation: menu-arrive 240ms var(--ease-spavia);
+}
+.nav-dropdown a,
+.mobile-navigation a:not(.button) {
+  transition: color 180ms ease, background-color 180ms ease;
+}
+.nav-toggle {
+  transition: color 180ms ease, background-color 180ms ease;
+}
+.nav-toggle[aria-expanded="true"] {
+  background: #ffffff14;
+  color: #c9a57d;
+}
+@keyframes menu-arrive {
+  from { opacity: 0.7; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-list summary,
+.training-stages summary,
+.owner-film summary {
+  transition: color 200ms ease;
+}
+.faq-symbol::after {
+  transition: transform 260ms var(--ease-spavia);
+}
+.faq-list details[open] .faq-answer,
+.training-stages details[open] .training-stage-body {
+  animation: answer-arrive 260ms var(--ease-spavia);
+}
+@keyframes answer-arrive {
+  from { opacity: 0.6; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.overview-form[data-step="2"] .lead-fields,
+.long-lead-form[data-step="2"] form {
+  /* Opacity only: the newly focused field does not move under the keyboard. */
+  animation: form-arrive 220ms ease-out;
+}
+@keyframes form-arrive {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+.lead-fields input,
+.lead-fields select {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+.lead-fields input:focus,
+.lead-fields select:focus {
+  box-shadow: 0 0 0 4px #80624012;
+}
+.content-switch {
+  animation: content-arrive 320ms var(--ease-spavia);
+}
+@keyframes content-arrive {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+.concept-options button,
+.article-filters button,
+.market-report-card {
+  transition: border-color 220ms ease, background-color 220ms ease,
+    color 220ms ease, box-shadow 220ms ease;
+}
+.market-report-card:focus-within {
+  border-color: var(--gold);
+}
+.owner-play-icon {
+  transition: transform 350ms var(--ease-spavia), background-color 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:not(:disabled):hover > [aria-hidden="true"],
+  .text-link:hover > [aria-hidden="true"],
+  .service-story:hover .text-link > [aria-hidden="true"],
+  .article-card:hover .text-link > [aria-hidden="true"],
+  .featured-article:hover .text-link > [aria-hidden="true"] {
+    transform: translateX(4px);
+  }
+  .text-link:hover::after,
+  .service-story:hover .text-link::after,
+  .article-card:hover .text-link::after,
+  .featured-article:hover .text-link::after {
+    transform: scaleX(1);
+  }
+  .faq-list summary:hover,
+  .training-stages summary:hover {
+    color: var(--bronze);
+  }
+  .market-report-card:hover {
+    border-color: #b9a585;
+    box-shadow: 0 10px 25px #30251708;
+  }
+  button:hover .owner-play-icon {
+    transform: scale(1.06);
+    background-color: #c9a57d;
+  }
+}
+
+/* Small, scroll-linked drift for two spacious photographic moments. It never
+   affects document scrolling, text, forms, or mobile image framing. */
+@supports (animation-timeline: view()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    .home-hero-photo,
+    .story-photo-drift {
+      view-timeline-name: --photo;
+      view-timeline-axis: block;
+      overflow: hidden;
+    }
+    .home-hero-photo > img,
+    .story-photo-drift > img {
+      top: -3% !important;
+      height: 106% !important;
+      animation: photo-drift linear both;
+      animation-timeline: --photo;
+      animation-range: cover 0% cover 100%;
+    }
+    @keyframes photo-drift {
+      from { transform: translateY(-2.5%); }
+      to { transform: translateY(2.5%); }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown, .mobile-navigation, .faq-answer, .training-stage-body,
+  .lead-fields, .long-lead-form form, .content-switch {
+    animation: none !important;
+  }
+  .button, .text-link, .button > [aria-hidden="true"],
+  .text-link > [aria-hidden="true"], .text-link::after, .owner-play-icon,
+  .nav-group > button svg, .faq-symbol::after {
+    transition: none !important;
+  }
+  .button:active, .button > [aria-hidden="true"],
+  .text-link > [aria-hidden="true"], .owner-play-icon {
+    transform: none !important;
+  }
+}
+@media print {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

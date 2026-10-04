@@ -7,8 +7,10 @@ import AttributionTracker from "./components/AttributionTracker";
 import ChatWidget from "./components/ChatWidget";
 import EngagementTracking from "./components/EngagementTracking";
 import FloatingButton from "./components/FloatingButton";
+import SiteMotion from "./components/SiteMotion";
 import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
+import "./motion.css";
 
 const recoleta = localFont({
   src: [
@@ -143,11 +145,13 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <ThemeProvider>
-          {children}
-          <FloatingButton />
-          <ChatWidget />
-        </ThemeProvider>
+        <SiteMotion>
+          <ThemeProvider>
+            {children}
+            <FloatingButton />
+            <ChatWidget />
+          </ThemeProvider>
+        </SiteMotion>
       </body>
     </html>
   );

@@ -48,7 +48,7 @@ export default function BlogGrid() {
       </div>
       {!activeTag && (
         <Link href={featured.href} className="featured-article">
-          <div className="featured-article-image">
+          <div className="featured-article-image" data-motion="photo">
             <Image
               src={featured.image}
               alt={featured.title}
@@ -76,10 +76,10 @@ export default function BlogGrid() {
           ? `${filtered.length} articles on ${tagLabels[activeTag]}`
           : "More perspectives for your ownership decision"}
       </p>
-      <div className="article-grid">
+      <div className="article-grid content-switch" key={activeTag ?? "all"}>
         {filtered.map((post) => (
           <Link href={post.href} key={post.href} className="article-card">
-            <div className="article-card-image">
+            <div className="article-card-image" data-motion="photo">
               <Image
                 src={post.image}
                 alt={post.title}

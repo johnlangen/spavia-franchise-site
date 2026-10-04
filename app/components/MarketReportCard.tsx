@@ -27,7 +27,7 @@ export default function MarketReportCard({
         : "Proven demand";
 
   return (
-    <div className="bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow brand-light">
+    <div data-motion="rise" className="market-report-card bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden brand-light">
       {/* Header */}
       <div className="px-6 pt-6 pb-4 border-b border-gray-100">
         <div className="flex items-start justify-between gap-3">

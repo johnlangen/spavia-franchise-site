@@ -60,7 +60,7 @@ export default function ProcessSection() {
         </div>
         <ol className="ownership-steps">
           {steps.map((step, index) => (
-            <li key={step.title}>
+            <li key={step.title} data-motion="rise">
               <span className="step-number" aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </span>

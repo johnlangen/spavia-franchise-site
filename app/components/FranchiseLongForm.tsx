@@ -165,7 +165,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
   };
 
   return (
-    <div className="long-lead-form mx-auto max-w-3xl bg-white border border-gray-300 rounded-sm p-6 md:p-8 brand-light">
+    <div data-step={step} className="long-lead-form mx-auto max-w-3xl bg-white border border-gray-300 rounded-sm p-6 md:p-8 brand-light">
       <p className="form-progress" role="status">Step {step} of 2 — {step === 1 ? "Your contact details" : "Your ownership goals"}</p>
       <form
         onSubmit={step === 1 ? handleStep1 : handleSubmit}

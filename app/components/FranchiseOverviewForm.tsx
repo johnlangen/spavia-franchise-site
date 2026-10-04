@@ -188,6 +188,7 @@ export default function FranchiseOverviewForm({
     <div
       className={`overview-form${compact ? " overview-form-compact" : ""}`}
       data-section="overview_form"
+      data-step={step}
     >
       {!compactEmail && (
         <>

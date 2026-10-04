@@ -8,7 +8,7 @@ export default function HomepageStory() {
     <>
       <section className="section-space guest-story" data-section="home_model">
         <div className="site-container">
-          <div className="editorial-heading">
+          <div className="editorial-heading" data-motion="rise">
             <p className="eyebrow">
               The guest experience. The business behind it.
             </p>
@@ -29,7 +29,7 @@ export default function HomepageStory() {
               className="service-story"
               data-track="cta_massage_model"
             >
-              <div className="service-photo">
+              <div className="service-photo" data-motion="photo">
                 <Image
                   src="/media/signature-massage-candle.webp"
                   alt="A massage therapist delivers a customized Spavia treatment"
@@ -54,7 +54,7 @@ export default function HomepageStory() {
               className="service-story"
               data-track="cta_facial_model"
             >
-              <div className="service-photo">
+              <div className="service-photo" data-motion="photo">
                 <Image
                   src="/media/facial-fan-brush.webp"
                   alt="A Spavia esthetician applies a facial treatment"
@@ -73,7 +73,7 @@ export default function HomepageStory() {
                 Explore the facial business <span aria-hidden="true">→</span>
               </span>
             </Link>
-            <div className="membership-story">
+            <div className="membership-story" data-motion="rise">
               <p className="eyebrow">03 / Membership & more</p>
               <h3>
                 Build relationships,
@@ -104,7 +104,7 @@ export default function HomepageStory() {
         data-section="home_owner_story"
       >
         <div className="site-container owner-story-grid">
-          <div>
+          <div data-motion="rise">
             <p className="eyebrow">Meet the people doing it</p>
             <h2 className="display-heading">
               What does ownership
@@ -139,7 +139,7 @@ export default function HomepageStory() {
         data-section="home_investment"
       >
         <div className="site-container investment-story">
-          <div>
+          <div data-motion="rise">
             <p className="eyebrow">Know the investment</p>
             <h2 className="display-heading">
               A business decision.
@@ -162,7 +162,7 @@ export default function HomepageStory() {
               Considering multiple locations? <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="investment-numbers">
+          <div className="investment-numbers" data-motion="rise">
             <dl>
               <div>
                 <dt>Total initial investment · Item 7</dt>
@@ -192,7 +192,7 @@ export default function HomepageStory() {
         data-section="home_support"
       >
         <div className="site-container support-story-grid">
-          <figure>
+          <figure data-motion="photo" className="story-photo-drift">
             <Image
               src="/media/reception-guest-experience.webp"
               alt="A Spavia team member welcomes a guest at reception"
@@ -201,7 +201,7 @@ export default function HomepageStory() {
               className="object-cover"
             />
           </figure>
-          <div>
+          <div data-motion="rise">
             <p className="eyebrow">
               You bring the drive. We bring the experience.
             </p>
@@ -248,7 +248,7 @@ export default function HomepageStory() {
         data-section="home_founders"
       >
         <div className="site-container founder-story-grid">
-          <div>
+          <div data-motion="rise">
             <p className="eyebrow">Family-owned since 2005</p>
             <h2 className="display-heading">
               The people who started it
@@ -287,7 +287,7 @@ export default function HomepageStory() {
                 src: "/who-we-are/image1.png",
               },
             ].map((person) => (
-              <figure key={person.name}>
+              <figure key={person.name} data-motion="photo">
                 <div>
                   <Image
                     src={person.src}

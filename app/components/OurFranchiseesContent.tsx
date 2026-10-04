@@ -136,7 +136,7 @@ export default function OurFranchiseesContent() {
             </h2>
             <div className="owner-portraits">
               {testimonials.map((owner) => (
-                <figure key={owner.name}>
+                <figure key={owner.name} data-motion="rise">
                   <Image
                     src={owner.image}
                     alt={owner.name}

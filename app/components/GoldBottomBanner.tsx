@@ -6,7 +6,7 @@ export default function GoldBottomBanner() {
   return (
     <section className="closing-invitation" data-section="closing_invitation">
       <div className="site-container closing-grid">
-        <div className="closing-person">
+        <div className="closing-person" data-motion="rise">
           <Image
             src="/who-we-are/alisa-anderson.png"
             alt="Alisa Anderson, Spavia VP of Franchise Development"
