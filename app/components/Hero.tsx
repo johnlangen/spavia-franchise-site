@@ -67,7 +67,7 @@ export default function Hero() {
             <span>60+ spas across the U.S.</span>
           </div>
         </div>
-        <figure className="home-hero-photo">
+        <figure className="home-hero-photo" data-motion="photo">
           <Image
             src="/media/guest-robe-fireplace.webp"
             alt="A Spavia guest unwinds by the fireplace in a plush robe"

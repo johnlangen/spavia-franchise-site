@@ -15,11 +15,15 @@ export function startSiteMotion() {
   const playing = new Map<HTMLElement, Animation>();
   const selector = "[data-motion], main section h2, .franchise-article h2";
   const protectedArea =
-    "#hero, nav, form, [data-motion-static], .overview-form, .long-lead-form, [role=dialog]";
+    "nav, form, [data-motion-static], .overview-form, .long-lead-form, [role=dialog]";
   let frame = 0;
+  // Use pixels: IntersectionObserver percentage margins resolve against width,
+  // which would make the trigger much shallower on a portrait phone.
+  let entryInset = Math.round(window.innerHeight * 0.2);
 
   const protect = (element: HTMLElement) =>
     element.closest(protectedArea) ||
+    (element.closest("#hero") && !element.matches(".home-hero-photo")) ||
     element.querySelector("form, input, select, textarea") ||
     element.contains(document.activeElement);
 
@@ -31,7 +35,7 @@ export function startSiteMotion() {
     seen.add(element);
   };
 
-  const observer = new IntersectionObserver(
+  const createObserver = () => new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
@@ -46,24 +50,24 @@ export function startSiteMotion() {
         const photo = element.dataset.motion === "photo";
         const delay = Math.min(
           Math.max(Number(element.dataset.motionDelay) || 0, 0),
-          mobile ? 40 : 140,
+          mobile ? 100 : 200,
         );
         // Nothing is hidden while waiting for JS, an observer or a delayed animation.
         // The animation owns its temporary appearance and releases it when finished.
         const keyframes = photo
           ? [
-              { clipPath: "inset(5% 0 0 0)", opacity: 0.65 },
+              { clipPath: "inset(10% 7% 10% 7%)", opacity: 0.3 },
               { clipPath: "inset(0 0 0 0)", opacity: 1 },
             ]
           : [
-              { transform: `translate3d(0, ${mobile ? 10 : 18}px, 0)`, opacity: 0.35 },
+              { transform: `translate3d(0, ${mobile ? 32 : 44}px, 0)`, opacity: 0.15 },
               { transform: "translate3d(0, 0, 0)", opacity: 1 },
             ];
         try {
           const animation = element.animate(keyframes, {
-            duration: mobile ? 380 : photo ? 760 : 560,
+            duration: photo ? 1300 : 1050,
             delay,
-            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+            easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             fill: "backwards",
           });
           playing.set(element, animation);
@@ -73,12 +77,20 @@ export function startSiteMotion() {
         }
       }
     },
-    { threshold: 0, rootMargin: "0px 0px -24px 0px" },
+    { threshold: 0, rootMargin: `0px 0px -${entryInset}px 0px` },
   );
+  let observer = createObserver();
 
   const scan = () => {
     frame = 0;
     if (preference.matches) return;
+    const nextInset = Math.round(window.innerHeight * 0.2);
+    if (nextInset !== entryInset) {
+      entryInset = nextInset;
+      observer.disconnect();
+      observer = createObserver();
+      for (const element of watched) observer.observe(element);
+    }
     for (const element of watched) {
       if (!element.isConnected) {
         observer.unobserve(element);
@@ -133,6 +145,7 @@ export function startSiteMotion() {
   mutations.observe(document.body, { childList: true, subtree: true });
   document.addEventListener("focusin", focus);
   document.addEventListener("visibilitychange", visibility);
+  window.addEventListener("resize", scheduleScan, { passive: true });
   preference.addEventListener("change", preferenceChanged);
   scan();
 
@@ -144,6 +157,7 @@ export function startSiteMotion() {
     watched.clear();
     document.removeEventListener("focusin", focus);
     document.removeEventListener("visibilitychange", visibility);
+    window.removeEventListener("resize", scheduleScan);
     preference.removeEventListener("change", preferenceChanged);
   };
 }

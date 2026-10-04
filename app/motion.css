@@ -147,27 +147,30 @@
   }
 }
 
-/* Small, scroll-linked drift for two spacious photographic moments. It never
-   affects document scrolling, text, forms, or mobile image framing. */
+/* Photography moves with the visitor's scroll, including on phones. The image
+   stays inside its frame; text, forms and document scrolling never move with it.
+   Browsers without view timelines still get the shared photo entrance. */
 @supports (animation-timeline: view()) {
-  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) {
     .home-hero-photo,
+    .service-photo,
     .story-photo-drift {
       view-timeline-name: --photo;
       view-timeline-axis: block;
       overflow: hidden;
     }
     .home-hero-photo > img,
+    .service-photo > img,
     .story-photo-drift > img {
-      top: -3% !important;
-      height: 106% !important;
+      top: -6% !important;
+      height: 112% !important;
       animation: photo-drift linear both;
       animation-timeline: --photo;
       animation-range: cover 0% cover 100%;
     }
     @keyframes photo-drift {
-      from { transform: translateY(-2.5%); }
-      to { transform: translateY(2.5%); }
+      from { transform: translateY(-5%); }
+      to { transform: translateY(5%); }
     }
   }
 }

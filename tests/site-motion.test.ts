@@ -5,6 +5,7 @@ class Preference extends EventTarget {
   matches = false;
 }
 let preference: Preference;
+let phone: { matches: boolean };
 let intersection: (entries: Partial<IntersectionObserverEntry>[]) => void;
 let mutation: () => void;
 let cleanup: (() => void) | undefined;
@@ -12,8 +13,9 @@ const observe = vi.fn();
 const unobserve = vi.fn();
 const disconnect = vi.fn();
 const frames: FrameRequestCallback[] = [];
+const observerOptions: IntersectionObserverInit[] = [];
 const animations: { cancel: ReturnType<typeof vi.fn>; onfinish: (() => void) | null; oncancel: (() => void) | null }[] = [];
-const animate = vi.fn(() => {
+const animate = vi.fn<(keyframes: Keyframe[], options: KeyframeAnimationOptions) => (typeof animations)[number]>(() => {
   const animation = { cancel: vi.fn(), onfinish: null, oncancel: null };
   animations.push(animation);
   return animation;
@@ -33,16 +35,21 @@ beforeEach(() => {
   vi.clearAllMocks();
   document.body.innerHTML = "";
   frames.length = animations.length = 0;
+  observerOptions.length = 0;
   preference = new Preference();
+  phone = { matches: false };
   vi.stubGlobal("innerHeight", 800);
   vi.stubGlobal("matchMedia", vi.fn((query: string) =>
-    query.includes("reduced-motion") ? preference : { matches: false },
+    query.includes("reduced-motion") ? preference : phone,
   ));
   vi.stubGlobal("IntersectionObserver", class {
     observe = observe;
     unobserve = unobserve;
     disconnect = disconnect;
-    constructor(callback: typeof intersection) { intersection = callback; }
+    constructor(callback: typeof intersection, options: IntersectionObserverInit) {
+      intersection = callback;
+      observerOptions.push(options);
+    }
   });
   vi.stubGlobal("MutationObserver", class {
     observe = vi.fn();
@@ -90,6 +97,50 @@ describe("motion preserves access to the franchise content", () => {
     expect(animate).toHaveBeenCalledTimes(1);
     expect(unobserve).toHaveBeenCalledWith(story);
     expect(story.style.opacity).toBe("");
+  });
+
+  it("gives a phone story visible travel and a full second inside the viewport", () => {
+    phone.matches = true;
+    document.body.innerHTML = '<div data-motion="rise">A story worth noticing</div>';
+    const story = bounds(document.querySelector("div")!);
+    cleanup = startSiteMotion();
+    // On an 800px-tall phone, start at 640px rather than the old 776px edge.
+    expect(observerOptions[0].rootMargin).toBe("0px 0px -160px 0px");
+    enter(story);
+    const [keyframes, options] = animate.mock.calls[0];
+    expect(options.duration).toBeGreaterThanOrEqual(1000);
+    expect(keyframes[0].transform).toBe("translate3d(0, 32px, 0)");
+    expect(story.style.opacity).toBe("");
+  });
+
+  it("allows the offscreen mobile hero photo to enter while keeping Alisa and email immediate", () => {
+    phone.matches = true;
+    document.body.innerHTML = `<section id="hero">
+      <div data-motion="rise">Alisa</div>
+      <form><input aria-label="Email" /></form>
+      <figure class="home-hero-photo" data-motion="photo">Guest experience</figure>
+    </section>`;
+    document.querySelectorAll("[data-motion]").forEach((element) => bounds(element));
+    const photo = document.querySelector("figure")!;
+    cleanup = startSiteMotion();
+    expect(observe).toHaveBeenCalledTimes(1);
+    expect(observe).toHaveBeenCalledWith(photo);
+    enter(photo);
+    expect(animate.mock.calls[0][1].duration).toBe(1300);
+    expect(document.querySelector("form")?.getAttribute("style")).toBeNull();
+  });
+
+  it("keeps the entry position proportional after a viewport resize", () => {
+    document.body.innerHTML = '<div data-motion="rise">Story</div>';
+    const story = bounds(document.querySelector("div")!);
+    cleanup = startSiteMotion();
+    vi.stubGlobal("innerHeight", 1000);
+    window.dispatchEvent(new Event("resize"));
+    frames.shift()?.(0);
+    expect(observerOptions.at(-1)?.rootMargin).toBe("0px 0px -200px 0px");
+    expect(observe).toHaveBeenLastCalledWith(story);
+    enter(story);
+    expect(animate).toHaveBeenCalledTimes(1);
   });
 
   it("does not animate a heading again inside an already animated story", () => {

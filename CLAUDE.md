@@ -77,7 +77,7 @@ app/
 - Tailwind utilities preferred. Some inline styles for theme-dynamic colors (`var(--accent)`)
 - FranchiseLongForm uses `<style jsx>` for form-specific classes — keep as-is
 - Use normal document scrolling and visible content. Prefer still photography, deliberate video playback, native FAQ details and directly visible owner proof over autoplay or rotating carousels.
-- Motion lives in `app/motion.css` and `app/lib/siteMotion.ts`, mounted by `SiteMotion`. Use `data-motion="rise"` for story groups and `data-motion="photo"` for photography (or `Reveal`). Section headings share the observer automatically; avoid nested entrances. Content is visible by default, entrances run once only for initially offscreen content, and the hero/forms stay immediately usable. Preserve reduced-motion, keyboard-focus and route-cleanup behavior; never use hidden initial styles for lead capture.
+- Motion lives in `app/motion.css` and `app/lib/siteMotion.ts`, mounted by `SiteMotion`. Use `data-motion="rise"` for story groups and `data-motion="photo"` for photography (or `Reveal`). Section headings share the observer automatically; avoid nested entrances. Content is visible by default. Entrances run once when initially offscreen content reaches 80% of viewport height, lasting 1.05–1.3 seconds on both phones and desktop. The homepage photo can enter below the mobile fold; hero copy, Alisa and forms stay immediately usable. Featured photography has scroll-linked movement where view timelines are supported. Preserve reduced-motion, keyboard-focus and route-cleanup behavior; never use hidden initial styles for lead capture.
 
 ### Content Pages
 - Each core page has a `*Content.tsx` client component in /components/ that contains all the page UI
