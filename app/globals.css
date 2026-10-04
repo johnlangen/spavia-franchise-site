@@ -179,12 +179,12 @@ summary {
   margin-inline: auto;
 }
 .home-hero-copy {
-  padding: clamp(52px, 5vw, 80px) max(48px, calc((100vw - 1224px) / 2));
+  padding: clamp(32px, 3vw, 48px) max(48px, calc((100vw - 1224px) / 2));
   padding-right: 50px;
   align-self: center;
 }
 .home-hero h1 {
-  font-size: clamp(43px, 4.1vw, 65px);
+  font-size: clamp(40px, 3.6vw, 56px);
   font-weight: 400;
   line-height: 1.08;
 }
@@ -198,6 +198,31 @@ summary {
   font-size: 17px;
   line-height: 1.75;
 }
+.hero-contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.hero-contact img {
+  width: 64px;
+  height: 76px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+.hero-contact-name {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+.hero-contact-message {
+  margin-top: 4px;
+}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -205,11 +230,14 @@ summary {
   gap: 15px 24px;
   margin-top: 28px;
 }
+.home-hero .hero-actions {
+  margin-top: 16px;
+}
 .hero-signature {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 18px;
-  margin-top: 36px;
+  margin-top: 22px;
   padding-top: 20px;
   border-top: 1px solid #dedede;
   font-size: 11px;
@@ -281,6 +309,23 @@ summary {
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 14px 44px #30251708;
+}
+.hero-overview {
+  margin-top: 24px;
+  max-width: 480px;
+}
+.overview-form.overview-form-compact {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.hero-form-qualification {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 .form-heading .eyebrow {
   margin-bottom: 8px;
@@ -432,7 +477,7 @@ summary {
     flex-direction: column;
   }
   .home-hero-copy {
-    padding: 38px 24px 28px;
+    padding: 28px 24px;
     align-self: stretch;
   }
   .home-hero h1 {
@@ -1009,9 +1054,6 @@ summary {
   }
   .closing-grid .display-heading {
     font-size: 32px;
-  }
-  .home-overview-grid > .overview-form {
-    order: -1;
   }
 }
 @media (max-width: 450px) {

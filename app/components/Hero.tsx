@@ -25,18 +25,34 @@ export default function Hero() {
             </span>
           </h1>
           <p className="home-hero-description">
-            A day spa franchise built around massage, facials and the feeling
-            that brings guests back. Bring accessible luxury to your
-            community—with a family-owned brand beside you.
+            Bring accessible luxury to your community with a family-owned day
+            spa brand.
           </p>
+          <div className="hero-contact">
+            <Image
+              src="/who-we-are/alisa-anderson.png"
+              alt="Alisa Anderson"
+              width={64}
+              height={76}
+              sizes="64px"
+              priority
+            />
+            <div>
+              <p className="hero-contact-name">Meet Alisa Anderson</p>
+              <p>VP of Franchise Development</p>
+              <p className="hero-contact-message">
+                Your guide to Spavia ownership.
+              </p>
+            </div>
+          </div>
+          <div id="franchise-overview" className="hero-overview">
+            <FranchiseOverviewForm
+              leadSource="homepage-hero"
+              formType="hero"
+              compact
+            />
+          </div>
           <div className="hero-actions">
-            <a
-              href="#franchise-overview"
-              className="button button-primary"
-              data-track="cta_overview"
-            >
-              Get the Franchise Overview <span aria-hidden="true">→</span>
-            </a>
             <Link
               href="/franchise-cost"
               className="text-link"
@@ -66,7 +82,6 @@ export default function Hero() {
         </figure>
       </section>
       <section
-        id="franchise-overview"
         className="home-overview"
         data-section="home_overview"
       >
@@ -78,9 +93,12 @@ export default function Hero() {
               <br />A clearer picture.
             </h2>
             <p className="body-copy mt-5 max-w-lg">
-              Start with the essentials: what you’re building, what it takes to
-              open and the team that will help you get there.
+              A day spa franchise built around massage, facials and the feeling
+              that brings guests back. Explore what it takes to open and the
+              team that will help you get there.
             </p>
+          </div>
+          <div>
             <dl className="overview-facts">
               <div>
                 <dt>Total initial investment*</dt>
@@ -107,7 +125,6 @@ export default function Hero() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <FranchiseOverviewForm leadSource="homepage-hero" formType="hero" />
         </div>
       </section>
     </>

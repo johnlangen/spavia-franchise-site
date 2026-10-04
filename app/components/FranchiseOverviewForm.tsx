@@ -7,12 +7,14 @@ import { getAttribution } from "../lib/attribution";
 interface Props {
   leadSource?: string;
   formType?: "hero" | "landing" | "intro";
+  compact?: boolean;
 }
 
-/** One presentation for the existing email-first lead flow. API contracts stay unchanged. */
+/** Shared email-first lead flow, with a compact entry for the homepage hero. */
 export default function FranchiseOverviewForm({
   leadSource,
   formType = "intro",
+  compact = false,
 }: Props) {
   const router = useRouter();
   const id = useId();
@@ -174,18 +176,30 @@ export default function FranchiseOverviewForm({
     if (step === 2) firstNameRef.current?.focus();
   }, [step]);
 
+  const compactEmail = compact && step === 1;
+  const qualification = (
+    <p className={compactEmail ? "hero-form-qualification" : "form-qualification"}>
+      Candidates need <strong>$200K+ liquid capital</strong> and{" "}
+      <strong>$500K+ net worth.</strong>
+    </p>
+  );
+
   return (
-    <div className="overview-form" data-section="overview_form">
-      <div className="form-heading">
-        <p className="eyebrow">Your next chapter</p>
-        <h2>Get the franchise overview</h2>
-        <p>Explore the investment, the model and your market with Alisa.</p>
-      </div>
-      <p className="form-qualification">
-        Candidates need <strong>$200K+ liquid capital</strong> and{" "}
-        <strong>$500K+ net worth.</strong>
-      </p>
-      <p className="form-progress" role="status">
+    <div
+      className={`overview-form${compact ? " overview-form-compact" : ""}`}
+      data-section="overview_form"
+    >
+      {!compactEmail && (
+        <>
+          <div className="form-heading">
+            <p className="eyebrow">Your next chapter</p>
+            <h2>Get the franchise overview</h2>
+            <p>Explore the investment, the model and your market with Alisa.</p>
+          </div>
+          {qualification}
+        </>
+      )}
+      <p className={compactEmail ? "sr-only" : "form-progress"} role="status">
         Step {step} of 2 <span aria-hidden="true">—</span>{" "}
         {step === 1 ? "Your email" : "A little about you"}
       </p>
@@ -212,7 +226,9 @@ export default function FranchiseOverviewForm({
             <span aria-hidden="true">→</span>
           </button>
           <p className="form-note">
-            No obligation. Complete the next step so we can follow up.
+            {compactEmail
+              ? "Step 1 of 2. No obligation."
+              : "No obligation. Complete the next step so we can follow up."}
           </p>
         </form>
       ) : (
@@ -313,6 +329,7 @@ export default function FranchiseOverviewForm({
           </p>
         </form>
       )}
+      {compactEmail && qualification}
     </div>
   );
 }

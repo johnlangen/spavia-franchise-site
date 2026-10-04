@@ -64,7 +64,11 @@ describe("working lead capture contracts", () => {
     "preserves %s source, partial save, attribution and successful conversions",
     async (formType, leadSource) => {
       render(
-        <FranchiseOverviewForm leadSource={leadSource} formType={formType} />,
+        <FranchiseOverviewForm
+          leadSource={leadSource}
+          formType={formType}
+          compact={formType === "hero"}
+        />,
       );
       const user = await enterDetails();
       expect(document.activeElement).toBe(
