@@ -1888,3 +1888,106 @@ summary {
   .page-hero-aside dd { font-size:25px; }
 }
 @media (min-width:1024px) { .landing-overview-link { display:none; } }
+
+/* Homepage video hero: the simple, numbers-first layout that ran during the
+   best qualified-lead stretch (Jul to Sep 2026). */
+.video-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+}
+.video-hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.video-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.78), rgb(0 0 0 / 0.5) 55%, rgb(0 0 0 / 0.35));
+}
+.video-hero-inner {
+  max-width: 1224px;
+  margin-inline: auto;
+  padding: clamp(28px, 6vw, 88px) 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  grid-template-areas: "copy form" "proof form";
+  column-gap: 56px;
+  row-gap: 24px;
+  align-items: start;
+}
+.video-hero-copy { grid-area: copy; align-self: end; }
+.video-hero-form { grid-area: form; align-self: center; }
+.video-hero-proof { grid-area: proof; }
+.video-hero .hero-intent { color: #d8b78f; }
+.video-hero h1 {
+  font-family: var(--font-recoleta), Georgia, serif;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.05;
+  margin-top: 10px;
+}
+.video-hero-big {
+  margin-top: 18px;
+  font-family: var(--font-recoleta), Georgia, serif;
+  font-size: clamp(64px, 11vw, 132px);
+  line-height: 0.95;
+  color: #d8b78f;
+}
+.video-hero-big span {
+  display: block;
+  margin-top: 6px;
+  font-family: inherit;
+  font-size: clamp(16px, 2vw, 22px);
+  color: #fff;
+}
+.video-hero-sub {
+  margin-top: 16px;
+  max-width: 520px;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.6;
+  color: rgb(255 255 255 / 0.86);
+}
+.video-hero-form .overview-form {
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 6px;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 0.35);
+}
+.video-hero-proof ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14px;
+  color: rgb(255 255 255 / 0.8);
+}
+.video-hero-proof strong { color: #fff; font-weight: 600; }
+.video-hero-proof p {
+  margin-top: 12px;
+  max-width: 560px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 0.55);
+}
+.video-hero-proof a { color: #d8b78f; text-decoration: underline; }
+@media (max-width: 900px) {
+  .video-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "form" "proof";
+    row-gap: 18px;
+  }
+  .video-hero-scrim { background: rgb(0 0 0 / 0.62); }
+  .video-hero-big { margin-top: 10px; }
+  .video-hero-sub { margin-top: 8px; }
+  .video-hero-form .overview-form { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-hero-video { display: none; }
+}
