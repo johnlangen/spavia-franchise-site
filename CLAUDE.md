@@ -42,7 +42,7 @@ app/
   components/
     NavBar.tsx           # Sticky nav, hamburger below lg (1024px)
     Footer.tsx
-    Hero.tsx             # Still-photo introduction, intent-aware copy and overview section
+    Hero.tsx             # Homepage video hero (Own a Day Spa Franchise, big $1.1M median, form beside it) + overview section
     Breadcrumbs.tsx      # Reusable breadcrumbs + BreadcrumbList JSON-LD
     FranchiseOverviewForm.tsx # Shared 2-step short form (email -> details)
     FranchiseIntroForm.tsx  # Section wrapper for the shared short form
@@ -77,6 +77,7 @@ app/
 - Tailwind utilities preferred. Some inline styles for theme-dynamic colors (`var(--accent)`)
 - FranchiseLongForm uses `<style jsx>` for form-specific classes — keep as-is
 - Use normal document scrolling and visible content. Prefer still photography, deliberate video playback, native FAQ details and directly visible owner proof over autoplay or rotating carousels.
+- Exception, by John's decision (10/7/2026): the homepage hero is a muted autoplay background video with a numbers-first message (big $1.1M median gross sales, $1M+ owners line, FDD footnote) and the form beside it. That layout matches the Jul to Sep 2026 stretch that produced the most qualified leads. Keep it simple; don't move Alisa or other content back into the hero or soften the numbers without checking lead data.
 - Motion lives in `app/motion.css` and `app/lib/siteMotion.ts`, mounted by `SiteMotion`. Use `data-motion="rise"` for story groups and `data-motion="photo"` for photography (or `Reveal`). Section headings share the observer automatically; avoid nested entrances. Content is visible by default. Entrances run once when initially offscreen content reaches 80% of viewport height, lasting 1.05–1.3 seconds on both phones and desktop. The homepage photo can enter below the mobile fold; hero copy, Alisa and forms stay immediately usable. Featured photography has scroll-linked movement where view timelines are supported. Preserve reduced-motion, keyboard-focus and route-cleanup behavior; never use hidden initial styles for lead capture.
 
 ### Content Pages
