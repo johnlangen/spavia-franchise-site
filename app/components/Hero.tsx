@@ -25,8 +25,9 @@ export default function Hero() {
             </span>
           </h1>
           <p className="home-hero-description">
-            Bring accessible luxury to your community with a family-owned day
-            spa brand.
+            Join 60+ owners building day spas with{" "}
+            <strong>$1.1M median gross sales.*</strong> A family-owned brand
+            with recurring membership revenue.
           </p>
           <div className="hero-contact">
             <Image
@@ -66,6 +67,10 @@ export default function Hero() {
             <span>Not PE-backed</span>
             <span>60+ spas across the U.S.</span>
           </div>
+          <p className="fine-print hero-fine-print">
+            *$1,110,481 median 2025 cash receipts (gross sales) at 44 reporting franchised
+            locations, 2026 FDD Item 19, Part III. Results vary.
+          </p>
         </div>
         <figure className="home-hero-photo" data-motion="photo">
           <Image

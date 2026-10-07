@@ -191,6 +191,10 @@ summary {
 .home-hero h1 span {
   color: #777777;
 }
+.hero-fine-print {
+  margin-top: 12px;
+  font-size: 11px;
+}
 .home-hero-description {
   max-width: 510px;
   margin-top: 25px;
