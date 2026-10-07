@@ -191,6 +191,30 @@ summary {
 .home-hero h1 span {
   color: #777777;
 }
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 510px;
+  margin-top: 18px;
+  padding-block: 12px;
+  border-block: 1px solid #dedede;
+}
+.hero-stats dt {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-stats dd {
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+@media (max-width: 400px) {
+  .hero-stats dd { font-size: 15px; }
+}
 .hero-fine-print {
   margin-top: 12px;
   font-size: 11px;

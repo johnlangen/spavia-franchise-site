@@ -29,6 +29,20 @@ export default function Hero() {
             <strong>$1.1M median gross sales.*</strong> A family-owned brand
             with recurring membership revenue.
           </p>
+          <dl className="hero-stats">
+            <div>
+              <dt>Median gross sales*</dt>
+              <dd>$1,110,481</dd>
+            </div>
+            <div>
+              <dt>Owners above $1M*</dt>
+              <dd>1 in 2</dd>
+            </div>
+            <div>
+              <dt>Initial investment</dt>
+              <dd>$479K–$885K</dd>
+            </div>
+          </dl>
           <div className="hero-contact">
             <Image
               src="/who-we-are/alisa-anderson.png"
@@ -68,8 +82,9 @@ export default function Hero() {
             <span>60+ spas across the U.S.</span>
           </div>
           <p className="fine-print hero-fine-print">
-            *$1,110,481 median 2025 cash receipts (gross sales) at 44 reporting franchised
-            locations, 2026 FDD Item 19, Part III. Results vary.
+            *2026 FDD Item 19, Part III: $1,110,481 median 2025 cash receipts
+            (gross sales) at 44 reporting franchised locations, so at least half
+            exceeded $1M. Investment per Item 7. Results vary.
           </p>
         </div>
         <figure className="home-hero-photo" data-motion="photo">
