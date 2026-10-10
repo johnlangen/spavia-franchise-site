@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect,useRef,useState } from "react";
 import { getAttribution } from "../lib/attribution";
+import { trackMeta } from "../lib/metaPixel";
 import Button from "./Button";
 
 declare global {
@@ -122,6 +123,13 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
         const liquidQualified = liquidAssets === "$200K - $500K" ||
           liquidAssets === "$500K - $1MM" ||
           liquidAssets === "$1MM+";
+        trackMeta("Lead", { content_name: "long" });
+        if (
+          liquidQualified &&
+          (netWorth === "$500K - $700K" || netWorth === "$700K +")
+        ) {
+          trackMeta("QualifiedLead", { value: 100, currency: "USD" }, true);
+        }
         // Fire Google Ads conversion
         if (typeof window.gtag === "function") {
           window.gtag("event", "conversion", {

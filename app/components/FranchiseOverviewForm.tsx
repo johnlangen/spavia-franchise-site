@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useId } from "react";
 import { useRouter } from "next/navigation";
 import { getAttribution } from "../lib/attribution";
+import { trackMeta } from "../lib/metaPixel";
 
 interface Props {
   leadSource?: string;
@@ -156,6 +157,14 @@ export default function FranchiseOverviewForm({
               currency: "USD",
             });
           }
+        }
+        trackMeta("Lead", { content_name: formType });
+        if (
+          liquidTier === "$200K - $500K" ||
+          liquidTier === "$500K - $1MM" ||
+          liquidTier === "$1MM+"
+        ) {
+          trackMeta("QualifiedLead", { value: 100, currency: "USD" }, true);
         }
         router.push("/thank-you");
         return;

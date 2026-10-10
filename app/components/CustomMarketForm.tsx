@@ -5,6 +5,7 @@ import { CheckCircle,MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { getAttribution } from "../lib/attribution";
+import { trackMeta } from "../lib/metaPixel";
 
 declare global {
   interface Window {
@@ -82,6 +83,7 @@ export default function CustomMarketForm() {
       });
 
       if (res.ok) {
+        trackMeta("Lead", { content_name: "custom_market" });
         if (typeof window.gtag === "function") {
           window.gtag("event", "conversion", {
             send_to: "AW-944657062/OhOICIf4y_cbEKalucID",

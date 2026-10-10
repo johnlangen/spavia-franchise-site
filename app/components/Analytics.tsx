@@ -1,7 +1,8 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { trackMeta } from "../lib/metaPixel";
 
 declare global {
   interface Window {
@@ -14,6 +15,16 @@ const GA_ID = "G-6N6Q7GX5D4";
 export default function Analytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const firstView = useRef(true);
+
+  useEffect(() => {
+    // The pixel snippet records the first PageView; track later route changes.
+    if (firstView.current) {
+      firstView.current = false;
+      return;
+    }
+    trackMeta("PageView");
+  }, [pathname, searchParams]);
 
   useEffect(() => {
     if (typeof window.gtag !== "function") return;
