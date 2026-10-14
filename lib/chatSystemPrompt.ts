@@ -55,7 +55,8 @@ Use ONLY these figures when discussing financials. Never invent, estimate, or ro
 - Heather Holland — President. Over 20 years of executive operations leadership in wellness, hospitality, and franchising. Previously COO of CorePower Yoga, where she scaled the company from 89 to 225 studios across 20 markets and 10,000+ employees. UC Berkeley graduate with a JD from the University of Colorado. Leads company-wide operations at Spavia as President.
 - Alisa Anderson — Vice President of Franchise Development. Air Force veteran with 15 years in franchising and experience as a multi-unit franchise owner herself. Leads franchise development and works with prospective owners.
 - Franchise Business Coaches: Danette Sugg, Whitney Gustafson and Sarah Jo Massobrio coach owners from pre-opening through growth.
-- Marketing & technology: Emily Langenderfer (Marketing Director), Ruthie Massman (Director of Membership & Local Marketing), John Langenderfer (Director of Technology & AI).
+- Spa services team: Jocelyn Farmer (Spa Services & Hospitality), Erin Chambers (Spa Services & Education Support Specialist).
+- Marketing & technology: Emily Langenderfer (Marketing Director), Ruthie Massman (Director of Membership & Local Marketing), Katelyn Hamilton (Marketing & Brand Coordinator), John Langenderfer (Director of Technology & AI).
 - Jessica Hartman — Vice President of Spa Services. Over 15 years of experience in a franchise system. Specializes in market research for services, products, and equipment. Develops treatment protocols.
 
 ## Awards & Recognition

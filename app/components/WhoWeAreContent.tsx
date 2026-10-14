@@ -106,6 +106,24 @@ const supportGroups = [
     ],
   },
   {
+    title: "Spa Services",
+    intro: "The team behind your treatments, protocols and spa training, working alongside our VP of Spa Services.",
+    people: [
+      {
+        name: "Jocelyn Farmer",
+        role: "Spa Services & Hospitality",
+        image: "/who-we-are/jocelyn-farmer.jpg",
+        bio: "Jocelyn helps every spa deliver Spavia's signature hospitality, building onboarding and training for spa teams and supporting owners on service standards. She also leads day-to-day operations at our Sway Wellness Spas in Denver.",
+      },
+      {
+        name: "Erin Chambers",
+        role: "Spa Services & Education Support Specialist",
+        image: "/who-we-are/erin-chambers.jpg",
+        bio: "Erin keeps the details behind every treatment running smoothly, updating service protocols and Spastream training content and building opening checklists so new owners launch with everything they need.",
+      },
+    ],
+  },
+  {
     title: "Marketing & Technology",
     intro: "The national team behind your brand, your local launch and the tools you run your spa on.",
     people: [
@@ -120,6 +138,12 @@ const supportGroups = [
         role: "Director of Membership & Local Marketing",
         image: "/who-we-are/ruthie-massman.jpg",
         bio: "A Colorado native with more than 20 years across wellness, fitness and hospitality, Ruthie helps owners fill their spas from day one with pre-opening launch plans, founding membership campaigns, local partnerships and in-spa marketing.",
+      },
+      {
+        name: "Katelyn Hamilton",
+        role: "Marketing & Brand Coordinator",
+        image: "/who-we-are/katelyn-hamilton.jpg",
+        bio: "Katelyn creates the marketing assets and videos behind the Spavia brand and helps owners get the most from our marketing platforms while keeping brand standards consistent across every location.",
       },
       {
         name: "John Langenderfer",
@@ -233,7 +257,7 @@ export default function WhoWeAreContent() {
               <div key={group.title}>
                 <h3 className="text-xl font-bold text-center">{group.title}</h3>
                 <p className="text-center text-sm text-gray-600 mt-1 mb-8 font-sans">{group.intro}</p>
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className={`grid gap-8 sm:grid-cols-2 ${group.people.length === 4 ? "lg:grid-cols-4" : group.people.length === 2 ? "max-w-3xl mx-auto" : "lg:grid-cols-3"}`}>
                   {group.people.map((p) => (
                     <div key={p.name} data-motion="rise" className="flex flex-col items-center text-center">
                       <div className="w-36 h-36 rounded-full overflow-hidden bg-gray-100 mb-4 border border-[#b38a5f]/60">
