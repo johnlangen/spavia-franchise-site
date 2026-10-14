@@ -56,7 +56,7 @@ const team = [
   {
     name: "Alisa Anderson",
     role: "Vice President of Franchise Development",
-    image: "/who-we-are/alisa-anderson.png",
+    image: "/who-we-are/alisa-anderson.jpg",
     objectPosition: "center 30%",
     bio: `Alisa brings 30 years in sales, marketing, and business development, including 15 years in franchising and time as a multi-unit franchise owner herself. A U.S. Air Force veteran, she has spent her career helping brands grow and helping entrepreneurs become owners.
 

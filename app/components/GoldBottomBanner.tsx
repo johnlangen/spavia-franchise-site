@@ -8,7 +8,7 @@ export default function GoldBottomBanner() {
       <div className="site-container closing-grid">
         <div className="closing-person" data-motion="rise">
           <Image
-            src="/who-we-are/alisa-anderson.png"
+            src="/who-we-are/alisa-anderson.jpg"
             alt="Alisa Anderson, Spavia VP of Franchise Development"
             width={112}
             height={136}

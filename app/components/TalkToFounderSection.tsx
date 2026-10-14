@@ -14,7 +14,7 @@ export default function TalkToFounderSection() {
       <div className="site-container alisa-grid">
         <div className="alisa-portrait" data-motion="photo">
           <Image
-            src="/who-we-are/alisa-anderson.png"
+            src="/who-we-are/alisa-anderson.jpg"
             alt="Alisa Anderson, Vice President of Franchise Development at Spavia"
             fill
             sizes="(max-width: 800px) 160px, 350px"
