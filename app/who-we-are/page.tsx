@@ -10,7 +10,7 @@ const whoWeAreFaqJsonLd = {
       name: "Who founded Spavia Day Spa?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia was co-founded by Marty Langenderfer (CEO) and Allison Langenderfer (President). Marty brings expertise in finance, marketing, and operations from his background at Cornell University, Travelocity, and DISH Network. Allison leads with passion in design, creativity, and spa retail, drawing on her experience at Macy's and in pharmaceutical sales.",
+        text: "Spavia was co-founded by Marty Langenderfer (CEO) and Allison Langenderfer. Marty brings expertise in finance, marketing, and operations from his background at Cornell University, Travelocity, and DISH Network. Allison leads with passion in design, creativity, and spa retail, drawing on her experience at Macy's and in pharmaceutical sales.",
       },
     },
     {
@@ -34,7 +34,7 @@ const whoWeAreFaqJsonLd = {
       name: "What leadership and support team does Spavia have?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+        text: "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
       },
     },
   ],

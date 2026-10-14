@@ -13,7 +13,7 @@ const whoWeAreFaqs = [
   {
     question: "Who founded Spavia Day Spa?",
     answer:
-      "Spavia was co-founded by Marty Langenderfer (CEO) and Allison Langenderfer (President). Marty brings expertise in finance, marketing, and operations from his background at Cornell University, Travelocity, and DISH Network. Allison leads with passion in design, creativity, and spa retail, drawing on her experience at Macy's and in pharmaceutical sales.",
+      "Spavia was co-founded by Marty Langenderfer (CEO) and Allison Langenderfer. Marty brings expertise in finance, marketing, and operations from his background at Cornell University, Travelocity, and DISH Network. Allison leads with passion in design, creativity, and spa retail, drawing on her experience at Macy's and in pharmaceutical sales.",
   },
   {
     question: "How long has Spavia been in business?",
@@ -28,7 +28,7 @@ const whoWeAreFaqs = [
   {
     question: "What leadership and support team does Spavia have?",
     answer:
-      "Spavia's support team includes a Chief Operating Officer with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Director of Spa Services with over 15 years of franchise system experience specializing in market research for services, products, and equipment.",
+      "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
   },
 ];
 
@@ -44,9 +44,9 @@ Shortly after, he joined American Airlines’ Sabre Division where he helped fou
   },
   {
     name: "Allison Langenderfer",
-    role: "President & Co-founder",
+    role: "Co-founder",
     image: "/who-we-are/image2.png",
-    bio: `Allison Langenderfer, President and Co-founder of Spavia, leads with passion in design, creativity, and spa retail. A Cal Poly San Luis Obispo graduate with a marketing focus, she embraces a "learning by doing" philosophy.
+    bio: `Allison Langenderfer, Co-founder of Spavia, leads with passion in design, creativity, and spa retail. A Cal Poly San Luis Obispo graduate with a marketing focus, she embraces a "learning by doing" philosophy.
 
 Before Spavia, Allison excelled as a Macy’s buyer and regional manager, followed by a 12-year career in pharmaceutical sales. She drives Spavia’s mission through Spavia Cares, franchisee support, and an expertly curated retail experience. She is also deeply passionate about fostering a strong culture and sense of community within Spavia, creating a welcoming environment for guests, team members, and franchise partners. With a market-driven approach, she brings world-class skincare, relaxation products, and gifts to Spavia’s retail. Her greatest success? Raising three children now launching careers of their own.`,
   },
@@ -64,18 +64,69 @@ As Vice President of Franchise Development, Alisa leads Spavia's franchise growt
   },
   {
     name: "Heather Holland",
-    role: "Chief Operating Officer",
+    role: "President",
     image: "/who-we-are/heather-holland.png",
     objectPosition: "center 20%",
     bio: `Heather brings over 20 years of executive operations leadership across wellness, hospitality, and franchising. She previously served as Chief Operating Officer of CorePower Yoga, scaling the company from 89 to 225 studios across 20 markets, and earlier led people, training, and legal operations at Le Pain Quotidien during its global expansion. A UC Berkeley graduate with a JD from the University of Colorado, she has built her career at the intersection of hospitality, wellness, and franchise operations.
 
-As Chief Operating Officer of Spavia, Heather leads company-wide operations, partnering with franchisees and the national support team to drive operational excellence, member growth, and continued brand expansion.`,
+As President of Spavia, Heather leads company-wide operations, partnering with franchisees and the national support team to drive operational excellence, member growth, and continued brand expansion.`,
   },
   {
     name: "Jessica Hartman",
-    role: "Director of Spa Services",
+    role: "Vice President of Spa Services",
     image: "/who-we-are/image6.png",
     bio: `With over 15 years of experience in a franchise system, Jessica specializes in market research for services, products, and equipment. Her expertise enhances operational efficiency and supports the development of popular treatment protocols, making her a key contributor to our team's success.`,
+  },
+];
+
+const supportGroups = [
+  {
+    title: "Franchise Business Coaches",
+    intro: "Your day-to-day partners, from pre-opening through every stage of growth.",
+    people: [
+      {
+        name: "Danette Sugg",
+        role: "Franchise Business Coach",
+        image: "/who-we-are/danette-sugg.jpg",
+        bio: "With 18 years in the spa industry, Danette guides new owners from signed agreement to grand opening. She runs pre-opening calls, owner training and remodel planning so every new Spavia opens on schedule and ready to grow.",
+      },
+      {
+        name: "Whitney Gustafson",
+        role: "Franchise Business Coach",
+        image: "/who-we-are/whitney-gustafson.jpg",
+        bio: "Whitney brings nearly two decades in wellness, including more than ten years with CorePower Yoga, to coaching owners on membership growth, team training and the numbers that drive a healthy spa.",
+      },
+      {
+        name: "Sarah Jo Massobrio",
+        role: "Franchise Business Coach",
+        image: "/who-we-are/sarah-jo-massobrio.jpg",
+        bio: "Sarah Jo brings 16 years in wellness to her work with owners from Florida to Massachusetts, partnering with each spa on membership goals, team performance and day-to-day operations.",
+      },
+    ],
+  },
+  {
+    title: "Marketing & Technology",
+    intro: "The national team behind your brand, your local launch and the tools you run your spa on.",
+    people: [
+      {
+        name: "Emily Langenderfer",
+        role: "Marketing Director",
+        image: "/who-we-are/emily-langenderfer.jpg",
+        bio: "Emily leads Spavia's brand and marketing, from PR and national campaigns to member communications, so every owner has a polished brand to launch and grow with.",
+      },
+      {
+        name: "Ruthie Massman",
+        role: "Director of Membership & Local Marketing",
+        image: "/who-we-are/ruthie-massman.jpg",
+        bio: "A Colorado native with more than 20 years across wellness, fitness and hospitality, Ruthie helps owners fill their spas from day one with pre-opening launch plans, founding membership campaigns, local partnerships and in-spa marketing.",
+      },
+      {
+        name: "John Langenderfer",
+        role: "Director of Technology & AI",
+        image: "/who-we-are/john-langenderfer.jpg",
+        bio: "John builds the technology and AI behind every Spavia: the dashboards owners use to run their business, the network's websites, and the data and digital marketing that bring in new guests.",
+      },
+    ],
   },
 ];
 
@@ -127,7 +178,7 @@ export default function WhoWeAreContent() {
       <section className="relative overflow-hidden py-20 bg-black text-white px-4 sm:px-6 brand-dark">
         <div className="max-w-6xl mx-auto relative">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-[var(--accent-text)]">
-            Your Support Team
+            Leadership Team
           </h2>
           <div
             className={`grid gap-8 ${
@@ -164,6 +215,36 @@ export default function WhoWeAreContent() {
                   {member.bio}
                 </p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support team: coaches, marketing and technology */}
+      <section className="py-20 bg-white px-4 sm:px-6 brand-light">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3">Your Support Team</h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-14 font-sans">
+            Every owner works with a national team that knows the spa business, from your first week to your fifth location.
+          </p>
+          <div className="space-y-16">
+            {supportGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-xl font-bold text-center">{group.title}</h3>
+                <p className="text-center text-sm text-gray-600 mt-1 mb-8 font-sans">{group.intro}</p>
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.people.map((p) => (
+                    <div key={p.name} data-motion="rise" className="flex flex-col items-center text-center">
+                      <div className="w-36 h-36 rounded-full overflow-hidden bg-gray-100 mb-4 border border-[#b38a5f]/60">
+                        <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover object-top grayscale" />
+                      </div>
+                      <p className="text-base font-bold">{p.name}</p>
+                      <p className="text-xs text-[var(--accent-text)] font-semibold mb-2">{p.role}</p>
+                      <p className="text-sm text-gray-700 leading-relaxed font-sans max-w-xs">{p.bio}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

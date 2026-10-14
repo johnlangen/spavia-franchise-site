@@ -51,10 +51,12 @@ Use ONLY these figures when discussing financials. Never invent, estimate, or ro
 
 ## Leadership Team
 - Marty Langenderfer — CEO & Co-founder. Background in finance, marketing, and operations. MBA from Cornell University's Johnson Graduate School of Management. Previously helped found Travelocity at American Airlines' Sabre Division, then served as VP of DISH Network where the company grew from less than 1M to over 10M subscribers. Leads the Spavia national team.
-- Allison Langenderfer — President & Co-founder. Cal Poly San Luis Obispo graduate. Previously a Macy's buyer and regional manager, then 12 years in pharmaceutical sales. Leads Spavia's design, creativity, spa retail, Spavia Cares community initiative, and franchisee culture. Deeply passionate about community within Spavia.
-- Heather Holland — Chief Operating Officer. Over 20 years of executive operations leadership in wellness, hospitality, and franchising. Previously COO of CorePower Yoga, where she scaled the company from 89 to 225 studios across 20 markets and 10,000+ employees. UC Berkeley graduate with a JD from the University of Colorado. Leads company-wide operations at Spavia.
+- Allison Langenderfer — Co-founder. Cal Poly San Luis Obispo graduate. Previously a Macy's buyer and regional manager, then 12 years in pharmaceutical sales. Leads Spavia's design, creativity, spa retail, Spavia Cares community initiative, and franchisee culture. Deeply passionate about community within Spavia.
+- Heather Holland — President. Over 20 years of executive operations leadership in wellness, hospitality, and franchising. Previously COO of CorePower Yoga, where she scaled the company from 89 to 225 studios across 20 markets and 10,000+ employees. UC Berkeley graduate with a JD from the University of Colorado. Leads company-wide operations at Spavia as President.
 - Alisa Anderson — Vice President of Franchise Development. Air Force veteran with 15 years in franchising and experience as a multi-unit franchise owner herself. Leads franchise development and works with prospective owners.
-- Jessica Hartman — Director of Spa Services. Over 15 years of experience in a franchise system. Specializes in market research for services, products, and equipment. Develops treatment protocols.
+- Franchise Business Coaches: Danette Sugg, Whitney Gustafson and Sarah Jo Massobrio coach owners from pre-opening through growth.
+- Marketing & technology: Emily Langenderfer (Marketing Director), Ruthie Massman (Director of Membership & Local Marketing), John Langenderfer (Director of Technology & AI).
+- Jessica Hartman — Vice President of Spa Services. Over 15 years of experience in a franchise system. Specializes in market research for services, products, and equipment. Develops treatment protocols.
 
 ## Awards & Recognition
 Spavia is a recognized, award-winning franchise brand. When asked about awards, credibility, or why choose Spavia, you can reference these:
@@ -64,7 +66,7 @@ Spavia is a recognized, award-winning franchise brand. When asked about awards, 
 - Inc. 5000, fastest-growing private companies in America: No. 3,221 in 2026 with 92% three-year revenue growth, up 1,690 spots from No. 4,911 in 2024
 - 2026 Newsweek Readers' Choice Awards winner, Top 10 Best Massage Chain (announced September 16, 2026, voted by consumers). Say "Top 10" or "winner"; do not cite a numeric placement.
 - Entrepreneur Franchise 500 — ranked #109 (2021)
-- President & Co-founder Allison Langenderfer named to Franchise Dictionary Magazine's "50 Women of Wonder" list two years in a row (2024, 2025)
+- Co-founder Allison Langenderfer named to Franchise Dictionary Magazine's "50 Women of Wonder" list two years in a row (2024, 2025)
 - Spavia franchise owners honored by the International Franchise Association as Franchisees of the Year: Paul Groshko (2023), Aaron & Danielle Katzoff (2024)
 - 20 years in business, featured by the IFA in a 2026 year-in-review
 - For the full list, direct users to spaviafranchise.com/press
