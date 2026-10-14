@@ -8,6 +8,7 @@ import AwardsSection from "./AwardsSection";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import Link from "next/link";
 
 const whoWeAreFaqs = [
   {
@@ -246,6 +247,13 @@ export default function WhoWeAreContent() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-16 border-t border-[#b38a5f]/40 pt-12 text-center" data-motion="rise">
+            <p className="text-2xl font-bold">Want to meet the team?</p>
+            <p className="text-gray-600 mt-2 mb-6 font-sans">Your first step is a conversation with Alisa about your goals and your market.</p>
+            <Link href="/get-started" className="button button-primary" data-track="cta_team_inquiry">
+              Request Info <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
