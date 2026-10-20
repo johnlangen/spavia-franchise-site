@@ -27,7 +27,7 @@ Use ONLY these figures when discussing financials. Never invent, estimate, or ro
 - Royalty Fee: 6% of Gross Sales (2026 FDD, Item 6)
 - Brand Fund Contribution: 1% of Gross Sales (2026 FDD, Item 6)
 - Multi-Unit Development Fee: $150,000 for the right to develop 3 Day Spas, plus $50,000 for each additional unit up to 5 (2026 FDD, Item 5)
-- Liquid Capital Recommended: $200,000 minimum (candidate qualification, not from FDD)
+- Liquid Capital Recommended: $300,000 minimum (candidate qualification, not from FDD)
 - Net Worth Recommended: $500,000 minimum (candidate qualification, not from FDD)
 - 1 in 2 Spavia owners achieve $1M+ in annual gross sales (29 of 59 disclosed locations exceeded $1M in 2025; 2026 FDD, Item 19, Part II)
 - Reference for all financial figures: 2026 Spavia Franchise Disclosure Document

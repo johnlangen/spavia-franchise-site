@@ -10,7 +10,7 @@ export default function CallToAction() {
         Schedule a Call
       </a>
       <p className="mt-2 text-sm text-gray-600">
-        *Spavia requires a minimum of $200,000 in liquid capital to qualify for franchise ownership.
+        *Spavia requires a minimum of $300,000 in liquid capital to qualify for franchise ownership.
       </p>
     </div>
   );

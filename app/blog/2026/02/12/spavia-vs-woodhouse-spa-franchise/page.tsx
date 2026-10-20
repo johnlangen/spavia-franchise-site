@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     "q": "What liquid capital is required?",
-    "a": "Spavia’s candidate requirement is at least $200,000 liquid capital and $500,000 net worth. Woodhouse’s published requirements are $700,000 liquid assets and $1,000,000 net worth. These are qualification criteria, not the full initial investment."
+    "a": "Spavia’s candidate requirement is at least $300,000 liquid capital and $500,000 net worth. Woodhouse’s published requirements are $700,000 liquid assets and $1,000,000 net worth. These are qualification criteria, not the full initial investment."
   },
   {
     "q": "Do both brands offer massage and facials?",
@@ -44,7 +44,7 @@ export default function Page() {
           <tbody>
             {[
               ["Initial investment", "$479,450–$885,450", "$1,482,439–$2,697,879"],
-              ["Liquid capital requirement", "$200,000+", "$700,000+"],
+              ["Liquid capital requirement", "$300,000+", "$700,000+"],
               ["Net worth requirement", "$500,000+", "$1,000,000+"],
               ["Royalty", "6% of Gross Sales", "6% of gross revenue"],
               ["Brand / national marketing fund", "1% of Gross Sales", "2% of gross revenue"],

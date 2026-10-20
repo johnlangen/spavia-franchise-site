@@ -32,7 +32,7 @@ const differentiators = [
 const faqs = [
   {
     "q": "How much does a Spavia facial franchise cost?",
-    "a": "The Spavia opportunity is a full-service day spa, with a total estimated investment of $479,450–$885,450 (2026 FDD, Item 7). The range includes the $59,500 franchise fee. Candidates need $200,000 or more in liquid capital and $500,000 or more in net worth."
+    "a": "The Spavia opportunity is a full-service day spa, with a total estimated investment of $479,450–$885,450 (2026 FDD, Item 7). The range includes the $59,500 franchise fee. Candidates need $300,000 or more in liquid capital and $500,000 or more in net worth."
   },
   {
     "q": "Can I open a facial-only Spavia?",

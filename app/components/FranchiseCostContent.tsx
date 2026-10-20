@@ -80,7 +80,7 @@ export default function FranchiseCostContent() {
         <Breadcrumbs items={[{ label: "Franchise Cost" }]} />
 
         {/* ═══════ HERO ═══════ */}
-        <PageHero eyebrow="The investment, in detail" title="How Much Does a Spa Franchise Cost?" intro="Plan for the whole business: your opening investment, ongoing fees and the capital to get started. Here is the Spavia cost breakdown from the 2026 Franchise Disclosure Document." action={{href:"#investment-breakdown",label:"See the investment breakdown"}}><dl><div><dt>Total estimated initial investment · Item 7</dt><dd>$479,450–$885,450</dd></div><div><dt>Initial franchise fee · Item 5</dt><dd>$59,500</dd></div></dl><p className="mt-5">Candidates need $200K+ liquid capital and $500K+ net worth. Investment requirements are discussed in detail with the franchise team.</p><Link href="/get-started" className="text-link mt-4">Talk through the investment →</Link></PageHero>
+        <PageHero eyebrow="The investment, in detail" title="How Much Does a Spa Franchise Cost?" intro="Plan for the whole business: your opening investment, ongoing fees and the capital to get started. Here is the Spavia cost breakdown from the 2026 Franchise Disclosure Document." action={{href:"#investment-breakdown",label:"See the investment breakdown"}}><dl><div><dt>Total estimated initial investment · Item 7</dt><dd>$479,450–$885,450</dd></div><div><dt>Initial franchise fee · Item 5</dt><dd>$59,500</dd></div></dl><p className="mt-5">Candidates need $300K+ liquid capital and $500K+ net worth. Investment requirements are discussed in detail with the franchise team.</p><Link href="/get-started" className="text-link mt-4">Talk through the investment →</Link></PageHero>
 
         {/* ═══════ COST BREAKDOWN ═══════ */}
         <section className="bg-white py-20 px-6 brand-light">
@@ -165,7 +165,7 @@ export default function FranchiseCostContent() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 rounded-sm p-6 border border-gray-100 brand-light">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Liquid Capital</h3>
-                <p className="text-3xl font-bold text-[var(--accent-text)]">$200K+</p>
+                <p className="text-3xl font-bold text-[var(--accent-text)]">$300K+</p>
                 <p className="text-sm text-gray-600 mt-2">
                   Cash or cash equivalents available for the initial investment and operating capital
                 </p>

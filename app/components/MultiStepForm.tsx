@@ -235,8 +235,8 @@ export default function MultiStepForm() {
               className={inputClass}
             >
               <option value="">Liquid Asset Investment</option>
-              <option value="$0-$200k">$0 - $200K</option>
-              <option value="$200k-$500k">$200K - $500K</option>
+              <option value="$0-$300k">$0 - $300K</option>
+              <option value="$300k-$500k">$300K - $500K</option>
               <option value="$500k-$1MM">$500K - $1MM</option>
               <option value="$1MM+">$1MM+</option>
             </select>

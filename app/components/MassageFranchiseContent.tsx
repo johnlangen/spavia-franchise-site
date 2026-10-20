@@ -32,7 +32,7 @@ const differentiators = [
 const faqs = [
   {
     "q": "How much does it cost to open a Spavia massage franchise?",
-    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment, including the $59,500 franchise fee (2026 FDD, Items 5 and 7). Candidates need at least $200,000 in liquid capital and $500,000 net worth. Liquid capital is a qualification requirement, not the total cost to open."
+    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment, including the $59,500 franchise fee (2026 FDD, Items 5 and 7). Candidates need at least $300,000 in liquid capital and $500,000 net worth. Liquid capital is a qualification requirement, not the total cost to open."
   },
   {
     "q": "Is Spavia a massage-only franchise?",

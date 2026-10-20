@@ -143,7 +143,7 @@ export default function FranchiseOverviewForm({
             currency: "USD",
           });
           const qualified =
-            liquidTier === "$200K - $500K" ||
+            liquidTier === "$300K - $500K" ||
             liquidTier === "$500K - $1MM" ||
             liquidTier === "$1MM+";
           if (qualified) {
@@ -160,7 +160,7 @@ export default function FranchiseOverviewForm({
         }
         trackMeta("Lead", { content_name: formType });
         if (
-          liquidTier === "$200K - $500K" ||
+          liquidTier === "$300K - $500K" ||
           liquidTier === "$500K - $1MM" ||
           liquidTier === "$1MM+"
         ) {
@@ -188,7 +188,7 @@ export default function FranchiseOverviewForm({
   const compactEmail = compact && step === 1;
   const qualification = (
     <p className={compactEmail ? "hero-form-qualification" : "form-qualification"}>
-      Candidates need <strong>$200K+ liquid capital</strong> and{" "}
+      Candidates need <strong>$300K+ liquid capital</strong> and{" "}
       <strong>$500K+ net worth.</strong>
     </p>
   );
@@ -315,8 +315,8 @@ export default function FranchiseOverviewForm({
               <option value="" disabled>
                 Select a range
               </option>
-              <option value="$0 - $200K">$0 – $200K</option>
-              <option value="$200K - $500K">$200K – $500K</option>
+              <option value="$0 - $300K">$0 – $300K</option>
+              <option value="$300K - $500K">$300K – $500K</option>
               <option value="$500K - $1MM">$500K – $1MM</option>
               <option value="$1MM+">$1MM+</option>
             </select>

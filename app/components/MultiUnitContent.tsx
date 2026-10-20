@@ -99,7 +99,7 @@ const faqs = [
   },
   {
     q: "What's the financial requirement for multi-unit development?",
-    a: "Per-unit financial requirements remain the same as single-unit ($200K+ liquid, $500K+ net worth). Multi-unit operators should plan for these requirements scaled to their development commitment, plus additional working capital reserves for the phased rollout. Specifics discussed during qualification.",
+    a: "Per-unit financial requirements remain the same as single-unit ($300K+ liquid, $500K+ net worth). Multi-unit operators should plan for these requirements scaled to their development commitment, plus additional working capital reserves for the phased rollout. Specifics discussed during qualification.",
   },
 ];
 

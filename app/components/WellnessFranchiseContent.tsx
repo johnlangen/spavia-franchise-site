@@ -32,7 +32,7 @@ const differentiators = [
 const faqs = [
   {
     "q": "How much does a wellness franchise like Spavia cost?",
-    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment (2026 FDD, Item 7). The initial franchise fee is $59,500. Candidates need at least $200,000 liquid capital and $500,000 net worth. Other wellness formats have their own costs and qualification criteria."
+    "a": "Spavia’s full-service day spa requires an estimated $479,450–$885,450 initial investment (2026 FDD, Item 7). The initial franchise fee is $59,500. Candidates need at least $300,000 liquid capital and $500,000 net worth. Other wellness formats have their own costs and qualification criteria."
   },
   {
     "q": "How is a day spa different from other wellness franchises?",

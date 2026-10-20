@@ -120,7 +120,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
       });
 
       if (res.ok) {
-        const liquidQualified = liquidAssets === "$200K - $500K" ||
+        const liquidQualified = liquidAssets === "$300K - $500K" ||
           liquidAssets === "$500K - $1MM" ||
           liquidAssets === "$1MM+";
         trackMeta("Lead", { content_name: "long" });
@@ -277,13 +277,13 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
                 }
               >
                 <option value="">Select range</option>
-                <option value="$0 - $200K">$0 – $200K</option>
-                <option value="$200K - $500K">$200K – $500K</option>
+                <option value="$0 - $300K">$0 – $300K</option>
+                <option value="$300K - $500K">$300K – $500K</option>
                 <option value="$500K - $1MM">$500K – $1MM</option>
                 <option value="$1MM+">$1MM+</option>
               </select>
               <p className="mt-1 text-xs text-gray-500">
-                Spavia ownership requires a minimum of $200K in liquid capital.
+                Spavia ownership requires a minimum of $300K in liquid capital.
               </p>
             </div>
 
