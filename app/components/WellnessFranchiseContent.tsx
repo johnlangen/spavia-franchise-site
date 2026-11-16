@@ -9,6 +9,7 @@ import GoldBottomBanner from "./GoldBottomBanner";
 import LandingHero from "./LandingHero";
 import NavBar from "./NavBar";
 import ProofSection from "./ProofSection";
+import { locationCounts } from "../data/locationStats";
 
 const differentiators = [
   {
@@ -82,7 +83,7 @@ export default function WellnessFranchiseContent() {
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
           "Membership-driven recurring revenue model",
           "Full service mix: massage, facials, body, waxing, retail",
-          "63 locations across the United States",
+          `${locationCounts.open} locations across the United States`,
           "$479K – $885K total investment",
         ]}
         leadSource="lp-wellness-franchise"

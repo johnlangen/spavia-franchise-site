@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { locationCounts } from "../data/locationStats";
 
 export default function OurStorySection() {
   return (
@@ -110,7 +111,7 @@ export default function OurStorySection() {
                 Today
               </p>
               <p className="text-sm md:text-base text-gray-700">
-                63 locations across the U.S.
+                {locationCounts.open} locations across the U.S.
               </p>
             </div>
           </div>

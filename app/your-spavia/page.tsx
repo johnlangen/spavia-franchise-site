@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import YourSpaviaContent from "../components/YourSpaviaContent";
 import locationData from "../data/spavia-locations.json";
 
-const { open, comingSoon, states } = locationData.counts;
+const { open, comingSoon, states, spavia, sway } = locationData.counts;
 
 const yourSpaviaFaqJsonLd = {
   "@context": "https://schema.org",
@@ -53,7 +53,7 @@ const yourSpaviaFaqJsonLd = {
       name: "How many Spavia locations are there?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: `There are ${open} Spavia locations open across ${states} states, with ${comingSoon} more opening soon. Each spa is independently owned and operated by a Spavia franchise partner.`,
+        text: `There are ${open} locations open across ${states} states (${spavia.open} Spavia day spas and ${sway.open} Sway by Spavia wellness spas), with ${comingSoon} more opening soon. Spavia day spas are independently owned and operated by franchise partners.`,
       },
     },
   ],

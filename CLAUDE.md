@@ -92,6 +92,7 @@ app/
 
 ## Things to Know
 - Always run `npm run build` before pushing — catches TypeScript errors that dev mode misses
+- Never hardcode a location count. Every "N locations" reads `locationCounts` from `app/data/locationStats.ts`, which wraps `app/data/spavia-locations.json`. That JSON is regenerated daily by the `sync-locations.yml` GitHub Action (`npm run sync:locations`) from spaviadayspa.com's spa finder plus swaywellnessspa.com's spa pages; the script refuses to write a short or empty list. FDD year-specific figures stay hardcoded.
 - Blog posts are hardcoded .tsx files (no CMS) — editing requires code changes
 - The `metadata.other["script:ld+json"]` pattern does NOT work in Next.js — always use `<script type="application/ld+json" dangerouslySetInnerHTML>` instead
 - Batch changes across many blog posts: use a Python script via Bash (much faster than editing files individually)

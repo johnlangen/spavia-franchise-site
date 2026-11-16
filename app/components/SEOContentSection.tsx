@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { locationCounts } from "../data/locationStats";
 
 const stats = [
   { value: "$479K–$885K", label: "To open (2026 FDD, Item 7)" },
   { value: "$1.1M", label: "Median unit revenue, 44 locations" },
-  { value: "63", label: "Locations open nationwide" },
+  { value: String(locationCounts.open), label: "Locations open nationwide" },
   { value: "~1 in 2", label: "Owners over $1M gross sales" },
 ];
 

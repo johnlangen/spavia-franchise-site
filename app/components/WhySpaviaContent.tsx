@@ -11,6 +11,7 @@ import AwardsSection from "./AwardsSection";
 import Breadcrumbs from "./Breadcrumbs";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import { locationCounts } from "../data/locationStats";
 
 const whySpaviaFaqs = [
   {
@@ -92,7 +93,7 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
-      {/* By the Numbers — Stability/Quality (2026 FDD, Item 20) */}
+      {/* By the Numbers: live open count (synced daily from the brand sites) + 2025 stability figures (2026 FDD, Item 20) */}
       <section className="py-20 bg-black text-white px-4 sm:px-6 brand-dark">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
@@ -112,7 +113,7 @@ export default function WhySpaviaContent() {
             className="text-white/70 max-w-2xl mx-auto mb-12 text-base"
           >
             Spavia grows carefully. We choose owners and locations with care, and the
-            data shows it &mdash; every owner is part of a brand we protect.
+            data shows it. Every owner is part of a brand we protect.
           </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
             <motion.div
@@ -122,12 +123,14 @@ export default function WhySpaviaContent() {
               transition={{ duration: 0.5 }}
             >
               <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
-                63
+                {locationCounts.open}
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
                 Locations Open
               </p>
-              <p className="text-white/40 text-xs mt-1">As of Dec 31, 2025</p>
+              <p className="text-white/40 text-xs mt-1">
+                Today, across {locationCounts.states} states
+              </p>
             </motion.div>
             <motion.div
               initial={false}
@@ -159,7 +162,7 @@ export default function WhySpaviaContent() {
             </motion.div>
           </div>
           <p className="text-white/40 text-[10px] mt-12">
-            Source: 2026 Spavia Franchise Disclosure Document, Item 20.
+            Open count: Spavia and Sway by Spavia location directories, refreshed daily. 2025 figures: 2026 Spavia Franchise Disclosure Document, Item 20.
           </p>
         </div>
       </section>

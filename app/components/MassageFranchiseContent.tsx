@@ -9,6 +9,7 @@ import GoldBottomBanner from "./GoldBottomBanner";
 import LandingHero from "./LandingHero";
 import NavBar from "./NavBar";
 import ProofSection from "./ProofSection";
+import { locationCounts } from "../data/locationStats";
 
 const differentiators = [
   {
@@ -111,7 +112,7 @@ export default function MassageFranchiseContent() {
           "$1,110,481 median gross sales (2026 FDD, Item 19)",
           "Membership-driven recurring revenue",
           "Multi-service revenue: massage + facials + retail",
-          "63 locations and growing",
+          `${locationCounts.open} locations and growing`,
           "10–14 month opening timeline",
         ]}
         leadSource="lp-massage-franchise"

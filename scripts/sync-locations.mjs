@@ -1,27 +1,37 @@
 #!/usr/bin/env node
 /**
- * Regenerates app/data/spavia-locations.json from Spavia's corporate site.
+ * Regenerates app/data/spavia-locations.json from the brand websites.
  *
- * Source of truth is the spaviadayspa.com store locator, which exposes a JSON
- * endpoint behind the "find a location" page:
- *   /service/directorylisting/filterMarkers?s=<query>
- * It returns name, street address, city/state/zip, phone, lat/lon and website
- * for every location in the directory.
+ * Two sources, both public pages, no credentials:
  *
- * Open vs. coming-soon is NOT taken from that endpoint -- its "COMING SOON"
- * custom field goes stale (St. Augustine was still flagged after opening).
- * Each location page is fetched instead and checked for the literal
- * "Coming Soon to:" banner, which is what the corporate site actually renders.
+ * 1. spaviadayspa.com/locations/ -- the spa finder on the consolidated Spavia
+ *    site (repo: johnlangen/spavia-website). The page is server-rendered and
+ *    its HTML carries the finder's full list in the React flight payload:
+ *    slug, name, city, state, address, coordinates, phone and status ("open"
+ *    or "coming-soon"). Announced spas live in that site's upcoming-locations
+ *    data until the day they open, so status comes straight from the list.
+ *
+ * 2. swaywellnessspa.com -- Sway by Spavia. No finder payload there, so the
+ *    sitemap gives one /locations/<slug>/ per spa and each spa page is read:
+ *    DaySpa JSON-LD carries name, address, phone and (once open) coordinates,
+ *    and an announced spa says "Coming Soon" in its <title>.
+ *
+ * The old source (the LiveEdit store locator at
+ * /service/directorylisting/filterMarkers) went away when the new Spavia site
+ * launched; on 2026-10-19 this script wrote an empty list because of it. The
+ * guards below make that impossible now: the sync fails loudly instead of
+ * writing a short or empty list, and the workflow commits nothing on failure.
  *
  * Map coordinates are fitted, not hardcoded: the @svg-maps/usa paths are a
  * Lambert conformal conic projection, so the script recovers the transform by
  * regressing projected state centers against the centroids of the real SVG
  * paths. If that package ever changes, the coordinates follow it.
  *
- * Usage:  node scripts/sync-locations.mjs [--dry]
+ * Usage:  node scripts/sync-locations.mjs [--dry] [--force] [--skip-zip-check]
+ *   --force  write even when the open count drops sharply vs. the committed file
  */
 
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { createRequire } from "node:module";
@@ -34,21 +44,18 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "../app/data/spavia-locations.json");
 
 const UA = "SpaviaFranchiseSiteSync/1.0 (+https://spaviafranchise.com)";
-const LOCATOR = "https://spaviadayspa.com/service/directorylisting/filterMarkers?s=";
-const SITEMAP = "https://spaviadayspa.com/locations_sitemap.xml";
+const SITE = "https://spaviadayspa.com";
+const FINDER = `${SITE}/locations/`;
+const SITEMAP = `${SITE}/sitemap.xml`;
+const SWAY = "https://swaywellnessspa.com";
+const SWAY_SITEMAP = `${SWAY}/sitemap.xml`;
 
-const STATES = [
-  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
-  "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
-  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
-  "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
-  "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
-  "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
-  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
-  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
-  "Washington", "West Virginia", "Wisconsin", "Wyoming",
-  "District of Columbia",
-];
+// Fewer than this from the Spavia finder and something is wrong with the
+// page, not with Spavia.
+const MIN_LOCATIONS = 40;
+// Refuse to write when the Spavia open count falls this far below the
+// committed file. Spavia does not close a tenth of its spas in a day.
+const MAX_OPEN_DROP = 0.15;
 
 const STATE_NAMES = {
   AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California",
@@ -63,19 +70,6 @@ const STATE_NAMES = {
   RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota",
   TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia",
   WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
-};
-
-// The locator stores a few internal shorthands in the city field.
-const CITY_FIXES = { "West Plano": "Plano", "Chicago/West Loop": "Chicago" };
-
-// Coordinates the locator gets wrong, keyed by its own location id. Only add an
-// entry with evidence -- the ZIP check below is what surfaces these.
-const COORD_OVERRIDES = {
-  // Spavia Fairfield, 29040 Hwy 290, Cypress TX 77433. The locator's point
-  // (30.1166557, -96.086116) reverse-geocodes to ZCTA 77445 in Waller County,
-  // ~22mi northwest near Hempstead. This point is inside ZCTA 77433 in Harris
-  // County, matching the address the spa's own page publishes.
-  44444: { lat: 29.993129, lon: -95.751465 },
 };
 
 /* ------------------------------------------------------------------ *
@@ -248,18 +242,70 @@ async function getText(url) {
   return res.text();
 }
 
-async function fetchDirectory() {
-  const byId = new Map();
-  for (const state of STATES) {
-    try {
-      const body = await getText(LOCATOR + encodeURIComponent(state));
-      for (const marker of JSON.parse(body).markers || []) byId.set(marker.id, marker);
-    } catch (err) {
-      console.warn(`  ! ${state}: ${err.message}`);
-    }
-    await new Promise((r) => setTimeout(r, 250)); // be polite
+const LD_RE = /<script[^>]*application\/ld\+json[^>]*>(.*?)<\/script>/gs;
+
+function jsonLdBlocks(html) {
+  return [...html.matchAll(LD_RE)]
+    .map((m) => { try { return JSON.parse(m[1]); } catch { return null; } })
+    .filter(Boolean);
+}
+
+/**
+ * The Spavia finder list, read out of the React flight payload the locations
+ * page ships inline. Next writes it as self.__next_f.push([1, "<json>"])
+ * chunks; decoding and joining them gives the serialized component tree, in
+ * which the finder's locations prop is a plain JSON array.
+ */
+async function fetchFinderList() {
+  const html = await getText(FINDER);
+  let flight = "";
+  for (const m of html.matchAll(/self\.__next_f\.push\(\[1,"((?:[^"\\]|\\.)*)"\]\)/g)) {
+    flight += JSON.parse(`"${m[1]}"`);
   }
-  return [...byId.values()];
+  if (!flight) throw new Error("no flight payload found on the Spavia locations page");
+
+  const key = '"locations":[{"slug":';
+  const at = flight.indexOf(key);
+  if (at < 0) throw new Error("finder locations array not found in the Spavia page payload");
+  const start = flight.indexOf("[", at);
+  let depth = 0, end = start;
+  for (; end < flight.length; end++) {
+    const c = flight[end];
+    if (c === "[") depth++;
+    else if (c === "]" && --depth === 0) break;
+  }
+  const list = JSON.parse(flight.slice(start, end + 1));
+
+  const bad = list.find(
+    (l) => !l || typeof l.slug !== "string" || typeof l.name !== "string" ||
+      typeof l.state !== "string" || !l.coordinates || typeof l.status !== "string"
+  );
+  if (bad) throw new Error(`finder entry has an unexpected shape: ${JSON.stringify(bad).slice(0, 200)}`);
+
+  // The same page lists every open spa in an ItemList (JSON-LD). It is an
+  // independent render of the same data, so it is the first cross-check.
+  const ld = jsonLdBlocks(html).find((d) => d["@type"] === "ItemList");
+  const listed = ld ? Number(ld.numberOfItems) || (ld.itemListElement || []).length : null;
+
+  return { list, listed };
+}
+
+/** Every Sway spa page: its business JSON-LD plus whether the title says coming soon. */
+async function fetchSwayPages() {
+  const xml = await getText(SWAY_SITEMAP);
+  const slugs = [...new Set(
+    [...xml.matchAll(/<loc>https:\/\/swaywellnessspa\.com\/locations\/([a-z0-9-]+)\/<\/loc>/g)].map((m) => m[1])
+  )];
+  if (slugs.length === 0) throw new Error("no spa pages found in the Sway sitemap");
+  return mapLimit(slugs, 3, async (slug) => {
+    const html = await getText(`${SWAY}/locations/${slug}/`);
+    const ld = jsonLdBlocks(html).find((d) =>
+      ["DaySpa", "HealthAndBeautyBusiness", "LocalBusiness"].includes(d["@type"])
+    );
+    if (!ld) throw new Error(`no business JSON-LD on the Sway page for ${slug}`);
+    const title = (html.match(/<title>(.*?)<\/title>/s) || [])[1] || "";
+    return { slug, ld, comingSoon: /coming\s+soon/i.test(title) };
+  });
 }
 
 /** Map over items with a small concurrency cap. */
@@ -308,85 +354,165 @@ function haversine([lat1, lon1], [lat2, lon2]) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-async function isComingSoon(url) {
-  try {
-    return /coming\s+soon\s+to\s*:/i.test(await getText(url));
-  } catch {
-    return null; // unreachable -- leave status unchanged rather than guessing
-  }
-}
-
 /* ------------------------------------------------------------------ *
  * Main
  * ------------------------------------------------------------------ */
 
 const dry = process.argv.includes("--dry");
+const force = process.argv.includes("--force");
 const warnings = [];
 
-console.log("Fetching Spavia directory...");
-const markers = await fetchDirectory();
-console.log(`  ${markers.length} unique locations`);
+/* ---- Spavia ---- */
 
-// Cross-check against the sitemap so a locator outage cannot silently
-// truncate the list.
+console.log("Fetching the Spavia spa finder...");
+const { list, listed } = await fetchFinderList();
+const openCount = list.filter((l) => l.status === "open").length;
+console.log(`  ${list.length} locations in the finder (${openCount} open)`);
+if (list.length < MIN_LOCATIONS) {
+  throw new Error(`only ${list.length} Spavia locations found; refusing to write (minimum ${MIN_LOCATIONS})`);
+}
+if (listed === null) {
+  warnings.push("no ItemList JSON-LD on the Spavia locations page; open count not cross-checked");
+} else {
+  console.log(`  ItemList schema lists ${listed} open`);
+  if (Math.abs(listed - openCount) > 2) {
+    warnings.push(`finder shows ${openCount} open but the page's ItemList schema lists ${listed}`);
+  }
+}
+
+// Second cross-check: the sitemap carries one top-level URL per spa page,
+// open or announced.
 try {
   const xml = await getText(SITEMAP);
-  const count = (xml.match(/<loc>/g) || []).length;
-  console.log(`  sitemap lists ${count}`);
-  if (Math.abs(count - markers.length) > 2) {
-    warnings.push(`locator returned ${markers.length} but sitemap lists ${count}`);
+  const slugs = new Set(
+    [...xml.matchAll(/<loc>https:\/\/spaviadayspa\.com\/locations\/([a-z0-9-]+)\/<\/loc>/g)].map((m) => m[1])
+  );
+  console.log(`  sitemap lists ${slugs.size} spa pages`);
+  if (Math.abs(slugs.size - list.length) > 2) {
+    warnings.push(`finder returned ${list.length} but the sitemap lists ${slugs.size} spa pages`);
+  }
+  for (const l of list) {
+    if (!slugs.has(l.slug)) warnings.push(`${l.name} (${l.slug}) is in the finder but not the sitemap`);
   }
 } catch (err) {
   warnings.push(`sitemap cross-check failed: ${err.message}`);
 }
 
-console.log("Checking open / coming-soon status on each location page...");
-const comingSoon = await mapLimit(markers, 6, (m) => isComingSoon((m.web_site || "").trim()));
+// Third guard: compare with what is committed. A sudden drop means the page
+// changed shape or half the list failed to render, not that spas closed.
+if (existsSync(OUT) && !force) {
+  let prevOpen = 0;
+  try {
+    const prev = JSON.parse(readFileSync(OUT, "utf8"));
+    prevOpen = prev?.counts?.spavia?.open ?? prev?.counts?.open ?? 0;
+  } catch (err) {
+    warnings.push(`could not read the committed file for comparison: ${err.message}`);
+  }
+  if (prevOpen > 0 && openCount < prevOpen * (1 - MAX_OPEN_DROP)) {
+    throw new Error(
+      `Spavia open count fell from ${prevOpen} to ${openCount}; refusing to write (re-run with --force if this is real)`
+    );
+  }
+}
 
 const { project, polys, worst } = buildProjection();
 console.log(`  projection fitted (worst state-center residual ${worst.toFixed(2)}px)`);
 
-const locations = markers.map((m, i) => {
-  const state = (m.state || "").toUpperCase();
-  const site = (m.web_site || "").trim().replace(/\/$/, "").replace(/^http:/, "https:");
-  const isSpavia = /spaviadayspa\.com/i.test(site);
-
-  let name = (m.name || "").trim();
-  if (isSpavia && !/^spavia\b/i.test(name)) name = `Spavia ${name}`;
-
-  const city = CITY_FIXES[(m.city || "").trim()] || (m.city || "").trim();
-  const override = COORD_OVERRIDES[m.id];
-  const lat = override ? override.lat : parseFloat(m.lat);
-  const lon = override ? override.lon : parseFloat(m.lon);
-
-  let x = null, y = null;
-  if (Number.isFinite(lat) && Number.isFinite(lon) && !INSET_STATES.has(state)) {
-    [x, y] = project(lon, lat);
-    const sid = state.toLowerCase();
-    if (polys[sid] && !pointInPolygon([x, y], polys[sid])) {
-      warnings.push(`${name}: plotted point falls outside ${state}`);
-    }
-  } else if (INSET_STATES.has(state)) {
+/** Map coordinates for one spa, with the sanity warnings the old script had. */
+function plot(name, state, lat, lon) {
+  if (INSET_STATES.has(state)) {
     warnings.push(`${name}: ${state} is an inset on this map, not plotted`);
+    return { x: null, y: null };
+  }
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+    warnings.push(`${name}: no coordinates, not plotted`);
+    return { x: null, y: null };
+  }
+  const [x, y] = project(lon, lat);
+  const sid = state.toLowerCase();
+  if (polys[sid] && !pointInPolygon([x, y], polys[sid])) {
+    warnings.push(`${name}: plotted point falls outside ${state}`);
+  }
+  return { x: Number(x.toFixed(2)), y: Number(y.toFixed(2)) };
+}
+
+const spaviaLocations = list.map((l) => {
+  const state = (l.state || "").toUpperCase();
+  const name = (l.name || "").trim();
+  const lat = Number(l.coordinates?.lat);
+  const lon = Number(l.coordinates?.lng);
+
+  let status = l.status;
+  if (status !== "open" && status !== "coming-soon") {
+    warnings.push(`${name}: unexpected status "${status}", treating as open`);
+    status = "open";
   }
 
   return {
-    id: m.id,
+    id: l.slug,
     name,
-    brand: isSpavia ? "spavia" : "other",
-    status: comingSoon[i] === true ? "coming-soon" : "open",
-    address: [m.address1, m.address2].filter(Boolean).join(", ").trim(),
-    city,
+    brand: "spavia",
+    status,
+    address: [l.address?.street, l.address?.suite].filter(Boolean).join(", ").trim(),
+    city: (l.city || l.address?.city || "").trim(),
     state,
-    stateName: STATE_NAMES[state] || state,
-    zip: (m.zip || "").trim(),
-    phone: (m.phone || "").trim(),
-    website: site,
-    lat, lon,
-    x: x === null ? null : Number(x.toFixed(2)),
-    y: y === null ? null : Number(y.toFixed(2)),
+    stateName: l.stateFullName || STATE_NAMES[state] || state,
+    zip: (l.address?.zip || "").trim(),
+    phone: (l.phone || "").trim(),
+    website: `${SITE}/locations/${l.slug}/`,
+    lat: Number.isFinite(lat) ? lat : null,
+    lon: Number.isFinite(lon) ? lon : null,
+    ...plot(name, state, lat, lon),
   };
 });
+
+/* ---- Sway by Spavia ---- */
+
+console.log("Fetching Sway by Spavia spa pages...");
+const swayPages = await fetchSwayPages();
+console.log(`  ${swayPages.length} Sway locations (${swayPages.filter((p) => !p.comingSoon).length} open)`);
+
+const swayLocations = [];
+for (const { slug, ld, comingSoon } of swayPages) {
+  const addr = ld.address || {};
+  const state = String(addr.addressRegion || "").toUpperCase();
+  // The pages title themselves "Sway Wellness Spa · RiNo" and the like; the
+  // Sway site's own display names are "Sway RiNo", so normalize to that.
+  let name = String(ld.name || "").trim().replace(/^Sway Wellness Spa\s*[\u00b7\u2013\u2014-]\s*/i, "Sway ");
+  if (!/^sway\b/i.test(name)) name = `Sway ${name}`;
+  const zip = String(addr.postalCode || "").trim();
+
+  let lat = Number(ld.geo?.latitude);
+  let lon = Number(ld.geo?.longitude);
+  if ((!Number.isFinite(lat) || !Number.isFinite(lon)) && zip) {
+    // Announced spas publish an address before coordinates; the ZIP centroid
+    // is close enough for a coming-soon pin on a national map.
+    const c = await zipCentroid(zip.slice(0, 5));
+    if (c) {
+      [lat, lon] = c;
+      warnings.push(`${name}: no coordinates on its page, pinned at the ${zip} ZIP centroid`);
+    }
+  }
+
+  swayLocations.push({
+    id: `sway-${slug}`,
+    name,
+    brand: "sway",
+    status: comingSoon ? "coming-soon" : "open",
+    address: String(addr.streetAddress || "").trim(),
+    city: String(addr.addressLocality || "").trim(),
+    state,
+    stateName: STATE_NAMES[state] || state,
+    zip,
+    phone: String(ld.telephone || "").trim(),
+    website: `${SWAY}/locations/${slug}/`,
+    lat: Number.isFinite(lat) ? lat : null,
+    lon: Number.isFinite(lon) ? lon : null,
+    ...plot(name, state, lat, lon),
+  });
+}
+
+const locations = [...spaviaLocations, ...swayLocations];
 
 // Advisory: is each plotted point anywhere near the ZIP its address claims?
 //
@@ -436,28 +562,31 @@ locations.sort((a, b) =>
   a.name.localeCompare(b.name)
 );
 
-const spavia = locations.filter((l) => l.brand === "spavia");
+const tally = (ls) => ({
+  total: ls.length,
+  open: ls.filter((l) => l.status === "open").length,
+  comingSoon: ls.filter((l) => l.status === "coming-soon").length,
+  states: new Set(ls.map((l) => l.state)).size,
+});
 const payload = {
   // Generated by scripts/sync-locations.mjs -- do not edit by hand.
   generatedAt: new Date().toISOString().slice(0, 10),
-  source: "spaviadayspa.com store locator",
+  source: "spaviadayspa.com/locations + swaywellnessspa.com/locations",
   counts: {
-    total: spavia.length,
-    open: spavia.filter((l) => l.status === "open").length,
-    comingSoon: spavia.filter((l) => l.status === "coming-soon").length,
-    states: new Set(spavia.map((l) => l.state)).size,
+    // All brands together: what "N locations open" means on the site.
+    ...tally(locations),
+    spavia: tally(spaviaLocations),
+    sway: tally(swayLocations),
   },
   locations,
 };
 
 console.log(
-  `\n${payload.counts.total} Spavia locations ` +
+  `\n${payload.counts.total} locations ` +
   `(${payload.counts.open} open, ${payload.counts.comingSoon} coming soon) ` +
-  `across ${payload.counts.states} states`
+  `across ${payload.counts.states} states: ` +
+  `${payload.counts.spavia.open} Spavia + ${payload.counts.sway.open} Sway open`
 );
-const others = locations.filter((l) => l.brand !== "spavia");
-if (others.length) console.log(`plus ${others.length} non-Spavia brand: ${others.map((l) => l.name).join(", ")}`);
-
 if (warnings.length) {
   console.log("\nWarnings:");
   for (const w of warnings) console.log(`  - ${w}`);
