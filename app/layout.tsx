@@ -67,7 +67,7 @@ const globalJsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Franchise Development",
-        email: "alisa@spaviadayspa.com",
+        email: "allison@spaviadayspa.com",
         url: "/get-started",
         availableLanguage: "English",
       },

@@ -10,8 +10,8 @@ import FranchiseeVideoTestimonial from "./FranchiseeVideoTestimonial";
 import NavBar from "./NavBar";
 import { ThemeProvider } from "./ThemeProvider";
 
-const ALISA_CALENDLY_URL =
-  "https://calendly.com/alisa-spaviadayspa/intro-call";
+const ALLISON_CALENDLY_URL =
+  "https://calendly.com/allison-spaviadayspa/discovery-call";
 
 declare global {
   interface Window {
@@ -64,7 +64,7 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-3xl md:text-5xl font-bold text-gray-900 font-[family-name:var(--font-recoleta)] mb-4"
             >
               {ceo
-                ? "You're In: Book Your Intro Call"
+                ? "You're In: Meet Our Founder"
                 : "You're In — We'll Be In Touch"}
             </motion.h1>
 
@@ -75,8 +75,8 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
               className="text-gray-700 text-lg leading-relaxed max-w-xl mx-auto mb-6"
             >
               {ceo
-                ? "Thank you for sharing your plans. Pick a time below for an intro call with Alisa Anderson, our VP of Franchise Development, to explore your goals, your market and whether Spavia is a fit."
-                : "Alisa and our franchise development team will review your inquiry and reach out within one business day. Your first conversation covers your goals, your market and the questions that matter to you."}
+                ? "Thank you for sharing your plans. Pick a time below to meet one-on-one with Allison Langenderfer, Spavia's co-founder, and explore your goals, your market and whether Spavia is a fit."
+                : "Our founding team will review your inquiry and reach out within one business day. Your first conversation covers your goals, your market and the questions that matter to you."}
             </motion.p>
 
             {!ceo && (
@@ -94,10 +94,10 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 <p className="mt-3 text-sm text-gray-500">
                   In a hurry? Email{" "}
                   <a
-                    href="mailto:alisa@spaviadayspa.com"
+                    href="mailto:allison@spaviadayspa.com"
                     className="text-[var(--accent-text)] font-medium hover:underline"
                   >
-                    alisa@spaviadayspa.com
+                    allison@spaviadayspa.com
                   </a>{" "}
                   and we&apos;ll get right back to you.
                 </p>
@@ -112,11 +112,11 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
             <div className="max-w-4xl mx-auto">
               <div className="rounded-sm overflow-hidden border border-gray-200">
                 <iframe
-                  src={ALISA_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=806240"}
+                  src={ALLISON_CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=806240"}
                   width="100%"
                   height="720"
                   frameBorder="0"
-                  title="Schedule an intro call with Alisa Anderson, Spavia VP of Franchise Development"
+                  title="Schedule a discovery call with Allison Langenderfer, Spavia co-founder"
                   className="block"
                 />
               </div>
@@ -158,15 +158,15 @@ export default function ThankYouContent({ ceo = false }: { ceo?: boolean }) {
                 ceo
                   ? {
                       number: "1",
-                      title: "Your Intro Call",
+                      title: "Your Discovery Call",
                       description:
-                        "A one-on-one call with Alisa Anderson, our VP of Franchise Development, covering your goals, your market, and how Spavia works.",
+                        "A one-on-one discovery call with Allison Langenderfer, our co-founder, covering your goals, your market, and how Spavia works.",
                     }
                   : {
                       number: "1",
-                      title: "Your Intro Call",
+                      title: "Your Discovery Call",
                       description:
-                        "A conversation with Alisa Anderson, our VP of Franchise Development. She'll learn about your goals and walk you through Spavia's franchise model.",
+                        "A conversation with Allison, our co-founder. She'll learn about your goals and walk you through Spavia's franchise model.",
                     },
                 ceo
                   ? {

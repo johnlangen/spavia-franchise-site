@@ -76,7 +76,7 @@ export default function ArizonaContent() {
         />
 
         {/* ═══════ HERO ═══════ */}
-        <PageHero eyebrow="Build in the Arizona communities you know" title="Own a Spavia Day Spa Franchise in Arizona" intro="Explore the Phoenix and Scottsdale market opportunity, review the investment and discuss your preferred territory with Alisa." image="/media/exterior-storefront.webp" alt="A Spavia day spa storefront" action={{href:"#arizona-form",label:"Discuss your Arizona market"}} />
+        <PageHero eyebrow="Build in the Arizona communities you know" title="Own a Spavia Day Spa Franchise in Arizona" intro="Explore the Phoenix and Scottsdale market opportunity, review the investment and discuss your preferred territory with our team." image="/media/exterior-storefront.webp" alt="A Spavia day spa storefront" action={{href:"#arizona-form",label:"Discuss your Arizona market"}} />
 
         {/* ═══════ SHORT FORM ═══════ */}
         <FranchiseIntroForm leadSource="arizona_short" />

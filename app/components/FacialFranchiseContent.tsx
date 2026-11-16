@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     "q": "Where can I learn about training and available markets?",
-    "a": "Review Spavia’s training and support overview and state market research, then request a conversation with Alisa. The team confirms territory availability and the next steps for your proposed location."
+    "a": "Review Spavia’s training and support overview and state market research, then request a conversation with our founding team. The team confirms territory availability and the next steps for your proposed location."
   }
 ];
 

@@ -8,13 +8,13 @@ export default function GoldBottomBanner() {
       <div className="site-container closing-grid">
         <div className="closing-person" data-motion="rise">
           <Image
-            src="/who-we-are/alisa-anderson.jpg"
-            alt="Alisa Anderson, Spavia VP of Franchise Development"
+            src="/who-we-are/image2.png"
+            alt="Allison Langenderfer, Spavia co-founder"
             width={112}
             height={136}
           />
           <p>
-            Alisa Anderson
+            Allison Langenderfer
             <span>
               Your first conversation.
               <br />A real person.
@@ -40,8 +40,8 @@ export default function GoldBottomBanner() {
           >
             Request Franchise Info <span aria-hidden="true">→</span>
           </Link>
-          <a href="mailto:alisa@spaviadayspa.com" className="text-link">
-            Email Alisa directly
+          <a href="mailto:allison@spaviadayspa.com" className="text-link">
+            Email Allison directly
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@ const steps = [
   {
     title: "Intro Call",
     description:
-      "We want to get to know you! A one-on-one call with Alisa Anderson, our VP of Franchise Development, to learn your goals and answer your first questions.",
+      "We want to get to know you! A one-on-one discovery call with Allison Langenderfer, our co-founder, to learn your goals and answer your first questions.",
     button: "Schedule a Call",
   },
   {

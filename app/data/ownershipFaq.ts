@@ -4,7 +4,7 @@ export const ownershipFaqItems = [
   {
     question: "How much can I make as a Spavia franchise?",
     answer:
-      "Spavia’s 2026 FDD, Item 19, Part III reports 2025 results for 44 reporting franchised locations: median annual revenue (cash receipts) of $1,110,481, median cash flow from operations of $199,773, and a median operating margin of 18.4%.\n\nThese are historical results, not a projection of your earnings. Cash flow from operations is not owner take-home pay. The reported measure excludes owner salary or withdrawals, debt and debt service costs such as interest, managerial expenses, depreciation and amortization, home office expenses, and business meals and travel.\n\nIndividual results vary. Review the full FDD, including the reporting criteria and notes, with Alisa.",
+      "Spavia’s 2026 FDD, Item 19, Part III reports 2025 results for 44 reporting franchised locations: median annual revenue (cash receipts) of $1,110,481, median cash flow from operations of $199,773, and a median operating margin of 18.4%.\n\nThese are historical results, not a projection of your earnings. Cash flow from operations is not owner take-home pay. The reported measure excludes owner salary or withdrawals, debt and debt service costs such as interest, managerial expenses, depreciation and amortization, home office expenses, and business meals and travel.\n\nIndividual results vary. Review the full FDD, including the reporting criteria and notes, with our team.",
   },
   {
     question: "Do I need experience in the spa industry?",
@@ -54,6 +54,6 @@ export const ownershipFaqItems = [
   {
     question: "What are the next steps in the process?",
     answer:
-      "Once you have filled out our form, qualified candidates book an intro call with Alisa Anderson, our VP of Franchise Development, to learn whether Spavia is an excellent fit.",
+      "Once you have filled out our form, qualified candidates book a discovery call with Allison Langenderfer, our co-founder, to learn whether Spavia is an excellent fit.",
   },
 ];

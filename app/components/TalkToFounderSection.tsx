@@ -14,27 +14,27 @@ export default function TalkToFounderSection() {
       <div className="site-container alisa-grid">
         <div className="alisa-portrait" data-motion="photo">
           <Image
-            src="/who-we-are/alisa-anderson.jpg"
-            alt="Alisa Anderson, Vice President of Franchise Development at Spavia"
+            src="/who-we-are/image2.png"
+            alt="Allison Langenderfer, co-founder of Spavia"
             fill
             sizes="(max-width: 800px) 160px, 350px"
             className="object-cover object-top"
           />
         </div>
         <div data-motion="rise">
-          <p className="eyebrow">Talk to Alisa</p>
+          <p className="eyebrow">Talk to Our Founder</p>
           <h2 className="display-heading">
             A real conversation.
             <br />
             About your next chapter.
           </h2>
           <p className="body-copy mt-5">
-            Alisa Anderson leads franchise development for our family-owned
-            brand. With 15 years in franchising and experience as a multi-unit
-            owner herself, she knows the questions behind the decision.
+            Allison Langenderfer co-founded Spavia in 2005. We are still
+            family-owned, with no private equity, and your first conversation
+            happens with the founder who built the brand, not a sales team.
           </p>
           <h3 className="text-lg mt-6 mb-3">
-            What your conversation with Alisa covers
+            What your conversation with Allison covers
           </h3>
           <ul className="conversation-topics">
             <li>
@@ -56,10 +56,10 @@ export default function TalkToFounderSection() {
               onClick={trackScheduleClick}
               className="button button-primary"
             >
-              Request an Intro Call <span aria-hidden="true">→</span>
+              Request a Discovery Call <span aria-hidden="true">→</span>
             </Link>
-            <a href="mailto:alisa@spaviadayspa.com" className="text-link">
-              Email Alisa
+            <a href="mailto:allison@spaviadayspa.com" className="text-link">
+              Email Allison
             </a>
           </div>
           <Link href="/steps-to-ownership" className="text-link mt-5">

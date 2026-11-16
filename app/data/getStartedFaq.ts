@@ -7,12 +7,12 @@ export const getStartedFaqs = [
   {
     question: "What happens after I submit the franchise inquiry form?",
     answer:
-      "After you submit the form, our franchise development team reviews your information within one business day. Qualified candidates book an intro call directly with Alisa Anderson, Spavia's VP of Franchise Development.",
+      "After you submit the form, our founding team reviews your information within one business day. Qualified candidates book a discovery call directly with Allison Langenderfer, Spavia's co-founder.",
   },
   {
     question: "What is the franchise ownership process at Spavia?",
     answer:
-      "The Spavia franchise process has seven steps: an intro call with our VP of Franchise Development, a Brand Overview, FDD Review, a Market & Territory review, Validation with current franchise partners, Meet the Team Day in Denver, Colorado, and the Franchise Agreement.",
+      "The Spavia franchise process has seven steps: a discovery call with our co-founder, a Brand Overview, FDD Review, a Market & Territory review, Validation with current franchise partners, Meet the Team Day in Denver, Colorado, and the Franchise Agreement.",
   },
   {
     question: "How large is the wellness industry opportunity?",

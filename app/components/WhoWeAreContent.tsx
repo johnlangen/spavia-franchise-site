@@ -29,7 +29,7 @@ const whoWeAreFaqs = [
   {
     question: "What leadership and support team does Spavia have?",
     answer:
-      "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
+      "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga) and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
   },
 ];
 
@@ -54,15 +54,6 @@ Before Spavia, Allison excelled as a Macy’s buyer and regional manager, follow
 ];
 
 const team = [
-  {
-    name: "Alisa Anderson",
-    role: "Vice President of Franchise Development",
-    image: "/who-we-are/alisa-anderson.jpg",
-    objectPosition: "center 30%",
-    bio: `Alisa brings 30 years in sales, marketing, and business development, including 15 years in franchising and time as a multi-unit franchise owner herself. A U.S. Air Force veteran, she has spent her career helping brands grow and helping entrepreneurs become owners.
-
-As Vice President of Franchise Development, Alisa leads Spavia's franchise growth, guiding prospective owners from their first conversation through opening. Off the clock, you'll find her at Pilates, traveling, enjoying the outdoors, or spending time with her grandchildren.`,
-  },
   {
     name: "Heather Holland",
     role: "President",
@@ -274,7 +265,7 @@ export default function WhoWeAreContent() {
           </div>
           <div className="mt-16 border-t border-[#b38a5f]/40 pt-12 text-center" data-motion="rise">
             <p className="text-2xl font-bold">Want to meet the team?</p>
-            <p className="text-gray-600 mt-2 mb-6 font-sans">Your first step is a conversation with Alisa about your goals and your market.</p>
+            <p className="text-gray-600 mt-2 mb-6 font-sans">Your first step is a conversation with Allison about your goals and your market.</p>
             <Link href="/get-started" className="button button-primary" data-track="cta_team_inquiry">
               Request Info <span aria-hidden="true">→</span>
             </Link>

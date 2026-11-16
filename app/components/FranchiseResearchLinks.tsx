@@ -10,7 +10,7 @@ export default function FranchiseResearchLinks() {
           ["/franchise-cost", "Spavia franchise costs and fees"],
           ["/day-spa-franchise", "The full-service day spa franchise model"],
           ["/franchise-opportunities", "Explore franchise markets by state"],
-          ["/get-started", "Talk with Alisa about your plans"],
+          ["/get-started", "Talk with our founder about your plans"],
         ].map(([href, label]) => <li key={href}><Link href={href} className="text-[#705b31] underline underline-offset-4">{label}</Link></li>)}
       </ul>
     </aside>

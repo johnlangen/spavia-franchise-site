@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     "q": "Who can help me explore ownership?",
-    "a": "Alisa Anderson, Spavia’s VP of Franchise Development, leads the introductory conversation. She can discuss your goals, capital, preferred market and the steps to ownership."
+    "a": "Allison Langenderfer, Spavia’s co-founder, leads the introductory conversation. She can discuss your goals, capital, preferred market and the steps to ownership."
   }
 ];
 export default function Page() {
@@ -70,7 +70,7 @@ export default function Page() {
       <h2>Connect the model to your market and ownership role</h2>
       <p>Review <Link href="/franchise-opportunities">Spavia’s market research by state</Link> and bring your preferred city to the franchise team. The team can confirm territory availability and discuss the next steps. Market research helps frame the conversation; site selection still requires a closer look at the location.</p>
       <p>Owners lead hiring, guest service, local execution and financial management. Read about <Link href="/training-and-support">training and ongoing support</Link>, hear from <Link href="/our-franchisees">current Spavia owners</Link>, and consider how your own experience fits. Qualified candidates interested in several locations can also explore <Link href="/multi-unit">multi-unit development</Link>.</p>
-      <p>Your first conversation is with Alisa. See the <Link href="/steps-to-ownership">steps to ownership</Link> or <Link href="/get-started">request an introduction</Link> when you are ready to discuss your plans.</p>
+      <p>Your first conversation is with our co-founder, Allison. See the <Link href="/steps-to-ownership">steps to ownership</Link> or <Link href="/get-started">request an introduction</Link> when you are ready to discuss your plans.</p>
     </section>
   </FranchiseGuideArticle>;
 }

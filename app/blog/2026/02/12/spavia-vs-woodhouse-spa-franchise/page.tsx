@@ -68,7 +68,7 @@ export default function Page() {
     <section>
       <h2>Match the support and market to your plans</h2>
       <p>Both brands describe franchise training and support. At Spavia, the conversation covers site selection, build-out guidance, training, marketing and operations. Review <Link href="/training-and-support">Spavia’s support</Link> and bring specific questions about your experience and preferred market.</p>
-      <p>Use the <Link href="/franchise-opportunities">state market pages</Link> as a starting point, then have the team confirm territory availability. Alisa Anderson leads Spavia’s introductory conversation and can help you understand the <Link href="/steps-to-ownership">steps to ownership</Link>. If Spavia fits your plans, <Link href="/get-started">request an introduction</Link>.</p>
+      <p>Use the <Link href="/franchise-opportunities">state market pages</Link> as a starting point, then have the team confirm territory availability. Co-founder Allison Langenderfer leads Spavia’s introductory conversation and can help you understand the <Link href="/steps-to-ownership">steps to ownership</Link>. If Spavia fits your plans, <Link href="/get-started">request an introduction</Link>.</p>
     </section>
   </FranchiseGuideArticle>;
 }

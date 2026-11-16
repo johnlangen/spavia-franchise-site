@@ -21,7 +21,7 @@ export default function StepsToOwnershipContent() {
         <Breadcrumbs sticky items={[{ label: "Steps to Ownership" }]} />
 
         {/* Hero */}
-        <PageHero eyebrow="Get to know each other. Then decide." title="Steps to Spa Ownership" intro="Seven steps, with time to ask questions along the way. Start with Alisa, explore the business and your market, speak with current owners and meet our founders in Denver." image="/media/exterior-storefront.webp" alt="A Spavia day spa storefront at dusk" action={{href:"#ownership-process-heading",label:"See the seven steps"}} />
+        <PageHero eyebrow="Get to know each other. Then decide." title="Steps to Spa Ownership" intro="Seven steps, with time to ask questions along the way. Start with our co-founder, explore the business and your market, speak with current owners and meet our founders in Denver." image="/media/exterior-storefront.webp" alt="A Spavia day spa storefront at dusk" action={{href:"#ownership-process-heading",label:"See the seven steps"}} />
 
         {/* Process Section */}
         <section className="bg-white brand-light">

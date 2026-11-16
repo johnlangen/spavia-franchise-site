@@ -56,7 +56,7 @@ export default function Footer() {
               <br />
               Family-owned since 2005.
             </p>
-            <a href="mailto:alisa@spaviadayspa.com">alisa@spaviadayspa.com</a>
+            <a href="mailto:allison@spaviadayspa.com">allison@spaviadayspa.com</a>
           </div>
           {groups.map((group) => (
             <nav key={group.label} aria-label={group.label}>

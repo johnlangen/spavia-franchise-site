@@ -34,7 +34,7 @@ const whoWeAreFaqJsonLd = {
       name: "What leadership and support team does Spavia have?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga), a Vice President of Franchise Development with 15 years in franchising and experience as a multi-unit franchise owner, and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
+        text: "Spavia's leadership includes a President with 20+ years of executive operations experience in wellness and franchising (formerly COO of CorePower Yoga) and a Vice President of Spa Services with over 15 years of franchise system experience. Owners are also supported by dedicated Franchise Business Coaches and a national marketing and technology team.",
       },
     },
   ],

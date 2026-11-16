@@ -19,7 +19,7 @@ export default function FranchiseIntroForm({
           </h2>
           <p className="body-copy mt-5">
             Get an introduction to the Spavia business model, the investment and
-            the support behind your spa. Alisa will help you explore whether
+            the support behind your spa. Allison, our co-founder, will help you explore whether
             your goals and market are a fit.
           </p>
           <Link href="/steps-to-ownership" className="text-link mt-6">

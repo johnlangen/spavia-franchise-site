@@ -204,7 +204,7 @@ export default function FranchiseOverviewForm({
           <div className="form-heading">
             <p className="eyebrow">Your next chapter</p>
             <h2>Get the franchise overview</h2>
-            <p>Explore the investment, the model and your market with Alisa.</p>
+            <p>Explore the investment, the model and your market with our founding team.</p>
           </div>
           {qualification}
         </>

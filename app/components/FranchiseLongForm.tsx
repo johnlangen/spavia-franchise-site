@@ -152,7 +152,7 @@ export default function FranchiseLongForm({ leadSource }: FranchiseLongFormProps
             });
           }
         }
-        // Preserve the existing liquid-capital route to Alisa’s calendar (legacy ceo query key)
+        // Preserve the existing liquid-capital route to the founder's calendar (legacy ceo query key)
         router.push(liquidQualified ? "/thank-you?ceo=1" : "/thank-you");
         return;
       }

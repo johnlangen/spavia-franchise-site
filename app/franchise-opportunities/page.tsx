@@ -3,13 +3,13 @@ import FranchiseOpportunitiesContent from "../components/FranchiseOpportunitiesC
 
 export const metadata: Metadata = {
   title: "Spa Franchise Opportunities & Available Markets | Spavia",
-  description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
+  description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with our team.",
   alternates: {
     canonical: "https://spaviafranchise.com/franchise-opportunities",
   },
   openGraph: {
     title: "Spa Franchise Opportunities & Available Markets | Spavia",
-    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
+    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with our team.",
     url: "https://spaviafranchise.com/franchise-opportunities",
     type: "website",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Spa Franchise Opportunities & Available Markets | Spavia",
-    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with Alisa.",
+    description: "Explore Spavia spa franchise opportunities by state. Review the investment, ownership requirements and market research, then discuss your territory with our team.",
     images: ["https://spaviafranchise.com/og/spavia-franchise-og.jpg"],
   },
 };

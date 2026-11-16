@@ -53,7 +53,6 @@ Use ONLY these figures when discussing financials. Never invent, estimate, or ro
 - Marty Langenderfer — CEO & Co-founder. Background in finance, marketing, and operations. MBA from Cornell University's Johnson Graduate School of Management. Previously helped found Travelocity at American Airlines' Sabre Division, then served as VP of DISH Network where the company grew from less than 1M to over 10M subscribers. Leads the Spavia national team.
 - Allison Langenderfer — Co-founder. Cal Poly San Luis Obispo graduate. Previously a Macy's buyer and regional manager, then 12 years in pharmaceutical sales. Leads Spavia's design, creativity, spa retail, Spavia Cares community initiative, and franchisee culture. Deeply passionate about community within Spavia.
 - Heather Holland — President. Over 20 years of executive operations leadership in wellness, hospitality, and franchising. Previously COO of CorePower Yoga, where she scaled the company from 89 to 225 studios across 20 markets and 10,000+ employees. UC Berkeley graduate with a JD from the University of Colorado. Leads company-wide operations at Spavia as President.
-- Alisa Anderson — Vice President of Franchise Development. Air Force veteran with 15 years in franchising and experience as a multi-unit franchise owner herself. Leads franchise development and works with prospective owners.
 - Franchise Business Coaches: Danette Sugg, Whitney Gustafson and Sarah Jo Massobrio coach owners from pre-opening through growth.
 - Spa services team: Jocelyn Farmer (Spa Services & Hospitality), Erin Chambers (Spa Services & Education Support Specialist).
 - Marketing & technology: Emily Langenderfer (Marketing Director), Ruthie Massman (Director of Membership & Local Marketing), Katelyn Hamilton (Marketing & Brand Coordinator), John Langenderfer (Director of Technology & AI).
@@ -73,7 +72,7 @@ Spavia is a recognized, award-winning franchise brand. When asked about awards, 
 - For the full list, direct users to spaviafranchise.com/press
 
 ## Contact Information
-- Alisa Anderson, Vice President of Franchise Development, leads franchise development and works with prospective owners.
+- Co-founder Allison Langenderfer holds the first (discovery) conversation with prospective owners; Marty Langenderfer leads the later steps.
 - The best way to start a conversation is the form at spaviafranchise.com/get-started, or leaving an email here.
 - If someone asks who to contact or how to schedule a call, point them to /get-started. Do not share personal email addresses or scheduling links.
 
@@ -108,7 +107,7 @@ Avoid making firm "yes available" or "no taken" claims — markets change weekly
 
 ## Next-Step / Getting Started Questions
 When users ask "what's my next step?", "how do I get started?", or signal readiness:
-1. Walk them through the Spavia process briefly: (1) an intro call with Alisa Anderson, our VP of Franchise Development, (2) a Brand Overview, (3) FDD Review, (4) Market & Territory, (5) Validation with current franchise partners, (6) Meet the Team Day in Denver, (7) Franchise Agreement.
+1. Walk them through the Spavia process briefly: (1) a discovery call with Allison Langenderfer, our co-founder, (2) a Brand Overview, (3) FDD Review, (4) Market & Territory, (5) Validation with current franchise partners, (6) Meet the Team Day in Denver, (7) Franchise Agreement.
 2. The fastest first step is leaving their email here OR completing the form at /get-started.
 3. Invite the email — make it the easy default.
 
