@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-20",
   "source": "spaviadayspa.com/locations + swaywellnessspa.com/locations",
   "counts": {
-    "total": 74,
+    "total": 76,
     "open": 69,
-    "comingSoon": 5,
+    "comingSoon": 7,
     "states": 26,
     "spavia": {
-      "total": 69,
+      "total": 71,
       "open": 66,
-      "comingSoon": 3,
+      "comingSoon": 5,
       "states": 25
     },
     "sway": {
@@ -444,6 +444,23 @@
       "lon": -81.415134,
       "x": 1049.34,
       "y": 468.94
+    },
+    {
+      "id": "sarasota-fl",
+      "name": "Spavia Sarasota",
+      "brand": "spavia",
+      "status": "coming-soon",
+      "address": "",
+      "city": "Sarasota",
+      "state": "FL",
+      "stateName": "Florida",
+      "zip": "",
+      "phone": "",
+      "website": "https://spaviadayspa.com/locations/sarasota-fl/",
+      "lat": 27.3364,
+      "lon": -82.5307,
+      "x": 1037.09,
+      "y": 534.22
     },
     {
       "id": "st-augustine-fl",
@@ -1260,6 +1277,23 @@
       "lon": -77.5106069,
       "x": 1087.22,
       "y": 275.89
+    },
+    {
+      "id": "glen-allen-va",
+      "name": "Spavia Wyndham",
+      "brand": "spavia",
+      "status": "coming-soon",
+      "address": "5344 Wyndham Forest Dr., Suite 5336",
+      "city": "Glen Allen",
+      "state": "VA",
+      "stateName": "Virginia",
+      "zip": "23059",
+      "phone": "",
+      "website": "https://spaviadayspa.com/locations/glen-allen-va/",
+      "lat": 37.6843,
+      "lon": -77.5875,
+      "x": 1088.68,
+      "y": 289.65
     },
     {
       "id": "seattle-wa",
