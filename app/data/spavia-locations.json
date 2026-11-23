@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20",
+  "generatedAt": "2026-11-23",
   "source": "spaviadayspa.com/locations + swaywellnessspa.com/locations",
   "counts": {
     "total": 76,
@@ -450,17 +450,17 @@
       "name": "Spavia Sarasota",
       "brand": "spavia",
       "status": "coming-soon",
-      "address": "",
+      "address": "1900 Lakewood Ranch Blvd., Unit 160",
       "city": "Sarasota",
       "state": "FL",
       "stateName": "Florida",
-      "zip": "",
+      "zip": "34240",
       "phone": "",
       "website": "https://spaviadayspa.com/locations/sarasota-fl/",
-      "lat": 27.3364,
-      "lon": -82.5307,
-      "x": 1037.09,
-      "y": 534.22
+      "lat": 27.3352,
+      "lon": -82.4368,
+      "x": 1038.97,
+      "y": 533.96
     },
     {
       "id": "st-augustine-fl",
