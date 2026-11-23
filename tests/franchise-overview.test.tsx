@@ -40,7 +40,7 @@ async function enterEmail() {
   await screen.findByLabelText("First name");
   return user;
 }
-async function enterDetails(capital = "$200K - $500K", phone = "3035550100") {
+async function enterDetails(capital = "$300K - $500K", phone = "3035550100") {
   const user = await enterEmail();
   await user.type(screen.getByLabelText("First name"), "Test");
   await user.type(screen.getByLabelText("Last name"), "Candidate");
@@ -93,7 +93,7 @@ describe("working lead capture contracts", () => {
         lastName: "Candidate",
         phone: "3035550100",
         zip: "80202",
-        liquidTier: "$200K - $500K",
+        liquidTier: "$300K - $500K",
         leadSource,
         attribution,
       });
@@ -111,7 +111,7 @@ describe("working lead capture contracts", () => {
         "form_step2_submitted",
         {
           form: formType,
-          liquidTier: "$200K - $500K",
+          liquidTier: "$300K - $500K",
           ...source,
         },
       );
@@ -119,7 +119,7 @@ describe("working lead capture contracts", () => {
         "event",
         "qualified_lead_submitted",
         {
-          liquidTier: "$200K - $500K",
+          liquidTier: "$300K - $500K",
           ...(formType === "landing" ? { leadSource } : {}),
         },
       );
@@ -142,7 +142,7 @@ describe("working lead capture contracts", () => {
   });
   it("records only the standard conversion for a lower capital tier", async () => {
     render(<FranchiseOverviewForm />);
-    const user = await enterDetails("$0 - $200K");
+    const user = await enterDetails("$0 - $300K");
     await user.click(screen.getByRole("button", { name: "Request Info" }));
     await waitFor(() => expect(push).toHaveBeenCalled());
     expect(conversions()).toHaveLength(1);
@@ -174,7 +174,7 @@ describe("working lead capture contracts", () => {
   });
   it("validates a US phone before calling either final endpoint", async () => {
     render(<FranchiseOverviewForm />);
-    const user = await enterDetails("$200K - $500K", "1234567");
+    const user = await enterDetails("$300K - $500K", "1234567");
     await user.click(screen.getByRole("button", { name: "Request Info" }));
     expect((await screen.findByRole("alert")).textContent).toContain(
       "10-digit US phone",

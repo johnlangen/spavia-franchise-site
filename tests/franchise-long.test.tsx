@@ -27,7 +27,7 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-async function contact(capital = "$200K - $500K") {
+async function contact(capital = "$300K - $500K") {
   const user = userEvent.setup();
   await user.type(screen.getByLabelText("First Name"), "Test");
   await user.type(screen.getByLabelText("Last Name"), "Candidate");
@@ -42,7 +42,7 @@ async function contact(capital = "$200K - $500K") {
   await screen.findByLabelText("Estimated Net Worth");
   return user;
 }
-async function goals(netWorth = "$500K - $700K", capital = "$200K - $500K") {
+async function goals(netWorth = "$500K - $700K", capital = "$300K - $500K") {
   const user = await contact(capital);
   expect(document.activeElement).toBe(
     screen.getByLabelText("Estimated Net Worth"),
@@ -59,9 +59,9 @@ async function goals(netWorth = "$500K - $700K", capital = "$200K - $500K") {
   return user;
 }
 it.each([
-  ["$200K - $500K", "$500K - $700K", 2, "/thank-you?ceo=1"],
-  ["$200K - $500K", "$150K - $350K", 1, "/thank-you?ceo=1"],
-  ["$0 - $200K", "$700K +", 1, "/thank-you"],
+  ["$300K - $500K", "$500K - $700K", 2, "/thank-you?ceo=1"],
+  ["$300K - $500K", "$150K - $350K", 1, "/thank-you?ceo=1"],
+  ["$0 - $300K", "$700K +", 1, "/thank-you"],
 ])(
   "preserves liquid %s and net worth %s qualification and calendar routing",
   async (capital, netWorth, count, route) => {
