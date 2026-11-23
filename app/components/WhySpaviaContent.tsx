@@ -13,6 +13,11 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import { locationCounts } from "../data/locationStats";
 
+// Marty 11/17: open, in progress, countdown to 100. In progress = spas the brand
+// sites already list as coming soon, so every number here is published somewhere else first.
+const locationsInProgress = locationCounts.comingSoon;
+const locationsToHundred = Math.max(0, 100 - locationCounts.open - locationsInProgress);
+
 const whySpaviaFaqs = [
   {
     question: "What revenue streams does a Spavia franchise offer?",
@@ -93,7 +98,7 @@ export default function WhySpaviaContent() {
         </div>
       </section>
 
-      {/* By the Numbers: live open count (synced daily from the brand sites) + 2025 stability figures (2026 FDD, Item 20) */}
+      {/* By the Numbers: open, in progress and the countdown to 100, all from the daily location sync (Marty 11/17) */}
       <section className="py-20 bg-black text-white px-4 sm:px-6 brand-dark">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
@@ -139,12 +144,12 @@ export default function WhySpaviaContent() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
-                4
+                {locationsInProgress}
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
-                New Locations in 2025
+                In Progress
               </p>
-              <p className="text-white/40 text-xs mt-1">Net additions during 2025</p>
+              <p className="text-white/40 text-xs mt-1">Announced and opening soon</p>
             </motion.div>
             <motion.div
               initial={false}
@@ -153,16 +158,18 @@ export default function WhySpaviaContent() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-[var(--accent-text)] text-5xl md:text-6xl font-bold font-[family-name:var(--font-recoleta)] mb-2">
-                0
+                {locationsToHundred}
               </p>
               <p className="text-white/60 text-sm tracking-wide uppercase">
-                Terminations in 2025
+                Countdown to 100
               </p>
-              <p className="text-white/40 text-xs mt-1">Zero closures system-wide</p>
+              <p className="text-white/40 text-xs mt-1">
+                Once the {locationsInProgress} in progress open
+              </p>
             </motion.div>
           </div>
           <p className="text-white/40 text-[10px] mt-12">
-            Open count: Spavia and Sway by Spavia location directories, refreshed daily. 2025 figures: 2026 Spavia Franchise Disclosure Document, Item 20.
+            Open and in-progress counts: Spavia and Sway by Spavia location directories, refreshed daily. Countdown: 100 minus locations open and in progress.
           </p>
         </div>
       </section>
