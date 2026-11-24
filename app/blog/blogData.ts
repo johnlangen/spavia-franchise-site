@@ -19,6 +19,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "The Gift Card Season: How the Holidays Work for a Day Spa Owner",
+    excerpt:
+      "Spa visits aren't seasonal, but gift buying is. How holiday gift cards work for a Spavia owner: the sale and the visit, one card across every spa, a holiday offer built around the calendar, and how a gift turns into a member.",
+    image: "/blog/gift-season/gift-season-share.jpg",
+    href: "/blog/2026/11/24/day-spa-gift-card-season-franchise-owners",
+    date: "2026-11-24",
+    tags: ["operations", "franchise-guide", "brand-story"],
+    readingTime: 6,
+    featured: true,
+  },
+  {
     title:
       "How to Read Franchise Awards: What Spavia's 2026 Inc. 5000 and Newsweek Wins Actually Mean",
     excerpt:
